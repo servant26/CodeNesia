@@ -1,0 +1,515 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CodeNesia — Stable Layout (Sidebar Fixed)</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+  <style>
+    :root{
+      --sidebar-w: 260px;
+      --accent: #6f5af8;
+      --muted: #9aa3b2;
+      --bg: #f1f2f4;
+      --card-bg: #fff;
+    }
+
+    html,body{
+      height:100%;
+      margin:0;
+      padding:0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      color:#222;
+      background: linear-gradient(180deg,#e9e9eb 0%, #f4f4f6 100%);
+      box-sizing:border-box;
+      overflow-x: hidden;
+    }
+
+    /* SIDEBAR fixed so it never affects main width calculations */
+    .sidebar{
+      position: fixed;
+      left: 0;
+      top: 0;
+      height: 100vh;
+      width: var(--sidebar-w);
+      background:#fbfdff;
+      border-right:1px solid rgba(16,24,40,0.04);
+      padding:18px 14px;
+      display:flex;
+      flex-direction:column;
+      gap:14px;
+      box-sizing:border-box;
+      z-index: 40;
+      flex-shrink: 0;
+    }
+
+    .logo{ display:flex; align-items:center; gap:10px; font-weight:600; }
+    .logo .mark{ width:34px;height:34px;border-radius:8px;background:linear-gradient(135deg,var(--accent),#3ec5ff); display:flex;align-items:center;justify-content:center;color:white;font-weight:700; }
+
+    .side-nav{ margin-top:6px; display:flex;flex-direction:column;gap:8px; color:#425261;font-size:14px; }
+    .side-nav a{ text-decoration:none;color:inherit;padding:8px;border-radius:8px;display:flex;gap:10px;align-items:center;}
+    .side-nav a.active{ background:linear-gradient(90deg,rgba(111,90,248,0.08), rgba(62,197,255,0.03)); color:var(--accent); font-weight:600;}
+    .project-pill{ display:flex; gap:8px; align-items:center; padding:8px; border-radius:8px; background:#fafafa; margin-bottom:8px; font-size:13px; }
+
+    /* MAIN: sits to the right of fixed sidebar and ALWAYS takes the remaining viewport width */
+    .main{
+      margin-left: var(--sidebar-w);              /* reserve space for sidebar */
+      width: calc(100vw - var(--sidebar-w));      /* always full remaining width */
+      min-width: 0;                               /* avoid flex overflow issues */
+      padding:18px 26px;
+      display:flex;
+      flex-direction:column;
+      position:relative;
+      box-sizing:border-box;
+      overflow:auto;
+      min-height:100vh;
+    }
+
+    .topbar{ display:flex; align-items:center; gap:12px; justify-content:space-between; padding-bottom:8px; }
+    .breadcrumbs{ display:flex; gap:12px; align-items:center; color:var(--muted); font-size:13px; }
+    .top-actions{ display:flex; gap:10px; align-items:center; }
+
+    .studio-head{ display:flex; gap:16px; align-items:center; margin-top:6px; margin-bottom:12px; }
+    .studio-avatar{ width:46px;height:46px;border-radius:10px;background:linear-gradient(90deg,#FFD88D,#FF8AA1); display:flex; align-items:center; justify-content:center; font-weight:700; color:#fff; }
+    .studio-name{ font-weight:700; font-size:18px; }
+    .studio-subtabs{ display:flex; gap:14px; color:#6b7280; margin-left:8px; align-items:center; flex-wrap:wrap; }
+
+    .filters-row{ display:flex; gap:12px; align-items:center; margin:12px 0; flex-wrap:wrap; }
+    .chip{ background: #eef2ff; color:var(--accent); padding:6px 10px; border-radius:18px; font-weight:600; font-size:13px; display:inline-flex; gap:8px; align-items:center; }
+
+    /* GRID sections (non-horizontal) */
+    .cards-grid{ display:grid; grid-template-columns: repeat(3,1fr); gap:18px; margin-top:6px; align-items:start; box-sizing:border-box; }
+    .content-card{
+      background:var(--card-bg);
+      border-radius:12px;
+      padding:14px;
+      box-shadow: 0 6px 18px rgba(16,24,40,0.04);
+      border:1px solid rgba(16,24,40,0.04);
+      min-height:160px;
+      display:flex;flex-direction:column; gap:10px;
+      box-sizing:border-box;
+      position:relative;
+      transition: transform .12s ease, opacity .12s ease;
+    }
+    .card-cover{ height:140px;border-radius:8px; overflow:hidden; display:block;padding:0; }
+    .card-cover img{ width:100%; height:100%; display:block; object-fit:cover; border-radius:8px; }
+
+    .card-title{ font-weight:700; font-size:15px; color:#111827; padding-top:6px; }
+    .card-meta{ font-size:13px; color:var(--muted); display:flex; gap:10px; align-items:center; flex-wrap:wrap; }
+    .assign-badge{ position:absolute; background:rgba(0,0,0,0.6); color:white; font-size:12px; padding:6px 8px; border-radius:8px; left:12px; top:-10px; }
+    .card-bottom{ display:flex; justify-content:space-between; align-items:center; gap:10px; margin-top:auto; }
+    .muted{ color:var(--muted); font-size:13px; }
+    .section-title{ font-size:18px; font-weight:700; margin-top:28px; margin-bottom:10px; color:#111827; }
+    .no-results { color:var(--muted); font-style:italic; margin-top:8px; display:none; text-align:center; }
+
+    .help-fab{ position:fixed; right:18px; bottom:18px; width:44px;height:44px;border-radius:10px;background:#0f1724;color:white; display:grid;place-items:center; box-shadow:0 8px 20px rgba(16,24,40,0.12); cursor:pointer; }
+
+    /* HORIZONTAL variant */
+    .cards-grid.horizontal{
+      display:flex;
+      gap:18px;
+      padding:8px 6px;
+      margin-top:6px;
+      width:100%;
+      min-width:0;
+      box-sizing:border-box;
+      align-items:flex-start;
+      justify-content:flex-start;
+      overflow-x: hidden;
+      transition: all .18s ease;
+      flex-wrap: wrap;
+    }
+    .cards-grid.horizontal .content-card{
+      flex: 0 0 300px;
+      min-width:260px;
+      margin-bottom:0;
+      box-sizing:border-box;
+    }
+    .cards-grid.horizontal.scrollable{
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      -webkit-overflow-scrolling:touch;
+      justify-content: flex-start;
+    }
+
+    @media (max-width:1100px){
+      .cards-grid{ grid-template-columns: repeat(2,1fr); }
+    }
+    @media (max-width:760px){
+      .sidebar{ display:none; }
+      .main{ margin-left:0; width:100%; padding:14px; }
+      .cards-grid{ grid-template-columns: 1fr; }
+      .cards-grid.horizontal .content-card{ flex: 0 0 80%; min-width:220px; }
+    }
+
+    .cards-grid.horizontal::-webkit-scrollbar { height:8px; }
+    .cards-grid.horizontal::-webkit-scrollbar-thumb { background:rgba(0,0,0,0.12); border-radius:6px; }
+
+    /* prevent inputs from growing the layout horizontally */
+    .input-group .form-control { min-width: 0; }
+  </style>
+</head>
+<body>
+  <!-- SIDEBAR -->
+  <aside class="sidebar" aria-label="Sidebar">
+    <div class="logo">
+      <div class="mark">TI</div>
+      <div>
+        <div style="font-size:14px;font-weight:700">CodeNesia</div>
+        <div style="font-size:12px;color:var(--muted)">Selasa, 26 April</div>
+      </div>
+    </div>
+
+    <nav class="side-nav mt-3">
+      <a class="active"><i class="bi bi-house-door-fill"></i> Home</a>
+      <a><i class="bi bi-folder2-open"></i> Roadmap</a>
+      <a><i class="bi bi-layout-text-window-reverse"></i> Ebook</a>
+      <a><i class="bi bi-layout-text-window-reverse"></i> Support Us</a>
+      <a><i class="bi bi-layout-text-window-reverse"></i> Back</a>
+    </nav>
+
+    <div class="mt-2">
+      <div style="font-size:13px;color:#6b7280;margin-bottom:6px">Social Media</div>
+      <div class="project-pill"><i class="bi bi-star-fill" style="color:#f59e0b"></i> Youtube</div>
+      <div class="project-pill"><i class="bi bi-folder-fill" style="color:#3ec5ff"></i> Instagram</div>
+      <div class="project-pill"><i class="bi bi-list-task"></i> Tiktok</div>
+      <div class="project-pill"><i class="bi bi-list-task"></i> Facebook</div>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main" role="main">
+    <div class="topbar">
+      <div class="breadcrumbs">
+        <i class="bi bi-grid-fill"></i>
+        <div style="font-weight:700">Home</div>
+      </div>
+
+      <div class="top-actions">
+        <div class="input-group me-2" style="max-width:360px; width:100%;">
+          <span class="input-group-text bg-white"><i class="bi bi-search"></i></span>
+          <input id="searchInput" class="form-control" placeholder="Mau belajar apa..." autofocus aria-label="Search cards" />
+        </div>
+      </div>
+    </div>
+
+    <div class="studio-head">
+      <div class="studio-avatar">H</div>
+      <div>
+        <div class="studio-name">Selamat datang brow <small class="muted"></small></div>
+        <div class="studio-subtabs mt-2">
+          <div>Front-End</div>
+          <div>Back-End</div>
+          <div>Programming Language</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section: Front End (horizontal) -->
+    <div class="section" data-section-name="front end">
+      <div class="section-title">Front End Web Developer</div>
+      <div class="cards-grid horizontal" id="frontendGrid">
+        <!-- cards same as before -->
+        <div class="content-card">
+          <div class="assign-badge">12 Assigned</div>
+          <div class="card-cover"><img src="https://i.pinimg.com/736x/2c/32/1d/2c321d3d1512aa3bd347a24999b2497e.jpg" alt="React cover"></div>
+          <div class="card-title">Mastering React for Modern UI</div>
+          <div class="card-meta"><div class="badge rounded-pill bg-light text-dark">Front End</div></div>
+          <div class="muted">Estimasi waktu belajar : 30 menit</div>
+        </div>
+
+        <div class="content-card">
+          <div class="assign-badge">8 Assigned</div>
+          <div class="card-cover"><img src="https://i0.wp.com/blog.nashtechglobal.com/wp-content/uploads/2024/01/css-tutorial-img1-01.o.png?fit=820%2C350&ssl=1" alt="CSS cover"></div>
+          <div class="card-title">Advanced CSS & Layout Techniques</div>
+          <div class="card-meta"><div class="badge rounded-pill bg-light text-dark">Front End</div></div>
+          <div class="muted">Estimasi waktu belajar : 30 menit</div>
+        </div>
+
+        <div class="content-card">
+          <div class="assign-badge">5 Assigned</div>
+          <div class="card-cover"><img src="https://picsum.photos/seed/vue/800/400" alt="Vue cover"></div>
+          <div class="card-title">Build Reactive Interfaces with Vue</div>
+          <div class="card-meta"><div class="badge rounded-pill bg-light text-dark">Front End</div></div>
+          <div class="muted">Estimasi waktu belajar : 30 menit</div>
+        </div>
+
+        <div class="content-card">
+          <div class="assign-badge">14 Assigned</div>
+          <div class="card-cover"><img src="https://picsum.photos/seed/javascript/800/400" alt="JavaScript cover"></div>
+          <div class="card-title">Modern JavaScript: From Basics to ES6+</div>
+          <div class="card-meta"><div class="badge rounded-pill bg-light text-dark">Front End</div><div class="muted">• Popular</div></div>
+          <div class="muted">Estimasi waktu belajar : 45 menit</div>
+        </div>
+
+        <div class="content-card">
+          <div class="assign-badge">9 Assigned</div>
+          <div class="card-cover"><img src="https://picsum.photos/seed/performance/800/400" alt="Performance cover"></div>
+          <div class="card-title">Web Performance & Optimization</div>
+          <div class="card-meta"><div class="badge rounded-pill bg-light text-dark">Front End</div></div>
+          <div class="muted">Estimasi waktu belajar : 35 menit</div>
+        </div>
+
+        <div class="content-card">
+          <div class="assign-badge">6 Assigned</div>
+          <div class="card-cover"><img src="https://picsum.photos/seed/typescript/800/400" alt="TypeScript cover"></div>
+          <div class="card-title">TypeScript for Safer Frontend</div>
+          <div class="card-meta"><div class="badge rounded-pill bg-light text-dark">Front End</div></div>
+          <div class="muted">Estimasi waktu belajar : 40 menit</div>
+        </div>
+
+        <div class="content-card">
+          <div class="assign-badge">11 Assigned</div>
+          <div class="card-cover"><img src="https://picsum.photos/seed/accessibility/800/400" alt="Accessibility cover"></div>
+          <div class="card-title">A11y: Building Inclusive Interfaces</div>
+          <div class="card-meta"><div class="badge rounded-pill bg-light text-dark">Front End</div></div>
+          <div class="muted">Estimasi waktu belajar : 25 menit</div>
+        </div>
+
+        <div class="content-card">
+          <div class="assign-badge">7 Assigned</div>
+          <div class="card-cover"><img src="https://picsum.photos/seed/testing/800/400" alt="Testing cover"></div>
+          <div class="card-title">Testing UI: Jest & React Testing Library</div>
+          <div class="card-meta"><div class="badge rounded-pill bg-light text-dark">Front End</div></div>
+          <div class="muted">Estimasi waktu belajar : 30 menit</div>
+        </div>
+
+        <div class="content-card">
+          <div class="assign-badge">5 Assigned</div>
+          <div class="card-cover"><img src="https://picsum.photos/seed/tailwind/800/400" alt="Tailwind cover"></div>
+          <div class="card-title">Utility-first Styling with Tailwind</div>
+          <div class="card-meta"><div class="badge rounded-pill bg-light text-dark">Front End</div></div>
+          <div class="muted">Estimasi waktu belajar : 20 menit</div>
+        </div>
+
+        <div class="content-card">
+          <div class="assign-badge">4 Assigned</div>
+          <div class="card-cover"><img src="https://picsum.photos/seed/build/800/400" alt="Build tools cover"></div>
+          <div class="card-title">Vite / Webpack: Modern Build Setup</div>
+          <div class="card-meta"><div class="badge rounded-pill bg-light text-dark">Front End</div></div>
+          <div class="muted">Estimasi waktu belajar : 30 menit</div>
+        </div>
+      </div>
+
+      <div class="no-results">Tidak ditemukan di Front End.</div>
+    </div>
+
+    <!-- Back End (grid) -->
+    <div class="section" data-section-name="back end">
+      <div class="section-title">Back End Developer</div>
+      <div class="cards-grid" id="backendGrid">
+        <div class="content-card">
+          <div class="assign-badge">10 Assigned</div>
+          <div class="card-cover"><img src="https://picsum.photos/seed/node/800/400" alt="Node cover"></div>
+          <div class="card-title">Building APIs with Node.js</div>
+          <div class="card-meta"><div class="badge rounded-pill bg-light text-dark">Back End</div><div class="muted">• Urgent</div></div>
+          <div class="muted">Estimasi waktu belajar : 30 menit</div>
+        </div>
+
+        <div class="content-card">
+          <div class="assign-badge">7 Assigned</div>
+          <div class="card-cover"><img src="https://picsum.photos/seed/postgres/800/400" alt="Postgres cover"></div>
+          <div class="card-title">Database Design & Optimization</div>
+          <div class="card-meta"><div class="badge rounded-pill bg-light text-dark">Back End</div></div>
+          <div class="muted">Estimasi waktu belajar : 30 menit</div>
+        </div>
+
+        <div class="content-card">
+          <div class="assign-badge">4 Assigned</div>
+          <div class="card-cover"><img src="https://picsum.photos/seed/security/800/400" alt="Security cover"></div>
+          <div class="card-title">Best Practices for Secure Backends</div>
+          <div class="card-meta"><div class="badge rounded-pill bg-light text-dark">Back End</div></div>
+          <div class="muted">Estimasi waktu belajar : 30 menit</div>
+        </div>
+      </div>
+
+      <div class="no-results">Tidak ditemukan di Back End.</div>
+    </div>
+
+    <!-- Language (grid) -->
+    <div class="section" data-section-name="language">
+      <div class="section-title">Programming Language</div>
+      <div class="cards-grid" id="langGrid">
+        <div class="content-card">
+          <div class="assign-badge">9 Assigned</div>
+          <div class="card-cover"><img src="https://picsum.photos/seed/python/800/400" alt="Python cover"></div>
+          <div class="card-title">Python for Data Analysis</div>
+          <div class="card-meta"><div class="badge rounded-pill bg-light text-dark">Language</div></div>
+          <div class="muted">Estimasi waktu belajar : 30 menit</div>
+        </div>
+
+        <div class="content-card">
+          <div class="assign-badge">6 Assigned</div>
+          <div class="card-cover"><img src="https://picsum.photos/seed/java/800/400" alt="Java cover"></div>
+          <div class="card-title">Java Fundamentals & OOP</div>
+          <div class="card-meta"><div class="badge rounded-pill bg-light text-dark">Language</div></div>
+          <div class="muted">Estimasi waktu belajar : 30 menit</div>
+        </div>
+
+        <div class="content-card">
+          <div class="assign-badge">3 Assigned</div>
+          <div class="card-cover"><img src="https://picsum.photos/seed/rust/800/400" alt="Rust cover"></div>
+          <div class="card-title">Intro to Systems Programming with Rust</div>
+          <div class="card-meta"><div class="badge rounded-pill bg-light text-dark">Language</div></div>
+          <div class="muted">Estimasi waktu belajar : 30 menit</div>
+        </div>
+      </div>
+
+      <div class="no-results">Tidak ditemukan di Programming Language.</div>
+    </div>
+
+  </main>
+
+  <div class="help-fab" title="Help">
+    <i class="bi bi-question-lg"></i>
+  </div>
+
+  <!-- Bootstrap JS bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    // ---------- Helpers ----------
+    const searchInput = document.getElementById('searchInput');
+    const sections = document.querySelectorAll('.section');
+    function normalize(s){ return (s||'').toString().toLowerCase(); }
+    function updateNoResults(sectionEl, anyVisible){
+      const noEl = sectionEl.querySelector('.no-results');
+      if(!noEl) return;
+      noEl.style.display = anyVisible ? 'none' : 'block';
+    }
+
+    // Evaluate horizontal container: sum widths of visible cards and toggle scroll or wrap
+    function evaluateHorizontal(cardsWrap){
+      if(!cardsWrap) return;
+      // ensure container uses full available width (don't let inner changes shrink parent)
+      cardsWrap.style.minWidth = '0';
+      cardsWrap.style.boxSizing = 'border-box';
+
+      const all = Array.from(cardsWrap.querySelectorAll('.content-card'));
+      const visible = all.filter(c => c.style.display !== 'none');
+      const visibleCount = visible.length;
+
+      if(visibleCount === 0){
+        cardsWrap.classList.remove('scrollable');
+        cardsWrap.style.flexWrap = 'wrap';
+        cardsWrap.style.overflowX = 'hidden';
+        cardsWrap.style.justifyContent = 'flex-start';
+        return;
+      }
+
+      // compute gap
+      const cs = getComputedStyle(cardsWrap);
+      const gap = parseFloat(cs.gap || cs.columnGap || 18) || 18;
+
+      // compute total width needed (sum bounding widths + gaps)
+      let total = 0;
+      visible.forEach(c => {
+        const w = Math.ceil(c.getBoundingClientRect().width);
+        total += w;
+      });
+      if(visibleCount > 1) total += gap * (visibleCount - 1);
+
+      const containerWidth = Math.floor(cardsWrap.getBoundingClientRect().width);
+
+      if(total <= containerWidth){
+        // fits -> wrap, left align
+        cardsWrap.classList.remove('scrollable');
+        cardsWrap.style.flexWrap = 'wrap';
+        cardsWrap.style.overflowX = 'hidden';
+        cardsWrap.style.justifyContent = 'flex-start';
+      } else {
+        // doesn't fit -> scrollable, nowrap, left align
+        cardsWrap.classList.add('scrollable');
+        cardsWrap.style.flexWrap = 'nowrap';
+        cardsWrap.style.overflowX = 'auto';
+        cardsWrap.style.justifyContent = 'flex-start';
+      }
+    }
+
+    // filter function (for horizontal remove non-matches from flow to avoid holes)
+    function filterAll(q){
+      const query = normalize(q).trim();
+
+      sections.forEach(section => {
+        const cardsWrap = section.querySelector('.cards-grid');
+        const cards = Array.from(section.querySelectorAll('.content-card'));
+        const isHorizontal = cardsWrap && cardsWrap.classList.contains('horizontal');
+        let anyVisible = false;
+
+        cards.forEach(card => {
+          const title = normalize(card.querySelector('.card-title')?.innerText);
+          const meta = normalize(card.querySelector('.card-meta')?.innerText);
+          const cover = normalize(card.querySelector('.card-cover')?.innerText);
+          const bottom = normalize(card.querySelector('.card-bottom')?.innerText);
+          const matches = query === '' || title.includes(query) || meta.includes(query) || cover.includes(query) || bottom.includes(query);
+
+          if(matches){
+            card.style.display = '';
+            card.style.opacity = '1';
+            anyVisible = true;
+          } else {
+            card.style.display = 'none';
+            card.style.opacity = '0';
+          }
+        });
+
+        if(cardsWrap && cardsWrap.style.display === 'block'){
+          cards.forEach(c => { if(c.style.display === '') c.style.width = '100%'; });
+        }
+
+        updateNoResults(section, anyVisible);
+
+        if(isHorizontal){
+          setTimeout(() => evaluateHorizontal(cardsWrap), 20);
+        }
+      });
+    }
+
+    // bind image load so measurements are accurate
+    function bindImageLoadRecalc(){
+      document.querySelectorAll('.cards-grid.horizontal .card-cover img').forEach(img => {
+        if (img.__boundRecalc) return;
+        img.__boundRecalc = true;
+        img.addEventListener('load', () => {
+          setTimeout(() => {
+            document.querySelectorAll('.cards-grid.horizontal').forEach(cw => evaluateHorizontal(cw));
+          }, 30);
+        });
+      });
+    }
+
+    // debounce helper for resize
+    let _resizeTO;
+    window.addEventListener('resize', () => {
+      clearTimeout(_resizeTO);
+      _resizeTO = setTimeout(() => {
+        document.querySelectorAll('.cards-grid.horizontal').forEach(cw => evaluateHorizontal(cw));
+      }, 120);
+    });
+
+    if(searchInput){
+      searchInput.addEventListener('input', (e) => { filterAll(e.target.value); });
+    }
+
+    // init
+    document.addEventListener('DOMContentLoaded', () => {
+      bindImageLoadRecalc();
+      setTimeout(() => {
+        document.querySelectorAll('.cards-grid.horizontal').forEach(cw => evaluateHorizontal(cw));
+      }, 300);
+    });
+
+    // safety second pass after images likely loaded
+    setTimeout(() => {
+      bindImageLoadRecalc();
+      document.querySelectorAll('.cards-grid.horizontal').forEach(cw => evaluateHorizontal(cw));
+    }, 900);
+
+  </script>
+</body>
+</html>
