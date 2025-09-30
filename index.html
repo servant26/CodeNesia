@@ -23,7 +23,7 @@
       margin: 0 0.75rem;
     }
     .brand{font-weight:700}
-    .hero{padding:3.5rem 2rem}
+    .hero{padding:3.5rem 2rem; min-height: 500px;}
     .hero .title{font-size:2.6rem; font-weight:800; line-height:1;}
     .hero p.lead{color:var(--muted); margin-top:.6rem}
     .btn-ghost{background:#000; color:#fff; border-radius:999px; padding: .6rem 1.1rem}
@@ -35,11 +35,13 @@
       padding: 20px;
       transition: all 0.3s ease;
       cursor: pointer;
+      flex: 0 0 auto;
+      width: 280px;
     }
 
     .course-card .course-img {
       width: 100%;
-      height: 200px;     /* tinggi fix */
+      height: 160px;     /* tinggi fix - DIPERKECIL */
       object-fit: cover; /* biar gambar tetap proporsional */
       border-radius: 12px 12px 0 0; /* hanya sudut atas rounded */
       display: block;
@@ -287,17 +289,348 @@
   background: #111; /* warna gelap */
   color: #fff; /* teks jadi putih */
   padding: 6rem 7rem;
+  min-height: 300px; /* TINGGI DITAMBAH */
+  display: flex;
+  align-items: center;
 }
 
 /* Hero Image jadi lingkaran */
 .hero .right img {
   border-radius: 50%; /* bikin lingkaran */
-  object-fit: cover; /* biar proporsional */
+  object-fit: cover; /* biar gambar tetap proporsional */
   width: 300px;
   height: 300px;
   box-shadow: 0 8px 20px rgba(0,0,0,0.4); /* kasih efek biar menonjol */
 }
 
+/* ========== PERBAIKAN RESPONSIVITAS ========== */
+
+/* Hero section untuk HP - HANYA TEKS DAN BUTTON, TANPA GAMBAR */
+@media (max-width: 768px) {
+  .hero {
+    padding: 3rem 1rem !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 400px !important;
+  }
+  
+  .hero .right {
+    display: none !important; /* SEMBUNYIKAN GAMBAR DI HP */
+  }
+  
+  .hero .left {
+    width: 100%;
+    max-width: 500px;
+  }
+  
+  .hero .title {
+    font-size: 1.8rem !important;
+    line-height: 1.3;
+    margin-bottom: 1rem;
+  }
+  
+  .hero p.lead {
+    font-size: 1rem !important;
+    margin-bottom: 2rem;
+    line-height: 1.5;
+  }
+  
+  /* PERBAIKAN: BUTTON DI TENGAH UNTUK HP */
+  .hero .d-flex.align-items-center.gap-3.mt-4 {
+    justify-content: center !important;
+    width: 100%;
+  }
+  
+  .btn-ghost {
+    padding: 0.7rem 1.5rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Untuk HP yang sangat kecil */
+@media (max-width: 480px) {
+  .hero {
+    padding: 2.5rem 1rem !important;
+    min-height: 350px !important;
+  }
+  
+  .hero .title {
+    font-size: 1.5rem !important;
+  }
+  
+  .hero p.lead {
+    font-size: 0.9rem !important;
+  }
+  
+  .btn-ghost {
+    padding: 0.6rem 1.3rem;
+    font-size: 0.85rem;
+  }
+}
+
+/* ========== PERBAIKAN JARAK UNTUK TABLET ========== */
+
+/* Untuk Tablet - TAMPILKAN GAMBAR DENGAN JARAK YANG CUKUP */
+@media (min-width: 769px) and (max-width: 991px) {
+  .hero {
+    padding: 4rem 2rem !important;
+    min-height: 450px !important;
+    gap: 3rem !important; /* JARAK DITAMBAH ANTARA TEKS DAN GAMBAR */
+  }
+  
+  .hero .right img {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .hero .title {
+    font-size: 2.2rem !important;
+    margin-bottom: 1.5rem !important; /* JARAK DITAMBAH */
+  }
+  
+  .hero p.lead {
+    font-size: 1.1rem !important;
+    margin-bottom: 2rem !important; /* JARAK DITAMBAH */
+    line-height: 1.6;
+  }
+  
+  .hero .left {
+    padding-right: 1rem; /* JARAK DITAMBAH DARI KANAN */
+  }
+  
+  .hero .right {
+    padding-left: 1rem; /* JARAK DITAMBAH DARI KIRI */
+  }
+}
+
+/* Course cards - 3 per baris di desktop, horizontal scroll di HP */
+.courses-scroll-container {
+  overflow-x: auto;
+  padding-bottom: 1rem;
+  margin: 0 -1rem;
+  padding: 0 1rem;
+}
+
+.courses-scroll-wrapper {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: nowrap;
+  padding: 1rem 0;
+}
+
+@media (min-width: 992px) {
+  .courses-scroll-container {
+    overflow-x: visible;
+  }
+  
+  .courses-scroll-wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  
+  .course-card {
+    width: 100%;
+  }
+  
+  .course-card .course-img {
+    height: 200px; /* Tinggi normal untuk desktop */
+  }
+}
+
+/* Ukuran card course untuk HP - DIPERKECIL */
+@media (max-width: 991px) {
+  .course-card {
+    width: 260px !important; /* LEBAR DIPERKECIL */
+  }
+  
+  .course-card .course-img {
+    height: 140px !important; /* TINGGI GAMBAR DIPERKECIL */
+  }
+  
+  .course-card h5 {
+    font-size: 1rem !important; /* JUDUL DIPERKECIL */
+  }
+  
+  .course-card p {
+    font-size: 0.8rem !important; /* TEKS DIPERKECIL */
+  }
+}
+
+/* Untuk HP kecil */
+@media (max-width: 480px) {
+  .course-card {
+    width: 240px !important; /* LEBIH KECIL LAGI */
+  }
+  
+  .course-card .course-img {
+    height: 120px !important; /* LEBIH KECIL LAGI */
+  }
+}
+
+/* Hide scrollbar untuk browser tertentu */
+.courses-scroll-container::-webkit-scrollbar {
+  height: 6px;
+}
+
+.courses-scroll-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.courses-scroll-container::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 10px;
+}
+
+.courses-scroll-container::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* Purple banner - untuk HP jadi 1 kolom vertikal */
+@media (max-width: 768px) {
+  .purple-banner {
+    padding: 1.5rem;
+    margin: 2rem 0;
+  }
+  
+  .purple-banner .row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    text-align: center;
+  }
+  
+  .purple-banner .col-md-6 {
+    width: 100%;
+  }
+  
+  .purple-left {
+    min-height: auto;
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .purple-banner img {
+    max-height: 200px;
+    width: auto;
+  }
+  
+  .purple-banner h4 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+  }
+  
+  .purple-banner p {
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+  }
+  
+  .purple-banner ul li {
+    font-size: 0.9rem;
+    margin-bottom: 0.8rem;
+    text-align: left;
+  }
+  
+  .purple-banner ul {
+    display: inline-block;
+    text-align: left;
+  }
+}
+
+/* ========== PERBAIKAN TESTIMONIAL UNTUK TABLET ========== */
+
+/* Testimonial cards - 3 per baris di tablet */
+@media (min-width: 769px) and (max-width: 991px) {
+  .testi-track > .col {
+    width: calc((100% - 2rem) / 3) !important;
+    max-width: calc((100% - 2rem) / 3) !important;
+  }
+  
+  .testi-card {
+    padding: 1rem 0.8rem;
+  }
+  
+  .testi-card p {
+    font-size: 0.85rem;
+  }
+  
+  .avatar-wrapper {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .avatar-bg {
+    width: 48px;
+    height: 48px;
+  }
+  
+  .avatar-img {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+/* Testimonial cards - 2 per baris di HP */
+@media (max-width: 768px) {
+  .testi-track > .col {
+    width: calc((100% - 1rem) / 2) !important;
+    max-width: calc((100% - 1rem) / 2) !important;
+  }
+}
+
+/* Untuk HP yang sangat kecil, 1 card per baris */
+@media (max-width: 480px) {
+  .testi-track > .col {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}
+
+/* ========== PERBAIKAN NAVIGASI MOBILE ========== */
+
+/* Perbaikan untuk navbar pada mobile - MENU DI KIRI */
+@media (max-width: 991px) {
+  .navbar {
+    padding: 1rem 1.5rem;
+  }
+  
+  .navbar-collapse {
+    text-align: left !important; /* TEKS DI KIRI */
+    margin-top: 1rem;
+  }
+  
+  .navbar-nav .nav-link {
+    margin: 0.25rem 0;
+    padding: 0.5rem 0;
+    text-align: left !important; /* TEKS DI KIRI */
+    justify-content: flex-start !important;
+  }
+  
+  .navbar-nav {
+    align-items: flex-start !important; /* ITEM DI KIRI */
+  }
+}
+
+/* Perbaikan untuk gambar yang tidak ditemukan */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Responsivitas untuk container */
+.container-fluid {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
 
   </style>
 </head>
@@ -323,7 +656,7 @@
 </nav>
 
 <header class="hero container-fluid">
-  <div class="left">
+  <div class="left px-5">
     <h1 class="title">Mau belajar coding?<br>cobain ini deh..</h1>
     <p class="lead">Tersedia banyak materi dan video yang dapat kamu akses kapan saja secara gratis!</p>
     <div class="d-flex align-items-center gap-3 mt-4">
@@ -346,70 +679,51 @@
 <main class="container mt-5">
   <section id="courses">
     <h3 class="text-center fw-bold">Apa yang akan kamu dapat?</h3>
-    <div class="row row-cols-1 row-cols-md-3 g-4 mt-4">
-    <div class="col">
-      <div class="course-card h-100 p-0"> <!-- p-0 hilangkan padding default card -->
-        <!-- Gambar full width -->
-        <img src="webdev.png"
-             alt="UI Design"
-             class="course-img rounded-top">
-
-        <!-- Konten -->
-        <div class="p-3">
-          <h5 class="mt-3">Web Programming</h5>
-          <p class="text-muted small">
-            Dalam materi ini, kamu akan mempelajari seputar web dimulai dari HTML, CSS, JS, PHP hingga ke framework seperti Laravel dan React
-          </p>
-          <div class="d-flex justify-content-between align-items-center mt-3">
-            <div>
-              <div class="fw-bold price"></div>
+    <div class="courses-scroll-container">
+      <div class="courses-scroll-wrapper">
+        <div class="course-card h-100 p-0">
+          <img src="webdev.png" alt="UI Design" class="course-img rounded-top">
+          <div class="p-3">
+            <h5 class="mt-3">Web Programming</h5>
+            <p class="text-muted small">
+              Dalam materi ini, kamu akan mempelajari seputar web dimulai dari HTML, CSS, JS, PHP hingga ke framework seperti Laravel dan React
+            </p>
+            <div class="d-flex justify-content-between align-items-center mt-3">
+              <div>
+                <div class="fw-bold price"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="course-card h-100 p-0">
+          <img src="prolang.jpg" alt="UI Design" class="course-img rounded-top">
+          <div class="p-3">
+            <h5 class="mt-3">Programming Language</h5>
+            <p class="text-muted small">
+             Dalam materi ini, kamu akan mempelajari seputar bahasa pemgrogaman seperti Java, Python, C, C++, C#, dan masih banyak lagi.
+            </p>
+            <div class="d-flex justify-content-between align-items-center mt-3">
+              <div>
+                <div class="fw-bold price"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="course-card h-100 p-0">
+          <img src="materi.jpg" alt="UI Design" class="course-img rounded-top">
+          <div class="p-3">
+            <h5 class="mt-3">Video Materi & Ebook</h5>
+            <p class="text-muted small">
+             Akses video materi gratis dan ebook dengan harga terjangkau sebagai bentuk dukungan untuk kami.
+            </p>
+            <div class="d-flex justify-content-between align-items-center mt-3">
+              <div>
+                <div class="fw-bold price"></div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="col">
-      <div class="course-card h-100 p-0"> <!-- p-0 hilangkan padding default card -->
-        <!-- Gambar full width -->
-        <img src="prolang.jpg"
-             alt="UI Design"
-             class="course-img rounded-top">
-
-        <!-- Konten -->
-        <div class="p-3">
-          <h5 class="mt-3">Programming Language</h5>
-          <p class="text-muted small">
-           Dalam materi ini, kamu akan mempelajari seputar bahasa pemgrogaman seperti Java, Python, C, C++, C#, dan masih banyak lagi.
-          </p>
-          <div class="d-flex justify-content-between align-items-center mt-3">
-            <div>
-              <div class="fw-bold price"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col">
-      <div class="course-card h-100 p-0"> <!-- p-0 hilangkan padding default card -->
-        <!-- Gambar full width -->
-        <img src="materi.jpg"
-             alt="UI Design"
-             class="course-img rounded-top">
-
-        <!-- Konten -->
-        <div class="p-3">
-          <h5 class="mt-3">Video Materi & Ebook</h5>
-          <p class="text-muted small">
-           Akses video materi gratis dan ebook dengan harga terjangkau sebagai bentuk dukungan untuk kami.
-          </p>
-          <div class="d-flex justify-content-between align-items-center mt-3">
-            <div>
-              <div class="fw-bold price"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
     </div>
   </section>
 
