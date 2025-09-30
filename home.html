@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>CodeNesia — Stable Layout (Sidebar Fixed)</title>
+  <title>CodeNesia — Responsive Sidebar with Social Pills</title>
 
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -28,9 +28,10 @@
       background: linear-gradient(180deg,#e9e9eb 0%, #f4f4f6 100%);
       box-sizing:border-box;
       overflow-x: hidden;
+      scroll-behavior: smooth;
     }
 
-    /* SIDEBAR fixed so it never affects main width calculations */
+    /* SIDEBAR - desktop fixed; mobile offcanvas */
     .sidebar{
       position: fixed;
       left: 0;
@@ -44,23 +45,56 @@
       flex-direction:column;
       gap:14px;
       box-sizing:border-box;
-      z-index: 40;
-      flex-shrink: 0;
+      z-index: 1040;
+      transform: translateX(0);
+      transition: transform .24s ease, box-shadow .18s ease;
     }
+    .sidebar.offcanvas { transform: translateX(-110%); box-shadow:none; }
+    .sidebar.open { transform: translateX(0); box-shadow: 0 10px 40px rgba(2,6,23,0.12); }
 
     .logo{ display:flex; align-items:center; gap:10px; font-weight:600; }
     .logo .mark{ width:34px;height:34px;border-radius:8px;background:linear-gradient(135deg,var(--accent),#3ec5ff); display:flex;align-items:center;justify-content:center;color:white;font-weight:700; }
 
-    .side-nav{ margin-top:6px; display:flex;flex-direction:column;gap:8px; color:#425261;font-size:14px; }
-    .side-nav a{ text-decoration:none;color:inherit;padding:8px;border-radius:8px;display:flex;gap:10px;align-items:center;}
-    .side-nav a.active{ background:linear-gradient(90deg,rgba(111,90,248,0.08), rgba(62,197,255,0.03)); color:var(--accent); font-weight:600;}
-    .project-pill{ display:flex; gap:8px; align-items:center; padding:8px; border-radius:8px; background:#fafafa; margin-bottom:8px; font-size:13px; }
+    .side-nav{ margin-top:6px; display:flex;flex-direction:column;gap:6px; color:#425261;font-size:14px; }
+    .side-nav a{ text-decoration:none;color:inherit;padding:10px;border-radius:8px;display:flex;gap:10px;align-items:center; transition: background .12s ease; }
+    .side-nav a:hover{ background: rgba(111,90,248,0.04); color:var(--accent); }
+    .side-nav a.active{ background:linear-gradient(90deg,rgba(111,90,248,0.08), rgba(62,197,255,0.03)); color:var(--accent); font-weight:600; }
 
-    /* MAIN: sits to the right of fixed sidebar and ALWAYS takes the remaining viewport width */
+    /* project-pill (social) - same style as top area */
+    .project-pill{
+      display:flex;
+      gap:8px;
+      align-items:center;
+      padding:8px 10px;
+      border-radius:8px;
+      background:#fafafa;
+      margin-bottom:8px;
+      font-size:13px;
+      color:inherit;
+      text-decoration:none;
+      border:1px solid rgba(16,24,40,0.03);
+    }
+    .project-pill .icon{
+      width:20px;height:20px;display:inline-flex;align-items:center;justify-content:center;
+    }
+
+    /* Backdrop for mobile overlay */
+    .sidebar-backdrop{
+      position: fixed;
+      inset: 0;
+      background: rgba(2,6,23,0.45);
+      z-index: 1030;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .18s ease;
+    }
+    .sidebar-backdrop.visible{ opacity: 1; pointer-events: auto; }
+
+    /* MAIN takes remaining width */
     .main{
-      margin-left: var(--sidebar-w);              /* reserve space for sidebar */
-      width: calc(100vw - var(--sidebar-w));      /* always full remaining width */
-      min-width: 0;                               /* avoid flex overflow issues */
+      margin-left: var(--sidebar-w);
+      width: calc(100vw - var(--sidebar-w));
+      min-width: 0;
       padding:18px 26px;
       display:flex;
       flex-direction:column;
@@ -68,9 +102,16 @@
       box-sizing:border-box;
       overflow:auto;
       min-height:100vh;
+      transition: margin-left .18s ease, width .18s ease;
     }
 
+    /* Topbar + hamburger */
     .topbar{ display:flex; align-items:center; gap:12px; justify-content:space-between; padding-bottom:8px; }
+    .hamburger {
+      display:none;
+      width:42px;height:42px;border-radius:8px;background:white;align-items:center;justify-content:center;box-shadow:0 6px 18px rgba(16,24,40,0.04);cursor:pointer;border:1px solid rgba(16,24,40,0.04);
+    }
+
     .breadcrumbs{ display:flex; gap:12px; align-items:center; color:var(--muted); font-size:13px; }
     .top-actions{ display:flex; gap:10px; align-items:center; }
 
@@ -82,7 +123,7 @@
     .filters-row{ display:flex; gap:12px; align-items:center; margin:12px 0; flex-wrap:wrap; }
     .chip{ background: #eef2ff; color:var(--accent); padding:6px 10px; border-radius:18px; font-weight:600; font-size:13px; display:inline-flex; gap:8px; align-items:center; }
 
-    /* GRID sections (non-horizontal) */
+    /* GRID sections */
     .cards-grid{ display:grid; grid-template-columns: repeat(3,1fr); gap:18px; margin-top:6px; align-items:start; box-sizing:border-box; }
     .content-card{
       background:var(--card-bg);
@@ -109,7 +150,7 @@
 
     .help-fab{ position:fixed; right:18px; bottom:18px; width:44px;height:44px;border-radius:10px;background:#0f1724;color:white; display:grid;place-items:center; box-shadow:0 8px 20px rgba(16,24,40,0.12); cursor:pointer; }
 
-    /* HORIZONTAL variant */
+    /* HORIZONTAL */
     .cards-grid.horizontal{
       display:flex;
       gap:18px;
@@ -124,97 +165,99 @@
       transition: all .18s ease;
       flex-wrap: wrap;
     }
-    .cards-grid.horizontal .content-card{
-      flex: 0 0 300px;
-      min-width:260px;
-      margin-bottom:0;
-      box-sizing:border-box;
-    }
-    .cards-grid.horizontal.scrollable{
-      flex-wrap: nowrap;
-      overflow-x: auto;
-      -webkit-overflow-scrolling:touch;
-      justify-content: flex-start;
-    }
+    .cards-grid.horizontal .content-card{ flex: 0 0 300px; min-width:260px; margin-bottom:0; box-sizing:border-box; }
+    .cards-grid.horizontal.scrollable{ flex-wrap: nowrap; overflow-x: auto; -webkit-overflow-scrolling:touch; justify-content: flex-start; }
 
-    @media (max-width:1100px){
-      .cards-grid{ grid-template-columns: repeat(2,1fr); }
+    /* Responsive rules */
+    @media (max-width: 960px) {
+      .hamburger { display:flex; }
+      .sidebar { transform: translateX(-110%); }   /* hide by default on mobile */
+      .sidebar.open { transform: translateX(0); }
+      .main { margin-left: 0; width: 100%; }
     }
-    @media (max-width:760px){
-      .sidebar{ display:none; }
-      .main{ margin-left:0; width:100%; padding:14px; }
-      .cards-grid{ grid-template-columns: 1fr; }
-      .cards-grid.horizontal .content-card{ flex: 0 0 80%; min-width:220px; }
-    }
+    @media (max-width:1100px){ .cards-grid{ grid-template-columns: repeat(2,1fr); } }
+    @media (max-width:760px){ .cards-grid{ grid-template-columns: 1fr; } .cards-grid.horizontal .content-card{ flex: 0 0 80%; min-width:220px; } }
 
     .cards-grid.horizontal::-webkit-scrollbar { height:8px; }
     .cards-grid.horizontal::-webkit-scrollbar-thumb { background:rgba(0,0,0,0.12); border-radius:6px; }
 
-    /* prevent inputs from growing the layout horizontally */
     .input-group .form-control { min-width: 0; }
   </style>
 </head>
 <body>
-  <!-- SIDEBAR -->
-  <aside class="sidebar" aria-label="Sidebar">
+  <!-- Sidebar -->
+  <aside id="siteSidebar" class="sidebar" aria-label="Sidebar">
     <div class="logo">
       <div class="mark">TI</div>
       <div>
         <div style="font-size:14px;font-weight:700">CodeNesia</div>
-        <div style="font-size:12px;color:var(--muted)">Selasa, 26 April</div>
       </div>
     </div>
 
-    <nav class="side-nav mt-3">
-      <a class="active"><i class="bi bi-house-door-fill"></i> Home</a>
-      <a><i class="bi bi-folder2-open"></i> Roadmap</a>
-      <a><i class="bi bi-layout-text-window-reverse"></i> Ebook</a>
-      <a><i class="bi bi-layout-text-window-reverse"></i> Support Us</a>
-      <a><i class="bi bi-layout-text-window-reverse"></i> Back</a>
+    <nav id="mainNav" class="side-nav" aria-label="Main navigation">
+      <a class="nav-link" href="#section-front-end"><i class="bi bi-folder2-open"></i> Front-End</a>
+      <a class="nav-link" href="#section-back-end"><i class="bi bi-server"></i> Back-End</a>
+      <a class="nav-link" href="#section-language"><i class="bi bi-code-slash"></i> Programming Language</a>
+      <a class="nav-link" href="#ebook"><i class="bi bi-book"></i> Ebook</a>
+      <a class="nav-link" href="#support"><i class="bi bi-hand-thumbs-up"></i> Support Us</a>
     </nav>
 
-    <div class="mt-2">
+    <div>
       <div style="font-size:13px;color:#6b7280;margin-bottom:6px">Social Media</div>
-      <div class="project-pill"><i class="bi bi-star-fill" style="color:#f59e0b"></i> Youtube</div>
-      <div class="project-pill"><i class="bi bi-folder-fill" style="color:#3ec5ff"></i> Instagram</div>
-      <div class="project-pill"><i class="bi bi-list-task"></i> Tiktok</div>
-      <div class="project-pill"><i class="bi bi-list-task"></i> Facebook</div>
+
+      <!-- project-pill style social buttons (like top area) -->
+      <a class="project-pill" href="https://www.youtube.com" target="_blank" rel="noopener noreferrer">
+        <span class="icon"><i class="bi bi-youtube" style="color:#f59e0b"></i></span>
+        <span>Youtube</span>
+      </a>
+
+      <a class="project-pill" href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+        <span class="icon"><i class="bi bi-instagram" style="color:#3ec5ff"></i></span>
+        <span>Instagram</span>
+      </a>
+
+      <a class="project-pill" href="https://www.tiktok.com" target="_blank" rel="noopener noreferrer">
+        <span class="icon"><i class="bi bi-music-note-beamed"></i></span>
+        <span>Tiktok</span>
+      </a>
+
+      <a class="project-pill" href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+        <span class="icon"><i class="bi bi-facebook"></i></span>
+        <span>Facebook</span>
+      </a>
     </div>
   </aside>
 
-  <!-- MAIN -->
-  <main class="main" role="main">
+  <!-- Backdrop -->
+  <div id="sidebarBackdrop" class="sidebar-backdrop" aria-hidden="true"></div>
+
+  <!-- Main -->
+  <main id="top" class="main" role="main">
     <div class="topbar">
-      <div class="breadcrumbs">
-        <i class="bi bi-grid-fill"></i>
-        <div style="font-weight:700">Home</div>
+      <div style="display:flex;gap:12px;align-items:center;">
+        <button id="hamburgerBtn" class="hamburger" aria-label="Open menu" aria-controls="siteSidebar" aria-expanded="false">
+          <i class="bi bi-list" style="font-size:18px;"></i>
+        </button>
+
+        <div class="breadcrumbs">
+          <i class="bi bi-grid-fill"></i>
+          <div style="font-weight:700">Selasa, 26 April 2026</div>
+        </div>
       </div>
 
       <div class="top-actions">
         <div class="input-group me-2" style="max-width:360px; width:100%;">
           <span class="input-group-text bg-white"><i class="bi bi-search"></i></span>
-          <input id="searchInput" class="form-control" placeholder="Mau belajar apa..." autofocus aria-label="Search cards" />
+          <input id="searchInput" class="form-control" placeholder="Mau belajar apa..." aria-label="Search cards" />
         </div>
       </div>
     </div>
 
-    <div class="studio-head">
-      <div class="studio-avatar">H</div>
-      <div>
-        <div class="studio-name">Selamat datang brow <small class="muted"></small></div>
-        <div class="studio-subtabs mt-2">
-          <div>Front-End</div>
-          <div>Back-End</div>
-          <div>Programming Language</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Section: Front End (horizontal) -->
-    <div class="section" data-section-name="front end">
+    <!-- Front End -->
+    <section id="section-front-end" class="section">
       <div class="section-title">Front End Web Developer</div>
       <div class="cards-grid horizontal" id="frontendGrid">
-        <!-- cards same as before -->
+        <!-- cards -->
         <div class="content-card">
           <div class="assign-badge">12 Assigned</div>
           <div class="card-cover"><img src="https://i.pinimg.com/736x/2c/32/1d/2c321d3d1512aa3bd347a24999b2497e.jpg" alt="React cover"></div>
@@ -295,87 +338,303 @@
           <div class="muted">Estimasi waktu belajar : 30 menit</div>
         </div>
       </div>
-
       <div class="no-results">Tidak ditemukan di Front End.</div>
-    </div>
+    </section>
 
-    <!-- Back End (grid) -->
-    <div class="section" data-section-name="back end">
-      <div class="section-title">Back End Developer</div>
-      <div class="cards-grid" id="backendGrid">
+    <!-- Back End -->
+    <section id="section-front-end" class="section">
+      <div class="section-title">Front End Web Developer</div>
+      <div class="cards-grid horizontal" id="frontendGrid">
+        <!-- cards -->
         <div class="content-card">
-          <div class="assign-badge">10 Assigned</div>
-          <div class="card-cover"><img src="https://picsum.photos/seed/node/800/400" alt="Node cover"></div>
-          <div class="card-title">Building APIs with Node.js</div>
-          <div class="card-meta"><div class="badge rounded-pill bg-light text-dark">Back End</div><div class="muted">• Urgent</div></div>
+          <div class="assign-badge">12 Assigned</div>
+          <div class="card-cover"><img src="https://i.pinimg.com/736x/2c/32/1d/2c321d3d1512aa3bd347a24999b2497e.jpg" alt="React cover"></div>
+          <div class="card-title">Mastering React for Modern UI</div>
+          <div class="card-meta"><div class="badge rounded-pill bg-light text-dark">Front End</div></div>
           <div class="muted">Estimasi waktu belajar : 30 menit</div>
         </div>
 
         <div class="content-card">
-          <div class="assign-badge">7 Assigned</div>
-          <div class="card-cover"><img src="https://picsum.photos/seed/postgres/800/400" alt="Postgres cover"></div>
-          <div class="card-title">Database Design & Optimization</div>
-          <div class="card-meta"><div class="badge rounded-pill bg-light text-dark">Back End</div></div>
+          <div class="assign-badge">8 Assigned</div>
+          <div class="card-cover"><img src="https://i0.wp.com/blog.nashtechglobal.com/wp-content/uploads/2024/01/css-tutorial-img1-01.o.png?fit=820%2C350&ssl=1" alt="CSS cover"></div>
+          <div class="card-title">Advanced CSS & Layout Techniques</div>
+          <div class="card-meta"><div class="badge rounded-pill bg-light text-dark">Front End</div></div>
           <div class="muted">Estimasi waktu belajar : 30 menit</div>
         </div>
 
         <div class="content-card">
-          <div class="assign-badge">4 Assigned</div>
-          <div class="card-cover"><img src="https://picsum.photos/seed/security/800/400" alt="Security cover"></div>
-          <div class="card-title">Best Practices for Secure Backends</div>
-          <div class="card-meta"><div class="badge rounded-pill bg-light text-dark">Back End</div></div>
+          <div class="assign-badge">5 Assigned</div>
+          <div class="card-cover"><img src="https://picsum.photos/seed/vue/800/400" alt="Vue cover"></div>
+          <div class="card-title">Build Reactive Interfaces with Vue</div>
+          <div class="card-meta"><div class="badge rounded-pill bg-light text-dark">Front End</div></div>
           <div class="muted">Estimasi waktu belajar : 30 menit</div>
         </div>
-      </div>
 
-      <div class="no-results">Tidak ditemukan di Back End.</div>
-    </div>
+        <div class="content-card">
+          <div class="assign-badge">14 Assigned</div>
+          <div class="card-cover"><img src="https://picsum.photos/seed/javascript/800/400" alt="JavaScript cover"></div>
+          <div class="card-title">Modern JavaScript: From Basics to ES6+</div>
+          <div class="card-meta"><div class="badge rounded-pill bg-light text-dark">Front End</div><div class="muted">• Popular</div></div>
+          <div class="muted">Estimasi waktu belajar : 45 menit</div>
+        </div>
 
-    <!-- Language (grid) -->
-    <div class="section" data-section-name="language">
-      <div class="section-title">Programming Language</div>
-      <div class="cards-grid" id="langGrid">
         <div class="content-card">
           <div class="assign-badge">9 Assigned</div>
-          <div class="card-cover"><img src="https://picsum.photos/seed/python/800/400" alt="Python cover"></div>
-          <div class="card-title">Python for Data Analysis</div>
-          <div class="card-meta"><div class="badge rounded-pill bg-light text-dark">Language</div></div>
-          <div class="muted">Estimasi waktu belajar : 30 menit</div>
+          <div class="card-cover"><img src="https://picsum.photos/seed/performance/800/400" alt="Performance cover"></div>
+          <div class="card-title">Web Performance & Optimization</div>
+          <div class="card-meta"><div class="badge rounded-pill bg-light text-dark">Front End</div></div>
+          <div class="muted">Estimasi waktu belajar : 35 menit</div>
         </div>
 
         <div class="content-card">
           <div class="assign-badge">6 Assigned</div>
-          <div class="card-cover"><img src="https://picsum.photos/seed/java/800/400" alt="Java cover"></div>
-          <div class="card-title">Java Fundamentals & OOP</div>
-          <div class="card-meta"><div class="badge rounded-pill bg-light text-dark">Language</div></div>
+          <div class="card-cover"><img src="https://picsum.photos/seed/typescript/800/400" alt="TypeScript cover"></div>
+          <div class="card-title">TypeScript for Safer Frontend</div>
+          <div class="card-meta"><div class="badge rounded-pill bg-light text-dark">Front End</div></div>
+          <div class="muted">Estimasi waktu belajar : 40 menit</div>
+        </div>
+
+        <div class="content-card">
+          <div class="assign-badge">11 Assigned</div>
+          <div class="card-cover"><img src="https://picsum.photos/seed/accessibility/800/400" alt="Accessibility cover"></div>
+          <div class="card-title">A11y: Building Inclusive Interfaces</div>
+          <div class="card-meta"><div class="badge rounded-pill bg-light text-dark">Front End</div></div>
+          <div class="muted">Estimasi waktu belajar : 25 menit</div>
+        </div>
+
+        <div class="content-card">
+          <div class="assign-badge">7 Assigned</div>
+          <div class="card-cover"><img src="https://picsum.photos/seed/testing/800/400" alt="Testing cover"></div>
+          <div class="card-title">Testing UI: Jest & React Testing Library</div>
+          <div class="card-meta"><div class="badge rounded-pill bg-light text-dark">Front End</div></div>
           <div class="muted">Estimasi waktu belajar : 30 menit</div>
         </div>
 
         <div class="content-card">
-          <div class="assign-badge">3 Assigned</div>
-          <div class="card-cover"><img src="https://picsum.photos/seed/rust/800/400" alt="Rust cover"></div>
-          <div class="card-title">Intro to Systems Programming with Rust</div>
-          <div class="card-meta"><div class="badge rounded-pill bg-light text-dark">Language</div></div>
+          <div class="assign-badge">5 Assigned</div>
+          <div class="card-cover"><img src="https://picsum.photos/seed/tailwind/800/400" alt="Tailwind cover"></div>
+          <div class="card-title">Utility-first Styling with Tailwind</div>
+          <div class="card-meta"><div class="badge rounded-pill bg-light text-dark">Front End</div></div>
+          <div class="muted">Estimasi waktu belajar : 20 menit</div>
+        </div>
+
+        <div class="content-card">
+          <div class="assign-badge">4 Assigned</div>
+          <div class="card-cover"><img src="https://picsum.photos/seed/build/800/400" alt="Build tools cover"></div>
+          <div class="card-title">Vite / Webpack: Modern Build Setup</div>
+          <div class="card-meta"><div class="badge rounded-pill bg-light text-dark">Front End</div></div>
           <div class="muted">Estimasi waktu belajar : 30 menit</div>
         </div>
       </div>
+      <div class="no-results">Tidak ditemukan di Front End.</div>
+    </section>
 
-      <div class="no-results">Tidak ditemukan di Programming Language.</div>
-    </div>
+    <!-- Language -->
+    <section id="section-front-end" class="section">
+      <div class="section-title">Front End Web Developer</div>
+      <div class="cards-grid horizontal" id="frontendGrid">
+        <!-- cards -->
+        <div class="content-card">
+          <div class="assign-badge">12 Assigned</div>
+          <div class="card-cover"><img src="https://i.pinimg.com/736x/2c/32/1d/2c321d3d1512aa3bd347a24999b2497e.jpg" alt="React cover"></div>
+          <div class="card-title">Mastering React for Modern UI</div>
+          <div class="card-meta"><div class="badge rounded-pill bg-light text-dark">Front End</div></div>
+          <div class="muted">Estimasi waktu belajar : 30 menit</div>
+        </div>
 
+        <div class="content-card">
+          <div class="assign-badge">8 Assigned</div>
+          <div class="card-cover"><img src="https://i0.wp.com/blog.nashtechglobal.com/wp-content/uploads/2024/01/css-tutorial-img1-01.o.png?fit=820%2C350&ssl=1" alt="CSS cover"></div>
+          <div class="card-title">Advanced CSS & Layout Techniques</div>
+          <div class="card-meta"><div class="badge rounded-pill bg-light text-dark">Front End</div></div>
+          <div class="muted">Estimasi waktu belajar : 30 menit</div>
+        </div>
+
+        <div class="content-card">
+          <div class="assign-badge">5 Assigned</div>
+          <div class="card-cover"><img src="https://picsum.photos/seed/vue/800/400" alt="Vue cover"></div>
+          <div class="card-title">Build Reactive Interfaces with Vue</div>
+          <div class="card-meta"><div class="badge rounded-pill bg-light text-dark">Front End</div></div>
+          <div class="muted">Estimasi waktu belajar : 30 menit</div>
+        </div>
+
+        <div class="content-card">
+          <div class="assign-badge">14 Assigned</div>
+          <div class="card-cover"><img src="https://picsum.photos/seed/javascript/800/400" alt="JavaScript cover"></div>
+          <div class="card-title">Modern JavaScript: From Basics to ES6+</div>
+          <div class="card-meta"><div class="badge rounded-pill bg-light text-dark">Front End</div><div class="muted">• Popular</div></div>
+          <div class="muted">Estimasi waktu belajar : 45 menit</div>
+        </div>
+
+        <div class="content-card">
+          <div class="assign-badge">9 Assigned</div>
+          <div class="card-cover"><img src="https://picsum.photos/seed/performance/800/400" alt="Performance cover"></div>
+          <div class="card-title">Web Performance & Optimization</div>
+          <div class="card-meta"><div class="badge rounded-pill bg-light text-dark">Front End</div></div>
+          <div class="muted">Estimasi waktu belajar : 35 menit</div>
+        </div>
+
+        <div class="content-card">
+          <div class="assign-badge">6 Assigned</div>
+          <div class="card-cover"><img src="https://picsum.photos/seed/typescript/800/400" alt="TypeScript cover"></div>
+          <div class="card-title">TypeScript for Safer Frontend</div>
+          <div class="card-meta"><div class="badge rounded-pill bg-light text-dark">Front End</div></div>
+          <div class="muted">Estimasi waktu belajar : 40 menit</div>
+        </div>
+
+        <div class="content-card">
+          <div class="assign-badge">11 Assigned</div>
+          <div class="card-cover"><img src="https://picsum.photos/seed/accessibility/800/400" alt="Accessibility cover"></div>
+          <div class="card-title">A11y: Building Inclusive Interfaces</div>
+          <div class="card-meta"><div class="badge rounded-pill bg-light text-dark">Front End</div></div>
+          <div class="muted">Estimasi waktu belajar : 25 menit</div>
+        </div>
+
+        <div class="content-card">
+          <div class="assign-badge">7 Assigned</div>
+          <div class="card-cover"><img src="https://picsum.photos/seed/testing/800/400" alt="Testing cover"></div>
+          <div class="card-title">Testing UI: Jest & React Testing Library</div>
+          <div class="card-meta"><div class="badge rounded-pill bg-light text-dark">Front End</div></div>
+          <div class="muted">Estimasi waktu belajar : 30 menit</div>
+        </div>
+
+        <div class="content-card">
+          <div class="assign-badge">5 Assigned</div>
+          <div class="card-cover"><img src="https://picsum.photos/seed/tailwind/800/400" alt="Tailwind cover"></div>
+          <div class="card-title">Utility-first Styling with Tailwind</div>
+          <div class="card-meta"><div class="badge rounded-pill bg-light text-dark">Front End</div></div>
+          <div class="muted">Estimasi waktu belajar : 20 menit</div>
+        </div>
+
+        <div class="content-card">
+          <div class="assign-badge">4 Assigned</div>
+          <div class="card-cover"><img src="https://picsum.photos/seed/build/800/400" alt="Build tools cover"></div>
+          <div class="card-title">Vite / Webpack: Modern Build Setup</div>
+          <div class="card-meta"><div class="badge rounded-pill bg-light text-dark">Front End</div></div>
+          <div class="muted">Estimasi waktu belajar : 30 menit</div>
+        </div>
+      </div>
+      <div class="no-results">Tidak ditemukan di Front End.</div>
+    </section>
+
+    <div id="ebook" style="margin-top:40px"></div>
+    <div id="support" style="margin-top:40px"></div>
   </main>
 
-  <div class="help-fab" title="Help">
-    <i class="bi bi-question-lg"></i>
-  </div>
+  <div id="helpFab" class="help-fab" title="Help"><i class="bi bi-question-lg"></i></div>
+
+  <!-- Backdrop element -->
+  <div id="sidebarBackdrop" class="sidebar-backdrop" aria-hidden="true"></div>
 
   <!-- Bootstrap JS bundle -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
   <script>
-    // ---------- Helpers ----------
+    // Elements
+    const sidebar = document.getElementById('siteSidebar');
+    const hamburgerBtn = document.getElementById('hamburgerBtn');
+    const backdrop = document.getElementById('sidebarBackdrop');
+    const navLinks = document.querySelectorAll('#mainNav .nav-link');
+    const main = document.querySelector('.main');
+
+    // Utility
+    const MOBILE_BREAK = 960;
+    function isMobileLayout(){ return window.innerWidth <= MOBILE_BREAK; }
+
+    // Open/close sidebar (mobile)
+    function openSidebar(){
+      sidebar.classList.add('open');
+      sidebar.classList.remove('offcanvas');
+      backdrop.classList.add('visible');
+      hamburgerBtn.setAttribute('aria-expanded','true');
+    }
+    function closeSidebar(){
+      sidebar.classList.remove('open');
+      sidebar.classList.add('offcanvas');
+      backdrop.classList.remove('visible');
+      hamburgerBtn.setAttribute('aria-expanded','false');
+    }
+    function toggleSidebar(){ if(sidebar.classList.contains('open')) closeSidebar(); else openSidebar(); }
+
+    // Ensure desktop view forces sidebar visible
+    function ensureSidebarStateOnResize(){
+      if(!isMobileLayout()){
+        sidebar.classList.remove('offcanvas');
+        sidebar.classList.add('open');
+        backdrop.classList.remove('visible');
+        hamburgerBtn.setAttribute('aria-expanded','true');
+        main.style.marginLeft = getComputedStyle(document.documentElement).getPropertyValue('--sidebar-w') || '260px';
+      } else {
+        sidebar.classList.add('offcanvas');
+        sidebar.classList.remove('open');
+        backdrop.classList.remove('visible');
+        hamburgerBtn.setAttribute('aria-expanded','false');
+        main.style.marginLeft = '0';
+      }
+    }
+
+    // Highlight active nav link (click + scroll)
+    function setActiveLinkByHash(hash){
+      navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === hash));
+    }
+
+    // On nav link click: let anchor work, then close sidebar on mobile
+    navLinks.forEach(a => {
+      a.addEventListener('click', (ev) => {
+        setActiveLinkByHash(a.getAttribute('href'));
+        if(isMobileLayout()){
+          setTimeout(closeSidebar, 120);
+        }
+      });
+    });
+
+    // Backdrop clicking closes sidebar
+    backdrop.addEventListener('click', closeSidebar);
+
+    // Hamburger toggles
+    hamburgerBtn.addEventListener('click', (e) => { e.stopPropagation(); toggleSidebar(); });
+
+    // Close sidebar when clicking outside on mobile
+    document.addEventListener('click', (e) => {
+      if(isMobileLayout() && sidebar.classList.contains('open')){
+        if(!sidebar.contains(e.target) && e.target !== hamburgerBtn){
+          closeSidebar();
+        }
+      }
+    });
+
+    // Close on Esc
+    document.addEventListener('keydown', (e) => { if(e.key === 'Escape') closeSidebar(); });
+
+    // Keep sidebar state correct on resize (debounced)
+    let resizeTO;
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTO);
+      resizeTO = setTimeout(() => {
+        ensureSidebarStateOnResize();
+        document.querySelectorAll('.cards-grid.horizontal').forEach(cw => evaluateHorizontal(cw));
+      }, 120);
+    });
+
+    // initial state
+    ensureSidebarStateOnResize();
+
+    // Scroll spy-ish: update active menu by viewport section
+    const sections = Array.from(document.querySelectorAll('section[id]'));
+    function onScrollSpy(){
+      const fromTop = window.scrollY + 120;
+      let current = '#top';
+      for(const s of sections){
+        if(s.offsetTop <= fromTop) current = '#' + s.id;
+      }
+      setActiveLinkByHash(current);
+    }
+    document.addEventListener('scroll', throttle(onScrollSpy, 150));
+    onScrollSpy();
+
+    // ----------------- Search + horizontal logic -----------------
     const searchInput = document.getElementById('searchInput');
-    const sections = document.querySelectorAll('.section');
+
     function normalize(s){ return (s||'').toString().toLowerCase(); }
     function updateNoResults(sectionEl, anyVisible){
       const noEl = sectionEl.querySelector('.no-results');
@@ -383,17 +642,14 @@
       noEl.style.display = anyVisible ? 'none' : 'block';
     }
 
-    // Evaluate horizontal container: sum widths of visible cards and toggle scroll or wrap
     function evaluateHorizontal(cardsWrap){
       if(!cardsWrap) return;
-      // ensure container uses full available width (don't let inner changes shrink parent)
       cardsWrap.style.minWidth = '0';
       cardsWrap.style.boxSizing = 'border-box';
 
       const all = Array.from(cardsWrap.querySelectorAll('.content-card'));
       const visible = all.filter(c => c.style.display !== 'none');
       const visibleCount = visible.length;
-
       if(visibleCount === 0){
         cardsWrap.classList.remove('scrollable');
         cardsWrap.style.flexWrap = 'wrap';
@@ -402,28 +658,21 @@
         return;
       }
 
-      // compute gap
       const cs = getComputedStyle(cardsWrap);
       const gap = parseFloat(cs.gap || cs.columnGap || 18) || 18;
 
-      // compute total width needed (sum bounding widths + gaps)
       let total = 0;
-      visible.forEach(c => {
-        const w = Math.ceil(c.getBoundingClientRect().width);
-        total += w;
-      });
+      visible.forEach(c => { total += Math.ceil(c.getBoundingClientRect().width); });
       if(visibleCount > 1) total += gap * (visibleCount - 1);
 
       const containerWidth = Math.floor(cardsWrap.getBoundingClientRect().width);
 
       if(total <= containerWidth){
-        // fits -> wrap, left align
         cardsWrap.classList.remove('scrollable');
         cardsWrap.style.flexWrap = 'wrap';
         cardsWrap.style.overflowX = 'hidden';
         cardsWrap.style.justifyContent = 'flex-start';
       } else {
-        // doesn't fit -> scrollable, nowrap, left align
         cardsWrap.classList.add('scrollable');
         cardsWrap.style.flexWrap = 'nowrap';
         cardsWrap.style.overflowX = 'auto';
@@ -431,11 +680,9 @@
       }
     }
 
-    // filter function (for horizontal remove non-matches from flow to avoid holes)
     function filterAll(q){
       const query = normalize(q).trim();
-
-      sections.forEach(section => {
+      document.querySelectorAll('.section').forEach(section => {
         const cardsWrap = section.querySelector('.cards-grid');
         const cards = Array.from(section.querySelectorAll('.content-card'));
         const isHorizontal = cardsWrap && cardsWrap.classList.contains('horizontal');
@@ -448,14 +695,8 @@
           const bottom = normalize(card.querySelector('.card-bottom')?.innerText);
           const matches = query === '' || title.includes(query) || meta.includes(query) || cover.includes(query) || bottom.includes(query);
 
-          if(matches){
-            card.style.display = '';
-            card.style.opacity = '1';
-            anyVisible = true;
-          } else {
-            card.style.display = 'none';
-            card.style.opacity = '0';
-          }
+          if(matches){ card.style.display = ''; card.style.opacity = '1'; anyVisible = true; }
+          else { card.style.display = 'none'; card.style.opacity = '0'; }
         });
 
         if(cardsWrap && cardsWrap.style.display === 'block'){
@@ -470,46 +711,36 @@
       });
     }
 
-    // bind image load so measurements are accurate
+    // bind image load to recalc
     function bindImageLoadRecalc(){
       document.querySelectorAll('.cards-grid.horizontal .card-cover img').forEach(img => {
-        if (img.__boundRecalc) return;
-        img.__boundRecalc = true;
-        img.addEventListener('load', () => {
-          setTimeout(() => {
-            document.querySelectorAll('.cards-grid.horizontal').forEach(cw => evaluateHorizontal(cw));
-          }, 30);
-        });
+        if(img.__bound) return;
+        img.__bound = true;
+        img.addEventListener('load', () => setTimeout(()=>document.querySelectorAll('.cards-grid.horizontal').forEach(cw=>evaluateHorizontal(cw)),30));
       });
     }
 
-    // debounce helper for resize
-    let _resizeTO;
-    window.addEventListener('resize', () => {
-      clearTimeout(_resizeTO);
-      _resizeTO = setTimeout(() => {
-        document.querySelectorAll('.cards-grid.horizontal').forEach(cw => evaluateHorizontal(cw));
-      }, 120);
-    });
-
-    if(searchInput){
-      searchInput.addEventListener('input', (e) => { filterAll(e.target.value); });
+    // debounce helper
+    function throttle(fn, wait){
+      let t = null;
+      return function(...args){
+        if(t) return;
+        t = setTimeout(()=>{ fn.apply(this,args); clearTimeout(t); t=null; }, wait);
+      };
     }
 
     // init
     document.addEventListener('DOMContentLoaded', () => {
       bindImageLoadRecalc();
-      setTimeout(() => {
-        document.querySelectorAll('.cards-grid.horizontal').forEach(cw => evaluateHorizontal(cw));
-      }, 300);
+      setTimeout(()=>document.querySelectorAll('.cards-grid.horizontal').forEach(cw=>evaluateHorizontal(cw)),300);
     });
 
-    // safety second pass after images likely loaded
-    setTimeout(() => {
-      bindImageLoadRecalc();
-      document.querySelectorAll('.cards-grid.horizontal').forEach(cw => evaluateHorizontal(cw));
-    }, 900);
+    if(searchInput){
+      searchInput.addEventListener('input', e => filterAll(e.target.value));
+    }
 
+    // run one more time after images probably loaded
+    setTimeout(()=>{ bindImageLoadRecalc(); document.querySelectorAll('.cards-grid.horizontal').forEach(cw=>evaluateHorizontal(cw)); }, 900);
   </script>
 </body>
 </html>
