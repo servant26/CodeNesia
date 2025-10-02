@@ -33,24 +33,32 @@
       background: #fff;
       border-radius: 12px;
       padding: 20px;
-      transition: all 0.3s ease;
+      transition: all 0.4s ease;
       cursor: pointer;
       flex: 0 0 auto;
       width: 280px;
+      overflow: hidden;
+      position: relative;
     }
 
     .course-card .course-img {
       width: 100%;
-      height: 160px;     /* tinggi fix - DIPERKECIL */
-      object-fit: cover; /* biar gambar tetap proporsional */
-      border-radius: 12px 12px 0 0; /* hanya sudut atas rounded */
+      height: 160px;
+      object-fit: cover;
+      border-radius: 12px 12px 0 0;
       display: block;
+      transition: transform 0.4s ease;
     }
 
     .course-card:hover {
-      background: #e0f8ff; /* warna pas hover, bisa ganti sesuai selera */
+      background: #e0f8ff;
       transform: translateY(-5px);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Efek zoom in pada gambar saat hover */
+    .course-card:hover .course-img {
+      transform: scale(1.08);
     }
 
     .course-card{border-radius:18px; background:var(--card); box-shadow:0 8px 20px rgba(12,18,23,0.06); padding:1.25rem}
@@ -59,13 +67,13 @@
 
     /* purple banner */
     .purple-banner img {
-      max-width: 100%;     /* biar nggak melebihi lebar wadah */
-      max-height: 320px;   /* kasih batas tinggi maksimal */
-      width: auto;         /* biar proporsional */
-      height: auto;        /* biar proporsional */
-      object-fit: contain; /* biar gambar muat dalam area */
+      max-width: 100%;
+      max-height: 320px;
+      width: auto;
+      height: auto;
+      object-fit: contain;
       display: block;
-      margin: 0 auto;      /* biar center */
+      margin: 0 auto;
     }
 
     .purple-banner{background:linear-gradient(90deg,#eae8ff,#d8d6ff); border-radius:18px; padding:2rem; margin:3rem 0}
@@ -126,7 +134,7 @@
       position: absolute;
       top: 50%;
       left: 50%;
-      width: 56px; /* sedikit lebih besar dari foto */
+      width: 56px;
       height: 56px;
       border-radius: 50%;
       transform: translate(-50%, -50%);
@@ -255,7 +263,7 @@
         }
     }
     .btn-ghost {
-      background-color: #fff; /* putih */
+      background-color: #fff;
       color: #000;   
       border: 2px solid #111;
       padding: 0.6rem 1.2rem;
@@ -269,7 +277,7 @@
 
     .btn-ghost span {
       display: inline-block;
-      transition: transform 0.3s ease; /* animasi geser halus */
+      transition: transform 0.3s ease;
     }
 
     .btn-ghost i {
@@ -278,34 +286,67 @@
     }
 
     .btn-ghost:hover span {
-      transform: translateX(7px); /* teks bergerak ke kanan */
+      transform: translateX(7px);
     }
 
     .btn-ghost:hover i {
-      transform: translateX(5px); /* ikon ikut bergerak */
+      transform: translateX(5px);
     }
 /* Hero Section Dark Background */
 .hero {
-  background: #111; /* warna gelap */
-  color: #fff; /* teks jadi putih */
+  background: #111;
+  color: #fff;
   padding: 6rem 7rem;
-  min-height: 300px; /* TINGGI DITAMBAH */
+  min-height: 300px;
   display: flex;
   align-items: center;
 }
 
 /* Hero Image jadi lingkaran */
 .hero .right img {
-  border-radius: 50%; /* bikin lingkaran */
-  object-fit: cover; /* biar gambar tetap proporsional */
+  border-radius: 50%;
+  object-fit: cover;
   width: 300px;
   height: 300px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.4); /* kasih efek biar menonjol */
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+
+/* ========== ANIMASI HOVER PADA TEKS HERO YANG BAGUS ========== */
+.hero-title {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+
+.hero-title::before {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #6C63FF, #FF6B6B);
+  transition: width 0.4s ease;
+  border-radius: 2px;
+}
+
+.hero-title:hover {
+  transform: translateY(-5px);
+  text-shadow: 0 5px 15px rgba(108, 99, 255, 0.3);
+  background: linear-gradient(90deg, #6C63FF, #FF6B6B);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-title:hover::before {
+  width: 100%;
 }
 
 /* ========== PERBAIKAN RESPONSIVITAS ========== */
 
-/* Hero section untuk HP - HANYA TEKS DAN BUTTON, TANPA GAMBAR */
+/* Hero section untuk HP - GAMBAR DITAMPILKAN DI ATAS TEKS */
 @media (max-width: 768px) {
   .hero {
     padding: 3rem 1rem !important;
@@ -314,11 +355,20 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    min-height: 400px !important;
+    height: auto !important;
   }
   
+  /* GAMBAR DITAMPILKAN DI ATAS TEKS */
   .hero .right {
-    display: none !important; /* SEMBUNYIKAN GAMBAR DI HP */
+    display: flex !important;
+    order: -1;
+    margin-bottom: 2rem;
+    justify-content: center;
+  }
+  
+  .hero .right img {
+    width: 200px;
+    height: 200px;
   }
   
   .hero .left {
@@ -354,7 +404,7 @@
 @media (max-width: 480px) {
   .hero {
     padding: 2.5rem 1rem !important;
-    min-height: 350px !important;
+    min-height: auto !important;
   }
   
   .hero .title {
@@ -378,7 +428,7 @@
   .hero {
     padding: 4rem 2rem !important;
     min-height: 450px !important;
-    gap: 3rem !important; /* JARAK DITAMBAH ANTARA TEKS DAN GAMBAR */
+    gap: 3rem !important;
   }
   
   .hero .right img {
@@ -388,21 +438,21 @@
   
   .hero .title {
     font-size: 2.2rem !important;
-    margin-bottom: 1.5rem !important; /* JARAK DITAMBAH */
+    margin-bottom: 1.5rem !important;
   }
   
   .hero p.lead {
     font-size: 1.1rem !important;
-    margin-bottom: 2rem !important; /* JARAK DITAMBAH */
+    margin-bottom: 2rem !important;
     line-height: 1.6;
   }
   
   .hero .left {
-    padding-right: 1rem; /* JARAK DITAMBAH DARI KANAN */
+    padding-right: 1rem;
   }
   
   .hero .right {
-    padding-left: 1rem; /* JARAK DITAMBAH DARI KIRI */
+    padding-left: 1rem;
   }
 }
 
@@ -438,37 +488,37 @@
   }
   
   .course-card .course-img {
-    height: 200px; /* Tinggi normal untuk desktop */
+    height: 200px;
   }
 }
 
 /* Ukuran card course untuk HP - DIPERKECIL */
 @media (max-width: 991px) {
   .course-card {
-    width: 260px !important; /* LEBAR DIPERKECIL */
+    width: 260px !important;
   }
   
   .course-card .course-img {
-    height: 140px !important; /* TINGGI GAMBAR DIPERKECIL */
+    height: 140px !important;
   }
   
   .course-card h5 {
-    font-size: 1rem !important; /* JUDUL DIPERKECIL */
+    font-size: 1rem !important;
   }
   
   .course-card p {
-    font-size: 0.8rem !important; /* TEKS DIPERKECIL */
+    font-size: 0.8rem !important;
   }
 }
 
 /* Untuk HP kecil */
 @media (max-width: 480px) {
   .course-card {
-    width: 240px !important; /* LEBIH KECIL LAGI */
+    width: 240px !important;
   }
   
   .course-card .course-img {
-    height: 120px !important; /* LEBIH KECIL LAGI */
+    height: 120px !important;
   }
 }
 
@@ -604,19 +654,19 @@
   }
   
   .navbar-collapse {
-    text-align: left !important; /* TEKS DI KIRI */
+    text-align: left !important;
     margin-top: 1rem;
   }
   
   .navbar-nav .nav-link {
     margin: 0.25rem 0;
     padding: 0.5rem 0;
-    text-align: left !important; /* TEKS DI KIRI */
+    text-align: left !important;
     justify-content: flex-start !important;
   }
   
   .navbar-nav {
-    align-items: flex-start !important; /* ITEM DI KIRI */
+    align-items: flex-start !important;
   }
 }
 
@@ -658,7 +708,7 @@ img {
 
 <header class="hero container-fluid">
   <div class="left px-5">
-    <h1 class="title">Mau belajar coding?<br>cobain ini deh..</h1>
+    <h1 class="title hero-title">Mau belajar coding?<br>cobain ini deh..</h1>
     <p class="lead">Tersedia banyak materi dan video yang dapat kamu akses kapan saja secara gratis!</p>
     <div class="d-flex align-items-center gap-3 mt-4">
       <a href="home.html" class="btn-ghost text-decoration-none">
@@ -780,6 +830,7 @@ img {
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   <script>
+    // Kode testimonial slider (tetap sama)
     const pool = [
       { name: 'Nayla Putri', age: '22 tahun', text: 'Materinya mudah dipahami, gampang dicerna, dan pas buat belajar di sela kesibukan.', tag: 'Mahasiswa kreatif', image: 'https://api.dicebear.com/7.x/avataaars/svg?seed=layla&gender=female' },
       { name: 'Rizky Aditya', age: '24 tahun', text: 'Cara penyampaiannya simpel tapi ngena. Rasanya kayak lagi diceritain temen sendiri.', tag: 'Pecinta teknologi', image: 'https://api.dicebear.com/7.x/avataaars/svg?seed=RizkyAditya&gender=male' },

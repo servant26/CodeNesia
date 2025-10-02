@@ -78,8 +78,21 @@
       transition: transform .24s ease, box-shadow .18s ease, background-color 0.3s ease;
       overflow-y: auto;
     }
+    
+    /* FITUR BARU: Sidebar selalu fixed di mobile ketika open */
+    @media (max-width: 960px) {
+      .sidebar.open {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        z-index: 1040;
+        transform: translateX(0);
+        box-shadow: 0 10px 40px rgba(2,6,23,0.12);
+      }
+    }
+    
     .sidebar.offcanvas { transform: translateX(-110%); box-shadow:none; }
-    .sidebar.open { transform: translateX(0); box-shadow: 0 10px 40px rgba(2,6,23,0.12); }
 
     .logo{ display:flex; align-items:center; gap:10px; font-weight:600; color: var(--text-color); }
     .logo .mark{ width:34px;height:34px;border-radius:8px;background:linear-gradient(135deg,var(--accent),#3ec5ff); display:flex;align-items:center;justify-content:center;color:white;font-weight:700; }
@@ -583,6 +596,12 @@
       
       .sidebar.open { 
         transform: translateX(0); 
+        /* FITUR BARU: Sidebar selalu fixed di mobile */
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        z-index: 1040;
       }
       
       .main { 
@@ -701,6 +720,15 @@
       
       .sidebar {
         width: 280px;
+      }
+      
+      /* FITUR BARU: Sidebar tetap fixed di mobile kecil */
+      .sidebar.open {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        z-index: 1040;
       }
     }
     
@@ -863,6 +891,7 @@
       <a class="nav-link" href="#section-language"><i class="bi bi-code-slash"></i> Programming Language</a>
       <a class="nav-link" href="#ebook"><i class="bi bi-book"></i> Ebook</a>
       <a class="nav-link" href="#support"><i class="bi bi-hand-thumbs-up"></i> Support Us</a>
+      <a class="nav-link" href="index.html"><i class="bi bi-back"></i> Back</a>
     </nav>
 
     <div class="social-section">
@@ -932,7 +961,7 @@
           <div class="content-card">
             <div class="assign-badge">12 Assigned</div>
             <div class="card-cover"><img src="https://i.pinimg.com/736x/2c/32/1d/2c321d3d1512aa3bd347a24999b2497e.jpg" alt="React cover"></div>
-            <div class="card-title">Mastering React for Modern UI</div>
+            <div class="card-title">HTML</div>
             <div class="card-meta"><div class="badge rounded-pill bg-light text-dark">Front End</div></div>
             <div class="muted">Estimasi waktu belajar : 30 menit</div>
           </div>
@@ -940,7 +969,7 @@
           <div class="content-card">
             <div class="assign-badge">8 Assigned</div>
             <div class="card-cover"><img src="https://i0.wp.com/blog.nashtechglobal.com/wp-content/uploads/2024/01/css-tutorial-img1-01.o.png?fit=820%2C350&ssl=1" alt="CSS cover"></div>
-            <div class="card-title">Advanced CSS & Layout Techniques</div>
+            <div class="card-title">CSS</div>
             <div class="card-meta"><div class="badge rounded-pill bg-light text-dark">Front End</div></div>
             <div class="muted">Estimasi waktu belajar : 30 menit</div>
           </div>
@@ -948,15 +977,15 @@
           <div class="content-card">
             <div class="assign-badge">5 Assigned</div>
             <div class="card-cover"><img src="https://picsum.photos/seed/vue/800/400" alt="Vue cover"></div>
-            <div class="card-title">Build Reactive Interfaces with Vue</div>
+            <div class="card-title">Bootstrap</div>
             <div class="card-meta"><div class="badge rounded-pill bg-light text-dark">Front End</div></div>
             <div class="muted">Estimasi waktu belajar : 30 menit</div>
           </div>
 
           <div class="content-card">
-            <div class="assign-badge">14 Assigned</div>
+            <div class="assign-badge">5 Assigned</div>
             <div class="card-cover"><img src="https://picsum.photos/seed/javascript/800/400" alt="JavaScript cover"></div>
-            <div class="card-title">Modern JavaScript: From Basics to ES6+</div>
+            <div class="card-title">Tailwind</div>
             <div class="card-meta"><div class="badge rounded-pill bg-light text-dark">Front End</div><div class="muted">• Popular</div></div>
             <div class="muted">Estimasi waktu belajar : 45 menit</div>
           </div>
@@ -964,7 +993,39 @@
           <div class="content-card">
             <div class="assign-badge">9 Assigned</div>
             <div class="card-cover"><img src="https://picsum.photos/seed/performance/800/400" alt="Performance cover"></div>
-            <div class="card-title">Web Performance & Optimization</div>
+            <div class="card-title">JavaScript</div>
+            <div class="card-meta"><div class="badge rounded-pill bg-light text-dark">Front End</div></div>
+            <div class="muted">Estimasi waktu belajar : 35 menit</div>
+          </div>
+
+          <div class="content-card">
+            <div class="assign-badge">9 Assigned</div>
+            <div class="card-cover"><img src="https://picsum.photos/seed/performance/800/400" alt="Performance cover"></div>
+            <div class="card-title">TypeScript</div>
+            <div class="card-meta"><div class="badge rounded-pill bg-light text-dark">Front End</div></div>
+            <div class="muted">Estimasi waktu belajar : 35 menit</div>
+          </div>
+
+          <div class="content-card">
+            <div class="assign-badge">9 Assigned</div>
+            <div class="card-cover"><img src="https://picsum.photos/seed/performance/800/400" alt="Performance cover"></div>
+            <div class="card-title">React JS</div>
+            <div class="card-meta"><div class="badge rounded-pill bg-light text-dark">Front End</div></div>
+            <div class="muted">Estimasi waktu belajar : 35 menit</div>
+          </div>
+
+          <div class="content-card">
+            <div class="assign-badge">9 Assigned</div>
+            <div class="card-cover"><img src="https://picsum.photos/seed/performance/800/400" alt="Performance cover"></div>
+            <div class="card-title">Next JS</div>
+            <div class="card-meta"><div class="badge rounded-pill bg-light text-dark">Front End</div></div>
+            <div class="muted">Estimasi waktu belajar : 35 menit</div>
+          </div>
+
+          <div class="content-card">
+            <div class="assign-badge">Bonus</div>
+            <div class="card-cover"><img src="https://picsum.photos/seed/performance/800/400" alt="Performance cover"></div>
+            <div class="card-title">GIT</div>
             <div class="card-meta"><div class="badge rounded-pill bg-light text-dark">Front End</div></div>
             <div class="muted">Estimasi waktu belajar : 35 menit</div>
           </div>
@@ -980,7 +1041,7 @@
           <div class="content-card">
             <div class="assign-badge">10 Assigned</div>
             <div class="card-cover"><img src="https://picsum.photos/seed/nodejs/800/400" alt="Node.js cover"></div>
-            <div class="card-title">Node.js: Server-Side JavaScript</div>
+            <div class="card-title">Node.js</div>
             <div class="card-meta"><div class="badge rounded-pill bg-light text-dark">Back End</div></div>
             <div class="muted">Estimasi waktu belajar : 40 menit</div>
           </div>
@@ -988,7 +1049,7 @@
           <div class="content-card">
             <div class="assign-badge">7 Assigned</div>
             <div class="card-cover"><img src="https://picsum.photos/seed/express/800/400" alt="Express cover"></div>
-            <div class="card-title">Express Framework Fundamentals</div>
+            <div class="card-title">Express.js</div>
             <div class="card-meta"><div class="badge rounded-pill bg-light text-dark">Back End</div></div>
             <div class="muted">Estimasi waktu belajar : 35 menit</div>
           </div>
@@ -996,9 +1057,65 @@
           <div class="content-card">
             <div class="assign-badge">9 Assigned</div>
             <div class="card-cover"><img src="https://picsum.photos/seed/database/800/400" alt="Database cover"></div>
-            <div class="card-title">Database Design & Optimization</div>
+            <div class="card-title">NestJS</div>
             <div class="card-meta"><div class="badge rounded-pill bg-light text-dark">Back End</div></div>
             <div class="muted">Estimasi waktu belajar : 45 menit</div>
+          </div>
+
+          <div class="content-card">
+            <div class="assign-badge">12 Assigned</div>
+            <div class="card-cover"><img src="https://picsum.photos/seed/java/800/400" alt="Java cover"></div>
+            <div class="card-title">CodeIgniter</div>
+            <div class="card-meta"><div class="badge rounded-pill bg-light text-dark">Language</div></div>
+            <div class="muted">Estimasi waktu belajar : 55 menit</div>
+          </div>
+
+          <div class="content-card">
+            <div class="assign-badge">10 Assigned</div>
+            <div class="card-cover"><img src="https://picsum.photos/seed/go/800/400" alt="Go cover"></div>
+            <div class="card-title">Laravel</div>
+            <div class="card-meta"><div class="badge rounded-pill bg-light text-dark">Language</div></div>
+            <div class="muted">Estimasi waktu belajar : 40 menit</div>
+          </div>
+
+          <div class="content-card">
+            <div class="assign-badge">10 Assigned</div>
+            <div class="card-cover"><img src="https://picsum.photos/seed/go/800/400" alt="Go cover"></div>
+            <div class="card-title">Python</div>
+            <div class="card-meta"><div class="badge rounded-pill bg-light text-dark">Language</div></div>
+            <div class="muted">Estimasi waktu belajar : 40 menit</div>
+          </div>
+
+          <div class="content-card">
+            <div class="assign-badge">10 Assigned</div>
+            <div class="card-cover"><img src="https://picsum.photos/seed/go/800/400" alt="Go cover"></div>
+            <div class="card-title">Django</div>
+            <div class="card-meta"><div class="badge rounded-pill bg-light text-dark">Language</div></div>
+            <div class="muted">Estimasi waktu belajar : 40 menit</div>
+          </div>
+
+          <div class="content-card">
+            <div class="assign-badge">10 Assigned</div>
+            <div class="card-cover"><img src="https://picsum.photos/seed/go/800/400" alt="Go cover"></div>
+            <div class="card-title">MySQL</div>
+            <div class="card-meta"><div class="badge rounded-pill bg-light text-dark">Language</div></div>
+            <div class="muted">Estimasi waktu belajar : 40 menit</div>
+          </div>
+
+          <div class="content-card">
+            <div class="assign-badge">10 Assigned</div>
+            <div class="card-cover"><img src="https://picsum.photos/seed/go/800/400" alt="Go cover"></div>
+            <div class="card-title">Postgree</div>
+            <div class="card-meta"><div class="badge rounded-pill bg-light text-dark">Language</div></div>
+            <div class="muted">Estimasi waktu belajar : 40 menit</div>
+          </div>
+
+          <div class="content-card">
+            <div class="assign-badge">10 Assigned</div>
+            <div class="card-cover"><img src="https://picsum.photos/seed/go/800/400" alt="Go cover"></div>
+            <div class="card-title">MongoDB</div>
+            <div class="card-meta"><div class="badge rounded-pill bg-light text-dark">Language</div></div>
+            <div class="muted">Estimasi waktu belajar : 40 menit</div>
           </div>
         </div>
         <div class="no-results">Tidak ditemukan di Back End.</div>
@@ -1010,26 +1127,45 @@
         <div class="cards-grid horizontal" id="languageGrid">
           <!-- cards -->
           <div class="content-card">
-            <div class="assign-badge">15 Assigned</div>
-            <div class="card-cover"><img src="https://picsum.photos/seed/python/800/400" alt="Python cover"></div>
-            <div class="card-title">Python Programming Fundamentals</div>
-            <div class="card-meta"><div class="badge rounded-pill bg-light text-dark">Language</div></div>
-            <div class="muted">Estimasi waktu belajar : 50 menit</div>
+            <div class="assign-badge">10 Assigned</div>
+            <div class="card-cover"><img src="https://picsum.photos/seed/nodejs/800/400" alt="Node.js cover"></div>
+            <div class="card-title">C</div>
+            <div class="card-meta"><div class="badge rounded-pill bg-light text-dark">Back End</div></div>
+            <div class="muted">Estimasi waktu belajar : 40 menit</div>
           </div>
-
-          <div class="content-card">
-            <div class="assign-badge">12 Assigned</div>
-            <div class="card-cover"><img src="https://picsum.photos/seed/java/800/400" alt="Java cover"></div>
-            <div class="card-title">Java Object-Oriented Programming</div>
-            <div class="card-meta"><div class="badge rounded-pill bg-light text-dark">Language</div></div>
-            <div class="muted">Estimasi waktu belajar : 55 menit</div>
-          </div>
-
           <div class="content-card">
             <div class="assign-badge">10 Assigned</div>
-            <div class="card-cover"><img src="https://picsum.photos/seed/go/800/400" alt="Go cover"></div>
-            <div class="card-title">Go Language for Web Development</div>
-            <div class="card-meta"><div class="badge rounded-pill bg-light text-dark">Language</div></div>
+            <div class="card-cover"><img src="https://picsum.photos/seed/nodejs/800/400" alt="Node.js cover"></div>
+            <div class="card-title">C++</div>
+            <div class="card-meta"><div class="badge rounded-pill bg-light text-dark">Back End</div></div>
+            <div class="muted">Estimasi waktu belajar : 40 menit</div>
+          </div>
+          <div class="content-card">
+            <div class="assign-badge">10 Assigned</div>
+            <div class="card-cover"><img src="https://picsum.photos/seed/nodejs/800/400" alt="Node.js cover"></div>
+            <div class="card-title">C#</div>
+            <div class="card-meta"><div class="badge rounded-pill bg-light text-dark">Back End</div></div>
+            <div class="muted">Estimasi waktu belajar : 40 menit</div>
+          </div>
+          <div class="content-card">
+            <div class="assign-badge">10 Assigned</div>
+            <div class="card-cover"><img src="https://picsum.photos/seed/nodejs/800/400" alt="Node.js cover"></div>
+            <div class="card-title">Java</div>
+            <div class="card-meta"><div class="badge rounded-pill bg-light text-dark">Back End</div></div>
+            <div class="muted">Estimasi waktu belajar : 40 menit</div>
+          </div>
+          <div class="content-card">
+            <div class="assign-badge">10 Assigned</div>
+            <div class="card-cover"><img src="https://picsum.photos/seed/nodejs/800/400" alt="Node.js cover"></div>
+            <div class="card-title">Python</div>
+            <div class="card-meta"><div class="badge rounded-pill bg-light text-dark">Back End</div></div>
+            <div class="muted">Estimasi waktu belajar : 40 menit</div>
+          </div>
+          <div class="content-card">
+            <div class="assign-badge">10 Assigned</div>
+            <div class="card-cover"><img src="https://picsum.photos/seed/nodejs/800/400" alt="Node.js cover"></div>
+            <div class="card-title">Pascal</div>
+            <div class="card-meta"><div class="badge rounded-pill bg-light text-dark">Back End</div></div>
             <div class="muted">Estimasi waktu belajar : 40 menit</div>
           </div>
         </div>
