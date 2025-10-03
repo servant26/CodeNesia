@@ -1,0 +1,2002 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CodeNesia - Course Detail</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    :root{
+      --sidebar-w: 260px;
+      --accent: #6f5af8;
+      --muted: #6b7280;
+      --bg: #f1f2f4;
+      --card-bg: #fff;
+      --text-color: #111827;
+      --sidebar-bg: #fbfdff;
+      --topbar-bg: transparent;
+      --border-color: rgba(16,24,40,0.08);
+      --input-text: #111827;
+      --input-bg: #fff;
+      --input-placeholder: #6b7280;
+      --nav-text: #374151;
+      --nav-text-hover: #111827;
+      --muted-text: #4b5563;
+    }
+
+    [data-theme="dark"] {
+      --accent: #8b7cfc;
+      --muted: #94a3b8;
+      --bg: #0f172a;
+      --card-bg: #1e293b;
+      --text-color: #f8fafc;
+      --sidebar-bg: #0f172a;
+      --topbar-bg: #1e293b;
+      --border-color: rgba(255,255,255,0.08);
+      --input-text: #f8fafc;
+      --input-bg: #334155;
+      --input-placeholder: #cbd5e1;
+      --nav-text: #e2e8f0;
+      --nav-text-hover: #f8fafc;
+      --muted-text: #cbd5e1;
+    }
+
+    html,body{
+      height:100%;
+      margin:0;
+      padding:0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      color: var(--text-color);
+      background: var(--bg);
+      box-sizing:border-box;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    /* SIDEBAR - desktop fixed; mobile offcanvas */
+    .sidebar{
+      position: fixed;
+      left: 0;
+      top: 0;
+      height: 100vh;
+      width: var(--sidebar-w);
+      background: var(--sidebar-bg);
+      border-right: 1px solid var(--border-color);
+      padding: 18px 14px;
+      display:flex;
+      flex-direction:column;
+      gap:14px;
+      box-sizing:border-box;
+      z-index: 1040;
+      transform: translateX(0);
+      transition: transform .24s ease, box-shadow .18s ease, background-color 0.3s ease;
+      overflow-y: auto;
+    }
+
+    .logo{ 
+      display:flex; 
+      align-items:center; 
+      gap:10px; 
+      font-weight:600; 
+      color: var(--text-color); 
+    }
+    
+    .logo .mark{ 
+      width:34px;
+      height:34px;
+      border-radius:8px;
+      background:linear-gradient(135deg,var(--accent),#3ec5ff); 
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:white;
+      font-weight:700; 
+    }
+    
+    /* Gaya untuk foto profil kartun */
+    .profile-pic {
+      width: 34px;
+      height: 34px;
+      border-radius: 8px;
+      object-fit: cover;
+      border: 2px solid var(--accent);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .side-nav{ margin-top:6px; display:flex;flex-direction:column;gap:6px; font-size:14px; }
+    .side-nav a{ 
+      text-decoration:none;
+      color: var(--nav-text);
+      padding:10px;
+      border-radius:8px;
+      display:flex;
+      gap:10px;
+      align-items:center; 
+      transition: background .12s ease, color .12s ease; 
+    }
+    .side-nav a:hover{ 
+      background: rgba(111,90,248,0.08); 
+      color: var(--nav-text-hover);
+    }
+    .side-nav a.active{ 
+      background:linear-gradient(90deg,rgba(111,90,248,0.12), rgba(62,197,255,0.06)); 
+      color:var(--accent); 
+      font-weight:600; 
+    }
+
+    /* Social media pills */
+    .social-section div:first-child {
+      font-size:13px;
+      color:var(--nav-text);
+      margin-bottom:6px;
+      font-weight: 500;
+    }
+
+    /* project-pill (social) - same style as top area */
+    .project-pill{
+      display:flex;
+      gap:8px;
+      align-items:center;
+      padding:8px 10px;
+      border-radius:8px;
+      background: var(--card-bg);
+      margin-bottom:8px;
+      font-size:13px;
+      color: var(--nav-text);
+      text-decoration:none;
+      border:1px solid var(--border-color);
+      transition: background-color 0.3s ease, transform 0.1s ease, color 0.3s ease;
+    }
+
+    .project-pill:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      color: var(--nav-text-hover);
+    }
+
+    .project-pill .icon{
+      width:20px;height:20px;display:inline-flex;align-items:center;justify-content:center;
+    }
+
+    /* MAIN takes remaining width */
+    .main{
+      margin-left: var(--sidebar-w);
+      width: calc(100vw - var(--sidebar-w));
+      min-width: 0;
+      padding: 0;
+      display:flex;
+      flex-direction:column;
+      position:relative;
+      box-sizing:border-box;
+      overflow:auto;
+      min-height:100vh;
+      transition: margin-left .18s ease, width .18s ease;
+    }
+
+    /* Main content area */
+    .main-content {
+      padding: 18px 26px;
+      flex: 1;
+    }
+
+    /* Topbar */
+    .topbar{ 
+      display:flex; 
+      align-items:center; 
+      gap: 16px;
+      justify-content:space-between; 
+      padding: 16px 26px;
+      background: var(--topbar-bg);
+      border-bottom: 1px solid var(--border-color);
+      transition: background-color 0.3s ease;
+      position: sticky;
+      top: 0;
+      z-index: 1020;
+    }
+    
+    .topbar-left {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex: 1;
+      min-width: 0;
+    }
+    
+    .topbar-right {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-shrink: 0;
+    }
+
+    .breadcrumbs{ 
+      display:flex; 
+      gap:12px; 
+      align-items:center; 
+      color:var(--text-color); 
+      font-size:14px;
+      flex-wrap: wrap;
+    }
+    
+    .search-container {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      flex: 1;
+      max-width: 400px;
+      min-width: 200px;
+    }
+
+    /* Theme Toggle Button */
+    .theme-toggle {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      width: 44px;
+      height: 44px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.1s ease;
+      flex-shrink: 0;
+      color: var(--text-color);
+    }
+    
+    .theme-toggle:hover {
+      background: rgba(111,90,248,0.08);
+    }
+    
+    .theme-toggle:active {
+      transform: scale(0.95);
+    }
+
+    /* Course Page Styles */
+    .course-header {
+      display: flex;
+      gap: 24px;
+      margin-bottom: 30px;
+    }
+    
+    .course-cover {
+      flex: 0 0 300px;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+    
+    .course-cover img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+    }
+    
+    .course-info {
+      flex: 1;
+    }
+    
+    .course-title {
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--text-color);
+    }
+    
+    .course-meta {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+    
+    .course-meta-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 14px;
+      color: var(--muted-text);
+    }
+    
+    .course-description {
+      font-size: 16px;
+      line-height: 1.6;
+      color: var(--text-color);
+      margin-bottom: 20px;
+    }
+    
+    .course-actions {
+      display: flex;
+      gap: 12px;
+    }
+    
+    .btn-enroll {
+      background: var(--accent);
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    
+    .btn-enroll:hover {
+      background: #5a48d9;
+    }
+    
+    .btn-outline {
+      background: transparent;
+      color: var(--accent);
+      border: 1px solid var(--accent);
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    
+    .btn-outline:hover {
+      background: rgba(111,90,248,0.08);
+    }
+    
+    .course-content {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 30px;
+    }
+    
+    .content-section {
+      background: var(--card-bg);
+      border-radius: 12px;
+      padding: 24px;
+      box-shadow: 0 2px 8px rgba(16,24,40,0.08);
+      border: 1px solid var(--border-color);
+      margin-bottom: 24px;
+    }
+    
+    .section-title {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 16px;
+      color: var(--text-color);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .section-title i {
+      color: var(--accent);
+    }
+    
+    .module-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    
+    .module-item {
+      padding: 16px;
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      transition: background-color 0.2s ease;
+      cursor: pointer;
+    }
+    
+    .module-item:last-child {
+      border-bottom: none;
+    }
+    
+    .module-item:hover {
+      background: rgba(111,90,248,0.05);
+      border-radius: 8px;
+    }
+    
+    .module-number {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: rgba(111,90,248,0.1);
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      font-size: 14px;
+      flex-shrink: 0;
+    }
+    
+    .module-content {
+      flex: 1;
+    }
+    
+    .module-title {
+      font-weight: 600;
+      margin-bottom: 4px;
+      color: var(--text-color);
+    }
+    
+    .module-duration {
+      font-size: 14px;
+      color: var(--muted-text);
+    }
+    
+    .module-status {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      border: 2px solid var(--border-color);
+      flex-shrink: 0;
+    }
+    
+    .module-item.completed .module-status {
+      background: var(--accent);
+      border-color: var(--accent);
+      position: relative;
+    }
+    
+    .module-item.completed .module-status:after {
+      content: "✓";
+      color: white;
+      font-size: 12px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    
+    .about-course {
+      line-height: 1.6;
+      color: var(--text-color);
+    }
+    
+    .learn-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    
+    .learn-item {
+      padding: 8px 0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .learn-item:before {
+      content: "✓";
+      color: var(--accent);
+      font-weight: bold;
+    }
+    
+    .author-card {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      padding: 16px;
+      background: var(--card-bg);
+      border-radius: 12px;
+      border: 1px solid var(--border-color);
+    }
+    
+    .author-avatar {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    
+    .author-info {
+      flex: 1;
+    }
+    
+    .author-name {
+      font-weight: 600;
+      margin-bottom: 4px;
+      color: var(--text-color);
+    }
+    
+    .author-title {
+      font-size: 14px;
+      color: var(--muted-text);
+      margin-bottom: 8px;
+    }
+    
+    .author-rating {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    
+    .rating-stars {
+      color: #fbbf24;
+    }
+    
+    .rating-value {
+      font-size: 14px;
+      color: var(--muted-text);
+    }
+    
+    /* Modal Styles */
+    .course-modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      z-index: 1100;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .course-modal.active {
+      display: flex;
+    }
+    
+    .modal-content {
+      background: var(--card-bg);
+      border-radius: 12px;
+      width: 90%;
+      max-width: 900px;
+      max-height: 90vh;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+    
+    .modal-header {
+      padding: 20px 24px;
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .modal-title {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--text-color);
+      margin: 0;
+    }
+    
+    .close-modal {
+      background: none;
+      border: none;
+      font-size: 24px;
+      color: var(--muted-text);
+      cursor: pointer;
+      transition: color 0.2s ease;
+    }
+    
+    .close-modal:hover {
+      color: var(--text-color);
+    }
+    
+    .modal-body {
+      flex: 1;
+      padding: 0;
+      overflow: auto;
+    }
+    
+    .slide {
+      display: none;
+      padding: 30px;
+      min-height: 400px;
+    }
+    
+    .slide.active {
+      display: block;
+    }
+    
+    .slide-title {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 16px;
+      color: var(--text-color);
+    }
+    
+    .slide-content {
+      line-height: 1.6;
+      margin-bottom: 24px;
+    }
+    
+    .slide-content p {
+      margin-bottom: 16px;
+    }
+    
+    .slide-content ul, .slide-content ol {
+      margin-left: 20px;
+      margin-bottom: 16px;
+    }
+    
+    .slide-content li {
+      margin-bottom: 8px;
+    }
+    
+    .video-container {
+      position: relative;
+      width: 100%;
+      height: 0;
+      padding-bottom: 56.25%; /* 16:9 aspect ratio */
+      margin-bottom: 20px;
+    }
+    
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 8px;
+    }
+    
+    .modal-footer {
+      padding: 20px 24px;
+      border-top: 1px solid var(--border-color);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .slide-indicator {
+      font-size: 14px;
+      color: var(--muted-text);
+    }
+    
+    .nav-buttons {
+      display: flex;
+      gap: 12px;
+    }
+    
+    .btn-nav {
+      background: var(--accent);
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .btn-nav:hover {
+      background: #5a48d9;
+    }
+    
+    .btn-nav:disabled {
+      background: var(--muted);
+      cursor: not-allowed;
+    }
+    
+    .btn-nav-outline {
+      background: transparent;
+      color: var(--accent);
+      border: 1px solid var(--accent);
+    }
+    
+    .btn-nav-outline:hover {
+      background: rgba(111,90,248,0.08);
+    }
+    
+    .help-fab{ 
+      position:fixed; 
+      right:20px; 
+      bottom:20px; 
+      width:50px;
+      height:50px;
+      border-radius:12px;
+      background:var(--accent);
+      color:white; 
+      display:grid;
+      place-items:center; 
+      box-shadow:0 8px 24px rgba(16,24,40,0.15); 
+      cursor:pointer; 
+      z-index: 1000;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+    
+    .help-fab:hover {
+      transform: scale(1.05);
+    }
+
+    /* ========== MOBILE NAVBAR STYLES ========== */
+    .mobile-navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 60px;
+      background: var(--sidebar-bg);
+      border-bottom: 1px solid var(--border-color);
+      padding: 0 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 1050;
+      transform: translateY(0);
+      transition: transform 0.3s ease, background-color 0.3s ease;
+      overflow-x: auto;
+      overflow-y: hidden;
+    }
+    
+    .mobile-navbar .side-nav {
+      flex-direction: row;
+      margin-top: 0;
+      gap: 8px;
+      flex: 1;
+      justify-content: flex-start;
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding: 8px 0;
+      -webkit-overflow-scrolling: touch;
+      position: relative;
+    }
+    
+    .mobile-navbar .side-nav a {
+      white-space: nowrap;
+      flex-shrink: 0;
+      padding: 8px 12px;
+      font-size: 13px;
+      border-radius: 6px;
+    }
+    
+    .mobile-navbar .side-nav a i {
+      font-size: 14px;
+    }
+    
+    .mobile-navbar .social-section {
+      display: none;
+    }
+    
+    .mobile-navbar .logo {
+      display: none;
+    }
+    
+    /* Active state untuk navbar mobile */
+    .mobile-navbar .side-nav a.active {
+      background: linear-gradient(90deg, rgba(111,90,248,0.12), rgba(62,197,255,0.06));
+      color: var(--accent);
+      font-weight: 600;
+    }
+    
+    /* Hide scrollbar for mobile navbar */
+    .mobile-navbar .side-nav::-webkit-scrollbar {
+      display: none;
+    }
+    
+    .mobile-navbar .side-nav {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+    
+    /* Scroll indicator untuk navbar mobile */
+    .scroll-indicator {
+      position: absolute;
+      right: 0;
+      top: 0;
+      height: 100%;
+      width: 30px;
+      background: linear-gradient(90deg, transparent, var(--sidebar-bg));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    
+    .scroll-indicator.visible {
+      opacity: 1;
+    }
+    
+    .scroll-indicator i {
+      color: var(--accent);
+      font-size: 16px;
+      animation: bounce 2s infinite;
+    }
+    
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% {
+        transform: translateX(0);
+      }
+      40% {
+        transform: translateX(-3px);
+      }
+      60% {
+        transform: translateX(-2px);
+      }
+    }
+
+    /* ========== RESPONSIVE STYLES ========== */
+    
+    /* Hide mobile navbar on desktop */
+    @media (min-width: 961px) {
+      .mobile-navbar {
+        display: none !important;
+      }
+    }
+    
+    /* Adjust main content for mobile navbar */
+    @media (max-width: 960px) {
+      .main {
+        margin-top: 60px;
+      }
+      
+      .topbar {
+        position: fixed;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        z-index: 1040;
+        background: var(--topbar-bg);
+        backdrop-filter: blur(10px);
+      }
+      
+      .main-content {
+        margin-top: 120px;
+      }
+      
+      /* Sembunyikan sidebar di mobile */
+      .sidebar {
+        display: none !important;
+      }
+    }
+    
+    /* Tablet */
+    @media (max-width: 960px) {
+      .sidebar { 
+        display: none !important;
+      }
+      
+      .main { 
+        margin-left: 0; 
+        width: 100%; 
+      }
+      
+      .topbar {
+        padding: 14px 20px;
+      }
+      
+      .main-content {
+        padding: 14px 20px;
+      }
+      
+      .course-header {
+        flex-direction: column;
+      }
+      
+      .course-cover {
+        flex: 0 0 100%;
+      }
+      
+      .course-content {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    /* Mobile */
+    @media (max-width: 768px) {
+      .topbar {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 16px;
+        padding: 16px;
+      }
+      
+      .topbar-left {
+        width: 100%;
+        justify-content: space-between;
+      }
+      
+      .search-container {
+        max-width: 100%;
+        order: 3;
+      }
+      
+      .breadcrumbs {
+        font-size: 13px;
+      }
+      
+      .main-content {
+        padding: 16px;
+      }
+      
+      .course-title {
+        font-size: 24px;
+      }
+      
+      .course-meta {
+        gap: 12px;
+      }
+      
+      .course-actions {
+        flex-direction: column;
+      }
+      
+      .content-section {
+        padding: 20px;
+      }
+      
+      .modal-content {
+        width: 95%;
+        height: 95vh;
+      }
+      
+      .slide {
+        padding: 20px;
+      }
+    }
+    
+    /* Small Mobile */
+    @media (max-width: 480px) {
+      .main-content {
+        padding: 12px;
+      }
+      
+      .topbar {
+        padding: 12px;
+        gap: 12px;
+      }
+      
+      .content-section {
+        padding: 16px;
+      }
+      
+      .module-item {
+        padding: 12px;
+      }
+      
+      .author-card {
+        flex-direction: column;
+        text-align: center;
+      }
+      
+      .help-fab {
+        width: 44px;
+        height: 44px;
+        right: 16px;
+        bottom: 16px;
+      }
+      
+      .theme-toggle {
+        width: 40px;
+        height: 40px;
+      }
+      
+      .modal-footer {
+        flex-direction: column;
+        gap: 16px;
+        align-items: stretch;
+      }
+      
+      .nav-buttons {
+        width: 100%;
+        justify-content: space-between;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Mobile Navbar -->
+  <nav id="mobileNavbar" class="mobile-navbar" aria-label="Mobile navigation" style="display: none;">
+    <!-- Content akan diisi oleh JavaScript -->
+  </nav>
+
+  <!-- Sidebar -->
+  <aside id="siteSidebar" class="sidebar" aria-label="Sidebar">
+    <div class="logo">
+      <!-- Mengganti mark dengan foto profil kartun -->
+      <img src="https://i.pravatar.cc/150?img=32" alt="Foto Profil" class="profile-pic">
+      <div>
+        <div style="font-size:14px;font-weight:700">CodeNesia</div>
+      </div>
+    </div>
+
+    <nav id="mainNav" class="side-nav" aria-label="Main navigation">
+      <a class="nav-link" href="#section-front-end"><i class="bi bi-folder2-open"></i> Front-End</a>
+      <a class="nav-link" href="#section-back-end"><i class="bi bi-server"></i> Back-End</a>
+      <a class="nav-link" href="#section-language"><i class="bi bi-code-slash"></i> Programming Language</a>
+      <a class="nav-link" href="#ebook"><i class="bi bi-book"></i> Ebook</a>
+      <a class="nav-link" href="#support"><i class="bi bi-hand-thumbs-up"></i> Support Us</a>
+      <a class="nav-link" href="index.html"><i class="bi bi-back"></i> Back</a>
+    </nav>
+
+    <div class="social-section">
+      <div>Social Media</div>
+
+      <!-- project-pill style social buttons (like top area) -->
+      <a class="project-pill" href="https://www.youtube.com" target="_blank" rel="noopener noreferrer">
+        <span class="icon"><i class="bi bi-youtube" style="color:#f59e0b"></i></span>
+        <span>Youtube</span>
+      </a>
+
+      <a class="project-pill" href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+        <span class="icon"><i class="bi bi-instagram" style="color:#3ec5ff"></i></span>
+        <span>Instagram</span>
+      </a>
+
+      <a class="project-pill" href="https://www.tiktok.com" target="_blank" rel="noopener noreferrer">
+        <span class="icon"><i class="bi bi-music-note-beamed"></i></span>
+        <span>Tiktok</span>
+      </a>
+
+      <a class="project-pill" href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+        <span class="icon"><i class="bi bi-facebook"></i></span>
+        <span>Facebook</span>
+      </a>
+    </div>
+  </aside>
+
+  <!-- Main -->
+  <main id="top" class="main" role="main">
+    <div class="topbar">
+      <div class="topbar-left">
+        <div class="breadcrumbs">
+          <i class="bi bi-grid-fill"></i>
+          <div id="currentDate" style="font-weight:700"></div>
+        </div>
+      </div>
+
+      <div class="topbar-right">
+        <div class="search-container">
+          <div class="input-group me-2">
+            <span class="input-group-text"><i class="bi bi-search"></i></span>
+            <input id="searchInput" class="form-control" placeholder="Cari kursus..." aria-label="Search courses" />
+          </div>
+        </div>
+        
+        <!-- Theme Toggle Button -->
+        <button id="themeToggle" class="theme-toggle" aria-label="Toggle dark mode">
+          <i class="bi bi-sun" id="themeIcon"></i>
+        </button>
+      </div>
+    </div>
+
+    <div class="main-content">
+      <!-- Course Header -->
+      <div class="course-header">
+        <div class="course-cover">
+          <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Figma Course Cover">
+        </div>
+        <div class="course-info">
+          <h1 class="course-title">Mastering Figma: From Beginner to Advanced</h1>
+          <div class="course-meta">
+            <div class="course-meta-item">
+              <i class="bi bi-clock"></i>
+              <span>2.5 jam total</span>
+            </div>
+            <div class="course-meta-item">
+              <i class="bi bi-bar-chart"></i>
+              <span>Semua level</span>
+            </div>
+            <div class="course-meta-item">
+              <i class="bi bi-star-fill" style="color:#fbbf24"></i>
+              <span>4.8 (1,245 rating)</span>
+            </div>
+          </div>
+          <p class="course-description">
+            Unlock the power of Figma, the leading collaborative design tool, with our comprehensive online course. Whether you're a novice or looking to enhance your skills, this course will guide you through Figma's robust features and workflows.
+          </p>
+          <div class="course-actions">
+            <button class="btn-enroll">Enroll Now</button>
+            <button class="btn-outline">Add to Wishlist</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Course Content -->
+      <div class="course-content">
+        <div class="content-left">
+          <!-- Course Modules -->
+          <div class="content-section">
+            <h2 class="section-title"><i class="bi bi-list-check"></i> Course Content</h2>
+            <ul class="module-list">
+              <li class="module-item" data-module="1">
+                <div class="module-number">01</div>
+                <div class="module-content">
+                  <div class="module-title">Intro</div>
+                  <div class="module-duration">20 min</div>
+                </div>
+                <div class="module-status"></div>
+              </li>
+              <li class="module-item" data-module="2">
+                <div class="module-number">02</div>
+                <div class="module-content">
+                  <div class="module-title">Intermediate Level Stuff</div>
+                  <div class="module-duration">20 min</div>
+                </div>
+                <div class="module-status"></div>
+              </li>
+              <li class="module-item" data-module="3">
+                <div class="module-number">03</div>
+                <div class="module-content">
+                  <div class="module-title">Advanced Stuff</div>
+                  <div class="module-duration">36 min</div>
+                </div>
+                <div class="module-status"></div>
+              </li>
+              <li class="module-item" data-module="4">
+                <div class="module-number">04</div>
+                <div class="module-content">
+                  <div class="module-title">Imports & Graphics</div>
+                  <div class="module-duration">40 min</div>
+                </div>
+                <div class="module-status"></div>
+              </li>
+              <li class="module-item" data-module="5">
+                <div class="module-number">05</div>
+                <div class="module-content">
+                  <div class="module-title">Component in Figma</div>
+                  <div class="module-duration">12 min</div>
+                </div>
+                <div class="module-status"></div>
+              </li>
+              <li class="module-item" data-module="6">
+                <div class="module-number">06</div>
+                <div class="module-content">
+                  <div class="module-title">Styles in Figma</div>
+                  <div class="module-duration">40 min</div>
+                </div>
+                <div class="module-status"></div>
+              </li>
+              <li class="module-item" data-module="7">
+                <div class="module-number">07</div>
+                <div class="module-content">
+                  <div class="module-title">Summary</div>
+                  <div class="module-duration">8 min</div>
+                </div>
+                <div class="module-status"></div>
+              </li>
+            </ul>
+          </div>
+
+          <!-- About Course -->
+          <div class="content-section">
+            <h2 class="section-title"><i class="bi bi-info-circle"></i> About Course</h2>
+            <p class="about-course">
+              Unlock the power of Figma, the leading collaborative design tool, with our comprehensive online course. Whether you're a novice or looking to enhance your skills, this course will guide you through Figma's robust features and workflows.
+            </p>
+            <p class="about-course">
+              Perfect for UI/UX designers, product managers, and anyone interested in modern design tools. Join us to elevate your design skills and boost your productivity with Figma!
+            </p>
+          </div>
+
+          <!-- What You'll Learn -->
+          <div class="content-section">
+            <h2 class="section-title"><i class="bi bi-lightbulb"></i> What You'll Learn</h2>
+            <ul class="learn-list">
+              <li class="learn-item">Setting up the environment</li>
+              <li class="learn-item">Understand HTML Programming</li>
+              <li class="learn-item">Advanced HTML Practices</li>
+              <li class="learn-item">Code HTML</li>
+              <li class="learn-item">Build a portfolio website</li>
+              <li class="learn-item">Start building beautiful websites</li>
+              <li class="learn-item">Responsible Decisions</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="content-right">
+          <!-- Author Info -->
+          <div class="content-section">
+            <h2 class="section-title"><i class="bi bi-person"></i> Author</h2>
+            <div class="author-card">
+              <img src="https://i.pravatar.cc/150?img=5" alt="Crystal Lucas" class="author-avatar">
+              <div class="author-info">
+                <div class="author-name">Crystal Lucas</div>
+                <div class="author-title">UI/UX Specialist</div>
+                <div class="author-rating">
+                  <div class="rating-stars">
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-half"></i>
+                  </div>
+                  <div class="rating-value">4.5</div>
+                </div>
+              </div>
+            </div>
+            <p style="margin-top: 16px; font-size: 14px; line-height: 1.5; color: var(--muted-text);">
+              Crystal is a seasoned UI/UX designer with over a decade of experience in digital product design. She has worked with startups and Fortune 500 companies to create intuitive and beautiful user experiences.
+            </p>
+          </div>
+
+          <!-- Course Stats -->
+          <div class="content-section">
+            <h2 class="section-title"><i class="bi bi-graph-up"></i> Course Details</h2>
+            <div style="display: flex; flex-direction: column; gap: 12px;">
+              <div style="display: flex; justify-content: space-between;">
+                <span style="color: var(--muted-text);">Duration</span>
+                <span style="font-weight: 600;">2.5 hours</span>
+              </div>
+              <div style="display: flex; justify-content: space-between;">
+                <span style="color: var(--muted-text);">Lectures</span>
+                <span style="font-weight: 600;">7 modules</span>
+              </div>
+              <div style="display: flex; justify-content: space-between;">
+                <span style="color: var(--muted-text);">Level</span>
+                <span style="font-weight: 600;">All Levels</span>
+              </div>
+              <div style="display: flex; justify-content: space-between;">
+                <span style="color: var(--muted-text);">Language</span>
+                <span style="font-weight: 600;">English</span>
+              </div>
+              <div style="display: flex; justify-content: space-between;">
+                <span style="color: var(--muted-text);">Certificate</span>
+                <span style="font-weight: 600; color: var(--accent);">Yes</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Course Modal -->
+  <div id="courseModal" class="course-modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="modalModuleTitle">Module 1: Intro</h3>
+        <button class="close-modal">&times;</button>
+      </div>
+      <div class="modal-body" id="modalBody">
+        <!-- Konten akan diisi oleh JavaScript berdasarkan modul yang dipilih -->
+      </div>
+      <div class="modal-footer">
+        <div class="slide-indicator">
+          Slide <span id="currentSlide">1</span> of <span id="totalSlides">3</span>
+        </div>
+        <div class="nav-buttons">
+          <button class="btn-nav btn-nav-outline" id="prevBtn">
+            <i class="bi bi-chevron-left"></i> Previous
+          </button>
+          <button class="btn-nav" id="nextBtn">
+            Next <i class="bi bi-chevron-right"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="helpFab" class="help-fab" title="Help"><i class="bi bi-question-lg"></i></div>
+
+  <!-- Bootstrap JS bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    // Elements
+    const sidebar = document.getElementById('siteSidebar');
+    const themeToggle = document.getElementById('themeToggle');
+    const themeIcon = document.getElementById('themeIcon');
+    const htmlElement = document.documentElement;
+    const mobileNavbar = document.getElementById('mobileNavbar');
+    const navLinks = document.querySelectorAll('#mainNav .nav-link');
+    const currentDateElement = document.getElementById('currentDate');
+    const courseModal = document.getElementById('courseModal');
+    const closeModal = document.querySelector('.close-modal');
+    const moduleItems = document.querySelectorAll('.module-item');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const currentSlideEl = document.getElementById('currentSlide');
+    const totalSlidesEl = document.getElementById('totalSlides');
+    const modalModuleTitle = document.getElementById('modalModuleTitle');
+    const modalBody = document.getElementById('modalBody');
+
+    // Modal state
+    let currentSlide = 0;
+    let totalSlides = 0;
+    let currentModule = 1;
+    let slides = [];
+
+    // Data konten untuk setiap modul
+    const moduleContent = {
+      1: {
+        title: "Intro",
+        slides: [
+          {
+            title: "Introduction to Figma",
+            content: `
+              <p>Figma is a powerful design tool that enables teams to collaborate in real-time on interface design projects. It's web-based, which means you can access your work from anywhere without installing software.</p>
+              
+              <p><strong>Key Features:</strong></p>
+              <ul>
+                <li>Real-time collaboration</li>
+                <li>Vector networks for precise design</li>
+                <li>Component-based design system</li>
+                <li>Prototyping capabilities</li>
+                <li>Developer handoff tools</li>
+              </ul>
+              
+              <p>In this module, we'll explore the Figma interface and learn the fundamental tools you'll use throughout your design journey.</p>
+            `
+          },
+          {
+            title: "Understanding the Figma Interface",
+            content: `
+              <p>The Figma interface is organized into several key areas that you'll use regularly:</p>
+              
+              <p><strong>Toolbar:</strong> Located at the top, contains tools for creating and manipulating objects</p>
+              <p><strong>Canvas:</strong> The central area where you design your interfaces</p>
+              <p><strong>Layers Panel:</strong> Shows the hierarchy of all elements in your design</p>
+              <p><strong>Properties Panel:</strong> Where you adjust properties of selected elements</p>
+              <p><strong>Assets Panel:</strong> Contains your components and styles</p>
+              
+              <p>Take some time to familiarize yourself with these areas before moving to the next lesson.</p>
+            `
+          },
+          {
+            title: "Video: Getting Started with Figma",
+            video: "https://www.youtube.com/embed/3q3FV65ZrUs",
+            content: `
+              <p>Watch this video to see the Figma interface in action and learn how to navigate the basic tools and features.</p>
+              <p>After watching, try to recreate the simple design shown in the video to practice what you've learned.</p>
+            `
+          }
+        ]
+      },
+      2: {
+        title: "Intermediate Level Stuff",
+        slides: [
+          {
+            title: "Working with Shapes and Text",
+            content: `
+              <p>In this module, we'll dive deeper into working with shapes and text in Figma.</p>
+              
+              <p><strong>Shape Tools:</strong></p>
+              <ul>
+                <li>Rectangle Tool (R)</li>
+                <li>Ellipse Tool (O)</li>
+                <li>Line Tool (L)</li>
+                <li>Polygon Tool</li>
+                <li>Pen Tool (P)</li>
+              </ul>
+              
+              <p><strong>Text Properties:</strong></p>
+              <ul>
+                <li>Font family and size</li>
+                <li>Line height and letter spacing</li>
+                <li>Text alignment</li>
+                <li>Text styles</li>
+              </ul>
+            `
+          },
+          {
+            title: "Creating Layouts with Frames",
+            content: `
+              <p>Frames are the foundation of your designs in Figma. They act as containers for your design elements.</p>
+              
+              <p><strong>Frame Properties:</strong></p>
+              <ul>
+                <li>Width and height</li>
+                <li>Constraints for responsive design</li>
+                <li>Background colors and images</li>
+                <li>Auto layout for dynamic layouts</li>
+              </ul>
+              
+              <p>Practice creating frames for different screen sizes like mobile, tablet, and desktop.</p>
+            `
+          },
+          {
+            title: "Video: Intermediate Figma Techniques",
+            video: "https://www.youtube.com/embed/II-33t6gHlE",
+            content: `
+              <p>This video demonstrates intermediate techniques for working with shapes, text, and frames in Figma.</p>
+              <p>Follow along to create a simple card component using the techniques shown.</p>
+            `
+          }
+        ]
+      },
+      3: {
+        title: "Advanced Stuff",
+        slides: [
+          {
+            title: "Advanced Vector Editing",
+            content: `
+              <p>Figma's vector editing capabilities allow you to create complex shapes and illustrations.</p>
+              
+              <p><strong>Vector Networks:</strong></p>
+              <ul>
+                <li>Creating custom shapes with the Pen Tool</li>
+                <li>Editing vector points and curves</li>
+                <li>Boolean operations (Union, Subtract, Intersect, Exclude)</li>
+                <li>Using the Pencil Tool for freehand drawing</li>
+              </ul>
+              
+              <p>These tools give you complete control over your vector artwork.</p>
+            `
+          },
+          {
+            title: "Prototyping and Interactions",
+            content: `
+              <p>Figma's prototyping features allow you to create interactive prototypes without coding.</p>
+              
+              <p><strong>Prototyping Basics:</strong></p>
+              <ul>
+                <li>Creating connections between frames</li>
+                <li>Setting up interactions (On Click, While Hovering, etc.)</li>
+                <li>Animation and transition settings</li>
+                <li>Smart animate for smooth transitions</li>
+              </ul>
+              
+              <p>Prototyping helps you test and validate your design concepts before development.</p>
+            `
+          },
+          {
+            title: "Video: Advanced Figma Prototyping",
+            video: "https://www.youtube.com/embed/2_LX9c5hQ6E",
+            content: `
+              <p>This advanced tutorial shows how to create complex interactions and animations in Figma.</p>
+              <p>Learn how to use smart animate and other advanced prototyping features.</p>
+            `
+          }
+        ]
+      },
+      4: {
+        title: "Imports & Graphics",
+        slides: [
+          {
+            title: "Importing Assets into Figma",
+            content: `
+              <p>Figma allows you to import various types of assets to enhance your designs.</p>
+              
+              <p><strong>Supported Formats:</strong></p>
+              <ul>
+                <li>Images (JPG, PNG, SVG)</li>
+                <li>PDF documents</li>
+                <li>Sketch files</li>
+                <li>Adobe XD files</li>
+              </ul>
+              
+              <p><strong>Import Methods:</strong></p>
+              <ul>
+                <li>Drag and drop from your computer</li>
+                <li>Copy and paste</li>
+                <li>Using the Place Image command</li>
+              </ul>
+            `
+          },
+          {
+            title: "Working with Images and Graphics",
+            content: `
+              <p>Once imported, you can manipulate images and graphics in various ways.</p>
+              
+              <p><strong>Image Editing:</strong></p>
+              <ul>
+                <li>Cropping and masking</li>
+                <li>Adjusting opacity and blend modes</li>
+                <li>Applying filters and effects</li>
+                <li>Creating image fills for shapes</li>
+              </ul>
+              
+              <p>These tools help you integrate external assets seamlessly into your designs.</p>
+            `
+          },
+          {
+            title: "Video: Working with Graphics in Figma",
+            video: "https://www.youtube.com/embed/FTV6mQg6wIE",
+            content: `
+              <p>Learn how to import and work with various graphic assets in Figma.</p>
+              <p>This video covers image manipulation, masking, and creating visually appealing designs with imported graphics.</p>
+            `
+          }
+        ]
+      },
+      5: {
+        title: "Component in Figma",
+        slides: [
+          {
+            title: "Introduction to Components",
+            content: `
+              <p>Components are reusable elements that help maintain consistency across your designs.</p>
+              
+              <p><strong>What are Components?</strong></p>
+              <ul>
+                <li>Reusable design elements</li>
+                <li>Maintain consistency across your project</li>
+                <li>Update all instances when the main component changes</li>
+                <li>Save time and ensure design consistency</li>
+              </ul>
+              
+              <p>Components are essential for creating scalable design systems.</p>
+            `
+          },
+          {
+            title: "Creating and Using Components",
+            content: `
+              <p>Learn how to create and use components effectively in your designs.</p>
+              
+              <p><strong>Creating Components:</strong></p>
+              <ul>
+                <li>Select an element and click "Create Component"</li>
+                <li>Use keyboard shortcut Ctrl+Alt+K (Windows) or Cmd+Opt+K (Mac)</li>
+                <li>Components appear purple in the layers panel</li>
+              </ul>
+              
+              <p><strong>Using Components:</strong></p>
+              <ul>
+                <li>Drag from Assets panel to create instances</li>
+                <li>Instances are linked to the main component</li>
+                <li>Changes to the main component update all instances</li>
+              </ul>
+            `
+          },
+          {
+            title: "Video: Mastering Components in Figma",
+            video: "https://www.youtube.com/embed/0cd--w0oSHs",
+            content: `
+              <p>This comprehensive tutorial covers everything you need to know about components in Figma.</p>
+              <p>Learn how to create, manage, and use components to build scalable design systems.</p>
+            `
+          }
+        ]
+      },
+      6: {
+        title: "Styles in Figma",
+        slides: [
+          {
+            title: "Understanding Design Styles",
+            content: `
+              <p>Styles in Figma help you maintain visual consistency throughout your designs.</p>
+              
+              <p><strong>Types of Styles:</strong></p>
+              <ul>
+                <li>Text Styles - for typography</li>
+                <li>Color Styles - for colors</li>
+                <li>Effect Styles - for shadows and blurs</li>
+                <li>Grid Styles - for layout grids</li>
+              </ul>
+              
+              <p>Styles ensure that your design remains consistent and can be updated globally.</p>
+            `
+          },
+          {
+            title: "Creating and Applying Styles",
+            content: `
+              <p>Learn how to create and apply styles to maintain design consistency.</p>
+              
+              <p><strong>Creating Styles:</strong></p>
+              <ul>
+                <li>Select an element with the properties you want to save</li>
+                <li>Click the "+" icon in the Design panel</li>
+                <li>Give your style a descriptive name</li>
+                <li>Organize styles with forward slashes (e.g., "Colors/Primary")</li>
+              </ul>
+              
+              <p><strong>Applying Styles:</strong></p>
+              <ul>
+                <li>Select an element</li>
+                <li>Choose a style from the Design panel</li>
+                <li>Styles can be applied to text, fills, strokes, and effects</li>
+              </ul>
+            `
+          },
+          {
+            title: "Video: Working with Styles in Figma",
+            video: "https://www.youtube.com/embed/HZ5wyZ5E4a0",
+            content: `
+              <p>This tutorial demonstrates how to create, manage, and apply styles in Figma.</p>
+              <p>Learn how to build a consistent design system using text, color, and effect styles.</p>
+            `
+          }
+        ]
+      },
+      7: {
+        title: "Summary",
+        slides: [
+          {
+            title: "Course Recap",
+            content: `
+              <p>Congratulations on completing the Mastering Figma course! Let's review what we've covered.</p>
+              
+              <p><strong>Key Takeaways:</strong></p>
+              <ul>
+                <li>Understanding the Figma interface and basic tools</li>
+                <li>Working with shapes, text, and frames</li>
+                <li>Advanced vector editing and prototyping</li>
+                <li>Importing and working with graphics</li>
+                <li>Creating and using components</li>
+                <li>Applying styles for design consistency</li>
+              </ul>
+              
+              <p>You now have a solid foundation in Figma and can create professional designs and prototypes.</p>
+            `
+          },
+          {
+            title: "Next Steps",
+            content: `
+              <p>Your Figma journey doesn't end here! Here are some suggestions for continuing your learning:</p>
+              
+              <p><strong>Practice Projects:</strong></p>
+              <ul>
+                <li>Redesign an existing website or app</li>
+                <li>Create a design system for a fictional company</li>
+                <li>Build a portfolio of your design work</li>
+              </ul>
+              
+              <p><strong>Advanced Topics to Explore:</strong></p>
+              <ul>
+                <li>Auto layout for responsive designs</li>
+                <li>Variables for dynamic content</li>
+                <li>Advanced prototyping with conditionals</li>
+                <li>Plugins to extend Figma's functionality</li>
+              </ul>
+            `
+          },
+          {
+            title: "Final Video: Putting It All Together",
+            video: "https://www.youtube.com/embed/Cx2dkpBxst8",
+            content: `
+              <p>This final video demonstrates how to apply all the concepts you've learned in a real-world project.</p>
+              <p>Watch as we create a complete mobile app interface from scratch using Figma's powerful features.</p>
+              <p>Thank you for completing the course! Keep practicing and exploring Figma's capabilities.</p>
+            `
+          }
+        ]
+      }
+    };
+
+    // Update tanggal live
+    function updateCurrentDate() {
+      const now = new Date();
+      const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+      const formattedDate = now.toLocaleDateString('id-ID', options);
+      currentDateElement.textContent = formattedDate;
+    }
+
+    // Theme Management
+    function initTheme() {
+      const savedTheme = localStorage.getItem('theme') || 'light';
+      setTheme(savedTheme);
+    }
+
+    function setTheme(theme) {
+      htmlElement.setAttribute('data-theme', theme);
+      localStorage.setItem('theme', theme);
+      
+      if (theme === 'dark') {
+        themeIcon.className = 'bi bi-moon';
+      } else {
+        themeIcon.className = 'bi bi-sun';
+      }
+    }
+
+    function toggleTheme() {
+      const currentTheme = htmlElement.getAttribute('data-theme') || 'light';
+      const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+      setTheme(newTheme);
+    }
+
+    // Modal Functions
+    function openModal(moduleNumber) {
+      currentModule = moduleNumber;
+      currentSlide = 0;
+      slides = moduleContent[moduleNumber].slides;
+      totalSlides = slides.length;
+      
+      // Update modal title
+      modalModuleTitle.textContent = `Module ${moduleNumber}: ${moduleContent[moduleNumber].title}`;
+      
+      // Render slides
+      renderSlides();
+      
+      // Show modal
+      courseModal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModalFunc() {
+      courseModal.classList.remove('active');
+      document.body.style.overflow = 'auto';
+    }
+
+    function renderSlides() {
+      modalBody.innerHTML = '';
+      
+      slides.forEach((slide, index) => {
+        const slideElement = document.createElement('div');
+        slideElement.className = `slide ${index === currentSlide ? 'active' : ''}`;
+        slideElement.id = `slide-${index}`;
+        
+        let slideHTML = `<h2 class="slide-title">${slide.title}</h2>`;
+        
+        if (slide.video) {
+          slideHTML += `
+            <div class="video-container">
+              <iframe src="${slide.video}" title="${slide.title}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+          `;
+        }
+        
+        slideHTML += `<div class="slide-content">${slide.content}</div>`;
+        slideElement.innerHTML = slideHTML;
+        
+        modalBody.appendChild(slideElement);
+      });
+      
+      updateSlides();
+    }
+
+    function updateSlides() {
+      // Hide all slides
+      document.querySelectorAll('.slide').forEach(slide => {
+        slide.classList.remove('active');
+      });
+      
+      // Show current slide
+      document.getElementById(`slide-${currentSlide}`).classList.add('active');
+      
+      // Update slide indicator
+      currentSlideEl.textContent = currentSlide + 1;
+      totalSlidesEl.textContent = totalSlides;
+      
+      // Update button states
+      prevBtn.disabled = currentSlide === 0;
+      nextBtn.textContent = currentSlide === totalSlides - 1 ? 'Finish' : 'Next';
+    }
+
+    function nextSlide() {
+      if (currentSlide < totalSlides - 1) {
+        currentSlide++;
+        updateSlides();
+      } else {
+        // Mark module as completed when finished
+        const activeModule = document.querySelector(`.module-item[data-module="${currentModule}"]`);
+        if (activeModule) {
+          activeModule.classList.add('completed');
+        }
+        closeModalFunc();
+      }
+    }
+
+    function prevSlide() {
+      if (currentSlide > 0) {
+        currentSlide--;
+        updateSlides();
+      }
+    }
+
+    // Utility
+    const MOBILE_BREAK = 960;
+    function isMobileLayout(){ return window.innerWidth <= MOBILE_BREAK; }
+
+    // Ensure desktop view forces sidebar visible
+    function ensureSidebarStateOnResize(){
+      if(!isMobileLayout()){
+        sidebar.style.display = '';
+        // Hide mobile navbar on desktop
+        if (mobileNavbar) {
+          mobileNavbar.style.display = 'none';
+        }
+      } else {
+        sidebar.style.display = 'none';
+        // Show mobile navbar on mobile
+        createMobileNavbar();
+      }
+    }
+
+    // Highlight active nav link (click + scroll)
+    function setActiveLinkByHash(hash){
+      navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === hash));
+      updateMobileNavbarActive(hash);
+    }
+
+    // On nav link click
+    navLinks.forEach(a => {
+      a.addEventListener('click', (ev) => {
+        // Perbaikan: Scroll ke bagian yang dituju dengan offset yang tepat
+        const targetId = a.getAttribute('href').substring(1);
+        const targetElement = document.getElementById(targetId);
+        
+        if (targetElement) {
+          // Hitung offset berdasarkan apakah di mobile atau desktop
+          const offset = isMobileLayout() ? 120 : 80;
+          const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - offset;
+          
+          window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
+          });
+        }
+        
+        setActiveLinkByHash(a.getAttribute('href'));
+      });
+    });
+
+    // Theme toggle
+    themeToggle.addEventListener('click', toggleTheme);
+
+    // Keep sidebar state correct on resize (debounced)
+    let resizeTO;
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTO);
+      resizeTO = setTimeout(() => {
+        ensureSidebarStateOnResize();
+      }, 120);
+    });
+
+    // ========== MOBILE NAVBAR FUNCTIONS ==========
+    
+    // Create mobile navbar from sidebar content
+    function createMobileNavbar() {
+      if (!isMobileLayout()) return;
+      
+      // Cek apakah navbar mobile sudah ada
+      if (mobileNavbar.children.length > 0) {
+        mobileNavbar.style.display = 'flex';
+        return;
+      }
+      
+      // Clone navigation dari sidebar
+      const sideNav = document.querySelector('#mainNav').cloneNode(true);
+      sideNav.classList.add('side-nav');
+      
+      // Hapus class active dari semua link
+      sideNav.querySelectorAll('.nav-link').forEach(link => {
+        link.classList.remove('active');
+        
+        // Perbaikan: Tambahkan event listener yang sama untuk mobile navbar
+        link.addEventListener('click', function(e) {
+          const targetId = this.getAttribute('href').substring(1);
+          const targetElement = document.getElementById(targetId);
+          
+          if (targetElement) {
+            // Hitung offset untuk mobile
+            const offset = 120;
+            const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - offset;
+            
+            window.scrollTo({
+              top: targetPosition,
+              behavior: 'smooth'
+            });
+          }
+          
+          setActiveLinkByHash(this.getAttribute('href'));
+        });
+      });
+      
+      // Buat scroll indicator
+      const scrollIndicator = document.createElement('div');
+      scrollIndicator.className = 'scroll-indicator';
+      scrollIndicator.innerHTML = '<i class="bi bi-chevron-left"></i>';
+      
+      // Tambahkan ke mobile navbar
+      mobileNavbar.innerHTML = '';
+      mobileNavbar.appendChild(sideNav);
+      mobileNavbar.appendChild(scrollIndicator);
+      mobileNavbar.style.display = 'flex';
+      
+      // Handle scroll indicator visibility
+      const navContainer = mobileNavbar.querySelector('.side-nav');
+      function updateScrollIndicator() {
+        const isScrollable = navContainer.scrollWidth > navContainer.clientWidth;
+        const isAtEnd = navContainer.scrollLeft + navContainer.clientWidth >= navContainer.scrollWidth - 10;
+        
+        if (isScrollable && !isAtEnd) {
+          scrollIndicator.classList.add('visible');
+        } else {
+          scrollIndicator.classList.remove('visible');
+        }
+      }
+      
+      navContainer.addEventListener('scroll', updateScrollIndicator);
+      window.addEventListener('resize', updateScrollIndicator);
+      updateScrollIndicator();
+    }
+    
+    // Update active state di navbar mobile
+    function updateMobileNavbarActive(hash) {
+      if (!mobileNavbar) return;
+      
+      const mobileNavLinks = mobileNavbar.querySelectorAll('.nav-link');
+      mobileNavLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === hash));
+    }
+    
+    // Handle scroll behavior untuk mobile navbar
+    let lastScrollTop = 0;
+    function handleMobileNavbarScroll() {
+      if (!isMobileLayout() || !mobileNavbar) return;
+      
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      
+      if (scrollTop > lastScrollTop && scrollTop > 100) {
+        // Scroll down - hide navbar
+        mobileNavbar.style.transform = 'translateY(-100%)';
+      } else {
+        // Scroll up - show navbar
+        mobileNavbar.style.transform = 'translateY(0)';
+      }
+      
+      lastScrollTop = scrollTop;
+    }
+    
+    // Add scroll event listener untuk navbar mobile
+    window.addEventListener('scroll', throttle(handleMobileNavbarScroll, 100));
+
+    // initial state
+    updateCurrentDate();
+    ensureSidebarStateOnResize();
+    initTheme();
+
+    // Scroll spy-ish: update active menu by viewport section
+    const sections = Array.from(document.querySelectorAll('section[id]'));
+    function onScrollSpy(){
+      const fromTop = window.scrollY + 120;
+      let current = '#top';
+      for(const s of sections){
+        if(s.offsetTop <= fromTop) current = '#' + s.id;
+      }
+      setActiveLinkByHash(current);
+    }
+    document.addEventListener('scroll', throttle(onScrollSpy, 150));
+    onScrollSpy();
+
+    // debounce helper
+    function throttle(fn, wait){
+      let t = null;
+      return function(...args){
+        if(t) return;
+        t = setTimeout(() => { 
+          fn.apply(this,args); 
+          clearTimeout(t); 
+          t = null; 
+        }, wait);
+      };
+    }
+
+    // Module click event
+    moduleItems.forEach(item => {
+      item.addEventListener('click', function() {
+        const moduleNumber = this.getAttribute('data-module');
+        
+        // Set active module
+        moduleItems.forEach(m => m.classList.remove('active'));
+        this.classList.add('active');
+        
+        // Open modal
+        openModal(moduleNumber);
+      });
+    });
+
+    // Modal events
+    closeModal.addEventListener('click', closeModalFunc);
+    prevBtn.addEventListener('click', prevSlide);
+    nextBtn.addEventListener('click', nextSlide);
+
+    // Close modal when clicking outside content
+    courseModal.addEventListener('click', function(e) {
+      if (e.target === courseModal) {
+        closeModalFunc();
+      }
+    });
+
+    // Keyboard navigation
+    document.addEventListener('keydown', function(e) {
+      if (courseModal.classList.contains('active')) {
+        if (e.key === 'Escape') {
+          closeModalFunc();
+        } else if (e.key === 'ArrowLeft') {
+          prevSlide();
+        } else if (e.key === 'ArrowRight') {
+          nextSlide();
+        }
+      }
+    });
+
+    // Enroll button
+    document.querySelector('.btn-enroll').addEventListener('click', function() {
+      alert('Terima kasih! Anda telah berhasil mendaftar untuk kursus ini.');
+    });
+  </script>
+</body>
+</html>
