@@ -1,0 +1,3680 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CodeNesia - Course Detail</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    :root{
+      --sidebar-w: 260px;
+      --accent: #6f5af8;
+      --muted: #6b7280;
+      --bg: #f1f2f4;
+      --card-bg: #fff;
+      --text-color: #111827;
+      --sidebar-bg: #fbfdff;
+      --topbar-bg: transparent;
+      --border-color: rgba(16,24,40,0.08);
+      --input-text: #111827;
+      --input-bg: #fff;
+      --input-placeholder: #6b7280;
+      --nav-text: #374151;
+      --nav-text-hover: #111827;
+      --muted-text: #4b5563;
+    }
+
+    [data-theme="dark"] {
+      --accent: #8b7cfc;
+      --muted: #94a3b8;
+      --bg: #0f172a;
+      --card-bg: #1e293b;
+      --text-color: #f8fafc;
+      --sidebar-bg: #0f172a;
+      --topbar-bg: #1e293b;
+      --border-color: rgba(255,255,255,0.08);
+      --input-text: #f8fafc;
+      --input-bg: #334155;
+      --input-placeholder: #cbd5e1;
+      --nav-text: #e2e8f0;
+      --nav-text-hover: #f8fafc;
+      --muted-text: #cbd5e1;
+    }
+
+    html,body{
+      height:100%;
+      margin:0;
+      padding:0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      color: var(--text-color);
+      background: var(--bg);
+      box-sizing:border-box;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    /* SIDEBAR - desktop fixed; mobile offcanvas */
+    .sidebar{
+      position: fixed;
+      left: 0;
+      top: 0;
+      height: 100vh;
+      width: var(--sidebar-w);
+      background: var(--sidebar-bg);
+      border-right: 1px solid var(--border-color);
+      padding: 18px 14px;
+      display:flex;
+      flex-direction:column;
+      gap:14px;
+      box-sizing:border-box;
+      z-index: 1040;
+      transform: translateX(0);
+      transition: transform .24s ease, box-shadow .18s ease, background-color 0.3s ease;
+      overflow-y: auto;
+    }
+
+    .logo{ 
+      display:flex; 
+      align-items:center; 
+      gap:10px; 
+      font-weight:600; 
+      color: var(--text-color); 
+    }
+    
+    .logo .mark{ 
+      width:34px;
+      height:34px;
+      border-radius:8px;
+      background:linear-gradient(135deg,var(--accent),#3ec5ff); 
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:white;
+      font-weight:700; 
+    }
+    
+    /* Gaya untuk foto profil kartun */
+    .profile-pic {
+      width: 34px;
+      height: 34px;
+      border-radius: 8px;
+      object-fit: cover;
+      border: 2px solid var(--accent);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .side-nav{ margin-top:6px; display:flex;flex-direction:column;gap:6px; font-size:14px; }
+    .side-nav a{ 
+      text-decoration:none;
+      color: var(--nav-text);
+      padding:10px;
+      border-radius:8px;
+      display:flex;
+      gap:10px;
+      align-items:center; 
+      transition: background .12s ease, color .12s ease; 
+    }
+    .side-nav a:hover{ 
+      background: rgba(111,90,248,0.08); 
+      color: var(--nav-text-hover);
+    }
+    .side-nav a.active{ 
+      background:linear-gradient(90deg,rgba(111,90,248,0.12), rgba(62,197,255,0.06)); 
+      color:var(--accent); 
+      font-weight:600; 
+    }
+
+    /* Social media pills */
+    .social-section div:first-child {
+      font-size:13px;
+      color:var(--nav-text);
+      margin-bottom:6px;
+      font-weight: 500;
+    }
+
+    /* project-pill (social) - same style as top area */
+    .project-pill{
+      display:flex;
+      gap:8px;
+      align-items:center;
+      padding:8px 10px;
+      border-radius:8px;
+      background: var(--card-bg);
+      margin-bottom:8px;
+      font-size:13px;
+      color: var(--nav-text);
+      text-decoration:none;
+      border:1px solid var(--border-color);
+      transition: background-color 0.3s ease, transform 0.1s ease, color 0.3s ease;
+    }
+
+    .project-pill:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      color: var(--nav-text-hover);
+    }
+
+    .project-pill .icon{
+      width:20px;height:20px;display:inline-flex;align-items:center;justify-content:center;
+    }
+
+    /* MAIN takes remaining width */
+    .main{
+      margin-left: var(--sidebar-w);
+      width: calc(100vw - var(--sidebar-w));
+      min-width: 0;
+      padding: 0;
+      display:flex;
+      flex-direction:column;
+      position:relative;
+      box-sizing:border-box;
+      overflow:auto;
+      min-height:100vh;
+      transition: margin-left .18s ease, width .18s ease;
+    }
+
+    /* Main content area */
+    .main-content {
+      padding: 18px 26px;
+      flex: 1;
+    }
+
+    /* Topbar */
+    .topbar{ 
+      display:flex; 
+      align-items:center; 
+      gap: 16px;
+      justify-content:space-between; 
+      padding: 16px 26px;
+      background: var(--topbar-bg);
+      border-bottom: 1px solid var(--border-color);
+      transition: background-color 0.3s ease;
+      position: sticky;
+      top: 0;
+      z-index: 1020;
+    }
+    
+    .topbar-left {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex: 1;
+      min-width: 0;
+    }
+    
+    .topbar-right {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-shrink: 0;
+    }
+
+    .breadcrumbs{ 
+      display:flex; 
+      gap:12px; 
+      align-items:center; 
+      color:var(--text-color); 
+      font-size:14px;
+      flex-wrap: wrap;
+    }
+    
+    .search-container {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      flex: 1;
+      max-width: 400px;
+      min-width: 200px;
+    }
+
+    /* Theme Toggle Button */
+    .theme-toggle {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      width: 44px;
+      height: 44px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.1s ease;
+      flex-shrink: 0;
+      color: var(--text-color);
+    }
+    
+    .theme-toggle:hover {
+      background: rgba(111,90,248,0.08);
+    }
+    
+    .theme-toggle:active {
+      transform: scale(0.95);
+    }
+
+    /* Course Page Styles */
+    .course-header {
+      display: flex;
+      gap: 24px;
+      margin-bottom: 30px;
+    }
+    
+    .course-cover {
+      flex: 0 0 300px;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+    
+    .course-cover img {
+      width: 100%;
+      height: 185px;
+      object-fit: cover;
+      display: block;
+    }
+    
+    .course-info {
+      flex: 1;
+    }
+    
+    .course-title {
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--text-color);
+    }
+    
+    .course-meta {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+    
+    .course-meta-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 14px;
+      color: var(--muted-text);
+    }
+    
+    .course-description {
+      font-size: 16px;
+      line-height: 1.6;
+      color: var(--text-color);
+      margin-bottom: 20px;
+    }
+    
+    .course-actions {
+      display: flex;
+      gap: 12px;
+    }
+    
+    .btn-enroll {
+      background: var(--accent);
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    
+    .btn-enroll:hover {
+      background: #5a48d9;
+    }
+    
+    .btn-outline {
+      background: transparent;
+      color: var(--accent);
+      border: 1px solid var(--accent);
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    
+    .btn-outline:hover {
+      background: rgba(111,90,248,0.08);
+    }
+    
+    .course-content {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 30px;
+    }
+    
+    .content-section {
+      background: var(--card-bg);
+      border-radius: 12px;
+      padding: 24px;
+      box-shadow: 0 2px 8px rgba(16,24,40,0.08);
+      border: 1px solid var(--border-color);
+      margin-bottom: 24px;
+      margin-top: -30px;
+    }
+    
+    .scrollable-section {
+      max-height: 400px;
+      overflow-y: auto;
+      padding-right: 8px;
+      padding-bottom: 16px; /* PERUBAHAN: Tambah padding bottom untuk About Course */
+    }
+    
+    /* Custom scrollbar */
+    .scrollable-section::-webkit-scrollbar {
+      width: 6px;
+    }
+    
+    .scrollable-section::-webkit-scrollbar-track {
+      background: transparent;
+      border-radius: 10px;
+    }
+    
+    .scrollable-section::-webkit-scrollbar-thumb {
+      background: var(--accent);
+      border-radius: 10px;
+      opacity: 0.3;
+    }
+    
+    .scrollable-section::-webkit-scrollbar-thumb:hover {
+      opacity: 0.5;
+    }
+    
+    .section-title {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 16px;
+      color: var(--text-color);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .section-title i {
+      color: var(--accent);
+    }
+    
+    .module-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    
+    .module-item {
+      padding: 16px;
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      transition: background-color 0.2s ease;
+      cursor: pointer;
+    }
+    
+    .module-item:last-child {
+      border-bottom: none;
+    }
+    
+    .module-item:hover {
+      background: rgba(111,90,248,0.05);
+      border-radius: 8px;
+    }
+    
+    .module-number {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: rgba(111,90,248,0.1);
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      font-size: 14px;
+      flex-shrink: 0;
+    }
+    
+    .module-content {
+      flex: 1;
+    }
+    
+    .module-title {
+      font-weight: 600;
+      margin-bottom: 4px;
+      color: var(--text-color);
+    }
+    
+    .module-duration {
+      font-size: 14px;
+      color: var(--muted-text);
+    }
+    
+    .about-course {
+      line-height: 1.6;
+      color: var(--text-color);
+      margin-bottom: 16px; /* PERUBAHAN: Tambah margin bottom untuk jarak antar paragraf */
+      text-align: justify;
+    }
+    
+    .learn-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr; /* Tetap 2 kolom */
+      gap: 12px;
+    }
+    
+    .learn-item {
+      padding: 8px 0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .learn-item:before {
+      content: "✓";
+      color: var(--accent);
+      font-weight: bold;
+    }
+    
+    .author-card {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      padding: 16px;
+      background: var(--card-bg);
+      border-radius: 12px;
+      border: 1px solid var(--border-color);
+    }
+    
+    .author-avatar {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    
+    .author-info {
+      flex: 1;
+    }
+    
+    .author-name {
+      font-weight: 600;
+      margin-bottom: 4px;
+      color: var(--text-color);
+    }
+    
+    .author-title {
+      font-size: 14px;
+      color: var(--muted-text);
+      margin-bottom: 8px;
+    }
+    
+    .author-rating {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    
+    .rating-stars {
+      color: #fbbf24;
+    }
+    
+    .rating-value {
+      font-size: 14px;
+      color: var(--muted-text);
+    }
+    
+    /* PERUBAHAN: Style untuk full-width section */
+    .full-width-section {
+      grid-column: 1 / -1;
+      /* PERUBAHAN: Mengurangi margin-top dari 20px menjadi 5px */
+      margin-top: -30px;
+    }
+    
+    /* Modal Styles */
+    .course-modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      z-index: 1100;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .course-modal.active {
+      display: flex;
+    }
+    
+    .modal-content {
+      background: var(--card-bg);
+      border-radius: 12px;
+      width: 90%;
+      max-width: 900px;
+      max-height: 90vh;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+    
+    .modal-header {
+      padding: 20px 24px;
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .modal-title {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--text-color);
+      margin: 0;
+    }
+    
+    .close-modal {
+      background: none;
+      border: none;
+      font-size: 24px;
+      color: var(--muted-text);
+      cursor: pointer;
+      transition: color 0.2s ease;
+    }
+    
+    .close-modal:hover {
+      color: var(--text-color);
+    }
+    
+    .modal-body {
+      flex: 1;
+      padding: 0;
+      overflow: auto;
+    }
+    
+    .slide {
+      display: none;
+      padding: 30px;
+      min-height: 400px;
+    }
+    
+    .slide.active {
+      display: block;
+    }
+    
+    .slide-title {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 16px;
+      color: var(--text-color);
+    }
+    
+    .slide-content {
+      line-height: 1.6;
+      margin-bottom: 24px;
+    }
+    
+    .slide-content p {
+      margin-bottom: 16px;
+    }
+    
+    .slide-content ul, .slide-content ol {
+      margin-left: 20px;
+      margin-bottom: 16px;
+    }
+    
+    .slide-content li {
+      margin-bottom: 8px;
+    }
+    
+    .video-container {
+      position: relative;
+      width: 100%;
+      height: 0;
+      padding-bottom: 56.25%; /* 16:9 aspect ratio */
+      margin-bottom: 20px;
+    }
+    
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 8px;
+    }
+    
+    .modal-footer {
+      padding: 20px 24px;
+      border-top: 1px solid var(--border-color);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .slide-indicator {
+      font-size: 14px;
+      color: var(--muted-text);
+    }
+    
+    .nav-buttons {
+      display: flex;
+      gap: 12px;
+    }
+    
+    .btn-nav {
+      background: var(--accent);
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .btn-nav:hover {
+      background: #5a48d9;
+    }
+    
+    .btn-nav:disabled {
+      background: var(--muted);
+      cursor: not-allowed;
+    }
+    
+    .btn-nav-outline {
+      background: transparent;
+      color: var(--accent);
+      border: 1px solid var(--accent);
+    }
+    
+    .btn-nav-outline:hover {
+      background: rgba(111,90,248,0.08);
+    }
+    
+    .help-fab{ 
+      position:fixed; 
+      right:20px; 
+      bottom:20px; 
+      width:50px;
+      height:50px;
+      border-radius:12px;
+      background:var(--accent);
+      color:white; 
+      display:grid;
+      place-items:center; 
+      box-shadow:0 8px 24px rgba(16,24,40,0.15); 
+      cursor:pointer; 
+      z-index: 1000;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+    
+    .help-fab:hover {
+      transform: scale(1.05);
+    }
+
+    /* ========== MOBILE NAVBAR STYLES ========== */
+    .mobile-navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 60px;
+      background: var(--sidebar-bg);
+      border-bottom: 1px solid var(--border-color);
+      padding: 0 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 1050;
+      transform: translateY(0);
+      transition: transform 0.3s ease, background-color 0.3s ease;
+      overflow-x: auto;
+      overflow-y: hidden;
+    }
+    
+    .mobile-navbar .side-nav {
+      flex-direction: row;
+      margin-top: 0;
+      gap: 8px;
+      flex: 1;
+      justify-content: flex-start;
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding: 8px 0;
+      -webkit-overflow-scrolling: touch;
+      position: relative;
+    }
+    
+    .mobile-navbar .side-nav a {
+      white-space: nowrap;
+      flex-shrink: 0;
+      padding: 8px 12px;
+      font-size: 13px;
+      border-radius: 6px;
+    }
+    
+    .mobile-navbar .side-nav a i {
+      font-size: 14px;
+    }
+    
+    .mobile-navbar .social-section {
+      display: none;
+    }
+    
+    .mobile-navbar .logo {
+      display: none;
+    }
+    
+    /* Active state untuk navbar mobile */
+    .mobile-navbar .side-nav a.active {
+      background: linear-gradient(90deg, rgba(111,90,248,0.12), rgba(62,197,255,0.06));
+      color: var(--accent);
+      font-weight: 600;
+    }
+    
+    /* Hide scrollbar for mobile navbar */
+    .mobile-navbar .side-nav::-webkit-scrollbar {
+      display: none;
+    }
+    
+    .mobile-navbar .side-nav {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+    
+    /* Scroll indicator untuk navbar mobile */
+    .scroll-indicator {
+      position: absolute;
+      right: 0;
+      top: 0;
+      height: 100%;
+      width: 30px;
+      background: linear-gradient(90deg, transparent, var(--sidebar-bg));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    
+    .scroll-indicator.visible {
+      opacity: 1;
+    }
+    
+    .scroll-indicator i {
+      color: var(--accent);
+      font-size: 16px;
+      animation: bounce 2s infinite;
+    }
+    
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% {
+        transform: translateX(0);
+      }
+      40% {
+        transform: translateX(-3px);
+      }
+      60% {
+        transform: translateX(-2px);
+      }
+    }
+
+    /* ========== RESPONSIVE STYLES ========== */
+    
+    /* Hide mobile navbar on desktop */
+    @media (min-width: 961px) {
+      .mobile-navbar {
+        display: none !important;
+      }
+    }
+    
+    /* Adjust main content for mobile navbar */
+    @media (max-width: 960px) {
+      .main {
+        margin-top: 60px;
+      }
+      
+      .topbar {
+        position: fixed;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        z-index: 1040;
+        background: var(--topbar-bg);
+        backdrop-filter: blur(10px);
+      }
+      
+      .main-content {
+        margin-top: 120px;
+      }
+      
+      /* Sembunyikan sidebar di mobile */
+      .sidebar {
+        display: none !important;
+      }
+    }
+    
+    /* Tablet */
+    @media (max-width: 960px) {
+      .sidebar { 
+        display: none !important;
+      }
+      
+      .main { 
+        margin-left: 0; 
+        width: 100%; 
+      }
+      
+      .topbar {
+        padding: 14px 20px;
+      }
+      
+      .main-content {
+        padding: 14px 20px;
+      }
+      
+      .course-header {
+        flex-direction: column;
+      }
+      
+      .course-cover {
+        flex: 0 0 100%;
+      }
+      
+      .course-content {
+        grid-template-columns: 1fr;
+      }
+      
+      .learn-list {
+        grid-template-columns: 1fr;
+      }
+      
+      /* PERUBAHAN: Responsive untuk full-width section */
+      .full-width-section {
+        grid-column: 1;
+      }
+    }
+    
+    /* Mobile */
+    @media (max-width: 768px) {
+      .topbar {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 16px;
+        padding: 16px;
+      }
+      
+      .topbar-left {
+        width: 100%;
+        justify-content: space-between;
+      }
+      
+      .search-container {
+        max-width: 100%;
+        order: 3;
+      }
+      
+      .breadcrumbs {
+        font-size: 13px;
+      }
+      
+      .main-content {
+        padding: 16px;
+      }
+      
+      .course-title {
+        font-size: 24px;
+      }
+      
+      .course-meta {
+        gap: 12px;
+      }
+      
+      .course-actions {
+        flex-direction: column;
+      }
+      
+      .content-section {
+        padding: 20px;
+      }
+      
+      .modal-content {
+        width: 95%;
+        height: 95vh;
+      }
+      
+      .slide {
+        padding: 20px;
+      }
+    }
+    
+    /* Small Mobile */
+    @media (max-width: 480px) {
+      .main-content {
+        padding: 12px;
+      }
+      
+      .topbar {
+        padding: 12px;
+        gap: 12px;
+      }
+      
+      .content-section {
+        padding: 16px;
+      }
+      
+      .module-item {
+        padding: 12px;
+      }
+      
+      .author-card {
+        flex-direction: column;
+        text-align: center;
+      }
+      
+      .help-fab {
+        width: 44px;
+        height: 44px;
+        right: 16px;
+        bottom: 16px;
+      }
+      
+      .theme-toggle {
+        width: 40px;
+        height: 40px;
+      }
+      
+      .modal-footer {
+        flex-direction: column;
+        gap: 16px;
+        align-items: stretch;
+      }
+      
+      .nav-buttons {
+        width: 100%;
+        justify-content: space-between;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Mobile Navbar -->
+  <nav id="mobileNavbar" class="mobile-navbar" aria-label="Mobile navigation" style="display: none;">
+    <!-- Content akan diisi oleh JavaScript -->
+  </nav>
+
+  <!-- Sidebar -->
+  <aside id="siteSidebar" class="sidebar" aria-label="Sidebar">
+    <div class="logo">
+      <!-- Mengganti mark dengan foto profil kartun -->
+      <img src="../../../assets/img/profile.jpg" alt="Foto Profil" class="profile-pic">
+      <div>
+        <div style="font-size:14px;font-weight:700">CodeNesia</div>
+      </div>
+    </div>
+
+    <nav id="mainNav" class="side-nav" aria-label="Main navigation">
+      <a class="nav-link" href="#section-front-end"><i class="bi bi-folder2-open"></i> Front-End</a>
+      <a class="nav-link" href="#section-back-end"><i class="bi bi-server"></i> Back-End</a>
+      <a class="nav-link" href="#section-language"><i class="bi bi-code-slash"></i> Programming Language</a>
+      <a class="nav-link" href="#ebook"><i class="bi bi-book"></i> Ebook</a>
+      <a class="nav-link" href="#support"><i class="bi bi-hand-thumbs-up"></i> Support Us</a>
+      <a class="nav-link" href="../../home.html"><i class="bi bi-back"></i> Back</a>
+    </nav>
+
+    <div class="social-section">
+      <div>Social Media</div>
+
+      <!-- project-pill style social buttons (like top area) -->
+      <a class="project-pill" href="https://www.youtube.com" target="_blank" rel="noopener noreferrer">
+        <span class="icon"><i class="bi bi-youtube" style="color:#f59e0b"></i></span>
+        <span>Youtube</span>
+      </a>
+
+      <a class="project-pill" href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+        <span class="icon"><i class="bi bi-instagram" style="color:#3ec5ff"></i></span>
+        <span>Instagram</span>
+      </a>
+
+      <a class="project-pill" href="https://www.tiktok.com" target="_blank" rel="noopener noreferrer">
+        <span class="icon"><i class="bi bi-music-note-beamed"></i></span>
+        <span>Tiktok</span>
+      </a>
+
+      <a class="project-pill" href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+        <span class="icon"><i class="bi bi-facebook"></i></span>
+        <span>Facebook</span>
+      </a>
+    </div>
+  </aside>
+
+  <!-- Main -->
+  <main id="top" class="main" role="main">
+    <div class="topbar">
+      <div class="topbar-left">
+        <div class="breadcrumbs">
+          <i class="bi bi-grid-fill"></i>
+          <div id="currentDate" style="font-weight:700"></div>
+        </div>
+      </div>
+
+      <div class="topbar-right">
+        <!-- Theme Toggle Button -->
+        <button id="themeToggle" class="theme-toggle" aria-label="Toggle dark mode">
+          <i class="bi bi-sun" id="themeIcon"></i>
+        </button>
+      </div>
+    </div>
+
+    <div class="main-content">
+      <!-- Course Header -->
+      <div class="course-header">
+        <div class="course-cover">
+          <img src="../../../assets/img/html.png" alt="Figma Course Cover">
+        </div>
+        <div class="course-info">
+          <h1 class="course-title">HTML</h1>
+          <p class="course-description">
+            Pelajari HTML dari dasar dan pahami bagaimana struktur sebuah website dibangun. Di course ini, kamu akan mengenal berbagai tag, elemen, dan cara menulis kode yang benar agar tampilan web lebih teratur dan mudah dikembangkan.
+          </p>
+          <div class="course-actions">
+            <a href="https://www.youtube.com/playlist?list=YOUR_PLAYLIST_ID" target="_blank" class="btn-enroll btn btn-primary">
+              Tonton Playlist
+            </a>
+          </div>
+        </div>
+      </div>
+      <br>
+      <!-- Course Content -->
+      <div class="course-content">
+        <div class="content-left">
+          <!-- Course Modules -->
+          <div class="content-section">
+            <h2 class="section-title"><i class="bi bi-list-check"></i> Daftar Materi</h2>
+            <div class="scrollable-section">
+              <ul class="module-list">
+                <li class="module-item" data-module="1">
+                  <div class="module-number">01</div>
+                  <div class="module-content">
+                    <div class="module-title">Pengenalan Dasar</div>
+                    <div class="module-duration">20 min</div>
+                  </div>
+                </li>
+                <li class="module-item" data-module="2">
+                  <div class="module-number">02</div>
+                  <div class="module-content">
+                    <div class="module-title">Struktur & Elemen</div>
+                    <div class="module-duration">20 min</div>
+                  </div>
+                </li>
+                <li class="module-item" data-module="3">
+                  <div class="module-number">03</div>
+                  <div class="module-content">
+                    <div class="module-title">Link & Navigasi</div>
+                    <div class="module-duration">36 min</div>
+                  </div>
+                </li>
+                <li class="module-item" data-module="4">
+                  <div class="module-number">04</div>
+                  <div class="module-content">
+                    <div class="module-title">Gambar & Media</div>
+                    <div class="module-duration">40 min</div>
+                  </div>
+                </li>
+                <li class="module-item" data-module="5">
+                  <div class="module-number">05</div>
+                  <div class="module-content">
+                    <div class="module-title">List</div>
+                    <div class="module-duration">12 min</div>
+                  </div>
+                </li>
+                <li class="module-item" data-module="6">
+                  <div class="module-number">06</div>
+                  <div class="module-content">
+                    <div class="module-title">Table</div>
+                    <div class="module-duration">40 min</div>
+                  </div>
+                </li>
+                <li class="module-item" data-module="7">
+                  <div class="module-number">07</div>
+                  <div class="module-content">
+                    <div class="module-title">Form</div>
+                    <div class="module-duration">8 min</div>
+                  </div>
+                </li>
+                <li class="module-item" data-module="8">
+                  <div class="module-number">08</div>
+                  <div class="module-content">
+                    <div class="module-title">Elemen Semantik</div>
+                    <div class="module-duration">25 min</div>
+                  </div>
+                </li>
+                <li class="module-item" data-module="9">
+                  <div class="module-number">09</div>
+                  <div class="module-content">
+                    <div class="module-title">Metadata & SEO Dasar</div>
+                    <div class="module-duration">18 min</div>
+                  </div>
+                </li>
+                <li class="module-item" data-module="10">
+                  <div class="module-number">10</div>
+                  <div class="module-content">
+                    <div class="module-title">Resource & Asset</div>
+                    <div class="module-duration">45 min</div>
+                  </div>
+                </li>
+                <li class="module-item" data-module="11">
+                  <div class="module-number">11</div>
+                  <div class="module-content">
+                    <div class="module-title">HTML 5</div>
+                    <div class="module-duration">45 min</div>
+                  </div>
+                </li>
+                <li class="module-item" data-module="12">
+                  <div class="module-number">12</div>
+                  <div class="module-content">
+                    <div class="module-title">Project</div>
+                    <div class="module-duration">45 min</div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="content-right">
+          <!-- Course Stats - Now at the top -->
+          <div class="content-section">
+            <h2 class="section-title"><i class="bi bi-graph-up"></i> Detail Materi</h2>
+            <div style="display: flex; flex-direction: column; gap: 12px;">
+              <div style="display: flex; justify-content: space-between;">
+                <span style="color: var(--muted-text);">Durasi</span>
+                <span style="font-weight: 600;">2.5 Jam</span>
+              </div>
+              <div style="display: flex; justify-content: space-between;">
+                <span style="color: var(--muted-text);">Total Materi</span>
+                <span style="font-weight: 600;">12 Modul</span>
+              </div>
+              <div style="display: flex; justify-content: space-between;">
+                <span style="color: var(--muted-text);">Tipe</span>
+                <span style="font-weight: 600; color: var(--accent);">Front-End</span>
+              </div>
+            </div>
+          </div>
+          <br>
+          <!-- About Course - Now scrollable and at the bottom -->
+          <div class="content-section">
+            <h2 class="section-title"><i class="bi bi-info-circle"></i> Tentang Materi</h2>
+            <div class="scrollable-section" style="max-height: 195px;">
+              <p class="about-course">
+                Course HTML ini dirancang untuk membantu kamu memahami pondasi utama dalam pembuatan website. Mulai dari pengenalan struktur HTML, elemen penting, hingga praktik menulis kode yang efisien dan semantik.
+              </p>
+              <p class="about-course">
+                Sangat cocok untuk pemula yang ingin memulai karier di dunia web development atau siapa pun yang ingin memahami cara kerja halaman web secara menyeluruh.
+              </p>
+              <!-- ... konten lainnya ... -->
+            </div>
+          </div>
+        </div>
+
+        <!-- PERUBAHAN: What You'll Learn - NOW FULL WIDTH -->
+        <div class="content-section full-width-section">
+          <h2 class="section-title"><i class="bi bi-lightbulb"></i> Apa yang akan kamu pelajari?</h2><br>
+          <ul class="learn-list">
+            <li class="learn-item">Memahami struktur dasar dokumen HTML dan elemen penting di dalamnya</li>
+            <li class="learn-item">Mengetahui perbedaan dan fungsi berbagai tag HTML</li>
+            <li class="learn-item">Menggunakan teks, list, tabel, gambar, audio, dan video di halaman web</li>
+            <li class="learn-item">Membuat form dengan input, validasi, dan struktur semantik yang benar</li>
+            <li class="learn-item">Mengatur metadata dan optimasi dasar SEO di halaman HTML</li>
+            <li class="learn-item">Mengimpor resource eksternal seperti CSS dan JavaScript ke dalam proyek</li>
+            <li class="learn-item">Memahami path relatif dan absolut dalam pengaturan file project</li>
+            <li class="learn-item">Menggunakan elemen-elemen baru di HTML5 seperti &lt;video&gt;, &lt;audio&gt;, &lt;canvas&gt;, dan &lt;progress&gt;</li>
+            <li class="learn-item">Mengenal fitur modern HTML5 seperti LocalStorage, Drag & Drop API, dan Geolocation</li>
+            <li class="learn-item">Membuat halaman web multi-page sederhana menggunakan struktur semantik yang benar</li>
+            <li class="learn-item">Menulis kode HTML yang rapi, konsisten, dan mudah di-maintain</li>
+            <li class="learn-item">Membuat dan mempublikasikan proyek website statis sederhana</li>
+          </ul>
+        </div>
+    </div>
+  </main>
+
+  <!-- Course Modal -->
+  <div id="courseModal" class="course-modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="modalModuleTitle">Module 1: Pengenalan Dasar</h3>
+        <button class="close-modal">&times;</button>
+      </div>
+      <div class="modal-body" id="modalBody">
+        <!-- Konten akan diisi oleh JavaScript berdasarkan modul yang dipilih -->
+      </div>
+      <div class="modal-footer">
+        <div class="slide-indicator">
+          Slide <span id="currentSlide">1</span> of <span id="totalSlides">3</span>
+        </div>
+        <div class="nav-buttons">
+          <button class="btn-nav btn-nav-outline" id="prevBtn">
+            <i class="bi bi-chevron-left"></i> Previous
+          </button>
+          <button class="btn-nav" id="nextBtn">
+            Next <i class="bi bi-chevron-right"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="helpFab" class="help-fab" title="Help"><i class="bi bi-question-lg"></i></div>
+
+  <!-- Bootstrap JS bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    // Elements
+    const sidebar = document.getElementById('siteSidebar');
+    const themeToggle = document.getElementById('themeToggle');
+    const themeIcon = document.getElementById('themeIcon');
+    const htmlElement = document.documentElement;
+    const mobileNavbar = document.getElementById('mobileNavbar');
+    const navLinks = document.querySelectorAll('#mainNav .nav-link');
+    const currentDateElement = document.getElementById('currentDate');
+    const courseModal = document.getElementById('courseModal');
+    const closeModal = document.querySelector('.close-modal');
+    const moduleItems = document.querySelectorAll('.module-item');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const currentSlideEl = document.getElementById('currentSlide');
+    const totalSlidesEl = document.getElementById('totalSlides');
+    const modalModuleTitle = document.getElementById('modalModuleTitle');
+    const modalBody = document.getElementById('modalBody');
+
+    // Modal state
+    let currentSlide = 0;
+    let totalSlides = 0;
+    let currentModule = 1;
+    let slides = [];
+
+    // Data konten untuk setiap modul
+    const moduleContent = {
+      1: {
+        title: "Pengenalan HTML",
+        slides: [
+          {
+            title: "Apa itu HTML",
+            content: `
+              <p><strong>HTML (HyperText Markup Language)</strong> adalah bahasa markup yang digunakan untuk membuat struktur dan konten halaman web.</p>
+
+              <p>HTML bukan bahasa pemrograman, melainkan bahasa yang memberi makna dan susunan pada elemen di halaman web seperti teks, gambar, video, dan tautan.</p>
+
+              <p>Browser seperti Chrome atau Firefox membaca kode HTML dan menampilkannya menjadi halaman visual yang bisa dilihat pengguna.</p>
+            `
+          },
+          {
+            title: "Sejarah Singkat HTML",
+            content: `
+              <ul>
+                <li><strong>1991</strong> – HTML pertama kali diperkenalkan oleh <em>Tim Berners-Lee</em>.</li>
+                <li><strong>1995</strong> – HTML 2.0 dirilis, menambahkan dukungan untuk form dan tabel.</li>
+                <li><strong>1997</strong> – HTML 3.2 hadir dengan dukungan gambar, script, dan style.</li>
+                <li><strong>1999</strong> – HTML 4.01 menjadi standar web utama selama bertahun-tahun.</li>
+                <li><strong>2014</strong> – HTML5 diluncurkan, membawa elemen modern seperti <code>&lt;video&gt;</code>, <code>&lt;audio&gt;</code>, <code>&lt;section&gt;</code>, dan <code>&lt;article&gt;</code>.</li>
+              </ul>
+
+              <p>Saat ini, HTML5 adalah versi yang digunakan secara luas dan terus diperbarui oleh <strong>WHATWG</strong> (bukan W3C lagi).</p>
+            `
+          },
+          {
+            title: "Tools & Requirement",
+            content: `
+              <p>Untuk mulai belajar HTML, kamu tidak memerlukan instalasi rumit. Cukup siapkan alat berikut:</p>
+              <ul>
+                <li><strong>Browser:</strong> Google Chrome, Firefox, Edge, atau Safari.</li>
+                <li><strong>Code Editor:</strong> Visual Studio Code (disarankan), Sublime Text, atau Notepad++.</li>
+                <li><strong>Live Server Extension:</strong> (opsional) di VS Code, untuk menampilkan hasil HTML secara langsung di browser.</li>
+              </ul>
+
+              <p>Buat file baru dan simpan dengan ekstensi <code>.html</code>, misalnya <code>index.html</code>.</p>
+            `
+          },
+          {
+            title: "Struktur Dasar HTML",
+            content: `
+              <p>Berikut struktur dasar dokumen HTML5:</p>
+              <pre><code>&lt;!DOCTYPE html&gt;
+      &lt;html lang="en"&gt;
+        &lt;head&gt;
+          &lt;meta charset="UTF-8"&gt;
+          &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+          &lt;title&gt;Judul Halaman&lt;/title&gt;
+        &lt;/head&gt;
+        &lt;body&gt;
+          &lt;h1&gt;Halo Dunia!&lt;/h1&gt;
+          &lt;p&gt;Ini adalah paragraf pertama saya.&lt;/p&gt;
+        &lt;/body&gt;
+      &lt;/html&gt;
+      </code></pre>
+
+              <p><strong>Penjelasan singkat:</strong></p>
+              <ul>
+                <li><code>&lt;!DOCTYPE html&gt;</code> → Menandakan dokumen HTML5.</li>
+                <li><code>&lt;html&gt;</code> → Elemen root dari seluruh halaman.</li>
+                <li><code>&lt;head&gt;</code> → Berisi metadata dan informasi halaman.</li>
+                <li><code>&lt;body&gt;</code> → Tempat konten utama ditampilkan.</li>
+              </ul>
+            `
+          },
+          {
+            title: "Komentar di HTML",
+            content: `
+              <p>Komentar digunakan untuk memberi catatan di dalam kode HTML tanpa memengaruhi tampilan web.</p>
+
+              <pre><code>&lt;!-- Ini komentar --&gt;
+      &lt;p&gt;Ini teks yang akan tampil&lt;/p&gt;
+      &lt;!-- Komentar tidak akan muncul di browser --&gt;
+      </code></pre>
+
+              <p><strong>Fungsi komentar:</strong></p>
+              <ul>
+                <li>Menjelaskan bagian kode.</li>
+                <li>Menandai bagian penting.</li>
+                <li>Membantu kolaborasi antar developer.</li>
+              </ul>
+            `
+          },
+          {
+            title: "Video: Dasar HTML dan Struktur Halaman",
+            video: "https://www.youtube.com/embed/pQN-pnXPaVg", 
+            content: `
+              <p>Tonton video ini untuk memahami konsep dasar HTML, cara membuat file HTML baru, dan bagaimana browser menampilkan hasilnya.</p>
+              <p>Setelah menonton, coba buat sendiri file <code>index.html</code> sederhana menggunakan struktur yang sudah dijelaskan di materi sebelumnya.</p>
+            `
+          }
+        ]
+      },
+
+      2: {
+        title: "Struktur & Elemen Teks",
+        slides: [
+          {
+            title: "Heading (H1–H6)",
+            content: `
+              <p>Heading digunakan untuk memberi struktur hierarki pada halaman web. Ada 6 tingkatan heading, dari <code>&lt;h1&gt;</code> (paling penting) hingga <code>&lt;h6&gt;</code> (paling rendah).</p>
+
+              <pre><code>&lt;h1&gt;Judul Utama&lt;/h1&gt;
+      &lt;h2&gt;Subjudul&lt;/h2&gt;
+      &lt;h3&gt;Sub-subjudul&lt;/h3&gt;
+      &lt;h4&gt;Judul Level 4&lt;/h4&gt;
+      &lt;h5&gt;Judul Level 5&lt;/h5&gt;
+      &lt;h6&gt;Judul Level 6&lt;/h6&gt;</code></pre>
+
+              <p><strong>Tips:</strong> Gunakan heading sesuai struktur logika, bukan hanya untuk memperbesar ukuran teks. Heading juga membantu SEO dan pembaca layar.</p>
+            `
+          },
+          {
+            title: "Paragraf & Pemisah Baris",
+            content: `
+              <p>Elemen <code>&lt;p&gt;</code> digunakan untuk menulis teks dalam bentuk paragraf.</p>
+              <pre><code>&lt;p&gt;Ini adalah paragraf pertama.&lt;/p&gt;
+      &lt;p&gt;Ini adalah paragraf kedua.&lt;/p&gt;</code></pre>
+
+              <p>Untuk membuat baris baru di dalam paragraf tanpa memulai paragraf baru, gunakan <code>&lt;br&gt;</code>:</p>
+              <pre><code>Baris pertama&lt;br&gt;Baris kedua</code></pre>
+
+              <p>Untuk membuat garis horizontal pemisah antar bagian, gunakan <code>&lt;hr&gt;</code>:</p>
+              <pre><code>&lt;hr&gt;</code></pre>
+            `
+          },
+          {
+            title: "Formatting Text",
+            content: `
+              <p>HTML menyediakan berbagai elemen untuk memberi gaya dan makna pada teks:</p>
+
+              <ul>
+                <li><code>&lt;b&gt;</code> – teks tebal (tanpa makna semantik)</li>
+                <li><code>&lt;strong&gt;</code> – teks tebal dengan makna penting</li>
+                <li><code>&lt;i&gt;</code> – teks miring (tanpa makna semantik)</li>
+                <li><code>&lt;em&gt;</code> – teks miring dengan makna penekanan</li>
+                <li><code>&lt;u&gt;</code> – teks bergaris bawah</li>
+                <li><code>&lt;mark&gt;</code> – teks ditandai seperti stabilo</li>
+                <li><code>&lt;small&gt;</code> – teks berukuran lebih kecil</li>
+                <li><code>&lt;del&gt;</code> – teks dicoret (menandakan penghapusan)</li>
+                <li><code>&lt;ins&gt;</code> – teks bergaris bawah (menandakan penambahan)</li>
+                <li><code>&lt;sub&gt;</code> – teks subscript (tulisan bawah, contoh: H<sub>2</sub>O)</li>
+                <li><code>&lt;sup&gt;</code> – teks superscript (tulisan atas, contoh: x<sup>2</sup>)</li>
+              </ul>
+
+              <pre><code>&lt;p&gt;Ini adalah &lt;strong&gt;teks penting&lt;/strong&gt; dan &lt;em&gt;teks miring&lt;/em&gt;.&lt;/p&gt;
+      &lt;p&gt;Air kimia: H&lt;sub&gt;2&lt;/sub&gt;O dan rumus luas: x&lt;sup&gt;2&lt;/sup&gt;&lt;/p&gt;</code></pre>
+            `
+          },
+          {
+            title: "Quote & Citation",
+            content: `
+              <p>Untuk menampilkan kutipan atau referensi, HTML menyediakan beberapa elemen:</p>
+
+              <ul>
+                <li><code>&lt;blockquote&gt;</code> – untuk kutipan panjang.</li>
+                <li><code>&lt;q&gt;</code> – untuk kutipan pendek dalam satu baris.</li>
+                <li><code>&lt;cite&gt;</code> – untuk menandai sumber atau referensi.</li>
+                <li><code>&lt;abbr&gt;</code> – untuk singkatan atau akronim dengan keterangan.</li>
+              </ul>
+
+              <pre><code>&lt;blockquote&gt;
+        "Kegigihan adalah kunci sukses dalam belajar pemrograman."
+      &lt;/blockquote&gt;
+
+      &lt;p&gt;Seperti kata &lt;q&gt;Albert Einstein&lt;/q&gt;, imajinasi lebih penting dari pengetahuan.&lt;/p&gt;
+
+      &lt;p&gt;Artikel oleh &lt;cite&gt;OpenAI Blog&lt;/cite&gt;&lt;/p&gt;
+
+      &lt;p&gt;&lt;abbr title="HyperText Markup Language"&gt;HTML&lt;/abbr&gt; adalah bahasa dasar web.&lt;/p&gt;</code></pre>
+            `
+          },
+          {
+            title: "Preformatted & Code Text",
+            content: `
+              <p>Elemen berikut digunakan untuk menampilkan teks yang mempertahankan format aslinya, biasanya untuk kode atau teks teknis:</p>
+
+              <ul>
+                <li><code>&lt;pre&gt;</code> – mempertahankan spasi dan baris seperti di sumber.</li>
+                <li><code>&lt;code&gt;</code> – menandai potongan kode.</li>
+                <li><code>&lt;kbd&gt;</code> – menunjukkan input dari keyboard.</li>
+                <li><code>&lt;samp&gt;</code> – menunjukkan output dari sistem atau program.</li>
+              </ul>
+
+              <pre><code>&lt;pre&gt;
+      for (let i = 0; i &lt; 5; i++) {
+        console.log(i);
+      }
+      &lt;/pre&gt;
+
+      &lt;p&gt;Gunakan &lt;code&gt;console.log()&lt;/code&gt; untuk menampilkan output.&lt;/p&gt;
+
+      &lt;p&gt;Tekan &lt;kbd&gt;Ctrl&lt;/kbd&gt; + &lt;kbd&gt;S&lt;/kbd&gt; untuk menyimpan.&lt;/p&gt;
+
+      &lt;p&gt;Hasil program: &lt;samp&gt;File berhasil disimpan&lt;/samp&gt;&lt;/p&gt;</code></pre>
+            `
+          },
+          {
+            title: "Video: Elemen Teks HTML",
+            video: "https://www.youtube.com/embed/5bMDWn0n7zE",
+            content: `
+              <p>Tonton video ini untuk melihat cara penggunaan berbagai elemen teks HTML secara langsung di browser.</p>
+              <p>Setelah menonton, coba latihan dengan membuat halaman berisi heading, paragraf, dan format teks yang berbeda.</p>
+            `
+          }
+        ]
+      },
+
+      3: {
+        title: "Link & Navigasi",
+        slides: [
+          {
+            title: "Anchor Tag (<a>)",
+            content: `
+              <p>Elemen <code>&lt;a&gt;</code> atau <strong>anchor tag</strong> digunakan untuk membuat tautan (link) ke halaman lain, file, atau lokasi tertentu di dalam halaman.</p>
+
+              <pre><code>&lt;a href="https://www.google.com"&gt;Kunjungi Google&lt;/a&gt;</code></pre>
+
+              <p>Ketika pengguna mengklik teks di dalam tag <code>&lt;a&gt;</code>, browser akan membuka halaman tujuan yang didefinisikan dalam atribut <code>href</code>.</p>
+            `
+          },
+          {
+            title: "Attribute href, target, dan title",
+            content: `
+              <p>Anchor tag memiliki beberapa atribut penting yang menentukan cara link bekerja:</p>
+
+              <ul>
+                <li><strong>href</strong> – menentukan alamat tujuan tautan.</li>
+                <li><strong>target</strong> – menentukan di mana link dibuka.</li>
+                <li><strong>title</strong> – menampilkan teks tambahan saat kursor diarahkan ke link.</li>
+              </ul>
+
+              <pre><code>&lt;a href="https://www.example.com" target="_blank" title="Buka situs Example"&gt;
+        Kunjungi Example
+      &lt;/a&gt;
+      </code></pre>
+
+              <p><strong>Keterangan:</strong></p>
+              <ul>
+                <li><code>target="_blank"</code> → membuka link di tab baru.</li>
+                <li><code>target="_self"</code> → membuka link di tab yang sama (default).</li>
+                <li><code>title</code> → menampilkan tooltip kecil saat hover.</li>
+              </ul>
+            `
+          },
+          {
+            title: "Internal Link & Anchor Link",
+            content: `
+              <p><strong>Internal link</strong> digunakan untuk menautkan halaman lain dalam satu website, sedangkan <strong>anchor link</strong> menautkan ke bagian tertentu dalam halaman yang sama.</p>
+
+              <h4>Contoh Internal Link:</h4>
+              <pre><code>&lt;a href="about.html"&gt;Tentang Kami&lt;/a&gt;</code></pre>
+
+              <h4>Contoh Anchor Link:</h4>
+              <pre><code>&lt;a href="#kontak"&gt;Ke Bagian Kontak&lt;/a&gt;
+
+      &lt;!-- Bagian tujuan --&gt;
+      &lt;h2 id="kontak"&gt;Kontak Kami&lt;/h2&gt;
+      &lt;p&gt;Hubungi kami melalui formulir berikut...&lt;/p&gt;</code></pre>
+
+              <p><strong>Tips:</strong> Gunakan <code>id</code> unik agar anchor link bisa bekerja dengan benar.</p>
+            `
+          },
+          {
+            title: "Link ke Email dan Telepon",
+            content: `
+              <p>HTML memungkinkan kita membuat tautan langsung ke email atau nomor telepon dengan format khusus pada atribut <code>href</code>:</p>
+
+              <h4>Contoh Link ke Email:</h4>
+              <pre><code>&lt;a href="mailto:info@contoh.com"&gt;Kirim Email&lt;/a&gt;</code></pre>
+
+              <h4>Contoh Link ke Telepon:</h4>
+              <pre><code>&lt;a href="tel:+6281234567890"&gt;Hubungi Kami&lt;/a&gt;</code></pre>
+
+              <p><strong>Keterangan:</strong></p>
+              <ul>
+                <li><code>mailto:</code> membuka aplikasi email default pengguna.</li>
+                <li><code>tel:</code> membuka aplikasi telepon di perangkat mobile.</li>
+              </ul>
+            `
+          },
+          {
+            title: "Membuat Navigation Bar Dasar",
+            content: `
+              <p>Navigation bar (navbar) biasanya berisi kumpulan tautan untuk berpindah antar halaman.</p>
+
+              <pre><code>&lt;nav&gt;
+        &lt;a href="index.html"&gt;Beranda&lt;/a&gt;
+        &lt;a href="about.html"&gt;Tentang&lt;/a&gt;
+        &lt;a href="services.html"&gt;Layanan&lt;/a&gt;
+        &lt;a href="contact.html"&gt;Kontak&lt;/a&gt;
+      &lt;/nav&gt;</code></pre>
+
+              <p>Dengan CSS, navbar ini bisa dibuat horizontal:</p>
+
+              <pre><code>nav a {
+        text-decoration: none;
+        color: black;
+        margin: 10px;
+      }
+
+      nav a:hover {
+        color: blue;
+        text-decoration: underline;
+      }</code></pre>
+
+              <p><strong>Tips:</strong> Gunakan elemen <code>&lt;nav&gt;</code> untuk menandai area navigasi utama agar struktur halaman lebih semantik.</p>
+            `
+          },
+          {
+            title: "Video: Membuat Link & Navigasi HTML",
+            video: "https://www.youtube.com/embed/qg5-hE-T6O0",
+            content: `
+              <p>Tonton video ini untuk mempelajari cara membuat tautan, anchor link, dan navbar sederhana menggunakan HTML.</p>
+              <p>Setelah menonton, cobalah membuat halaman web dengan navigasi antar section dan link eksternal.</p>
+            `
+          }
+        ]
+      },
+      4: {
+        title: "Gambar & Media",
+        slides: [
+          {
+            title: "Tag <img> dan Atribut Dasar",
+            content: `
+              <p>Tag <code>&lt;img&gt;</code> digunakan untuk menampilkan gambar di halaman web. Tag ini bersifat <em>self-closing</em> (tidak perlu tag penutup).</p>
+
+              <p><strong>Atribut penting:</strong></p>
+              <ul>
+                <li><code>src</code> – menentukan sumber gambar (path atau URL)</li>
+                <li><code>alt</code> – teks alternatif jika gambar gagal dimuat</li>
+                <li><code>width</code> dan <code>height</code> – mengatur ukuran tampilan gambar</li>
+              </ul>
+
+              <p><strong>Contoh:</strong></p>
+              <pre><code>&lt;img src="images/logo.png" alt="Logo Website" width="200" height="200"&gt;</code></pre>
+
+              <p><strong>Catatan:</strong> Gunakan atribut <code>alt</code> untuk aksesibilitas dan SEO yang lebih baik.</p>
+            `
+          },
+          {
+            title: "Menambahkan Audio ke Halaman",
+            content: `
+              <p>Untuk menambahkan suara atau musik, gunakan tag <code>&lt;audio&gt;</code>. Kamu dapat mengontrolnya dengan atribut seperti <code>controls</code>, <code>autoplay</code>, dan <code>loop</code>.</p>
+
+              <p><strong>Contoh:</strong></p>
+              <pre><code>&lt;audio controls&gt;
+        &lt;source src="audio/background.mp3" type="audio/mpeg"&gt;
+        Browser kamu tidak mendukung elemen audio.
+      &lt;/audio&gt;</code></pre>
+
+              <ul>
+                <li><code>controls</code>: menampilkan tombol play/pause, volume, dll</li>
+                <li><code>autoplay</code>: otomatis memutar audio saat halaman dimuat</li>
+                <li><code>loop</code>: mengulang audio terus-menerus</li>
+              </ul>
+            `
+          },
+          {
+            title: "Menampilkan Video",
+            content: `
+              <p>Tag <code>&lt;video&gt;</code> digunakan untuk menampilkan video di halaman web. Seperti <code>&lt;audio&gt;</code>, elemen ini bisa memakai atribut <code>controls</code>, <code>autoplay</code>, dan <code>loop</code>.</p>
+
+              <p><strong>Contoh:</strong></p>
+              <pre><code>&lt;video width="640" height="360" controls poster="thumbnail.jpg"&gt;
+        &lt;source src="videos/tutorial.mp4" type="video/mp4"&gt;
+        Browser kamu tidak mendukung elemen video.
+      &lt;/video&gt;</code></pre>
+
+              <ul>
+                <li><code>poster</code>: menampilkan gambar thumbnail sebelum video diputar</li>
+                <li><code>controls</code>: menampilkan tombol kontrol video</li>
+                <li><code>autoplay</code> dan <code>loop</code> juga dapat ditambahkan sesuai kebutuhan</li>
+              </ul>
+            `
+          },
+          {
+            title: "Menyematkan Media dari YouTube & Sumber Lain (iframe)",
+            content: `
+              <p>Untuk menampilkan video dari situs seperti YouTube, gunakan tag <code>&lt;iframe&gt;</code>.</p>
+
+              <p><strong>Contoh:</strong></p>
+              <pre><code>&lt;iframe width="560" height="315"
+        src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen&gt;&lt;/iframe&gt;</code></pre>
+
+              <p><strong>Tips:</strong> Kamu juga bisa pakai <code>&lt;iframe&gt;</code> untuk menyematkan peta (Google Maps), dokumen, atau konten eksternal lainnya.</p>
+            `
+          },
+          {
+            title: "Video: Mengelola Gambar & Media di HTML",
+            video: "https://www.youtube.com/embed/Y0HVnPPhs0k",
+            content: `
+              <p>Tonton video ini untuk melihat cara menggunakan tag <code>&lt;img&gt;</code>, <code>&lt;audio&gt;</code>, <code>&lt;video&gt;</code>, dan <code>&lt;iframe&gt;</code> secara praktis di halaman web.</p>
+            `
+          }
+        ]
+      },
+      5: {
+        title: "List",
+        slides: [
+          {
+            title: "Ordered List",
+            content: `
+              <p>Ordered List digunakan untuk membuat list yang memiliki urutan angka (1, 2, 3, ...). Setiap item list ditulis dalam tag <code>&lt;li&gt;</code> (list item).</p>
+
+              <p><strong>Contoh:</strong></p>
+              <pre><code>&lt;ol&gt;
+        &lt;li&gt;HTML&lt;/li&gt;
+        &lt;li&gt;CSS&lt;/li&gt;
+        &lt;li&gt;JavaScript&lt;/li&gt;
+      &lt;/ol&gt;</code></pre>
+
+              <p><strong>Hasil:</strong></p>
+              <ol>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+              </ol>
+
+              <p><strong>Tips:</strong> Kamu juga bisa mengubah tipe penomoran dengan atribut <code>type</code> (misal <code>type="A"</code> atau <code>type="i"</code>).</p>
+            `
+          },
+          {
+            title: "Unordered List",
+            content: `
+              <p>Unordered List digunakan untuk membuat list tanpa urutan (biasanya menggunakan bullet).</p>
+
+              <p><strong>Contoh:</strong></p>
+              <pre><code>&lt;ul&gt;
+        &lt;li&gt;Apel&lt;/li&gt;
+        &lt;li&gt;Jeruk&lt;/li&gt;
+        &lt;li&gt;Mangga&lt;/li&gt;
+      &lt;/ul&gt;</code></pre>
+
+              <p><strong>Hasil:</strong></p>
+              <ul>
+                <li>Apel</li>
+                <li>Jeruk</li>
+                <li>Mangga</li>
+              </ul>
+
+              <p><strong>Catatan:</strong> Tag <code>&lt;ul&gt;</code> sering digunakan untuk membuat navigasi (navbar) dalam kombinasi dengan CSS.</p>
+            `
+          },
+          {
+            title: "Description List",
+            content: `
+              <p>Description List digunakan untuk membuat list berpasangan antara istilah dan penjelasannya.</p>
+
+              <ul>
+                <li><code>&lt;dl&gt;</code> — container utama list.</li>
+                <li><code>&lt;dt&gt;</code> — istilah (definition term).</li>
+                <li><code>&lt;dd&gt;</code> — deskripsi atau penjelasan istilah.</li>
+              </ul>
+
+              <p><strong>Contoh:</strong></p>
+              <pre><code>&lt;dl&gt;
+        &lt;dt&gt;HTML&lt;/dt&gt;
+        &lt;dd&gt;Bahasa markup untuk membuat struktur halaman web.&lt;/dd&gt;
+        &lt;dt&gt;CSS&lt;/dt&gt;
+        &lt;dd&gt;Bahasa untuk mengatur tampilan dan gaya halaman web.&lt;/dd&gt;
+      &lt;/dl&gt;</code></pre>
+
+              <p><strong>Hasil:</strong></p>
+              <dl>
+                <dt>HTML</dt>
+                <dd>Bahasa markup untuk membuat struktur halaman web.</dd>
+                <dt>CSS</dt>
+                <dd>Bahasa untuk mengatur tampilan dan gaya halaman web.</dd>
+              </dl>
+            `
+          },
+          {
+            title: "Video: Membuat List di HTML",
+            video: "https://www.youtube.com/embed/8J8w7IhYV3Q",
+            content: `
+              <p>Tonton video ini untuk memahami cara membuat berbagai jenis list di HTML, serta kapan sebaiknya menggunakan masing-masing struktur.</p>
+            `
+          }
+        ]
+      },
+      6: {
+        title: "Tabel Lanjutan",
+        slides: [
+          {
+            title: "Tabel Dasar",
+            content: `
+              <p>
+                Tabel di HTML dibuat menggunakan tag <code>&lt;table&gt;</code>.
+                Setiap baris didefinisikan dengan <code>&lt;tr&gt;</code>,
+                dan di dalamnya berisi sel data <code>&lt;td&gt;</code>
+                atau header kolom <code>&lt;th&gt;</code>.
+              </p>
+
+              <p><strong>Contoh:</strong></p>
+              <pre><code>&lt;table border="1"&gt;
+        &lt;tr&gt;
+          &lt;th&gt;Nama&lt;/th&gt;
+          &lt;th&gt;Posisi&lt;/th&gt;
+          &lt;th&gt;Tim&lt;/th&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td&gt;Lionel Messi&lt;/td&gt;
+          &lt;td&gt;Forward&lt;/td&gt;
+          &lt;td&gt;Inter Miami&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td&gt;Erling Haaland&lt;/td&gt;
+          &lt;td&gt;Striker&lt;/td&gt;
+          &lt;td&gt;Manchester City&lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/table&gt;
+      </code></pre>
+
+              <p><strong>Hasil:</strong></p>
+              <table border="1">
+                <tr>
+                  <th>Nama</th>
+                  <th>Posisi</th>
+                  <th>Tim</th>
+                </tr>
+                <tr>
+                  <td>Lionel Messi</td>
+                  <td>Forward</td>
+                  <td>Inter Miami</td>
+                </tr>
+                <tr>
+                  <td>Erling Haaland</td>
+                  <td>Striker</td>
+                  <td>Manchester City</td>
+                </tr>
+              </table>
+
+              <p>
+                <strong>Tips:</strong> Gunakan <code>&lt;th&gt;</code> untuk judul kolom agar lebih jelas secara semantik dan lebih mudah dibaca oleh screen reader.
+              </p>
+            `
+          },
+          {
+            title: "Menggabungkan Sel (rowspan & colspan)",
+            content: `
+              <p>
+                Kadang kita perlu menggabungkan beberapa sel menjadi satu, baik secara vertikal (baris)
+                maupun horizontal (kolom). Gunakan atribut <code>rowspan</code> dan <code>colspan</code> untuk itu.
+              </p>
+
+              <p><strong>Contoh:</strong></p>
+              <pre><code>&lt;table border="1"&gt;
+        &lt;tr&gt;
+          &lt;th rowspan="2"&gt;Nama&lt;/th&gt;
+          &lt;th colspan="2"&gt;Nilai&lt;/th&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;th&gt;Teori&lt;/th&gt;
+          &lt;th&gt;Praktik&lt;/th&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td&gt;Ali&lt;/td&gt;
+          &lt;td&gt;85&lt;/td&gt;
+          &lt;td&gt;90&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td&gt;Budi&lt;/td&gt;
+          &lt;td&gt;88&lt;/td&gt;
+          &lt;td&gt;92&lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/table&gt;
+      </code></pre>
+
+              <p><strong>Hasil:</strong></p>
+              <table border="1">
+                <tr>
+                  <th rowspan="2">Nama</th>
+                  <th colspan="2">Nilai</th>
+                </tr>
+                <tr>
+                  <th>Teori</th>
+                  <th>Praktik</th>
+                </tr>
+                <tr>
+                  <td>Ali</td>
+                  <td>85</td>
+                  <td>90</td>
+                </tr>
+                <tr>
+                  <td>Budi</td>
+                  <td>88</td>
+                  <td>92</td>
+                </tr>
+              </table>
+
+              <p>
+                <strong>Penjelasan:</strong><br>
+                - <code>rowspan="2"</code> → sel memanjang ke bawah sebanyak 2 baris.<br>
+                - <code>colspan="2"</code> → sel memanjang ke samping sebanyak 2 kolom.
+              </p>
+            `
+          },
+          {
+            title: "Caption & Grouping (thead, tbody, tfoot)",
+            content: `
+              <p>
+                Tabel yang kompleks sebaiknya memiliki struktur yang lebih terorganisir menggunakan
+                <code>&lt;caption&gt;</code>, <code>&lt;thead&gt;</code>, <code>&lt;tbody&gt;</code>, dan
+                <code>&lt;tfoot&gt;</code>.
+              </p>
+
+              <ul>
+                <li><code>&lt;caption&gt;</code> — memberi judul atau deskripsi tabel.</li>
+                <li><code>&lt;thead&gt;</code> — berisi baris header kolom.</li>
+                <li><code>&lt;tbody&gt;</code> — berisi data utama tabel.</li>
+                <li><code>&lt;tfoot&gt;</code> — berisi ringkasan atau total di akhir tabel.</li>
+              </ul>
+
+              <p><strong>Contoh:</strong></p>
+              <pre><code>&lt;table border="1"&gt;
+        &lt;caption&gt;Daftar Penjualan Bulanan&lt;/caption&gt;
+
+        &lt;thead&gt;
+          &lt;tr&gt;
+            &lt;th&gt;Bulan&lt;/th&gt;
+            &lt;th&gt;Produk&lt;/th&gt;
+            &lt;th&gt;Jumlah&lt;/th&gt;
+          &lt;/tr&gt;
+        &lt;/thead&gt;
+
+        &lt;tbody&gt;
+          &lt;tr&gt;
+            &lt;td&gt;Januari&lt;/td&gt;
+            &lt;td&gt;Laptop&lt;/td&gt;
+            &lt;td&gt;25&lt;/td&gt;
+          &lt;/tr&gt;
+          &lt;tr&gt;
+            &lt;td&gt;Februari&lt;/td&gt;
+            &lt;td&gt;Monitor&lt;/td&gt;
+            &lt;td&gt;18&lt;/td&gt;
+          &lt;/tr&gt;
+        &lt;/tbody&gt;
+
+        &lt;tfoot&gt;
+          &lt;tr&gt;
+            &lt;td colspan="2"&gt;Total Penjualan&lt;/td&gt;
+            &lt;td&gt;43&lt;/td&gt;
+          &lt;/tr&gt;
+        &lt;/tfoot&gt;
+      &lt;/table&gt;
+      </code></pre>
+
+              <p><strong>Hasil:</strong></p>
+              <table border="1">
+                <caption>Daftar Penjualan Bulanan</caption>
+                <thead>
+                  <tr>
+                    <th>Bulan</th>
+                    <th>Produk</th>
+                    <th>Jumlah</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Januari</td>
+                    <td>Laptop</td>
+                    <td>25</td>
+                  </tr>
+                  <tr>
+                    <td>Februari</td>
+                    <td>Monitor</td>
+                    <td>18</td>
+                  </tr>
+                </tbody>
+                <tfoot>
+                  <tr>
+                    <td colspan="2">Total Penjualan</td>
+                    <td>43</td>
+                  </tr>
+                </tfoot>
+              </table>
+
+              <p>
+                <strong>Tips:</strong> Penggunaan <code>&lt;thead&gt;</code> dan <code>&lt;tfoot&gt;</code>
+                sangat membantu saat tabel digulir panjang, terutama dalam tabel data besar.
+              </p>
+            `
+          },
+          {
+            title: "Video: Struktur Tabel Lanjutan di HTML",
+            video: "https://www.youtube.com/embed/FnFSBjFvK2o",
+            content: `
+              <p>
+                Tonton video ini untuk memahami cara membuat tabel profesional dengan penggunaan
+                <code>rowspan</code>, <code>colspan</code>, serta <code>thead</code> dan <code>tfoot</code>.
+              </p>
+            `
+          }
+        ]
+      },
+      7: {
+        title: "Formulir (Form)",
+        slides: [
+          {
+            title: "Form dan Attribut",
+            content: `
+              <p>
+                Tag <code>&lt;form&gt;</code> digunakan untuk membuat formulir di HTML.
+                Di dalamnya bisa berisi berbagai elemen input seperti text, checkbox, radio, dll.
+              </p>
+
+              <ul>
+                <li><strong>action:</strong> menentukan ke mana data dikirim (biasanya ke file backend seperti PHP atau API).</li>
+                <li><strong>method:</strong> cara pengiriman data, bisa <code>GET</code> atau <code>POST</code>.</li>
+              </ul>
+
+              <pre><code>&lt;form action="/submit" method="POST"&gt;
+        &lt;label&gt;Nama:&lt;/label&gt;
+        &lt;input type="text" name="nama"&gt;
+        &lt;input type="submit" value="Kirim"&gt;
+      &lt;/form&gt;
+      </code></pre>
+
+              <p><strong>Penjelasan:</strong></p>
+              <ul>
+                <li><code>GET</code> → data dikirim lewat URL (biasanya untuk pencarian).</li>
+                <li><code>POST</code> → data dikirim tersembunyi (lebih aman untuk form login/registrasi).</li>
+              </ul>
+            `
+          },
+          {
+            title: "Input Dasar",
+            content: `
+              <p>
+                Elemen <code>&lt;input&gt;</code> digunakan untuk menerima berbagai jenis data.
+                Jenis input ditentukan lewat atribut <code>type</code>.
+              </p>
+
+              <pre><code>&lt;form&gt;
+        &lt;input type="text" placeholder="Nama Lengkap"&gt;&lt;br&gt;
+        &lt;input type="password" placeholder="Kata Sandi"&gt;&lt;br&gt;
+        &lt;input type="email" placeholder="Email"&gt;&lt;br&gt;
+        &lt;input type="number" placeholder="Umur"&gt;&lt;br&gt;
+        &lt;input type="file"&gt;&lt;br&gt;
+        &lt;input type="date"&gt;&lt;br&gt;
+        &lt;input type="radio" name="gender" value="L"&gt; Laki-laki
+        &lt;input type="radio" name="gender" value="P"&gt; Perempuan &lt;br&gt;
+        &lt;input type="checkbox" name="agree"&gt; Saya setuju &lt;br&gt;
+        &lt;input type="submit" value="Kirim"&gt;
+        &lt;input type="reset" value="Reset"&gt;
+      &lt;/form&gt;
+      </code></pre>
+
+              <p><strong>Penjelasan:</strong></p>
+              <ul>
+                <li><code>text</code> → input teks biasa.</li>
+                <li><code>password</code> → teks disembunyikan.</li>
+                <li><code>email</code> → validasi email otomatis.</li>
+                <li><code>number</code> → hanya angka yang bisa diinput.</li>
+                <li><code>file</code> → upload file.</li>
+                <li><code>date</code> → memilih tanggal.</li>
+                <li><code>radio</code> → memilih satu dari beberapa opsi.</li>
+                <li><code>checkbox</code> → memilih lebih dari satu opsi.</li>
+                <li><code>submit</code> → kirim data.</li>
+                <li><code>reset</code> → hapus semua input.</li>
+                <li><code>hidden</code> → menyimpan data tersembunyi.</li>
+              </ul>
+            `
+          },
+          {
+            title: "Label & Placeholder",
+            content: `
+              <p>
+                <code>&lt;label&gt;</code> digunakan untuk memberikan teks penjelas pada input.
+                Sedangkan <code>placeholder</code> memberi contoh teks di dalam input.
+              </p>
+
+              <pre><code>&lt;form&gt;
+        &lt;label for="username"&gt;Username:&lt;/label&gt;
+        &lt;input id="username" type="text" placeholder="Masukkan username"&gt;
+      &lt;/form&gt;
+      </code></pre>
+
+              <p>
+                <strong>Tips:</strong> Gunakan atribut <code>for</code> pada label yang sama dengan <code>id</code> input agar lebih mudah diklik.
+              </p>
+            `
+          },
+          {
+            title: "Select & Option",
+            content: `
+              <p>
+                Elemen <code>&lt;select&gt;</code> digunakan untuk membuat dropdown menu, dan di dalamnya berisi beberapa <code>&lt;option&gt;</code>.
+              </p>
+
+              <pre><code>&lt;form&gt;
+        &lt;label for="kota"&gt;Pilih Kota:&lt;/label&gt;
+        &lt;select id="kota"&gt;
+          &lt;option value="smd"&gt;Samarinda&lt;/option&gt;
+          &lt;option value="jkt"&gt;Jakarta&lt;/option&gt;
+          &lt;option value="bdg"&gt;Bandung&lt;/option&gt;
+        &lt;/select&gt;
+      &lt;/form&gt;
+      </code></pre>
+
+              <p>
+                <strong>Tips:</strong> Kamu bisa menambahkan atribut <code>selected</code> pada salah satu <code>&lt;option&gt;</code> untuk menjadikannya default.
+              </p>
+            `
+          },
+          {
+            title: "Textarea",
+            content: `
+              <p>
+                <code>&lt;textarea&gt;</code> digunakan untuk input teks panjang seperti komentar atau deskripsi.
+              </p>
+
+              <pre><code>&lt;textarea rows="4" cols="50" placeholder="Tulis komentar di sini..."&gt;&lt;/textarea&gt;
+      </code></pre>
+
+              <p><strong>Tips:</strong> Kamu bisa ubah ukuran default dengan CSS atau atribut <code>rows</code> dan <code>cols</code>.</p>
+            `
+          },
+          {
+            title: "Fieldset & Legend",
+            content: `
+              <p>
+                Gunakan <code>&lt;fieldset&gt;</code> untuk mengelompokkan input yang sejenis, dan <code>&lt;legend&gt;</code> untuk memberi judul pada grup tersebut.
+              </p>
+
+              <pre><code>&lt;fieldset&gt;
+        &lt;legend&gt;Data Pribadi&lt;/legend&gt;
+        &lt;label&gt;Nama:&lt;/label&gt;
+        &lt;input type="text"&gt;&lt;br&gt;
+        &lt;label&gt;Umur:&lt;/label&gt;
+        &lt;input type="number"&gt;
+      &lt;/fieldset&gt;
+      </code></pre>
+
+              <p>Elemen ini bikin tampilan form lebih rapi dan terstruktur.</p>
+            `
+          },
+          {
+            title: "Datalist",
+            content: `
+              <p>
+                <code>&lt;datalist&gt;</code> menyediakan daftar saran otomatis saat pengguna mengetik di input.
+              </p>
+
+              <pre><code>&lt;label for="browser"&gt;Pilih Browser:&lt;/label&gt;
+      &lt;input list="browsers" id="browser" name="browser"&gt;
+
+      &lt;datalist id="browsers"&gt;
+        &lt;option value="Google Chrome"&gt;
+        &lt;option value="Mozilla Firefox"&gt;
+        &lt;option value="Microsoft Edge"&gt;
+        &lt;option value="Safari"&gt;
+      &lt;/datalist&gt;
+      </code></pre>
+
+              <p><strong>Tips:</strong> Cocok digunakan untuk autofill cepat tanpa perlu dropdown penuh.</p>
+            `
+          },
+          {
+            title: "Input Validation",
+            content: `
+              <p>
+                HTML menyediakan atribut validasi otomatis untuk memastikan input sesuai ketentuan.
+              </p>
+
+              <ul>
+                <li><code>required</code> → wajib diisi.</li>
+                <li><code>minlength</code> / <code>maxlength</code> → panjang minimal dan maksimal teks.</li>
+                <li><code>pattern</code> → validasi format input menggunakan regex.</li>
+              </ul>
+
+              <pre><code>&lt;form&gt;
+        &lt;input type="text" required minlength="3" maxlength="10" placeholder="Nama (3-10 huruf)"&gt;&lt;br&gt;
+        &lt;input type="email" required placeholder="Masukkan email"&gt;&lt;br&gt;
+        &lt;input type="text" pattern="[0-9]{4}" placeholder="Kode 4 digit"&gt;&lt;br&gt;
+        &lt;button type="submit"&gt;Kirim&lt;/button&gt;
+      &lt;/form&gt;
+      </code></pre>
+
+              <p><strong>Tips:</strong> Validasi ini bisa dikombinasikan dengan JavaScript untuk kontrol lebih lanjut.</p>
+            `
+          },
+          {
+            title: "Button",
+            content: `
+              <p>
+                Selain <code>&lt;input type="submit"&gt;</code>, kamu bisa pakai <code>&lt;button&gt;</code> untuk tombol yang lebih fleksibel.
+              </p>
+
+              <pre><code>&lt;button type="submit"&gt;Kirim&lt;/button&gt;
+      &lt;button type="reset"&gt;Reset&lt;/button&gt;
+      &lt;button type="button" onclick="alert('Halo!')"&gt;Klik Aku&lt;/button&gt;
+      </code></pre>
+
+              <p><strong>Tips:</strong> Gunakan <code>type="button"</code> kalau tombolnya tidak ingin mengirim form.</p>
+            `
+          },
+          {
+            title: "Form Attribute (autocomplete, novalidate, readonly, disabled)",
+            content: `
+              <ul>
+                <li><code>autocomplete</code> → mengaktifkan atau menonaktifkan auto-suggestion.</li>
+                <li><code>novalidate</code> → menonaktifkan semua validasi form.</li>
+                <li><code>readonly</code> → membuat input hanya bisa dibaca, tidak diubah.</li>
+                <li><code>disabled</code> → membuat input tidak bisa diklik atau diisi.</li>
+              </ul>
+
+              <pre><code>&lt;form autocomplete="off" novalidate&gt;
+        &lt;input type="text" value="Contoh" readonly&gt;&lt;br&gt;
+        &lt;input type="text" value="Tidak aktif" disabled&gt;&lt;br&gt;
+        &lt;button type="submit"&gt;Kirim&lt;/button&gt;
+      &lt;/form&gt;
+      </code></pre>
+
+              <p><strong>Tips:</strong> Gunakan <code>readonly</code> untuk menampilkan data yang boleh dilihat tapi tidak diubah user (misalnya username).</p>
+            `
+          },
+          {
+            title: "Video: Membuat Form Interaktif di HTML",
+            video: "https://www.youtube.com/embed/5KjqQvE5b0g",
+            content: `
+              <p>
+                Tonton video ini untuk memahami cara kerja form HTML, berbagai jenis input, dan validasi dasar.
+              </p>
+            `
+          }
+        ]
+      },
+      8: {
+        title: "Elemen Struktur & Semantik",
+        slides: [
+          {
+            title: "Pengenalan Elemen Struktur HTML",
+            content: `
+              <p>
+                Dalam HTML5, elemen struktur digunakan untuk memberikan makna (semantik) pada bagian-bagian halaman.
+                Elemen-elemen ini membantu browser, developer, dan mesin pencari memahami fungsi tiap bagian dari halaman web.
+              </p>
+
+              <ul>
+                <li><code>&lt;header&gt;</code> — bagian kepala halaman atau artikel, biasanya berisi logo, judul, dan navigasi utama.</li>
+                <li><code>&lt;nav&gt;</code> — bagian navigasi, berisi tautan ke halaman lain atau bagian lain dari situs.</li>
+                <li><code>&lt;section&gt;</code> — bagian yang berisi sekelompok konten yang saling berhubungan.</li>
+                <li><code>&lt;article&gt;</code> — konten independen yang bisa berdiri sendiri seperti postingan blog, berita, atau artikel.</li>
+                <li><code>&lt;aside&gt;</code> — konten tambahan seperti sidebar, catatan samping, atau iklan.</li>
+                <li><code>&lt;footer&gt;</code> — bagian kaki halaman atau artikel, biasanya berisi informasi kontak atau hak cipta.</li>
+              </ul>
+
+              <pre><code>
+      &lt;header&gt;
+        &lt;h1&gt;Belajar HTML&lt;/h1&gt;
+        &lt;nav&gt;
+          &lt;a href="#"&gt;Home&lt;/a&gt;
+          &lt;a href="#"&gt;Tentang&lt;/a&gt;
+          &lt;a href="#"&gt;Kontak&lt;/a&gt;
+        &lt;/nav&gt;
+      &lt;/header&gt;
+
+      &lt;section&gt;
+        &lt;article&gt;
+          &lt;h2&gt;Judul Artikel&lt;/h2&gt;
+          &lt;p&gt;Isi artikel di sini...&lt;/p&gt;
+        &lt;/article&gt;
+      &lt;/section&gt;
+
+      &lt;aside&gt;
+        &lt;p&gt;Konten sampingan atau sidebar.&lt;/p&gt;
+      &lt;/aside&gt;
+
+      &lt;footer&gt;
+        &lt;p&gt;&copy; 2025 Belajar HTML&lt;/p&gt;
+      &lt;/footer&gt;
+              </code></pre>
+            `
+          },
+          {
+            title: "Elemen main, figure, dan figcaption",
+            content: `
+              <p>
+                Selain elemen utama seperti <code>&lt;header&gt;</code> dan <code>&lt;footer&gt;</code>, 
+                ada juga elemen lain yang berfungsi untuk memperjelas struktur halaman.
+              </p>
+
+              <ul>
+                <li><code>&lt;main&gt;</code> — bagian utama dari dokumen, hanya boleh ada satu per halaman.</li>
+                <li><code>&lt;figure&gt;</code> — digunakan untuk membungkus gambar, diagram, atau ilustrasi.</li>
+                <li><code>&lt;figcaption&gt;</code> — memberikan keterangan pada elemen <code>&lt;figure&gt;</code>.</li>
+              </ul>
+
+              <pre><code>
+      &lt;main&gt;
+        &lt;h2&gt;Tentang Kami&lt;/h2&gt;
+        &lt;p&gt;Kami menyediakan kursus pemrograman web untuk pemula hingga mahir.&lt;/p&gt;
+
+        &lt;figure&gt;
+          &lt;img src="team.jpg" alt="Tim Pengajar"&gt;
+          &lt;figcaption&gt;Tim pengajar kami yang berpengalaman.&lt;/figcaption&gt;
+        &lt;/figure&gt;
+      &lt;/main&gt;
+              </code></pre>
+            `
+          },
+          {
+            title: "Div dan Span",
+            content: `
+              <p>
+                Elemen <code>&lt;div&gt;</code> dan <code>&lt;span&gt;</code> merupakan elemen non-semantik 
+                yang digunakan untuk pengelompokan konten.
+              </p>
+
+              <ul>
+                <li><code>&lt;div&gt;</code> — digunakan untuk membungkus elemen blok, sering digunakan untuk layout atau container.</li>
+                <li><code>&lt;span&gt;</code> — digunakan untuk membungkus teks atau elemen inline untuk keperluan styling atau scripting.</li>
+              </ul>
+
+              <pre><code>
+      &lt;div class="kontainer"&gt;
+        &lt;h2&gt;Produk&lt;/h2&gt;
+        &lt;p&gt;
+          Produk kami terdiri dari 
+          &lt;span class="highlight"&gt;barang berkualitas tinggi&lt;/span&gt; 
+          dengan harga terjangkau.
+        &lt;/p&gt;
+      &lt;/div&gt;
+              </code></pre>
+            `
+          },
+          {
+            title: "Tag Semantik vs Non-Semantik",
+            content: `
+              <p>
+                Perbedaan utama antara tag semantik dan non-semantik adalah:
+              </p>
+
+              <ul>
+                <li><strong>Tag Semantik:</strong> Memiliki makna khusus dan menggambarkan tujuan kontennya. 
+                    Contoh: <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;footer&gt;</code>.</li>
+                <li><strong>Tag Non-Semantik:</strong> Tidak menjelaskan kontennya, hanya digunakan untuk styling atau struktur. 
+                    Contoh: <code>&lt;div&gt;</code>, <code>&lt;span&gt;</code>.</li>
+              </ul>
+
+              <pre><code>
+      &lt;!-- Semantik --&gt;
+      &lt;article&gt;
+        &lt;h2&gt;Berita Terbaru&lt;/h2&gt;
+        &lt;p&gt;Konten berita terbaru hari ini.&lt;/p&gt;
+      &lt;/article&gt;
+
+      &lt;!-- Non-Semantik --&gt;
+      &lt;div class="artikel"&gt;
+        &lt;h2&gt;Berita Terbaru&lt;/h2&gt;
+        &lt;p&gt;Konten berita terbaru hari ini.&lt;/p&gt;
+      &lt;/div&gt;
+              </code></pre>
+            `
+          },
+          {
+            title: "Best Practice Struktur Halaman",
+            content: `
+              <p>
+                Beberapa praktik terbaik saat menyusun struktur HTML:
+              </p>
+
+              <ul>
+                <li>Gunakan elemen semantik untuk meningkatkan aksesibilitas dan SEO.</li>
+                <li>Hindari penggunaan <code>&lt;div&gt;</code> berlebihan (div soup).</li>
+                <li>Pastikan hanya ada satu <code>&lt;main&gt;</code> per halaman.</li>
+                <li>Gunakan heading (<code>&lt;h1&gt;</code>–<code>&lt;h6&gt;</code>) secara berurutan dan logis.</li>
+                <li>Tambahkan atribut <code>alt</code> pada gambar untuk deskripsi.</li>
+              </ul>
+
+              <pre><code>
+      &lt;header&gt;
+        &lt;nav&gt;...&lt;/nav&gt;
+      &lt;/header&gt;
+
+      &lt;main&gt;
+        &lt;section&gt;
+          &lt;article&gt;...&lt;/article&gt;
+        &lt;/section&gt;
+      &lt;/main&gt;
+
+      &lt;footer&gt;...&lt;/footer&gt;
+              </code></pre>
+            `
+          },
+          {
+            title: "Video: Struktur dan Elemen Semantik HTML",
+            video: "https://www.youtube.com/embed/W-6OY9eI3hk",
+            content: `
+              <p>
+                Tonton video berikut untuk memahami perbedaan antara elemen semantik dan non-semantik,
+                serta bagaimana menyusun struktur halaman web yang baik dan terorganisir.
+              </p>
+            `
+          }
+        ]
+      },
+      9: {
+        title: "Metadata & SEO Dasar",
+        slides: [
+          {
+            title: "Pengenalan Metadata dan Tag Head",
+            content: `
+              <p>
+                Metadata adalah informasi tambahan yang menjelaskan isi dari halaman web, 
+                tetapi tidak ditampilkan langsung kepada pengguna. 
+                Metadata biasanya diletakkan di dalam elemen <code>&lt;head&gt;</code>.
+              </p>
+
+              <p>
+                Elemen <code>&lt;head&gt;</code> berfungsi untuk menyimpan informasi penting seperti:
+              </p>
+
+              <ul>
+                <li>Judul halaman (<code>&lt;title&gt;</code>)</li>
+                <li>Deskripsi dan pengaturan SEO (<code>&lt;meta&gt;</code>)</li>
+                <li>Ikon website (<code>&lt;link rel="icon"&gt;</code>)</li>
+                <li>Referensi stylesheet atau font (<code>&lt;link&gt;</code>)</li>
+                <li>Tag sosial media dan Open Graph</li>
+              </ul>
+
+              <pre><code>
+      &lt;head&gt;
+        &lt;title&gt;Belajar HTML - Metadata&lt;/title&gt;
+        &lt;meta charset="UTF-8"&gt;
+        &lt;meta name="description" content="Kursus online untuk belajar HTML dari dasar hingga mahir."&gt;
+        &lt;meta name="keywords" content="HTML, belajar HTML, web development"&gt;
+        &lt;meta name="author" content="WebCourse"&gt;
+      &lt;/head&gt;
+              </code></pre>
+            `
+          },
+          {
+            title: "Tag Title",
+            content: `
+              <p>
+                Elemen <code>&lt;title&gt;</code> menampilkan judul halaman pada tab browser dan hasil pencarian di mesin pencari. 
+                Tag ini sangat penting untuk SEO.
+              </p>
+
+              <pre><code>
+      &lt;head&gt;
+        &lt;title&gt;Belajar HTML untuk Pemula&lt;/title&gt;
+      &lt;/head&gt;
+              </code></pre>
+
+              <p><strong>Tips SEO:</strong></p>
+              <ul>
+                <li>Gunakan judul yang singkat, relevan, dan mengandung kata kunci utama.</li>
+                <li>Idealnya tidak lebih dari 60 karakter.</li>
+              </ul>
+            `
+          },
+          {
+            title: "Tag Meta Dasar",
+            content: `
+              <p>
+                Tag <code>&lt;meta&gt;</code> digunakan untuk memberikan informasi tambahan tentang halaman web.
+                Tag ini tidak memiliki penutup dan diletakkan di dalam <code>&lt;head&gt;</code>.
+              </p>
+
+              <ul>
+                <li><code>&lt;meta charset&gt;</code> — Menentukan karakter encoding halaman (biasanya UTF-8).</li>
+                <li><code>&lt;meta name="description"&gt;</code> — Menjelaskan isi halaman, digunakan oleh mesin pencari.</li>
+                <li><code>&lt;meta name="viewport"&gt;</code> — Mengatur tampilan halaman agar responsif di perangkat mobile.</li>
+              </ul>
+
+              <pre><code>
+      &lt;meta charset="UTF-8"&gt;
+      &lt;meta name="description" content="Panduan lengkap belajar HTML untuk pemula."&gt;
+      &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+              </code></pre>
+            `
+          },
+          {
+            title: "Favicon (Link Rel Icon)",
+            content: `
+              <p>
+                Favicon adalah ikon kecil yang muncul di tab browser, bookmark, atau hasil pencarian.
+                Biasanya berformat <code>.ico</code>, <code>.png</code>, atau <code>.svg</code>.
+              </p>
+
+              <pre><code>
+      &lt;link rel="icon" type="image/png" href="favicon.png"&gt;
+              </code></pre>
+
+              <p>
+                Pastikan favicon berukuran kecil (misalnya 32x32 px) dan mewakili identitas website kamu.
+              </p>
+            `
+          },
+          {
+            title: "Open Graph & Meta Tag Sosial Media",
+            content: `
+              <p>
+                Open Graph adalah standar meta tag yang digunakan oleh platform seperti Facebook, WhatsApp, dan LinkedIn
+                untuk menampilkan preview halaman saat dibagikan.
+              </p>
+
+              <ul>
+                <li><code>og:title</code> — Judul yang muncul saat halaman dibagikan.</li>
+                <li><code>og:description</code> — Deskripsi singkat halaman.</li>
+                <li><code>og:image</code> — Gambar thumbnail.</li>
+                <li><code>og:url</code> — URL halaman.</li>
+              </ul>
+
+              <pre><code>
+      &lt;meta property="og:title" content="Belajar HTML untuk Pemula"&gt;
+      &lt;meta property="og:description" content="Panduan interaktif belajar HTML dari nol!"&gt;
+      &lt;meta property="og:image" content="https://webcourse.com/html-thumbnail.jpg"&gt;
+      &lt;meta property="og:url" content="https://webcourse.com/html"&gt;
+              </code></pre>
+
+              <p>
+                Selain Open Graph, Twitter juga memiliki versi khusus yaitu <code>twitter:card</code> dan <code>twitter:title</code>.
+              </p>
+
+              <pre><code>
+      &lt;meta name="twitter:card" content="summary_large_image"&gt;
+      &lt;meta name="twitter:title" content="Belajar HTML untuk Pemula"&gt;
+      &lt;meta name="twitter:description" content="Pelajari HTML dengan mudah dan cepat."&gt;
+      &lt;meta name="twitter:image" content="https://webcourse.com/html-thumbnail.jpg"&gt;
+              </code></pre>
+            `
+          },
+          {
+            title: "Tag Base dan Link",
+            content: `
+              <p>
+                Elemen <code>&lt;base&gt;</code> digunakan untuk menetapkan URL dasar untuk semua tautan relatif di halaman.
+                Sementara elemen <code>&lt;link&gt;</code> berfungsi untuk menghubungkan file eksternal seperti CSS, font, atau ikon.
+              </p>
+
+              <pre><code>
+      &lt;base href="https://webcourse.com/"&gt;
+      &lt;link rel="stylesheet" href="assets/styles.css"&gt;
+      &lt;link rel="preconnect" href="https://fonts.googleapis.com"&gt;
+      &lt;link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&amp;display=swap"&gt;
+              </code></pre>
+
+              <p>
+                Dengan <code>&lt;base&gt;</code>, browser akan menggunakan URL dasar ini untuk semua tautan relatif, 
+                sehingga tidak perlu menulis URL lengkap di setiap <code>href</code>.
+              </p>
+            `
+          },
+          {
+            title: "Video: Optimasi Metadata & SEO Dasar",
+            video: "https://www.youtube.com/embed/XR5Rlw6h8rE",
+            content: `
+              <p>
+                Tonton video berikut untuk memahami bagaimana metadata dan tag <code>&lt;head&gt;</code>
+                berperan dalam SEO dan bagaimana cara menerapkannya dengan benar di setiap halaman web.
+              </p>
+            `
+          }
+        ]
+      },
+      10: {
+        title: "Resource & Asset",
+        slides: [
+          {
+            title: "Pengenalan Resource & Asset",
+            content: `
+              <p>
+                Dalam pengembangan web, <strong>resource</strong> dan <strong>asset</strong> adalah semua file pendukung
+                yang digunakan oleh halaman HTML agar tampil dengan baik dan interaktif.
+              </p>
+
+              <p>
+                Contoh resource dan asset:
+              </p>
+
+              <ul>
+                <li>File CSS untuk tampilan (misal: <code>style.css</code>)</li>
+                <li>File JavaScript untuk interaksi (misal: <code>script.js</code>)</li>
+                <li>Gambar, video, font, dan ikon</li>
+              </ul>
+
+              <p>
+                Semua resource ini biasanya disimpan dalam folder seperti <code>/assets</code> atau <code>/public</code>.
+              </p>
+
+              <pre><code>
+      project-folder/
+      │
+      ├── index.html
+      ├── assets/
+      │   ├── css/
+      │   │   └── style.css
+      │   ├── js/
+      │   │   └── script.js
+      │   └── images/
+      │       └── logo.png
+              </code></pre>
+            `
+          },
+          {
+            title: "Menghubungkan File Eksternal",
+            content: `
+              <p>
+                File eksternal seperti CSS dan JavaScript dihubungkan menggunakan tag 
+                <code>&lt;link&gt;</code>, <code>&lt;script&gt;</code>, dan <code>&lt;style&gt;</code>.
+              </p>
+
+              <ul>
+                <li><code>&lt;link&gt;</code> — untuk file CSS eksternal</li>
+                <li><code>&lt;script&gt;</code> — untuk file JavaScript eksternal</li>
+                <li><code>&lt;style&gt;</code> — untuk menulis CSS langsung di dalam HTML</li>
+              </ul>
+
+              <pre><code>
+      &lt;!-- CSS eksternal --&gt;
+      &lt;link rel="stylesheet" href="assets/css/style.css"&gt;
+
+      &lt;!-- CSS internal (di dalam tag style) --&gt;
+      &lt;style&gt;
+        body {
+          background-color: #f9f9f9;
+        }
+      &lt;/style&gt;
+
+      &lt;!-- JavaScript eksternal --&gt;
+      &lt;script src="assets/js/script.js"&gt;&lt;/script&gt;
+              </code></pre>
+
+              <p>
+                Penulisan <code>&lt;script&gt;</code> sebaiknya ditempatkan di akhir <code>&lt;body&gt;</code> 
+                agar halaman tidak berat saat dimuat.
+              </p>
+            `
+          },
+          {
+            title: "Import CSS ke HTML",
+            content: `
+              <p>
+                CSS bisa diimpor ke HTML dengan dua cara utama:
+              </p>
+
+              <h4>1. Menggunakan Tag &lt;link&gt;</h4>
+              <pre><code>
+      &lt;link rel="stylesheet" href="assets/css/style.css"&gt;
+              </code></pre>
+
+              <p>
+                Ini adalah cara yang paling umum dan direkomendasikan karena browser dapat memuat file CSS secara paralel.
+              </p>
+
+              <h4>2. Menggunakan @import di CSS</h4>
+              <pre><code>
+      /* di dalam style.css */
+      @import url("reset.css");
+
+      body {
+        font-family: Arial, sans-serif;
+      }
+              </code></pre>
+
+              <p>
+                Cara ini tidak direkomendasikan untuk proyek besar karena memperlambat proses loading halaman.
+              </p>
+            `
+          },
+          {
+            title: "Import JavaScript ke HTML",
+            content: `
+              <p>
+                File JavaScript juga bisa diimpor ke HTML dengan dua cara:
+              </p>
+
+              <h4>1. Menggunakan Tag Script Eksternal</h4>
+              <pre><code>
+      &lt;script src="assets/js/main.js"&gt;&lt;/script&gt;
+              </code></pre>
+
+              <h4>2. Menulis Script Langsung di HTML</h4>
+              <pre><code>
+      &lt;script&gt;
+        console.log("Hello, JavaScript!");
+      &lt;/script&gt;
+              </code></pre>
+
+              <p>
+                Gunakan atribut <code>defer</code> atau <code>async</code> untuk mengontrol kapan script dijalankan:
+              </p>
+
+              <ul>
+                <li><code>defer</code> — dijalankan setelah HTML selesai dimuat</li>
+                <li><code>async</code> — dijalankan segera tanpa menunggu HTML selesai</li>
+              </ul>
+
+              <pre><code>
+      &lt;script src="assets/js/app.js" defer&gt;&lt;/script&gt;
+              </code></pre>
+            `
+          },
+          {
+            title: "Path Relatif & Absolut",
+            content: `
+              <p>
+                Path digunakan untuk menunjuk lokasi file (CSS, JS, gambar, dll) di dalam proyek.
+                Ada dua jenis path: <strong>relatif</strong> dan <strong>absolut</strong>.
+              </p>
+
+              <h4>Path Relatif</h4>
+              <p>
+                Path relatif mengacu pada posisi file terhadap file HTML yang memanggilnya.
+              </p>
+
+              <pre><code>
+      &lt;img src="assets/images/logo.png" alt="Logo"&gt;
+              </code></pre>
+
+              <ul>
+                <li><code>./</code> — folder saat ini</li>
+                <li><code>../</code> — naik satu folder ke atas</li>
+              </ul>
+
+              <pre><code>
+      &lt;img src="../images/banner.jpg" alt="Banner"&gt;
+              </code></pre>
+
+              <h4>Path Absolut</h4>
+              <p>
+                Path absolut menunjuk langsung ke lokasi lengkap di internet.
+              </p>
+
+              <pre><code>
+      &lt;img src="https://example.com/assets/logo.png" alt="Logo"&gt;
+              </code></pre>
+
+              <p>
+                Gunakan path absolut jika file berada di server lain atau CDN (misalnya Google Fonts, Bootstrap, dll).
+              </p>
+            `
+          },
+          {
+            title: "Video: Mengelola Resource & Asset di HTML",
+            video: "https://www.youtube.com/embed/RNo6-fsFjVY",
+            content: `
+              <p>
+                Tonton video berikut untuk memahami cara menghubungkan file CSS dan JavaScript eksternal,
+                serta perbedaan penggunaan path relatif dan absolut di dalam proyek web kamu.
+              </p>
+            `
+          }
+        ]
+      },
+      11: {
+        title: "HTML5 & Fitur Modern",
+        slides: [
+          {
+            title: "Pengenalan HTML5",
+            content: `
+              <p>
+                <strong>HTML5</strong> adalah versi terbaru dari HTML yang membawa banyak fitur baru dan peningkatan besar dibanding versi sebelumnya.
+                Tujuannya adalah untuk membuat web lebih interaktif, efisien, dan kaya media tanpa bergantung pada plugin eksternal seperti Flash.
+              </p>
+
+              <p>
+                HTML5 memperkenalkan banyak <strong>tag semantik</strong>, <strong>API baru</strong>, serta <strong>dukungan multimedia</strong> langsung.
+              </p>
+
+              <ul>
+                <li>Tag semantik baru seperti <code>&lt;header&gt;</code>, <code>&lt;footer&gt;</code>, <code>&lt;article&gt;</code></li>
+                <li>Dukungan video dan audio bawaan</li>
+                <li>Canvas untuk menggambar dan membuat animasi</li>
+                <li>API penyimpanan lokal dan lokasi pengguna</li>
+              </ul>
+
+              <p>
+                Mari kita pelajari satu per satu fitur modern ini.
+              </p>
+            `
+          },
+          {
+            title: "Elemen Multimedia: Video dan Audio",
+            content: `
+              <p>
+                HTML5 memungkinkan pemutaran media langsung di browser menggunakan tag <code>&lt;video&gt;</code> dan <code>&lt;audio&gt;</code>.
+              </p>
+
+              <pre><code>
+      &lt;video width="400" controls&gt;
+        &lt;source src="video.mp4" type="video/mp4"&gt;
+        Browser kamu tidak mendukung tag video.
+      &lt;/video&gt;
+
+      &lt;audio controls&gt;
+        &lt;source src="audio.mp3" type="audio/mpeg"&gt;
+        Browser kamu tidak mendukung tag audio.
+      &lt;/audio&gt;
+              </code></pre>
+
+              <p>
+                Atribut penting:
+              </p>
+              <ul>
+                <li><code>controls</code> — menampilkan kontrol pemutar (play, pause, volume)</li>
+                <li><code>autoplay</code> — memutar otomatis</li>
+                <li><code>loop</code> — mengulang otomatis</li>
+                <li><code>poster</code> — gambar thumbnail untuk video</li>
+              </ul>
+            `
+          },
+          {
+            title: "Canvas & SVG",
+            content: `
+              <p>
+                HTML5 menyediakan dua cara utama untuk menampilkan grafik vektor atau menggambar di halaman web: <strong>Canvas</strong> dan <strong>SVG</strong>.
+              </p>
+
+              <h4>1. Canvas</h4>
+              <p>
+                Tag <code>&lt;canvas&gt;</code> digunakan untuk menggambar grafik menggunakan JavaScript.
+              </p>
+
+              <pre><code>
+      &lt;canvas id="myCanvas" width="200" height="100" style="border:1px solid #000;"&gt;&lt;/canvas&gt;
+
+      &lt;script&gt;
+        const c = document.getElementById("myCanvas");
+        const ctx = c.getContext("2d");
+        ctx.fillStyle = "blue";
+        ctx.fillRect(20, 20, 150, 50);
+      &lt;/script&gt;
+              </code></pre>
+
+              <h4>2. SVG (Scalable Vector Graphics)</h4>
+              <p>
+                SVG digunakan untuk menampilkan gambar vektor berbasis XML yang bisa diperbesar tanpa pecah.
+              </p>
+
+              <pre><code>
+      &lt;svg width="200" height="100"&gt;
+        &lt;circle cx="50" cy="50" r="40" stroke="green" stroke-width="4" fill="yellow" /&gt;
+      &lt;/svg&gt;
+              </code></pre>
+
+              <p>
+                Canvas cocok untuk grafik dinamis (game, animasi), sementara SVG cocok untuk ikon, diagram, dan grafik statis.
+              </p>
+            `
+          },
+          {
+            title: "Elemen Interaktif: Progress dan Meter",
+            content: `
+              <p>
+                HTML5 menambahkan elemen visual untuk menunjukkan progres atau nilai tertentu dalam bentuk bar.
+              </p>
+
+              <h4>Tag &lt;progress&gt;</h4>
+              <pre><code>
+      &lt;label for="file"&gt;Mengunggah file:&lt;/label&gt;
+      &lt;progress id="file" value="70" max="100"&gt;70%&lt;/progress&gt;
+              </code></pre>
+
+              <h4>Tag &lt;meter&gt;</h4>
+              <pre><code>
+      &lt;label for="disk"&gt;Penggunaan disk:&lt;/label&gt;
+      &lt;meter id="disk" value="0.6"&gt;60%&lt;/meter&gt;
+              </code></pre>
+
+              <p>
+                <code>&lt;progress&gt;</code> digunakan untuk progres tugas (upload, loading),
+                sementara <code>&lt;meter&gt;</code> untuk nilai terukur seperti suhu atau level baterai.
+              </p>
+            `
+          },
+          {
+            title: "Elemen Interaktif Lainnya: Details & Summary",
+            content: `
+              <p>
+                Tag <code>&lt;details&gt;</code> dan <code>&lt;summary&gt;</code> digunakan untuk membuat konten yang bisa dibuka/tutup (collapsible).
+              </p>
+
+              <pre><code>
+      &lt;details&gt;
+        &lt;summary&gt;Klik untuk melihat detail&lt;/summary&gt;
+        &lt;p&gt;Ini adalah konten tersembunyi yang muncul saat diklik.&lt;/p&gt;
+      &lt;/details&gt;
+              </code></pre>
+
+              <p>
+                Fitur ini sangat berguna untuk FAQ, panduan, atau deskripsi tambahan tanpa menggunakan JavaScript.
+              </p>
+            `
+          },
+          {
+            title: "Elemen Tambahan: Time & Mark",
+            content: `
+              <p>
+                HTML5 juga menambahkan beberapa tag semantik kecil tapi berguna.
+              </p>
+
+              <pre><code>
+      &lt;p&gt;Artikel ini ditulis pada &lt;time datetime="2025-10-12"&gt;12 Oktober 2025&lt;/time&gt;.&lt;/p&gt;
+      &lt;p&gt;Kalimat ini memiliki &lt;mark&gt;teks yang disorot&lt;/mark&gt;.&lt;/p&gt;
+              </code></pre>
+
+              <ul>
+                <li><code>&lt;time&gt;</code> — menandai waktu atau tanggal (berguna untuk SEO dan mesin pencari)</li>
+                <li><code>&lt;mark&gt;</code> — menandai atau menyorot teks penting</li>
+              </ul>
+            `
+          },
+          {
+            title: "Pengenalan LocalStorage & SessionStorage",
+            content: `
+              <p>
+                HTML5 memperkenalkan <strong>Web Storage API</strong> untuk menyimpan data secara lokal di browser tanpa server.
+              </p>
+
+              <ul>
+                <li><strong>localStorage</strong> — menyimpan data permanen (tidak hilang setelah browser ditutup)</li>
+                <li><strong>sessionStorage</strong> — data hanya berlaku selama sesi browser aktif</li>
+              </ul>
+
+              <pre><code>
+      // Menyimpan data
+      localStorage.setItem("username", "Ali");
+
+      // Mengambil data
+      const user = localStorage.getItem("username");
+
+      // Menghapus data
+      localStorage.removeItem("username");
+              </code></pre>
+
+              <p>
+                Fitur ini sering digunakan untuk menyimpan preferensi user, tema (gelap/terang), atau data sementara tanpa database.
+              </p>
+            `
+          },
+          {
+            title: "Pengenalan Drag & Drop API",
+            content: `
+              <p>
+                HTML5 memiliki <strong>Drag and Drop API</strong> yang memungkinkan pengguna menyeret dan melepaskan elemen langsung di halaman web.
+              </p>
+
+              <pre><code>
+      &lt;div id="drag" draggable="true" style="width:100px;height:100px;background:tomato;"&gt;
+        Seret saya!
+      &lt;/div&gt;
+
+      &lt;script&gt;
+        const box = document.getElementById("drag");
+        box.addEventListener("dragstart", () =&gt; {
+          console.log("Elemen sedang diseret!");
+        });
+      &lt;/script&gt;
+              </code></pre>
+
+              <p>
+                API ini bisa digunakan untuk fitur seperti upload gambar dengan drag, atau menyusun ulang elemen secara interaktif.
+              </p>
+            `
+          },
+          {
+            title: "Pengenalan Geolocation API",
+            content: `
+              <p>
+                HTML5 juga menambahkan <strong>Geolocation API</strong> untuk mendeteksi lokasi pengguna (dengan izin).
+              </p>
+
+              <pre><code>
+      &lt;button onclick="getLocation()"&gt;Lihat Lokasi Saya&lt;/button&gt;
+      &lt;p id="result"&gt;&lt;/p&gt;
+
+      &lt;script&gt;
+        function getLocation() {
+          if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition);
+          } else {
+            document.getElementById("result").innerText = "Geolocation tidak didukung di browser ini.";
+          }
+        }
+
+        function showPosition(position) {
+          document.getElementById("result").innerText =
+            "Latitude: " + position.coords.latitude +
+            ", Longitude: " + position.coords.longitude;
+        }
+      &lt;/script&gt;
+              </code></pre>
+
+              <p>
+                Fitur ini berguna untuk aplikasi seperti peta, pelacakan lokasi, atau rekomendasi berbasis lokasi.
+              </p>
+            `
+          },
+          {
+            title: "Video: Fitur Modern di HTML5",
+            video: "https://www.youtube.com/embed/qPYCnebQQ6U",
+            content: `
+              <p>
+                Tonton video berikut untuk melihat demonstrasi fitur-fitur modern HTML5 seperti video, canvas, dan localStorage secara langsung.
+              </p>
+            `
+          }
+        ]
+      },
+      12: {
+        title: "Project: Build a Multi-page Course Landing Website (Step-by-step)",
+        slides: [
+          {
+            title: "Project Overview",
+            content: `
+              <p>
+                Tujuan proyek: membuat website landing untuk kursus web yang terdiri dari:
+                <strong>Beranda</strong>, <strong>Halaman Artikel</strong>, dan <strong>Halaman Kontak</strong>.
+                Di sini kita akan menerapkan struktur semantik, metadata, gambar & media, daftar & tabel, formulir,
+                dan beberapa fitur HTML5 modern.
+              </p>
+
+              <p><strong>Output akhir</strong> yang diharapkan:</p>
+              <ul>
+                <li>Halaman utama yang rapi dan semantik</li>
+                <li>Halaman artikel dengan <code>&lt;article&gt;</code> dan <code>&lt;figure&gt;</code></li>
+                <li>Halaman kontak dengan form bervalidasi sederhana</li>
+                <li>Penggunaan metadata, favicon, dan resource external</li>
+              </ul>
+            `
+          },
+
+          {
+            title: "1) Persiapan & Requirement",
+            content: `
+              <p>Siapkan tool & struktur folder seperti yang sudah dipelajari:</p>
+              <pre><code>
+      project/
+      ├─ index.html
+      ├─ article.html
+      ├─ contact.html
+      ├─ assets/
+      │  ├─ css/
+      │  │  └─ style.css
+      │  ├─ js/
+      │  │  └─ main.js
+      │  └─ images/
+      │     ├─ logo.png
+      │     └─ hero.jpg
+      └─ favicon.png
+              </code></pre>
+
+              <p>Tools: Browser (Chrome), VS Code, Live Server (opsional).</p>
+            `
+          },
+
+          {
+            title: "2) Wireframe & Content Plan",
+            content: `
+              <p>Buat sketsa singkat apa yang akan ada pada setiap halaman:</p>
+              <ul>
+                <li>Beranda: header (logo + nav), hero, fitur (list), course list (cards atau table), footer</li>
+                <li>Artikel: artikel penuh (<code>&lt;article&gt;</code>), gambar + caption (<code>&lt;figure&gt;</code>)</li>
+                <li>Kontak: form (name, email, message), validasi HTML</li>
+              </ul>
+            `
+          },
+
+          {
+            title: "3) Struktur Dasar (index.html template)",
+            content: `
+              <p>Mulai dari skeleton HTML5 dengan metadata & link ke resource:</p>
+              <pre><code>
+      &lt;!DOCTYPE html&gt;
+      &lt;html lang="en"&gt;
+        &lt;head&gt;
+          &lt;meta charset="UTF-8"&gt;
+          &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+          &lt;title&gt;WebCourse - Home&lt;/title&gt;
+          &lt;meta name="description" content="Kursus web interaktif: HTML, CSS, JavaScript"&gt;
+          &lt;link rel="icon" href="favicon.png"&gt;
+          &lt;link rel="stylesheet" href="assets/css/style.css"&gt;
+        &lt;/head&gt;
+        &lt;body&gt;
+          <!-- content here -->
+          &lt;script src="assets/js/main.js" defer&gt;&lt;/script&gt;
+        &lt;/body&gt;
+      &lt;/html&gt;
+              </code></pre>
+            `
+          },
+
+          {
+            title: "4) Header & Navigation (semantic)",
+            content: `
+              <p>Gunakan elemen semantik untuk header & nav:</p>
+              <pre><code>
+      &lt;header&gt;
+        &lt;div class="container"&gt;
+          &lt;img src="assets/images/logo.png" alt="WebCourse Logo" class="logo"&gt;
+          &lt;nav&gt;
+            &lt;a href="index.html"&gt;Home&lt;/a&gt;
+            &lt;a href="article.html"&gt;Artikel&lt;/a&gt;
+            &lt;a href="contact.html"&gt;Kontak&lt;/a&gt;
+          &lt;/nav&gt;
+        &lt;/div&gt;
+      &lt;/header&gt;
+              </code></pre>
+            `
+          },
+
+          {
+            title: "5) Hero Section (image & heading)",
+            content: `
+              <p>Hero memakai &lt;section&gt; dengan gambar dan call-to-action:</p>
+              <pre><code>
+      &lt;section class="hero"&gt;
+        &lt;h1&gt;Belajar HTML dari Dasar sampai Mahir&lt;/h1&gt;
+        &lt;p&gt;Kursus interaktif untuk membuat website nyata.&lt;/p&gt;
+        &lt;img src="assets/images/hero.jpg" alt="Hero image"&gt;
+        &lt;a href="#courses" class="btn"&gt;Lihat Kursus&lt;/a&gt;
+      &lt;/section&gt;
+              </code></pre>
+            `
+          },
+
+          {
+            title: "6) Features (Ordered / Unordered Lists)",
+            content: `
+              <p>Tampilkan fitur kursus menggunakan daftar:</p>
+              <pre><code>
+      &lt;section class="features"&gt;
+        &lt;h2&gt;Apa yang Akan Kamu Pelajari&lt;/h2&gt;
+        &lt;ul&gt;
+          &lt;li&gt;HTML dasar sampai mahir&lt;/li&gt;
+          &lt;li&gt;Form & validasi&lt;/li&gt;
+          &lt;li&gt;Best practice struktur semantik&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/section&gt;
+              </code></pre>
+            `
+          },
+
+          {
+            title: "7) Course List / Table (example menggunakan table)",
+            content: `
+              <p>Bisa gunakan tabel untuk daftar kursus singkat:</p>
+              <pre><code>
+      &lt;section id="courses"&gt;
+        &lt;h2&gt;Daftar Kursus&lt;/h2&gt;
+        &lt;table&gt;
+          &lt;caption&gt;Kursus Populer&lt;/caption&gt;
+          &lt;thead&gt;
+            &lt;tr&gt;&lt;th&gt;Nama&lt;/th&gt;&lt;th&gt;Durasi&lt;/th&gt;&lt;th&gt;Level&lt;/th&gt;&lt;/tr&gt;
+          &lt;/thead&gt;
+          &lt;tbody&gt;
+            &lt;tr&gt;&lt;td&gt;HTML Dasar&lt;/td&gt;&lt;td&gt;4 minggu&lt;/td&gt;&lt;td&gt;Beginner&lt;/td&gt;&lt;/tr&gt;
+            &lt;tr&gt;&lt;td&gt;HTML Lanjutan&lt;/td&gt;&lt;td&gt;3 minggu&lt;/td&gt;&lt;td&gt;Intermediate&lt;/td&gt;&lt;/tr&gt;
+          &lt;/tbody&gt;
+        &lt;/table&gt;
+      &lt;/section&gt;
+              </code></pre>
+            `
+          },
+
+          {
+            title: "8) Artikel Page (article, figure, figcaption)",
+            content: `
+              <p>Contoh struktur artikel dengan gambar dan caption:</p>
+              <pre><code>
+      &lt;!-- article.html --&gt;
+      &lt;main&gt;
+        &lt;article&gt;
+          &lt;h1&gt;Judul Artikel: Kenapa Semantik Penting&lt;/h1&gt;
+          &lt;figure&gt;
+            &lt;img src="assets/images/article-image.jpg" alt="Gambar Artikel"&gt;
+            &lt;figcaption&gt;Ilustrasi: Struktur HTML yang baik.&lt;/figcaption&gt;
+          &lt;/figure&gt;
+          &lt;p&gt;Isi artikel panjang di sini...&lt;/p&gt;
+        &lt;/article&gt;
+      &lt;/main&gt;
+              </code></pre>
+            `
+          },
+
+          {
+            title: "9) Kontak Page (Form + Validation)",
+            content: `
+              <p>Halaman kontak dengan formulir bervalidasi HTML:</p>
+              <pre><code>
+      &lt;!-- contact.html --&gt;
+      &lt;main&gt;
+        &lt;h1&gt;Hubungi Kami&lt;/h1&gt;
+        &lt;form action="/submit-contact" method="POST"&gt;
+          &lt;label for="name"&gt;Nama:&lt;/label&gt;
+          &lt;input id="name" name="name" type="text" required minlength="3"&gt;
+
+          &lt;label for="email"&gt;Email:&lt;/label&gt;
+          &lt;input id="email" name="email" type="email" required&gt;
+
+          &lt;label for="message"&gt;Pesan:&lt;/label&gt;
+          &lt;textarea id="message" name="message" rows="4" required&gt;&lt;/textarea&gt;
+
+          &lt;button type="submit"&gt;Kirim&lt;/button&gt;
+        &lt;/form&gt;
+      &lt;/main&gt;
+              </code></pre>
+            `
+          },
+
+          {
+            title: "10) SEO & Metadata (per halaman)",
+            content: `
+              <p>Pastikan setiap halaman punya tag <code>&lt;title&gt;</code>, <code>&lt;meta name=\"description\"&gt;</code>, dan Open Graph jika perlu:</p>
+              <pre><code>
+      &lt;head&gt;
+        &lt;title&gt;WebCourse - Contact&lt;/title&gt;
+        &lt;meta name="description" content="Hubungi tim WebCourse untuk pertanyaan."&gt;
+        &lt;meta property="og:title" content="WebCourse - Contact"&gt;
+      &lt;/head&gt;
+              </code></pre>
+            `
+          },
+
+          {
+            title: "11) Resource & Asset Handling",
+            content: `
+              <p>Gunakan path relatif untuk asset lokal dan link eksternal untuk CDN:</p>
+              <pre><code>
+      &lt;link rel="stylesheet" href="assets/css/style.css"&gt;
+      &lt;script src="assets/js/main.js" defer&gt;&lt;/script&gt;
+      &lt;img src="assets/images/logo.png" alt="Logo"&gt;
+              </code></pre>
+            `
+          },
+
+          {
+            title: "12) HTML5 Features (optional enhancements)",
+            content: `
+              <p>Tambahkan fitur HTML5 untuk meningkatkan UX:</p>
+              <ul>
+                <li>Gunakan <code>&lt;details&gt;</code> untuk FAQ</li>
+                <li>Simpan preferensi tema dengan <code>localStorage</code></li>
+                <li>Tambahkan video demo dengan <code>&lt;video&gt;</code></li>
+              </ul>
+
+              <pre><code>
+      &lt;details&gt;
+        &lt;summary&gt;Pertanyaan Umum&lt;/summary&gt;
+        &lt;p&gt;Jawaban singkat...&lt;/p&gt;
+      &lt;/details&gt;
+              </code></pre>
+            `
+          },
+
+          {
+            title: "13) Testing & Accessibility",
+            content: `
+              <p>Checklist pengujian sebelum deploy:</p>
+              <ul>
+                <li>Cek validasi HTML (W3C Validator)</li>
+                <li>Periksa semua gambar punya <code>alt</code></li>
+                <li>Pastikan navigasi bisa diakses dengan keyboard</li>
+                <li>Cek responsive viewport</li>
+              </ul>
+            `
+          },
+
+          {
+            title: "14) Deployment (simple)",
+            content: `
+              <p>Cara mudah deploy static site:</p>
+              <ul>
+                <li>Deploy ke GitHub Pages (push repo & enable Pages)</li>
+                <li>Atau gunakan Netlify / Vercel (tarik repo & publish)</li>
+              </ul>
+
+              <pre><code>
+      # contoh singkat
+      git init
+      git add .
+      git commit -m "Initial website"
+      git push origin main
+      # lalu konfig di Netlify / Vercel / GitHub Pages
+              </code></pre>
+            `
+          },
+
+          {
+            title: "15) Final Checklist & Enhancements",
+            content: `
+              <p>Final checklist sebelum menutup proyek:</p>
+              <ul>
+                <li>Semua halaman punya metadata & favicon</li>
+                <li>Form sudah divalidasi</li>
+                <li>Semua asset menggunakan path benar</li>
+                <li>Struktur HTML semantik & bersih</li>
+                <li>Menggunakan accessibility attributes (aria jika perlu)</li>
+              </ul>
+
+              <p>Enhancements opsional:</p>
+              <ul>
+                <li>Tambahkan syntax highlighting di blog</li>
+                <li>Integrasi analytics</li>
+                <li>Tambah testing otomatis & CI/CD</li>
+              </ul>
+            `
+          },
+
+          {
+            title: "Video: Build a Simple Multi-page Site with HTML",
+            video: "https://www.youtube.com/embed/3q3FV65ZrUs",
+            content: `
+              <p>
+                Tonton video ini untuk langkah-langkah pembuatan website statis dari awal sampai deploy.
+              </p>
+            `
+          }
+        ]
+      },
+    };
+
+    // Update tanggal live
+    function updateCurrentDate() {
+      const now = new Date();
+      const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+      const formattedDate = now.toLocaleDateString('id-ID', options);
+      currentDateElement.textContent = formattedDate;
+    }
+
+    // Theme Management
+    function initTheme() {
+      const savedTheme = localStorage.getItem('theme') || 'light';
+      setTheme(savedTheme);
+    }
+
+    function setTheme(theme) {
+      htmlElement.setAttribute('data-theme', theme);
+      localStorage.setItem('theme', theme);
+      
+      if (theme === 'dark') {
+        themeIcon.className = 'bi bi-moon';
+      } else {
+        themeIcon.className = 'bi bi-sun';
+      }
+    }
+
+    function toggleTheme() {
+      const currentTheme = htmlElement.getAttribute('data-theme') || 'light';
+      const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+      setTheme(newTheme);
+    }
+
+    // Modal Functions
+    function openModal(moduleNumber) {
+      currentModule = moduleNumber;
+      currentSlide = 0;
+      slides = moduleContent[moduleNumber].slides;
+      totalSlides = slides.length;
+      
+      // Update modal title
+      modalModuleTitle.textContent = `Module ${moduleNumber}: ${moduleContent[moduleNumber].title}`;
+      
+      // Render slides
+      renderSlides();
+      
+      // Show modal
+      courseModal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModalFunc() {
+      courseModal.classList.remove('active');
+      document.body.style.overflow = 'auto';
+    }
+
+    function renderSlides() {
+      modalBody.innerHTML = '';
+      
+      slides.forEach((slide, index) => {
+        const slideElement = document.createElement('div');
+        slideElement.className = `slide ${index === currentSlide ? 'active' : ''}`;
+        slideElement.id = `slide-${index}`;
+        
+        let slideHTML = `<h2 class="slide-title">${slide.title}</h2>`;
+        
+        if (slide.video) {
+          slideHTML += `
+            <div class="video-container">
+              <iframe src="${slide.video}" title="${slide.title}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+          `;
+        }
+        
+        slideHTML += `<div class="slide-content">${slide.content}</div>`;
+        slideElement.innerHTML = slideHTML;
+        
+        modalBody.appendChild(slideElement);
+      });
+      
+      updateSlides();
+    }
+
+    function updateSlides() {
+      // Hide all slides
+      document.querySelectorAll('.slide').forEach(slide => {
+        slide.classList.remove('active');
+      });
+      
+      // Show current slide
+      document.getElementById(`slide-${currentSlide}`).classList.add('active');
+      
+      // Update slide indicator
+      currentSlideEl.textContent = currentSlide + 1;
+      totalSlidesEl.textContent = totalSlides;
+      
+      // Update button states
+      prevBtn.disabled = currentSlide === 0;
+      nextBtn.textContent = currentSlide === totalSlides - 1 ? 'Finish' : 'Next';
+    }
+
+    function nextSlide() {
+      if (currentSlide < totalSlides - 1) {
+        currentSlide++;
+        updateSlides();
+      } else {
+        closeModalFunc();
+      }
+    }
+
+    function prevSlide() {
+      if (currentSlide > 0) {
+        currentSlide--;
+        updateSlides();
+      }
+    }
+
+    // Utility
+    const MOBILE_BREAK = 960;
+    function isMobileLayout(){ return window.innerWidth <= MOBILE_BREAK; }
+
+    // Ensure desktop view forces sidebar visible
+    function ensureSidebarStateOnResize(){
+      if(!isMobileLayout()){
+        sidebar.style.display = '';
+        // Hide mobile navbar on desktop
+        if (mobileNavbar) {
+          mobileNavbar.style.display = 'none';
+        }
+      } else {
+        sidebar.style.display = 'none';
+        // Show mobile navbar on mobile
+        createMobileNavbar();
+      }
+    }
+
+    // Highlight active nav link (click + scroll)
+    function setActiveLinkByHash(hash){
+      navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === hash));
+      updateMobileNavbarActive(hash);
+    }
+
+    // On nav link click
+    navLinks.forEach(a => {
+      a.addEventListener('click', (ev) => {
+        // Perbaikan: Scroll ke bagian yang dituju dengan offset yang tepat
+        const targetId = a.getAttribute('href').substring(1);
+        const targetElement = document.getElementById(targetId);
+        
+        if (targetElement) {
+          // Hitung offset berdasarkan apakah di mobile atau desktop
+          const offset = isMobileLayout() ? 120 : 80;
+          const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - offset;
+          
+          window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
+          });
+        }
+        
+        setActiveLinkByHash(a.getAttribute('href'));
+      });
+    });
+
+    // Theme toggle
+    themeToggle.addEventListener('click', toggleTheme);
+
+    // Keep sidebar state correct on resize (debounced)
+    let resizeTO;
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTO);
+      resizeTO = setTimeout(() => {
+        ensureSidebarStateOnResize();
+      }, 120);
+    });
+
+    // ========== MOBILE NAVBAR FUNCTIONS ==========
+    
+    // Create mobile navbar from sidebar content
+    function createMobileNavbar() {
+      if (!isMobileLayout()) return;
+      
+      // Cek apakah navbar mobile sudah ada
+      if (mobileNavbar.children.length > 0) {
+        mobileNavbar.style.display = 'flex';
+        return;
+      }
+      
+      // Clone navigation dari sidebar
+      const sideNav = document.querySelector('#mainNav').cloneNode(true);
+      sideNav.classList.add('side-nav');
+      
+      // Hapus class active dari semua link
+      sideNav.querySelectorAll('.nav-link').forEach(link => {
+        link.classList.remove('active');
+        
+        // Perbaikan: Tambahkan event listener yang sama untuk mobile navbar
+        link.addEventListener('click', function(e) {
+          const targetId = this.getAttribute('href').substring(1);
+          const targetElement = document.getElementById(targetId);
+          
+          if (targetElement) {
+            // Hitung offset untuk mobile
+            const offset = 120;
+            const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - offset;
+            
+            window.scrollTo({
+              top: targetPosition,
+              behavior: 'smooth'
+            });
+          }
+          
+          setActiveLinkByHash(this.getAttribute('href'));
+        });
+      });
+      
+      // Buat scroll indicator
+      const scrollIndicator = document.createElement('div');
+      scrollIndicator.className = 'scroll-indicator';
+      scrollIndicator.innerHTML = '<i class="bi bi-chevron-left"></i>';
+      
+      // Tambahkan ke mobile navbar
+      mobileNavbar.innerHTML = '';
+      mobileNavbar.appendChild(sideNav);
+      mobileNavbar.appendChild(scrollIndicator);
+      mobileNavbar.style.display = 'flex';
+      
+      // Handle scroll indicator visibility
+      const navContainer = mobileNavbar.querySelector('.side-nav');
+      function updateScrollIndicator() {
+        const isScrollable = navContainer.scrollWidth > navContainer.clientWidth;
+        const isAtEnd = navContainer.scrollLeft + navContainer.clientWidth >= navContainer.scrollWidth - 10;
+        
+        if (isScrollable && !isAtEnd) {
+          scrollIndicator.classList.add('visible');
+        } else {
+          scrollIndicator.classList.remove('visible');
+        }
+      }
+      
+      navContainer.addEventListener('scroll', updateScrollIndicator);
+      window.addEventListener('resize', updateScrollIndicator);
+      updateScrollIndicator();
+    }
+    
+    // Update active state di navbar mobile
+    function updateMobileNavbarActive(hash) {
+      if (!mobileNavbar) return;
+      
+      const mobileNavLinks = mobileNavbar.querySelectorAll('.nav-link');
+      mobileNavLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === hash));
+    }
+    
+    // Handle scroll behavior untuk mobile navbar
+    let lastScrollTop = 0;
+    function handleMobileNavbarScroll() {
+      if (!isMobileLayout() || !mobileNavbar) return;
+      
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      
+      if (scrollTop > lastScrollTop && scrollTop > 100) {
+        // Scroll down - hide navbar
+        mobileNavbar.style.transform = 'translateY(-100%)';
+      } else {
+        // Scroll up - show navbar
+        mobileNavbar.style.transform = 'translateY(0)';
+      }
+      
+      lastScrollTop = scrollTop;
+    }
+    
+    // Add scroll event listener untuk navbar mobile
+    window.addEventListener('scroll', throttle(handleMobileNavbarScroll, 100));
+
+    // initial state
+    updateCurrentDate();
+    ensureSidebarStateOnResize();
+    initTheme();
+
+    // Scroll spy-ish: update active menu by viewport section
+    const sections = Array.from(document.querySelectorAll('section[id]'));
+    function onScrollSpy(){
+      const fromTop = window.scrollY + 120;
+      let current = '#top';
+      for(const s of sections){
+        if(s.offsetTop <= fromTop) current = '#' + s.id;
+      }
+      setActiveLinkByHash(current);
+    }
+    document.addEventListener('scroll', throttle(onScrollSpy, 150));
+    onScrollSpy();
+
+    // debounce helper
+    function throttle(fn, wait){
+      let t = null;
+      return function(...args){
+        if(t) return;
+        t = setTimeout(() => { 
+          fn.apply(this,args); 
+          clearTimeout(t); 
+          t = null; 
+        }, wait);
+      };
+    }
+
+    // Module click event
+    moduleItems.forEach(item => {
+      item.addEventListener('click', function() {
+        const moduleNumber = this.getAttribute('data-module');
+        
+        // Set active module
+        moduleItems.forEach(m => m.classList.remove('active'));
+        this.classList.add('active');
+        
+        // Open modal
+        openModal(moduleNumber);
+      });
+    });
+
+    // Modal events
+    closeModal.addEventListener('click', closeModalFunc);
+    prevBtn.addEventListener('click', prevSlide);
+    nextBtn.addEventListener('click', nextSlide);
+
+    // Close modal when clicking outside content
+    courseModal.addEventListener('click', function(e) {
+      if (e.target === courseModal) {
+        closeModalFunc();
+      }
+    });
+
+    // Keyboard navigation
+    document.addEventListener('keydown', function(e) {
+      if (courseModal.classList.contains('active')) {
+        if (e.key === 'Escape') {
+          closeModalFunc();
+        } else if (e.key === 'ArrowLeft') {
+          prevSlide();
+        } else if (e.key === 'ArrowRight') {
+          nextSlide();
+        }
+      }
+    });
+  </script>
+</body>
+</html>
