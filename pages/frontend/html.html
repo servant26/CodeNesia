@@ -163,26 +163,12 @@
                 <li class="module-item" data-module="9">
                   <div class="module-number">09</div>
                   <div class="module-content">
-                    <div class="module-title">Metadata & SEO Dasar</div>
-                    <div class="module-duration">18 min</div>
-                  </div>
-                </li>
-                <li class="module-item" data-module="10">
-                  <div class="module-number">10</div>
-                  <div class="module-content">
                     <div class="module-title">Resource & Asset</div>
                     <div class="module-duration">45 min</div>
                   </div>
                 </li>
-                <li class="module-item" data-module="11">
-                  <div class="module-number">11</div>
-                  <div class="module-content">
-                    <div class="module-title">HTML 5</div>
-                    <div class="module-duration">45 min</div>
-                  </div>
-                </li>
-                <li class="module-item" data-module="12">
-                  <div class="module-number">12</div>
+                <li class="module-item" data-module="10">
+                  <div class="module-number">10</div>
                   <div class="module-content">
                     <div class="module-title">Project</div>
                     <div class="module-duration">45 min</div>
@@ -627,6 +613,7 @@
           }
         ]
       },
+
       4: {
         title: "Gambar & Media",
         slides: [
@@ -709,6 +696,7 @@
           }
         ]
       },
+
       5: {
         title: "List",
         slides: [
@@ -793,6 +781,7 @@
           }
         ]
       },
+
       6: {
         title: "Tabel Lanjutan",
         slides: [
@@ -1008,6 +997,7 @@
           }
         ]
       },
+
       7: {
         title: "Formulir (Form)",
         slides: [
@@ -1241,6 +1231,7 @@
           }
         ]
       },
+
       8: {
         title: "Elemen Struktur & Semantik",
         slides: [
@@ -1411,168 +1402,8 @@
           }
         ]
       },
+
       9: {
-        title: "Metadata & SEO Dasar",
-        slides: [
-          {
-            title: "Pengenalan Metadata dan Tag Head",
-            content: `
-              <p>
-                Metadata adalah informasi tambahan yang menjelaskan isi dari halaman web, 
-                tetapi tidak ditampilkan langsung kepada pengguna. 
-                Metadata biasanya diletakkan di dalam elemen <code>&lt;head&gt;</code>.
-              </p>
-
-              <p>
-                Elemen <code>&lt;head&gt;</code> berfungsi untuk menyimpan informasi penting seperti:
-              </p>
-
-              <ul>
-                <li>Judul halaman (<code>&lt;title&gt;</code>)</li>
-                <li>Deskripsi dan pengaturan SEO (<code>&lt;meta&gt;</code>)</li>
-                <li>Ikon website (<code>&lt;link rel="icon"&gt;</code>)</li>
-                <li>Referensi stylesheet atau font (<code>&lt;link&gt;</code>)</li>
-                <li>Tag sosial media dan Open Graph</li>
-              </ul>
-
-              <pre><code>
-      &lt;head&gt;
-        &lt;title&gt;Belajar HTML - Metadata&lt;/title&gt;
-        &lt;meta charset="UTF-8"&gt;
-        &lt;meta name="description" content="Kursus online untuk belajar HTML dari dasar hingga mahir."&gt;
-        &lt;meta name="keywords" content="HTML, belajar HTML, web development"&gt;
-        &lt;meta name="author" content="WebCourse"&gt;
-      &lt;/head&gt;
-              </code></pre>
-            `
-          },
-          {
-            title: "Tag Title",
-            content: `
-              <p>
-                Elemen <code>&lt;title&gt;</code> menampilkan judul halaman pada tab browser dan hasil pencarian di mesin pencari. 
-                Tag ini sangat penting untuk SEO.
-              </p>
-
-              <pre><code>
-      &lt;head&gt;
-        &lt;title&gt;Belajar HTML untuk Pemula&lt;/title&gt;
-      &lt;/head&gt;
-              </code></pre>
-
-              <p><strong>Tips SEO:</strong></p>
-              <ul>
-                <li>Gunakan judul yang singkat, relevan, dan mengandung kata kunci utama.</li>
-                <li>Idealnya tidak lebih dari 60 karakter.</li>
-              </ul>
-            `
-          },
-          {
-            title: "Tag Meta Dasar",
-            content: `
-              <p>
-                Tag <code>&lt;meta&gt;</code> digunakan untuk memberikan informasi tambahan tentang halaman web.
-                Tag ini tidak memiliki penutup dan diletakkan di dalam <code>&lt;head&gt;</code>.
-              </p>
-
-              <ul>
-                <li><code>&lt;meta charset&gt;</code> — Menentukan karakter encoding halaman (biasanya UTF-8).</li>
-                <li><code>&lt;meta name="description"&gt;</code> — Menjelaskan isi halaman, digunakan oleh mesin pencari.</li>
-                <li><code>&lt;meta name="viewport"&gt;</code> — Mengatur tampilan halaman agar responsif di perangkat mobile.</li>
-              </ul>
-
-              <pre><code>
-      &lt;meta charset="UTF-8"&gt;
-      &lt;meta name="description" content="Panduan lengkap belajar HTML untuk pemula."&gt;
-      &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
-              </code></pre>
-            `
-          },
-          {
-            title: "Favicon (Link Rel Icon)",
-            content: `
-              <p>
-                Favicon adalah ikon kecil yang muncul di tab browser, bookmark, atau hasil pencarian.
-                Biasanya berformat <code>.ico</code>, <code>.png</code>, atau <code>.svg</code>.
-              </p>
-
-              <pre><code>
-      &lt;link rel="icon" type="image/png" href="favicon.png"&gt;
-              </code></pre>
-
-              <p>
-                Pastikan favicon berukuran kecil (misalnya 32x32 px) dan mewakili identitas website kamu.
-              </p>
-            `
-          },
-          {
-            title: "Open Graph & Meta Tag Sosial Media",
-            content: `
-              <p>
-                Open Graph adalah standar meta tag yang digunakan oleh platform seperti Facebook, WhatsApp, dan LinkedIn
-                untuk menampilkan preview halaman saat dibagikan.
-              </p>
-
-              <ul>
-                <li><code>og:title</code> — Judul yang muncul saat halaman dibagikan.</li>
-                <li><code>og:description</code> — Deskripsi singkat halaman.</li>
-                <li><code>og:image</code> — Gambar thumbnail.</li>
-                <li><code>og:url</code> — URL halaman.</li>
-              </ul>
-
-              <pre><code>
-      &lt;meta property="og:title" content="Belajar HTML untuk Pemula"&gt;
-      &lt;meta property="og:description" content="Panduan interaktif belajar HTML dari nol!"&gt;
-      &lt;meta property="og:image" content="https://webcourse.com/html-thumbnail.jpg"&gt;
-      &lt;meta property="og:url" content="https://webcourse.com/html"&gt;
-              </code></pre>
-
-              <p>
-                Selain Open Graph, Twitter juga memiliki versi khusus yaitu <code>twitter:card</code> dan <code>twitter:title</code>.
-              </p>
-
-              <pre><code>
-      &lt;meta name="twitter:card" content="summary_large_image"&gt;
-      &lt;meta name="twitter:title" content="Belajar HTML untuk Pemula"&gt;
-      &lt;meta name="twitter:description" content="Pelajari HTML dengan mudah dan cepat."&gt;
-      &lt;meta name="twitter:image" content="https://webcourse.com/html-thumbnail.jpg"&gt;
-              </code></pre>
-            `
-          },
-          {
-            title: "Tag Base dan Link",
-            content: `
-              <p>
-                Elemen <code>&lt;base&gt;</code> digunakan untuk menetapkan URL dasar untuk semua tautan relatif di halaman.
-                Sementara elemen <code>&lt;link&gt;</code> berfungsi untuk menghubungkan file eksternal seperti CSS, font, atau ikon.
-              </p>
-
-              <pre><code>
-      &lt;base href="https://webcourse.com/"&gt;
-      &lt;link rel="stylesheet" href="assets/styles.css"&gt;
-      &lt;link rel="preconnect" href="https://fonts.googleapis.com"&gt;
-      &lt;link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&amp;display=swap"&gt;
-              </code></pre>
-
-              <p>
-                Dengan <code>&lt;base&gt;</code>, browser akan menggunakan URL dasar ini untuk semua tautan relatif, 
-                sehingga tidak perlu menulis URL lengkap di setiap <code>href</code>.
-              </p>
-            `
-          },
-          {
-            title: "Video: Optimasi Metadata & SEO Dasar",
-            video: "https://www.youtube.com/embed/XR5Rlw6h8rE",
-            content: `
-              <p>
-                Tonton video berikut untuk memahami bagaimana metadata dan tag <code>&lt;head&gt;</code>
-                berperan dalam SEO dan bagaimana cara menerapkannya dengan benar di setiap halaman web.
-              </p>
-            `
-          }
-        ]
-      },
-      10: {
         title: "Resource & Asset",
         slides: [
           {
@@ -1762,262 +1593,8 @@
           }
         ]
       },
-      11: {
-        title: "HTML5 & Fitur Modern",
-        slides: [
-          {
-            title: "Pengenalan HTML5",
-            content: `
-              <p>
-                <strong>HTML5</strong> adalah versi terbaru dari HTML yang membawa banyak fitur baru dan peningkatan besar dibanding versi sebelumnya.
-                Tujuannya adalah untuk membuat web lebih interaktif, efisien, dan kaya media tanpa bergantung pada plugin eksternal seperti Flash.
-              </p>
-
-              <p>
-                HTML5 memperkenalkan banyak <strong>tag semantik</strong>, <strong>API baru</strong>, serta <strong>dukungan multimedia</strong> langsung.
-              </p>
-
-              <ul>
-                <li>Tag semantik baru seperti <code>&lt;header&gt;</code>, <code>&lt;footer&gt;</code>, <code>&lt;article&gt;</code></li>
-                <li>Dukungan video dan audio bawaan</li>
-                <li>Canvas untuk menggambar dan membuat animasi</li>
-                <li>API penyimpanan lokal dan lokasi pengguna</li>
-              </ul>
-
-              <p>
-                Mari kita pelajari satu per satu fitur modern ini.
-              </p>
-            `
-          },
-          {
-            title: "Elemen Multimedia: Video dan Audio",
-            content: `
-              <p>
-                HTML5 memungkinkan pemutaran media langsung di browser menggunakan tag <code>&lt;video&gt;</code> dan <code>&lt;audio&gt;</code>.
-              </p>
-
-              <pre><code>
-      &lt;video width="400" controls&gt;
-        &lt;source src="video.mp4" type="video/mp4"&gt;
-        Browser kamu tidak mendukung tag video.
-      &lt;/video&gt;
-
-      &lt;audio controls&gt;
-        &lt;source src="audio.mp3" type="audio/mpeg"&gt;
-        Browser kamu tidak mendukung tag audio.
-      &lt;/audio&gt;
-              </code></pre>
-
-              <p>
-                Atribut penting:
-              </p>
-              <ul>
-                <li><code>controls</code> — menampilkan kontrol pemutar (play, pause, volume)</li>
-                <li><code>autoplay</code> — memutar otomatis</li>
-                <li><code>loop</code> — mengulang otomatis</li>
-                <li><code>poster</code> — gambar thumbnail untuk video</li>
-              </ul>
-            `
-          },
-          {
-            title: "Canvas & SVG",
-            content: `
-              <p>
-                HTML5 menyediakan dua cara utama untuk menampilkan grafik vektor atau menggambar di halaman web: <strong>Canvas</strong> dan <strong>SVG</strong>.
-              </p>
-
-              <h4>1. Canvas</h4>
-              <p>
-                Tag <code>&lt;canvas&gt;</code> digunakan untuk menggambar grafik menggunakan JavaScript.
-              </p>
-
-              <pre><code>
-      &lt;canvas id="myCanvas" width="200" height="100" style="border:1px solid #000;"&gt;&lt;/canvas&gt;
-
-      &lt;script&gt;
-        const c = document.getElementById("myCanvas");
-        const ctx = c.getContext("2d");
-        ctx.fillStyle = "blue";
-        ctx.fillRect(20, 20, 150, 50);
-      &lt;/script&gt;
-              </code></pre>
-
-              <h4>2. SVG (Scalable Vector Graphics)</h4>
-              <p>
-                SVG digunakan untuk menampilkan gambar vektor berbasis XML yang bisa diperbesar tanpa pecah.
-              </p>
-
-              <pre><code>
-      &lt;svg width="200" height="100"&gt;
-        &lt;circle cx="50" cy="50" r="40" stroke="green" stroke-width="4" fill="yellow" /&gt;
-      &lt;/svg&gt;
-              </code></pre>
-
-              <p>
-                Canvas cocok untuk grafik dinamis (game, animasi), sementara SVG cocok untuk ikon, diagram, dan grafik statis.
-              </p>
-            `
-          },
-          {
-            title: "Elemen Interaktif: Progress dan Meter",
-            content: `
-              <p>
-                HTML5 menambahkan elemen visual untuk menunjukkan progres atau nilai tertentu dalam bentuk bar.
-              </p>
-
-              <h4>Tag &lt;progress&gt;</h4>
-              <pre><code>
-      &lt;label for="file"&gt;Mengunggah file:&lt;/label&gt;
-      &lt;progress id="file" value="70" max="100"&gt;70%&lt;/progress&gt;
-              </code></pre>
-
-              <h4>Tag &lt;meter&gt;</h4>
-              <pre><code>
-      &lt;label for="disk"&gt;Penggunaan disk:&lt;/label&gt;
-      &lt;meter id="disk" value="0.6"&gt;60%&lt;/meter&gt;
-              </code></pre>
-
-              <p>
-                <code>&lt;progress&gt;</code> digunakan untuk progres tugas (upload, loading),
-                sementara <code>&lt;meter&gt;</code> untuk nilai terukur seperti suhu atau level baterai.
-              </p>
-            `
-          },
-          {
-            title: "Elemen Interaktif Lainnya: Details & Summary",
-            content: `
-              <p>
-                Tag <code>&lt;details&gt;</code> dan <code>&lt;summary&gt;</code> digunakan untuk membuat konten yang bisa dibuka/tutup (collapsible).
-              </p>
-
-              <pre><code>
-      &lt;details&gt;
-        &lt;summary&gt;Klik untuk melihat detail&lt;/summary&gt;
-        &lt;p&gt;Ini adalah konten tersembunyi yang muncul saat diklik.&lt;/p&gt;
-      &lt;/details&gt;
-              </code></pre>
-
-              <p>
-                Fitur ini sangat berguna untuk FAQ, panduan, atau deskripsi tambahan tanpa menggunakan JavaScript.
-              </p>
-            `
-          },
-          {
-            title: "Elemen Tambahan: Time & Mark",
-            content: `
-              <p>
-                HTML5 juga menambahkan beberapa tag semantik kecil tapi berguna.
-              </p>
-
-              <pre><code>
-      &lt;p&gt;Artikel ini ditulis pada &lt;time datetime="2025-10-12"&gt;12 Oktober 2025&lt;/time&gt;.&lt;/p&gt;
-      &lt;p&gt;Kalimat ini memiliki &lt;mark&gt;teks yang disorot&lt;/mark&gt;.&lt;/p&gt;
-              </code></pre>
-
-              <ul>
-                <li><code>&lt;time&gt;</code> — menandai waktu atau tanggal (berguna untuk SEO dan mesin pencari)</li>
-                <li><code>&lt;mark&gt;</code> — menandai atau menyorot teks penting</li>
-              </ul>
-            `
-          },
-          {
-            title: "Pengenalan LocalStorage & SessionStorage",
-            content: `
-              <p>
-                HTML5 memperkenalkan <strong>Web Storage API</strong> untuk menyimpan data secara lokal di browser tanpa server.
-              </p>
-
-              <ul>
-                <li><strong>localStorage</strong> — menyimpan data permanen (tidak hilang setelah browser ditutup)</li>
-                <li><strong>sessionStorage</strong> — data hanya berlaku selama sesi browser aktif</li>
-              </ul>
-
-              <pre><code>
-      // Menyimpan data
-      localStorage.setItem("username", "Ali");
-
-      // Mengambil data
-      const user = localStorage.getItem("username");
-
-      // Menghapus data
-      localStorage.removeItem("username");
-              </code></pre>
-
-              <p>
-                Fitur ini sering digunakan untuk menyimpan preferensi user, tema (gelap/terang), atau data sementara tanpa database.
-              </p>
-            `
-          },
-          {
-            title: "Pengenalan Drag & Drop API",
-            content: `
-              <p>
-                HTML5 memiliki <strong>Drag and Drop API</strong> yang memungkinkan pengguna menyeret dan melepaskan elemen langsung di halaman web.
-              </p>
-
-              <pre><code>
-      &lt;div id="drag" draggable="true" style="width:100px;height:100px;background:tomato;"&gt;
-        Seret saya!
-      &lt;/div&gt;
-
-      &lt;script&gt;
-        const box = document.getElementById("drag");
-        box.addEventListener("dragstart", () =&gt; {
-          console.log("Elemen sedang diseret!");
-        });
-      &lt;/script&gt;
-              </code></pre>
-
-              <p>
-                API ini bisa digunakan untuk fitur seperti upload gambar dengan drag, atau menyusun ulang elemen secara interaktif.
-              </p>
-            `
-          },
-          {
-            title: "Pengenalan Geolocation API",
-            content: `
-              <p>
-                HTML5 juga menambahkan <strong>Geolocation API</strong> untuk mendeteksi lokasi pengguna (dengan izin).
-              </p>
-
-              <pre><code>
-      &lt;button onclick="getLocation()"&gt;Lihat Lokasi Saya&lt;/button&gt;
-      &lt;p id="result"&gt;&lt;/p&gt;
-
-      &lt;script&gt;
-        function getLocation() {
-          if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(showPosition);
-          } else {
-            document.getElementById("result").innerText = "Geolocation tidak didukung di browser ini.";
-          }
-        }
-
-        function showPosition(position) {
-          document.getElementById("result").innerText =
-            "Latitude: " + position.coords.latitude +
-            ", Longitude: " + position.coords.longitude;
-        }
-      &lt;/script&gt;
-              </code></pre>
-
-              <p>
-                Fitur ini berguna untuk aplikasi seperti peta, pelacakan lokasi, atau rekomendasi berbasis lokasi.
-              </p>
-            `
-          },
-          {
-            title: "Video: Fitur Modern di HTML5",
-            video: "https://www.youtube.com/embed/qPYCnebQQ6U",
-            content: `
-              <p>
-                Tonton video berikut untuk melihat demonstrasi fitur-fitur modern HTML5 seperti video, canvas, dan localStorage secara langsung.
-              </p>
-            `
-          }
-        ]
-      },
-      12: {
+      
+      10: {
         title: "Project: Build a Multi-page Course Landing Website (Step-by-step)",
         slides: [
           {

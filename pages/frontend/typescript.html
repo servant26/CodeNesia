@@ -1,0 +1,2114 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CodeNesia - Course Detail</title>
+  <link rel="stylesheet" type="text/css" href="../../assets/bootstrap/css/bootstrap.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="../../assets/css/frontend.css">
+</head>
+<body>
+  <!-- Mobile Navbar -->
+  <nav id="mobileNavbar" class="mobile-navbar" aria-label="Mobile navigation" style="display: none;">
+    <!-- Content akan diisi oleh JavaScript -->
+  </nav>
+
+  <!-- Sidebar -->
+  <aside id="siteSidebar" class="sidebar" aria-label="Sidebar">
+    <div class="logo">
+      <!-- Mengganti mark dengan foto profil kartun -->
+      <img src="../../assets/img/profile.jpg" alt="Foto Profil" class="profile-pic">
+      <div>
+        <div style="font-size:14px;font-weight:700">CodeNesia</div>
+      </div>
+    </div>
+
+    <nav id="mainNav" class="side-nav" aria-label="Main navigation">
+      <a class="nav-link" href="#section-front-end"><i class="bi bi-folder2-open"></i> Front-End</a>
+      <a class="nav-link" href="#section-back-end"><i class="bi bi-server"></i> Back-End</a>
+      <a class="nav-link" href="#section-language"><i class="bi bi-code-slash"></i> Programming Language</a>
+      <a class="nav-link" href="#ebook"><i class="bi bi-book"></i> Ebook</a>
+      <a class="nav-link" href="#support"><i class="bi bi-hand-thumbs-up"></i> Support Us</a>
+      <a class="nav-link" href="../home.html"><i class="bi bi-back"></i> Back</a>
+    </nav>
+
+    <div class="social-section">
+      <div>Social Media</div>
+
+      <!-- project-pill style social buttons (like top area) -->
+      <a class="project-pill" href="https://www.youtube.com" target="_blank" rel="noopener noreferrer">
+        <span class="icon"><i class="bi bi-youtube" style="color:#f59e0b"></i></span>
+        <span>Youtube</span>
+      </a>
+
+      <a class="project-pill" href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+        <span class="icon"><i class="bi bi-instagram" style="color:#3ec5ff"></i></span>
+        <span>Instagram</span>
+      </a>
+
+      <a class="project-pill" href="https://www.tiktok.com" target="_blank" rel="noopener noreferrer">
+        <span class="icon"><i class="bi bi-music-note-beamed"></i></span>
+        <span>Tiktok</span>
+      </a>
+
+      <a class="project-pill" href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+        <span class="icon"><i class="bi bi-facebook"></i></span>
+        <span>Facebook</span>
+      </a>
+    </div>
+  </aside>
+
+  <!-- Main -->
+  <main id="top" class="main" role="main">
+    <div class="topbar">
+      <div class="topbar-left">
+        <div class="breadcrumbs">
+          <i class="bi bi-grid-fill"></i>
+          <div id="currentDate" style="font-weight:700"></div>
+        </div>
+      </div>
+
+      <div class="topbar-right">
+        <!-- Theme Toggle Button -->
+        <button id="themeToggle" class="theme-toggle" aria-label="Toggle dark mode">
+          <i class="bi bi-sun" id="themeIcon"></i>
+        </button>
+      </div>
+    </div>
+
+    <div class="main-content">
+      <!-- Course Header -->
+      <div class="course-header">
+        <div class="course-cover">
+          <img src="../../assets/img/tailwind.jpg" alt="Figma Course Cover">
+        </div>
+        <div class="course-info">
+          <h1 class="course-title">Tailwind</h1>
+          <p class="course-description">
+            Pelajari Tailwind CSS untuk membuat tampilan website modern dengan cara yang cepat dan fleksibel. Di course ini, kamu akan memahami cara kerja utility-first framework yang memungkinkan kamu mendesain langsung di dalam HTML.
+          </p>
+          <div class="course-actions">
+            <a href="https://www.youtube.com/playlist?list=YOUR_PLAYLIST_ID" target="_blank" class="btn-enroll btn btn-primary">
+              Tonton Playlist
+            </a>
+          </div>
+        </div>
+      </div>
+      <br>
+      <!-- Course Content -->
+      <div class="course-content">
+        <div class="content-left">
+          <!-- Course Modules -->
+          <div class="content-section">
+            <h2 class="section-title"><i class="bi bi-list-check"></i> Daftar Materi</h2>
+            <div class="scrollable-section">
+              <ul class="module-list">
+                <li class="module-item" data-module="1">
+                  <div class="module-number">01</div>
+                  <div class="module-content">
+                    <div class="module-title">Pengenalan TypeScript</div>
+                    <div class="module-duration">20 min</div>
+                  </div>
+                </li>
+                <li class="module-item" data-module="2">
+                  <div class="module-number">02</div>
+                  <div class="module-content">
+                    <div class="module-title">Persiapan & Instalasi</div>
+                    <div class="module-duration">20 min</div>
+                  </div>
+                </li>
+                <li class="module-item" data-module="3">
+                  <div class="module-number">03</div>
+                  <div class="module-content">
+                    <div class="module-title">Dasar TypeScript</div>
+                    <div class="module-duration">36 min</div>
+                  </div>
+                </li>
+                <li class="module-item" data-module="4">
+                  <div class="module-number">04</div>
+                  <div class="module-content">
+                    <div class="module-title">Fungsi (Functions)</div>
+                    <div class="module-duration">40 min</div>
+                  </div>
+                </li>
+                <li class="module-item" data-module="5">
+                  <div class="module-number">05</div>
+                  <div class="module-content">
+                    <div class="module-title">Objek, Array, & Tuple</div>
+                    <div class="module-duration">12 min</div>
+                  </div>
+                </li>
+                <li class="module-item" data-module="6">
+                  <div class="module-number">06</div>
+                  <div class="module-content">
+                    <div class="module-title">Interface & Type Alias</div>
+                    <div class="module-duration">40 min</div>
+                  </div>
+                </li>
+                <li class="module-item" data-module="7">
+                  <div class="module-number">07</div>
+                  <div class="module-content">
+                    <div class="module-title">Class & Object-Oriented Programming (OOP)</div>
+                    <div class="module-duration">8 min</div>
+                  </div>
+                </li>
+                <li class="module-item" data-module="8">
+                  <div class="module-number">08</div>
+                  <div class="module-content">
+                    <div class="module-title">Enums, Generics, & Utility Types</div>
+                    <div class="module-duration">25 min</div>
+                  </div>
+                </li>
+                <li class="module-item" data-module="9">
+                  <div class="module-number">09</div>
+                  <div class="module-content">
+                    <div class="module-title">Modul & Namespace</div>
+                    <div class="module-duration">18 min</div>
+                  </div>
+                </li>
+                <li class="module-item" data-module="10">
+                  <div class="module-number">10</div>
+                  <div class="module-content">
+                    <div class="module-title">TypeScript + JavaScript & Framework</div>
+                    <div class="module-duration">45 min</div>
+                  </div>
+                </li>
+                <li class="module-item" data-module="11">
+                  <div class="module-number">11</div>
+                  <div class="module-content">
+                    <div class="module-title">Error Handling & Type Narrowing</div>
+                    <div class="module-duration">45 min</div>
+                  </div>
+                </li>
+                <li class="module-item" data-module="12">
+                  <div class="module-number">12</div>
+                  <div class="module-content">
+                    <div class="module-title">Project</div>
+                    <div class="module-duration">45 min</div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="content-right">
+          <!-- Course Stats - Now at the top -->
+          <div class="content-section">
+            <h2 class="section-title"><i class="bi bi-graph-up"></i> Detail Materi</h2>
+            <div style="display: flex; flex-direction: column; gap: 12px;">
+              <div style="display: flex; justify-content: space-between;">
+                <span style="color: var(--muted-text);">Durasi</span>
+                <span style="font-weight: 600;">2.5 Jam</span>
+              </div>
+              <div style="display: flex; justify-content: space-between;">
+                <span style="color: var(--muted-text);">Total Materi</span>
+                <span style="font-weight: 600;">12 Modul</span>
+              </div>
+              <div style="display: flex; justify-content: space-between;">
+                <span style="color: var(--muted-text);">Tipe</span>
+                <span style="font-weight: 600; color: var(--accent);">Front-End</span>
+              </div>
+            </div>
+          </div>
+          <br>
+          <!-- About Course - Now scrollable and at the bottom -->
+          <div class="content-section">
+            <h2 class="section-title"><i class="bi bi-info-circle"></i> Tentang Materi</h2>
+            <div class="scrollable-section" style="max-height: 195px;">
+              <p class="about-course">
+                Course Tailwind CSS ini dirancang untuk membantumu membangun antarmuka web yang responsif dan efisien tanpa harus menulis CSS panjang. Kamu akan belajar konsep utility class, responsive design, hingga teknik kustomisasi tema dan komponen.
+              </p>
+              <p class="about-course">
+                Cocok untuk developer yang ingin mempercepat proses styling, menjaga konsistensi desain, dan menghasilkan tampilan website yang bersih serta profesional.
+              </p>
+              <!-- ... konten lainnya ... -->
+            </div>
+          </div>
+        </div>
+
+        <!-- PERUBAHAN: What You'll Learn - NOW FULL WIDTH -->
+        <div class="content-section full-width-section">
+          <h2 class="section-title"><i class="bi bi-lightbulb"></i> Apa yang akan kamu kuasai?</h2><br>
+          <ul class="learn-list">
+            <li class="learn-item">Memahami konsep dasar dan filosofi utility-first dari Tailwind CSS</li>
+            <li class="learn-item">Mengetahui cara instalasi Tailwind melalui CDN, NPM, dan konfigurasi manual menggunakan PostCSS atau Vite</li>
+            <li class="learn-item">Menguasai struktur dan workflow proyek berbasis Tailwind</li>
+            <li class="learn-item">Mengatur tipografi, warna, background, border, shadow, dan efek visual menggunakan utility class</li>
+            <li class="learn-item">Menggunakan sistem spacing, sizing, dan positioning dengan fleksibel dan efisien</li>
+            <li class="learn-item">Membangun layout modern menggunakan Flexbox dan Grid utilities bawaan Tailwind</li>
+            <li class="learn-item">Menerapkan transition, transform, dan animasi bawaan Tailwind untuk efek interaktif</li>
+            <li class="learn-item">Mengimplementasikan desain responsif menggunakan breakpoint (sm, md, lg, xl, 2xl)</li>
+            <li class="learn-item">Menerapkan dark mode berbasis class maupun prefers-color-scheme secara otomatis</li>
+            <li class="learn-item">Menyesuaikan konfigurasi Tailwind melalui file tailwind.config.js untuk menambah warna, font, dan spacing custom</li>
+            <li class="learn-item">Menggunakan @apply untuk membuat utility class gabungan dan komponen reusable</li>
+            <li class="learn-item">Membangun komponen seperti button, card, navbar, modal, alert, form, dan hero section dengan pendekatan utility-first</li>
+            <li class="learn-item">Mengoptimalkan ukuran CSS dengan fitur purge dan minify</li>
+            <li class="learn-item">Mengintegrasikan Tailwind dengan framework populer seperti React, Next.js, dan Laravel</li>
+            <li class="learn-item">Menerapkan best practice dalam membangun website lengkap yang modern, ringan, dan mudah diatur</li>
+          </ul>
+        </div>
+
+    </div>
+  </main>
+
+  <!-- Course Modal -->
+  <div id="courseModal" class="course-modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="modalModuleTitle">Module 1: Pengenalan Dasar</h3>
+        <button class="close-modal">&times;</button>
+      </div>
+      <div class="modal-body" id="modalBody">
+        <!-- Konten akan diisi oleh JavaScript berdasarkan modul yang dipilih -->
+      </div>
+      <div class="modal-footer">
+        <div class="slide-indicator">
+          Slide <span id="currentSlide">1</span> of <span id="totalSlides">3</span>
+        </div>
+        <div class="nav-buttons">
+          <button class="btn-nav btn-nav-outline" id="prevBtn">
+            <i class="bi bi-chevron-left"></i> Previous
+          </button>
+          <button class="btn-nav" id="nextBtn">
+            Next <i class="bi bi-chevron-right"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="helpFab" class="help-fab" title="Help"><i class="bi bi-question-lg"></i></div>
+
+  <!-- Bootstrap JS bundle -->
+  <script src="../../assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Elements
+    const sidebar = document.getElementById('siteSidebar');
+    const themeToggle = document.getElementById('themeToggle');
+    const themeIcon = document.getElementById('themeIcon');
+    const htmlElement = document.documentElement;
+    const mobileNavbar = document.getElementById('mobileNavbar');
+    const navLinks = document.querySelectorAll('#mainNav .nav-link');
+    const currentDateElement = document.getElementById('currentDate');
+    const courseModal = document.getElementById('courseModal');
+    const closeModal = document.querySelector('.close-modal');
+    const moduleItems = document.querySelectorAll('.module-item');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const currentSlideEl = document.getElementById('currentSlide');
+    const totalSlidesEl = document.getElementById('totalSlides');
+    const modalModuleTitle = document.getElementById('modalModuleTitle');
+    const modalBody = document.getElementById('modalBody');
+
+    // Modal state
+    let currentSlide = 0;
+    let totalSlides = 0;
+    let currentModule = 1;
+    let slides = [];
+
+    // Data konten untuk setiap modul
+    const moduleContent = {
+      1: {
+        title: "Pengenalan TypeScript",
+        slides: [
+          {
+            title: "Sejarah Singkat TypeScript",
+            content: `
+      TypeScript pertama kali dirilis oleh **Microsoft pada tahun 2012**, dipimpin oleh Anders Hejlsberg — arsitek utama C#.
+      Tujuannya sederhana: memperbaiki kelemahan JavaScript dalam proyek skala besar yang semakin kompleks.
+      Dengan menambahkan sistem tipe (type system) dan fitur OOP modern, TypeScript membantu developer menulis kode yang lebih **terstruktur, aman, dan mudah dikelola**.
+            `
+          },
+          {
+            title: "Apa Itu TypeScript?",
+            content: `
+      **TypeScript** adalah _superset_ dari JavaScript — artinya, semua kode JavaScript valid juga di TypeScript.
+      Perbedaannya, TypeScript menambahkan fitur **static typing**, **class**, **interface**, dan **tools compiler** yang lebih canggih.
+      Kode TypeScript perlu di-*transpile* menjadi JavaScript sebelum dijalankan di browser atau Node.js.
+            `
+          },
+          {
+            title: "Perbedaan TypeScript vs JavaScript",
+            content: `
+      | Aspek | JavaScript | TypeScript |
+      |-------|-------------|------------|
+      | Jenis bahasa | Dynamic typing | Static typing |
+      | Eksekusi | Langsung dijalankan | Harus di-*compile* |
+      | Error checking | Saat runtime | Saat compile-time |
+      | Fitur modern | Bergantung versi | Mendukung fitur baru dengan tipe |
+      | Dukungan IDE | Terbatas | Auto-complete & type hints kuat |
+
+      Intinya, **TypeScript memberi kepastian tipe**, sehingga bug bisa dicegah bahkan sebelum kode dijalankan.
+            `
+          },
+          {
+            title: "Kenapa Dipakai di Proyek Besar?",
+            content: `
+      TypeScript banyak dipakai di perusahaan besar seperti **Microsoft, Google, Airbnb, dan Slack**.
+      Beberapa alasan utamanya:
+      - ✅ **Type safety** → mencegah error sejak awal.
+      - ⚙️ **Scalability** → mudah dikelola di proyek tim besar.
+      - 🧠 **Tooling support** → integrasi bagus dengan VSCode & linting tools.
+      - 🧩 **Maintainability** → kode lebih mudah dibaca & diperluas.
+            `
+          },
+          {
+            title: "Cara Kerja TypeScript",
+            content: `
+      TypeScript **tidak dijalankan langsung** oleh browser.
+      Langkah kerjanya:
+      1. Developer menulis kode dalam file \`.ts\`.
+      2. Compiler TypeScript (\`tsc\`) mengubahnya menjadi JavaScript murni (\`.js\`).
+      3. JavaScript hasil kompilasi inilah yang dijalankan di browser atau Node.js.
+
+      Jadi, TypeScript adalah **lapisan di atas JavaScript** yang menambah keamanan dan struktur sebelum dijalankan.
+            `
+          },
+          {
+            title: "Kelebihan & Kekurangan TypeScript",
+            content: `
+      **Kelebihan:**
+      - Mendeteksi error sebelum runtime.
+      - Lebih mudah di-maintain dan scalable.
+      - Fitur OOP lengkap (class, interface, inheritance).
+      - Dukungan tooling dan autocomplete sangat kuat.
+
+      **Kekurangan:**
+      - Perlu proses compile tambahan.
+      - Kurva belajar sedikit lebih tinggi.
+      - Kadang butuh konfigurasi ekstra untuk library lama.
+
+      Namun secara keseluruhan, TypeScript memberikan keseimbangan antara fleksibilitas JavaScript dan keamanan tipe dari bahasa seperti Java/C#.
+            `
+          },
+          {
+            title: "Video: Pengenalan TypeScript",
+            content: `
+      <iframe width="560" height="315"
+      src="https://www.youtube.com/embed/zQnBQ4tB3ZA"
+      title="Pengenalan TypeScript untuk Pemula"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen></iframe>
+            `
+          }
+        ]
+      },
+
+      2: {
+        title: "Persiapan & Setup Lingkungan",
+        slides: [
+          {
+            title: "Tujuan Pembelajaran",
+            content: `
+      Tujuan dari materi ini adalah agar kamu bisa:
+      - Menyiapkan semua kebutuhan untuk mulai menulis kode TypeScript.
+      - Memahami cara menginstal, mengatur, dan menjalankan file TypeScript pertama kamu.
+      - Mengenal struktur dasar proyek TypeScript yang baik.
+
+      Setelah materi ini, kamu sudah bisa **membuat proyek TypeScript sendiri dari nol.**
+            `
+          },
+          {
+            title: "Requirement: Node.js & npm",
+            content: `
+      Sebelum mulai, pastikan kamu sudah menginstal:
+      1. **Node.js** → dibutuhkan untuk menjalankan compiler TypeScript.
+      2. **npm (Node Package Manager)** → otomatis terinstal bersama Node.js.
+
+      Cek instalasi dengan perintah:
+      \`\`\`bash
+      node -v
+      npm -v
+      \`\`\`
+
+      Jika keduanya menampilkan versi, artinya sudah siap digunakan.
+            `
+          },
+          {
+            title: "Instalasi TypeScript Global",
+            content: `
+      Setelah Node.js dan npm siap, langkah berikutnya adalah menginstal TypeScript secara global.
+
+      Gunakan perintah:
+      \`\`\`bash
+      npm install -g typescript
+      \`\`\`
+
+      Perintah ini akan menambahkan **compiler TypeScript (\`tsc\`)** ke sistem kamu, sehingga bisa digunakan di mana saja lewat terminal.
+            `
+          },
+          {
+            title: "Mengecek Versi TypeScript",
+            content: `
+      Setelah instalasi selesai, pastikan TypeScript sudah terpasang dengan benar.
+
+      Cek dengan:
+      \`\`\`bash
+      tsc -v
+      \`\`\`
+
+      Jika muncul versi seperti:
+      \`\`\`
+      Version 5.4.3
+      \`\`\`
+      berarti instalasi berhasil dan TypeScript siap digunakan.
+            `
+          },
+          {
+            title: "Membuat Proyek TypeScript Baru",
+            content: `
+      Kamu bisa membuat proyek TypeScript dari nol dengan langkah berikut:
+
+      1. Buat folder proyek baru:
+      \`\`\`bash
+      mkdir belajar-typescript
+      cd belajar-typescript
+      \`\`\`
+
+      2. Inisialisasi TypeScript:
+      \`\`\`bash
+      tsc --init
+      \`\`\`
+
+      Perintah ini akan otomatis membuat file konfigurasi bernama **\`tsconfig.json\`**, yang berisi pengaturan compiler TypeScript.
+            `
+          },
+          {
+            title: "Struktur File Dasar TypeScript",
+            content: `
+      Setelah inisialisasi, struktur folder kamu akan terlihat seperti ini:
+      \`\`\`
+      belajar-typescript/
+      ├── tsconfig.json
+      └── index.ts
+      \`\`\`
+
+      - **\`index.ts\`** → tempat kamu menulis kode TypeScript.
+      - **\`tsconfig.json\`** → file konfigurasi yang mengatur cara TypeScript dikompilasi ke JavaScript.
+            `
+          },
+          {
+            title: "Menjalankan & Meng-Compile TypeScript",
+            content: `
+      Untuk menjalankan file TypeScript, pertama kamu harus meng-*compile* menjadi JavaScript.
+
+      Gunakan perintah:
+      \`\`\`bash
+      tsc index.ts
+      \`\`\`
+
+      Perintah ini akan menghasilkan file baru:
+      \`\`\`
+      index.js
+      \`\`\`
+
+      Kemudian jalankan JavaScript-nya dengan Node.js:
+      \`\`\`bash
+      node index.js
+      \`\`\`
+
+      🎉 Selamat! Kamu baru saja menjalankan program TypeScript pertamamu.
+            `
+          },
+          {
+            title: "Video: Setup TypeScript di VSCode",
+            content: `
+      <iframe width="560" height="315"
+      src="https://www.youtube.com/embed/TP4bYiuE1Zg"
+      title="Setup TypeScript di VSCode - Web Programming UNPAS"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen></iframe>
+            `
+          }
+        ]
+      },
+
+      3: {
+        title: "Dasar TypeScript",
+        slides: [
+          {
+            title: "Tujuan Pembelajaran",
+            content: `
+      Pada materi ini, kamu akan belajar dasar-dasar sintaks TypeScript yang wajib dikuasai:
+      - Mengenal tipe data dasar dan cara deklarasi variabel.
+      - Memahami *type annotation* dan *type inference*.
+      - Mengenal konsep *union*, *type alias*, dan *literal type*.
+
+      Setelah memahami materi ini, kamu akan mampu menulis kode TypeScript yang lebih aman dan terstruktur.
+            `
+          },
+          {
+            title: "Tipe Data Dasar di TypeScript",
+            content: `
+      TypeScript memiliki tipe data utama seperti bahasa lain, dengan tambahan kontrol tipe yang ketat.
+
+      Beberapa tipe data dasar:
+      - **string** → teks (contoh: \`"Hello"\`)
+      - **number** → angka (contoh: \`42\`)
+      - **boolean** → nilai benar/salah (contoh: \`true\`)
+      - **null** & **undefined** → nilai kosong / belum diisi
+      - **any** → tipe fleksibel (bisa apa saja)
+      - **unknown** → mirip \`any\` tapi lebih aman, harus dicek sebelum digunakan
+
+      Contoh:
+      \`\`\`ts
+      let nama: string = "Ali";
+      let umur: number = 21;
+      let aktif: boolean = true;
+      let data: any = "bebas";
+      \`\`\`
+            `
+          },
+          {
+            title: "Deklarasi Variabel (let, const, var)",
+            content: `
+      TypeScript mengikuti gaya modern JavaScript dalam deklarasi variabel:
+
+      - **let** → nilai bisa berubah.
+      - **const** → nilai tetap, tidak bisa diubah.
+      - **var** → sebaiknya dihindari karena cakupan (scope) yang luas.
+
+      Contoh:
+      \`\`\`ts
+      let usia: number = 20;
+      const PI: number = 3.14;
+      var status: string = "aktif";
+      \`\`\`
+
+      Gunakan **let** dan **const** untuk menjaga kode tetap aman dan konsisten.
+            `
+          },
+          {
+            title: "Type Annotation",
+            content: `
+      Type annotation digunakan untuk menentukan tipe variabel secara eksplisit.
+
+      Contoh:
+      \`\`\`ts
+      let nama: string = "Ali";
+      let umur: number = 22;
+      let isOnline: boolean = false;
+      \`\`\`
+
+      Kelebihannya:
+      - Mencegah salah input data.
+      - Membantu *auto-complete* di editor.
+      - Membuat kode lebih jelas bagi tim lain yang membaca.
+            `
+          },
+          {
+            title: "Type Inference (Deteksi Otomatis)",
+            content: `
+      TypeScript bisa otomatis mengenali tipe variabel tanpa kita tulis manual.
+
+      Contoh:
+      \`\`\`ts
+      let kota = "Samarinda";  // otomatis string
+      let jumlah = 10;         // otomatis number
+      \`\`\`
+
+      Jika kamu memberi nilai saat deklarasi, TypeScript akan **menebak tipe-nya** dan tidak mengizinkan tipe lain setelahnya.
+            `
+          },
+          {
+            title: "Union Types",
+            content: `
+      Union types memungkinkan satu variabel memiliki lebih dari satu tipe data.
+
+      Contoh:
+      \`\`\`ts
+      let id: string | number;
+      id = 123;     // valid
+      id = "ABC";   // valid
+      \`\`\`
+
+      Union sering digunakan untuk data yang fleksibel — misalnya ID pengguna bisa berupa angka atau teks.
+            `
+          },
+          {
+            title: "Type Alias",
+            content: `
+      Type alias digunakan untuk **memberi nama baru** pada tipe yang sering digunakan.
+
+      Contoh:
+      \`\`\`ts
+      type ID = string | number;
+
+      let userID: ID;
+      userID = 100;
+      userID = "U-01";
+      \`\`\`
+
+      Dengan type alias, kode jadi lebih rapi dan mudah dibaca.
+            `
+          },
+          {
+            title: "Literal Types",
+            content: `
+      Literal types membatasi nilai variabel agar hanya bisa berisi pilihan tertentu.
+
+      Contoh:
+      \`\`\`ts
+      type Role = "admin" | "user" | "guest";
+
+      let akses: Role;
+      akses = "admin";  // ✅
+      akses = "user";   // ✅
+      akses = "super";  // ❌ Error
+      \`\`\`
+
+      Cocok digunakan untuk membuat sistem peran, status, atau kondisi tetap.
+            `
+          },
+          {
+            title: "Video: Belajar Dasar TypeScript",
+            content: `
+      <iframe width="560" height="315"
+      src="https://www.youtube.com/embed/BCg4U1FzODs"
+      title="TypeScript Dasar untuk Pemula - Web Programming UNPAS"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen></iframe>
+            `
+          }
+        ]
+      },
+
+      4: {
+        title: "Fungsi (Functions)",
+        slides: [
+          {
+            title: "Tujuan Pembelajaran",
+            content: `
+      Di materi ini kamu akan belajar bagaimana cara membuat fungsi di TypeScript dengan tipe yang aman dan jelas.
+
+      Setelah mempelajari bagian ini, kamu akan mampu:
+      - Menentukan tipe untuk parameter dan nilai balik fungsi.
+      - Menggunakan *optional* dan *default parameter*.
+      - Memahami arrow function di TypeScript.
+      - Menggunakan *function overloading*.
+      - Mengenali tipe pengembalian khusus: \`void\`, \`never\`, dan \`unknown\`.
+            `
+          },
+          {
+            title: "Deklarasi Fungsi dengan Tipe Parameter & Return",
+            content: `
+      Dalam TypeScript, setiap parameter dan nilai balik fungsi bisa diberi tipe agar lebih aman.
+
+      Contoh:
+      \`\`\`ts
+      function tambah(a: number, b: number): number {
+        return a + b;
+      }
+
+      let hasil = tambah(5, 3); // hasil: 8
+      \`\`\`
+
+      Penjelasan:
+      - Parameter \`a\` dan \`b\` harus berupa **number**.
+      - Fungsi ini mengembalikan nilai bertipe **number** juga.
+      - Jika tipe salah, TypeScript akan memberi peringatan bahkan sebelum dijalankan.
+            `
+          },
+          {
+            title: "Optional Parameter & Default Value",
+            content: `
+      Kamu bisa membuat parameter bersifat opsional (tidak wajib diisi) atau memiliki nilai default.
+
+      Contoh:
+      \`\`\`ts
+      function greet(nama: string, pesan?: string) {
+        console.log(\`Halo \${nama}, \${pesan ?? "selamat datang!"}\`);
+      }
+
+      greet("Ali");
+      greet("Budi", "apa kabar?");
+      \`\`\`
+
+      Atau dengan *default value*:
+      \`\`\`ts
+      function greet2(nama: string, pesan: string = "selamat datang!") {
+        console.log(\`Halo \${nama}, \${pesan}\`);
+      }
+      \`\`\`
+
+      🔹 Catatan: Parameter opsional harus ditulis **setelah** parameter wajib.
+            `
+          },
+          {
+            title: "Arrow Function di TypeScript",
+            content: `
+      Arrow function digunakan untuk membuat fungsi singkat dan modern.
+
+      Contoh:
+      \`\`\`ts
+      const kali = (a: number, b: number): number => a * b;
+
+      console.log(kali(4, 3)); // 12
+      \`\`\`
+
+      Fungsi ini tetap bisa menggunakan tipe parameter dan tipe return.
+      Kelebihan arrow function:
+      - Lebih ringkas.
+      - Tidak mengubah konteks \`this\` (berguna di React, OOP, dll).
+            `
+          },
+          {
+            title: "Function Overloading",
+            content: `
+      *Function overloading* memungkinkan satu fungsi memiliki beberapa bentuk pemanggilan dengan tipe berbeda.
+
+      Contoh:
+      \`\`\`ts
+      function gabung(a: string, b: string): string;
+      function gabung(a: number, b: number): number;
+
+      function gabung(a: any, b: any): any {
+        return a + b;
+      }
+
+      console.log(gabung("Halo ", "Dunia")); // "Halo Dunia"
+      console.log(gabung(10, 20));           // 30
+      \`\`\`
+
+      Dengan overloading, kamu bisa membuat satu fungsi yang mendukung berbagai tipe data secara aman.
+            `
+          },
+          {
+            title: "Void, Never, dan Unknown Return Types",
+            content: `
+      TypeScript punya tipe khusus untuk fungsi tertentu:
+
+      - **void** → fungsi tidak mengembalikan nilai.
+        \`\`\`ts
+        function logPesan(msg: string): void {
+          console.log(msg);
+        }
+        \`\`\`
+
+      - **never** → fungsi yang tidak pernah selesai atau tidak mengembalikan apa pun (misalnya error loop).
+        \`\`\`ts
+        function error(msg: string): never {
+          throw new Error(msg);
+        }
+        \`\`\`
+
+      - **unknown** → tipe yang belum diketahui sampai dicek.
+        \`\`\`ts
+        function parseData(data: unknown) {
+          if (typeof data === "string") {
+            console.log("Panjang string:", data.length);
+          }
+        }
+        \`\`\`
+
+      Tipe-tipe ini membantu TypeScript memprediksi perilaku fungsi dengan lebih aman.
+            `
+          },
+          {
+            title: "Video: Fungsi di TypeScript",
+            content: `
+      <iframe width="560" height="315"
+      src="https://www.youtube.com/embed/J4b_T-qH3BY"
+      title="Belajar Fungsi di TypeScript - Web Programming UNPAS"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen></iframe>
+            `
+          }
+        ]
+      },
+
+      5: {
+        title: "Objek, Array, & Tuple",
+        slides: [
+          {
+            title: "Tujuan Pembelajaran",
+            content: `
+      Tujuan dari materi ini adalah agar kamu dapat:
+      - Menggunakan tipe data kompleks seperti objek, array, dan tuple.
+      - Menentukan struktur tipe data secara eksplisit agar aman.
+      - Memahami konsep optional, readonly, dan destructuring dengan tipe.
+
+      Setelah memahami materi ini, kamu bisa membuat struktur data yang kuat dan mudah dipelihara dalam proyek TypeScript.
+            `
+          },
+          {
+            title: "Penulisan Tipe Objek",
+            content: `
+      TypeScript memungkinkan kita menentukan struktur objek secara detail menggunakan tipe.
+
+      Contoh:
+      \`\`\`ts
+      let user: { nama: string; umur: number } = {
+        nama: "Ali",
+        umur: 22
+      };
+      \`\`\`
+
+      Dengan cara ini, TypeScript akan memastikan objek tersebut **harus memiliki properti dan tipe yang sesuai.**
+
+      Jika ada properti yang salah atau hilang, maka akan muncul error saat compile.
+            `
+          },
+          {
+            title: "Optional Property (?)",
+            content: `
+      Kamu bisa membuat properti bersifat opsional menggunakan tanda **tanya (?)**.
+
+      Contoh:
+      \`\`\`ts
+      type User = {
+        nama: string;
+        umur?: number; // opsional
+      };
+
+      let user1: User = { nama: "Ali" };
+      let user2: User = { nama: "Budi", umur: 25 };
+      \`\`\`
+
+      Artinya: properti \`umur\` boleh ada, boleh juga tidak.
+      Ini sangat berguna untuk data yang tidak selalu lengkap.
+            `
+          },
+          {
+            title: "Readonly Property",
+            content: `
+      Gunakan **readonly** agar properti tidak bisa diubah setelah diinisialisasi.
+
+      Contoh:
+      \`\`\`ts
+      type User = {
+        readonly id: number;
+        nama: string;
+      };
+
+      let u: User = { id: 1, nama: "Ali" };
+      u.nama = "Budi";   // ✅ boleh
+      u.id = 2;          // ❌ Error: karena readonly
+      \`\`\`
+
+      Readonly menjaga data penting agar tidak bisa dimodifikasi secara tidak sengaja.
+            `
+          },
+          {
+            title: "Array di TypeScript",
+            content: `
+      Array di TypeScript memiliki dua cara penulisan tipe:
+      1. **Shorthand:** \`string[]\`
+      2. **Generic:** \`Array<number>\`
+
+      Contoh:
+      \`\`\`ts
+      let nama: string[] = ["Ali", "Budi", "Caca"];
+      let angka: Array<number> = [1, 2, 3, 4];
+      \`\`\`
+
+      TypeScript akan memastikan semua elemen dalam array sesuai tipe yang ditentukan.
+            `
+          },
+          {
+            title: "Tuple",
+            content: `
+      Tuple digunakan untuk menyimpan data dengan **jumlah dan tipe tetap**.
+
+      Contoh:
+      \`\`\`ts
+      let data: [string, number] = ["Ali", 22];
+      \`\`\`
+
+      Artinya:
+      - Elemen pertama harus string.
+      - Elemen kedua harus number.
+
+      Jika urutan atau jumlah elemennya salah, TypeScript akan menolak.
+            `
+          },
+          {
+            title: "Destructuring dengan Tipe",
+            content: `
+      Kamu bisa menggunakan *destructuring* pada objek dan array sambil tetap mempertahankan tipe-nya.
+
+      Contoh pada objek:
+      \`\`\`ts
+      let user = { nama: "Ali", umur: 22 };
+      let { nama, umur }: { nama: string; umur: number } = user;
+
+      console.log(nama); // "Ali"
+      \`\`\`
+
+      Contoh pada array:
+      \`\`\`ts
+      let koordinat: [number, number] = [10, 20];
+      let [x, y]: [number, number] = koordinat;
+
+      console.log(x, y); // 10 20
+      \`\`\`
+
+      Dengan tipe eksplisit, kamu tetap mendapat keamanan tipe saat melakukan destructuring.
+            `
+          },
+          {
+            title: "Video: Objek, Array, & Tuple di TypeScript",
+            content: `
+      <iframe width="560" height="315"
+      src="https://www.youtube.com/embed/CEjD8NZoFQ4"
+      title="Belajar Objek, Array, & Tuple di TypeScript - Web Programming UNPAS"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen></iframe>
+            `
+          }
+        ]
+      },
+
+      6: {
+        title: "Interface & Type Alias",
+        slides: [
+          {
+            title: "Membuat dan Menggunakan Interface",
+            content: `
+              <p><strong>Interface</strong> digunakan untuk mendefinisikan struktur atau bentuk objek di TypeScript agar lebih konsisten dan aman dari kesalahan tipe.</p>
+
+              <pre><code class="language-ts">interface User {
+        name: string;
+        age: number;
+      }
+
+      const user1: User = {
+        name: "Ali",
+        age: 22,
+      };</code></pre>
+
+              <p>Dengan menggunakan interface, kita memastikan bahwa setiap objek bertipe <code>User</code> wajib memiliki properti <code>name</code> dan <code>age</code> dengan tipe data yang sesuai.</p>
+            `
+          },
+          {
+            title: "Perbedaan Interface vs Type",
+            content: `
+              <p>Baik <strong>interface</strong> maupun <strong>type alias</strong> sama-sama dapat digunakan untuk mendefinisikan tipe data, tetapi memiliki beberapa perbedaan penting:</p>
+
+              <table>
+                <thead>
+                  <tr>
+                    <th>Aspek</th>
+                    <th>Interface</th>
+                    <th>Type</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Dapat diperluas (extends)</td>
+                    <td>✅ Ya</td>
+                    <td>✅ Ya (dengan <code>&</code>)</td>
+                  </tr>
+                  <tr>
+                    <td>Dapat dideklarasi ulang</td>
+                    <td>✅ Ya</td>
+                    <td>❌ Tidak</td>
+                  </tr>
+                  <tr>
+                    <td>Union & Intersection</td>
+                    <td>❌ Tidak bisa</td>
+                    <td>✅ Bisa</td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <pre><code class="language-ts">interface Person {
+        name: string;
+      }
+
+      type Animal = {
+        species: string;
+      };</code></pre>
+
+              <p>Gunakan <code>interface</code> untuk mendeskripsikan bentuk objek, dan <code>type</code> untuk tipe kompleks atau gabungan.</p>
+            `
+          },
+          {
+            title: "Interface Inheritance (extends)",
+            content: `
+              <p><strong>Interface</strong> bisa mewarisi properti dari interface lain menggunakan keyword <code>extends</code>. Ini memudahkan pembuatan struktur tipe yang lebih kompleks tanpa menulis ulang kode.</p>
+
+              <pre><code class="language-ts">interface Person {
+        name: string;
+        age: number;
+      }
+
+      interface Employee extends Person {
+        position: string;
+      }
+
+      const emp: Employee = {
+        name: "Rudi",
+        age: 30,
+        position: "Developer",
+      };</code></pre>
+
+              <p>Dengan cara ini, <code>Employee</code> otomatis memiliki semua properti dari <code>Person</code>.</p>
+            `
+          },
+          {
+            title: "Intersection Types (&)",
+            content: `
+              <p><strong>Intersection types</strong> digunakan untuk menggabungkan beberapa tipe menjadi satu tipe baru menggunakan operator <code>&</code>.</p>
+
+              <pre><code class="language-ts">type Contact = {
+        email: string;
+      };
+
+      type Account = {
+        username: string;
+        password: string;
+      };
+
+      type User = Contact & Account;
+
+      const newUser: User = {
+        email: "ali@mail.com",
+        username: "alikhatami",
+        password: "12345",
+      };</code></pre>
+
+              <p>Semua properti dari <code>Contact</code> dan <code>Account</code> digabung menjadi satu tipe <code>User</code>.</p>
+            `
+          },
+          {
+            title: "Implementasi Interface pada Class",
+            content: `
+              <p>Class di TypeScript bisa mengimplementasikan satu atau lebih interface menggunakan keyword <code>implements</code>. Ini memastikan class memiliki semua properti dan method yang ditentukan.</p>
+
+              <pre><code class="language-ts">interface Vehicle {
+        brand: string;
+        drive(): void;
+      }
+
+      class Car implements Vehicle {
+        brand: string;
+
+        constructor(brand: string) {
+          this.brand = brand;
+        }
+
+        drive() {
+          console.log(\`\${this.brand} sedang berjalan...\`);
+        }
+      }
+
+      const myCar = new Car("Toyota");
+      myCar.drive(); // Toyota sedang berjalan...</code></pre>
+
+              <p>Pendekatan ini sangat berguna untuk menjaga konsistensi antar class di proyek besar.</p>
+            `
+          },
+          {
+            title: "🎥 Video Pembelajaran Interface & Type Alias",
+            content: `
+              <p>Tonton video berikut untuk memahami perbedaan antara <strong>interface</strong> dan <strong>type</strong> serta penggunaannya di proyek nyata.</p>
+
+              <div class="video-container">
+                <iframe width="100%" height="400" src="https://www.youtube.com/embed/lhMKvyLRWo0" 
+                title="TypeScript Interfaces vs Types Explained" frameborder="0" allowfullscreen></iframe>
+              </div>
+            `
+          }
+        ]
+      },
+
+      7: {
+        title: "Class & Object-Oriented Programming (OOP)",
+        slides: [
+          {
+            title: "Pengenalan Class & Constructor",
+            content: `
+              <p><strong>Class</strong> di TypeScript digunakan untuk membuat blueprint dari sebuah objek. Di dalam class, kita dapat mendefinisikan properti dan method agar lebih terstruktur.</p>
+
+              <pre><code class="language-ts">class User {
+        name: string;
+        age: number;
+
+        constructor(name: string, age: number) {
+          this.name = name;
+          this.age = age;
+        }
+
+        greet() {
+          console.log(\`Halo, nama saya \${this.name} dan umur saya \${this.age}\`);
+        }
+      }
+
+      const user1 = new User("Ali", 22);
+      user1.greet(); // Halo, nama saya Ali dan umur saya 22</code></pre>
+
+              <p><code>constructor</code> dipanggil otomatis setiap kali class dibuat menjadi objek dengan keyword <code>new</code>.</p>
+            `
+          },
+          {
+            title: "Access Modifiers (public, private, protected)",
+            content: `
+              <p>Access modifier digunakan untuk mengatur visibilitas properti atau method di dalam class.</p>
+
+              <ul>
+                <li><code>public</code> → bisa diakses dari mana saja (default)</li>
+                <li><code>private</code> → hanya bisa diakses di dalam class itu sendiri</li>
+                <li><code>protected</code> → bisa diakses di class itu sendiri dan turunannya</li>
+              </ul>
+
+              <pre><code class="language-ts">class Person {
+        public name: string;
+        private age: number;
+        protected address: string;
+
+        constructor(name: string, age: number, address: string) {
+          this.name = name;
+          this.age = age;
+          this.address = address;
+        }
+
+        public getAge() {
+          return this.age; // boleh, karena masih dalam class
+        }
+      }
+
+      const p1 = new Person("Ali", 22, "Samarinda");
+      console.log(p1.name); // ✅ bisa diakses
+      // console.log(p1.age); ❌ error - private
+      // console.log(p1.address); ❌ error - protected</code></pre>
+
+              <p>Dengan modifier ini, kita bisa menjaga enkapsulasi dan keamanan data dalam class.</p>
+            `
+          },
+          {
+            title: "Readonly Property",
+            content: `
+              <p><code>readonly</code> digunakan agar properti tidak bisa diubah setelah diinisialisasi.</p>
+
+              <pre><code class="language-ts">class Product {
+        readonly id: number;
+        name: string;
+
+        constructor(id: number, name: string) {
+          this.id = id;
+          this.name = name;
+        }
+      }
+
+      const item = new Product(1, "Laptop");
+      console.log(item.id); // 1
+      // item.id = 2 ❌ Error - readonly property</code></pre>
+
+              <p>Readonly cocok digunakan untuk properti yang nilainya tetap seperti ID atau UUID.</p>
+            `
+          },
+          {
+            title: "Getter & Setter",
+            content: `
+              <p><strong>Getter</strong> dan <strong>Setter</strong> digunakan untuk mengontrol akses terhadap properti, mirip seperti enkapsulasi pada OOP klasik.</p>
+
+              <pre><code class="language-ts">class BankAccount {
+        private _balance: number = 0;
+
+        get balance() {
+          return this._balance;
+        }
+
+        set balance(value: number) {
+          if (value < 0) throw new Error("Saldo tidak boleh negatif");
+          this._balance = value;
+        }
+      }
+
+      const account = new BankAccount();
+      account.balance = 1000; // setter dipanggil
+      console.log(account.balance); // getter dipanggil → 1000</code></pre>
+
+              <p>Getter dan setter membantu menjaga validasi dan logika ketika properti diakses atau diubah.</p>
+            `
+          },
+          {
+            title: "Inheritance (extends)",
+            content: `
+              <p>TypeScript mendukung pewarisan class menggunakan keyword <code>extends</code>.</p>
+
+              <pre><code class="language-ts">class Animal {
+        constructor(public name: string) {}
+
+        makeSound() {
+          console.log("Suara hewan...");
+        }
+      }
+
+      class Dog extends Animal {
+        makeSound() {
+          console.log("Guk! Guk!");
+        }
+      }
+
+      const anjing = new Dog("Buddy");
+      anjing.makeSound(); // Guk! Guk!</code></pre>
+
+              <p>Dengan pewarisan, class turunan bisa menggunakan dan menimpa (override) method dari class induk.</p>
+            `
+          },
+          {
+            title: "Abstract Class",
+            content: `
+              <p><strong>Abstract class</strong> digunakan sebagai blueprint dasar yang tidak bisa diinstansiasi langsung, tapi harus diturunkan oleh class lain.</p>
+
+              <pre><code class="language-ts">abstract class Shape {
+        abstract getArea(): number;
+
+        describe() {
+          console.log("Ini adalah bentuk geometris.");
+        }
+      }
+
+      class Circle extends Shape {
+        constructor(public radius: number) {
+          super();
+        }
+
+        getArea(): number {
+          return Math.PI * this.radius ** 2;
+        }
+      }
+
+      const c = new Circle(5);
+      console.log(c.getArea()); // 78.54</code></pre>
+
+              <p>Abstract class memaksa class turunan untuk mengimplementasikan method tertentu.</p>
+            `
+          },
+          {
+            title: "Interface + Class Implementation",
+            content: `
+              <p>Class bisa mengimplementasikan satu atau lebih <code>interface</code> untuk memastikan konsistensi struktur dan perilaku.</p>
+
+              <pre><code class="language-ts">interface Flyable {
+        fly(): void;
+      }
+
+      interface Swimmable {
+        swim(): void;
+      }
+
+      class Duck implements Flyable, Swimmable {
+        fly() {
+          console.log("Bebek terbang dengan rendah.");
+        }
+
+        swim() {
+          console.log("Bebek berenang di air.");
+        }
+      }
+
+      const donald = new Duck();
+      donald.fly();  // Bebek terbang dengan rendah.
+      donald.swim(); // Bebek berenang di air.</code></pre>
+
+              <p>Interface + Class implementation membuat kode lebih modular dan scalable, terutama untuk proyek besar.</p>
+            `
+          },
+          {
+            title: "🎥 Video Pembelajaran Class & OOP di TypeScript",
+            content: `
+              <p>Tonton video ini untuk memahami konsep OOP di TypeScript secara visual, termasuk class, inheritance, dan interface.</p>
+
+              <div class="video-container">
+                <iframe width="100%" height="400" src="https://www.youtube.com/embed/E2YI-G7KBy0"
+                title="TypeScript OOP Tutorial - Classes, Inheritance, Access Modifiers" frameborder="0" allowfullscreen></iframe>
+              </div>
+            `
+          }
+        ]
+      },
+
+
+      8: {
+        title: "Flexbox & Grid System",
+        slides: [
+          {
+            title: "Konsep Flex Container dan Item",
+            content: `
+              <p>Tailwind CSS menyediakan utilitas berbasis <strong>Flexbox</strong> untuk membuat layout yang fleksibel dan responsif tanpa menulis CSS manual.</p>
+              <p>Gunakan <code>flex</code> untuk mengubah elemen menjadi flex container, dan atur arah elemen anak dengan <code>flex-row</code> atau <code>flex-col</code>.</p>
+
+              <h4>Contoh:</h4>
+              <pre><code class="language-html">&lt;div class="flex flex-row bg-gray-200 p-4 gap-4"&gt;
+        &lt;div class="bg-blue-500 text-white p-4"&gt;Item 1&lt;/div&gt;
+        &lt;div class="bg-green-500 text-white p-4"&gt;Item 2&lt;/div&gt;
+        &lt;div class="bg-red-500 text-white p-4"&gt;Item 3&lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;div class="flex flex-col bg-gray-200 p-4 gap-2 mt-4"&gt;
+        &lt;div class="bg-indigo-500 text-white p-4"&gt;Kolom 1&lt;/div&gt;
+        &lt;div class="bg-pink-500 text-white p-4"&gt;Kolom 2&lt;/div&gt;
+      &lt;/div&gt;</code></pre>
+            `
+          },
+          {
+            title: "Align, Justify, dan Order Utilities",
+            content: `
+              <p>Gunakan utilitas <strong>align</strong> dan <strong>justify</strong> untuk mengatur posisi item di dalam flex container.</p>
+
+              <h4>Justify (Horizontal Alignment):</h4>
+              <ul>
+                <li><code>justify-start</code> → rata kiri</li>
+                <li><code>justify-center</code> → tengah</li>
+                <li><code>justify-end</code> → kanan</li>
+                <li><code>justify-between</code> → spasi antar elemen</li>
+                <li><code>justify-around</code> / <code>justify-evenly</code></li>
+              </ul>
+
+              <h4>Align Items (Vertical Alignment):</h4>
+              <ul>
+                <li><code>items-start</code>, <code>items-center</code>, <code>items-end</code></li>
+              </ul>
+
+              <h4>Order (Urutan Item):</h4>
+              <p>Kamu bisa ubah urutan item dengan class <code>order-{angka}</code>.</p>
+
+              <pre><code class="language-html">&lt;div class="flex justify-between items-center bg-gray-100 p-4"&gt;
+        &lt;div class="order-3 bg-red-500 text-white p-3"&gt;3&lt;/div&gt;
+        &lt;div class="order-1 bg-blue-500 text-white p-3"&gt;1&lt;/div&gt;
+        &lt;div class="order-2 bg-green-500 text-white p-3"&gt;2&lt;/div&gt;
+      &lt;/div&gt;</code></pre>
+            `
+          },
+          {
+            title: "Gap Antar Elemen dalam Flexbox",
+            content: `
+              <p>Tailwind mendukung <strong>gap utilities</strong> yang berfungsi untuk memberi jarak antar item dalam flexbox atau grid layout tanpa menambah margin manual.</p>
+
+              <h4>Contoh Penggunaan:</h4>
+              <pre><code class="language-html">&lt;div class="flex gap-4 bg-gray-200 p-4"&gt;
+        &lt;div class="bg-blue-400 text-white p-4"&gt;Item 1&lt;/div&gt;
+        &lt;div class="bg-green-400 text-white p-4"&gt;Item 2&lt;/div&gt;
+        &lt;div class="bg-pink-400 text-white p-4"&gt;Item 3&lt;/div&gt;
+      &lt;/div&gt;</code></pre>
+
+              <p>Kamu juga bisa menggunakan <code>gap-x-</code> dan <code>gap-y-</code> untuk jarak horizontal atau vertikal spesifik.</p>
+
+              <pre><code class="language-html">&lt;div class="flex flex-col gap-y-2 bg-gray-100 p-4"&gt;
+        &lt;div class="bg-indigo-500 text-white p-2"&gt;Atas&lt;/div&gt;
+        &lt;div class="bg-indigo-700 text-white p-2"&gt;Bawah&lt;/div&gt;
+      &lt;/div&gt;</code></pre>
+            `
+          },
+          {
+            title: "Grid Layout dan Template Columns/Rows",
+            content: `
+              <p>Selain flexbox, Tailwind juga mendukung sistem <strong>grid layout</strong> yang kuat.</p>
+              <p>Gunakan <code>grid</code> untuk mengaktifkan grid container, lalu atur kolom dengan <code>grid-cols-{n}</code> dan baris dengan <code>grid-rows-{n}</code>.</p>
+
+              <h4>Contoh:</h4>
+              <pre><code class="language-html">&lt;div class="grid grid-cols-3 gap-4"&gt;
+        &lt;div class="bg-blue-400 text-white p-4"&gt;1&lt;/div&gt;
+        &lt;div class="bg-green-400 text-white p-4"&gt;2&lt;/div&gt;
+        &lt;div class="bg-pink-400 text-white p-4"&gt;3&lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;div class="grid grid-rows-2 gap-2 mt-4"&gt;
+        &lt;div class="bg-purple-500 text-white p-4"&gt;Atas&lt;/div&gt;
+        &lt;div class="bg-purple-700 text-white p-4"&gt;Bawah&lt;/div&gt;
+      &lt;/div&gt;</code></pre>
+            `
+          },
+          {
+            title: "Auto Placement & Grid Gap",
+            content: `
+              <p>Dengan sistem grid Tailwind, item akan otomatis menempati posisi grid sesuai urutan HTML, kecuali diatur secara manual.</p>
+              <p>Gunakan <code>gap-</code> untuk memberi jarak antar grid item.</p>
+
+              <pre><code class="language-html">&lt;div class="grid grid-cols-4 gap-4 bg-gray-100 p-4"&gt;
+        &lt;div class="bg-blue-500 text-white p-4"&gt;1&lt;/div&gt;
+        &lt;div class="bg-green-500 text-white p-4"&gt;2&lt;/div&gt;
+        &lt;div class="bg-yellow-500 text-white p-4"&gt;3&lt;/div&gt;
+        &lt;div class="bg-red-500 text-white p-4"&gt;4&lt;/div&gt;
+      &lt;/div&gt;</code></pre>
+
+              <p>Grid akan menyesuaikan secara otomatis jika jumlah item lebih dari jumlah kolom.</p>
+            `
+          },
+          {
+            title: "Responsive Grid Layout",
+            content: `
+              <p>Tailwind membuat layout responsif sangat mudah. Kamu bisa mengatur jumlah kolom berbeda untuk tiap ukuran layar menggunakan breakpoint seperti <code>sm:</code>, <code>md:</code>, <code>lg:</code>, dan <code>xl:</code>.</p>
+
+              <h4>Contoh:</h4>
+              <pre><code class="language-html">&lt;div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"&gt;
+        &lt;div class="bg-blue-400 text-white p-4"&gt;1&lt;/div&gt;
+        &lt;div class="bg-green-400 text-white p-4"&gt;2&lt;/div&gt;
+        &lt;div class="bg-yellow-400 text-white p-4"&gt;3&lt;/div&gt;
+        &lt;div class="bg-pink-400 text-white p-4"&gt;4&lt;/div&gt;
+        &lt;div class="bg-purple-400 text-white p-4"&gt;5&lt;/div&gt;
+        &lt;div class="bg-indigo-400 text-white p-4"&gt;6&lt;/div&gt;
+      &lt;/div&gt;</code></pre>
+
+              <p>👉 Di layar kecil (mobile): 2 kolom.<br>
+              👉 Di tablet (md): 3 kolom.<br>
+              👉 Di desktop (lg): 4 kolom.</p>
+            `
+          },
+          {
+            title: "Video Pembahasan Lengkap",
+            content: `
+              <p>Tonton pembahasan lengkap tentang <strong>Flexbox & Grid System di Tailwind CSS</strong> di bawah ini 👇</p>
+              <div class="video-container" style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
+                <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" 
+                  title="Tailwind CSS Flexbox dan Grid System" 
+                  frameborder="0" 
+                  allowfullscreen 
+                  style="position:absolute;top:0;left:0;width:100%;height:100%;">
+                </iframe>
+              </div>
+            `
+          }
+        ]
+      },
+
+      9: {
+        title: "Transisi, Animasi, dan Efek",
+        slides: [
+          {
+            title: "Transition Utilities (transition-all, duration-, ease-)",
+            content: `
+              <p>Tailwind menyediakan utilitas transisi bawaan yang membuat efek animasi sederhana jadi mudah diterapkan tanpa menulis CSS manual.</p>
+
+              <h4>Class Utama:</h4>
+              <ul>
+                <li><code>transition-all</code> — Menerapkan transisi pada semua properti yang berubah.</li>
+                <li><code>duration-{ms}</code> — Mengatur durasi animasi (contoh: <code>duration-300</code> = 300ms).</li>
+                <li><code>ease-in</code>, <code>ease-out</code>, <code>ease-in-out</code> — Mengatur pola pergerakan transisi.</li>
+              </ul>
+
+              <h4>Contoh:</h4>
+              <pre><code class="language-html">&lt;button class="bg-blue-500 text-white px-4 py-2 rounded transition-all duration-300 ease-in-out hover:bg-blue-700"&gt;
+        Hover Aku
+      &lt;/button&gt;</code></pre>
+
+              <p>Hasilnya: tombol akan berubah warna dengan efek lembut saat di-hover.</p>
+            `
+          },
+          {
+            title: "Transform Utilities (Scale, Rotate, Translate)",
+            content: `
+              <p>Transformasi memungkinkan kamu mengubah posisi, ukuran, atau rotasi elemen dengan mudah menggunakan class bawaan Tailwind.</p>
+
+              <h4>Beberapa Class Penting:</h4>
+              <ul>
+                <li><code>scale-{value}</code> → memperbesar atau memperkecil elemen.</li>
+                <li><code>rotate-{deg}</code> → memutar elemen (misal <code>rotate-45</code>).</li>
+                <li><code>translate-x-{value}</code>, <code>translate-y-{value}</code> → memindahkan elemen.</li>
+              </ul>
+
+              <pre><code class="language-html">&lt;div class="transform hover:scale-110 hover:rotate-6 transition-all duration-300 bg-green-500 text-white p-6 w-40 text-center"&gt;
+        Hover Aku!
+      &lt;/div&gt;</code></pre>
+
+              <p>Efek ini sangat cocok untuk membuat interaksi halus pada tombol, card, atau gambar.</p>
+            `
+          },
+          {
+            title: "Built-in Animation (animate-spin, animate-bounce, dll)",
+            content: `
+              <p>Tailwind sudah menyediakan beberapa animasi bawaan yang bisa langsung digunakan tanpa menulis <code>@keyframes</code> sendiri.</p>
+
+              <h4>Class Animasi Umum:</h4>
+              <ul>
+                <li><code>animate-spin</code> → berputar terus menerus.</li>
+                <li><code>animate-ping</code> → efek berdenyut keluar.</li>
+                <li><code>animate-bounce</code> → efek pantulan vertikal.</li>
+                <li><code>animate-pulse</code> → efek berkedip lembut.</li>
+              </ul>
+
+              <h4>Contoh:</h4>
+              <pre><code class="language-html">&lt;div class="flex gap-6"&gt;
+        &lt;div class="w-10 h-10 bg-blue-500 rounded-full animate-spin"&gt;&lt;/div&gt;
+        &lt;div class="w-10 h-10 bg-green-500 rounded-full animate-bounce"&gt;&lt;/div&gt;
+        &lt;div class="w-10 h-10 bg-pink-500 rounded-full animate-pulse"&gt;&lt;/div&gt;
+      &lt;/div&gt;</code></pre>
+            `
+          },
+          {
+            title: "Custom Animation dengan @keyframes",
+            content: `
+              <p>Kamu juga bisa menambahkan animasi kustom di Tailwind dengan menulis <code>@keyframes</code> sendiri di file konfigurasi <code>tailwind.config.js</code>.</p>
+
+              <h4>Langkah-langkah:</h4>
+              <ol>
+                <li>Buka file <code>tailwind.config.js</code>.</li>
+                <li>Tambahkan definisi animasi dan keyframes baru di dalam <code>extend</code>.</li>
+              </ol>
+
+              <pre><code class="language-js">theme: {
+        extend: {
+          keyframes: {
+            wiggle: {
+              '0%, 100%': { transform: 'rotate(-3deg)' },
+              '50%': { transform: 'rotate(3deg)' },
+            },
+          },
+          animation: {
+            wiggle: 'wiggle 0.5s ease-in-out infinite',
+          },
+        },
+      }</code></pre>
+
+              <h4>Penggunaan di HTML:</h4>
+              <pre><code class="language-html">&lt;button class="bg-purple-500 text-white px-4 py-2 rounded animate-wiggle"&gt;
+        Wiggle Aku 😄
+      &lt;/button&gt;</code></pre>
+            `
+          },
+          {
+            title: "Hover & Focus Effect Interaktif",
+            content: `
+              <p>Tailwind menggunakan sistem <strong>state variants</strong> seperti <code>hover:</code>, <code>focus:</code>, dan <code>active:</code> untuk membuat efek interaktif tanpa JavaScript.</p>
+
+              <h4>Contoh Hover & Focus:</h4>
+              <pre><code class="language-html">&lt;input type="text" placeholder="Ketik di sini..."
+        class="border border-gray-400 rounded px-3 py-2 focus:border-blue-500 focus:ring-2 focus:ring-blue-300 transition-all duration-200"
+      /&gt;
+
+      &lt;button class="bg-gray-700 text-white px-4 py-2 rounded hover:bg-gray-900 focus:ring-2 focus:ring-gray-400 transition"&gt;
+        Interaktif!
+      &lt;/button&gt;</code></pre>
+
+              <p>Dengan kombinasi hover, focus, dan transition, kamu bisa membuat UI terasa lebih hidup tanpa tambahan library.</p>
+            `
+          },
+          {
+            title: "Video Pembahasan Lengkap",
+            content: `
+              <p>Tonton pembahasan lengkap tentang <strong>Transisi, Animasi, dan Efek di Tailwind CSS</strong> di bawah ini 👇</p>
+              <div class="video-container" style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
+                <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
+                  title="Tailwind CSS Transitions & Animations"
+                  frameborder="0"
+                  allowfullscreen
+                  style="position:absolute;top:0;left:0;width:100%;height:100%;">
+                </iframe>
+              </div>
+            `
+          }
+        ]
+      },
+
+      10: {
+        title: "Responsive Design & Dark Mode",
+        slides: [
+          {
+            title: "Breakpoint Tailwind (sm, md, lg, xl, 2xl)",
+            content: `
+              <p>Tailwind menggunakan sistem <strong>breakpoint responsif</strong> yang berbasis pada prinsip <em>mobile-first</em>. 
+              Artinya, gaya yang kamu tulis berlaku untuk layar kecil secara default, dan bisa ditingkatkan untuk layar lebih besar dengan prefix breakpoint.</p>
+
+              <h4>Daftar Breakpoint:</h4>
+              <ul>
+                <li><code>sm</code> → ≥640px (ponsel besar)</li>
+                <li><code>md</code> → ≥768px (tablet)</li>
+                <li><code>lg</code> → ≥1024px (laptop)</li>
+                <li><code>xl</code> → ≥1280px (desktop besar)</li>
+                <li><code>2xl</code> → ≥1536px (monitor besar)</li>
+              </ul>
+
+              <h4>Contoh Penggunaan:</h4>
+              <pre><code class="language-html">&lt;div class="text-sm md:text-base lg:text-lg xl:text-2xl"&gt;
+        Teks ini akan semakin besar di layar yang lebih lebar
+      &lt;/div&gt;</code></pre>
+
+              <p>Pada contoh di atas, ukuran teks akan bertambah seiring dengan ukuran layar, secara bertahap berdasarkan breakpoint.</p>
+            `
+          },
+          {
+            title: "Mobile-First Workflow",
+            content: `
+              <p>Pendekatan <strong>mobile-first</strong> berarti kamu mendesain tampilan terlebih dahulu untuk layar kecil (ponsel), 
+              kemudian menambahkan class tambahan untuk menyesuaikan tampilan di layar lebih besar.</p>
+
+              <h4>Contoh Praktik Mobile-First:</h4>
+              <pre><code class="language-html">&lt;div class="bg-blue-400 sm:bg-green-400 md:bg-yellow-400 lg:bg-pink-400 xl:bg-purple-400 text-white p-4"&gt;
+        Warna background berubah tergantung ukuran layar
+      &lt;/div&gt;</code></pre>
+
+              <p>Secara default, class tanpa prefix berlaku untuk mobile, sedangkan class dengan prefix (<code>sm:</code>, <code>md:</code>, dst.) untuk ukuran layar yang lebih besar.</p>
+            `
+          },
+          {
+            title: "Dark Mode di Tailwind (Class-based & Media-based)",
+            content: `
+              <p>Tailwind memiliki dukungan <strong>dark mode</strong> bawaan yang bisa diaktifkan dengan dua cara: <em>class-based</em> dan <em>media-based</em>.</p>
+
+              <h4>1️⃣ Class-based Mode</h4>
+              <p>Dark mode aktif jika elemen induk memiliki class <code>dark</code>.</p>
+
+              <pre><code class="language-html">&lt;html class="dark"&gt;
+        &lt;body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-white"&gt;
+          Konten
+        &lt;/body&gt;
+      &lt;/html&gt;</code></pre>
+
+              <h4>2️⃣ Media-based Mode</h4>
+              <p>Tailwind mendeteksi preferensi sistem pengguna menggunakan <code>prefers-color-scheme</code>.</p>
+
+              <pre><code class="language-js">// tailwind.config.js
+      module.exports = {
+        darkMode: 'media', // atau 'class'
+      }</code></pre>
+
+              <p>Mode ini akan otomatis menyesuaikan dengan pengaturan tema perangkat pengguna.</p>
+            `
+          },
+          {
+            title: "Customizing Dark Mode Behavior",
+            content: `
+              <p>Kamu bisa mengubah perilaku dark mode sesuai kebutuhan, baik secara global maupun lokal.</p>
+
+              <h4>Contoh Penggunaan Class <code>dark:</code>:</h4>
+              <pre><code class="language-html">&lt;div class="bg-gray-200 dark:bg-gray-800 text-gray-900 dark:text-gray-100 p-6 rounded-lg"&gt;
+        Mode terang dan gelap otomatis!
+      &lt;/div&gt;</code></pre>
+
+              <h4>Contoh Toggle Manual (JavaScript):</h4>
+              <pre><code class="language-js">const html = document.documentElement;
+      const toggle = document.getElementById('dark-toggle');
+      toggle.addEventListener('click', () =&gt; {
+        html.classList.toggle('dark');
+      });</code></pre>
+
+              <p>Dengan toggle seperti ini, pengguna bisa beralih antara light dan dark mode secara manual.</p>
+            `
+          },
+          {
+            title: "Mode Gelap Otomatis (prefers-color-scheme)",
+            content: `
+              <p>Jika kamu menggunakan mode <code>media</code>, Tailwind akan mengikuti preferensi sistem pengguna. 
+              Jadi, jika pengguna menyalakan dark mode di perangkatnya, situsmu otomatis beradaptasi.</p>
+
+              <h4>Contoh:</h4>
+              <pre><code class="language-html">&lt;div class="bg-white text-black dark:bg-black dark:text-white p-6"&gt;
+        Tema ini otomatis mengikuti pengaturan perangkatmu 🌙
+      &lt;/div&gt;</code></pre>
+
+              <p>Pastikan di <code>tailwind.config.js</code> kamu sudah mengaktifkan mode:</p>
+              <pre><code class="language-js">darkMode: 'media'</code></pre>
+
+              <p>Dengan begitu, pengguna yang mengaktifkan dark mode di sistem operasi mereka akan langsung melihat tampilan gelap tanpa harus menekan tombol apapun.</p>
+            `
+          },
+          {
+            title: "Video Pembahasan Lengkap",
+            content: `
+              <p>Tonton video pembahasan lengkap tentang <strong>Responsive Design & Dark Mode</strong> di Tailwind CSS di bawah ini 👇</p>
+              <div class="video-container" style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
+                <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
+                  title="Tailwind CSS Responsive Design & Dark Mode"
+                  frameborder="0"
+                  allowfullscreen
+                  style="position:absolute;top:0;left:0;width:100%;height:100%;">
+                </iframe>
+              </div>
+            `
+          }
+        ]
+      },
+
+      11: {
+        title: "Komponen Reusable",
+        slides: [
+          {
+            title: "Membuat Komponen dengan Utility Class (tanpa CSS tambahan)",
+            content: `
+              <p>Tailwind memungkinkan kamu membangun komponen sepenuhnya hanya dengan utility class — tanpa perlu menulis CSS tambahan.</p>
+
+              <h4>Contoh: Tombol (Button)</h4>
+              <pre><code class="language-html">&lt;button class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-lg shadow transition-all"&gt;
+        Klik Aku
+      &lt;/button&gt;</code></pre>
+
+              <p>Dengan pendekatan ini, kamu bisa membuat berbagai komponen (seperti card, navbar, alert, modal, dsb) langsung dari HTML tanpa file CSS terpisah.</p>
+
+              <p><strong>Keuntungan:</strong></p>
+              <ul>
+                <li>Lebih cepat membangun UI</li>
+                <li>Tidak perlu menamai class custom</li>
+                <li>Konsisten dengan desain Tailwind</li>
+              </ul>
+            `
+          },
+          {
+            title: "Menerapkan @apply untuk Gabungan Class yang Sering Digunakan",
+            content: `
+              <p>Jika kamu sering menggunakan kombinasi class yang sama, gunakan direktif <code>@apply</code> untuk menggabungkannya jadi satu class custom.</p>
+
+              <h4>Contoh:</h4>
+              <pre><code class="language-css">@layer components {
+        .btn-primary {
+          @apply bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-lg shadow transition-all;
+        }
+
+        .card {
+          @apply bg-white rounded-xl shadow-md p-6 border border-gray-100;
+        }
+      }</code></pre>
+
+              <p>Sekarang kamu bisa pakai di HTML seperti:</p>
+              <pre><code class="language-html">&lt;button class="btn-primary"&gt;Tombol Reusable&lt;/button&gt;
+      &lt;div class="card"&gt;Isi konten di sini&lt;/div&gt;</code></pre>
+
+              <p><strong>Tips:</strong> Simpan kode <code>@apply</code> di file <code>components.css</code> agar lebih terorganisir.</p>
+            `
+          },
+          {
+            title: "Struktur Folder Komponen",
+            content: `
+              <p>Struktur folder yang rapi memudahkan kamu dalam mengelola komponen-komponen Tailwind.</p>
+
+              <h4>Rekomendasi Struktur:</h4>
+              <pre><code class="language-bash">src/
+      ├─ components/
+      │  ├─ buttons.css
+      │  ├─ cards.css
+      │  ├─ navbar.css
+      │  └─ modals.css
+      ├─ layouts/
+      │  ├─ header.css
+      │  ├─ footer.css
+      │  └─ content.css
+      ├─ pages/
+      │  ├─ home.html
+      │  ├─ about.html
+      │  └─ contact.html
+      └─ tailwind.config.js</code></pre>
+
+              <p>Kamu juga bisa menulis komponen ini langsung di file HTML jika proyekmu kecil. 
+              Tapi untuk proyek besar, pisahkan tiap komponen ke file terdedikasi agar mudah dirawat.</p>
+            `
+          },
+          {
+            title: "Membuat Button, Card, Navbar, Modal, Alert, Form, dan Hero Section",
+            content: `
+              <h4>1️⃣ Button</h4>
+              <pre><code class="language-html">&lt;button class="bg-indigo-600 hover:bg-indigo-700 text-white py-2 px-5 rounded-lg font-semibold transition-all"&gt;
+        Get Started
+      &lt;/button&gt;</code></pre>
+
+              <h4>2️⃣ Card</h4>
+              <pre><code class="language-html">&lt;div class="bg-white rounded-xl shadow-md p-6 text-gray-800"&gt;
+        &lt;h3 class="text-xl font-bold mb-2"&gt;Card Title&lt;/h3&gt;
+        &lt;p&gt;Deskripsi singkat card ini.&lt;/p&gt;
+      &lt;/div&gt;</code></pre>
+
+              <h4>3️⃣ Navbar</h4>
+              <pre><code class="language-html">&lt;nav class="bg-gray-900 text-white flex items-center justify-between px-6 py-3"&gt;
+        &lt;h1 class="text-2xl font-bold"&gt;TailwindSite&lt;/h1&gt;
+        &lt;ul class="flex gap-6"&gt;
+          &lt;li&gt;&lt;a href="#" class="hover:text-blue-400"&gt;Home&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href="#" class="hover:text-blue-400"&gt;About&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href="#" class="hover:text-blue-400"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/nav&gt;</code></pre>
+
+              <h4>4️⃣ Modal</h4>
+              <pre><code class="language-html">&lt;div class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center"&gt;
+        &lt;div class="bg-white p-8 rounded-xl shadow-xl w-96"&gt;
+          &lt;h3 class="text-lg font-semibold mb-4"&gt;Konfirmasi&lt;/h3&gt;
+          &lt;p&gt;Apakah kamu yakin ingin melanjutkan?&lt;/p&gt;
+          &lt;div class="mt-4 flex justify-end gap-2"&gt;
+            &lt;button class="btn-primary"&gt;Ya&lt;/button&gt;
+            &lt;button class="bg-gray-300 px-4 py-2 rounded-lg"&gt;Batal&lt;/button&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;</code></pre>
+
+              <h4>5️⃣ Alert</h4>
+              <pre><code class="language-html">&lt;div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded-lg"&gt;
+        ✅ Data berhasil disimpan!
+      &lt;/div&gt;</code></pre>
+
+              <h4>6️⃣ Form</h4>
+              <pre><code class="language-html">&lt;form class="bg-white p-6 rounded-lg shadow-md space-y-4"&gt;
+        &lt;input type="text" placeholder="Nama" class="w-full border border-gray-300 rounded-lg p-2"&gt;
+        &lt;input type="email" placeholder="Email" class="w-full border border-gray-300 rounded-lg p-2"&gt;
+        &lt;button class="btn-primary w-full"&gt;Kirim&lt;/button&gt;
+      &lt;/form&gt;</code></pre>
+
+              <h4>7️⃣ Hero Section</h4>
+              <pre><code class="language-html">&lt;section class="bg-gradient-to-r from-blue-600 to-indigo-700 text-white py-20 text-center"&gt;
+        &lt;h1 class="text-4xl font-bold mb-4"&gt;Bangun Website Cepat dengan Tailwind CSS&lt;/h1&gt;
+        &lt;p class="text-lg mb-8"&gt;Desain modern, responsif, dan mudah dikustomisasi.&lt;/p&gt;
+        &lt;button class="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold"&gt;Mulai Sekarang&lt;/button&gt;
+      &lt;/section&gt;</code></pre>
+            `
+          },
+          {
+            title: "Reusable Layout Section (Header, Content, Footer)",
+            content: `
+              <p>Dengan Tailwind, kamu juga bisa membangun layout yang reusable tanpa framework tambahan.</p>
+
+              <pre><code class="language-html">&lt;div class="min-h-screen flex flex-col"&gt;
+        &lt;!-- Header --&gt;
+        &lt;header class="bg-gray-900 text-white p-4"&gt;
+          &lt;h1 class="text-2xl font-bold"&gt;My Website&lt;/h1&gt;
+        &lt;/header&gt;
+
+        &lt;!-- Content --&gt;
+        &lt;main class="flex-1 p-6 bg-gray-50"&gt;
+          &lt;h2 class="text-xl font-semibold mb-4"&gt;Selamat datang&lt;/h2&gt;
+          &lt;p&gt;Ini adalah layout sederhana yang mudah diatur ulang untuk setiap halaman.&lt;/p&gt;
+        &lt;/main&gt;
+
+        &lt;!-- Footer --&gt;
+        &lt;footer class="bg-gray-900 text-gray-300 p-4 text-center"&gt;
+          &copy; 2025 Tailwind Project. All rights reserved.
+        &lt;/footer&gt;
+      &lt;/div&gt;</code></pre>
+
+              <p>Struktur ini bisa dijadikan template dasar untuk semua halaman website kamu.</p>
+            `
+          },
+          {
+            title: "Video Pembahasan Lengkap",
+            content: `
+              <p>Tonton pembahasan lengkap tentang <strong>Pembuatan Komponen Reusable di Tailwind CSS</strong> di bawah ini 👇</p>
+              <div class="video-container" style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
+                <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
+                  title="Tailwind CSS Reusable Components"
+                  frameborder="0"
+                  allowfullscreen
+                  style="position:absolute;top:0;left:0;width:100%;height:100%;">
+                </iframe>
+              </div>
+            `
+          }
+        ]
+      },
+
+      12: {
+        title: "Final Project: Landing Page Modern dengan Tailwind CSS",
+        slides: [
+          {
+            title: "Pendahuluan Project",
+            content: `
+              <p>Pada project akhir ini, kamu akan membangun sebuah <strong>landing page modern</strong> menggunakan seluruh fitur yang telah dipelajari dari materi Tailwind CSS.</p>
+
+              <p>Tujuan dari project ini adalah untuk melatih kamu dalam:</p>
+              <ul>
+                <li>Menggunakan <strong>utility-first workflow</strong> untuk membangun tampilan tanpa menulis CSS tambahan.</li>
+                <li>Menerapkan <strong>responsive design</strong> dengan breakpoint (sm, md, lg, xl).</li>
+                <li>Membuat <strong>komponen reusable</strong> seperti button, card, dan navbar dengan <code>@apply</code> dan <code>@layer</code>.</li>
+                <li>Mengatur <strong>dark mode</strong> baik class-based maupun otomatis (prefers-color-scheme).</li>
+                <li>Menambahkan interaksi sederhana seperti modal dan animasi.</li>
+              </ul>
+
+              <p>Hasil akhirnya adalah sebuah landing page modern yang responsif, dengan tema terang dan gelap yang bisa diganti secara dinamis.</p>
+            `
+          },
+          {
+            title: "Langkah 1: Persiapan & Struktur Project",
+            content: `
+              <p>Buat struktur folder project seperti ini:</p>
+
+              <pre><code class="language-bash">tailwind-landing/
+      ├── index.html
+      ├── package.json
+      ├── tailwind.config.js
+      ├── postcss.config.js
+      └── src/
+          ├── css/
+          │   ├── main.css
+          │   └── components.css
+          └── js/
+              └── main.js</code></pre>
+
+              <p>Instal Tailwind menggunakan Vite agar workflow lebih cepat:</p>
+
+              <pre><code class="language-bash">npm init -y
+      npm install -D vite tailwindcss postcss autoprefixer
+      npx tailwindcss init -p</code></pre>
+
+              <p>Tambahkan script di <code>package.json</code>:</p>
+
+              <pre><code class="language-json">"scripts": {
+        "dev": "vite",
+        "build": "vite build",
+        "preview": "vite preview"
+      }</code></pre>
+            `
+          },
+          {
+            title: "Langkah 2: Konfigurasi Tailwind",
+            content: `
+              <p>Buka file <code>tailwind.config.js</code> dan ubah menjadi seperti ini:</p>
+
+              <pre><code class="language-js">module.exports = {
+        content: ["./index.html", "./src/**/*.{js,html}"],
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#4F46E5",
+              accent: "#06B6D4",
+            },
+            fontFamily: {
+              sans: ["Inter", "system-ui", "sans-serif"],
+            },
+          },
+        },
+        plugins: [],
+      }</code></pre>
+
+              <p>Kemudian di file <code>src/css/main.css</code>, tambahkan:</p>
+
+              <pre><code class="language-css">@tailwind base;
+      @tailwind components;
+      @tailwind utilities;
+
+      @import "./components.css";</code></pre>
+            `
+          },
+          {
+            title: "Langkah 3: Membuat Komponen Reusable",
+            content: `
+              <p>Kita akan membuat beberapa komponen menggunakan <code>@layer components</code> dan <code>@apply</code> di file <code>src/css/components.css</code>:</p>
+
+              <pre><code class="language-css">@layer components {
+        .btn-primary {
+          @apply bg-primary text-white font-semibold py-2 px-4 rounded-lg shadow-md hover:bg-indigo-600 transition;
+        }
+        .card {
+          @apply bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-6 shadow;
+        }
+        .hero-title {
+          @apply text-4xl md:text-5xl font-extrabold leading-tight;
+        }
+      }</code></pre>
+
+              <p>Dengan ini kamu bisa menggunakan class <code>btn-primary</code> dan <code>card</code> di HTML tanpa menulis CSS tambahan.</p>
+            `
+          },
+          {
+            title: "Langkah 4: Membuat Navbar dan Hero Section",
+            content: `
+              <p>Buat struktur dasar pada <code>index.html</code>:</p>
+
+              <pre><code class="language-html">&lt;header class="py-4 bg-white dark:bg-gray-900 border-b dark:border-gray-800"&gt;
+        &lt;div class="container mx-auto px-6 flex items-center justify-between"&gt;
+          &lt;h1 class="text-xl font-bold text-primary"&gt;TailwindCourse&lt;/h1&gt;
+          &lt;nav class="hidden md:flex gap-6"&gt;
+            &lt;a href="#features" class="hover:text-primary"&gt;Features&lt;/a&gt;
+            &lt;a href="#pricing" class="hover:text-primary"&gt;Pricing&lt;/a&gt;
+            &lt;a href="#contact" class="hover:text-primary"&gt;Contact&lt;/a&gt;
+          &lt;/nav&gt;
+          &lt;button id="dark-toggle" class="p-2 bg-gray-100 dark:bg-gray-700 rounded-md"&gt;🌙&lt;/button&gt;
+        &lt;/div&gt;
+      &lt;/header&gt;
+
+      &lt;section class="py-20 bg-gradient-to-r from-primary to-indigo-700 text-white text-center"&gt;
+        &lt;h2 class="hero-title"&gt;Bangun Website Modern dengan Tailwind&lt;/h2&gt;
+        &lt;p class="mt-4 text-lg"&gt;Cepat, fleksibel, dan sepenuhnya responsif.&lt;/p&gt;
+        &lt;div class="mt-8"&gt;
+          &lt;a href="#features" class="btn-primary bg-white text-primary hover:bg-gray-100"&gt;Lihat Fitur&lt;/a&gt;
+        &lt;/div&gt;
+      &lt;/section&gt;</code></pre>
+            `
+          },
+          {
+            title: "Langkah 5: Section Features dan Pricing",
+            content: `
+              <p>Buat layout responsif menggunakan <strong>grid dan flex utilities</strong>:</p>
+
+              <pre><code class="language-html">&lt;section id="features" class="py-16"&gt;
+        &lt;div class="container mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"&gt;
+          &lt;div class="card"&gt;
+            &lt;h4 class="font-semibold text-lg"&gt;Responsive Design&lt;/h4&gt;
+            &lt;p class="text-sm mt-2"&gt;Gunakan breakpoint sm, md, lg untuk tampilan dinamis.&lt;/p&gt;
+          &lt;/div&gt;
+          &lt;div class="card"&gt;
+            &lt;h4 class="font-semibold text-lg"&gt;Utility First&lt;/h4&gt;
+            &lt;p class="text-sm mt-2"&gt;Bangun layout tanpa menulis CSS manual.&lt;/p&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/section&gt;
+
+      &lt;section id="pricing" class="py-16 bg-gray-50 dark:bg-gray-800 text-center"&gt;
+        &lt;h3 class="text-3xl font-bold mb-8"&gt;Paket Belajar&lt;/h3&gt;
+        &lt;div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-6"&gt;
+          &lt;div class="card"&gt;
+            &lt;h4 class="font-semibold mb-2"&gt;Basic&lt;/h4&gt;
+            &lt;p&gt;Gratis untuk pemula.&lt;/p&gt;
+            &lt;button class="btn-primary mt-4 w-full"&gt;Pilih&lt;/button&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/section&gt;</code></pre>
+            `
+          },
+          {
+            title: "Langkah 6: Dark Mode & Interaktivitas",
+            content: `
+              <p>Kita tambahkan dark mode toggle di file <code>src/js/main.js</code>:</p>
+
+              <pre><code class="language-js">const html = document.documentElement;
+      const toggle = document.getElementById("dark-toggle");
+
+      toggle.addEventListener("click", () =&gt; {
+        html.classList.toggle("dark");
+        localStorage.setItem("theme", html.classList.contains("dark") ? "dark" : "light");
+      });
+
+      if (localStorage.getItem("theme") === "dark") {
+        html.classList.add("dark");
+      }</code></pre>
+
+              <p>Sekarang website-mu bisa berpindah antara mode terang dan gelap dengan satu tombol!</p>
+            `
+          },
+          {
+            title: "Langkah 7: Form Kontak dan Footer",
+            content: `
+              <p>Buat form sederhana untuk bagian kontak dan tambahkan footer:</p>
+
+              <pre><code class="language-html">&lt;section id="contact" class="py-16"&gt;
+        &lt;div class="container mx-auto px-6 max-w-xl"&gt;
+          &lt;h3 class="text-2xl font-bold mb-4"&gt;Hubungi Kami&lt;/h3&gt;
+          &lt;form class="space-y-4"&gt;
+            &lt;input type="text" placeholder="Nama" class="w-full border rounded px-3 py-2"&gt;
+            &lt;input type="email" placeholder="Email" class="w-full border rounded px-3 py-2"&gt;
+            &lt;textarea rows="4" placeholder="Pesan" class="w-full border rounded px-3 py-2"&gt;&lt;/textarea&gt;
+            &lt;button class="btn-primary w-full"&gt;Kirim&lt;/button&gt;
+          &lt;/form&gt;
+        &lt;/div&gt;
+      &lt;/section&gt;
+
+      &lt;footer class="bg-white dark:bg-gray-900 text-center py-6 border-t dark:border-gray-800"&gt;
+        &lt;p class="text-sm text-gray-600 dark:text-gray-400"&gt;&copy; 2025 Tailwind Landing. All rights reserved.&lt;/p&gt;
+      &lt;/footer&gt;</code></pre>
+            `
+          },
+          {
+            title: "Langkah 8: Build & Optimasi",
+            content: `
+              <p>Terakhir, jalankan build untuk menghasilkan CSS yang sudah teroptimasi:</p>
+
+              <pre><code class="language-bash">npm run build</code></pre>
+
+              <p>Tailwind akan secara otomatis <strong>menghapus class yang tidak digunakan</strong> berdasarkan daftar file di properti <code>content</code> pada konfigurasi.</p>
+
+              <p>Dengan ini, kamu sudah menyelesaikan project akhir Tailwind CSS: landing page modern yang responsif, ringan, dan memiliki dark mode interaktif! 🎉</p>
+            `
+          }
+        ]
+      }
+
+
+    };
+  </script>
+  <script src="../../assets/js/frontend.js"></script>
+</body>
+</html>
