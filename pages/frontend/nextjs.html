@@ -1,0 +1,1811 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CodeNesia - Course Detail</title>
+  <link rel="stylesheet" type="text/css" href="../../assets/bootstrap/css/bootstrap.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="../../assets/css/frontend.css">
+</head>
+<body>
+  <!-- Mobile Navbar -->
+  <nav id="mobileNavbar" class="mobile-navbar" aria-label="Mobile navigation" style="display: none;">
+    <!-- Content akan diisi oleh JavaScript -->
+  </nav>
+
+  <!-- Sidebar -->
+  <aside id="siteSidebar" class="sidebar" aria-label="Sidebar">
+    <div class="logo">
+      <!-- Mengganti mark dengan foto profil kartun -->
+      <img src="../../assets/img/profile.jpg" alt="Foto Profil" class="profile-pic">
+      <div>
+        <div style="font-size:14px;font-weight:700">CodeNesia</div>
+      </div>
+    </div>
+
+    <nav id="mainNav" class="side-nav" aria-label="Main navigation">
+      <a class="nav-link" href="#section-front-end"><i class="bi bi-folder2-open"></i> Front-End</a>
+      <a class="nav-link" href="#section-back-end"><i class="bi bi-server"></i> Back-End</a>
+      <a class="nav-link" href="#section-language"><i class="bi bi-code-slash"></i> Programming Language</a>
+      <a class="nav-link" href="#ebook"><i class="bi bi-book"></i> Ebook</a>
+      <a class="nav-link" href="#support"><i class="bi bi-hand-thumbs-up"></i> Support Us</a>
+      <a class="nav-link" href="../home.html"><i class="bi bi-back"></i> Back</a>
+    </nav>
+
+    <div class="social-section">
+      <div>Social Media</div>
+
+      <!-- project-pill style social buttons (like top area) -->
+      <a class="project-pill" href="https://www.youtube.com" target="_blank" rel="noopener noreferrer">
+        <span class="icon"><i class="bi bi-youtube" style="color:#f59e0b"></i></span>
+        <span>Youtube</span>
+      </a>
+
+      <a class="project-pill" href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+        <span class="icon"><i class="bi bi-instagram" style="color:#3ec5ff"></i></span>
+        <span>Instagram</span>
+      </a>
+
+      <a class="project-pill" href="https://www.tiktok.com" target="_blank" rel="noopener noreferrer">
+        <span class="icon"><i class="bi bi-music-note-beamed"></i></span>
+        <span>Tiktok</span>
+      </a>
+
+      <a class="project-pill" href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+        <span class="icon"><i class="bi bi-facebook"></i></span>
+        <span>Facebook</span>
+      </a>
+    </div>
+  </aside>
+
+  <!-- Main -->
+  <main id="top" class="main" role="main">
+    <div class="topbar">
+      <div class="topbar-left">
+        <div class="breadcrumbs">
+          <i class="bi bi-grid-fill"></i>
+          <div id="currentDate" style="font-weight:700"></div>
+        </div>
+      </div>
+
+      <div class="topbar-right">
+        <!-- Theme Toggle Button -->
+        <button id="themeToggle" class="theme-toggle" aria-label="Toggle dark mode">
+          <i class="bi bi-sun" id="themeIcon"></i>
+        </button>
+      </div>
+    </div>
+
+    <div class="main-content">
+      <!-- Course Header -->
+      <div class="course-header">
+        <div class="course-cover">
+          <img src="../../assets/img/reactjs.jpg" alt="Figma Course Cover">
+        </div>
+        <div class="course-info">
+          <h1 class="course-title">React JS</h1>
+          <p class="course-description">
+            Pelajari React JS untuk membangun antarmuka web yang interaktif, cepat, dan modular. Di course ini, kamu akan memahami konsep komponen, state, dan props yang menjadi dasar pengembangan aplikasi modern berbasis JavaScript.
+          </p>
+          <div class="course-actions">
+            <a href="https://www.youtube.com/playlist?list=YOUR_PLAYLIST_ID" target="_blank" class="btn-enroll btn btn-primary">
+              Tonton Playlist
+            </a>
+          </div>
+        </div>
+      </div>
+      <br>
+      <!-- Course Content -->
+      <div class="course-content">
+        <div class="content-left">
+          <!-- Course Modules -->
+          <div class="content-section">
+            <h2 class="section-title"><i class="bi bi-list-check"></i> Daftar Materi</h2>
+            <div class="scrollable-section">
+              <ul class="module-list">
+                <li class="module-item" data-module="1">
+                  <div class="module-number">01</div>
+                  <div class="module-content">
+                    <div class="module-title">Pengenalan Dasar</div>
+                    <div class="module-duration">20 min</div>
+                  </div>
+                </li>
+                <li class="module-item" data-module="2">
+                  <div class="module-number">02</div>
+                  <div class="module-content">
+                    <div class="module-title">Persiapan & Requirement</div>
+                    <div class="module-duration">20 min</div>
+                  </div>
+                </li>
+                <li class="module-item" data-module="3">
+                  <div class="module-number">03</div>
+                  <div class="module-content">
+                    <div class="module-title">Fundamental React</div>
+                    <div class="module-duration">36 min</div>
+                  </div>
+                </li>
+                <li class="module-item" data-module="4">
+                  <div class="module-number">04</div>
+                  <div class="module-content">
+                    <div class="module-title">Hooks & Lifecycle</div>
+                    <div class="module-duration">40 min</div>
+                  </div>
+                </li>
+                <li class="module-item" data-module="5">
+                  <div class="module-number">05</div>
+                  <div class="module-content">
+                    <div class="module-title">Routing & Navigasi</div>
+                    <div class="module-duration">12 min</div>
+                  </div>
+                </li>
+                <li class="module-item" data-module="6">
+                  <div class="module-number">06</div>
+                  <div class="module-content">
+                    <div class="module-title">Fetching Data & API</div>
+                    <div class="module-duration">40 min</div>
+                  </div>
+                </li>
+                <li class="module-item" data-module="7">
+                  <div class="module-number">07</div>
+                  <div class="module-content">
+                    <div class="module-title">State Management</div>
+                    <div class="module-duration">8 min</div>
+                  </div>
+                </li>
+                <li class="module-item" data-module="8">
+                  <div class="module-number">08</div>
+                  <div class="module-content">
+                    <div class="module-title">Form Handling</div>
+                    <div class="module-duration">25 min</div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="content-right">
+          <!-- Course Stats - Now at the top -->
+          <div class="content-section">
+            <h2 class="section-title"><i class="bi bi-graph-up"></i> Detail Materi</h2>
+            <div style="display: flex; flex-direction: column; gap: 12px;">
+              <div style="display: flex; justify-content: space-between;">
+                <span style="color: var(--muted-text);">Durasi</span>
+                <span style="font-weight: 600;">2.5 Jam</span>
+              </div>
+              <div style="display: flex; justify-content: space-between;">
+                <span style="color: var(--muted-text);">Total Materi</span>
+                <span style="font-weight: 600;">12 Modul</span>
+              </div>
+              <div style="display: flex; justify-content: space-between;">
+                <span style="color: var(--muted-text);">Tipe</span>
+                <span style="font-weight: 600; color: var(--accent);">Front-End</span>
+              </div>
+            </div>
+          </div>
+          <br>
+          <!-- About Course - Now scrollable and at the bottom -->
+          <div class="content-section">
+            <h2 class="section-title"><i class="bi bi-info-circle"></i> Tentang Materi</h2>
+            <div class="scrollable-section" style="max-height: 195px;">
+              <p class="about-course">
+                Course React JS ini dirancang untuk membantumu menguasai salah satu library front-end paling populer di dunia. Kamu akan belajar membuat komponen dinamis, mengelola data dengan hooks, hingga memahami alur kerja React yang efisien.
+              </p>
+              <p class="about-course">
+                Cocok untuk developer yang ingin membuat aplikasi web modern dengan performa tinggi dan struktur kode yang mudah dikembangkan.
+              </p>
+              <!-- ... konten lainnya ... -->
+            </div>
+          </div>
+        </div>
+
+        <!-- PERUBAHAN: What You'll Learn - NOW FULL WIDTH -->
+        <div class="content-section full-width-section">
+          <h2 class="section-title">
+            <i class="bi bi-lightbulb"></i> Apa yang akan kamu pelajari?
+          </h2>
+          <br />
+          <ul class="learn-list">
+            <li class="learn-item">Memahami konsep dasar React dan perbedaan React vs ReactJS</li>
+            <li class="learn-item">Mempelajari struktur project React dan cara kerja JSX</li>
+            <li class="learn-item">Membuat dan mengelola komponen menggunakan props dan state</li>
+            <li class="learn-item">Mengatur event dan perubahan data menggunakan useState dan event handler</li>
+            <li class="learn-item">Mengimplementasikan conditional & list rendering untuk tampilan dinamis</li>
+            <li class="learn-item">Menerapkan berbagai metode styling: CSS biasa, CSS Modules, dan inline style</li>
+            <li class="learn-item">Menggunakan Hooks seperti useEffect, useRef, dan useContext dalam pengelolaan state dan efek samping</li>
+            <li class="learn-item">Membuat navigasi multi-halaman dengan React Router (Route, Link, useNavigate)</li>
+            <li class="learn-item">Melakukan fetching data dari API menggunakan fetch() dan async/await</li>
+            <li class="learn-item">Mengelola global state menggunakan Context API dan Redux Toolkit</li>
+            <li class="learn-item">Membangun form interaktif dengan validasi manual dan React Hook Form</li>
+            <li class="learn-item">Menerapkan seluruh konsep React dalam satu proyek nyata (To-Do, Blog, atau Movie App)</li>
+            <li class="learn-item">Menulis kode React yang rapi, efisien, dan mudah di-maintain</li>
+          </ul>
+        </div>
+    </div>
+  </main>
+
+  <!-- Course Modal -->
+  <div id="courseModal" class="course-modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="modalModuleTitle">Module 1: Pengenalan Dasar</h3>
+        <button class="close-modal">&times;</button>
+      </div>
+      <div class="modal-body" id="modalBody">
+        <!-- Konten akan diisi oleh JavaScript berdasarkan modul yang dipilih -->
+      </div>
+      <div class="modal-footer">
+        <div class="slide-indicator">
+          Slide <span id="currentSlide">1</span> of <span id="totalSlides">3</span>
+        </div>
+        <div class="nav-buttons">
+          <button class="btn-nav btn-nav-outline" id="prevBtn">
+            <i class="bi bi-chevron-left"></i> Previous
+          </button>
+          <button class="btn-nav" id="nextBtn">
+            Next <i class="bi bi-chevron-right"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="helpFab" class="help-fab" title="Help"><i class="bi bi-question-lg"></i></div>
+
+  <!-- Bootstrap JS bundle -->
+  <script src="../../assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Elements
+    const sidebar = document.getElementById('siteSidebar');
+    const themeToggle = document.getElementById('themeToggle');
+    const themeIcon = document.getElementById('themeIcon');
+    const htmlElement = document.documentElement;
+    const mobileNavbar = document.getElementById('mobileNavbar');
+    const navLinks = document.querySelectorAll('#mainNav .nav-link');
+    const currentDateElement = document.getElementById('currentDate');
+    const courseModal = document.getElementById('courseModal');
+    const closeModal = document.querySelector('.close-modal');
+    const moduleItems = document.querySelectorAll('.module-item');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const currentSlideEl = document.getElementById('currentSlide');
+    const totalSlidesEl = document.getElementById('totalSlides');
+    const modalModuleTitle = document.getElementById('modalModuleTitle');
+    const modalBody = document.getElementById('modalBody');
+
+    // Modal state
+    let currentSlide = 0;
+    let totalSlides = 0;
+    let currentModule = 1;
+    let slides = [];
+
+    // Data konten untuk setiap modul
+    const moduleContent = {
+      1: {
+        title: "Pengenalan React.js",
+        slides: [
+          {
+            title: "Sejarah Singkat React.js",
+            content: `
+              <p><strong>React.js</strong> pertama kali dikembangkan oleh <strong>Jordan Walke</strong>, seorang engineer di <strong>Facebook</strong>, dan dirilis ke publik pada tahun <strong>2013</strong>.</p>
+
+              <p>Awalnya React digunakan secara internal untuk memperbaiki performa antarmuka pada <em>Facebook News Feed</em> dan <em>Instagram</em>. Setelah dirilis sebagai proyek open-source, React dengan cepat menjadi salah satu library <strong>front-end</strong> paling populer di dunia.</p>
+
+              <p>React kini dikelola oleh <strong>Meta</strong> dan komunitas open-source besar, serta menjadi dasar dari framework seperti <strong>Next.js</strong>.</p>
+            `
+          },
+          {
+            title: "Apa Itu React.js?",
+            content: `
+              <p><strong>React.js</strong> adalah <em>JavaScript library</em> untuk membangun <strong>User Interface (UI)</strong> secara efisien menggunakan konsep <strong>komponen</strong>.</p>
+
+              <p>React tidak seperti framework besar (misalnya Angular), karena fokus utamanya hanya pada <strong>tampilan (view layer)</strong>. React memungkinkan developer membuat UI yang dinamis dan dapat digunakan kembali (reusable).</p>
+
+              <pre><code class="language-js">// Contoh sederhana komponen React
+      function Hello() {
+        return &lt;h1&gt;Hello, React!&lt;/h1&gt;;
+      }
+              </code></pre>
+            `
+          },
+          {
+            title: "Kenapa Menggunakan React?",
+            content: `
+              <p><strong>React.js</strong> banyak digunakan karena berbagai keunggulannya:</p>
+
+              <ul>
+                <li>⚡ <strong>Cepat</strong> — berkat <em>Virtual DOM</em> yang efisien dalam memperbarui tampilan.</li>
+                <li>🧩 <strong>Reusable</strong> — setiap bagian UI dibangun dari komponen yang bisa digunakan ulang.</li>
+                <li>🧠 <strong>Declarative</strong> — kamu cukup mendefinisikan tampilan berdasarkan data, React yang mengatur sisanya.</li>
+                <li>🔄 <strong>Unidirectional Data Flow</strong> — aliran data satu arah membuat aplikasi mudah diprediksi.</li>
+                <li>🌍 <strong>Ekosistem luas</strong> — dukungan library, tools, dan komunitas sangat besar.</li>
+              </ul>
+
+              <p>Dengan kombinasi ini, React menjadi pilihan utama dalam pengembangan web modern.</p>
+            `
+          },
+          {
+            title: "Perbandingan React vs Framework Lain",
+            content: `
+              <p>React sering dibandingkan dengan framework seperti <strong>Vue.js</strong> dan <strong>Angular</strong>. Berikut perbandingannya:</p>
+
+              <table class="table table-bordered table-striped">
+                <thead>
+                  <tr>
+                    <th>Aspek</th>
+                    <th>React.js</th>
+                    <th>Vue.js</th>
+                    <th>Angular</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Tipe</td>
+                    <td>Library</td>
+                    <td>Framework ringan</td>
+                    <td>Full framework</td>
+                  </tr>
+                  <tr>
+                    <td>Bahasa Utama</td>
+                    <td>JavaScript / TypeScript</td>
+                    <td>JavaScript / TypeScript</td>
+                    <td>TypeScript</td>
+                  </tr>
+                  <tr>
+                    <td>Arsitektur</td>
+                    <td>Component-based</td>
+                    <td>Component-based</td>
+                    <td>MVC</td>
+                  </tr>
+                  <tr>
+                    <td>Learning Curve</td>
+                    <td>Mudah menengah</td>
+                    <td>Mudah</td>
+                    <td>Cukup sulit</td>
+                  </tr>
+                  <tr>
+                    <td>Performa</td>
+                    <td>Sangat cepat (Virtual DOM)</td>
+                    <td>Cepat</td>
+                    <td>Lebih berat</td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <p><strong>Kesimpulan:</strong> React seimbang antara fleksibilitas dan performa — ideal untuk proyek skala kecil hingga besar.</p>
+            `
+          },
+          {
+            title: "Konsep Dasar: Component-Based Architecture",
+            content: `
+              <p>Inti dari React adalah <strong>komponen</strong>. Setiap bagian UI (seperti tombol, navbar, atau kartu produk) adalah satu komponen terpisah.</p>
+
+              <p>Dengan pendekatan ini, UI dibangun dari kumpulan komponen kecil yang saling berinteraksi, mirip seperti menyusun LEGO.</p>
+
+              <pre><code class="language-js">// Contoh struktur komponen
+      function App() {
+        return (
+          &lt;div&gt;
+            &lt;Header /&gt;
+            &lt;MainContent /&gt;
+            &lt;Footer /&gt;
+          &lt;/div&gt;
+        );
+      }
+              </code></pre>
+
+              <p>Setiap komponen bisa memiliki <strong>state</strong> (data internal) dan <strong>props</strong> (data dari luar), membuatnya mudah dikelola dan digunakan ulang.</p>
+            `
+          },
+          {
+            title: "Cara Kerja Virtual DOM & Reconciliation",
+            content: `
+              <p><strong>Virtual DOM</strong> adalah representasi virtual dari <strong>DOM asli</strong> di browser.</p>
+
+              <p>Ketika data berubah, React tidak langsung mengubah DOM asli (yang berat). Sebaliknya, React:</p>
+
+              <ol>
+                <li>Membuat salinan Virtual DOM baru.</li>
+                <li>Membandingkannya dengan versi lama (proses <em>reconciliation</em>).</li>
+                <li>Hanya memperbarui bagian yang berubah di DOM nyata.</li>
+              </ol>
+
+              <pre><code class="language-js">// Contoh: React hanya ubah elemen yang berubah
+      setCount(count + 1); // UI langsung ter-update efisien
+              </code></pre>
+
+              <p>Inilah alasan kenapa React sangat cepat dan efisien dalam mengelola UI kompleks.</p>
+            `
+          },
+          {
+            title: "Konsep Single Page Application (SPA)",
+            content: `
+              <p><strong>Single Page Application (SPA)</strong> adalah aplikasi web yang hanya memuat satu halaman HTML utama.</p>
+
+              <p>Saat pengguna berpindah halaman, React hanya memperbarui bagian konten yang berubah — tanpa melakukan <em>full reload</em> seperti website tradisional.</p>
+
+              <p>Keuntungan SPA dengan React:</p>
+              <ul>
+                <li>⚡ Navigasi super cepat.</li>
+                <li>🧭 Pengalaman pengguna lebih halus (seperti aplikasi native).</li>
+                <li>📦 Beban server lebih ringan karena tidak perlu render ulang seluruh halaman.</li>
+              </ul>
+
+              <p>React menggunakan <strong>React Router</strong> untuk mengatur navigasi dalam SPA.</p>
+
+              <pre><code class="language-js">// Contoh route sederhana dengan React Router
+      &lt;Routes&gt;
+        &lt;Route path="/" element={&lt;Home /&gt;} /&gt;
+        &lt;Route path="/about" element={&lt;About /&gt;} /&gt;
+      &lt;/Routes&gt;
+              </code></pre>
+            `
+          },
+          {
+            title: "Video: Pengenalan React.js",
+            content: `
+              <p>Berikut video pengantar untuk memahami dasar <strong>React.js</strong> dan bagaimana cara kerjanya:</p>
+
+              <div class="ratio ratio-16x9">
+                <iframe 
+                  src="https://www.youtube.com/embed/SqcY0GlETPk"
+                  title="Pengenalan React.js untuk Pemula"
+                  allowfullscreen>
+                </iframe>
+              </div>
+            `
+          }
+        ]
+      },
+
+      2: {
+        title: "Persiapan & Requirement",
+        slides: [
+          {
+            title: "Instalasi Node.js & npm",
+            content: `
+              <p>Untuk mulai belajar <strong>React.js</strong>, kamu membutuhkan <strong>Node.js</strong> dan <strong>npm</strong> (Node Package Manager) yang berfungsi untuk mengelola dependensi atau library.</p>
+
+              <p><strong>Langkah-langkah instalasi:</strong></p>
+              <ol>
+                <li>Kunjungi situs resmi: <a href="https://nodejs.org" target="_blank">nodejs.org</a></li>
+                <li>Download versi <strong>LTS (Long Term Support)</strong></li>
+                <li>Instal seperti biasa</li>
+                <li>Cek versi setelah instalasi:</li>
+              </ol>
+
+              <pre><code class="language-bash">node -v
+      npm -v
+              </code></pre>
+
+              <p>Kamu juga bisa menggunakan <strong>yarn</strong> atau <strong>pnpm</strong> sebagai alternatif npm:</p>
+
+              <pre><code class="language-bash"># Instal yarn
+      npm install -g yarn
+
+      # Instal pnpm
+      npm install -g pnpm
+              </code></pre>
+            `
+          },
+          {
+            title: "Membuat Proyek React dengan create-react-app",
+            content: `
+              <p><strong>create-react-app</strong> (CRA) adalah cara termudah untuk membuat proyek React tanpa konfigurasi manual.</p>
+
+              <p><strong>Langkah-langkah:</strong></p>
+              <pre><code class="language-bash"># Buat proyek baru
+      npx create-react-app my-react-app
+
+      # Masuk ke folder proyek
+      cd my-react-app
+
+      # Jalankan aplikasi
+      npm start
+              </code></pre>
+
+              <p>Perintah <code>npm start</code> akan membuka aplikasi di <strong>http://localhost:3000</strong>.</p>
+
+              <p><strong>Kelebihan CRA:</strong></p>
+              <ul>
+                <li>✅ Konfigurasi otomatis (webpack, babel, ESLint, dll).</li>
+                <li>⚙️ Cocok untuk pemula.</li>
+                <li>🚀 Langsung bisa digunakan untuk belajar React dasar.</li>
+              </ul>
+            `
+          },
+          {
+            title: "Alternatif Setup dengan Vite",
+            content: `
+              <p><strong>Vite</strong> adalah alat build modern yang lebih cepat dibanding <em>create-react-app</em>. Banyak developer kini beralih ke Vite karena waktu build dan dev server yang jauh lebih ringan.</p>
+
+              <p><strong>Langkah-langkah setup React dengan Vite:</strong></p>
+
+              <pre><code class="language-bash"># Membuat proyek React + JavaScript
+      npm create vite@latest my-react-app -- --template react
+
+      # Masuk ke folder proyek
+      cd my-react-app
+
+      # Instal dependensi
+      npm install
+
+      # Jalankan aplikasi
+      npm run dev
+              </code></pre>
+
+              <p>Setelah itu, aplikasi akan berjalan di <strong>http://localhost:5173</strong>.</p>
+
+              <p><strong>Kelebihan Vite:</strong></p>
+              <ul>
+                <li>⚡ Startup super cepat (instan).</li>
+                <li>📦 Build lebih kecil dan efisien.</li>
+                <li>🧩 Lebih cocok untuk proyek modern dan skala menengah ke atas.</li>
+              </ul>
+            `
+          },
+          {
+            title: "Struktur Folder Proyek React",
+            content: `
+              <p>Berikut contoh struktur folder dari proyek React (baik menggunakan CRA maupun Vite):</p>
+
+              <pre><code class="language-text">
+      my-react-app/
+      ├── node_modules/
+      ├── public/
+      │   └── index.html
+      ├── src/
+      │   ├── assets/
+      │   ├── components/
+      │   ├── App.jsx
+      │   └── main.jsx
+      ├── package.json
+      ├── .gitignore
+      └── README.md
+              </code></pre>
+
+              <p><strong>Penjelasan singkat:</strong></p>
+              <ul>
+                <li><code>src/</code> → tempat semua file utama React (komponen, style, logic).</li>
+                <li><code>public/</code> → berisi file statis (favicon, gambar, HTML utama).</li>
+                <li><code>package.json</code> → menyimpan informasi proyek dan daftar dependensi.</li>
+                <li><code>node_modules/</code> → tempat npm menyimpan library.</li>
+              </ul>
+            `
+          },
+          {
+            title: "Menjalankan Aplikasi React",
+            content: `
+              <p>Setelah membuat proyek, kamu bisa menjalankannya menggunakan perintah berikut:</p>
+
+              <pre><code class="language-bash"># Untuk CRA
+      npm start
+
+      # Untuk Vite
+      npm run dev
+              </code></pre>
+
+              <p>Jika berhasil, terminal akan menampilkan URL lokal seperti:</p>
+
+              <pre><code class="language-text">VITE v5.0  ready in 400ms
+      Local: http://localhost:5173/
+              </code></pre>
+
+              <p>Buka alamat tersebut di browser, dan kamu akan melihat tampilan React default (“Vite + React” atau “Edit App.js and save to reload”).</p>
+            `
+          },
+          {
+            title: "Dasar-Dasar JSX (JavaScript + XML)",
+            content: `
+              <p><strong>JSX</strong> (JavaScript XML) adalah sintaks khusus di React yang memungkinkan kita menulis HTML langsung di dalam JavaScript.</p>
+
+              <p>Contoh:</p>
+
+              <pre><code class="language-js">function App() {
+        return (
+          &lt;div&gt;
+            &lt;h1&gt;Hello, React!&lt;/h1&gt;
+            &lt;p&gt;Belajar JSX itu seru!&lt;/p&gt;
+          &lt;/div&gt;
+        );
+      }
+              </code></pre>
+
+              <p><strong>Catatan penting JSX:</strong></p>
+              <ul>
+                <li>Harus memiliki satu elemen induk (misal: &lt;div&gt;).</li>
+                <li>Gunakan <code>className</code> alih-alih <code>class</code>.</li>
+                <li>Gunakan <code>{}</code> untuk menampilkan nilai JavaScript di dalam JSX.</li>
+              </ul>
+
+              <pre><code class="language-js">// Contoh ekspresi JavaScript dalam JSX
+      const name = "Ali";
+      &lt;h2&gt;Hello, {name}!&lt;/h2&gt;
+              </code></pre>
+            `
+          },
+          {
+            title: "Import dan Export Komponen",
+            content: `
+              <p>React memecah UI menjadi banyak komponen. Agar dapat digunakan di berbagai file, kita perlu melakukan <strong>export</strong> dan <strong>import</strong>.</p>
+
+              <p><strong>Contoh:</strong></p>
+
+              <pre><code class="language-js">// Header.jsx
+      function Header() {
+        return &lt;h1&gt;Website Saya&lt;/h1&gt;;
+      }
+      export default Header;
+              </code></pre>
+
+              <pre><code class="language-js">// App.jsx
+      import Header from './Header';
+
+      function App() {
+        return (
+          &lt;div&gt;
+            &lt;Header /&gt;
+            &lt;p&gt;Selamat datang di React!&lt;/p&gt;
+          &lt;/div&gt;
+        );
+      }
+              </code></pre>
+
+              <p><code>export default</code> digunakan agar komponen bisa diimpor dari file lain.</p>
+            `
+          },
+          {
+            title: "Function Component vs Class Component",
+            content: `
+              <p>React memiliki dua cara membuat komponen: <strong>Class Component</strong> dan <strong>Function Component</strong>.</p>
+
+              <p>Namun, sejak React Hooks (v16.8), sebagian besar developer kini menggunakan <strong>Function Component</strong>.</p>
+
+              <table class="table table-bordered table-striped">
+                <thead>
+                  <tr>
+                    <th>Aspek</th>
+                    <th>Function Component</th>
+                    <th>Class Component</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Penulisan</td>
+                    <td>Fungsi biasa</td>
+                    <td>Kelas OOP (extends React.Component)</td>
+                  </tr>
+                  <tr>
+                    <td>State & Lifecycle</td>
+                    <td>Hooks (useState, useEffect, dll)</td>
+                    <td>Method bawaan (this.state, componentDidMount)</td>
+                  </tr>
+                  <tr>
+                    <td>Kode</td>
+                    <td>Lebih ringkas & modern</td>
+                    <td>Lebih verbose & lama</td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <pre><code class="language-js">// Function Component (modern)
+      function Welcome() {
+        return &lt;h1&gt;Hello!&lt;/h1&gt;;
+      }
+
+      // Class Component (lama)
+      class Welcome extends React.Component {
+        render() {
+          return &lt;h1&gt;Hello!&lt;/h1&gt;;
+        }
+      }
+              </code></pre>
+
+              <p><strong>Rekomendasi:</strong> Gunakan <strong>Function Component</strong> karena lebih sederhana, cepat, dan didukung penuh oleh React Hooks.</p>
+            `
+          },
+          {
+            title: "Video: Setup React & JSX Dasar",
+            content: `
+              <p>Berikut video panduan untuk menginstal dan menyiapkan proyek React, serta penjelasan JSX dasar:</p>
+
+              <div class="ratio ratio-16x9">
+                <iframe 
+                  src="https://www.youtube.com/embed/SqcY0GlETPk?start=60"
+                  title="Setup React dan JSX Dasar"
+                  allowfullscreen>
+                </iframe>
+              </div>
+            `
+          }
+        ]
+      },
+
+      3: {
+        title: "Fundamental React",
+        slides: [
+          {
+            title: "Komponen & Props",
+            content: `
+              <p><strong>Komponen</strong> adalah blok penyusun utama di React. Setiap bagian UI — seperti tombol, header, atau kartu — bisa dibuat menjadi komponen terpisah agar mudah digunakan ulang.</p>
+
+              <pre><code class="language-jsx">
+      // Contoh komponen sederhana
+      function Welcome(props) {
+        return <h1>Halo, {props.name}!</h1>;
+      }
+
+      // Penggunaan komponen
+      <Welcome name="Ali" />
+              </code></pre>
+
+              <p><strong>Props</strong> (singkatan dari <em>properties</em>) digunakan untuk mengirim data dari komponen induk ke komponen anak.</p>
+
+              <ul>
+                <li>📦 Props bersifat <strong>immutable</strong> (tidak bisa diubah di dalam komponen anak).</li>
+                <li>🔁 Cocok untuk komunikasi <strong>satu arah</strong> (parent → child).</li>
+              </ul>
+            `
+          },
+          {
+            title: "State & Event Handling",
+            content: `
+              <p><strong>State</strong> adalah data internal komponen yang bisa berubah seiring waktu. Perubahan state akan otomatis memperbarui UI.</p>
+
+              <pre><code class="language-jsx">
+      import { useState } from "react";
+
+      function Counter() {
+        const [count, setCount] = useState(0);
+
+        return (
+          <div>
+            <p>Kamu menekan tombol sebanyak {count} kali</p>
+            <button onClick={() => setCount(count + 1)}>Tambah</button>
+          </div>
+        );
+      }
+              </code></pre>
+
+              <p>Fungsi <code>useState</code> mengembalikan dua nilai: data saat ini (<code>count</code>) dan fungsi untuk mengubahnya (<code>setCount</code>).</p>
+
+              <p><strong>Event handling</strong> di React dilakukan menggunakan sintaks camelCase:</p>
+
+              <pre><code class="language-jsx">
+      <button onClick={handleClick}>Klik Aku</button>
+              </code></pre>
+            `
+          },
+          {
+            title: "Conditional Rendering",
+            content: `
+              <p>React memungkinkan kita menampilkan elemen UI secara <strong>kondisional</strong> berdasarkan nilai state atau props.</p>
+
+              <pre><code class="language-jsx">
+      function Greeting({ isLoggedIn }) {
+        return (
+          <div>
+            {isLoggedIn ? (
+              <h2>Selamat datang kembali!</h2>
+            ) : (
+              <h2>Silakan login dulu.</h2>
+            )}
+          </div>
+        );
+      }
+              </code></pre>
+
+              <p>Selain ternary operator, kamu juga bisa menggunakan <strong>short-circuit (&&)</strong> untuk kondisi sederhana:</p>
+
+              <pre><code class="language-jsx">
+      {isLoggedIn && <p>Kamu sudah login.</p>}
+              </code></pre>
+            `
+          },
+          {
+            title: "List Rendering",
+            content: `
+              <p>Untuk menampilkan data dalam bentuk list dinamis, gunakan fungsi <code>map()</code> pada array.</p>
+
+              <pre><code class="language-jsx">
+      const users = ["Ali", "Budi", "Citra"];
+
+      function UserList() {
+        return (
+          <ul>
+            {users.map((user, index) => (
+              <li key={index}>{user}</li>
+            ))}
+          </ul>
+        );
+      }
+              </code></pre>
+
+              <p>⚠️ Setiap elemen dalam list harus punya <strong>key unik</strong> agar React bisa mengenali dan memperbarui elemen dengan efisien.</p>
+            `
+          },
+          {
+            title: "Styling di React",
+            content: `
+              <p>Ada beberapa cara menambahkan gaya (style) di React:</p>
+
+              <h5>1️⃣ CSS Biasa</h5>
+              <pre><code class="language-jsx">
+      // App.css
+      .title {
+        color: blue;
+        font-size: 24px;
+      }
+
+      // App.jsx
+      import "./App.css";
+      <h1 className="title">Halo Dunia!</h1>
+              </code></pre>
+
+              <h5>2️⃣ CSS Modules</h5>
+              <pre><code class="language-jsx">
+      // styles.module.css
+      .title {
+        color: red;
+      }
+
+      // Komponen
+      import styles from "./styles.module.css";
+      <h1 className={styles.title}>Teks Merah</h1>
+              </code></pre>
+
+              <h5>3️⃣ Inline Style</h5>
+              <pre><code class="language-jsx">
+      <h1 style={{ color: "green", fontSize: "20px" }}>Inline Style</h1>
+              </code></pre>
+
+              <h5>4️⃣ Tailwind CSS (Opsional tapi populer)</h5>
+              <pre><code class="language-jsx">
+      <h1 className="text-2xl text-blue-500 font-bold">Hello Tailwind!</h1>
+              </code></pre>
+
+              <p>Tailwind memberikan utilitas langsung lewat class tanpa perlu file CSS tambahan — efisien untuk proyek modern.</p>
+            `
+          }
+        ]
+      },
+
+      4: {
+        title: "Hooks & Lifecycle",
+        slides: [
+          {
+            title: "Apa Itu Hooks?",
+            content: `
+              <p><strong>Hooks</strong> diperkenalkan pada React 16.8 sebagai cara baru untuk mengelola <em>state</em> dan <em>lifecycle</em> tanpa harus menulis <strong>class component</strong>.</p>
+
+              <p>Sebelum ada Hooks, fitur seperti state dan efek samping hanya bisa digunakan di class component. Kini, semuanya bisa dilakukan di <strong>function component</strong>.</p>
+
+              <ul>
+                <li>🔁 <code>useState</code> — untuk mengelola data lokal (state).</li>
+                <li>⚙️ <code>useEffect</code> — untuk menjalankan efek samping (side effects).</li>
+                <li>📌 <code>useRef</code> — untuk menyimpan referensi ke elemen DOM.</li>
+                <li>🌍 <code>useContext</code> — untuk mengakses global state ringan.</li>
+                <li>🧩 <code>useReducer</code> — untuk mengatur state yang lebih kompleks (opsional).</li>
+              </ul>
+
+              <p>Hooks selalu diawali dengan kata <strong>"use"</strong> dan hanya bisa dipanggil di dalam <strong>function component</strong> atau <strong>custom hook</strong>.</p>
+            `
+          },
+          {
+            title: "useState — Mengelola State",
+            content: `
+              <p><code>useState</code> digunakan untuk menyimpan data yang bisa berubah dan memicu <em>re-render</em> UI.</p>
+
+              <pre><code class="language-jsx">
+      import { useState } from "react";
+
+      function Counter() {
+        const [count, setCount] = useState(0);
+
+        return (
+          <div>
+            <p>Jumlah: {count}</p>
+            <button onClick={() => setCount(count + 1)}>Tambah</button>
+            <button onClick={() => setCount(0)}>Reset</button>
+          </div>
+        );
+      }
+              </code></pre>
+
+              <p>Setiap kali <code>setCount()</code> dipanggil, React akan merender ulang komponen dengan nilai terbaru.</p>
+            `
+          },
+          {
+            title: "useEffect — Efek Samping & Lifecycle",
+            content: `
+              <p><code>useEffect</code> digunakan untuk menjalankan <strong>efek samping</strong> seperti:</p>
+
+              <ul>
+                <li>📡 Mengambil data (fetch API).</li>
+                <li>🕒 Menjalankan interval atau timeout.</li>
+                <li>🧹 Membersihkan event listener.</li>
+                <li>🧾 Mengubah title halaman.</li>
+              </ul>
+
+              <pre><code class="language-jsx">
+      import { useEffect, useState } from "react";
+
+      function DataFetcher() {
+        const [users, setUsers] = useState([]);
+
+        useEffect(() => {
+          fetch("https://jsonplaceholder.typicode.com/users")
+            .then((res) => res.json())
+            .then((data) => setUsers(data));
+        }, []); // [] = hanya dijalankan sekali saat mount
+
+        return (
+          <ul>
+            {users.map((u) => (
+              <li key={u.id}>{u.name}</li>
+            ))}
+          </ul>
+        );
+      }
+              </code></pre>
+
+              <p>Array kosong <code>[]</code> di akhir menandakan efek hanya dijalankan sekali, mirip dengan <strong>componentDidMount()</strong> di class component.</p>
+            `
+          },
+          {
+            title: "useRef — Akses ke Elemen DOM",
+            content: `
+              <p><code>useRef</code> digunakan untuk mengakses langsung elemen DOM tanpa memicu re-render.</p>
+
+              <pre><code class="language-jsx">
+      import { useRef } from "react";
+
+      function InputFocus() {
+        const inputRef = useRef(null);
+
+        const handleFocus = () => {
+          inputRef.current.focus();
+        };
+
+        return (
+          <div>
+            <input ref={inputRef} type="text" placeholder="Ketik sesuatu..." />
+            <button onClick={handleFocus}>Fokuskan Input</button>
+          </div>
+        );
+      }
+              </code></pre>
+
+              <p><strong>useRef</strong> tidak menyebabkan render ulang, karena nilainya disimpan secara permanen sepanjang umur komponen.</p>
+            `
+          },
+          {
+            title: "useContext — Global State Ringan",
+            content: `
+              <p><code>useContext</code> digunakan untuk berbagi data antar komponen tanpa harus mengoper props satu per satu.</p>
+
+              <pre><code class="language-jsx">
+      import { createContext, useContext } from "react";
+
+      const ThemeContext = createContext("light");
+
+      function App() {
+        return (
+          <ThemeContext.Provider value="dark">
+            <Toolbar />
+          </ThemeContext.Provider>
+        );
+      }
+
+      function Toolbar() {
+        const theme = useContext(ThemeContext);
+        return <p>Tema saat ini: {theme}</p>;
+      }
+              </code></pre>
+
+              <p>Cocok untuk tema, bahasa, atau user login state yang dibutuhkan banyak komponen.</p>
+            `
+          },
+          {
+            title: "(Opsional) useReducer — State Kompleks",
+            content: `
+              <p><code>useReducer</code> digunakan untuk mengelola state yang lebih kompleks dari <code>useState</code>.</p>
+
+              <pre><code class="language-jsx">
+      import { useReducer } from "react";
+
+      function reducer(state, action) {
+        switch (action.type) {
+          case "tambah":
+            return { count: state.count + 1 };
+          case "reset":
+            return { count: 0 };
+          default:
+            return state;
+        }
+      }
+
+      function Counter() {
+        const [state, dispatch] = useReducer(reducer, { count: 0 });
+
+        return (
+          <div>
+            <p>Jumlah: {state.count}</p>
+            <button onClick={() => dispatch({ type: "tambah" })}>Tambah</button>
+            <button onClick={() => dispatch({ type: "reset" })}>Reset</button>
+          </div>
+        );
+      }
+              </code></pre>
+
+              <p><strong>useReducer</strong> berguna ketika logika pengelolaan state mulai rumit — misalnya banyak kondisi atau nested state.</p>
+            `
+          }
+        ]
+      },
+
+      5: {
+        title: "Routing & Navigasi",
+        slides: [
+          {
+            title: "Instalasi React Router",
+            content: `
+              <p><strong>React Router</strong> adalah library resmi untuk membuat navigasi dan sistem halaman (<em>multi-page</em>) di aplikasi React.</p>
+
+              <p>Untuk menggunakannya, instal paket <code>react-router-dom</code>:</p>
+
+              <pre><code class="language-bash">npm install react-router-dom</code></pre>
+
+              <p>Setelah terinstal, kamu bisa menggunakan komponen <strong>BrowserRouter</strong> untuk membungkus seluruh aplikasi.</p>
+            `
+          },
+          {
+            title: "BrowserRouter, Routes, dan Route",
+            content: `
+              <p>Struktur dasar routing di React menggunakan tiga komponen utama:</p>
+
+              <ul>
+                <li><code>BrowserRouter</code> → Pembungkus utama aplikasi.</li>
+                <li><code>Routes</code> → Wadah untuk semua rute.</li>
+                <li><code>Route</code> → Menentukan path dan komponen yang dirender.</li>
+              </ul>
+
+              <pre><code class="language-jsx">
+      import { BrowserRouter, Routes, Route } from "react-router-dom";
+      import Home from "./pages/Home";
+      import About from "./pages/About";
+
+      function App() {
+        return (
+          <BrowserRouter>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/about" element={<About />} />
+            </Routes>
+          </BrowserRouter>
+        );
+      }
+              </code></pre>
+
+              <p>Dengan struktur ini, setiap <code>path</code> akan menampilkan komponen berbeda tanpa perlu reload halaman.</p>
+            `
+          },
+          {
+            title: "Navigasi Antar Halaman",
+            content: `
+              <p>Untuk berpindah halaman di React Router, gunakan dua cara utama:</p>
+
+              <h5>1️⃣ Menggunakan <code>Link</code> Component</h5>
+              <pre><code class="language-jsx">
+      import { Link } from "react-router-dom";
+
+      function Navbar() {
+        return (
+          <nav>
+            <Link to="/">Home</Link> | <Link to="/about">About</Link>
+          </nav>
+        );
+      }
+              </code></pre>
+
+              <h5>2️⃣ Menggunakan <code>useNavigate()</code> Hook</h5>
+              <pre><code class="language-jsx">
+      import { useNavigate } from "react-router-dom";
+
+      function GoButton() {
+        const navigate = useNavigate();
+        return (
+          <button onClick={() => navigate("/about")}>Ke Halaman About</button>
+        );
+      }
+              </code></pre>
+
+              <p><code>useNavigate</code> cocok digunakan untuk navigasi setelah event tertentu seperti klik tombol atau submit form.</p>
+            `
+          },
+          {
+            title: "Route Parameters & Query Params",
+            content: `
+              <p>Kamu bisa membuat route dinamis menggunakan parameter (<code>:id</code>).</p>
+
+              <pre><code class="language-jsx">
+      import { useParams } from "react-router-dom";
+
+      function UserPage() {
+        const { id } = useParams();
+        return <h2>Profil Pengguna ID: {id}</h2>;
+      }
+
+      // Routing
+      <Route path="/user/:id" element={<UserPage />} />
+              </code></pre>
+
+              <p>Untuk <strong>query params</strong>, gunakan <code>useLocation()</code>:</p>
+
+              <pre><code class="language-jsx">
+      import { useLocation } from "react-router-dom";
+
+      function SearchPage() {
+        const { search } = useLocation();
+        const params = new URLSearchParams(search);
+        const query = params.get("q");
+
+        return <p>Hasil pencarian: {query}</p>;
+      }
+              </code></pre>
+            `
+          },
+          {
+            title: "Nested Routes",
+            content: `
+              <p><strong>Nested Routes</strong> memungkinkan rute di dalam rute, cocok untuk layout seperti dashboard.</p>
+
+              <pre><code class="language-jsx">
+      import { Outlet, Link } from "react-router-dom";
+
+      function Dashboard() {
+        return (
+          <div>
+            <h2>Dashboard</h2>
+            <nav>
+              <Link to="profile">Profil</Link> | <Link to="settings">Pengaturan</Link>
+            </nav>
+            <Outlet /> {/* Tempat render child route */}
+          </div>
+        );
+      }
+
+      function Profile() { return <p>Halaman Profil</p>; }
+      function Settings() { return <p>Halaman Pengaturan</p>; }
+
+      <Routes>
+        <Route path="/dashboard" element={<Dashboard />}>
+          <Route path="profile" element={<Profile />} />
+          <Route path="settings" element={<Settings />} />
+        </Route>
+      </Routes>
+              </code></pre>
+
+              <p><code>Outlet</code> digunakan untuk menampilkan komponen anak di dalam layout induk.</p>
+            `
+          },
+          {
+            title: "Redirect & 404 Page",
+            content: `
+              <p>React Router menyediakan cara untuk melakukan <strong>redirect</strong> atau menampilkan halaman 404 jika rute tidak ditemukan.</p>
+
+              <h5>Redirect otomatis:</h5>
+              <pre><code class="language-jsx">
+      import { Navigate } from "react-router-dom";
+
+      <Route path="/old-path" element={<Navigate to="/new-path" />} />
+              </code></pre>
+
+              <h5>Halaman 404 (Not Found):</h5>
+              <pre><code class="language-jsx">
+      function NotFound() {
+        return <h2>404 - Halaman Tidak Ditemukan</h2>;
+      }
+
+      <Route path="*" element={<NotFound />} />
+              </code></pre>
+
+              <p>Gunakan <code>path="*"</code> untuk menangkap semua URL yang tidak cocok dengan route lainnya.</p>
+            `
+          }
+        ]
+      },
+
+      6: {
+        title: "Fetching Data & API",
+        slides: [
+          {
+            title: "Konsep Dasar Fetching Data",
+            content: `
+              <p><strong>Fetching data</strong> berarti mengambil data dari sumber eksternal seperti <em>API backend</em> atau server.</p>
+              <p>Di React, proses ini biasanya dilakukan di dalam <code>useEffect()</code> agar hanya dijalankan setelah komponen dirender.</p>
+
+              <pre><code class="language-jsx">
+      fetch("https://api.example.com/users")
+        .then(res => res.json())
+        .then(data => console.log(data))
+        .catch(err => console.error(err));
+              </code></pre>
+
+              <p><code>fetch()</code> merupakan fungsi bawaan JavaScript untuk melakukan HTTP request.</p>
+            `
+          },
+          {
+            title: "Async/Await di React",
+            content: `
+              <p>Daripada menggunakan <code>.then()</code>, kamu bisa memakai <strong>async/await</strong> agar kode lebih rapi dan mudah dibaca.</p>
+
+              <pre><code class="language-jsx">
+      async function getUsers() {
+        try {
+          const res = await fetch("https://api.example.com/users");
+          const data = await res.json();
+          console.log(data);
+        } catch (error) {
+          console.error("Terjadi kesalahan:", error);
+        }
+      }
+              </code></pre>
+
+              <p><strong>Catatan:</strong> Fungsi dengan <code>await</code> harus diberi keyword <code>async</code>.</p>
+            `
+          },
+          {
+            title: "Fetch Data dengan useEffect",
+            content: `
+              <p>Di React, pengambilan data biasanya dilakukan di dalam <code>useEffect()</code> agar hanya berjalan sekali saat komponen dimuat.</p>
+
+              <pre><code class="language-jsx">
+      import { useEffect, useState } from "react";
+
+      function UserList() {
+        const [users, setUsers] = useState([]);
+
+        useEffect(() => {
+          async function fetchUsers() {
+            const res = await fetch("https://jsonplaceholder.typicode.com/users");
+            const data = await res.json();
+            setUsers(data);
+          }
+          fetchUsers();
+        }, []);
+
+        return (
+          <ul>
+            {users.map(user => (
+              <li key={user.id}>{user.name}</li>
+            ))}
+          </ul>
+        );
+      }
+              </code></pre>
+
+              <p><code>[]</code> di akhir <code>useEffect</code> berarti efek hanya dijalankan sekali (saat komponen pertama kali muncul).</p>
+            `
+          },
+          {
+            title: "Error Handling & Loading State",
+            content: `
+              <p>Selalu tampilkan indikator <strong>loading</strong> atau pesan error agar UI lebih responsif.</p>
+
+              <pre><code class="language-jsx">
+      import { useState, useEffect } from "react";
+
+      function PostList() {
+        const [posts, setPosts] = useState([]);
+        const [loading, setLoading] = useState(true);
+        const [error, setError] = useState(null);
+
+        useEffect(() => {
+          async function fetchPosts() {
+            try {
+              const res = await fetch("https://jsonplaceholder.typicode.com/posts");
+              if (!res.ok) throw new Error("Gagal memuat data!");
+              const data = await res.json();
+              setPosts(data);
+            } catch (err) {
+              setError(err.message);
+            } finally {
+              setLoading(false);
+            }
+          }
+          fetchPosts();
+        }, []);
+
+        if (loading) return <p>Memuat data...</p>;
+        if (error) return <p style={{ color: "red" }}>{error}</p>;
+
+        return (
+          <ul>
+            {posts.map(p => (
+              <li key={p.id}>{p.title}</li>
+            ))}
+          </ul>
+        );
+      }
+              </code></pre>
+
+              <p>Gunakan <code>try...catch</code> untuk menangani error, dan <code>finally</code> untuk menghentikan status loading.</p>
+            `
+          },
+          {
+            title: "Menampilkan Data dari API",
+            content: `
+              <p>Setelah data berhasil diambil, kita bisa menampilkannya di UI dengan cara <code>map()</code> data ke elemen JSX.</p>
+
+              <pre><code class="language-jsx">
+      function UserCard({ user }) {
+        return (
+          <div className="card">
+            <h3>{user.name}</h3>
+            <p>Email: {user.email}</p>
+          </div>
+        );
+      }
+
+      function UserList({ users }) {
+        return (
+          <div className="grid">
+            {users.map(user => (
+              <UserCard key={user.id} user={user} />
+            ))}
+          </div>
+        );
+      }
+              </code></pre>
+
+              <p>Dengan cara ini, UI akan otomatis memperbarui saat data berubah.</p>
+            `
+          },
+          {
+            title: "Axios (Alternatif untuk Fetch)",
+            content: `
+              <p><strong>Axios</strong> adalah library populer untuk HTTP request, dengan fitur tambahan seperti interceptor, timeout, dan JSON parsing otomatis.</p>
+
+              <pre><code class="language-bash">npm install axios</code></pre>
+
+              <pre><code class="language-jsx">
+      import axios from "axios";
+      import { useEffect, useState } from "react";
+
+      function Todos() {
+        const [todos, setTodos] = useState([]);
+
+        useEffect(() => {
+          axios.get("https://jsonplaceholder.typicode.com/todos")
+            .then(res => setTodos(res.data))
+            .catch(err => console.error(err));
+        }, []);
+
+        return (
+          <ul>
+            {todos.map(todo => (
+              <li key={todo.id}>{todo.title}</li>
+            ))}
+          </ul>
+        );
+      }
+              </code></pre>
+
+              <p>Axios lebih simpel dari <code>fetch()</code> karena langsung mengembalikan data di <code>res.data</code>.</p>
+            `
+          }
+        ]
+      },
+
+      7: {
+        title: "State Management",
+        slides: [
+          {
+            title: "Kapan Butuh Global State?",
+            content: `
+              <p>Pada aplikasi kecil, data cukup dikelola di level <strong>komponen</strong> menggunakan <code>useState</code>.</p>
+
+              <p>Namun, saat data perlu dibagikan ke banyak komponen (misalnya: user login, tema, keranjang belanja), maka dibutuhkan <strong>global state management</strong>.</p>
+
+              <ul>
+                <li>🔸 <strong>State lokal</strong> → hanya digunakan di 1 komponen.</li>
+                <li>🔹 <strong>State global</strong> → dibutuhkan oleh banyak komponen.</li>
+              </ul>
+
+              <p>Contoh kasus global state:</p>
+              <ul>
+                <li>Status login pengguna (auth)</li>
+                <li>Keranjang belanja (cart)</li>
+                <li>Pengaturan tema (dark/light)</li>
+                <li>Bahasa atau preferensi aplikasi</li>
+              </ul>
+            `
+          },
+          {
+            title: "useContext untuk Global State Sederhana",
+            content: `
+              <p><strong>useContext</strong> digunakan untuk menghindari <em>props drilling</em> — yaitu pengiriman props dari satu komponen ke komponen lain yang terlalu dalam.</p>
+
+              <pre><code class="language-jsx">
+      import { createContext, useContext, useState } from "react";
+
+      // 1. Buat Context
+      const ThemeContext = createContext();
+
+      // 2. Buat Provider
+      function ThemeProvider({ children }) {
+        const [theme, setTheme] = useState("light");
+        const toggleTheme = () => setTheme(theme === "light" ? "dark" : "light");
+
+        return (
+          <ThemeContext.Provider value={{ theme, toggleTheme }}>
+            {children}
+          </ThemeContext.Provider>
+        );
+      }
+
+      // 3. Gunakan Context di Komponen Lain
+      function Button() {
+        const { theme, toggleTheme } = useContext(ThemeContext);
+        return (
+          <button onClick={toggleTheme}>
+            Mode: {theme === "light" ? "☀️" : "🌙"}
+          </button>
+        );
+      }
+
+      // 4. Bungkus Aplikasi
+      function App() {
+        return (
+          <ThemeProvider>
+            <Button />
+          </ThemeProvider>
+        );
+      }
+              </code></pre>
+
+              <p><strong>useContext</strong> cocok untuk global state yang sederhana, seperti tema atau bahasa.</p>
+            `
+          },
+          {
+            title: "Redux Toolkit: Solusi Modern untuk State Kompleks",
+            content: `
+              <p><strong>Redux Toolkit (RTK)</strong> adalah cara modern dan efisien untuk menggunakan Redux di React.</p>
+
+              <p>Redux digunakan untuk <strong>state management kompleks</strong> yang melibatkan banyak komponen dan aksi (actions).</p>
+
+              <pre><code class="language-bash">npm install @reduxjs/toolkit react-redux</code></pre>
+
+              <p>Redux Toolkit mengurangi <em>boilerplate</em> code dan mempermudah konfigurasi.</p>
+            `
+          },
+          {
+            title: "Setup Store dengan Redux Toolkit",
+            content: `
+              <p>Langkah pertama: buat file <code>store.js</code> dan daftarkan reducer-nya.</p>
+
+              <pre><code class="language-js">
+      // store.js
+      import { configureStore } from "@reduxjs/toolkit";
+      import counterReducer from "./counterSlice";
+
+      export const store = configureStore({
+        reducer: {
+          counter: counterReducer,
+        },
+      });
+              </code></pre>
+
+              <p>Lalu bungkus aplikasi React dengan <code>&lt;Provider&gt;</code> agar semua komponen bisa mengakses store.</p>
+
+              <pre><code class="language-jsx">
+      import { Provider } from "react-redux";
+      import { store } from "./store";
+      import App from "./App";
+
+      import { createRoot } from "react-dom/client";
+      createRoot(document.getElementById("root")).render(
+        <Provider store={store}>
+          <App />
+        </Provider>
+      );
+              </code></pre>
+            `
+          },
+          {
+            title: "createSlice: Cara Membuat Reducer Lebih Mudah",
+            content: `
+              <p><strong>createSlice()</strong> digunakan untuk membuat state, actions, dan reducers dalam satu tempat.</p>
+
+              <pre><code class="language-js">
+      // counterSlice.js
+      import { createSlice } from "@reduxjs/toolkit";
+
+      const counterSlice = createSlice({
+        name: "counter",
+        initialState: { value: 0 },
+        reducers: {
+          increment: (state) => { state.value += 1 },
+          decrement: (state) => { state.value -= 1 },
+          reset: (state) => { state.value = 0 }
+        }
+      });
+
+      export const { increment, decrement, reset } = counterSlice.actions;
+      export default counterSlice.reducer;
+              </code></pre>
+
+              <p><strong>createSlice</strong> menyederhanakan penulisan reducer & action.</p>
+            `
+          },
+          {
+            title: "useSelector & useDispatch di Komponen",
+            content: `
+              <p>Gunakan <code>useSelector</code> untuk membaca state, dan <code>useDispatch</code> untuk memicu aksi (action).</p>
+
+              <pre><code class="language-jsx">
+      import { useSelector, useDispatch } from "react-redux";
+      import { increment, decrement, reset } from "./counterSlice";
+
+      function Counter() {
+        const count = useSelector((state) => state.counter.value);
+        const dispatch = useDispatch();
+
+        return (
+          <div>
+            <h2>Counter: {count}</h2>
+            <button onClick={() => dispatch(increment())}>Tambah</button>
+            <button onClick={() => dispatch(decrement())}>Kurangi</button>
+            <button onClick={() => dispatch(reset())}>Reset</button>
+          </div>
+        );
+      }
+              </code></pre>
+
+              <p>Dengan cara ini, seluruh state dikelola secara terpusat di Redux store.</p>
+            `
+          },
+          {
+            title: "Alternatif Ringan: Zustand & Jotai",
+            content: `
+              <p>Untuk proyek kecil-menengah, kamu bisa pakai library ringan seperti <strong>Zustand</strong> atau <strong>Jotai</strong>.</p>
+
+              <h5>Contoh Zustand:</h5>
+              <pre><code class="language-bash">npm install zustand</code></pre>
+
+              <pre><code class="language-js">
+      import { create } from "zustand";
+
+      const useStore = create((set) => ({
+        count: 0,
+        increment: () => set((state) => ({ count: state.count + 1 }))
+      }));
+
+      function Counter() {
+        const { count, increment } = useStore();
+        return <button onClick={increment}>Count: {count}</button>;
+      }
+              </code></pre>
+
+              <h5>Contoh Jotai:</h5>
+              <pre><code class="language-bash">npm install jotai</code></pre>
+
+              <pre><code class="language-js">
+      import { atom, useAtom } from "jotai";
+
+      const countAtom = atom(0);
+
+      function Counter() {
+        const [count, setCount] = useAtom(countAtom);
+        return <button onClick={() => setCount(count + 1)}>Count: {count}</button>;
+      }
+              </code></pre>
+
+              <p>🔹 <strong>Zustand</strong> cocok untuk global state sederhana tanpa boilerplate.<br>
+              🔹 <strong>Jotai</strong> cocok untuk state reaktif berbasis atom.</p>
+            `
+          }
+        ]
+      },
+
+      8: {
+        title: "Form Handling",
+        slides: [
+          {
+            title: "Controlled vs Uncontrolled Components",
+            content: `
+              <p>Dalam React, form dapat dikelola dengan dua pendekatan utama: <strong>Controlled</strong> dan <strong>Uncontrolled Components</strong>.</p>
+
+              <h5>1️⃣ Controlled Components</h5>
+              <p>Nilai input dikontrol sepenuhnya oleh <code>state</code> React.</p>
+
+              <pre><code class="language-jsx">
+      import { useState } from "react";
+
+      function FormControlled() {
+        const [name, setName] = useState("");
+
+        const handleSubmit = (e) => {
+          e.preventDefault();
+          alert("Nama: " + name);
+        };
+
+        return (
+          <form onSubmit={handleSubmit}>
+            <input 
+              type="text" 
+              value={name} 
+              onChange={(e) => setName(e.target.value)} 
+              placeholder="Masukkan nama" 
+            />
+            <button type="submit">Kirim</button>
+          </form>
+        );
+      }
+              </code></pre>
+
+              <p>Pada pendekatan ini, setiap perubahan input disimpan di state React menggunakan <code>useState</code>.</p>
+
+              <h5>2️⃣ Uncontrolled Components</h5>
+              <p>Nilai input tidak dikontrol oleh React, melainkan diambil langsung dari DOM menggunakan <code>useRef</code>.</p>
+
+              <pre><code class="language-jsx">
+      import { useRef } from "react";
+
+      function FormUncontrolled() {
+        const inputRef = useRef();
+
+        const handleSubmit = (e) => {
+          e.preventDefault();
+          alert("Nama: " + inputRef.current.value);
+        };
+
+        return (
+          <form onSubmit={handleSubmit}>
+            <input type="text" ref={inputRef} placeholder="Masukkan nama" />
+            <button type="submit">Kirim</button>
+          </form>
+        );
+      }
+              </code></pre>
+
+              <p>Pendekatan ini lebih sederhana, tapi tidak sefleksibel controlled form dalam validasi dan re-render.</p>
+            `
+          },
+          {
+            title: "onChange, onSubmit, dan useState",
+            content: `
+              <p>Form React bekerja dengan event handler seperti <code>onChange</code> dan <code>onSubmit</code>.</p>
+
+              <pre><code class="language-jsx">
+      import { useState } from "react";
+
+      function LoginForm() {
+        const [email, setEmail] = useState("");
+        const [password, setPassword] = useState("");
+
+        const handleSubmit = (e) => {
+          e.preventDefault();
+          console.log("Email:", email);
+          console.log("Password:", password);
+        };
+
+        return (
+          <form onSubmit={handleSubmit}>
+            <input 
+              type="email" 
+              placeholder="Email" 
+              value={email} 
+              onChange={(e) => setEmail(e.target.value)} 
+            />
+            <input 
+              type="password" 
+              placeholder="Password" 
+              value={password} 
+              onChange={(e) => setPassword(e.target.value)} 
+            />
+            <button type="submit">Login</button>
+          </form>
+        );
+      }
+              </code></pre>
+
+              <p><code>onChange</code> menangani perubahan input, sedangkan <code>onSubmit</code> dipakai untuk aksi ketika form dikirim.</p>
+            `
+          },
+          {
+            title: "Validasi Manual",
+            content: `
+              <p>Kamu bisa menambahkan validasi manual sebelum data dikirim.</p>
+
+              <pre><code class="language-jsx">
+      import { useState } from "react";
+
+      function RegisterForm() {
+        const [email, setEmail] = useState("");
+        const [error, setError] = useState("");
+
+        const handleSubmit = (e) => {
+          e.preventDefault();
+
+          if (!email.includes("@")) {
+            setError("Email tidak valid!");
+            return;
+          }
+
+          setError("");
+          alert("Registrasi berhasil dengan email: " + email);
+        };
+
+        return (
+          <form onSubmit={handleSubmit}>
+            <input 
+              type="text" 
+              placeholder="Email" 
+              value={email} 
+              onChange={(e) => setEmail(e.target.value)} 
+            />
+            {error && <p style={{ color: "red" }}>{error}</p>}
+            <button type="submit">Daftar</button>
+          </form>
+        );
+      }
+              </code></pre>
+
+              <p>Dengan validasi manual, kamu bisa menentukan aturan sesuai kebutuhan form, misalnya format email, panjang password, atau input wajib diisi.</p>
+            `
+          },
+          {
+            title: "React Hook Form (Opsional tapi Populer)",
+            content: `
+              <p><strong>React Hook Form</strong> adalah library populer untuk mengelola form di React secara efisien.</p>
+
+              <pre><code class="language-bash">npm install react-hook-form</code></pre>
+
+              <pre><code class="language-jsx">
+      import { useForm } from "react-hook-form";
+
+      function FormWithRHF() {
+        const { register, handleSubmit, formState: { errors } } = useForm();
+
+        const onSubmit = (data) => {
+          console.log(data);
+        };
+
+        return (
+          <form onSubmit={handleSubmit(onSubmit)}>
+            <input 
+              {...register("username", { required: true })} 
+              placeholder="Username" 
+            />
+            {errors.username && <p style={{ color: "red" }}>Username wajib diisi!</p>}
+
+            <input 
+              {...register("email", { required: true, pattern: /^\S+@\S+$/i })} 
+              placeholder="Email" 
+            />
+            {errors.email && <p style={{ color: "red" }}>Email tidak valid!</p>}
+
+            <button type="submit">Kirim</button>
+          </form>
+        );
+      }
+              </code></pre>
+
+              <p><strong>Kelebihan React Hook Form:</strong></p>
+              <ul>
+                <li>⚡ Performanya cepat (minim re-rendering)</li>
+                <li>🧩 Mudah dikombinasikan dengan UI library (MUI, Chakra, dll)</li>
+                <li>🧠 Validasi built-in & fleksibel</li>
+              </ul>
+            `
+          }
+        ]
+      }
+    };
+  </script>
+  <script src="../../assets/js/frontend.js"></script>
+</body>
+</html>
