@@ -9,7 +9,8 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Bootstrap Icons -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
-
+  <!-- Tambahkan setelah Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
   <style>
     :root{
       --sidebar-w: 260px;
@@ -1132,7 +1133,8 @@
           </div>
         </a>
 
-        <a href="frontend/reactjs.html" class="content-card-link">
+        <a href="javascript:void(0);" class="content-card-link" onclick="showComingSoonAlert('React JS')">
+        <!-- <a href="frontend/reactjs.html" class="content-card-link"> -->
           <div class="content-card">
             <div class="assign-badge">8 Materi</div>
             <div class="card-cover"><img src="../assets/img/reactjs.jpg" alt="Performance cover"></div>
@@ -1142,7 +1144,8 @@
           </div>
         </a>
 
-        <a href="frontend/nextjs.html" class="content-card-link">
+        <a href="javascript:void(0);" class="content-card-link" onclick="showComingSoonAlert('Next JS')">
+        <!-- <a href="frontend/nextjs.html" class="content-card-link"> -->
           <div class="content-card">
             <div class="assign-badge">12 Materi</div>
             <div class="card-cover"><img src="../assets/img/nextjs.png" alt="Performance cover"></div>
@@ -1170,69 +1173,93 @@
         <div class="section-title">Back End Web Developer</div>
         <div class="cards-grid horizontal" id="backendGrid">
           <!-- cards -->
-          <div class="content-card">
-            <div class="assign-badge">10 Materi</div>
-            <div class="card-cover"><img src="../assets/img/php.png" alt="Node.js cover"></div>
-            <div class="card-title">PHP</div>
-            <div class="card-meta"><div class="badge rounded-pill bg-light text-dark">Back End</div></div>
-            <div class="muted">Estimasi waktu belajar : 40 menit</div>
-          </div>
+          <a href="javascript:void(0);" class="content-card-link" onclick="showComingSoonAlert('PHP')">
+          <!-- <a href="frontend/git.html" class="content-card-link"> -->
+            <div class="content-card">
+              <div class="assign-badge">10 Materi</div>
+              <div class="card-cover"><img src="../assets/img/php.png" alt="Node.js cover"></div>
+              <div class="card-title">PHP</div>
+              <div class="card-meta"><div class="badge rounded-pill bg-light text-dark">Back End</div></div>
+              <div class="muted">Estimasi waktu belajar : 40 menit</div>
+            </div>
+          </a>
 
-          <div class="content-card">
-            <div class="assign-badge">10 Materi</div>
-            <div class="card-cover"><img src="../assets/img/mysql.jpg" alt="Go cover"></div>
-            <div class="card-title">MySQL</div>
-            <div class="card-meta"><div class="badge rounded-pill bg-light text-dark">Back End</div></div>
-            <div class="muted">Estimasi waktu belajar : 40 menit</div>
-          </div>
+          <a href="javascript:void(0);" class="content-card-link" onclick="showComingSoonAlert('MySQL')">
+          <!-- <a href="frontend/git.html" class="content-card-link"> -->
+            <div class="content-card">
+              <div class="assign-badge">10 Materi</div>
+              <div class="card-cover"><img src="../assets/img/mysql.jpg" alt="Go cover"></div>
+              <div class="card-title">MySQL</div>
+              <div class="card-meta"><div class="badge rounded-pill bg-light text-dark">Back End</div></div>
+              <div class="muted">Estimasi waktu belajar : 40 menit</div>
+            </div>
+          </a>
 
-          <div class="content-card">
-            <div class="assign-badge">10 Materi</div>
-            <div class="card-cover"><img src="../assets/img/laravel.png" alt="Go cover"></div>
-            <div class="card-title">Laravel</div>
-            <div class="card-meta"><div class="badge rounded-pill bg-light text-dark">Back End</div></div>
-            <div class="muted">Estimasi waktu belajar : 40 menit</div>
-          </div>
+          <a href="javascript:void(0);" class="content-card-link" onclick="showComingSoonAlert('Laravel')">
+          <!-- <a href="frontend/git.html" class="content-card-link"> -->
+            <div class="content-card">
+              <div class="assign-badge">10 Materi</div>
+              <div class="card-cover"><img src="../assets/img/laravel.png" alt="Go cover"></div>
+              <div class="card-title">Laravel</div>
+              <div class="card-meta"><div class="badge rounded-pill bg-light text-dark">Back End</div></div>
+              <div class="muted">Estimasi waktu belajar : 40 menit</div>
+            </div>
+          </a>
 
-          <div class="content-card">
-            <div class="assign-badge">12 Materi</div>
-            <div class="card-cover"><img src="../assets/img/codeigniter.jpg" alt="Java cover"></div>
-            <div class="card-title">CodeIgniter</div>
-            <div class="card-meta"><div class="badge rounded-pill bg-light text-dark">Back End</div></div>
-            <div class="muted">Estimasi waktu belajar : 55 menit</div>
-          </div>
+          <a href="javascript:void(0);" class="content-card-link" onclick="showComingSoonAlert('CodeIgniter')">
+          <!-- <a href="frontend/git.html" class="content-card-link"> -->
+            <div class="content-card">
+              <div class="assign-badge">12 Materi</div>
+              <div class="card-cover"><img src="../assets/img/codeigniter.jpg" alt="Java cover"></div>
+              <div class="card-title">CodeIgniter</div>
+              <div class="card-meta"><div class="badge rounded-pill bg-light text-dark">Back End</div></div>
+              <div class="muted">Estimasi waktu belajar : 55 menit</div>
+            </div>
+          </a>
 
-          <div class="content-card">
-            <div class="assign-badge">10 Materi</div>
-            <div class="card-cover"><img src="../assets/img/nodejs.png" alt="Node.js cover"></div>
-            <div class="card-title">Node.js</div>
-            <div class="card-meta"><div class="badge rounded-pill bg-light text-dark">Back End</div></div>
-            <div class="muted">Estimasi waktu belajar : 40 menit</div>
-          </div>
+          <a href="javascript:void(0);" class="content-card-link" onclick="showComingSoonAlert('Node JS')">
+          <!-- <a href="frontend/git.html" class="content-card-link"> -->
+            <div class="content-card">
+              <div class="assign-badge">10 Materi</div>
+              <div class="card-cover"><img src="../assets/img/nodejs.png" alt="Node.js cover"></div>
+              <div class="card-title">Node.js</div>
+              <div class="card-meta"><div class="badge rounded-pill bg-light text-dark">Back End</div></div>
+              <div class="muted">Estimasi waktu belajar : 40 menit</div>
+            </div>
+          </a>
 
-          <div class="content-card">
-            <div class="assign-badge">7 Materi</div>
-            <div class="card-cover"><img src="../assets/img/expressjs.png" alt="Express cover"></div>
-            <div class="card-title">Express.js</div>
-            <div class="card-meta"><div class="badge rounded-pill bg-light text-dark">Back End</div></div>
-            <div class="muted">Estimasi waktu belajar : 35 menit</div>
-          </div>
+          <a href="javascript:void(0);" class="content-card-link" onclick="showComingSoonAlert('Express JS')">
+          <!-- <a href="frontend/git.html" class="content-card-link"> -->
+            <div class="content-card">
+              <div class="assign-badge">7 Materi</div>
+              <div class="card-cover"><img src="../assets/img/expressjs.png" alt="Express cover"></div>
+              <div class="card-title">Express.js</div>
+              <div class="card-meta"><div class="badge rounded-pill bg-light text-dark">Back End</div></div>
+              <div class="muted">Estimasi waktu belajar : 35 menit</div>
+            </div>
+          </a>
 
-          <div class="content-card">
-            <div class="assign-badge">10 Materi</div>
-            <div class="card-cover"><img src="../assets/img/postgree.png" alt="Go cover"></div>
-            <div class="card-title">Postgree</div>
-            <div class="card-meta"><div class="badge rounded-pill bg-light text-dark">Back End</div></div>
-            <div class="muted">Estimasi waktu belajar : 40 menit</div>
-          </div>
+          <a href="javascript:void(0);" class="content-card-link" onclick="showComingSoonAlert('Postgree')">
+          <!-- <a href="frontend/git.html" class="content-card-link"> -->
+            <div class="content-card">
+              <div class="assign-badge">10 Materi</div>
+              <div class="card-cover"><img src="../assets/img/postgree.png" alt="Go cover"></div>
+              <div class="card-title">Postgree</div>
+              <div class="card-meta"><div class="badge rounded-pill bg-light text-dark">Back End</div></div>
+              <div class="muted">Estimasi waktu belajar : 40 menit</div>
+            </div>
+          </a>
 
-          <div class="content-card">
-            <div class="assign-badge">10 Materi</div>
-            <div class="card-cover"><img src="../assets/img/mongodb.jpg" alt="Go cover"></div>
-            <div class="card-title">MongoDB</div>
-            <div class="card-meta"><div class="badge rounded-pill bg-light text-dark">Back End</div></div>
-            <div class="muted">Estimasi waktu belajar : 40 menit</div>
-          </div>
+          <a href="javascript:void(0);" class="content-card-link" onclick="showComingSoonAlert('MongoDB')">
+          <!-- <a href="frontend/git.html" class="content-card-link"> -->
+            <div class="content-card">
+              <div class="assign-badge">10 Materi</div>
+              <div class="card-cover"><img src="../assets/img/mongodb.jpg" alt="Go cover"></div>
+              <div class="card-title">MongoDB</div>
+              <div class="card-meta"><div class="badge rounded-pill bg-light text-dark">Back End</div></div>
+              <div class="muted">Estimasi waktu belajar : 40 menit</div>
+            </div>
+          </a>
         </div>
         <div class="no-results">Tidak ditemukan di Back End.</div>
       </section>
@@ -1242,48 +1269,71 @@
         <div class="section-title">Programming Languages</div>
         <div class="cards-grid horizontal" id="languageGrid">
           <!-- cards -->
-          <div class="content-card">
-            <div class="assign-badge">10 Materi</div>
-            <div class="card-cover"><img src="../assets/img/c.jpg" alt="Node.js cover"></div>
-            <div class="card-title">C</div>
-            <div class="card-meta"><div class="badge rounded-pill bg-light text-dark">Programming Language</div></div>
-            <div class="muted">Estimasi waktu belajar : 40 menit</div>
-          </div>
-          <div class="content-card">
-            <div class="assign-badge">10 Materi</div>
-            <div class="card-cover"><img src="../assets/img/cpp.png" alt="Node.js cover"></div>
-            <div class="card-title">C++</div>
-            <div class="card-meta"><div class="badge rounded-pill bg-light text-dark">Programming Language</div></div>
-            <div class="muted">Estimasi waktu belajar : 40 menit</div>
-          </div>
-          <div class="content-card">
-            <div class="assign-badge">10 Materi</div>
-            <div class="card-cover"><img src="../assets/img/csharp.png" alt="Node.js cover"></div>
-            <div class="card-title">C#</div>
-            <div class="card-meta"><div class="badge rounded-pill bg-light text-dark">Programming Language</div></div>
-            <div class="muted">Estimasi waktu belajar : 40 menit</div>
-          </div>
-          <div class="content-card">
-            <div class="assign-badge">10 Materi</div>
-            <div class="card-cover"><img src="../assets/img/java.jpg" alt="Node.js cover"></div>
-            <div class="card-title">Java</div>
-            <div class="card-meta"><div class="badge rounded-pill bg-light text-dark">Programming Language</div></div>
-            <div class="muted">Estimasi waktu belajar : 40 menit</div>
-          </div>
-          <div class="content-card">
-            <div class="assign-badge">10 Materi</div>
-            <div class="card-cover"><img src="../assets/img/python.jpg" alt="Node.js cover"></div>
-            <div class="card-title">Python</div>
-            <div class="card-meta"><div class="badge rounded-pill bg-light text-dark">Programming Language</div></div>
-            <div class="muted">Estimasi waktu belajar : 40 menit</div>
-          </div>
-          <div class="content-card">
-            <div class="assign-badge">10 Materi</div>
-            <div class="card-cover"><img src="../assets/img/pascal.png" alt="Node.js cover"></div>
-            <div class="card-title">Pascal</div>
-            <div class="card-meta"><div class="badge rounded-pill bg-light text-dark">Programming Language</div></div>
-            <div class="muted">Estimasi waktu belajar : 40 menit</div>
-          </div>
+          <a href="javascript:void(0);" class="content-card-link" onclick="showComingSoonAlert('C')">
+          <!-- <a href="frontend/git.html" class="content-card-link"> -->
+            <div class="content-card">
+              <div class="assign-badge">10 Materi</div>
+              <div class="card-cover"><img src="../assets/img/c.jpg" alt="Node.js cover"></div>
+              <div class="card-title">C</div>
+              <div class="card-meta"><div class="badge rounded-pill bg-light text-dark">Programming Language</div></div>
+              <div class="muted">Estimasi waktu belajar : 40 menit</div>
+            </div>
+          </a>
+
+          <a href="javascript:void(0);" class="content-card-link" onclick="showComingSoonAlert('C++')">
+          <!-- <a href="frontend/git.html" class="content-card-link"> -->
+            <div class="content-card">
+              <div class="assign-badge">10 Materi</div>
+              <div class="card-cover"><img src="../assets/img/cpp.png" alt="Node.js cover"></div>
+              <div class="card-title">C++</div>
+              <div class="card-meta"><div class="badge rounded-pill bg-light text-dark">Programming Language</div></div>
+              <div class="muted">Estimasi waktu belajar : 40 menit</div>
+            </div>
+          </a>
+
+          <a href="javascript:void(0);" class="content-card-link" onclick="showComingSoonAlert('C#')">
+          <!-- <a href="frontend/git.html" class="content-card-link"> -->
+            <div class="content-card">
+              <div class="assign-badge">10 Materi</div>
+              <div class="card-cover"><img src="../assets/img/csharp.png" alt="Node.js cover"></div>
+              <div class="card-title">C#</div>
+              <div class="card-meta"><div class="badge rounded-pill bg-light text-dark">Programming Language</div></div>
+              <div class="muted">Estimasi waktu belajar : 40 menit</div>
+            </div>
+          </a>
+
+          <a href="javascript:void(0);" class="content-card-link" onclick="showComingSoonAlert('Java')">
+          <!-- <a href="frontend/git.html" class="content-card-link"> -->
+            <div class="content-card">
+              <div class="assign-badge">10 Materi</div>
+              <div class="card-cover"><img src="../assets/img/java.jpg" alt="Node.js cover"></div>
+              <div class="card-title">Java</div>
+              <div class="card-meta"><div class="badge rounded-pill bg-light text-dark">Programming Language</div></div>
+              <div class="muted">Estimasi waktu belajar : 40 menit</div>
+            </div>
+          </a>
+
+          <a href="javascript:void(0);" class="content-card-link" onclick="showComingSoonAlert('Python')">
+          <!-- <a href="frontend/git.html" class="content-card-link"> -->
+            <div class="content-card">
+              <div class="assign-badge">10 Materi</div>
+              <div class="card-cover"><img src="../assets/img/python.jpg" alt="Node.js cover"></div>
+              <div class="card-title">Python</div>
+              <div class="card-meta"><div class="badge rounded-pill bg-light text-dark">Programming Language</div></div>
+              <div class="muted">Estimasi waktu belajar : 40 menit</div>
+            </div>
+          </a>
+
+          <a href="javascript:void(0);" class="content-card-link" onclick="showComingSoonAlert('Pascal')">
+          <!-- <a href="frontend/git.html" class="content-card-link"> -->
+            <div class="content-card">
+              <div class="assign-badge">10 Materi</div>
+              <div class="card-cover"><img src="../assets/img/pascal.png" alt="Node.js cover"></div>
+              <div class="card-title">Pascal</div>
+              <div class="card-meta"><div class="badge rounded-pill bg-light text-dark">Programming Language</div></div>
+              <div class="muted">Estimasi waktu belajar : 40 menit</div>
+            </div>
+          </a>
         </div>
         <div class="no-results">Tidak ditemukan di Programming Language.</div>
       </section>
@@ -1639,6 +1689,159 @@
       bindImageLoadRecalc(); 
       document.querySelectorAll('.cards-grid.horizontal').forEach(cw => evaluateHorizontal(cw)); 
     }, 900);
+  </script>
+  <!-- Tambahkan sebelum Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script>
+    // SweetAlert untuk materi yang belum tersedia tanpa icon
+    function showComingSoonAlert(materiName) {
+      Swal.fire({
+        title: 'Materi Belum Tersedia',
+        html: `Maaf, materi <strong>${materiName}</strong> sedang dalam tahap pengembangan. Silahkan tunggu secara berkala`,
+        confirmButtonText: 'Mengerti',
+        confirmButtonColor: 'var(--accent)',
+        background: 'var(--card-bg)',
+        color: 'var(--text-color)',
+        width: 520,
+        padding: '32px',
+        borderRadius: '16px',
+        showClass: {
+          popup: 'swal2-show-smooth'
+        },
+        showCloseButton: false, // TUTUP CLOSE BUTTON
+        customClass: {
+          popup: 'sweet-alert-popup',
+          confirmButton: 'sweet-confirm-btn',
+          title: 'sweet-title',
+          htmlContainer: 'sweet-html'
+        }
+      });
+    }
+
+    // Style untuk SweetAlert tanpa icon dan tanpa close button
+    const sweetAlertStyle = document.createElement('style');
+    sweetAlertStyle.textContent = `
+      .sweet-alert-popup {
+        border: 1px solid var(--border-color) !important;
+        box-shadow: 0 16px 40px rgba(16,24,40,0.18) !important;
+        border-radius: 16px !important;
+        width: 520px !important;
+        max-width: 90vw !important;
+        backdrop-filter: blur(10px) !important;
+      }
+      
+      .swal2-container {
+        z-index: 1060 !important;
+      }
+      
+      .sweet-title {
+        font-size: 24px !important;
+        font-weight: 700 !important;
+        color: var(--text-color) !important;
+        margin-bottom: 16px !important;
+        text-align: center !important;
+        padding-top: 10px !important;
+      }
+      
+      .sweet-html {
+        font-size: 16px !important;
+        color: var(--muted-text) !important;
+        line-height: 1.6 !important;
+        text-align: center !important;
+        padding: 0 20px !important;
+        margin-bottom: 10px !important;
+      }
+      
+      .sweet-confirm-btn {
+        border-radius: 12px !important;
+        font-weight: 600 !important;
+        font-size: 15px !important;
+        padding: 14px 32px !important;
+        transition: all 0.3s ease !important;
+        margin-top: 10px !important;
+        border: none !important;
+        box-shadow: 0 4px 14px rgba(111,90,248,0.3) !important;
+        min-width: 120px !important;
+        background: linear-gradient(135deg, var(--accent), #5a4af0) !important;
+      }
+      
+      .sweet-confirm-btn:hover {
+        transform: translateY(-2px) !important;
+        box-shadow: 0 8px 20px rgba(111,90,248,0.4) !important;
+        background: linear-gradient(135deg, #5a4af0, #4a3ae0) !important;
+      }
+      
+      .sweet-confirm-btn:active {
+        transform: translateY(0) !important;
+      }
+      
+      /* Animasi smooth */
+      .swal2-show-smooth {
+        animation: sweetSlideIn 0.3s ease-out !important;
+      }
+      
+      @keyframes sweetSlideIn {
+        from {
+          opacity: 0;
+          transform: translateY(-20px) scale(0.95);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0) scale(1);
+        }
+      }
+      
+      /* Responsive untuk mobile */
+      @media (max-width: 640px) {
+        .sweet-alert-popup {
+          width: 90vw !important;
+          padding: 28px !important;
+          margin: 16px !important;
+        }
+        
+        .sweet-title {
+          font-size: 22px !important;
+          margin-bottom: 14px !important;
+        }
+        
+        .sweet-html {
+          font-size: 15px !important;
+          padding: 0 15px !important;
+        }
+        
+        .sweet-confirm-btn {
+          padding: 12px 28px !important;
+          font-size: 14px !important;
+          min-width: 110px !important;
+        }
+      }
+      
+      @media (max-width: 480px) {
+        .sweet-alert-popup {
+          padding: 24px !important;
+        }
+        
+        .sweet-title {
+          font-size: 20px !important;
+        }
+        
+        .sweet-html {
+          font-size: 14px !important;
+          padding: 0 10px !important;
+        }
+      }
+      
+      /* Dark mode support */
+      [data-theme="dark"] .sweet-alert-popup {
+        border-color: rgba(255,255,255,0.1) !important;
+        box-shadow: 0 16px 40px rgba(0,0,0,0.3) !important;
+      }
+      
+      [data-theme="dark"] .sweet-html {
+        color: #cbd5e1 !important;
+      }
+    `;
+    document.head.appendChild(sweetAlertStyle);
   </script>
 </body>
 </html>
