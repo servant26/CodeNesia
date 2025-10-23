@@ -1,0 +1,1553 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CodeNesia - Course Detail</title>
+  <link rel="stylesheet" type="text/css" href="../../assets/bootstrap/css/bootstrap.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="../../assets/css/frontend.css">
+</head>
+<body>
+  <!-- Mobile Navbar -->
+  <nav id="mobileNavbar" class="mobile-navbar" aria-label="Mobile navigation" style="display: none;">
+    <!-- Content akan diisi oleh JavaScript -->
+  </nav>
+
+  <!-- Sidebar -->
+  <aside id="siteSidebar" class="sidebar" aria-label="Sidebar">
+    <div class="logo">
+      <!-- Mengganti mark dengan foto profil kartun -->
+      <img src="../../assets/img/profile.jpg" alt="Foto Profil" class="profile-pic">
+      <div>
+        <div style="font-size:14px;font-weight:700">CodeNesia</div>
+      </div>
+    </div>
+
+    <nav id="mainNav" class="side-nav" aria-label="Main navigation">
+      <a class="nav-link" href="#section-front-end"><i class="bi bi-folder2-open"></i> Front-End</a>
+      <a class="nav-link" href="#section-back-end"><i class="bi bi-server"></i> Back-End</a>
+      <a class="nav-link" href="#section-language"><i class="bi bi-code-slash"></i> Programming Language</a>
+      <a class="nav-link" href="#ebook"><i class="bi bi-book"></i> Ebook</a>
+      <a class="nav-link" href="#support"><i class="bi bi-hand-thumbs-up"></i> Support Us</a>
+      <a class="nav-link" href="../home.html"><i class="bi bi-back"></i> Back</a>
+    </nav>
+
+    <div class="social-section">
+      <div>Social Media</div>
+
+      <!-- project-pill style social buttons (like top area) -->
+      <a class="project-pill" href="https://www.youtube.com" target="_blank" rel="noopener noreferrer">
+        <span class="icon"><i class="bi bi-youtube" style="color:#f59e0b"></i></span>
+        <span>Youtube</span>
+      </a>
+
+      <a class="project-pill" href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+        <span class="icon"><i class="bi bi-instagram" style="color:#3ec5ff"></i></span>
+        <span>Instagram</span>
+      </a>
+
+      <a class="project-pill" href="https://www.tiktok.com" target="_blank" rel="noopener noreferrer">
+        <span class="icon"><i class="bi bi-music-note-beamed"></i></span>
+        <span>Tiktok</span>
+      </a>
+
+      <a class="project-pill" href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+        <span class="icon"><i class="bi bi-facebook"></i></span>
+        <span>Facebook</span>
+      </a>
+    </div>
+  </aside>
+
+  <!-- Main -->
+  <main id="top" class="main" role="main">
+    <div class="topbar">
+      <div class="topbar-left">
+        <div class="breadcrumbs">
+          <i class="bi bi-grid-fill"></i>
+          <div id="currentDate" style="font-weight:700"></div>
+        </div>
+      </div>
+
+      <div class="topbar-right">
+        <!-- Theme Toggle Button -->
+        <button id="themeToggle" class="theme-toggle" aria-label="Toggle dark mode">
+          <i class="bi bi-sun" id="themeIcon"></i>
+        </button>
+      </div>
+    </div>
+
+    <div class="main-content">
+      <!-- Course Header -->
+      <div class="course-header">
+        <div class="course-cover">
+          <img src="../../assets/img/git.jpg" alt="Figma Course Cover">
+        </div>
+        <div class="course-info">
+          <h1 class="course-title">GIT</h1>
+          <p class="course-description">
+            Pelajari Git untuk mengelola versi kode dan berkolaborasi dalam proyek dengan lebih efisien. Di course ini, kamu akan memahami cara kerja repository, commit, branch, dan merge sebagai dasar version control modern.
+          </p>
+          <div class="course-actions">
+            <a href="https://www.youtube.com/playlist?list=YOUR_PLAYLIST_ID" target="_blank" class="btn-enroll btn btn-primary">
+              Tonton Playlist
+            </a>
+          </div>
+        </div>
+      </div>
+      <br>
+      <!-- Course Content -->
+      <div class="course-content">
+        <div class="content-left">
+          <!-- Course Modules -->
+          <div class="content-section">
+            <h2 class="section-title"><i class="bi bi-list-check"></i> Daftar Materi</h2>
+            <div class="scrollable-section">
+              <ul class="module-list">
+                <li class="module-item" data-module="1">
+                  <div class="module-number">01</div>
+                  <div class="module-content">
+                    <div class="module-title">Pengenalan Dasar</div>
+                    <div class="module-duration">20 min</div>
+                  </div>
+                </li>
+                <li class="module-item" data-module="2">
+                  <div class="module-number">02</div>
+                  <div class="module-content">
+                    <div class="module-title">Persiapan & Instalasi</div>
+                    <div class="module-duration">20 min</div>
+                  </div>
+                </li>
+                <li class="module-item" data-module="3">
+                  <div class="module-number">03</div>
+                  <div class="module-content">
+                    <div class="module-title">Dasar Penggunaan Git (Fundamental)</div>
+                    <div class="module-duration">36 min</div>
+                  </div>
+                </li>
+                <li class="module-item" data-module="4">
+                  <div class="module-number">04</div>
+                  <div class="module-content">
+                    <div class="module-title">Branching & Merging</div>
+                    <div class="module-duration">40 min</div>
+                  </div>
+                </li>
+                <li class="module-item" data-module="5">
+                  <div class="module-number">05</div>
+                  <div class="module-content">
+                    <div class="module-title">Remote Repository (GitHub, GitLab, dsb)</div>
+                    <div class="module-duration">12 min</div>
+                  </div>
+                </li>
+                <li class="module-item" data-module="6">
+                  <div class="module-number">06</div>
+                  <div class="module-content">
+                    <div class="module-title">Kolaborasi & Workflow Tim</div>
+                    <div class="module-duration">40 min</div>
+                  </div>
+                </li>
+                <li class="module-item" data-module="7">
+                  <div class="module-number">07</div>
+                  <div class="module-content">
+                    <div class="module-title">Menjelajahi & Memperbaiki Repo</div>
+                    <div class="module-duration">8 min</div>
+                  </div>
+                </li>
+                <li class="module-item" data-module="8">
+                  <div class="module-number">08</div>
+                  <div class="module-content">
+                    <div class="module-title">Menyimpan Perubahan Sementara</div>
+                    <div class="module-duration">25 min</div>
+                  </div>
+                </li>
+                <li class="module-item" data-module="9">
+                  <div class="module-number">09</div>
+                  <div class="module-content">
+                    <div class="module-title">Optimisasi & Best Practice</div>
+                    <div class="module-duration">25 min</div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="content-right">
+          <!-- Course Stats - Now at the top -->
+          <div class="content-section">
+            <h2 class="section-title"><i class="bi bi-graph-up"></i> Detail Materi</h2>
+            <div style="display: flex; flex-direction: column; gap: 12px;">
+              <div style="display: flex; justify-content: space-between;">
+                <span style="color: var(--muted-text);">Durasi</span>
+                <span style="font-weight: 600;">2.5 Jam</span>
+              </div>
+              <div style="display: flex; justify-content: space-between;">
+                <span style="color: var(--muted-text);">Total Materi</span>
+                <span style="font-weight: 600;">12 Modul</span>
+              </div>
+              <div style="display: flex; justify-content: space-between;">
+                <span style="color: var(--muted-text);">Tipe</span>
+                <span style="font-weight: 600; color: var(--accent);">Front-End</span>
+              </div>
+            </div>
+          </div>
+          <br>
+          <!-- About Course - Now scrollable and at the bottom -->
+          <div class="content-section">
+            <h2 class="section-title"><i class="bi bi-info-circle"></i> Tentang Materi</h2>
+            <div class="scrollable-section" style="max-height: 195px;">
+              <p class="about-course">
+                Course Git ini dirancang untuk membantumu memahami alur kerja pengembangan software yang profesional. Kamu akan belajar membuat repository, mengelola perubahan, menangani konflik, hingga berkolaborasi melalui platform seperti GitHub.
+              </p>
+              <p class="about-course">
+                Cocok untuk developer, designer, atau siapa pun yang ingin bekerja secara tim dengan manajemen kode yang teratur, aman, dan mudah dilacak.
+              </p>
+              <!-- ... konten lainnya ... -->
+            </div>
+          </div>
+        </div>
+
+        <!-- PERUBAHAN: What You'll Learn - NOW FULL WIDTH -->
+        <div class="content-section full-width-section">
+          <h2 class="section-title">
+            <i class="bi bi-lightbulb"></i> Apa yang akan kamu pelajari?
+          </h2>
+          <br />
+          <ul class="learn-list">
+            <li class="learn-item">Memahami konsep dasar dan struktur project Next.js</li>
+            <li class="learn-item">Membuat halaman, routing, dan navigasi dinamis</li>
+            <li class="learn-item">Mengambil data dari API dan menampilkannya di halaman</li>
+            <li class="learn-item">Menerapkan styling menggunakan Tailwind CSS</li>
+            <li class="learn-item">Mengelola state lokal dan global pada aplikasi</li>
+            <li class="learn-item">Menerapkan autentikasi dan proteksi halaman</li>
+            <li class="learn-item">Menghubungkan aplikasi dengan database menggunakan Prisma</li>
+            <li class="learn-item">Menerapkan praktik optimasi dan deployment ke Vercel</li>
+            <li class="learn-item">Membangun proyek akhir yang menggabungkan seluruh konsep</li>
+          </ul>
+        </div>
+        
+    </div>
+  </main>
+
+  <!-- Course Modal -->
+  <div id="courseModal" class="course-modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="modalModuleTitle">Module 1: Pengenalan Dasar</h3>
+        <button class="close-modal">&times;</button>
+      </div>
+      <div class="modal-body" id="modalBody">
+        <!-- Konten akan diisi oleh JavaScript berdasarkan modul yang dipilih -->
+      </div>
+      <div class="modal-footer">
+        <div class="slide-indicator">
+          Slide <span id="currentSlide">1</span> of <span id="totalSlides">3</span>
+        </div>
+        <div class="nav-buttons">
+          <button class="btn-nav btn-nav-outline" id="prevBtn">
+            <i class="bi bi-chevron-left"></i> Previous
+          </button>
+          <button class="btn-nav" id="nextBtn">
+            Next <i class="bi bi-chevron-right"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="helpFab" class="help-fab" title="Help"><i class="bi bi-question-lg"></i></div>
+
+  <!-- Bootstrap JS bundle -->
+  <script src="../../assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Elements
+    const sidebar = document.getElementById('siteSidebar');
+    const themeToggle = document.getElementById('themeToggle');
+    const themeIcon = document.getElementById('themeIcon');
+    const htmlElement = document.documentElement;
+    const mobileNavbar = document.getElementById('mobileNavbar');
+    const navLinks = document.querySelectorAll('#mainNav .nav-link');
+    const currentDateElement = document.getElementById('currentDate');
+    const courseModal = document.getElementById('courseModal');
+    const closeModal = document.querySelector('.close-modal');
+    const moduleItems = document.querySelectorAll('.module-item');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const currentSlideEl = document.getElementById('currentSlide');
+    const totalSlidesEl = document.getElementById('totalSlides');
+    const modalModuleTitle = document.getElementById('modalModuleTitle');
+    const modalBody = document.getElementById('modalBody');
+
+    // Modal state
+    let currentSlide = 0;
+    let totalSlides = 0;
+    let currentModule = 1;
+    let slides = [];
+
+    // Data konten untuk setiap modul
+    const moduleContent = {
+      1: {
+        title: "Pengenalan & Dasar Git",
+        slides: [
+          {
+            title: "Sejarah Singkat Git",
+            content: `
+              <p><strong>Git</strong> pertama kali dikembangkan oleh <strong>Linus Torvalds</strong> pada tahun <strong>2005</strong>, orang yang sama yang menciptakan sistem operasi <strong>Linux</strong>.</p>
+
+              <p>Pada saat itu, komunitas Linux membutuhkan sistem kontrol versi yang cepat, terdistribusi, dan aman untuk mengelola ribuan kontributor di seluruh dunia. Akhirnya, Linus membuat Git sebagai solusi.</p>
+
+              <p>Sejak saat itu, Git menjadi <strong>Version Control System (VCS)</strong> paling populer di dunia dan menjadi standar industri dalam pengembangan perangkat lunak modern.</p>
+            `
+          },
+          {
+            title: "Apa Itu Version Control System (VCS)?",
+            content: `
+              <p><strong>Version Control System (VCS)</strong> adalah sistem yang digunakan untuk melacak dan mengelola perubahan pada kode sumber (source code) suatu proyek.</p>
+
+              <ul>
+                <li>📜 Menyimpan riwayat perubahan file.</li>
+                <li>🧩 Memungkinkan kolaborasi antar developer tanpa saling menimpa kode.</li>
+                <li>⏪ Bisa kembali ke versi sebelumnya jika terjadi kesalahan.</li>
+                <li>🌿 Mendukung pengembangan paralel lewat <strong>branch</strong>.</li>
+              </ul>
+
+              <p><strong>Git</strong> adalah contoh dari VCS modern yang bersifat <em>distributed</em> — artinya setiap developer memiliki salinan penuh dari repository.</p>
+            `
+          },
+          {
+            title: "Perbedaan Git vs GitHub / GitLab / Bitbucket",
+            content: `
+              <p>Banyak orang masih bingung membedakan antara <strong>Git</strong> dan platform seperti <strong>GitHub</strong>, <strong>GitLab</strong>, atau <strong>Bitbucket</strong>.</p>
+
+              <table class="table table-bordered table-striped">
+                <thead>
+                  <tr>
+                    <th>Aspek</th>
+                    <th>Git</th>
+                    <th>GitHub / GitLab / Bitbucket</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Jenis</td>
+                    <td>Alat Version Control (VCS)</td>
+                    <td>Platform hosting untuk repository Git</td>
+                  </tr>
+                  <tr>
+                    <td>Fungsi Utama</td>
+                    <td>Mengelola versi file secara lokal atau offline</td>
+                    <td>Menyimpan dan berbagi repo Git secara online</td>
+                  </tr>
+                  <tr>
+                    <td>Koneksi Internet</td>
+                    <td>Tidak wajib (bisa offline)</td>
+                    <td>Wajib (untuk kolaborasi online)</td>
+                  </tr>
+                  <tr>
+                    <td>Contoh Penggunaan</td>
+                    <td><code>git commit</code>, <code>git merge</code></td>
+                    <td><code>push</code> ke GitHub, buka Pull Request</td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <p><strong>Kesimpulan:</strong> Git adalah mesinnya, sedangkan GitHub/GitLab/Bitbucket adalah tempat kamu menyimpan dan berbagi hasil kerja Git.</p>
+            `
+          },
+          {
+            title: "Cara Kerja Dasar Git",
+            content: `
+              <p>Git bekerja dengan sistem penyimpanan versi yang disebut <strong>repository</strong>. Setiap kali kamu melakukan perubahan dan menyimpannya (commit), Git akan merekam snapshot dari seluruh file di repo tersebut.</p>
+
+              <ul>
+                <li>📁 <strong>Repository</strong> — tempat menyimpan seluruh riwayat proyek.</li>
+                <li>🧾 <strong>Commit</strong> — catatan perubahan (snapshot) terhadap file.</li>
+                <li>🌿 <strong>Branch</strong> — cabang untuk mengembangkan fitur tanpa mengganggu branch utama.</li>
+                <li>🔀 <strong>Merge</strong> — menggabungkan branch ke branch lain.</li>
+              </ul>
+
+              <p>Semua ini memungkinkan kamu dan tim bekerja bersamaan tanpa menginjak hasil kerja satu sama lain.</p>
+            `
+          },
+          {
+            title: "Istilah Penting dalam Git",
+            content: `
+              <ul>
+                <li><strong>Repository (Repo)</strong> — wadah yang berisi seluruh file dan riwayat proyek.</li>
+                <li><strong>Commit</strong> — menyimpan snapshot perubahan dengan pesan tertentu.</li>
+                <li><strong>Branch</strong> — jalur pengembangan terpisah untuk fitur atau percobaan.</li>
+                <li><strong>Merge</strong> — menggabungkan hasil branch ke branch lain.</li>
+                <li><strong>Clone</strong> — menyalin repository dari remote ke lokal.</li>
+                <li><strong>Push</strong> — mengirim commit dari lokal ke server remote (misalnya GitHub).</li>
+                <li><strong>Pull</strong> — mengambil update dari remote ke lokal.</li>
+                <li><strong>Remote</strong> — alamat repository online yang terhubung dengan repo lokal.</li>
+                <li><strong>Stage / Staging Area</strong> — area sementara sebelum perubahan di-commit.</li>
+              </ul>
+
+              <p>Istilah-istilah ini adalah dasar dari hampir semua aktivitas di Git. Kuasai maknanya, maka kamu sudah setengah jalan menjadi pengguna Git yang mahir.</p>
+            `
+          },
+          {
+            title: "Video: Pengenalan Git untuk Pemula",
+            content: `
+              <p>Untuk memahami dasar dan cara kerja Git secara visual, tonton video berikut:</p>
+
+              <div class="ratio ratio-16x9">
+                <iframe 
+                  src="https://www.youtube.com/embed/USjZcfj8yxE"
+                  title="Pengenalan Git untuk Pemula"
+                  allowfullscreen>
+                </iframe>
+              </div>
+            `
+          }
+        ]
+      },
+
+      2: {
+        title: "Persiapan & Instalasi Git",
+        slides: [
+          {
+            title: "Instalasi Git di Berbagai Sistem Operasi",
+            content: `
+              <p>Sebelum mulai menggunakan <strong>Git</strong>, kamu harus menginstalnya di komputer kamu. Git tersedia di berbagai sistem operasi populer.</p>
+
+              <h5>🪟 Windows</h5>
+              <ol>
+                <li>Kunjungi situs resmi: <a href="https://git-scm.com/download/win" target="_blank">git-scm.com</a></li>
+                <li>Unduh file installer dan jalankan.</li>
+                <li>Gunakan pengaturan default selama instalasi (kecuali kamu ingin mengubah lokasi folder).</li>
+                <li>Setelah selesai, buka <strong>Git Bash</strong> untuk menggunakan Git.</li>
+              </ol>
+
+              <h5>🍎 macOS</h5>
+              <ol>
+                <li>Gunakan Homebrew:</li>
+                <pre><code class="language-bash">brew install git</code></pre>
+                <li>Atau unduh manual di <a href="https://git-scm.com/download/mac" target="_blank">git-scm.com/download/mac</a>.</li>
+              </ol>
+
+              <h5>🐧 Linux (Debian/Ubuntu)</h5>
+              <pre><code class="language-bash">sudo apt update
+      sudo apt install git</code></pre>
+
+              <p>Setelah instalasi selesai, pastikan Git sudah terpasang dengan mengetik perintah berikut:</p>
+              <pre><code class="language-bash">git --version</code></pre>
+            `
+          },
+          {
+            title: "Cek Versi Git",
+            content: `
+              <p>Untuk memastikan Git sudah terpasang dengan benar di sistem kamu, gunakan perintah berikut di terminal atau Git Bash:</p>
+
+              <pre><code class="language-bash">git --version</code></pre>
+
+              <p>Jika instalasi berhasil, kamu akan melihat output seperti ini:</p>
+
+              <pre><code class="language-bash">git version 2.45.1</code></pre>
+
+              <p>Angka versi bisa berbeda tergantung versi Git terbaru yang terpasang di perangkat kamu.</p>
+            `
+          },
+          {
+            title: "Konfigurasi Awal Git",
+            content: `
+              <p>Setelah Git terinstal, kamu perlu melakukan konfigurasi awal agar setiap commit yang kamu buat memiliki identitas (nama dan email).</p>
+
+              <h5>🧑‍💻 Set nama pengguna:</h5>
+              <pre><code class="language-bash">git config --global user.name "Nama Kamu"</code></pre>
+
+              <h5>📧 Set email pengguna:</h5>
+              <pre><code class="language-bash">git config --global user.email "email@example.com"</code></pre>
+
+              <h5>🧾 Cek konfigurasi yang sudah dibuat:</h5>
+              <pre><code class="language-bash">git config --list</code></pre>
+
+              <p>Contoh output:</p>
+              <pre><code class="language-bash">user.name=Ali Khatami
+      user.email=alikhatami@example.com</code></pre>
+
+              <p>Konfigurasi ini disimpan secara global, artinya berlaku untuk semua repository di komputer kamu.</p>
+            `
+          },
+          {
+            title: "Mengatur Editor Default (Opsional)",
+            content: `
+              <p>Git biasanya menggunakan editor teks bawaan untuk menulis pesan commit atau merge. Kamu bisa menggantinya sesuai preferensi.</p>
+
+              <ul>
+                <li>Gunakan <strong>Visual Studio Code</strong> sebagai editor default:</li>
+              </ul>
+
+              <pre><code class="language-bash">git config --global core.editor "code --wait"</code></pre>
+
+              <ul>
+                <li>Gunakan <strong>Vim</strong> (default di banyak sistem Linux/macOS):</li>
+              </ul>
+
+              <pre><code class="language-bash">git config --global core.editor "vim"</code></pre>
+
+              <p>Dengan ini, setiap kali Git membutuhkan input teks panjang (misalnya pesan merge), editor yang kamu pilih akan terbuka otomatis.</p>
+            `
+          },
+          {
+            title: "Video: Instalasi & Konfigurasi Git",
+            content: `
+              <p>Untuk panduan visual dalam menginstal dan mengonfigurasi Git di berbagai OS, tonton video berikut:</p>
+
+              <div class="ratio ratio-16x9">
+                <iframe 
+                  src="https://www.youtube.com/embed/2ReR1YJrNOM"
+                  title="Cara Install & Setup Git untuk Pemula"
+                  allowfullscreen>
+                </iframe>
+              </div>
+            `
+          }
+        ]
+      },
+
+      3: {
+        title: "Dasar Penggunaan Git (Fundamental)",
+        slides: [
+          {
+            title: "Inisialisasi Repository Baru",
+            content: `
+              <p>Langkah pertama untuk mulai menggunakan Git di sebuah proyek adalah dengan membuat <strong>repository</strong> (repo) lokal.</p>
+
+              <p>Buka terminal di dalam folder proyek kamu, lalu jalankan perintah:</p>
+
+              <pre><code class="language-bash">git init</code></pre>
+
+              <p>Perintah ini akan membuat folder tersembunyi bernama <code>.git/</code> di dalam proyekmu — di sinilah Git menyimpan semua riwayat dan metadata perubahan.</p>
+
+              <p>Setelah inisialisasi, foldermu sekarang sudah menjadi repository Git, dan kamu bisa mulai melacak perubahan file di dalamnya.</p>
+            `
+          },
+          {
+            title: "Cek Status Perubahan File",
+            content: `
+              <p>Setelah Git diinisialisasi, kamu bisa mengecek status file yang ada di dalam repo menggunakan perintah:</p>
+
+              <pre><code class="language-bash">git status</code></pre>
+
+              <p>Output ini menunjukkan:</p>
+
+              <ul>
+                <li>✅ File yang sudah dilacak (tracked)</li>
+                <li>🆕 File baru yang belum ditambahkan ke Git (untracked)</li>
+                <li>📝 File yang berubah tapi belum di-commit</li>
+              </ul>
+
+              <p>Gunakan perintah ini secara rutin untuk memastikan kamu tahu kondisi repo sebelum men-<em>commit</em> perubahan.</p>
+            `
+          },
+          {
+            title: "Menambahkan File ke Staging Area",
+            content: `
+              <p>Sebelum perubahan disimpan, kamu perlu menambahkannya ke <strong>staging area</strong> dengan perintah:</p>
+
+              <pre><code class="language-bash">git add nama_file</code></pre>
+
+              <p>Untuk menambahkan semua file sekaligus, gunakan:</p>
+
+              <pre><code class="language-bash">git add .</code></pre>
+
+              <p><strong>Staging area</strong> adalah tempat sementara sebelum perubahan disimpan permanen dalam commit. Kamu bisa memilih file mana saja yang ingin di-commit.</p>
+            `
+          },
+          {
+            title: "Menyimpan Perubahan (Commit)",
+            content: `
+              <p>Setelah file masuk ke staging area, simpan perubahan tersebut ke dalam repository menggunakan perintah:</p>
+
+              <pre><code class="language-bash">git commit -m "Pesan commit kamu"</code></pre>
+
+              <p>Contoh:</p>
+
+              <pre><code class="language-bash">git commit -m "Menambahkan halaman utama dan file style.css"</code></pre>
+
+              <p><strong>Commit</strong> berfungsi seperti checkpoint — kamu bisa kembali ke titik ini kapan saja di masa depan.</p>
+
+              <p>Tips: Tulis pesan commit yang jelas dan deskriptif agar mudah dipahami oleh anggota tim.</p>
+            `
+          },
+          {
+            title: "Melihat Riwayat Commit",
+            content: `
+              <p>Untuk melihat daftar commit yang telah kamu buat, gunakan perintah:</p>
+
+              <pre><code class="language-bash">git log</code></pre>
+
+              <p>Outputnya akan menampilkan:</p>
+              <ul>
+                <li>🔑 <strong>Commit hash</strong> (ID unik)</li>
+                <li>👤 Nama pembuat commit</li>
+                <li>📅 Tanggal commit</li>
+                <li>📝 Pesan commit</li>
+              </ul>
+
+              <p>Gunakan opsi <code>--oneline</code> agar tampil lebih ringkas:</p>
+
+              <pre><code class="language-bash">git log --oneline</code></pre>
+            `
+          },
+          {
+            title: "Mengabaikan File dengan .gitignore",
+            content: `
+              <p>Tidak semua file perlu dilacak oleh Git. Misalnya file sementara, cache, atau konfigurasi lokal.</p>
+
+              <p>Kamu bisa mengabaikannya dengan membuat file bernama <strong>.gitignore</strong> di root project.</p>
+
+              <h5>Contoh isi <code>.gitignore</code>:</h5>
+
+              <pre><code class="language-bash">node_modules/
+      .env
+      .DS_Store
+      *.log</code></pre>
+
+              <p>Git tidak akan melacak file atau folder yang disebutkan di dalam file ini.</p>
+            `
+          },
+          {
+            title: "Membatalkan Perubahan",
+            content: `
+              <p>Git menyediakan beberapa cara untuk membatalkan perubahan tergantung kondisinya.</p>
+
+              <h5>1️⃣ Batalkan perubahan pada file yang belum di-staging:</h5>
+              <pre><code class="language-bash">git restore nama_file</code></pre>
+
+              <h5>2️⃣ Hapus file dari staging area (tanpa menghapus perubahan):</h5>
+              <pre><code class="language-bash">git reset nama_file</code></pre>
+
+              <h5>3️⃣ Kembali ke commit sebelumnya (hati-hati, ini mengubah riwayat):</h5>
+              <pre><code class="language-bash">git checkout commit_id</code></pre>
+
+              <p>Ketiga perintah ini berguna untuk memperbaiki kesalahan sebelum perubahan disimpan secara permanen.</p>
+            `
+          },
+          {
+            title: "Menghapus File dari Repository",
+            content: `
+              <p>Jika kamu ingin menghapus file dari Git dan juga dari folder proyek, gunakan:</p>
+
+              <pre><code class="language-bash">git rm nama_file</code></pre>
+
+              <p>Setelah itu, jangan lupa untuk menyimpan perubahan dengan commit baru:</p>
+
+              <pre><code class="language-bash">git commit -m "Menghapus file yang tidak diperlukan"</code></pre>
+
+              <p>Jika kamu hanya ingin berhenti melacak file tanpa menghapusnya dari folder, gunakan:</p>
+
+              <pre><code class="language-bash">git rm --cached nama_file</code></pre>
+            `
+          },
+          {
+            title: "Video: Dasar Penggunaan Git",
+            content: `
+              <p>Untuk memahami alur kerja dasar Git secara visual (init, add, commit, dan log), tonton video berikut:</p>
+
+              <div class="ratio ratio-16x9">
+                <iframe 
+                  src="https://www.youtube.com/embed/8JJ101D3knE"
+                  title="Git Dasar: Add, Commit, dan Log"
+                  allowfullscreen>
+                </iframe>
+              </div>
+            `
+          }
+        ]
+      },
+
+      4: {
+        title: "Branching & Merging",
+        slides: [
+          {
+            title: "Konsep Dasar Branch di Git",
+            content: `
+              <p><strong>Branch</strong> dalam Git adalah percabangan dari alur pengembangan utama. 
+              Dengan branch, kamu bisa mengerjakan fitur baru, melakukan eksperimen, atau memperbaiki bug tanpa mengganggu kode utama.</p>
+
+              <p>Secara default, Git membuat branch utama bernama <strong>main</strong> (atau <strong>master</strong> pada versi lama).</p>
+
+              <pre><code class="language-bash"># Melihat semua branch yang ada
+      git branch
+              </code></pre>
+
+              <p>Simbol <strong>*</strong> menunjukkan branch aktif saat ini.</p>
+            `
+          },
+          {
+            title: "Membuat Branch Baru",
+            content: `
+              <p>Gunakan perintah berikut untuk membuat branch baru:</p>
+
+              <pre><code class="language-bash">git branch nama-branch</code></pre>
+
+              <p>Contoh:</p>
+              <pre><code class="language-bash">git branch feature-login</code></pre>
+
+              <p>Branch baru sudah dibuat, tapi kamu masih berada di branch sebelumnya. 
+              Untuk berpindah, gunakan perintah berikut.</p>
+            `
+          },
+          {
+            title: "Berpindah Antar Branch",
+            content: `
+              <p>Kamu bisa berpindah ke branch lain menggunakan:</p>
+
+              <pre><code class="language-bash">git checkout nama-branch</code></pre>
+
+              <p>Contoh:</p>
+              <pre><code class="language-bash">git checkout feature-login</code></pre>
+
+              <p>Atau dengan perintah baru yang lebih modern:</p>
+              <pre><code class="language-bash">git switch nama-branch</code></pre>
+
+              <p>Untuk membuat dan langsung berpindah ke branch baru:</p>
+              <pre><code class="language-bash">git switch -c feature-register</code></pre>
+            `
+          },
+          {
+            title: "Menggabungkan Branch (Merge)",
+            content: `
+              <p>Setelah selesai mengerjakan fitur di branch terpisah, kamu bisa menggabungkannya kembali ke branch utama.</p>
+
+              <h5>Langkah-langkah merge:</h5>
+              <ol>
+                <li>Pindah ke branch utama:</li>
+                <pre><code class="language-bash">git checkout main</code></pre>
+                <li>Lakukan merge dengan branch fitur:</li>
+                <pre><code class="language-bash">git merge feature-login</code></pre>
+              </ol>
+
+              <p>Jika tidak ada konflik, Git akan menggabungkan perubahan secara otomatis.</p>
+            `
+          },
+          {
+            title: "Menghapus Branch",
+            content: `
+              <p>Setelah branch berhasil digabungkan (merge), kamu bisa menghapusnya untuk menjaga kebersihan repository.</p>
+
+              <pre><code class="language-bash">git branch -d nama-branch</code></pre>
+
+              <p>Contoh:</p>
+              <pre><code class="language-bash">git branch -d feature-login</code></pre>
+
+              <p>Jika branch belum digabung tapi ingin dihapus paksa, gunakan:</p>
+              <pre><code class="language-bash">git branch -D nama-branch</code></pre>
+            `
+          },
+          {
+            title: "Menangani Konflik Merge",
+            content: `
+              <p><strong>Konflik merge</strong> terjadi ketika dua branch mengubah bagian kode yang sama. 
+              Git tidak bisa memutuskan mana yang benar, jadi kamu harus menyelesaikannya secara manual.</p>
+
+              <h5>Contoh tanda konflik di file:</h5>
+              <pre><code class="language-diff">
+      <<<<<<< HEAD
+      console.log("Halo dari main");
+      =======
+      console.log("Halo dari feature-login");
+      >>>>>>> feature-login
+              </code></pre>
+
+              <p>Langkah penyelesaiannya:</p>
+              <ol>
+                <li>Buka file dan pilih versi kode yang benar.</li>
+                <li>Hapus tanda <code>&lt;&lt;&lt;&lt;&lt;&lt;&lt;</code> dan <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;</code>.</li>
+                <li>Tambahkan file yang sudah diperbaiki ke staging:</li>
+                <pre><code class="language-bash">git add nama-file</code></pre>
+                <li>Lanjutkan proses merge:</li>
+                <pre><code class="language-bash">git commit</code></pre>
+              </ol>
+            `
+          },
+          {
+            title: "Strategi Branching Dasar",
+            content: `
+              <p>Berikut contoh pola sederhana dalam pengelolaan branch:</p>
+
+              <ul>
+                <li><strong>main</strong> — berisi kode produksi yang sudah stabil.</li>
+                <li><strong>dev</strong> — tempat integrasi fitur sebelum dirilis ke main.</li>
+                <li><strong>feature/*</strong> — untuk mengembangkan fitur baru.</li>
+              </ul>
+
+              <pre><code class="language-bash">
+      # Contoh alur kerja
+      git switch -c feature-login
+      # (Kerjakan fitur)
+      git add .
+      git commit -m "Tambah fitur login"
+      git switch dev
+      git merge feature-login
+              </code></pre>
+
+              <p>Dengan strategi ini, pengembangan menjadi lebih terstruktur dan mudah dikelola, terutama jika bekerja dalam tim.</p>
+            `
+          },
+          {
+            title: "Video: Belajar Branch & Merge di Git",
+            content: `
+              <p>Untuk memahami konsep branching dan merging secara visual, tonton video berikut:</p>
+
+              <div class="ratio ratio-16x9">
+                <iframe 
+                  src="https://www.youtube.com/embed/e2IbNHi4uCI"
+                  title="Git Branch & Merge Tutorial"
+                  allowfullscreen>
+                </iframe>
+              </div>
+            `
+          }
+        ]
+      },
+
+      5: {
+        title: "Remote Repository (GitHub, GitLab, dsb)",
+        slides: [
+          {
+            title: "Apa Itu Remote Repository?",
+            content: `
+              <p><strong>Remote repository</strong> adalah versi proyek kamu yang disimpan di server online seperti 
+              <strong>GitHub</strong>, <strong>GitLab</strong>, atau <strong>Bitbucket</strong>. 
+              Ini memungkinkan kamu bekerja kolaboratif dengan orang lain, melakukan backup, 
+              dan mengakses kode dari mana saja.</p>
+
+              <p>Biasanya Git lokal digunakan untuk pekerjaan pribadi di komputer sendiri, 
+              sedangkan remote repository digunakan untuk berbagi dan sinkronisasi antar pengembang.</p>
+            `
+          },
+          {
+            title: "Membuat Akun GitHub",
+            content: `
+              <p>Langkah pertama agar bisa menggunakan remote repository adalah memiliki akun di platform seperti <strong>GitHub</strong>.</p>
+
+              <ol>
+                <li>Buka situs <a href="https://github.com" target="_blank">https://github.com</a></li>
+                <li>Klik <strong>Sign Up</strong> dan isi data pendaftaran (email, username, password).</li>
+                <li>Verifikasi email kamu.</li>
+                <li>Setelah login, kamu bisa mulai membuat repository baru.</li>
+              </ol>
+
+              <p>Platform alternatif lain selain GitHub:</p>
+              <ul>
+                <li><a href="https://gitlab.com" target="_blank">GitLab</a> – cocok untuk project open-source dan CI/CD.</li>
+                <li><a href="https://bitbucket.org" target="_blank">Bitbucket</a> – populer di lingkungan enterprise.</li>
+              </ul>
+            `
+          },
+          {
+            title: "Membuat Repository Baru di GitHub",
+            content: `
+              <p>Setelah login ke GitHub, ikuti langkah berikut:</p>
+              <ol>
+                <li>Klik tombol <strong>+ New Repository</strong>.</li>
+                <li>Isi nama repository, misalnya <code>belajar-git</code>.</li>
+                <li>Pilih visibilitas: <strong>Public</strong> (terbuka) atau <strong>Private</strong> (terbatas).</li>
+                <li>(Opsional) Centang "Add a README file".</li>
+                <li>Klik <strong>Create repository</strong>.</li>
+              </ol>
+
+              <p>Setelah dibuat, GitHub akan menampilkan URL repository seperti:</p>
+              <pre><code class="language-bash">https://github.com/username/belajar-git.git</code></pre>
+            `
+          },
+          {
+            title: "Menghubungkan Repo Lokal ke GitHub",
+            content: `
+              <p>Jika kamu sudah punya project Git di komputer lokal, hubungkan ke GitHub dengan perintah berikut:</p>
+
+              <pre><code class="language-bash">
+      git remote add origin https://github.com/username/belajar-git.git
+              </code></pre>
+
+              <p>Perintah ini menambahkan “remote” bernama <strong>origin</strong> yang mengarah ke repository GitHub kamu.</p>
+
+              <p>Untuk memverifikasi koneksi remote:</p>
+              <pre><code class="language-bash">git remote -v</code></pre>
+            `
+          },
+          {
+            title: "Mengirim Perubahan ke GitHub (Push)",
+            content: `
+              <p>Setelah melakukan commit di lokal, kirim perubahan ke remote repository dengan perintah:</p>
+
+              <pre><code class="language-bash">
+      git push -u origin main
+              </code></pre>
+
+              <p>Penjelasan:</p>
+              <ul>
+                <li><strong>origin</strong> → nama remote (alamat GitHub).</li>
+                <li><strong>main</strong> → nama branch yang ingin dikirim.</li>
+                <li>Opsi <code>-u</code> menetapkan default branch untuk push berikutnya.</li>
+              </ul>
+
+              <p>Setelah berhasil, buka halaman repository di GitHub untuk melihat file kamu sudah muncul di sana.</p>
+            `
+          },
+          {
+            title: "Mengambil & Menyinkronkan Perubahan",
+            content: `
+              <p>Jika ada perubahan di remote repository (misalnya dari anggota tim lain), kamu bisa mengambilnya menggunakan perintah:</p>
+
+              <h5>🔹 Mengambil dan langsung menggabungkan:</h5>
+              <pre><code class="language-bash">git pull</code></pre>
+
+              <h5>🔹 Hanya mengambil tanpa menggabungkan:</h5>
+              <pre><code class="language-bash">git fetch</code></pre>
+
+              <p>Setelah fetch, kamu bisa menggabungkan manual:</p>
+              <pre><code class="language-bash">git merge origin/main</code></pre>
+            `
+          },
+          {
+            title: "Clone Repository Orang Lain",
+            content: `
+              <p>Untuk menyalin (meng-clone) project orang lain dari GitHub ke komputer kamu, gunakan perintah:</p>
+
+              <pre><code class="language-bash">git clone https://github.com/username/nama-repo.git</code></pre>
+
+              <p>Perintah ini akan membuat folder baru berisi salinan lengkap repository tersebut beserta seluruh riwayat commit-nya.</p>
+
+              <p>Contoh:</p>
+              <pre><code class="language-bash">git clone https://github.com/torvalds/linux.git</code></pre>
+            `
+          },
+          {
+            title: "Perbedaan Fetch, Merge, dan Pull",
+            content: `
+              <table border="1" cellpadding="8">
+                <thead>
+                  <tr>
+                    <th>Perintah</th>
+                    <th>Fungsi</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><code>git fetch</code></td>
+                    <td>Mengambil update terbaru dari remote, tapi tidak menggabungkan ke branch lokal.</td>
+                  </tr>
+                  <tr>
+                    <td><code>git merge</code></td>
+                    <td>Menggabungkan perubahan dari branch lain (termasuk hasil fetch) ke branch aktif saat ini.</td>
+                  </tr>
+                  <tr>
+                    <td><code>git pull</code></td>
+                    <td>Gabungan dari <code>fetch</code> + <code>merge</code>. Langsung mengambil dan menggabungkan perubahan dari remote.</td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <p>Gunakan <code>git fetch</code> jika ingin memeriksa dulu perubahannya, dan <code>git pull</code> jika kamu yakin ingin langsung update branch lokal.</p>
+            `
+          },
+          {
+            title: "Video: Menghubungkan Git ke GitHub",
+            content: `
+              <p>Untuk penjelasan visual mengenai setup remote repository dan push/pull ke GitHub, tonton video ini:</p>
+
+              <div class="ratio ratio-16x9">
+                <iframe 
+                  src="https://www.youtube.com/embed/ivlTsbST6MM"
+                  title="Cara Menghubungkan Git Lokal ke GitHub"
+                  allowfullscreen>
+                </iframe>
+              </div>
+            `
+          }
+        ]
+      },
+
+      6: {
+        title: "Kolaborasi & Workflow Tim",
+        slides: [
+          {
+            title: "Pentingnya Kolaborasi di Git",
+            content: `
+              <p><strong>Git</strong> dirancang bukan hanya untuk penggunaan individu, tetapi juga untuk kolaborasi dalam tim.</p>
+
+              <p>Dengan Git, banyak orang bisa bekerja pada satu project yang sama tanpa saling menimpa pekerjaan satu sama lain.</p>
+
+              <p>Kolaborasi biasanya dilakukan melalui platform seperti <strong>GitHub</strong>, <strong>GitLab</strong>, atau <strong>Bitbucket</strong>, 
+              yang menyediakan fitur untuk pengelolaan tim, review kode, dan workflow profesional.</p>
+            `
+          },
+          {
+            title: "Fork Repository",
+            content: `
+              <p><strong>Fork</strong> berarti menyalin repository orang lain ke akun kamu sendiri di GitHub.</p>
+
+              <p>Biasanya dilakukan jika kamu ingin:</p>
+              <ul>
+                <li>🔧 Berkontribusi ke project open source tanpa akses langsung ke repo asli.</li>
+                <li>🧪 Bereksperimen dengan kode orang lain tanpa mengubah repository aslinya.</li>
+              </ul>
+
+              <h5>Cara fork di GitHub:</h5>
+              <ol>
+                <li>Buka halaman repository di GitHub.</li>
+                <li>Klik tombol <strong>Fork</strong> di kanan atas.</li>
+                <li>Repository akan tersalin ke akun kamu sendiri.</li>
+              </ol>
+
+              <p>Setelah fork, kamu bisa clone repo hasil fork ke lokal:</p>
+              <pre><code class="language-bash">
+      git clone https://github.com/username/repo-yang-difork.git
+              </code></pre>
+            `
+          },
+          {
+            title: "Pull Request (PR) / Merge Request (MR)",
+            content: `
+              <p>Setelah kamu membuat perubahan di repository hasil fork, kamu bisa mengajukan <strong>Pull Request (PR)</strong> 
+              agar perubahanmu ditinjau dan digabung (merge) ke repository utama.</p>
+
+              <p>Langkah umumnya:</p>
+              <ol>
+                <li>Fork repository utama.</li>
+                <li>Buat branch baru untuk fitur kamu.</li>
+                <li>Lakukan perubahan dan commit.</li>
+                <li>Push branch ke GitHub.</li>
+                <li>Buka repository asal dan klik <strong>New Pull Request</strong>.</li>
+              </ol>
+
+              <p>Di GitLab, istilah yang sama disebut <strong>Merge Request (MR)</strong>.</p>
+            `
+          },
+          {
+            title: "Review & Merge Pull Request",
+            content: `
+              <p>Ketika PR dibuat, anggota tim atau maintainer akan melakukan <strong>code review</strong>.</p>
+
+              <ul>
+                <li>🧩 Memeriksa kualitas dan gaya kode.</li>
+                <li>🐛 Mengecek bug atau konflik dengan kode lain.</li>
+                <li>💬 Memberikan komentar atau saran perbaikan.</li>
+              </ul>
+
+              <p>Setelah disetujui, maintainer dapat melakukan merge dengan satu klik tombol 
+              <strong>“Merge Pull Request”</strong>.</p>
+
+              <p>Setelah merge, branch bisa dihapus agar repository tetap rapi.</p>
+            `
+          },
+          {
+            title: "Resolving Conflict dalam Kolaborasi",
+            content: `
+              <p><strong>Conflict</strong> terjadi ketika dua orang mengubah bagian kode yang sama di waktu yang berdekatan.</p>
+
+              <p>Saat melakukan merge atau pull, Git akan memberitahu jika ada konflik.</p>
+
+              <h5>Langkah menyelesaikan konflik:</h5>
+              <ol>
+                <li>Buka file yang bertanda konflik (biasanya ada tanda <code>&lt;&lt;&lt;&lt;&lt;&lt;&lt;</code> dan <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;</code>).</li>
+                <li>Pilih atau gabungkan perubahan yang benar.</li>
+                <li>Simpan file, lalu jalankan:</li>
+              </ol>
+
+              <pre><code class="language-bash">
+      git add nama-file
+      git commit
+              </code></pre>
+
+              <p>Setelah itu, konflik dianggap selesai dan merge bisa dilanjutkan.</p>
+            `
+          },
+          {
+            title: "Workflow Umum di Industri",
+            content: `
+              <p>Dalam proyek profesional, tim menggunakan <strong>workflow</strong> (alur kerja) tertentu agar kolaborasi lebih teratur dan mudah diatur.</p>
+
+              <h5>1️⃣ Git Flow</h5>
+              <ul>
+                <li>Branch utama: <code>main</code> dan <code>develop</code>.</li>
+                <li>Branch fitur: <code>feature/fitur-baru</code>.</li>
+                <li>Branch rilis: <code>release/x.x.x</code>.</li>
+                <li>Branch hotfix untuk bug darurat.</li>
+              </ul>
+
+              <p>🧠 Cocok untuk tim besar dan proyek jangka panjang.</p>
+
+              <h5>2️⃣ Feature Branch Workflow</h5>
+              <ul>
+                <li>Setiap fitur dikembangkan di branch terpisah dari <code>main</code>.</li>
+                <li>Setelah selesai → Pull Request → Merge ke main.</li>
+              </ul>
+
+              <p>🚀 Cocok untuk tim kecil dan pengembangan cepat.</p>
+
+              <h5>3️⃣ Forking Workflow</h5>
+              <ul>
+                <li>Setiap kontributor membuat fork dari repository utama.</li>
+                <li>Perubahan dilakukan di repo pribadi, lalu diajukan PR ke repo utama.</li>
+              </ul>
+
+              <p>💡 Digunakan luas di proyek open source (misalnya di GitHub).</p>
+            `
+          },
+          {
+            title: "Video: Kolaborasi & Pull Request di GitHub",
+            content: `
+              <p>Untuk memahami cara kolaborasi dan pull request secara visual, tonton video berikut:</p>
+
+              <div class="ratio ratio-16x9">
+                <iframe 
+                  src="https://www.youtube.com/embed/0fKg7e37bQE"
+                  title="Kolaborasi dan Pull Request di GitHub"
+                  allowfullscreen>
+                </iframe>
+              </div>
+            `
+          }
+        ]
+      },
+
+      7: {
+        title: "Menjelajahi & Memperbaiki Repo",
+        slides: [
+          {
+            title: "Tujuan & Gambaran Umum",
+            content: `
+              <p>Pada tahap ini, kamu akan belajar cara <strong>menjelajahi riwayat</strong> dan 
+              <strong>memperbaiki kesalahan</strong> di dalam repository Git.</p>
+
+              <p>Seringkali saat bekerja, kita perlu menelusuri perubahan yang pernah dibuat, 
+              membatalkan commit yang salah, atau memperbaiki versi tertentu. 
+              Di sinilah perintah-perintah berikut menjadi penting.</p>
+            `
+          },
+          {
+            title: "Melihat Log Commit",
+            content: `
+              <p>Untuk menampilkan daftar commit dengan format standar:</p>
+
+              <pre><code class="language-bash">git log</code></pre>
+
+              <p>Namun, jika kamu ingin tampilan yang lebih ringkas dan visual, gunakan:</p>
+
+              <pre><code class="language-bash">
+      git log --oneline --graph --decorate
+              </code></pre>
+
+              <ul>
+                <li><strong>--oneline</strong> → menampilkan setiap commit dalam satu baris.</li>
+                <li><strong>--graph</strong> → menampilkan struktur cabang (branch graph).</li>
+                <li><strong>--decorate</strong> → menambahkan label branch dan tag pada commit.</li>
+              </ul>
+
+              <p>Contoh output:</p>
+              <pre><code class="language-bash">
+      * a3c1f9d (HEAD -> main, origin/main) Update README
+      * 5d2b3c1 Add login feature
+      * 7f6a1d2 Initial commit
+              </code></pre>
+            `
+          },
+          {
+            title: "Melihat Perubahan di File",
+            content: `
+              <p>Gunakan perintah <code>git diff</code> untuk melihat perubahan yang belum di-commit.</p>
+
+              <h5>🔹 Melihat perubahan sejak commit terakhir:</h5>
+              <pre><code class="language-bash">git diff</code></pre>
+
+              <h5>🔹 Melihat perubahan yang sudah di-staging:</h5>
+              <pre><code class="language-bash">git diff --staged</code></pre>
+
+              <p>Git akan menampilkan perbedaan baris demi baris, 
+              dengan warna <span style="color:red;">merah</span> untuk penghapusan dan 
+              <span style="color:green;">hijau</span> untuk penambahan.</p>
+            `
+          },
+          {
+            title: "Membatalkan Commit Terakhir",
+            content: `
+              <p>Ada dua cara umum untuk membatalkan commit terakhir tergantung situasi:</p>
+
+              <h5>1️⃣ Menghapus commit terakhir sepenuhnya (hati-hati!):</h5>
+              <pre><code class="language-bash">git reset --hard HEAD~1</code></pre>
+              <p>Commit akan dihapus dari riwayat. Cocok untuk commit yang belum di-push.</p>
+
+              <h5>2️⃣ Membuat commit pembalik (aman untuk repo publik):</h5>
+              <pre><code class="language-bash">git revert HEAD</code></pre>
+              <p>Git akan membuat commit baru yang membatalkan perubahan dari commit sebelumnya.</p>
+
+              <p>Gunakan <code>revert</code> jika commit sudah di-push ke GitHub agar riwayat tetap aman.</p>
+            `
+          },
+          {
+            title: "Melihat Isi Commit Tertentu",
+            content: `
+              <p>Setiap commit punya ID unik (hash). Untuk melihat detail dari commit tertentu, gunakan:</p>
+
+              <pre><code class="language-bash">git show &lt;hash-commit&gt;</code></pre>
+
+              <p>Contoh:</p>
+              <pre><code class="language-bash">git show 5d2b3c1</code></pre>
+
+              <p>Perintah ini menampilkan siapa yang membuat commit, kapan dibuat, 
+              dan baris-baris kode yang berubah.</p>
+            `
+          },
+          {
+            title: "Membuat Tag Versi",
+            content: `
+              <p><strong>Tag</strong> digunakan untuk menandai versi penting dari project, 
+              misalnya saat rilis versi 1.0.</p>
+
+              <h5>🔹 Membuat tag baru:</h5>
+              <pre><code class="language-bash">git tag v1.0</code></pre>
+
+              <h5>🔹 Membuat tag dengan pesan anotasi:</h5>
+              <pre><code class="language-bash">git tag -a v1.0 -m "Rilis pertama"</code></pre>
+
+              <h5>🔹 Melihat semua tag:</h5>
+              <pre><code class="language-bash">git tag</code></pre>
+
+              <h5>🔹 Push tag ke GitHub:</h5>
+              <pre><code class="language-bash">git push origin v1.0</code></pre>
+
+              <p>Tag sangat berguna untuk menandai versi stabil sebelum melanjutkan pengembangan fitur baru.</p>
+            `
+          },
+          {
+            title: "Cherry-Pick Commit",
+            content: `
+              <p>Perintah <code>git cherry-pick</code> digunakan untuk menyalin satu commit tertentu 
+              dari satu branch ke branch lain tanpa merge seluruh cabang.</p>
+
+              <h5>Contoh penggunaan:</h5>
+              <pre><code class="language-bash">
+      # Pastikan kamu berada di branch tujuan
+      git checkout main
+
+      # Ambil satu commit tertentu dari branch lain
+      git cherry-pick 5d2b3c1
+              </code></pre>
+
+              <p>Git akan menambahkan commit tersebut ke branch aktif kamu.</p>
+
+              <p>Gunakan ini jika kamu hanya ingin “mengambil” satu perubahan kecil dari branch lain, 
+              tanpa menggabungkan semuanya.</p>
+            `
+          },
+          {
+            title: "Video: Git Log, Diff, dan Revert",
+            content: `
+              <p>Untuk memahami cara melihat riwayat commit dan membatalkan perubahan dengan aman, 
+              tonton video berikut:</p>
+
+              <div class="ratio ratio-16x9">
+                <iframe 
+                  src="https://www.youtube.com/embed/Ff5J2Yc9K3U"
+                  title="Git Log, Diff, Revert, dan Tag - Panduan Lengkap"
+                  allowfullscreen>
+                </iframe>
+              </div>
+            `
+          }
+        ]
+      },
+
+      8: {
+        title: "Menyimpan Perubahan Sementara",
+        slides: [
+          {
+            title: "Tujuan & Gambaran Umum",
+            content: `
+              <p>Pada tahap ini kamu akan belajar cara <strong>menyimpan perubahan sementara</strong> 
+              menggunakan fitur <strong>stash</strong> di Git.</p>
+
+              <p>Fitur ini sangat berguna saat kamu sedang mengerjakan sesuatu, 
+              tapi harus berpindah branch atau mengerjakan hal lain tanpa ingin kehilangan perubahan yang belum di-commit.</p>
+            `
+          },
+          {
+            title: "Apa Itu Git Stash?",
+            content: `
+              <p><strong>Git Stash</strong> digunakan untuk “menyembunyikan” perubahan sementara 
+              di working directory dan staging area, agar bisa berpindah branch atau melakukan operasi lain tanpa commit dulu.</p>
+
+              <p>Setelah pekerjaan lain selesai, kamu bisa memunculkan kembali perubahan tersebut.</p>
+
+              <p>🎯 Analogi sederhana: <em>stash itu seperti lemari penyimpanan sementara untuk pekerjaan kamu di Git.</em></p>
+            `
+          },
+          {
+            title: "Menyimpan Perubahan Sementara",
+            content: `
+              <p>Gunakan perintah berikut untuk menyimpan perubahan yang belum di-commit:</p>
+
+              <pre><code class="language-bash">git stash</code></pre>
+
+              <p>Git akan menyimpan semua perubahan di area “stash” dan mengembalikan direktori kerja ke kondisi bersih (clean state).</p>
+
+              <p>Jika ingin menambahkan pesan agar mudah diingat:</p>
+
+              <pre><code class="language-bash">git stash push -m "Perbaikan halaman login"</code></pre>
+            `
+          },
+          {
+            title: "Melihat Daftar Stash",
+            content: `
+              <p>Untuk melihat daftar semua stash yang pernah kamu buat:</p>
+
+              <pre><code class="language-bash">git stash list</code></pre>
+
+              <p>Contoh hasilnya:</p>
+              <pre><code class="language-bash">
+      stash@{0}: On main: Perbaikan halaman login
+      stash@{1}: On feature/navbar: Update tampilan navbar
+              </code></pre>
+
+              <p>Setiap stash punya indeks (misalnya <code>stash@{0}</code>) yang bisa digunakan untuk memanggilnya kembali nanti.</p>
+            `
+          },
+          {
+            title: "Mengembalikan Perubahan dari Stash",
+            content: `
+              <p>Untuk mengembalikan perubahan yang telah disimpan di stash, gunakan:</p>
+
+              <pre><code class="language-bash">git stash pop</code></pre>
+
+              <p>Perintah ini akan mengembalikan perubahan dari stash terakhir dan menghapusnya dari daftar stash.</p>
+
+              <p>Jika kamu ingin mengembalikan stash tertentu tanpa menghapusnya, gunakan:</p>
+
+              <pre><code class="language-bash">git stash apply stash@{1}</code></pre>
+            `
+          },
+          {
+            title: "Menghapus Stash",
+            content: `
+              <p>Jika kamu sudah tidak membutuhkan stash tertentu, hapus dengan:</p>
+
+              <pre><code class="language-bash">git stash drop stash@{0}</code></pre>
+
+              <p>Untuk menghapus semua stash sekaligus:</p>
+
+              <pre><code class="language-bash">git stash clear</code></pre>
+
+              <p>Hati-hati! Setelah dihapus, perubahan di stash tidak bisa dikembalikan lagi.</p>
+            `
+          },
+          {
+            title: "Contoh Alur Penggunaan",
+            content: `
+              <ol>
+                <li>Kamu sedang mengerjakan fitur baru di branch <code>feature-login</code>.</li>
+                <li>Tiba-tiba harus berpindah ke branch <code>main</code> untuk memperbaiki bug.</li>
+                <li>Simpan dulu perubahan sementara:</li>
+                <pre><code class="language-bash">git stash push -m "WIP: fitur login"</code></pre>
+                <li>Pindah ke branch <code>main</code> dan perbaiki bug.</li>
+                <li>Setelah selesai, kembali ke branch <code>feature-login</code> dan kembalikan stash:</li>
+                <pre><code class="language-bash">git stash pop</code></pre>
+                <li>Lanjutkan coding seperti biasa. 💪</li>
+              </ol>
+            `
+          },
+          {
+            title: "Video: Git Stash untuk Simpan Kerjaan Sementara",
+            content: `
+              <p>Tonton video ini untuk memahami cara kerja dan praktik penggunaan stash dalam workflow sehari-hari:</p>
+
+              <div class="ratio ratio-16x9">
+                <iframe 
+                  src="https://www.youtube.com/embed/3uzBQuO2Jk8"
+                  title="Git Stash - Simpan Perubahan Sementara"
+                  allowfullscreen>
+                </iframe>
+              </div>
+            `
+          }
+        ]
+      },
+
+      9: {
+        title: "Optimisasi & Best Practice",
+        slides: [
+          {
+            title: "Tujuan & Gambaran Umum",
+            content: `
+              <p>Pada bagian ini, kamu akan mempelajari bagaimana menjaga repository Git agar tetap <strong>rapi, efisien, dan profesional</strong>.</p>
+              <p>Fokusnya adalah pada <strong>kebiasaan terbaik (best practice)</strong> yang biasa digunakan oleh developer di industri agar kerja tim lebih mudah dan riwayat proyek tetap jelas.</p>
+            `
+          },
+          {
+            title: "Cara Menulis Pesan Commit yang Baik",
+            content: `
+              <p>Pesan commit yang baik membuat riwayat proyek mudah dibaca dan dipahami, baik oleh kamu sendiri maupun tim lain.</p>
+
+              <h5>🧭 Aturan Umum:</h5>
+              <ul>
+                <li>Gunakan <strong>kata kerja perintah (imperative)</strong>, misalnya “Tambah”, “Perbaiki”, “Hapus”.</li>
+                <li>Jangan terlalu panjang — maksimal 50 karakter untuk baris pertama.</li>
+                <li>Tambahkan deskripsi lebih detail di baris bawah jika perlu.</li>
+              </ul>
+
+              <h5>📋 Contoh Baik:</h5>
+              <pre><code class="language-bash">
+      git commit -m "Tambah fitur login user"
+              </code></pre>
+
+              <h5>📋 Contoh Buruk:</h5>
+              <pre><code class="language-bash">
+      git commit -m "coba aja dulu"
+      git commit -m "fix"
+              </code></pre>
+
+              <p>Gunakan format commit message yang konsisten, misalnya <strong>Conventional Commits</strong>:</p>
+              <pre><code class="language-bash">
+      feat: tambahkan halaman registrasi
+      fix: perbaiki bug pada form login
+      docs: update README
+              </code></pre>
+            `
+          },
+          {
+            title: "Struktur Branch yang Bersih",
+            content: `
+              <p>Menjaga struktur branch yang rapi membantu alur kerja tetap jelas.</p>
+
+              <h5>🌳 Struktur Umum:</h5>
+              <ul>
+                <li><code>main</code> — branch utama (kode yang stabil dan siap rilis).</li>
+                <li><code>dev</code> — tempat integrasi semua fitur sebelum digabung ke <code>main</code>.</li>
+                <li><code>feature/*</code> — cabang khusus untuk pengembangan fitur baru.</li>
+                <li><code>hotfix/*</code> — untuk memperbaiki bug mendesak di <code>main</code>.</li>
+              </ul>
+
+              <p>🔁 Contoh alur kerja:</p>
+              <pre><code class="language-bash">
+      git checkout -b feature/login
+      # kerja di branch feature/login
+      git commit -m "feat: tambah halaman login"
+      git checkout dev
+      git merge feature/login
+      git push origin dev
+              </code></pre>
+            `
+          },
+          {
+            title: "Menggunakan .gitignore dengan Efektif",
+            content: `
+              <p>File <code>.gitignore</code> digunakan untuk mengecualikan file atau folder yang tidak perlu masuk ke repository.</p>
+
+              <p>Contohnya: file konfigurasi lokal, file build, atau dependency.</p>
+
+              <h5>📄 Contoh isi .gitignore:</h5>
+              <pre><code class="language-bash">
+      # Node.js
+      node_modules/
+      .env
+
+      # Editor
+      .vscode/
+      .idea/
+
+      # Build
+      dist/
+      *.log
+              </code></pre>
+
+              <p>Kamu bisa membuat file <code>.gitignore</code> otomatis di situs resmi GitHub:</p>
+              <a href="https://github.com/github/gitignore" target="_blank">github.com/github/gitignore</a>
+            `
+          },
+          {
+            title: "Backup Repository & Restore",
+            content: `
+              <p>Selalu penting untuk memiliki cadangan (backup) repository Git, terutama jika kamu bekerja lokal tanpa koneksi ke GitHub/GitLab.</p>
+
+              <h5>📦 Backup ke Remote:</h5>
+              <pre><code class="language-bash">
+      git remote add origin https://github.com/user/nama-repo.git
+      git push -u origin main
+              </code></pre>
+
+              <h5>💾 Backup Manual (Offline):</h5>
+              <ul>
+                <li>Salin seluruh folder proyek.</li>
+                <li>Pastikan folder <code>.git/</code> ikut disalin — di situlah semua riwayat commit disimpan.</li>
+              </ul>
+
+              <h5>♻️ Restore dari Backup:</h5>
+              <pre><code class="language-bash">
+      git clone https://github.com/user/nama-repo.git
+              </code></pre>
+            `
+          },
+          {
+            title: "Git Aliases (Opsional)",
+            content: `
+              <p><strong>Alias</strong> di Git berguna untuk mempersingkat perintah yang sering kamu pakai.</p>
+
+              <p>Misalnya, daripada mengetik <code>git status</code>, kamu bisa membuat alias <code>git st</code>.</p>
+
+              <pre><code class="language-bash">
+      git config --global alias.st "status"
+      git config --global alias.co "checkout"
+      git config --global alias.br "branch"
+      git config --global alias.cm "commit -m"
+              </code></pre>
+
+              <p>Setelah itu kamu bisa menjalankan:</p>
+              <pre><code class="language-bash">
+      git st
+      git co main
+      git br
+      git cm "pesan commit"
+              </code></pre>
+            `
+          },
+          {
+            title: "Menandai Rilis dengan Tag dan Release",
+            content: `
+              <p>Tag digunakan untuk menandai titik penting dalam riwayat proyek, misalnya versi rilis.</p>
+
+              <h5>🏷️ Membuat Tag:</h5>
+              <pre><code class="language-bash">
+      git tag v1.0
+              </code></pre>
+
+              <h5>📝 Menambahkan pesan ke tag:</h5>
+              <pre><code class="language-bash">
+      git tag -a v1.0 -m "Rilis versi pertama"
+              </code></pre>
+
+              <h5>🚀 Mengirim tag ke remote:</h5>
+              <pre><code class="language-bash">
+      git push origin v1.0
+              </code></pre>
+
+              <p>Kamu juga bisa membuat <strong>release resmi</strong> di GitHub menggunakan tag ini, 
+              lalu menambahkan changelog, file binary, atau catatan rilis.</p>
+            `
+          },
+          {
+            title: "Video: Best Practice & Optimisasi Git",
+            content: `
+              <p>Tonton video berikut untuk memahami kebiasaan dan trik menjaga repository tetap profesional:</p>
+
+              <div class="ratio ratio-16x9">
+                <iframe 
+                  src="https://www.youtube.com/embed/9GKpbI1siow"
+                  title="Git Best Practices untuk Developer"
+                  allowfullscreen>
+                </iframe>
+              </div>
+            `
+          }
+        ]
+      }
+      
+    };
+  </script>
+  <script src="../../assets/js/frontend.js"></script>
+</body>
+</html>
