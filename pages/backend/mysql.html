@@ -1,0 +1,2151 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CodeNesia - Course Detail</title>
+  <link rel="stylesheet" type="text/css" href="../../assets/bootstrap/css/bootstrap.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="../../assets/css/frontend.css">
+</head>
+<body>
+  <!-- Mobile Navbar -->
+  <nav id="mobileNavbar" class="mobile-navbar" aria-label="Mobile navigation" style="display: none;">
+    <!-- Content akan diisi oleh JavaScript -->
+  </nav>
+
+  <!-- Sidebar -->
+  <aside id="siteSidebar" class="sidebar" aria-label="Sidebar">
+    <div class="logo">
+      <!-- Mengganti mark dengan foto profil kartun -->
+      <img src="../../assets/img/profile.jpg" alt="Foto Profil" class="profile-pic">
+      <div>
+        <div style="font-size:14px;font-weight:700">CodeNesia</div>
+      </div>
+    </div>
+
+    <nav id="mainNav" class="side-nav" aria-label="Main navigation">
+      <a class="nav-link" href="#section-front-end"><i class="bi bi-folder2-open"></i> Front-End</a>
+      <a class="nav-link" href="#section-back-end"><i class="bi bi-server"></i> Back-End</a>
+      <a class="nav-link" href="#section-language"><i class="bi bi-code-slash"></i> Programming Language</a>
+      <a class="nav-link" href="#ebook"><i class="bi bi-book"></i> Ebook</a>
+      <a class="nav-link" href="#support"><i class="bi bi-hand-thumbs-up"></i> Support Us</a>
+      <a class="nav-link" href="../home.html"><i class="bi bi-back"></i> Back</a>
+    </nav>
+
+    <div class="social-section">
+      <div>Social Media</div>
+
+      <!-- project-pill style social buttons (like top area) -->
+      <a class="project-pill" href="https://www.youtube.com" target="_blank" rel="noopener noreferrer">
+        <span class="icon"><i class="bi bi-youtube" style="color:#f59e0b"></i></span>
+        <span>Youtube</span>
+      </a>
+
+      <a class="project-pill" href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+        <span class="icon"><i class="bi bi-instagram" style="color:#3ec5ff"></i></span>
+        <span>Instagram</span>
+      </a>
+
+      <a class="project-pill" href="https://www.tiktok.com" target="_blank" rel="noopener noreferrer">
+        <span class="icon"><i class="bi bi-music-note-beamed"></i></span>
+        <span>Tiktok</span>
+      </a>
+
+      <a class="project-pill" href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+        <span class="icon"><i class="bi bi-facebook"></i></span>
+        <span>Facebook</span>
+      </a>
+    </div>
+  </aside>
+
+  <!-- Main -->
+  <main id="top" class="main" role="main">
+    <div class="topbar">
+      <div class="topbar-left">
+        <div class="breadcrumbs">
+          <i class="bi bi-grid-fill"></i>
+          <div id="currentDate" style="font-weight:700"></div>
+        </div>
+      </div>
+
+      <div class="topbar-right">
+        <!-- Theme Toggle Button -->
+        <button id="themeToggle" class="theme-toggle" aria-label="Toggle dark mode">
+          <i class="bi bi-sun" id="themeIcon"></i>
+        </button>
+      </div>
+    </div>
+
+    <div class="main-content">
+      <!-- Course Header -->
+      <div class="course-header">
+        <div class="course-cover">
+          <img src="../../assets/img/mysql.jpg" alt="Figma Course Cover">
+        </div>
+        <div class="course-info">
+          <h1 class="course-title">PHP</h1>
+          <p class="course-description">
+            Pelajari MySQL untuk mengelola dan menyimpan data secara efisien di dalam aplikasi web. Di course ini, kamu akan memahami cara membuat database, tabel, dan menjalankan query untuk mengolah data dengan cepat dan aman.
+          </p>
+          <div class="course-actions">
+            <a href="https://www.youtube.com/playlist?list=YOUR_PLAYLIST_ID" target="_blank" class="btn-enroll btn btn-primary">
+              Tonton Playlist
+            </a>
+          </div>
+        </div>
+      </div>
+      <br>
+      <!-- Course Content -->
+      <div class="course-content">
+        <div class="content-left">
+          <!-- Course Modules -->
+          <div class="content-section">
+            <h2 class="section-title"><i class="bi bi-list-check"></i> Daftar Materi</h2>
+            <div class="scrollable-section">
+              <ul class="module-list">
+                <li class="module-item" data-module="1">
+                  <div class="module-number">01</div>
+                  <div class="module-content">
+                    <div class="module-title">Pengenalan Dasar</div>
+                    <div class="module-duration">20 min</div>
+                  </div>
+                </li>
+                <li class="module-item" data-module="2">
+                  <div class="module-number">02</div>
+                  <div class="module-content">
+                    <div class="module-title">Instalasi & Persiapan Lingkungan</div>
+                    <div class="module-duration">20 min</div>
+                  </div>
+                </li>
+                <li class="module-item" data-module="3">
+                  <div class="module-number">03</div>
+                  <div class="module-content">
+                    <div class="module-title">Dasar-dasar SQL</div>
+                    <div class="module-duration">36 min</div>
+                  </div>
+                </li>
+                <li class="module-item" data-module="4">
+                  <div class="module-number">04</div>
+                  <div class="module-content">
+                    <div class="module-title">Pengelolaan Tabel & Relasi</div>
+                    <div class="module-duration">40 min</div>
+                  </div>
+                </li>
+                <li class="module-item" data-module="5">
+                  <div class="module-number">05</div>
+                  <div class="module-content">
+                    <div class="module-title">Fungsi dan Agregasi</div>
+                    <div class="module-duration">12 min</div>
+                  </div>
+                </li>
+                <li class="module-item" data-module="6">
+                  <div class="module-number">06</div>
+                  <div class="module-content">
+                    <div class="module-title">Constraint & Indexing</div>
+                    <div class="module-duration">40 min</div>
+                  </div>
+                </li>
+                <li class="module-item" data-module="7">
+                  <div class="module-number">07</div>
+                  <div class="module-content">
+                    <div class="module-title">View, Alias, dan Stored Routine</div>
+                    <div class="module-duration">8 min</div>
+                  </div>
+                </li>
+                <li class="module-item" data-module="8">
+                  <div class="module-number">08</div>
+                  <div class="module-content">
+                    <div class="module-title">User Management & Privilege</div>
+                    <div class="module-duration">25 min</div>
+                  </div>
+                </li>
+                <li class="module-item" data-module="9">
+                  <div class="module-number">09</div>
+                  <div class="module-content">
+                    <div class="module-title">Backup, Restore & Maintenance</div>
+                    <div class="module-duration">18 min</div>
+                  </div>
+                </li>
+                <li class="module-item" data-module="10">
+                  <div class="module-number">10</div>
+                  <div class="module-content">
+                    <div class="module-title">MySQL untuk Pengembangan Web</div>
+                    <div class="module-duration">45 min</div>
+                  </div>
+                </li>
+                <li class="module-item" data-module="11">
+                  <div class="module-number">11</div>
+                  <div class="module-content">
+                    <div class="module-title">Project Akhir: Aplikasi CRUD PHP + MySQL</div>
+                    <div class="module-duration">45 min</div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="content-right">
+          <!-- Course Stats - Now at the top -->
+          <div class="content-section">
+            <h2 class="section-title"><i class="bi bi-graph-up"></i> Detail Materi</h2>
+            <div style="display: flex; flex-direction: column; gap: 12px;">
+              <div style="display: flex; justify-content: space-between;">
+                <span style="color: var(--muted-text);">Durasi</span>
+                <span style="font-weight: 600;">2.5 Jam</span>
+              </div>
+              <div style="display: flex; justify-content: space-between;">
+                <span style="color: var(--muted-text);">Total Materi</span>
+                <span style="font-weight: 600;">12 Modul</span>
+              </div>
+              <div style="display: flex; justify-content: space-between;">
+                <span style="color: var(--muted-text);">Tipe</span>
+                <span style="font-weight: 600; color: var(--accent);">Back-End</span>
+              </div>
+            </div>
+          </div>
+          <br>
+          <!-- About Course - Now scrollable and at the bottom -->
+          <div class="content-section">
+            <h2 class="section-title"><i class="bi bi-info-circle"></i> Tentang Materi</h2>
+            <div class="scrollable-section" style="max-height: 195px;">
+              <p class="about-course">
+                Course MySQL ini dirancang untuk membantumu menguasai dasar manajemen database relasional. Kamu akan belajar konsep tabel, relasi antar data, join, hingga optimasi query untuk performa yang lebih baik.
+              </p>
+              <p class="about-course">
+                Cocok untuk developer, data analyst, atau siapa pun yang ingin memahami cara kerja database dan mengintegrasikannya dengan aplikasi web secara profesional.
+              </p>
+              <!-- ... konten lainnya ... -->
+            </div>
+          </div>
+        </div>
+
+        <!-- PERUBAHAN: What You'll Learn - NOW FULL WIDTH -->
+        <div class="content-section full-width-section">
+          <h2 class="section-title"><i class="bi bi-lightbulb"></i> Apa yang akan kamu pelajari?</h2><br>
+          <ul class="learn-list">
+            <li class="learn-item">Memahami dasar-dasar PHP dan cara kerjanya dalam pengembangan web</li>
+            <li class="learn-item">Menulis sintaks dan logika program dasar menggunakan PHP</li>
+            <li class="learn-item">Mengolah data dan form input dari pengguna</li>
+            <li class="learn-item">Menghubungkan PHP dengan database untuk menyimpan dan menampilkan data</li>
+            <li class="learn-item">Membuat sistem login sederhana menggunakan session dan cookie</li>
+            <li class="learn-item">Menerapkan konsep OOP (Object-Oriented Programming) di PHP</li>
+            <li class="learn-item">Menangani error dan melakukan debugging saat pengembangan</li>
+            <li class="learn-item">Mengintegrasikan PHP dengan HTML, CSS, dan JavaScript</li>
+            <li class="learn-item">Membangun proyek CRUD sederhana berbasis PHP dan MySQL</li>
+          </ul>
+        </div>
+        
+    </div>
+  </main>
+
+  <!-- Course Modal -->
+  <div id="courseModal" class="course-modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="modalModuleTitle">Module 1: Pengenalan Dasar</h3>
+        <button class="close-modal">&times;</button>
+      </div>
+      <div class="modal-body" id="modalBody">
+        <!-- Konten akan diisi oleh JavaScript berdasarkan modul yang dipilih -->
+      </div>
+      <div class="modal-footer">
+        <div class="slide-indicator">
+          Slide <span id="currentSlide">1</span> of <span id="totalSlides">3</span>
+        </div>
+        <div class="nav-buttons">
+          <button class="btn-nav btn-nav-outline" id="prevBtn">
+            <i class="bi bi-chevron-left"></i> Previous
+          </button>
+          <button class="btn-nav" id="nextBtn">
+            Next <i class="bi bi-chevron-right"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="helpFab" class="help-fab" title="Help"><i class="bi bi-question-lg"></i></div>
+
+  <!-- Bootstrap JS bundle -->
+  <script src="../../assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Elements
+    const sidebar = document.getElementById('siteSidebar');
+    const themeToggle = document.getElementById('themeToggle');
+    const themeIcon = document.getElementById('themeIcon');
+    const htmlElement = document.documentElement;
+    const mobileNavbar = document.getElementById('mobileNavbar');
+    const navLinks = document.querySelectorAll('#mainNav .nav-link');
+    const currentDateElement = document.getElementById('currentDate');
+    const courseModal = document.getElementById('courseModal');
+    const closeModal = document.querySelector('.close-modal');
+    const moduleItems = document.querySelectorAll('.module-item');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const currentSlideEl = document.getElementById('currentSlide');
+    const totalSlidesEl = document.getElementById('totalSlides');
+    const modalModuleTitle = document.getElementById('modalModuleTitle');
+    const modalBody = document.getElementById('modalBody');
+
+    // Modal state
+    let currentSlide = 0;
+    let totalSlides = 0;
+    let currentModule = 1;
+    let slides = [];
+
+    // Data konten untuk setiap modul
+    const moduleContent = {
+      1: {
+        title: "Pengenalan MySQL",
+        slides: [
+          {
+            title: "Apa itu MySQL?",
+            content: `
+              <p><strong>MySQL</strong> adalah sistem manajemen basis data relasional (<em>Relational Database Management System</em> / RDBMS) yang menggunakan bahasa <strong>SQL (Structured Query Language)</strong> untuk mengelola dan memanipulasi data.</p>
+
+              <p>MySQL bersifat <strong>open-source</strong>, artinya siapa pun dapat menggunakannya secara gratis, memodifikasi, dan mendistribusikannya.</p>
+
+              <p>MySQL sangat populer karena kecepatan, stabilitas, dan kemudahan penggunaannya — terutama untuk pengembangan web menggunakan bahasa seperti <strong>PHP</strong> atau framework seperti <strong>Laravel</strong>.</p>
+
+              <p>Database ini digunakan oleh banyak situs besar seperti <strong>WordPress, Facebook, YouTube</strong>, dan <strong>Twitter</strong>.</p>
+            `
+          },
+          {
+            title: "Sejarah Singkat MySQL",
+            content: `
+              <ul>
+                <li><strong>1994</strong> – MySQL dikembangkan oleh <em>Michael Widenius (Monty)</em>, <em>David Axmark</em>, dan <em>Allan Larsson</em> di perusahaan <strong>MySQL AB</strong> asal Swedia.</li>
+                <li><strong>1995</strong> – MySQL resmi dirilis sebagai proyek open-source pertama.</li>
+                <li><strong>2008</strong> – MySQL diakuisisi oleh <strong>Sun Microsystems</strong>.</li>
+                <li><strong>2010</strong> – Setelah Sun diakuisisi oleh <strong>Oracle Corporation</strong>, MySQL menjadi bagian dari produk Oracle.</li>
+                <li><strong>Sekarang</strong> – MySQL masih aktif dikembangkan dan banyak digunakan di seluruh dunia. Versi modern seperti MySQL 8.0 membawa fitur-fitur baru seperti JSON support dan keamanan yang lebih baik.</li>
+              </ul>
+
+              <p>Selain versi resmi dari Oracle, juga ada versi turunan seperti <strong>MariaDB</strong> yang dikembangkan langsung oleh pencipta aslinya.</p>
+            `
+          },
+          {
+            title: "Fungsi & Kegunaan MySQL",
+            content: `
+              <p>Fungsi utama MySQL adalah <strong>menyimpan, mengelola, dan memproses data</strong> dalam format tabel yang saling terhubung.</p>
+
+              <p>MySQL digunakan dalam berbagai kebutuhan:</p>
+              <ul>
+                <li><strong>Aplikasi Web</strong> – seperti sistem login, e-commerce, blog, dan portal berita.</li>
+                <li><strong>Aplikasi Desktop & Mobile</strong> – sebagai backend database.</li>
+                <li><strong>Data Warehousing</strong> – untuk analisis dan pelaporan data.</li>
+              </ul>
+
+              <p>Dengan MySQL, developer bisa membuat sistem CRUD (Create, Read, Update, Delete) dengan mudah untuk berbagai aplikasi berbasis data.</p>
+            `
+          },
+          {
+            title: "Hubungan MySQL dengan RDBMS",
+            content: `
+              <p><strong>RDBMS</strong> (Relational Database Management System) adalah sistem yang menyimpan data dalam bentuk tabel yang saling berelasi.</p>
+
+              <p>MySQL adalah salah satu implementasi dari RDBMS. Artinya, ia memiliki fitur-fitur khas seperti:</p>
+              <ul>
+                <li>Menyimpan data dalam bentuk tabel (rows & columns).</li>
+                <li>Setiap tabel memiliki <strong>primary key</strong> unik.</li>
+                <li>Tabel dapat dihubungkan satu sama lain menggunakan <strong>foreign key</strong>.</li>
+                <li>Data bisa dimanipulasi menggunakan bahasa <strong>SQL</strong>.</li>
+              </ul>
+
+              <p>Dengan pendekatan relasional, MySQL sangat cocok untuk aplikasi yang membutuhkan <strong>konsistensi dan integritas data</strong>.</p>
+            `
+          },
+          {
+            title: "Kelebihan dan Kekurangan MySQL",
+            content: `
+              <h4>Kelebihan:</h4>
+              <ul>
+                <li>🟢 Gratis & Open-source – bebas digunakan untuk proyek pribadi maupun komersial.</li>
+                <li>⚡ Cepat & efisien untuk query standar.</li>
+                <li>🧱 Stabil & andal untuk aplikasi skala kecil hingga besar.</li>
+                <li>🧩 Kompatibel dengan banyak bahasa (PHP, Python, Java, Node.js).</li>
+                <li>🔐 Dukungan keamanan tinggi (user privilege, enkripsi, SSL).</li>
+              </ul>
+
+              <h4>Kekurangan:</h4>
+              <ul>
+                <li>🔴 Kurang optimal untuk <em>analisis data kompleks</em> (dibanding PostgreSQL).</li>
+                <li>🔴 Fitur prosedural (stored procedure, trigger) lebih terbatas.</li>
+                <li>🔴 Skala besar dengan banyak transaksi bisa butuh tuning manual.</li>
+              </ul>
+
+              <p>Meski begitu, untuk kebanyakan aplikasi web, MySQL sudah lebih dari cukup dan sangat populer di dunia pengembangan.</p>
+            `
+          },
+          {
+            title: "Perbandingan MySQL dengan Database Lain",
+            content: `
+              <table border="1" cellpadding="6" cellspacing="0">
+                <tr>
+                  <th>Database</th>
+                  <th>Kelebihan</th>
+                  <th>Kekurangan</th>
+                </tr>
+                <tr>
+                  <td><strong>MySQL</strong></td>
+                  <td>Ringan, cepat, mudah digunakan, open-source.</td>
+                  <td>Kurang fitur advanced dibanding PostgreSQL.</td>
+                </tr>
+                <tr>
+                  <td><strong>PostgreSQL</strong></td>
+                  <td>Lebih kuat untuk query kompleks, dukungan JSON bagus, sangat stabil.</td>
+                  <td>Lebih berat dan konfigurasi lebih rumit.</td>
+                </tr>
+                <tr>
+                  <td><strong>SQLite</strong></td>
+                  <td>Sangat ringan, tidak perlu server, cocok untuk aplikasi lokal/mobile.</td>
+                  <td>Tidak cocok untuk aplikasi web besar dengan banyak user.</td>
+                </tr>
+                <tr>
+                  <td><strong>MariaDB</strong></td>
+                  <td>Fork dari MySQL, performa lebih cepat, open-source murni.</td>
+                  <td>Beberapa fitur tidak sepenuhnya kompatibel dengan MySQL versi Oracle.</td>
+                </tr>
+              </table>
+
+              <p>Secara umum, <strong>MySQL</strong> adalah pilihan ideal untuk belajar dasar-dasar database dan membangun aplikasi web modern.</p>
+            `
+          },
+          {
+            title: "Video: Pengenalan MySQL dan Fungsinya",
+            video: "https://www.youtube.com/embed/9ylj9NR0Lcg",
+            content: `
+              <p>Tonton video ini untuk memahami sejarah MySQL, fungsinya dalam aplikasi web, dan perbandingannya dengan database lain.</p>
+              <p>Setelah menonton, kamu akan lebih paham kenapa MySQL menjadi database paling populer di dunia pengembangan web 🌍.</p>
+            `
+          }
+        ]
+      },
+
+      2: {
+        title: "Instalasi & Persiapan Lingkungan MySQL",
+        slides: [
+          {
+            title: "Requirement Sistem",
+            content: `
+              <p>Sebelum mulai belajar MySQL, kamu perlu memastikan perangkatmu memenuhi syarat minimum agar MySQL dapat berjalan dengan lancar.</p>
+
+              <h4>🔧 Spesifikasi Minimum:</h4>
+              <ul>
+                <li><strong>Sistem Operasi:</strong> Windows 10+, macOS, atau Linux.</li>
+                <li><strong>RAM:</strong> Minimal 2GB (disarankan 4GB+).</li>
+                <li><strong>Penyimpanan:</strong> Sekitar 1GB ruang kosong untuk instalasi.</li>
+                <li><strong>Software Pendukung:</strong> 
+                  <ul>
+                    <li><strong>XAMPP / Laragon:</strong> untuk instalasi cepat (MySQL + PHP + Apache).</li>
+                    <li><strong>Atau</strong> MySQL Standalone (instal manual hanya database-nya).</li>
+                  </ul>
+                </li>
+              </ul>
+
+              <p>Jika kamu ingin belajar MySQL bersama PHP atau Laravel, gunakan <strong>XAMPP</strong> atau <strong>Laragon</strong> agar setup-nya lebih mudah.</p>
+            `
+          },
+          {
+            title: "Opsi Instalasi MySQL",
+            content: `
+              <p>Ada tiga cara populer untuk menginstal MySQL di komputer:</p>
+
+              <ol>
+                <li><strong>1️⃣ Menggunakan XAMPP</strong> – paket lengkap berisi Apache, PHP, dan MySQL.
+                  <ul>
+                    <li>Download di: <a href="https://www.apachefriends.org" target="_blank">apachefriends.org</a></li>
+                    <li>Instal seperti aplikasi biasa.</li>
+                    <li>Buka <strong>XAMPP Control Panel</strong> dan jalankan service <strong>Apache</strong> dan <strong>MySQL</strong>.</li>
+                  </ul>
+                </li>
+                <li><strong>2️⃣ Menggunakan Laragon</strong> – ringan dan cepat untuk development web.
+                  <ul>
+                    <li>Download di: <a href="https://laragon.org" target="_blank">laragon.org</a></li>
+                    <li>Setelah instal, klik <strong>Start All</strong> untuk menjalankan MySQL & Apache otomatis.</li>
+                  </ul>
+                </li>
+                <li><strong>3️⃣ MySQL Standalone</strong> – hanya MySQL Server tanpa web server.
+                  <ul>
+                    <li>Download di: <a href="https://dev.mysql.com/downloads/mysql/" target="_blank">dev.mysql.com</a></li>
+                    <li>Ikuti wizard instalasi dan pastikan mencatat <strong>username</strong> dan <strong>password root</strong>.</li>
+                  </ul>
+                </li>
+              </ol>
+
+              <p>Pilih cara yang paling sesuai dengan kebutuhanmu. Untuk pemula, <strong>XAMPP</strong> atau <strong>Laragon</strong> direkomendasikan karena lebih mudah dan cepat digunakan.</p>
+            `
+          },
+          {
+            title: "Mengenal MySQL Command Line",
+            content: `
+              <p>MySQL bisa digunakan lewat <strong>Command Line Interface (CLI)</strong> untuk mengetikkan perintah langsung.</p>
+
+              <p>Jika kamu menggunakan XAMPP:</p>
+              <ol>
+                <li>Buka <strong>XAMPP Control Panel</strong>.</li>
+                <li>Klik tombol <strong>Shell</strong>.</li>
+                <li>Ketik perintah berikut untuk masuk ke MySQL:</li>
+              </ol>
+
+              <pre><code>mysql -u root -p</code></pre>
+
+              <p>Lalu tekan Enter. Jika kamu belum membuat password, cukup tekan Enter lagi untuk masuk.</p>
+
+              <p>Contoh perintah dasar di Command Line:</p>
+              <pre><code>
+      SHOW DATABASES;
+      CREATE DATABASE belajar_mysql;
+      USE belajar_mysql;
+      SHOW TABLES;
+      EXIT;
+              </code></pre>
+
+              <p>CLI ini penting untuk memahami perintah SQL secara langsung tanpa bantuan antarmuka grafis.</p>
+            `
+          },
+          {
+            title: "Mengenal GUI: phpMyAdmin & MySQL Workbench",
+            content: `
+              <p>Selain CLI, MySQL juga bisa dikelola lewat antarmuka grafis (GUI) agar lebih mudah.</p>
+
+              <h4>🖥️ 1. phpMyAdmin</h4>
+              <ul>
+                <li>Otomatis terinstal jika kamu menggunakan XAMPP atau Laragon.</li>
+                <li>Akses lewat browser: <code>http://localhost/phpmyadmin</code></li>
+                <li>Bisa membuat database, tabel, dan menjalankan query tanpa menulis kode manual.</li>
+              </ul>
+
+              <h4>🧩 2. MySQL Workbench</h4>
+              <ul>
+                <li>Software resmi dari Oracle untuk mengelola MySQL secara visual.</li>
+                <li>Download di: <a href="https://dev.mysql.com/downloads/workbench/" target="_blank">dev.mysql.com/workbench</a></li>
+                <li>Cocok untuk membuat <strong>diagram ERD</strong>, desain database, dan query kompleks.</li>
+              </ul>
+
+              <p>Keduanya sama-sama bisa digunakan. Namun, <strong>phpMyAdmin</strong> lebih ringan dan cocok untuk pemula.</p>
+            `
+          },
+          {
+            title: "Membuat dan Mengelola Database Pertama",
+            content: `
+              <p>Setelah MySQL berjalan, mari buat database pertama kamu 🎉</p>
+
+              <h4>📜 Cara 1: Lewat Command Line</h4>
+              <pre><code>
+      CREATE DATABASE toko_online;
+      SHOW DATABASES;
+      USE toko_online;
+      CREATE TABLE produk (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        nama_produk VARCHAR(100),
+        harga INT,
+        stok INT
+      );
+      SHOW TABLES;
+              </code></pre>
+
+              <p>Database <strong>toko_online</strong> berhasil dibuat, dan di dalamnya ada tabel <strong>produk</strong>.</p>
+
+              <h4>📊 Cara 2: Lewat phpMyAdmin</h4>
+              <ol>
+                <li>Buka <code>http://localhost/phpmyadmin</code>.</li>
+                <li>Klik tab <strong>Database</strong>.</li>
+                <li>Ketik nama database: <code>toko_online</code> → klik <strong>Create</strong>.</li>
+                <li>Tambahkan tabel baru dan isi kolom sesuai kebutuhan.</li>
+              </ol>
+
+              <p>Selamat! Kamu baru saja membuat database pertama di MySQL. Dari sini kamu bisa mulai mempraktikkan perintah SQL dasar seperti <code>INSERT</code>, <code>SELECT</code>, dan <code>UPDATE</code>.</p>
+            `
+          },
+          {
+            title: "Video: Instalasi dan Setup MySQL",
+            video: "https://www.youtube.com/embed/5OdVJbNCSso",
+            content: `
+              <p>Tonton video ini untuk melihat langkah-langkah instalasi MySQL menggunakan XAMPP dan cara membuat database pertama di phpMyAdmin.</p>
+              <p>Setelah menonton, coba praktikkan langsung di komputer kamu agar lebih cepat memahami konsepnya 💪.</p>
+            `
+          }
+        ]
+      },
+
+      3: {
+        title: "Dasar-dasar SQL (Structured Query Language)",
+        slides: [
+          {
+            title: "Apa itu SQL?",
+            content: `
+              <p><strong>SQL (Structured Query Language)</strong> adalah bahasa standar yang digunakan untuk berinteraksi dengan database relasional seperti <strong>MySQL</strong>.</p>
+
+              <p>Dengan SQL, kamu bisa:</p>
+              <ul>
+                <li>Membuat dan menghapus database serta tabel.</li>
+                <li>Menambah, mengubah, dan menghapus data.</li>
+                <li>Mengambil data dengan kriteria tertentu.</li>
+              </ul>
+
+              <p>Bahasa SQL bersifat <strong>deklaratif</strong> — artinya kamu cukup menyebutkan <em>apa yang ingin dilakukan</em>, bukan <em>bagaimana melakukannya</em>.</p>
+
+              <p>SQL terbagi menjadi beberapa kategori utama, yaitu:</p>
+              <ul>
+                <li><strong>DDL</strong> – Data Definition Language</li>
+                <li><strong>DML</strong> – Data Manipulation Language</li>
+                <li><strong>DQL</strong> – Data Query Language</li>
+              </ul>
+            `
+          },
+          {
+            title: "A. DDL (Data Definition Language)",
+            content: `
+              <p><strong>DDL</strong> digunakan untuk mendefinisikan struktur database, seperti membuat atau menghapus tabel.</p>
+
+              <h4>🧱 Perintah DDL Umum:</h4>
+
+              <pre><code>
+      -- Membuat database baru
+      CREATE DATABASE toko_online;
+
+      -- Menggunakan database
+      USE toko_online;
+
+      -- Menghapus database
+      DROP DATABASE toko_online;
+
+      -- Membuat tabel
+      CREATE TABLE produk (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        nama_produk VARCHAR(100) NOT NULL,
+        harga INT DEFAULT 0,
+        stok INT,
+        kategori_id INT
+      );
+
+      -- Mengubah struktur tabel
+      ALTER TABLE produk ADD COLUMN deskripsi TEXT;
+
+      -- Menghapus tabel
+      DROP TABLE produk;
+              </code></pre>
+
+              <p>DDL tidak berurusan dengan isi data, melainkan dengan <strong>struktur database</strong> itu sendiri.</p>
+            `
+          },
+          {
+            title: "Tipe Data di MySQL",
+            content: `
+              <p>Setiap kolom dalam tabel memiliki <strong>tipe data</strong> tertentu yang menentukan jenis nilai yang bisa disimpan.</p>
+
+              <table border="1" cellpadding="6" cellspacing="0">
+                <tr>
+                  <th>Kategori</th>
+                  <th>Tipe Data</th>
+                  <th>Keterangan</th>
+                </tr>
+                <tr>
+                  <td><strong>Angka</strong></td>
+                  <td>INT, BIGINT, FLOAT, DOUBLE, DECIMAL</td>
+                  <td>Untuk nilai numerik dan pecahan.</td>
+                </tr>
+                <tr>
+                  <td><strong>Teks</strong></td>
+                  <td>CHAR, VARCHAR, TEXT, LONGTEXT</td>
+                  <td>Untuk string pendek dan panjang.</td>
+                </tr>
+                <tr>
+                  <td><strong>Tanggal/Waktu</strong></td>
+                  <td>DATE, DATETIME, TIMESTAMP, TIME, YEAR</td>
+                  <td>Menyimpan informasi waktu.</td>
+                </tr>
+                <tr>
+                  <td><strong>Boolean</strong></td>
+                  <td>BOOLEAN / TINYINT(1)</td>
+                  <td>Nilai benar/salah (1 atau 0).</td>
+                </tr>
+              </table>
+
+              <p>Pemilihan tipe data yang tepat membantu menjaga efisiensi dan kecepatan database.</p>
+            `
+          },
+          {
+            title: "Primary Key, Auto Increment, Foreign Key, dan Constraint",
+            content: `
+              <p>Dalam MySQL, ada beberapa aturan penting (constraint) untuk menjaga integritas data.</p>
+
+              <ul>
+                <li><strong>PRIMARY KEY</strong> – kolom unik untuk mengidentifikasi setiap baris.</li>
+                <li><strong>AUTO_INCREMENT</strong> – menambah nilai otomatis setiap kali data baru ditambahkan.</li>
+                <li><strong>FOREIGN KEY</strong> – menghubungkan tabel satu dengan tabel lain.</li>
+                <li><strong>DEFAULT</strong> – memberi nilai otomatis jika kolom tidak diisi.</li>
+                <li><strong>NOT NULL</strong> – memastikan kolom tidak boleh kosong.</li>
+              </ul>
+
+              <pre><code>
+      CREATE TABLE kategori (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        nama_kategori VARCHAR(100) NOT NULL
+      );
+
+      CREATE TABLE produk (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        nama_produk VARCHAR(100) NOT NULL,
+        harga INT DEFAULT 0,
+        kategori_id INT,
+        FOREIGN KEY (kategori_id) REFERENCES kategori(id)
+      );
+              </code></pre>
+
+              <p>Dengan constraint ini, data akan lebih teratur dan hubungan antar tabel bisa dijaga.</p>
+            `
+          },
+          {
+            title: "B. DML (Data Manipulation Language)",
+            content: `
+              <p><strong>DML</strong> digunakan untuk memanipulasi isi data dalam tabel — menambah, mengubah, atau menghapus baris data.</p>
+
+              <h4>🟢 INSERT INTO – Menambah Data</h4>
+              <pre><code>
+      INSERT INTO produk (nama_produk, harga, stok)
+      VALUES ('Kopi Hitam', 15000, 100);
+              </code></pre>
+
+              <h4>🔵 SELECT – Mengambil Data</h4>
+              <pre><code>
+      SELECT * FROM produk;
+      SELECT nama_produk, harga FROM produk;
+              </code></pre>
+
+              <h4>🟡 UPDATE – Mengubah Data</h4>
+              <pre><code>
+      UPDATE produk
+      SET harga = 17000, stok = 120
+      WHERE id = 1;
+              </code></pre>
+
+              <h4>🔴 DELETE – Menghapus Data</h4>
+              <pre><code>
+      DELETE FROM produk WHERE id = 1;
+              </code></pre>
+
+              <p>Perintah DML sering digunakan dalam operasi CRUD (Create, Read, Update, Delete) di aplikasi web.</p>
+            `
+          },
+          {
+            title: "C. DQL (Data Query Language)",
+            content: `
+              <p><strong>DQL</strong> digunakan untuk <strong>mengambil data</strong> dari tabel dengan berbagai kondisi dan filter.</p>
+
+              <h4>🧾 SELECT dengan Kondisi</h4>
+              <pre><code>
+      SELECT * FROM produk WHERE harga > 10000;
+      SELECT nama_produk, harga FROM produk ORDER BY harga DESC;
+      SELECT * FROM produk LIMIT 5;
+      SELECT DISTINCT kategori_id FROM produk;
+              </code></pre>
+
+              <h4>🔍 Operator Logika</h4>
+              <pre><code>
+      SELECT * FROM produk WHERE harga BETWEEN 10000 AND 20000;
+      SELECT * FROM produk WHERE nama_produk LIKE '%kopi%';
+      SELECT * FROM produk WHERE kategori_id IN (1, 2, 3);
+      SELECT * FROM produk WHERE NOT stok = 0;
+              </code></pre>
+
+              <h4>💡 Pemeriksaan Nilai Kosong</h4>
+              <pre><code>
+      SELECT * FROM produk WHERE deskripsi IS NULL;
+      SELECT * FROM produk WHERE deskripsi IS NOT NULL;
+              </code></pre>
+
+              <p>Dengan DQL, kamu bisa menampilkan data sesuai kebutuhan, misalnya menampilkan 10 produk terlaris, mencari produk tertentu, atau memfilter data berdasarkan kondisi tertentu.</p>
+            `
+          },
+          {
+            title: "Video: Dasar-dasar SQL di MySQL",
+            video: "https://www.youtube.com/embed/7S_tz1z_5bA",
+            content: `
+              <p>Tonton video ini untuk memahami dasar-dasar SQL di MySQL — termasuk cara membuat tabel, menambahkan data, dan menjalankan query SELECT.</p>
+              <p>Setelah menonton, coba praktikkan perintah-perintah SQL dasar tersebut di phpMyAdmin atau MySQL CLI agar kamu semakin terbiasa 💪.</p>
+            `
+          }
+        ]
+      },
+
+      4: {
+        title: "Pengelolaan Tabel & Relasi",
+        slides: [
+          {
+            title: "Konsep Relasi Antar Tabel",
+            content: `
+              <p>Dalam <strong>database relasional</strong>, data disimpan di beberapa tabel yang saling terhubung melalui relasi. 
+              Relasi ini menjaga agar data tetap efisien, tidak duplikatif, dan mudah dikelola.</p>
+
+              <h4>🔗 Jenis-jenis Relasi:</h4>
+              <ul>
+                <li><strong>One to One (1:1)</strong> – satu baris di tabel A berhubungan dengan satu baris di tabel B.</li>
+                <li><strong>One to Many (1:N)</strong> – satu baris di tabel A bisa berhubungan dengan banyak baris di tabel B.</li>
+                <li><strong>Many to Many (M:N)</strong> – banyak baris di tabel A bisa berhubungan dengan banyak baris di tabel B melalui tabel penghubung.</li>
+              </ul>
+
+              <pre><code>
+      -- Contoh One to Many:
+      -- Satu kategori bisa memiliki banyak produk
+      CREATE TABLE kategori (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        nama_kategori VARCHAR(100) NOT NULL
+      );
+
+      CREATE TABLE produk (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        nama_produk VARCHAR(100) NOT NULL,
+        harga INT,
+        kategori_id INT,
+        FOREIGN KEY (kategori_id) REFERENCES kategori(id)
+      );
+              </code></pre>
+
+              <p>Dengan struktur seperti ini, database menjadi <strong>terstruktur, efisien, dan mudah dipelihara</strong>.</p>
+            `
+          },
+          {
+            title: "One to One Relationship",
+            content: `
+              <p>Relasi <strong>One to One</strong> berarti satu entitas hanya memiliki satu pasangan di tabel lain.</p>
+
+              <pre><code>
+      -- Contoh: Setiap user memiliki satu profile
+      CREATE TABLE users (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        username VARCHAR(100) NOT NULL
+      );
+
+      CREATE TABLE profiles (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        user_id INT UNIQUE,
+        bio TEXT,
+        FOREIGN KEY (user_id) REFERENCES users(id)
+      );
+              </code></pre>
+
+              <p>Relasi ini sering digunakan untuk data tambahan yang jarang digunakan (misalnya detail profil user) agar tidak membebani tabel utama.</p>
+            `
+          },
+          {
+            title: "One to Many Relationship",
+            content: `
+              <p>Relasi <strong>One to Many</strong> berarti satu entitas di tabel A bisa memiliki banyak data terkait di tabel B.</p>
+
+              <pre><code>
+      -- Contoh: Satu kategori memiliki banyak produk
+      CREATE TABLE kategori (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        nama_kategori VARCHAR(100)
+      );
+
+      CREATE TABLE produk (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        nama_produk VARCHAR(100),
+        kategori_id INT,
+        FOREIGN KEY (kategori_id) REFERENCES kategori(id)
+      );
+              </code></pre>
+
+              <p>Ini adalah relasi yang paling umum di MySQL, misalnya antara <em>user → post</em> atau <em>kategori → produk</em>.</p>
+            `
+          },
+          {
+            title: "Many to Many Relationship",
+            content: `
+              <p>Relasi <strong>Many to Many</strong> digunakan jika banyak data di tabel A bisa terhubung ke banyak data di tabel B.</p>
+
+              <p>Untuk membangun relasi ini, kita butuh <strong>tabel penghubung (junction table)</strong>.</p>
+
+              <pre><code>
+      -- Contoh: Produk bisa ada di banyak pesanan
+      -- dan satu pesanan bisa berisi banyak produk
+
+      CREATE TABLE produk (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        nama_produk VARCHAR(100)
+      );
+
+      CREATE TABLE pesanan (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        tanggal DATE
+      );
+
+      CREATE TABLE detail_pesanan (
+        produk_id INT,
+        pesanan_id INT,
+        jumlah INT,
+        PRIMARY KEY (produk_id, pesanan_id),
+        FOREIGN KEY (produk_id) REFERENCES produk(id),
+        FOREIGN KEY (pesanan_id) REFERENCES pesanan(id)
+      );
+              </code></pre>
+
+              <p>Dengan cara ini, relasi <strong>M:N</strong> bisa diwakili oleh dua relasi <strong>1:N</strong> melalui tabel penghubung.</p>
+            `
+          },
+          {
+            title: "Membuat Foreign Key",
+            content: `
+              <p><strong>Foreign Key</strong> adalah kolom yang digunakan untuk menghubungkan dua tabel.</p>
+
+              <p>Dengan foreign key, MySQL bisa menjaga <strong>integritas referensial</strong> — artinya data di tabel anak harus sesuai dengan data di tabel induk.</p>
+
+              <pre><code>
+      CREATE TABLE pelanggan (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        nama VARCHAR(100)
+      );
+
+      CREATE TABLE pesanan (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        tanggal DATE,
+        pelanggan_id INT,
+        FOREIGN KEY (pelanggan_id) REFERENCES pelanggan(id)
+      );
+              </code></pre>
+
+              <p>Jika pelanggan dihapus, kamu bisa atur aksi otomatis seperti:</p>
+
+              <ul>
+                <li><strong>ON DELETE CASCADE</strong> – hapus juga pesanan milik pelanggan itu.</li>
+                <li><strong>ON UPDATE CASCADE</strong> – update nilai foreign key jika id induk berubah.</li>
+              </ul>
+
+              <pre><code>
+      FOREIGN KEY (pelanggan_id) REFERENCES pelanggan(id)
+      ON DELETE CASCADE
+      ON UPDATE CASCADE;
+              </code></pre>
+            `
+          },
+          {
+            title: "JOIN di MySQL",
+            content: `
+              <p><strong>JOIN</strong> digunakan untuk mengambil data dari beberapa tabel yang saling berhubungan.</p>
+
+              <h4>🟢 INNER JOIN</h4>
+              <p>Menampilkan data yang cocok di kedua tabel.</p>
+              <pre><code>
+      SELECT produk.nama_produk, kategori.nama_kategori
+      FROM produk
+      INNER JOIN kategori ON produk.kategori_id = kategori.id;
+              </code></pre>
+
+              <h4>🟣 LEFT JOIN</h4>
+              <p>Menampilkan semua data dari tabel kiri, meskipun tidak ada pasangan di tabel kanan.</p>
+              <pre><code>
+      SELECT produk.nama_produk, kategori.nama_kategori
+      FROM produk
+      LEFT JOIN kategori ON produk.kategori_id = kategori.id;
+              </code></pre>
+
+              <h4>🔵 RIGHT JOIN</h4>
+              <p>Kebalikan dari LEFT JOIN — semua data tabel kanan ditampilkan meski tidak ada pasangan di kiri.</p>
+              <pre><code>
+      SELECT produk.nama_produk, kategori.nama_kategori
+      FROM produk
+      RIGHT JOIN kategori ON produk.kategori_id = kategori.id;
+              </code></pre>
+
+              <h4>🟡 CROSS JOIN</h4>
+              <p>Menghasilkan semua kombinasi baris dari kedua tabel (hati-hati, hasilnya bisa sangat banyak!).</p>
+              <pre><code>
+      SELECT * FROM produk CROSS JOIN kategori;
+              </code></pre>
+            `
+          },
+          {
+            title: "UNION dan Subquery",
+            content: `
+              <p>Selain JOIN, MySQL juga mendukung <strong>UNION</strong> dan <strong>Subquery</strong> untuk menggabungkan atau menyaring data dengan cara lain.</p>
+
+              <h4>🔹 UNION</h4>
+              <p>Menggabungkan hasil dari dua atau lebih query dengan jumlah kolom yang sama.</p>
+              <pre><code>
+      SELECT nama FROM pelanggan
+      UNION
+      SELECT nama_supplier FROM supplier;
+              </code></pre>
+
+              <h4>🔹 Subquery</h4>
+              <p>Query di dalam query — biasanya digunakan dalam klausa WHERE.</p>
+              <pre><code>
+      SELECT nama_produk
+      FROM produk
+      WHERE harga > (
+        SELECT AVG(harga) FROM produk
+      );
+              </code></pre>
+
+              <p>Subquery bisa juga dipakai untuk membuat filter dinamis atau validasi data sebelum menampilkan hasil.</p>
+            `
+          },
+          {
+            title: "Video: Relasi dan JOIN di MySQL",
+            video: "https://www.youtube.com/embed/OqjJjpjDRLc",
+            content: `
+              <p>Video ini menjelaskan dengan visual bagaimana relasi antar tabel bekerja, 
+              cara membuat foreign key, serta bagaimana menggunakan JOIN untuk menampilkan data antar tabel.</p>
+
+              <p>Tonton dan coba praktikkan query-nya di phpMyAdmin atau MySQL Workbench agar semakin paham 👨‍💻</p>
+            `
+          }
+        ]
+      },
+
+      5: {
+        title: "Fungsi dan Agregasi",
+        slides: [
+          {
+            title: "Apa Itu Fungsi dan Agregasi di MySQL?",
+            content: `
+              <p><strong>Fungsi</strong> di MySQL digunakan untuk mengolah, menghitung, atau memanipulasi data yang diambil dari tabel.</p>
+              <p>Sementara <strong>fungsi agregasi</strong> digunakan untuk menghitung nilai dari sekumpulan data — misalnya menghitung jumlah baris, rata-rata, atau total.</p>
+
+              <p>Dengan fungsi dan agregasi, kamu bisa menganalisis data dengan lebih efisien tanpa perlu memprosesnya secara manual.</p>
+            `
+          },
+          {
+            title: "Fungsi Agregasi: COUNT(), SUM(), AVG(), MAX(), MIN()",
+            content: `
+              <p>Fungsi agregasi menghitung nilai dari kumpulan data (bukan per baris). Berikut contoh fungsi yang sering digunakan:</p>
+
+              <ul>
+                <li><strong>COUNT()</strong> – menghitung jumlah baris</li>
+                <li><strong>SUM()</strong> – menjumlahkan nilai kolom numerik</li>
+                <li><strong>AVG()</strong> – menghitung rata-rata</li>
+                <li><strong>MAX()</strong> – mencari nilai tertinggi</li>
+                <li><strong>MIN()</strong> – mencari nilai terendah</li>
+              </ul>
+
+              <pre><code>
+      -- Contoh penggunaan fungsi agregasi
+      SELECT 
+        COUNT(*) AS total_produk,
+        SUM(harga) AS total_harga,
+        AVG(harga) AS rata_rata_harga,
+        MAX(harga) AS harga_tertinggi,
+        MIN(harga) AS harga_terendah
+      FROM produk;
+              </code></pre>
+
+              <p>Hasilnya akan menampilkan satu baris berisi ringkasan data dari seluruh tabel <code>produk</code>.</p>
+            `
+          },
+          {
+            title: "GROUP BY dan HAVING",
+            content: `
+              <p><strong>GROUP BY</strong> digunakan untuk mengelompokkan data berdasarkan kolom tertentu, lalu menjalankan fungsi agregasi di setiap kelompok.</p>
+
+              <pre><code>
+      -- Menghitung total produk per kategori
+      SELECT kategori_id, COUNT(*) AS jumlah_produk
+      FROM produk
+      GROUP BY kategori_id;
+              </code></pre>
+
+              <p>Kalau kamu ingin menyaring hasil setelah <code>GROUP BY</code>, gunakan <strong>HAVING</strong> (bukan WHERE).</p>
+
+              <pre><code>
+      -- Menampilkan kategori dengan lebih dari 5 produk
+      SELECT kategori_id, COUNT(*) AS jumlah_produk
+      FROM produk
+      GROUP BY kategori_id
+      HAVING COUNT(*) > 5;
+              </code></pre>
+
+              <p><strong>Catatan:</strong> <code>WHERE</code> digunakan sebelum data dikelompokkan, sedangkan <code>HAVING</code> digunakan setelah agregasi dilakukan.</p>
+            `
+          },
+          {
+            title: "Fungsi String di MySQL",
+            content: `
+              <p>Fungsi string digunakan untuk memanipulasi atau membaca data teks.</p>
+
+              <ul>
+                <li><strong>CONCAT(str1, str2, ...)</strong> – menggabungkan beberapa string</li>
+                <li><strong>LENGTH(str)</strong> – menghitung panjang string (dalam byte)</li>
+                <li><strong>UPPER(str)</strong> – mengubah huruf jadi kapital</li>
+                <li><strong>LOWER(str)</strong> – mengubah huruf jadi kecil</li>
+                <li><strong>SUBSTRING(str, start, length)</strong> – mengambil sebagian teks</li>
+              </ul>
+
+              <pre><code>
+      SELECT 
+        CONCAT(nama_depan, ' ', nama_belakang) AS nama_lengkap,
+        LENGTH(nama_depan) AS panjang_nama,
+        UPPER(nama_belakang) AS nama_kapital,
+        SUBSTRING(nama_depan, 1, 3) AS potongan_nama
+      FROM pelanggan;
+              </code></pre>
+
+              <p>Fungsi-fungsi ini sering dipakai saat menampilkan data di aplikasi atau laporan.</p>
+            `
+          },
+          {
+            title: "Fungsi Tanggal dan Waktu di MySQL",
+            content: `
+              <p>MySQL menyediakan banyak fungsi untuk menangani data waktu, seperti tanggal pembuatan, umur data, atau selisih hari.</p>
+
+              <ul>
+                <li><strong>NOW()</strong> – menampilkan tanggal dan waktu saat ini</li>
+                <li><strong>DATE()</strong> – mengambil bagian tanggal dari datetime</li>
+                <li><strong>DATEDIFF(date1, date2)</strong> – menghitung selisih hari antara dua tanggal</li>
+                <li><strong>YEAR(date)</strong> – mengambil tahun dari tanggal</li>
+                <li><strong>MONTH(date)</strong> – mengambil bulan dari tanggal</li>
+              </ul>
+
+              <pre><code>
+      SELECT 
+        NOW() AS waktu_sekarang,
+        DATE('2025-10-24 12:30:00') AS tanggal_saja,
+        DATEDIFF('2025-12-31', '2025-10-24') AS selisih_hari,
+        YEAR(NOW()) AS tahun_ini,
+        MONTH(NOW()) AS bulan_ini;
+              </code></pre>
+
+              <p>Fungsi tanggal ini sangat berguna untuk laporan data transaksi, log aktivitas, atau statistik waktu lainnya.</p>
+            `
+          },
+          {
+            title: "Kombinasi Fungsi Agregasi dan GROUP BY",
+            content: `
+              <p>Kamu bisa menggabungkan beberapa fungsi agregasi sekaligus dengan <code>GROUP BY</code> untuk membuat laporan data.</p>
+
+              <pre><code>
+      -- Menampilkan total penjualan per bulan
+      SELECT 
+        MONTH(tanggal_pesanan) AS bulan,
+        SUM(total_harga) AS total_penjualan,
+        COUNT(id) AS jumlah_pesanan
+      FROM pesanan
+      GROUP BY MONTH(tanggal_pesanan)
+      ORDER BY bulan;
+              </code></pre>
+
+              <p>Contoh ini sering digunakan untuk membuat <strong>dashboard laporan penjualan</strong> atau grafik di aplikasi.</p>
+            `
+          },
+          {
+            title: "Video: Fungsi dan Agregasi Data di MySQL",
+            video: "https://www.youtube.com/embed/XiT10MCSkzE",
+            content: `
+              <p>Tonton video ini untuk memahami cara menggunakan fungsi-fungsi penting seperti <strong>COUNT()</strong>, <strong>SUM()</strong>, dan <strong>GROUP BY</strong> secara visual.</p>
+
+              <p>Setelah menonton, coba praktikkan query-nya pada database contohmu agar lebih mudah memahami hasilnya.</p>
+            `
+          }
+        ]
+      },
+
+      6: {
+        title: "Constraint & Indexing",
+        slides: [
+          {
+            title: "Apa Itu Constraint dan Indexing?",
+            content: `
+              <p><strong>Constraint</strong> adalah aturan atau batasan yang diterapkan pada kolom tabel untuk menjaga keakuratan dan konsistensi data.</p>
+
+              <p>Sementara <strong>Indexing</strong> adalah teknik untuk mempercepat pencarian data di tabel, mirip seperti daftar isi pada buku.</p>
+
+              <p>Keduanya sangat penting dalam membangun database yang <strong>stabil, efisien, dan cepat diakses</strong>.</p>
+            `
+          },
+          {
+            title: "Jenis-jenis Constraint di MySQL",
+            content: `
+              <p>MySQL menyediakan beberapa jenis constraint yang dapat digunakan saat membuat atau mengubah tabel.</p>
+
+              <ul>
+                <li><strong>PRIMARY KEY</strong> – menandai kolom unik yang menjadi identitas utama setiap baris.</li>
+                <li><strong>UNIQUE</strong> – memastikan nilai kolom tidak boleh sama dengan baris lain.</li>
+                <li><strong>FOREIGN KEY</strong> – membuat relasi antar tabel dan menjaga integritas referensial.</li>
+                <li><strong>CHECK</strong> – membatasi nilai kolom agar memenuhi kondisi tertentu.</li>
+                <li><strong>DEFAULT</strong> – memberikan nilai bawaan jika tidak ada data yang dimasukkan.</li>
+                <li><strong>NOT NULL</strong> – memastikan kolom tidak boleh bernilai kosong.</li>
+              </ul>
+            `
+          },
+          {
+            title: "PRIMARY KEY & UNIQUE Constraint",
+            content: `
+              <p><strong>PRIMARY KEY</strong> memastikan setiap baris memiliki identitas unik dan tidak boleh NULL.</p>
+
+              <pre><code>
+      CREATE TABLE pelanggan (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        nama VARCHAR(100) NOT NULL
+      );
+              </code></pre>
+
+              <p><strong>UNIQUE</strong> juga memastikan nilai unik, tapi bisa diterapkan di lebih dari satu kolom.</p>
+
+              <pre><code>
+      CREATE TABLE akun (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        email VARCHAR(100) UNIQUE,
+        username VARCHAR(50) UNIQUE
+      );
+              </code></pre>
+
+              <p>Jika kamu mencoba memasukkan nilai duplikat, MySQL akan menolak data tersebut.</p>
+            `
+          },
+          {
+            title: "FOREIGN KEY Constraint",
+            content: `
+              <p><strong>FOREIGN KEY</strong> digunakan untuk membuat relasi antar tabel dan menjaga integritas data.</p>
+
+              <pre><code>
+      CREATE TABLE pesanan (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        pelanggan_id INT,
+        tanggal DATE,
+        FOREIGN KEY (pelanggan_id) REFERENCES pelanggan(id)
+      );
+              </code></pre>
+
+              <p>Dengan foreign key, kamu tidak bisa menambahkan data di tabel <code>pesanan</code> jika <code>pelanggan_id</code>-nya tidak ada di tabel <code>pelanggan</code>.</p>
+
+              <p>Kamu juga bisa menambahkan aksi otomatis seperti:</p>
+              <ul>
+                <li><strong>ON DELETE CASCADE</strong> – hapus data anak jika induknya dihapus.</li>
+                <li><strong>ON UPDATE CASCADE</strong> – update nilai foreign key jika induknya berubah.</li>
+              </ul>
+            `
+          },
+          {
+            title: "CHECK, DEFAULT, dan NOT NULL",
+            content: `
+              <p>Constraint tambahan ini membantu mengontrol isi data agar lebih konsisten dan valid.</p>
+
+              <pre><code>
+      CREATE TABLE produk (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        nama VARCHAR(100) NOT NULL,
+        harga DECIMAL(10,2) CHECK (harga > 0),
+        stok INT DEFAULT 0
+      );
+              </code></pre>
+
+              <ul>
+                <li><strong>NOT NULL</strong> → kolom wajib diisi.</li>
+                <li><strong>CHECK()</strong> → memastikan nilai sesuai kondisi (misalnya harga > 0).</li>
+                <li><strong>DEFAULT</strong> → memberi nilai otomatis jika tidak diisi.</li>
+              </ul>
+
+              <p>Contoh:</p>
+              <pre><code>
+      INSERT INTO produk (nama, harga) VALUES ('Kopi Hitam', 15000);
+      -- stok akan otomatis bernilai 0 karena DEFAULT
+              </code></pre>
+            `
+          },
+          {
+            title: "Konsep Indexing di MySQL",
+            content: `
+              <p><strong>Index</strong> adalah struktur data tambahan yang digunakan untuk mempercepat proses pencarian, penyortiran, dan pencocokan data di tabel.</p>
+
+              <p>Ibaratnya seperti daftar isi pada buku — dengan index, MySQL tidak perlu membaca seluruh tabel untuk menemukan data.</p>
+
+              <h4>🧩 Cara Kerja Index:</h4>
+              <ul>
+                <li>Index menyimpan pointer ke lokasi data di disk.</li>
+                <li>Ketika query menggunakan kolom yang di-index, MySQL bisa langsung melompat ke lokasi data.</li>
+                <li>Tanpa index, MySQL harus melakukan <em>full table scan</em>.</li>
+              </ul>
+
+              <p>Namun, terlalu banyak index justru memperlambat proses <strong>INSERT</strong> dan <strong>UPDATE</strong>, karena MySQL harus memperbarui semua index-nya.</p>
+            `
+          },
+          {
+            title: "Membuat dan Menghapus Index",
+            content: `
+              <p>Index bisa dibuat saat tabel dibuat, atau setelah tabel sudah ada.</p>
+
+              <pre><code>
+      -- Membuat index baru
+      CREATE INDEX idx_nama_produk ON produk(nama);
+
+      -- Membuat unique index
+      CREATE UNIQUE INDEX idx_email ON pelanggan(email);
+
+      -- Menghapus index
+      DROP INDEX idx_nama_produk ON produk;
+              </code></pre>
+
+              <p>Kamu bisa melihat daftar index di tabel dengan perintah:</p>
+
+              <pre><code>
+      SHOW INDEX FROM produk;
+              </code></pre>
+
+              <p><strong>Tips:</strong> Gunakan index hanya pada kolom yang sering dipakai untuk pencarian atau pengurutan (<code>WHERE</code>, <code>ORDER BY</code>).</p>
+            `
+          },
+          {
+            title: "Video: Memahami Constraint dan Indexing",
+            video: "https://www.youtube.com/embed/Eb7T-9AG0Ww",
+            content: `
+              <p>Video ini menjelaskan bagaimana cara kerja constraint seperti <strong>PRIMARY KEY</strong> dan <strong>FOREIGN KEY</strong>, serta bagaimana <strong>index</strong> bisa meningkatkan performa query.</p>
+
+              <p>Tonton dan coba praktikkan dengan membuat tabel sendiri untuk melihat perbedaannya saat menggunakan dan tanpa index 🔍</p>
+            `
+          }
+        ]
+      },
+
+      7: {
+        title: "View, Alias, dan Stored Routine",
+        slides: [
+          {
+            title: "Tujuan & Gambaran Umum",
+            content: `
+              <p>Di level ini, kita akan belajar bagaimana <strong>menyederhanakan query kompleks</strong> dan <strong>mengotomatiskan logika bisnis</strong> menggunakan fitur-fitur canggih MySQL seperti:</p>
+              <ul>
+                <li><strong>View</strong> — membuat tampilan virtual dari query.</li>
+                <li><strong>Alias</strong> — memberi nama sementara untuk kolom atau tabel.</li>
+                <li><strong>Stored Procedure & Function</strong> — menyimpan blok kode SQL agar bisa digunakan berulang kali.</li>
+              </ul>
+
+              <p>Tujuannya: supaya pekerjaanmu di database jadi lebih <strong>efisien, rapi, dan mudah dikelola</strong>.</p>
+            `
+          },
+          {
+            title: "Apa Itu View?",
+            content: `
+              <p><strong>View</strong> adalah tabel virtual yang berisi hasil dari query tertentu.</p>
+              <p>View tidak menyimpan data fisik, tapi menampilkan data yang diambil dari tabel lain — berguna untuk <strong>menyederhanakan query kompleks</strong>.</p>
+
+              <pre><code>
+      CREATE VIEW view_pesanan_pelanggan AS
+      SELECT p.id, pl.nama, p.tanggal, p.total
+      FROM pesanan p
+      JOIN pelanggan pl ON p.pelanggan_id = pl.id;
+              </code></pre>
+
+              <p>Setelah dibuat, kamu bisa mengaksesnya seperti tabel biasa:</p>
+
+              <pre><code>
+      SELECT * FROM view_pesanan_pelanggan;
+              </code></pre>
+
+              <p>Dengan View, kamu tidak perlu menulis query panjang berulang kali!</p>
+            `
+          },
+          {
+            title: "Manfaat & Pengelolaan View",
+            content: `
+              <p><strong>Manfaat View:</strong></p>
+              <ul>
+                <li>Menyederhanakan query kompleks.</li>
+                <li>Melindungi data sensitif (hanya tampilkan kolom tertentu).</li>
+                <li>Memudahkan pelaporan dan analisis.</li>
+              </ul>
+
+              <p><strong>Perintah penting:</strong></p>
+              <pre><code>
+      -- Melihat daftar view
+      SHOW FULL TABLES WHERE TABLE_TYPE = 'VIEW';
+
+      -- Melihat definisi view
+      SHOW CREATE VIEW view_pesanan_pelanggan;
+
+      -- Menghapus view
+      DROP VIEW view_pesanan_pelanggan;
+              </code></pre>
+            `
+          },
+          {
+            title: "Alias (Nama Sementara)",
+            content: `
+              <p><strong>Alias</strong> digunakan untuk memberi nama sementara pada kolom atau tabel dalam query, agar lebih mudah dibaca.</p>
+
+              <pre><code>
+      -- Alias untuk kolom
+      SELECT nama AS 'Nama Pelanggan', email AS 'Alamat Email'
+      FROM pelanggan;
+
+      -- Alias untuk tabel
+      SELECT p.nama, o.tanggal
+      FROM pelanggan AS p
+      JOIN pesanan AS o ON p.id = o.pelanggan_id;
+              </code></pre>
+
+              <p>Alias tidak mengubah struktur tabel, hanya membuat tampilan query lebih <strong>ringkas dan jelas</strong>.</p>
+            `
+          },
+          {
+            title: "Apa Itu Stored Procedure?",
+            content: `
+              <p><strong>Stored Procedure</strong> adalah kumpulan perintah SQL yang disimpan di database dan bisa dijalankan berulang kali.</p>
+              <p>Mirip seperti fungsi di bahasa pemrograman — membantu mengurangi penulisan ulang query yang sama.</p>
+
+              <pre><code>
+      DELIMITER //
+      CREATE PROCEDURE tampilkan_pelanggan()
+      BEGIN
+        SELECT * FROM pelanggan;
+      END //
+      DELIMITER ;
+
+      -- Menjalankan procedure
+      CALL tampilkan_pelanggan();
+              </code></pre>
+
+              <p>Stored Procedure sangat berguna untuk <strong>otomatisasi proses bisnis</strong> seperti laporan, update data, atau validasi.</p>
+            `
+          },
+          {
+            title: "Parameter dalam Stored Procedure",
+            content: `
+              <p>Stored Procedure bisa menerima parameter agar lebih fleksibel. Ada tiga jenis parameter:</p>
+              <ul>
+                <li><strong>IN</strong> – input dari pemanggil (default).</li>
+                <li><strong>OUT</strong> – menghasilkan output.</li>
+                <li><strong>INOUT</strong> – bisa digunakan untuk input dan output sekaligus.</li>
+              </ul>
+
+              <pre><code>
+      DELIMITER //
+      CREATE PROCEDURE cari_pelanggan(IN id_p INT)
+      BEGIN
+        SELECT * FROM pelanggan WHERE id = id_p;
+      END //
+      DELIMITER ;
+
+      CALL cari_pelanggan(2);
+              </code></pre>
+
+              <p>Contoh dengan <strong>OUT parameter</strong>:</p>
+
+              <pre><code>
+      DELIMITER //
+      CREATE PROCEDURE hitung_produk(OUT total INT)
+      BEGIN
+        SELECT COUNT(*) INTO total FROM produk;
+      END //
+      DELIMITER ;
+
+      CALL hitung_produk(@hasil);
+      SELECT @hasil;
+              </code></pre>
+            `
+          },
+          {
+            title: "Stored Function (Fungsi Buatan)",
+            content: `
+              <p><strong>Stored Function</strong> mirip dengan Stored Procedure, tapi wajib <strong>mengembalikan nilai (RETURN)</strong>.</p>
+
+              <pre><code>
+      DELIMITER //
+      CREATE FUNCTION total_harga(qty INT, harga DECIMAL(10,2))
+      RETURNS DECIMAL(10,2)
+      DETERMINISTIC
+      BEGIN
+        RETURN qty * harga;
+      END //
+      DELIMITER ;
+
+      -- Menggunakan function
+      SELECT total_harga(5, 12000) AS total;
+              </code></pre>
+
+              <p>Function sering digunakan untuk <strong>perhitungan</strong> dan <strong>operasi logika ringan</strong> langsung di dalam query.</p>
+            `
+          },
+          {
+            title: "Kapan Gunakan Procedure vs Function?",
+            content: `
+              <table border="1" cellpadding="8" style="border-collapse: collapse;">
+                <tr>
+                  <th>Kriteria</th>
+                  <th>Stored Procedure</th>
+                  <th>Function</th>
+                </tr>
+                <tr>
+                  <td>Pengembalian Nilai</td>
+                  <td>Bisa banyak hasil (SELECT, OUT param)</td>
+                  <td>Harus mengembalikan satu nilai (RETURN)</td>
+                </tr>
+                <tr>
+                  <td>Digunakan dalam Query</td>
+                  <td>Tidak bisa langsung di SELECT</td>
+                  <td>Bisa dipanggil di SELECT</td>
+                </tr>
+                <tr>
+                  <td>Tujuan</td>
+                  <td>Proses logika bisnis</td>
+                  <td>Perhitungan / ekspresi sederhana</td>
+                </tr>
+              </table>
+            `
+          },
+          {
+            title: "Video: Membuat View dan Stored Routine",
+            video: "https://www.youtube.com/embed/nHLT1TvePzQ",
+            content: `
+              <p>Video ini akan memandu kamu membuat <strong>View</strong>, menggunakan <strong>Alias</strong>, dan membuat <strong>Stored Procedure serta Function</strong> untuk otomatisasi query.</p>
+              <p>Cobalah praktikkan langsung di database latihanmu agar makin paham 🔥</p>
+            `
+          }
+        ]
+      },
+
+      8: {
+        title: "User Management & Privilege",
+        slides: [
+          {
+            title: "Tujuan & Gambaran Umum",
+            content: `
+              <p>Pada tahap ini, kamu akan belajar bagaimana cara <strong>mengelola user dan hak akses</strong> di MySQL.</p>
+              <p>Hal ini penting untuk menjaga <strong>keamanan dan integritas data</strong> agar tidak semua orang bisa sembarangan mengubah database.</p>
+
+              <ul>
+                <li>Membuat user baru di MySQL</li>
+                <li>Memberikan hak akses (GRANT)</li>
+                <li>Mencabut hak akses (REVOKE)</li>
+                <li>Menghapus user</li>
+                <li>Memahami level hak akses (read-only, full access, dll)</li>
+              </ul>
+
+              <p>Setelah bab ini, kamu akan mampu mengatur siapa saja yang boleh melihat, menambah, atau menghapus data dalam sistemmu 🔐</p>
+            `
+          },
+          {
+            title: "Membuat User MySQL",
+            content: `
+              <p>MySQL secara default punya user <strong>root</strong> dengan akses penuh. Namun, untuk keamanan, kita perlu membuat user baru dengan akses terbatas.</p>
+
+              <pre><code>
+      -- Membuat user baru
+      CREATE USER 'user_baru'@'localhost' IDENTIFIED BY 'passwordku';
+
+      -- Jika user diakses dari mana saja
+      CREATE USER 'user_baru'@'%' IDENTIFIED BY 'passwordku';
+              </code></pre>
+
+              <p>Simbol <code>'%'</code> artinya user bisa login dari alamat mana pun, bukan hanya dari lokal server.</p>
+            `
+          },
+          {
+            title: "Memberikan Hak Akses (GRANT)",
+            content: `
+              <p>Gunakan perintah <strong>GRANT</strong> untuk memberi izin pada user terhadap database atau tabel tertentu.</p>
+
+              <pre><code>
+      -- Memberikan semua hak pada 1 database
+      GRANT ALL PRIVILEGES ON nama_database.* TO 'user_baru'@'localhost';
+
+      -- Memberikan hak terbatas (misalnya hanya SELECT & INSERT)
+      GRANT SELECT, INSERT ON nama_database.* TO 'user_baru'@'localhost';
+
+      -- Terapkan perubahan hak akses
+      FLUSH PRIVILEGES;
+              </code></pre>
+
+              <p>Dengan begitu, user hanya bisa melakukan aksi sesuai izin yang diberikan — mencegah perubahan tidak sengaja atau berbahaya.</p>
+            `
+          },
+          {
+            title: "Mencabut Hak Akses (REVOKE)",
+            content: `
+              <p>Kalau user tidak lagi butuh hak tertentu, kamu bisa mencabutnya dengan perintah <strong>REVOKE</strong>.</p>
+
+              <pre><code>
+      -- Cabut izin SELECT dan INSERT
+      REVOKE SELECT, INSERT ON nama_database.* FROM 'user_baru'@'localhost';
+
+      -- Cabut semua izin
+      REVOKE ALL PRIVILEGES ON nama_database.* FROM 'user_baru'@'localhost';
+
+      FLUSH PRIVILEGES;
+              </code></pre>
+
+              <p><strong>Tips:</strong> Selalu cek ulang hak akses user secara berkala untuk menjaga keamanan database.</p>
+            `
+          },
+          {
+            title: "Menghapus User",
+            content: `
+              <p>Jika user sudah tidak diperlukan lagi, hapus saja akunnya agar tidak bisa login ke MySQL.</p>
+
+              <pre><code>
+      -- Menghapus user
+      DROP USER 'user_baru'@'localhost';
+
+      -- Hapus semua user dengan nama yang sama dari semua host
+      DROP USER 'user_baru'@'%';
+              </code></pre>
+
+              <p>Langkah ini penting dilakukan terutama ketika user keluar dari tim atau proyek sudah selesai.</p>
+            `
+          },
+          {
+            title: "Melihat Daftar User & Hak Akses",
+            content: `
+              <p>Kamu bisa mengecek siapa saja yang terdaftar di MySQL dan apa saja hak akses mereka.</p>
+
+              <pre><code>
+      -- Lihat semua user
+      SELECT User, Host FROM mysql.user;
+
+      -- Lihat hak akses user tertentu
+      SHOW GRANTS FOR 'user_baru'@'localhost';
+              </code></pre>
+
+              <p>Dari sini kamu bisa tahu user mana yang perlu dibatasi atau dihapus.</p>
+            `
+          },
+          {
+            title: "Konsep Privilege (Hak Akses)",
+            content: `
+              <p>MySQL punya banyak jenis hak akses, tergantung kebutuhan user. Berikut beberapa yang paling umum:</p>
+
+              <table border="1" cellpadding="8" style="border-collapse: collapse;">
+                <tr><th>Hak Akses</th><th>Deskripsi</th></tr>
+                <tr><td><strong>SELECT</strong></td><td>Mengambil data dari tabel.</td></tr>
+                <tr><td><strong>INSERT</strong></td><td>Menambah data ke tabel.</td></tr>
+                <tr><td><strong>UPDATE</strong></td><td>Mengubah data yang sudah ada.</td></tr>
+                <tr><td><strong>DELETE</strong></td><td>Menghapus data.</td></tr>
+                <tr><td><strong>CREATE</strong></td><td>Membuat database atau tabel baru.</td></tr>
+                <tr><td><strong>DROP</strong></td><td>Menghapus database atau tabel.</td></tr>
+                <tr><td><strong>ALTER</strong></td><td>Ubah struktur tabel.</td></tr>
+                <tr><td><strong>ALL PRIVILEGES</strong></td><td>Akses penuh ke semua aksi dalam database tertentu.</td></tr>
+              </table>
+
+              <p>Kamu bisa mengatur kombinasi hak akses ini agar user hanya bisa melakukan hal yang memang diizinkan — misalnya:</p>
+
+              <ul>
+                <li><strong>Read-only user</strong> → hanya SELECT</li>
+                <li><strong>Editor</strong> → SELECT, INSERT, UPDATE</li>
+                <li><strong>Admin</strong> → ALL PRIVILEGES</li>
+              </ul>
+            `
+          },
+          {
+            title: "Video: Manajemen User & Hak Akses MySQL",
+            video: "https://www.youtube.com/embed/8r6QvB5HFEQ",
+            content: `
+              <p>Video ini menjelaskan langkah-langkah praktis membuat user, memberikan hak akses, dan mengelola privilege di MySQL.</p>
+              <p>Pastikan kamu latihan langsung di MySQL Command Line atau Workbench supaya lebih paham konsepnya 💪</p>
+            `
+          }
+        ]
+      },
+
+      9: {
+        title: "Backup, Restore & Maintenance",
+        slides: [
+          {
+            title: "Tujuan & Gambaran Umum",
+            content: `
+              <p>Dalam dunia nyata, <strong>keamanan dan keandalan data</strong> adalah hal paling penting. Kehilangan data bisa berarti kehilangan proyek, klien, atau bahkan reputasi perusahaan.</p>
+              <p>Itulah kenapa kamu harus paham cara melakukan <strong>backup (cadangan)</strong>, <strong>restore (pemulihan)</strong>, dan <strong>maintenance (perawatan)</strong> database MySQL.</p>
+
+              <ul>
+                <li>Membuat cadangan database menggunakan <code>mysqldump</code></li>
+                <li>Melakukan pemulihan data dari backup</li>
+                <li>Optimasi tabel agar performa tetap cepat</li>
+                <li>Menganalisis performa query menggunakan <code>EXPLAIN</code></li>
+              </ul>
+            `
+          },
+          {
+            title: "Backup Database dengan mysqldump",
+            content: `
+              <p><strong>mysqldump</strong> adalah utilitas bawaan MySQL yang digunakan untuk menyalin (backup) seluruh isi database ke dalam file SQL.</p>
+
+              <pre><code>
+      -- Backup satu database
+      mysqldump -u root -p nama_database > backup_nama_database.sql
+
+      -- Backup semua database
+      mysqldump -u root -p --all-databases > backup_semua.sql
+
+      -- Backup hanya struktur tabel (tanpa data)
+      mysqldump -u root -p --no-data nama_database > struktur.sql
+              </code></pre>
+
+              <p>Setelah dijalankan, kamu akan diminta memasukkan password MySQL, lalu file hasil backup akan tersimpan di folder tempat kamu menjalankan perintah tersebut.</p>
+
+              <p><strong>Tips:</strong> Biasakan rutin melakukan backup otomatis (harian/mingguan) untuk menghindari kehilangan data.</p>
+            `
+          },
+          {
+            title: "Restore Database dari File Backup",
+            content: `
+              <p>Setelah punya file hasil backup, kamu bisa mengembalikannya ke MySQL menggunakan perintah berikut:</p>
+
+              <pre><code>
+      -- Pastikan database tujuan sudah ada
+      CREATE DATABASE nama_database;
+
+      -- Restore file backup
+      mysql -u root -p nama_database < backup_nama_database.sql
+              </code></pre>
+
+              <p>Jika kamu me-restore semua database:</p>
+
+              <pre><code>
+      mysql -u root -p < backup_semua.sql
+              </code></pre>
+
+              <p><strong>Catatan:</strong> File hasil backup berisi semua perintah SQL seperti <code>CREATE TABLE</code> dan <code>INSERT</code> untuk memulihkan data.</p>
+            `
+          },
+          {
+            title: "Optimasi Tabel dengan OPTIMIZE TABLE",
+            content: `
+              <p>Seiring waktu, tabel di MySQL bisa mengalami fragmentasi akibat proses <code>INSERT</code>, <code>UPDATE</code>, atau <code>DELETE</code> berulang. Hal ini bisa memperlambat kinerja.</p>
+
+              <p>Gunakan perintah <strong>OPTIMIZE TABLE</strong> untuk membersihkan dan merapikan tabel:</p>
+
+              <pre><code>
+      -- Optimasi tabel tertentu
+      OPTIMIZE TABLE nama_tabel;
+
+      -- Optimasi semua tabel dalam satu database
+      mysqlcheck -o nama_database -u root -p
+              </code></pre>
+
+              <p>Hasilnya: ruang penyimpanan menjadi efisien dan query bisa berjalan lebih cepat 🚀</p>
+            `
+          },
+          {
+            title: "Mengecek Performa Query dengan EXPLAIN",
+            content: `
+              <p>Untuk menganalisis performa query SQL, MySQL menyediakan perintah <strong>EXPLAIN</strong>.</p>
+
+              <pre><code>
+      EXPLAIN SELECT * FROM orders WHERE customer_id = 10;
+              </code></pre>
+
+              <p>Perintah ini akan menampilkan informasi seperti:</p>
+              <ul>
+                <li><strong>type</strong> – jenis akses (ALL, index, range, const, dll)</li>
+                <li><strong>possible_keys</strong> – indeks yang bisa digunakan</li>
+                <li><strong>key</strong> – indeks yang benar-benar dipakai</li>
+                <li><strong>rows</strong> – perkiraan jumlah baris yang diproses</li>
+              </ul>
+
+              <p>Tujuannya agar kamu tahu apakah query-mu sudah efisien atau perlu dioptimalkan (misalnya dengan indexing).</p>
+            `
+          },
+          {
+            title: "Tips Maintenance Database",
+            content: `
+              <ul>
+                <li>🗓️ <strong>Backup rutin</strong> – jadwalkan backup otomatis tiap hari/minggu.</li>
+                <li>🧹 <strong>Optimasi tabel</strong> – lakukan setelah banyak update/delete.</li>
+                <li>🔍 <strong>Gunakan EXPLAIN</strong> untuk audit query berat.</li>
+                <li>🧩 <strong>Pisahkan data besar</strong> ke tabel lain (sharding/archiving).</li>
+                <li>🔒 <strong>Gunakan user berhak terbatas</strong> agar data tidak rusak karena human error.</li>
+              </ul>
+
+              <p>Dengan kebiasaan maintenance yang baik, database akan lebih stabil, cepat, dan aman dari kehilangan data.</p>
+            `
+          },
+          {
+            title: "Video: Backup & Restore Database MySQL",
+            video: "https://www.youtube.com/embed/BRHE5sR1XJI",
+            content: `
+              <p>Tonton video ini untuk memahami cara membuat backup, restore database, serta melakukan optimasi tabel di MySQL secara praktis.</p>
+              <p>Setelah menonton, coba langsung latihan membuat dan me-restore backup database milikmu.</p>
+            `
+          }
+        ]
+      },
+
+      10: {
+        title: "MySQL untuk Pengembangan Web",
+        slides: [
+          {
+            title: "Tujuan & Gambaran Umum",
+            content: `
+              <p>Setelah memahami dasar-dasar MySQL, sekarang saatnya menghubungkannya dengan <strong>aplikasi web</strong>.</p>
+              <p>MySQL sering digunakan bersama bahasa pemrograman seperti <strong>PHP</strong>, <strong>Node.js</strong>, atau <strong>Python</strong> untuk membuat aplikasi dinamis.</p>
+
+              <ul>
+                <li>Koneksi MySQL di PHP menggunakan <code>mysqli</code> atau <code>PDO</code></li>
+                <li>Operasi CRUD (Create, Read, Update, Delete)</li>
+                <li>Penggunaan MySQL dalam framework seperti <strong>Laravel</strong> atau <strong>CodeIgniter</strong></li>
+                <li>Desain struktur database aplikasi (user, produk, transaksi, dsb)</li>
+              </ul>
+
+              <p>Tujuan akhirnya: kamu bisa membangun aplikasi web yang menyimpan, menampilkan, dan mengelola data langsung dari MySQL.</p>
+            `
+          },
+          {
+            title: "Koneksi MySQL di PHP (mysqli)",
+            content: `
+              <p>MySQL bisa dihubungkan ke PHP menggunakan ekstensi <code>mysqli</code> (MySQL Improved).</p>
+
+              <pre><code>&lt;?php
+      $host = "localhost";
+      $user = "root";
+      $pass = "";
+      $db   = "belajar_mysql";
+
+      // Membuat koneksi
+      $conn = new mysqli($host, $user, $pass, $db);
+
+      // Mengecek koneksi
+      if ($conn->connect_error) {
+        die("Koneksi gagal: " . $conn->connect_error);
+      }
+      echo "Koneksi berhasil!";
+      ?&gt;</code></pre>
+
+              <p>Jika muncul pesan <strong>“Koneksi berhasil!”</strong>, berarti PHP sudah terhubung ke MySQL.</p>
+            `
+          },
+          {
+            title: "Koneksi MySQL di PHP (PDO)",
+            content: `
+              <p>Alternatif lain adalah <strong>PDO (PHP Data Object)</strong> — lebih fleksibel dan mendukung banyak jenis database.</p>
+
+              <pre><code>&lt;?php
+      try {
+        $pdo = new PDO("mysql:host=localhost;dbname=belajar_mysql", "root", "");
+        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        echo "Koneksi berhasil!";
+      } catch (PDOException $e) {
+        echo "Koneksi gagal: " . $e->getMessage();
+      }
+      ?&gt;</code></pre>
+
+              <p>Pada proyek modern (seperti Laravel), PDO lebih disarankan karena lebih aman dan efisien.</p>
+            `
+          },
+          {
+            title: "Operasi CRUD (Create, Read, Update, Delete)",
+            content: `
+              <p>CRUD adalah empat operasi dasar dalam interaksi dengan database:</p>
+              <ul>
+                <li><strong>Create</strong> – menambah data</li>
+                <li><strong>Read</strong> – membaca data</li>
+                <li><strong>Update</strong> – mengubah data</li>
+                <li><strong>Delete</strong> – menghapus data</li>
+              </ul>
+
+              <pre><code>&lt;?php
+      // CREATE
+      $conn->query("INSERT INTO users (nama, email) VALUES ('Ali', 'ali@mail.com')");
+
+      // READ
+      $result = $conn->query("SELECT * FROM users");
+      while ($row = $result->fetch_assoc()) {
+        echo $row['nama'] . " - " . $row['email'] . "&lt;br&gt;";
+      }
+
+      // UPDATE
+      $conn->query("UPDATE users SET email='baru@mail.com' WHERE id=1");
+
+      // DELETE
+      $conn->query("DELETE FROM users WHERE id=1");
+      ?&gt;</code></pre>
+
+              <p>Pastikan gunakan <strong>prepared statement</strong> untuk mencegah SQL Injection jika menerima input dari user.</p>
+            `
+          },
+          {
+            title: "Menggunakan MySQL di Framework (Laravel, CodeIgniter, dsb)",
+            content: `
+              <p>Framework modern seperti <strong>Laravel</strong> dan <strong>CodeIgniter</strong> memudahkan integrasi MySQL lewat konfigurasi.</p>
+
+              <h4>🔹 Laravel</h4>
+              <pre><code>
+      // .env file
+      DB_CONNECTION=mysql
+      DB_HOST=127.0.0.1
+      DB_PORT=3306
+      DB_DATABASE=belajar_mysql
+      DB_USERNAME=root
+      DB_PASSWORD=
+              </code></pre>
+
+              <p>Setelah itu, kamu bisa menggunakan <strong>Eloquent ORM</strong> untuk berinteraksi dengan database tanpa menulis query SQL manual.</p>
+
+              <pre><code>
+      // Contoh Eloquent di Laravel
+      User::create(['nama' => 'Ali', 'email' => 'ali@mail.com']);
+      $users = User::all();
+              </code></pre>
+
+              <h4>🔹 CodeIgniter</h4>
+              <pre><code>
+      // application/config/database.php
+      $db['default'] = array(
+        'hostname' => 'localhost',
+        'username' => 'root',
+        'password' => '',
+        'database' => 'belajar_mysql',
+        'dbdriver' => 'mysqli'
+      );
+              </code></pre>
+
+              <p>Framework membantu mengatur koneksi dan operasi CRUD dengan lebih aman & efisien.</p>
+            `
+          },
+          {
+            title: "Struktur Database untuk Aplikasi Web",
+            content: `
+              <p>Sebelum membangun aplikasi, penting untuk mendesain struktur database yang baik agar mudah dikembangkan.</p>
+
+              <h4>Contoh struktur database untuk e-commerce:</h4>
+              <pre><code>
+      📦 toko_online
+       ┣ users
+       ┃ ┣ id (PK)
+       ┃ ┣ nama
+       ┃ ┣ email
+       ┃ ┗ password
+
+       ┣ products
+       ┃ ┣ id (PK)
+       ┃ ┣ nama_produk
+       ┃ ┣ harga
+       ┃ ┗ stok
+
+       ┣ orders
+       ┃ ┣ id (PK)
+       ┃ ┣ user_id (FK → users.id)
+       ┃ ┣ tanggal_order
+       ┃ ┗ total_harga
+
+       ┗ order_items
+          ┣ id (PK)
+          ┣ order_id (FK → orders.id)
+          ┣ product_id (FK → products.id)
+          ┣ jumlah
+          ┗ subtotal
+              </code></pre>
+
+              <p>Struktur seperti ini menggambarkan relasi antar tabel: <strong>users</strong> → <strong>orders</strong> → <strong>order_items</strong> → <strong>products</strong>.</p>
+
+              <p>Dengan perancangan yang baik, aplikasi akan lebih mudah dikelola dan dikembangkan.</p>
+            `
+          },
+          {
+            title: "Video: Integrasi MySQL dengan Aplikasi Web",
+            video: "https://www.youtube.com/embed/xfPVcL2WcUA",
+            content: `
+              <p>Tonton video ini untuk memahami cara menghubungkan MySQL dengan aplikasi PHP dan membuat operasi CRUD sederhana.</p>
+              <p>Setelah ini, kamu bisa langsung mencoba membuat proyek mini berbasis PHP + MySQL seperti sistem login atau manajemen data produk 💻</p>
+            `
+          }
+        ]
+      },
+
+      11: {
+        title: "Project Akhir: Aplikasi CRUD PHP + MySQL",
+        slides: [
+          {
+            title: "🎯 Tujuan & Gambaran Project",
+            content: `
+              <p>Dalam project ini kamu akan membuat <strong>aplikasi manajemen data mahasiswa</strong> sederhana menggunakan <strong>PHP + MySQL</strong>.</p>
+              <p>Fitur yang akan dibuat:</p>
+              <ul>
+                <li>Menampilkan daftar mahasiswa</li>
+                <li>Menambah data baru</li>
+                <li>Mengedit data mahasiswa</li>
+                <li>Menghapus data</li>
+              </ul>
+
+              <p>Tujuan utama project ini:</p>
+              <ul>
+                <li>Mempraktikkan koneksi database MySQL</li>
+                <li>Menerapkan operasi CRUD</li>
+                <li>Menggunakan struktur tabel & relasi sederhana</li>
+              </ul>
+
+              <p>💡 Setelah selesai, kamu sudah bisa membuat sistem CRUD untuk jenis data apa pun (produk, user, transaksi, dsb).</p>
+            `
+          },
+          {
+            title: "📁 Struktur Folder Project",
+            content: `
+              <p>Buat struktur folder seperti ini:</p>
+              <pre><code>
+      crud-mahasiswa/
+       ┣ config/
+       ┃ ┗ database.php
+       ┣ pages/
+       ┃ ┣ tambah.php
+       ┃ ┣ edit.php
+       ┃ ┗ hapus.php
+       ┣ index.php
+       ┗ style.css
+              </code></pre>
+
+              <p>Folder <strong>config</strong> untuk koneksi database, sedangkan <strong>pages</strong> berisi halaman CRUD (tambah, edit, hapus).</p>
+            `
+          },
+          {
+            title: "🧱 Membuat Database & Tabel",
+            content: `
+              <p>Buka <strong>phpMyAdmin</strong> atau terminal MySQL, lalu buat database dan tabel:</p>
+              <pre><code>
+      CREATE DATABASE crud_mahasiswa;
+
+      USE crud_mahasiswa;
+
+      CREATE TABLE mahasiswa (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        nama VARCHAR(100),
+        nim VARCHAR(20),
+        jurusan VARCHAR(50)
+      );
+              </code></pre>
+
+              <p>Database siap digunakan untuk menyimpan data mahasiswa.</p>
+            `
+          },
+          {
+            title: "🔗 Koneksi Database (config/database.php)",
+            content: `
+              <p>Buat file koneksi di folder <strong>config</strong>:</p>
+              <pre><code>&lt;?php
+      $host = "localhost";
+      $user = "root";
+      $pass = "";
+      $db   = "crud_mahasiswa";
+
+      $conn = new mysqli($host, $user, $pass, $db);
+
+      if ($conn->connect_error) {
+        die("Koneksi gagal: " . $conn->connect_error);
+      }
+      ?&gt;</code></pre>
+
+              <p>Koneksi ini akan digunakan di semua file untuk terhubung ke database.</p>
+            `
+          },
+          {
+            title: "📄 Menampilkan Data (index.php)",
+            content: `
+              <p>Buat halaman utama untuk menampilkan semua data mahasiswa:</p>
+              <pre><code>&lt;?php include 'config/database.php'; ?&gt;
+
+      &lt;h2&gt;Daftar Mahasiswa&lt;/h2&gt;
+      &lt;a href="pages/tambah.php"&gt;Tambah Data&lt;/a&gt;
+      &lt;table border="1" cellpadding="8"&gt;
+        &lt;tr&gt;
+          &lt;th&gt;No&lt;/th&gt;
+          &lt;th&gt;Nama&lt;/th&gt;
+          &lt;th&gt;NIM&lt;/th&gt;
+          &lt;th&gt;Jurusan&lt;/th&gt;
+          &lt;th&gt;Aksi&lt;/th&gt;
+        &lt;/tr&gt;
+        &lt;?php
+        $result = $conn->query("SELECT * FROM mahasiswa");
+        $no = 1;
+        while ($row = $result->fetch_assoc()) {
+          echo "&lt;tr&gt;
+                  &lt;td&gt;$no&lt;/td&gt;
+                  &lt;td&gt;{$row['nama']}&lt;/td&gt;
+                  &lt;td&gt;{$row['nim']}&lt;/td&gt;
+                  &lt;td&gt;{$row['jurusan']}&lt;/td&gt;
+                  &lt;td&gt;
+                    &lt;a href='pages/edit.php?id={$row['id']}'&gt;Edit&lt;/a&gt; |
+                    &lt;a href='pages/hapus.php?id={$row['id']}' onclick='return confirm("Yakin?")'&gt;Hapus&lt;/a&gt;
+                  &lt;/td&gt;
+                &lt;/tr&gt;";
+          $no++;
+        }
+        ?&gt;
+      &lt;/table&gt;</code></pre>
+            `
+          },
+          {
+            title: "🆕 Tambah Data (pages/tambah.php)",
+            content: `
+              <pre><code>&lt;?php include '../config/database.php'; ?&gt;
+
+      &lt;h2&gt;Tambah Mahasiswa&lt;/h2&gt;
+      &lt;form method="POST"&gt;
+        Nama: &lt;input type="text" name="nama" required&gt;&lt;br&gt;
+        NIM: &lt;input type="text" name="nim" required&gt;&lt;br&gt;
+        Jurusan: &lt;input type="text" name="jurusan" required&gt;&lt;br&gt;
+        &lt;button type="submit" name="simpan"&gt;Simpan&lt;/button&gt;
+      &lt;/form&gt;
+
+      &lt;?php
+      if (isset($_POST['simpan'])) {
+        $nama = $_POST['nama'];
+        $nim = $_POST['nim'];
+        $jurusan = $_POST['jurusan'];
+        $conn->query("INSERT INTO mahasiswa (nama, nim, jurusan) VALUES ('$nama', '$nim', '$jurusan')");
+        header("Location: ../index.php");
+      }
+      ?&gt;</code></pre>
+            `
+          },
+          {
+            title: "✏️ Edit Data (pages/edit.php)",
+            content: `
+              <pre><code>&lt;?php
+      include '../config/database.php';
+      $id = $_GET['id'];
+      $result = $conn->query("SELECT * FROM mahasiswa WHERE id=$id");
+      $row = $result->fetch_assoc();
+      ?&gt;
+
+      &lt;h2&gt;Edit Mahasiswa&lt;/h2&gt;
+      &lt;form method="POST"&gt;
+        Nama: &lt;input type="text" name="nama" value="&lt;?= $row['nama'] ?&gt;"&gt;&lt;br&gt;
+        NIM: &lt;input type="text" name="nim" value="&lt;?= $row['nim'] ?&gt;"&gt;&lt;br&gt;
+        Jurusan: &lt;input type="text" name="jurusan" value="&lt;?= $row['jurusan'] ?&gt;"&gt;&lt;br&gt;
+        &lt;button type="submit" name="update"&gt;Update&lt;/button&gt;
+      &lt;/form&gt;
+
+      &lt;?php
+      if (isset($_POST['update'])) {
+        $nama = $_POST['nama'];
+        $nim = $_POST['nim'];
+        $jurusan = $_POST['jurusan'];
+        $conn->query("UPDATE mahasiswa SET nama='$nama', nim='$nim', jurusan='$jurusan' WHERE id=$id");
+        header("Location: ../index.php");
+      }
+      ?&gt;</code></pre>
+            `
+          },
+          {
+            title: "🗑️ Hapus Data (pages/hapus.php)",
+            content: `
+              <pre><code>&lt;?php
+      include '../config/database.php';
+      $id = $_GET['id'];
+      $conn->query("DELETE FROM mahasiswa WHERE id=$id");
+      header("Location: ../index.php");
+      ?&gt;</code></pre>
+
+              <p>Setelah semua file selesai, jalankan di browser lewat <code>http://localhost/crud-mahasiswa/</code> untuk melihat hasilnya.</p>
+            `
+          },
+          {
+            title: "✨ Bonus: Tambahkan Desain & Keamanan",
+            content: `
+              <ul>
+                <li>Tambahkan <strong>CSS</strong> agar tampilannya rapi (misalnya pakai Bootstrap)</li>
+                <li>Gunakan <strong>prepared statements</strong> agar aman dari SQL Injection</li>
+                <li>Bisa tambahkan fitur pencarian, pagination, atau export CSV</li>
+              </ul>
+
+              <p>Setelah project ini, kamu udah bisa dibilang <strong>mahir MySQL di level pengembangan web</strong> 🚀</p>
+            `
+          }
+        ]
+      }
+
+    };
+  </script>
+  <script src="../../assets/js/frontend.js"></script>
+</body>
+</html>
