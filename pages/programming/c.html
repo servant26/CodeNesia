@@ -1,0 +1,2193 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CodeNesia - Course Detail</title>
+  <link rel="stylesheet" type="text/css" href="../../assets/bootstrap/css/bootstrap.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="../../assets/css/frontend.css">
+</head>
+<body>
+  <!-- Mobile Navbar -->
+  <nav id="mobileNavbar" class="mobile-navbar" aria-label="Mobile navigation" style="display: none;">
+    <!-- Content akan diisi oleh JavaScript -->
+  </nav>
+
+  <!-- Sidebar -->
+  <aside id="siteSidebar" class="sidebar" aria-label="Sidebar">
+    <div class="logo">
+      <!-- Mengganti mark dengan foto profil kartun -->
+      <img src="../../assets/img/profile.jpg" alt="Foto Profil" class="profile-pic">
+      <div>
+        <div style="font-size:14px;font-weight:700">CodeNesia</div>
+      </div>
+    </div>
+
+    <nav id="mainNav" class="side-nav" aria-label="Main navigation">
+      <a class="nav-link" href="#section-front-end"><i class="bi bi-folder2-open"></i> Front-End</a>
+      <a class="nav-link" href="#section-back-end"><i class="bi bi-server"></i> Back-End</a>
+      <a class="nav-link" href="#section-language"><i class="bi bi-code-slash"></i> Programming Language</a>
+      <a class="nav-link" href="#ebook"><i class="bi bi-book"></i> Ebook</a>
+      <a class="nav-link" href="#support"><i class="bi bi-hand-thumbs-up"></i> Support Us</a>
+      <a class="nav-link" href="../home.html"><i class="bi bi-back"></i> Back</a>
+    </nav>
+
+    <div class="social-section">
+      <div>Social Media</div>
+
+      <!-- project-pill style social buttons (like top area) -->
+      <a class="project-pill" href="https://www.youtube.com" target="_blank" rel="noopener noreferrer">
+        <span class="icon"><i class="bi bi-youtube" style="color:#f59e0b"></i></span>
+        <span>Youtube</span>
+      </a>
+
+      <a class="project-pill" href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+        <span class="icon"><i class="bi bi-instagram" style="color:#3ec5ff"></i></span>
+        <span>Instagram</span>
+      </a>
+
+      <a class="project-pill" href="https://www.tiktok.com" target="_blank" rel="noopener noreferrer">
+        <span class="icon"><i class="bi bi-music-note-beamed"></i></span>
+        <span>Tiktok</span>
+      </a>
+
+      <a class="project-pill" href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+        <span class="icon"><i class="bi bi-facebook"></i></span>
+        <span>Facebook</span>
+      </a>
+    </div>
+  </aside>
+
+  <!-- Main -->
+  <main id="top" class="main" role="main">
+    <div class="topbar">
+      <div class="topbar-left">
+        <div class="breadcrumbs">
+          <i class="bi bi-grid-fill"></i>
+          <div id="currentDate" style="font-weight:700"></div>
+        </div>
+      </div>
+
+      <div class="topbar-right">
+        <!-- Theme Toggle Button -->
+        <button id="themeToggle" class="theme-toggle" aria-label="Toggle dark mode">
+          <i class="bi bi-sun" id="themeIcon"></i>
+        </button>
+      </div>
+    </div>
+
+    <div class="main-content">
+      <!-- Course Header -->
+      <div class="course-header">
+        <div class="course-cover">
+          <img src="../../assets/img/c.jpg" alt="Figma Course Cover">
+        </div>
+        <div class="course-info">
+          <h1 class="course-title">C</h1>
+          <p class="course-description">
+            Pelajari bahasa pemrograman C untuk memahami dasar logika dan struktur program komputer. Di course ini, kamu akan mempelajari variabel, tipe data, percabangan, perulangan, hingga fungsi yang menjadi fondasi bahasa pemrograman modern.
+          </p>
+          <div class="course-actions">
+            <a href="https://www.youtube.com/playlist?list=YOUR_PLAYLIST_ID" target="_blank" class="btn-enroll btn btn-primary">
+              Tonton Playlist
+            </a>
+          </div>
+        </div>
+      </div>
+      <br>
+      <!-- Course Content -->
+      <div class="course-content">
+        <div class="content-left">
+          <!-- Course Modules -->
+          <div class="content-section">
+            <h2 class="section-title"><i class="bi bi-list-check"></i> Daftar Materi</h2>
+            <div class="scrollable-section">
+              <ul class="module-list">
+                <li class="module-item" data-module="1">
+                  <div class="module-number">01</div>
+                  <div class="module-content">
+                    <div class="module-title">Sejarah & Pengantar C</div>
+                    <div class="module-duration">20 min</div>
+                  </div>
+                </li>
+                <li class="module-item" data-module="2">
+                  <div class="module-number">02</div>
+                  <div class="module-content">
+                    <div class="module-title">Persiapan & Instalasi</div>
+                    <div class="module-duration">20 min</div>
+                  </div>
+                </li>
+                <li class="module-item" data-module="3">
+                  <div class="module-number">03</div>
+                  <div class="module-content">
+                    <div class="module-title">Dasar Pemrograman C</div>
+                    <div class="module-duration">36 min</div>
+                  </div>
+                </li>
+                <li class="module-item" data-module="4">
+                  <div class="module-number">04</div>
+                  <div class="module-content">
+                    <div class="module-title">Kontrol Alur Program</div>
+                    <div class="module-duration">40 min</div>
+                  </div>
+                </li>
+                <li class="module-item" data-module="5">
+                  <div class="module-number">05</div>
+                  <div class="module-content">
+                    <div class="module-title">Array dan String</div>
+                    <div class="module-duration">12 min</div>
+                  </div>
+                </li>
+                <li class="module-item" data-module="6">
+                  <div class="module-number">06</div>
+                  <div class="module-content">
+                    <div class="module-title">Fungsi (Functions)</div>
+                    <div class="module-duration">40 min</div>
+                  </div>
+                </li>
+                <li class="module-item" data-module="7">
+                  <div class="module-number">07</div>
+                  <div class="module-content">
+                    <div class="module-title">Pointer</div>
+                    <div class="module-duration">8 min</div>
+                  </div>
+                </li>
+                <li class="module-item" data-module="8">
+                  <div class="module-number">08</div>
+                  <div class="module-content">
+                    <div class="module-title">Struktur Data Dasar di C</div>
+                    <div class="module-duration">25 min</div>
+                  </div>
+                </li>
+                <li class="module-item" data-module="9">
+                  <div class="module-number">09</div>
+                  <div class="module-content">
+                    <div class="module-title">File Handling</div>
+                    <div class="module-duration">18 min</div>
+                  </div>
+                </li>
+                <li class="module-item" data-module="10">
+                  <div class="module-number">10</div>
+                  <div class="module-content">
+                    <div class="module-title">Memahami Memory & Dynamic Allocation</div>
+                    <div class="module-duration">45 min</div>
+                  </div>
+                </li>
+                <li class="module-item" data-module="11">
+                  <div class="module-number">11</div>
+                  <div class="module-content">
+                    <div class="module-title">Debugging & Error Handling</div>
+                    <div class="module-duration">45 min</div>
+                  </div>
+                </li>
+                <li class="module-item" data-module="12">
+                  <div class="module-number">12</div>
+                  <div class="module-content">
+                    <div class="module-title">Project</div>
+                    <div class="module-duration">45 min</div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="content-right">
+          <!-- Course Stats - Now at the top -->
+          <div class="content-section">
+            <h2 class="section-title"><i class="bi bi-graph-up"></i> Detail Materi</h2>
+            <div style="display: flex; flex-direction: column; gap: 12px;">
+              <div style="display: flex; justify-content: space-between;">
+                <span style="color: var(--muted-text);">Durasi</span>
+                <span style="font-weight: 600;">2.5 Jam</span>
+              </div>
+              <div style="display: flex; justify-content: space-between;">
+                <span style="color: var(--muted-text);">Total Materi</span>
+                <span style="font-weight: 600;">12 Modul</span>
+              </div>
+              <div style="display: flex; justify-content: space-between;">
+                <span style="color: var(--muted-text);">Tipe</span>
+                <span style="font-weight: 600; color: var(--accent);">Programming Language</span>
+              </div>
+            </div>
+          </div>
+          <br>
+          <!-- About Course - Now scrollable and at the bottom -->
+          <div class="content-section">
+            <h2 class="section-title"><i class="bi bi-info-circle"></i> Tentang Materi</h2>
+            <div class="scrollable-section" style="max-height: 195px;">
+              <p class="about-course">
+                Course C ini dirancang untuk membantumu memahami cara kerja program dari tingkat dasar. Kamu akan belajar konsep memory management, array, pointer, dan struktur data sederhana yang sering digunakan dalam pengembangan software.
+              </p>
+              <p class="about-course">
+                Cocok untuk pemula yang ingin membangun dasar logika kuat sebelum mempelajari bahasa lain, atau siapa pun yang ingin memahami cara kerja program secara mendalam dan efisien.
+              </p>
+              <!-- ... konten lainnya ... -->
+            </div>
+          </div>
+        </div>
+
+        <!-- PERUBAHAN: What You'll Learn - NOW FULL WIDTH -->
+        <div class="content-section full-width-section">
+          <h2 class="section-title"><i class="bi bi-lightbulb"></i> Apa yang akan kamu pelajari?</h2><br>
+          <ul class="learn-list">
+            <li class="learn-item">Memahami sejarah, karakteristik, dan dasar-dasar bahasa pemrograman C sebagai fondasi bahasa modern lainnya</li>
+            <li class="learn-item">Mampu menulis, menjalankan, dan mengelola program C dari awal menggunakan compiler dan lingkungan pengembangan</li>
+            <li class="learn-item">Menguasai sintaks dasar, struktur program, serta kontrol alur seperti percabangan dan perulangan</li>
+            <li class="learn-item">Mampu menggunakan array, string, dan fungsi untuk mengorganisir kode dengan efisien</li>
+            <li class="learn-item">Memahami konsep pointer dan penerapannya dalam pengelolaan data serta memori</li>
+            <li class="learn-item">Mempelajari struktur data dasar, file handling, serta pengalokasian memori secara dinamis</li>
+            <li class="learn-item">Menangani kesalahan dan melakukan debugging agar program berjalan stabil dan bebas error</li>
+            <li class="learn-item">Membangun satu proyek akhir menggunakan bahasa C sebagai penerapan dari seluruh konsep yang telah dipelajari</li>
+          </ul>
+        </div>
+
+
+
+        
+    </div>
+  </main>
+
+  <!-- Course Modal -->
+  <div id="courseModal" class="course-modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="modalModuleTitle">Module 1: Pengenalan Dasar</h3>
+        <button class="close-modal">&times;</button>
+      </div>
+      <div class="modal-body" id="modalBody">
+        <!-- Konten akan diisi oleh JavaScript berdasarkan modul yang dipilih -->
+      </div>
+      <div class="modal-footer">
+        <div class="slide-indicator">
+          Slide <span id="currentSlide">1</span> of <span id="totalSlides">3</span>
+        </div>
+        <div class="nav-buttons">
+          <button class="btn-nav btn-nav-outline" id="prevBtn">
+            <i class="bi bi-chevron-left"></i> Previous
+          </button>
+          <button class="btn-nav" id="nextBtn">
+            Next <i class="bi bi-chevron-right"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="helpFab" class="help-fab" title="Help"><i class="bi bi-question-lg"></i></div>
+
+  <!-- Bootstrap JS bundle -->
+  <script src="../../assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Elements
+    const sidebar = document.getElementById('siteSidebar');
+    const themeToggle = document.getElementById('themeToggle');
+    const themeIcon = document.getElementById('themeIcon');
+    const htmlElement = document.documentElement;
+    const mobileNavbar = document.getElementById('mobileNavbar');
+    const navLinks = document.querySelectorAll('#mainNav .nav-link');
+    const currentDateElement = document.getElementById('currentDate');
+    const courseModal = document.getElementById('courseModal');
+    const closeModal = document.querySelector('.close-modal');
+    const moduleItems = document.querySelectorAll('.module-item');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const currentSlideEl = document.getElementById('currentSlide');
+    const totalSlidesEl = document.getElementById('totalSlides');
+    const modalModuleTitle = document.getElementById('modalModuleTitle');
+    const modalBody = document.getElementById('modalBody');
+
+    // Modal state
+    let currentSlide = 0;
+    let totalSlides = 0;
+    let currentModule = 1;
+    let slides = [];
+
+    // Data konten untuk setiap modul
+    const moduleContent = {
+      1: {
+        title: "Sejarah & Pengantar Bahasa C",
+        slides: [
+          {
+            title: "Apa itu Bahasa C?",
+            content: `
+              <p><strong>Bahasa C</strong> adalah bahasa pemrograman tingkat menengah yang sangat berpengaruh, dikembangkan oleh <strong>Dennis Ritchie</strong> di <em>Bell Labs</em> pada tahun <strong>1972</strong>.</p>
+
+              <p>Bahasa ini dirancang untuk membuat sistem operasi <strong>UNIX</strong>, namun berkembang menjadi bahasa yang digunakan luas untuk berbagai jenis pemrograman — mulai dari sistem operasi, compiler, hingga aplikasi embedded.</p>
+
+              <p>C menjadi dasar bagi banyak bahasa modern seperti <strong>C++, Java, C#, dan bahkan Python</strong> dalam hal konsep struktur dan sintaksisnya.</p>
+
+              <p>Karena efisiensinya yang tinggi dan fleksibilitasnya yang luas, C sering disebut sebagai <strong>"Mother of Programming Languages"</strong>.</p>
+            `
+          },
+          {
+            title: "Sejarah Singkat Bahasa C",
+            content: `
+              <ul>
+                <li><strong>1969–1970</strong> – Bahasa <em>B</em> dikembangkan oleh Ken Thompson di Bell Labs.</li>
+                <li><strong>1972</strong> – Dennis Ritchie mengembangkan <strong>bahasa C</strong> sebagai peningkatan dari bahasa B.</li>
+                <li><strong>1973</strong> – Sistem operasi <strong>UNIX</strong> ditulis ulang menggunakan bahasa C, menjadikannya bukti nyata kekuatan C.</li>
+                <li><strong>1978</strong> – Buku legendaris <em>"The C Programming Language"</em> oleh Kernighan & Ritchie diterbitkan (sering disebut K&R C).</li>
+                <li><strong>1989</strong> – Standar resmi pertama bahasa C dirilis oleh ANSI (dikenal sebagai <strong>ANSI C</strong> atau <strong>C89</strong>).</li>
+                <li><strong>1999–2011</strong> – Rilis versi modern seperti <strong>C99</strong> dan <strong>C11</strong> dengan fitur tambahan (variabel di mana saja, tipe data baru, multithreading, dll).</li>
+              </ul>
+
+              <p>Bahasa C terus digunakan hingga kini karena stabilitas dan kemampuannya untuk bekerja sangat dekat dengan perangkat keras.</p>
+            `
+          },
+          {
+            title: "Hubungan Bahasa C dengan Bahasa Lain",
+            content: `
+              <p>Banyak bahasa pemrograman modern yang berasal atau terinspirasi dari bahasa C:</p>
+              <ul>
+                <li>🟦 <strong>C++</strong> – versi pengembangan dari C dengan konsep OOP (Object-Oriented Programming).</li>
+                <li>☕ <strong>Java</strong> – menggunakan sintaks mirip C, tapi lebih fokus pada portabilitas lintas platform.</li>
+                <li>🐍 <strong>Python</strong> – interpreter-nya ditulis dalam C (CPython).</li>
+                <li>🧱 <strong>C#</strong> – dikembangkan oleh Microsoft, juga mengadopsi sintaks dari C/C++.</li>
+              </ul>
+
+              <p>Karena itu, memahami bahasa C membantu kamu lebih cepat belajar bahasa pemrograman lain di masa depan.</p>
+            `
+          },
+          {
+            title: "Kelebihan & Kekurangan Bahasa C",
+            content: `
+              <h4>Kelebihan:</h4>
+              <ul>
+                <li>⚡ <strong>Cepat & Efisien</strong> – dekat dengan bahasa mesin, performanya tinggi.</li>
+                <li>🧠 <strong>Struktural</strong> – mendukung pemrograman terstruktur, membuat kode lebih mudah dibaca dan diatur.</li>
+                <li>💻 <strong>Portabel</strong> – kode C bisa dijalankan di berbagai sistem operasi.</li>
+                <li>🔧 <strong>Dasar Bahasa Modern</strong> – banyak bahasa populer berbasis sintaks C.</li>
+                <li>📚 <strong>Komunitas & Sumber Belajar Luas</strong>.</li>
+              </ul>
+
+              <h4>Kekurangan:</h4>
+              <ul>
+                <li>🚫 Tidak memiliki fitur OOP bawaan.</li>
+                <li>⚙️ Pengelolaan memori dilakukan secara manual (rentan error jika tidak hati-hati).</li>
+                <li>❌ Tidak memiliki banyak pustaka standar seperti bahasa modern.</li>
+              </ul>
+
+              <p>Walaupun begitu, C tetap menjadi pilihan utama untuk pembelajaran dasar pemrograman dan pengembangan sistem tingkat rendah.</p>
+            `
+          },
+          {
+            title: "Bahasa C: Compiled Language vs Interpreted Language",
+            content: `
+              <p>Bahasa C adalah <strong>compiled language</strong>, artinya kode sumber harus dikompilasi menjadi <em>machine code</em> sebelum dijalankan.</p>
+
+              <table border="1" cellpadding="6" cellspacing="0" style="border-collapse: collapse; width: 100%;">
+                <thead>
+                  <tr>
+                    <th>Perbandingan</th>
+                    <th>Compiled Language (C)</th>
+                    <th>Interpreted Language (Python, JS)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Proses Eksekusi</td>
+                    <td>Kode dikompilasi terlebih dahulu menjadi file biner</td>
+                    <td>Kode dijalankan baris demi baris oleh interpreter</td>
+                  </tr>
+                  <tr>
+                    <td>Kecepatan</td>
+                    <td>Sangat cepat</td>
+                    <td>Lebih lambat</td>
+                  </tr>
+                  <tr>
+                    <td>Debugging</td>
+                    <td>Lebih sulit</td>
+                    <td>Lebih mudah</td>
+                  </tr>
+                  <tr>
+                    <td>Contoh Bahasa</td>
+                    <td>C, C++, Go, Rust</td>
+                    <td>Python, JavaScript, PHP</td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <p>Konsep compiled ini membuat C ideal untuk aplikasi yang memerlukan performa tinggi seperti sistem operasi dan perangkat embedded.</p>
+            `
+          },
+          {
+            title: "Peran Bahasa C di Dunia Pemrograman Modern",
+            content: `
+              <p>Walau sudah berusia lebih dari 50 tahun, <strong>bahasa C</strong> masih digunakan secara luas hingga sekarang, terutama untuk:</p>
+              <ul>
+                <li>🖥️ <strong>Pengembangan Sistem Operasi</strong> – seperti Windows, Linux, dan macOS.</li>
+                <li>📦 <strong>Embedded System</strong> – perangkat keras seperti router, mikrokontroler, dan IoT.</li>
+                <li>💾 <strong>Compiler & Tools</strong> – banyak compiler bahasa lain ditulis dengan C.</li>
+                <li>⚙️ <strong>Game Engine & Grafik</strong> – performa tinggi dan kontrol penuh terhadap hardware.</li>
+              </ul>
+
+              <p>Intinya, bahasa C adalah pondasi penting dalam dunia pemrograman yang tidak tergantikan sampai sekarang.</p>
+            `
+          },
+          {
+            title: "Video: Sejarah dan Pengantar Bahasa C",
+            video: "https://www.youtube.com/embed/KJgsSFOSQv0",
+            content: `
+              <p>Tonton video ini untuk memahami bagaimana bahasa C diciptakan, mengapa ia begitu berpengaruh, dan peran pentingnya dalam dunia pemrograman modern.</p>
+              <p>Video ini menjelaskan sejarah C dan hubungannya dengan UNIX serta bahasa-bahasa turunannya.</p>
+            `
+          }
+        ]
+      },
+
+      2: {
+        title: "Persiapan & Requirement",
+        slides: [
+          {
+            title: "Instalasi Compiler C",
+            content: `
+              <p>Sebelum menulis program dalam bahasa C, kamu memerlukan <strong>compiler</strong> — alat yang menerjemahkan kode sumber menjadi kode mesin agar bisa dijalankan oleh komputer.</p>
+
+              <h4>Beberapa compiler populer untuk C:</h4>
+              <ul>
+                <li>🧱 <strong>GCC (GNU Compiler Collection)</strong> – compiler standar di Linux dan juga tersedia untuk Windows melalui MinGW.</li>
+                <li>💡 <strong>MinGW (Minimalist GNU for Windows)</strong> – versi ringan GCC untuk sistem operasi Windows.</li>
+                <li>💾 <strong>Turbo C</strong> – compiler lawas untuk DOS, sering dipakai untuk latihan dasar (namun sudah sangat jadul).</li>
+                <li>⚙️ <strong>Clang</strong> – compiler modern dengan kecepatan tinggi, digunakan di macOS dan Linux.</li>
+              </ul>
+
+              <p>Untuk pengguna modern, disarankan menggunakan <strong>GCC</strong> atau <strong>MinGW</strong> karena lebih kompatibel dan digunakan secara luas di dunia nyata.</p>
+            `
+          },
+          {
+            title: "IDE & Text Editor untuk Bahasa C",
+            content: `
+              <p>Setelah compiler terpasang, kamu memerlukan editor atau IDE (Integrated Development Environment) untuk menulis kode.</p>
+
+              <h4>Beberapa pilihan populer:</h4>
+              <ul>
+                <li>💻 <strong>Code::Blocks</strong> – ringan, stabil, dan sudah terintegrasi dengan compiler GCC.</li>
+                <li>🧠 <strong>Visual Studio Code (VS Code)</strong> – fleksibel dan bisa ditambah ekstensi seperti <em>C/C++ by Microsoft</em>.</li>
+                <li>🔧 <strong>Dev-C++</strong> – sederhana dan cocok untuk pemula.</li>
+                <li>🧰 <strong>CLion</strong> (JetBrains) – IDE profesional dengan fitur debugging canggih.</li>
+              </ul>
+
+              <p>Kamu bisa memilih sesuai kebutuhan. Untuk pemula, <strong>Code::Blocks</strong> atau <strong>VS Code</strong> adalah pilihan terbaik.</p>
+            `
+          },
+          {
+            title: "Struktur Dasar Program C",
+            content: `
+              <p>Program C memiliki struktur sederhana yang terdiri dari <em>header</em>, <em>fungsi utama</em> (<code>main()</code>), dan pernyataan program.</p>
+
+              <pre><code>#include &lt;stdio.h&gt;  // header standar untuk input-output
+
+      int main() {
+          printf("Hello, World!");  // menampilkan teks ke layar
+          return 0;                 // mengakhiri program
+      }
+      </code></pre>
+
+              <h4>Penjelasan:</h4>
+              <ul>
+                <li><code>#include &lt;stdio.h&gt;</code> – memasukkan pustaka standar untuk fungsi seperti <code>printf()</code>.</li>
+                <li><code>int main()</code> – fungsi utama tempat program dijalankan.</li>
+                <li><code>printf()</code> – mencetak output ke layar.</li>
+                <li><code>return 0;</code> – menandakan program selesai tanpa error.</li>
+              </ul>
+
+              <p>Semua program C <strong>harus memiliki fungsi <code>main()</code></strong> karena itu titik awal eksekusi.</p>
+            `
+          },
+          {
+            title: "Cara Compile & Jalankan Program C",
+            content: `
+              <p>Setelah menulis kode, langkah berikutnya adalah <strong>compile</strong> (menerjemahkan kode ke bahasa mesin) dan <strong>run</strong> (menjalankannya).</p>
+
+              <h4>🔹 Jika menggunakan terminal (command line):</h4>
+              <pre><code>// 1. Compile file
+      gcc program.c -o program
+
+      // 2. Jalankan program
+      ./program    // di Linux / Mac
+      program.exe  // di Windows
+      </code></pre>
+
+              <h4>🔹 Jika menggunakan IDE seperti Code::Blocks atau Dev-C++:</h4>
+              <ul>
+                <li>Klik tombol <strong>Build</strong> atau <strong>Run</strong>.</li>
+                <li>IDE akan otomatis meng-compile dan menjalankan program.</li>
+              </ul>
+
+              <p>Jika muncul hasil di terminal seperti <code>Hello, World!</code>, berarti kamu sudah berhasil menjalankan program C pertamamu 🎉</p>
+            `
+          },
+          {
+            title: "Video: Cara Instal & Menjalankan Program C",
+            video: "https://www.youtube.com/embed/IRQGszgOe0c",
+            content: `
+              <p>Tonton video berikut untuk panduan lengkap instalasi compiler C (GCC/MinGW) dan cara menjalankan program pertama menggunakan Code::Blocks dan VS Code.</p>
+              <p>Video ini sangat cocok untuk pemula yang baru pertama kali ingin menulis dan menjalankan kode C.</p>
+            `
+          }
+        ]
+      },
+
+      3: {
+        title: "Dasar Pemrograman C",
+        slides: [
+          {
+            title: "Sintaks Dasar & Aturan Penulisan Kode",
+            content: `
+              <p>Bahasa C memiliki sintaks yang <strong>sederhana namun ketat</strong>. Setiap baris kode biasanya diakhiri dengan tanda titik koma (<code>;</code>), dan blok kode dibungkus dengan kurung kurawal <code>{ }</code>.</p>
+
+              <pre><code>#include &lt;stdio.h&gt;
+
+      int main() {
+          printf("Hello, World!\\n");
+          return 0;
+      }
+      </code></pre>
+
+              <h4>Aturan umum penulisan kode:</h4>
+              <ul>
+                <li>Setiap pernyataan diakhiri dengan <code>;</code>.</li>
+                <li>Gunakan <code>{ }</code> untuk menandai awal dan akhir blok kode.</li>
+                <li>Huruf besar & kecil <strong>berbeda</strong> (case-sensitive).</li>
+                <li>Nama variabel hanya boleh berisi huruf, angka, dan garis bawah (<code>_</code>), tidak boleh diawali angka.</li>
+                <li>File program C disimpan dengan ekstensi <strong>.c</strong>.</li>
+              </ul>
+
+              <p>Penulisan kode yang rapi dan konsisten sangat penting agar mudah dibaca dan dipahami.</p>
+            `
+          },
+          {
+            title: "Tipe Data di Bahasa C",
+            content: `
+              <p>Tipe data menentukan <strong>jenis dan ukuran memori</strong> dari nilai yang disimpan dalam variabel.</p>
+
+              <table border="1" cellpadding="6" cellspacing="0" style="border-collapse: collapse; width: 100%;">
+                <thead>
+                  <tr>
+                    <th>Tipe Data</th>
+                    <th>Deskripsi</th>
+                    <th>Contoh</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><code>int</code></td>
+                    <td>Bilangan bulat</td>
+                    <td>int usia = 20;</td>
+                  </tr>
+                  <tr>
+                    <td><code>float</code></td>
+                    <td>Bilangan desimal (presisi tunggal)</td>
+                    <td>float berat = 60.5;</td>
+                  </tr>
+                  <tr>
+                    <td><code>double</code></td>
+                    <td>Bilangan desimal (presisi ganda)</td>
+                    <td>double pi = 3.141592;</td>
+                  </tr>
+                  <tr>
+                    <td><code>char</code></td>
+                    <td>Satu karakter</td>
+                    <td>char huruf = 'A';</td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <p>Dengan memahami tipe data, kamu bisa mengatur memori secara efisien dan mencegah kesalahan tipe nilai.</p>
+            `
+          },
+          {
+            title: "Variabel & Konstanta",
+            content: `
+              <p><strong>Variabel</strong> digunakan untuk menyimpan nilai yang dapat berubah, sedangkan <strong>konstanta</strong> menyimpan nilai tetap.</p>
+
+              <h4>Contoh variabel:</h4>
+              <pre><code>int umur = 18;
+      float suhu = 36.5;
+      char huruf = 'C';</code></pre>
+
+              <h4>Contoh konstanta:</h4>
+              <pre><code>#define PI 3.14       // cara 1: menggunakan preprocessor
+      const int MAKS = 100; // cara 2: menggunakan keyword const</code></pre>
+
+              <p>Gunakan konstanta untuk nilai yang tidak akan berubah selama program berjalan, seperti nilai pi atau batas maksimum.</p>
+            `
+          },
+          {
+            title: "Operator di Bahasa C",
+            content: `
+              <p>Operator digunakan untuk melakukan operasi pada nilai dan variabel. Berikut kategori operator utama di C:</p>
+
+              <h4>🔹 Operator Aritmatika</h4>
+              <pre><code>+, -, *, /, %</code></pre>
+              <p>Contoh: <code>hasil = a + b;</code></p>
+
+              <h4>🔹 Operator Relasional</h4>
+              <pre><code>==, !=, &gt;, &lt;, &gt;=, &lt;=</code></pre>
+              <p>Contoh: <code>if (a &gt; b)</code></p>
+
+              <h4>🔹 Operator Logika</h4>
+              <pre><code>&amp;&amp; (AND), || (OR), ! (NOT)</code></pre>
+
+              <h4>🔹 Operator Assignment</h4>
+              <pre><code>=, +=, -=, *=, /=, %=</code></pre>
+
+              <h4>🔹 Operator Bitwise (opsional)</h4>
+              <pre><code>&amp;, |, ^, ~, &lt;&lt;, &gt;&gt;</code></pre>
+
+              <p>Operator adalah dasar dari semua perhitungan dan logika dalam pemrograman C.</p>
+            `
+          },
+          {
+            title: "Input & Output di Bahasa C",
+            content: `
+              <p>Untuk berinteraksi dengan pengguna, bahasa C menggunakan fungsi dari pustaka <code>stdio.h</code>.</p>
+
+              <h4>🔹 Fungsi Output:</h4>
+              <pre><code>printf("Halo, Dunia!\\n");
+      puts("Selamat datang!");</code></pre>
+
+              <h4>🔹 Fungsi Input:</h4>
+              <pre><code>int umur;
+      printf("Masukkan umur: ");
+      scanf("%d", &amp;umur);
+
+      char nama[50];
+      gets(nama);   // membaca input string (tidak disarankan karena tidak aman)
+      puts(nama);   // menampilkan string</code></pre>
+
+              <p>Gunakan <code>scanf()</code> untuk input angka dan <code>gets()</code>/<code>fgets()</code> untuk input string. Selalu sertakan tanda <code>&amp;</code> untuk variabel non-string saat menggunakan <code>scanf()</code>.</p>
+            `
+          },
+          {
+            title: "Komentar & Gaya Penulisan Kode",
+            content: `
+              <p>Komentar digunakan untuk menjelaskan kode agar mudah dipahami oleh programmer lain (atau diri sendiri di masa depan).</p>
+
+              <h4>🔹 Jenis komentar:</h4>
+              <pre><code>// Komentar satu baris
+
+      /* Komentar
+         lebih dari
+         satu baris */</code></pre>
+
+              <h4>💡 Tips Gaya Penulisan:</h4>
+              <ul>
+                <li>Gunakan indentasi yang konsisten (biasanya 2 atau 4 spasi).</li>
+                <li>Gunakan nama variabel yang jelas dan deskriptif.</li>
+                <li>Tulis komentar hanya untuk bagian penting atau kompleks.</li>
+                <li>Simpan file dengan ekstensi <code>.c</code> dan beri nama sesuai fungsinya.</li>
+              </ul>
+
+              <p>Kode yang rapi, terkomentar, dan mudah dibaca adalah tanda dari programmer yang baik.</p>
+            `
+          },
+          {
+            title: "Video: Dasar Pemrograman C untuk Pemula",
+            video: "https://www.youtube.com/embed/ZSPZob_1TOk",
+            content: `
+              <p>Tonton video ini untuk memahami sintaks dasar, tipe data, variabel, operator, dan cara input-output di bahasa C.</p>
+              <p>Video ini cocok untuk kamu yang baru mulai menulis program pertama dan ingin memahami struktur logika C dengan jelas.</p>
+            `
+          }
+        ]
+      },
+
+      4: {
+        title: "Kontrol Alur Program",
+        slides: [
+          {
+            title: "Percabangan (if, else, switch)",
+            content: `
+              <p>Percabangan digunakan untuk membuat keputusan dalam program berdasarkan kondisi tertentu.</p>
+
+              <h4>🔹 Struktur <code>if</code> dan <code>else</code></h4>
+              <pre><code>int x = 10;
+
+      if (x > 0) {
+          printf("Bilangan positif");
+      } else {
+          printf("Bilangan negatif atau nol");
+      }
+      </code></pre>
+
+              <p><code>if</code> memeriksa kondisi logika, dan jika bernilai benar, blok di dalamnya akan dijalankan. Jika tidak, maka blok <code>else</code> akan dijalankan.</p>
+
+              <h4>🔹 Struktur <code>else if</code></h4>
+              <pre><code>if (nilai >= 90)
+          printf("A");
+      else if (nilai >= 80)
+          printf("B");
+      else
+          printf("C");
+      </code></pre>
+
+              <h4>🔹 Struktur <code>switch</code></h4>
+              <pre><code>int hari = 3;
+
+      switch (hari) {
+          case 1: printf("Senin"); break;
+          case 2: printf("Selasa"); break;
+          case 3: printf("Rabu"); break;
+          default: printf("Hari tidak valid");
+      }
+      </code></pre>
+
+              <p><code>switch</code> cocok digunakan ketika ada banyak kondisi dengan nilai tetap (misal angka atau karakter).</p>
+            `
+          },
+          {
+            title: "Perulangan (for, while, do-while)",
+            content: `
+              <p>Perulangan digunakan untuk menjalankan blok kode berulang kali selama kondisi tertentu terpenuhi.</p>
+
+              <h4>🔹 <code>for</code> loop</h4>
+              <pre><code>for (int i = 1; i <= 5; i++) {
+          printf("Perulangan ke-%d\\n", i);
+      }
+      </code></pre>
+              <p>Loop <code>for</code> cocok digunakan ketika jumlah perulangan sudah diketahui.</p>
+
+              <h4>🔹 <code>while</code> loop</h4>
+              <pre><code>int i = 1;
+      while (i <= 5) {
+          printf("Nilai i: %d\\n", i);
+          i++;
+      }
+      </code></pre>
+              <p><code>while</code> cocok digunakan jika jumlah perulangan belum pasti dan tergantung kondisi.</p>
+
+              <h4>🔹 <code>do-while</code> loop</h4>
+              <pre><code>int i = 1;
+      do {
+          printf("Angka: %d\\n", i);
+          i++;
+      } while (i <= 5);
+      </code></pre>
+              <p>Perbedaan utama: <code>do-while</code> menjalankan blok minimal sekali sebelum memeriksa kondisi.</p>
+            `
+          },
+          {
+            title: "Penggunaan break dan continue",
+            content: `
+              <p>Kedua perintah ini digunakan untuk mengontrol jalannya perulangan.</p>
+
+              <h4>🔹 <code>break</code></h4>
+              <p>Digunakan untuk menghentikan perulangan secara paksa sebelum kondisinya selesai.</p>
+              <pre><code>for (int i = 1; i <= 10; i++) {
+          if (i == 5)
+              break;
+          printf("%d ", i);
+      }
+      // Output: 1 2 3 4
+      </code></pre>
+
+              <h4>🔹 <code>continue</code></h4>
+              <p>Melewati satu iterasi tanpa menghentikan loop sepenuhnya.</p>
+              <pre><code>for (int i = 1; i <= 5; i++) {
+          if (i == 3)
+              continue;
+          printf("%d ", i);
+      }
+      // Output: 1 2 4 5
+      </code></pre>
+
+              <p><code>break</code> menghentikan seluruh loop, sementara <code>continue</code> hanya melewati satu langkah.</p>
+            `
+          },
+          {
+            title: "Konsep Blok Kode { } dan Scope Variabel",
+            content: `
+              <p>Blok kode dalam C dibatasi oleh tanda kurung kurawal <code>{ }</code> dan menentukan <strong>scope variabel</strong> — yaitu di mana variabel dapat diakses.</p>
+
+              <h4>🔹 Contoh:</h4>
+              <pre><code>int x = 10;
+
+      if (x > 0) {
+          int y = 5;
+          printf("%d", y); // ✅ bisa diakses
+      }
+
+      printf("%d", x); // ✅ bisa diakses
+      printf("%d", y); // ❌ error, di luar scope
+      </code></pre>
+
+              <ul>
+                <li>Variabel yang dideklarasikan di luar blok (<code>{ }</code>) bersifat <strong>global/local</strong> di dalam fungsi.</li>
+                <li>Variabel di dalam blok hanya bisa diakses di dalam blok tersebut.</li>
+              </ul>
+
+              <p>Memahami scope penting untuk mencegah error “variabel tidak dikenal” dan menjaga agar kode tetap rapi dan terstruktur.</p>
+            `
+          },
+          {
+            title: "Video: Belajar If-Else & Loop di C",
+            video: "https://www.youtube.com/embed/yT2cX4RrVb8",
+            content: `
+              <p>Video ini menjelaskan cara kerja struktur kontrol seperti <code>if</code>, <code>switch</code>, dan <code>loop</code> dalam bahasa C dengan contoh sederhana.</p>
+              <p>Cocok untuk pemula agar lebih mudah memahami logika program melalui simulasi visual.</p>
+            `
+          }
+        ]
+      },
+
+      5: {
+        title: "Array dan String",
+        slides: [
+          {
+            title: "Array Satu Dimensi",
+            content: `
+              <p><strong>Array</strong> digunakan untuk menyimpan banyak data dengan tipe yang sama dalam satu variabel.</p>
+
+              <h4>🔹 Deklarasi dan Inisialisasi:</h4>
+              <pre><code>int angka[5]; // array kosong dengan 5 elemen
+      int nilai[5] = {10, 20, 30, 40, 50}; // array dengan nilai awal
+      </code></pre>
+
+              <h4>🔹 Akses Elemen Array:</h4>
+              <pre><code>printf("%d", nilai[2]); // Output: 30
+      </code></pre>
+
+              <h4>🔹 Iterasi Array dengan Loop:</h4>
+              <pre><code>for (int i = 0; i < 5; i++) {
+          printf("%d ", nilai[i]);
+      }
+      </code></pre>
+
+              <p>Indeks array selalu dimulai dari <code>0</code>, jadi elemen pertama adalah <code>array[0]</code>.</p>
+            `
+          },
+          {
+            title: "Array Dua Dimensi",
+            content: `
+              <p><strong>Array 2 dimensi</strong> biasa digunakan untuk merepresentasikan tabel atau matriks.</p>
+
+              <h4>🔹 Deklarasi dan Inisialisasi:</h4>
+              <pre><code>int matriks[2][3] = {
+          {1, 2, 3},
+          {4, 5, 6}
+      };
+      </code></pre>
+
+              <h4>🔹 Akses Elemen Array 2D:</h4>
+              <pre><code>printf("%d", matriks[1][2]); // Output: 6
+      </code></pre>
+
+              <h4>🔹 Menampilkan Seluruh Elemen:</h4>
+              <pre><code>for (int i = 0; i < 2; i++) {
+          for (int j = 0; j < 3; j++) {
+              printf("%d ", matriks[i][j]);
+          }
+          printf("\\n");
+      }
+      </code></pre>
+
+              <p>Array 2D cocok untuk data tabel seperti nilai siswa, koordinat, atau peta.</p>
+            `
+          },
+          {
+            title: "Inisialisasi dan Iterasi Array",
+            content: `
+              <p>Kamu dapat menginisialisasi array dengan atau tanpa nilai awal, lalu mengisinya menggunakan loop.</p>
+
+              <h4>🔹 Contoh Inisialisasi Manual:</h4>
+              <pre><code>int data[3];
+      data[0] = 5;
+      data[1] = 10;
+      data[2] = 15;
+      </code></pre>
+
+              <h4>🔹 Contoh Pengisian Menggunakan Loop:</h4>
+              <pre><code>int angka[5];
+      for (int i = 0; i < 5; i++) {
+          angka[i] = (i + 1) * 10;
+      }
+
+      for (int i = 0; i < 5; i++) {
+          printf("%d ", angka[i]);
+      }
+      </code></pre>
+
+              <p>Loop memudahkan pengisian atau pembacaan data array yang jumlah elemennya banyak.</p>
+            `
+          },
+          {
+            title: "Dasar Manipulasi String (char[])",
+            content: `
+              <p>String dalam bahasa C sebenarnya adalah <strong>array karakter</strong> yang diakhiri dengan karakter <code>'\\0'</code> (null terminator).</p>
+
+              <h4>🔹 Deklarasi dan Inisialisasi String:</h4>
+              <pre><code>char nama[10] = "Ali";
+      char salam[] = "Halo Dunia!";
+      </code></pre>
+
+              <h4>🔹 Menampilkan String:</h4>
+              <pre><code>printf("%s", salam); // Output: Halo Dunia!
+      </code></pre>
+
+              <h4>🔹 Input String:</h4>
+              <pre><code>char nama[20];
+      printf("Masukkan nama: ");
+      scanf("%s", nama); // berhenti di spasi
+      </code></pre>
+
+              <p>Untuk input string dengan spasi, gunakan <code>gets()</code> (tidak disarankan di versi modern) atau <code>fgets()</code> sebagai gantinya.</p>
+            `
+          },
+          {
+            title: "Fungsi Penting dalam Manipulasi String",
+            content: `
+              <p>C menyediakan pustaka <code>&lt;string.h&gt;</code> yang berisi fungsi-fungsi untuk mengolah string.</p>
+
+              <h4>🔹 <code>strlen()</code> — Menghitung panjang string</h4>
+              <pre><code>printf("%lu", strlen("Halo")); // Output: 4
+      </code></pre>
+
+              <h4>🔹 <code>strcpy()</code> — Menyalin string</h4>
+              <pre><code>char s1[20], s2[] = "C Programming";
+      strcpy(s1, s2);
+      printf("%s", s1); // Output: C Programming
+      </code></pre>
+
+              <h4>🔹 <code>strcmp()</code> — Membandingkan dua string</h4>
+              <pre><code>if (strcmp("abc", "abc") == 0)
+          printf("Sama");
+      </code></pre>
+
+              <h4>🔹 <code>strcat()</code> — Menggabungkan dua string</h4>
+              <pre><code>char teks[30] = "Halo, ";
+      strcat(teks, "Dunia!");
+      printf("%s", teks); // Output: Halo, Dunia!
+      </code></pre>
+
+              <p>Semua fungsi ini sangat penting untuk manipulasi data teks dalam program C.</p>
+            `
+          },
+          {
+            title: "Video: Belajar Array & String di C",
+            video: "https://www.youtube.com/embed/0I4HCRP5qXU",
+            content: `
+              <p>Video ini membahas konsep array dan string di C dengan contoh yang mudah dipahami, termasuk cara mengakses, mengisi, dan memanipulasi data.</p>
+              <p>Cocok untuk pemula agar memahami struktur data dasar di C secara visual.</p>
+            `
+          }
+        ]
+      },
+
+      6: {
+        title: "Fungsi (Functions)",
+        slides: [
+          {
+            title: "Konsep Fungsi dalam C",
+            content: `
+              <p><strong>Fungsi</strong> adalah blok kode yang digunakan untuk menjalankan tugas tertentu. Dengan fungsi, program menjadi <strong>modular</strong>, lebih rapi, dan mudah dipelihara.</p>
+
+              <h4>🔹 Kelebihan Menggunakan Fungsi:</h4>
+              <ul>
+                <li>Memecah program besar menjadi bagian kecil yang mudah dikelola.</li>
+                <li>Menghindari pengulangan kode (reusable).</li>
+                <li>Meningkatkan keterbacaan dan efisiensi pengembangan.</li>
+              </ul>
+
+              <h4>🔹 Jenis Fungsi:</h4>
+              <ul>
+                <li><strong>Fungsi bawaan</strong> (built-in) seperti <code>printf()</code>, <code>scanf()</code>, dll.</li>
+                <li><strong>Fungsi buatan sendiri</strong> (user-defined function) yang kita tulis sesuai kebutuhan.</li>
+              </ul>
+
+              <p>Fungsi dalam C bisa memiliki parameter dan nilai balik (return value) — atau tidak sama sekali, tergantung kebutuhan.</p>
+            `
+          },
+          {
+            title: "Deklarasi, Definisi, dan Pemanggilan Fungsi",
+            content: `
+              <p>Untuk menggunakan fungsi buatan sendiri, kamu perlu memahami tiga bagian penting:</p>
+
+              <h4>1️⃣ Deklarasi Fungsi (Function Prototype)</h4>
+              <pre><code>int tambah(int a, int b);</code></pre>
+              <p>Berfungsi memberi tahu compiler bahwa fungsi bernama <code>tambah</code> akan dibuat.</p>
+
+              <h4>2️⃣ Definisi Fungsi</h4>
+              <pre><code>int tambah(int a, int b) {
+          return a + b;
+      }</code></pre>
+              <p>Berisi isi dari fungsi tersebut (blok kode yang dijalankan).</p>
+
+              <h4>3️⃣ Pemanggilan Fungsi</h4>
+              <pre><code>int hasil = tambah(5, 3);
+      printf("%d", hasil); // Output: 8
+      </code></pre>
+
+              <p>Dengan pola ini, kamu bisa membuat fungsi sendiri sebanyak yang dibutuhkan sesuai logika program.</p>
+            `
+          },
+          {
+            title: "Parameter & Return Value",
+            content: `
+              <p>Fungsi bisa menerima data dari luar melalui <strong>parameter</strong> dan mengembalikan hasil dengan <strong>return value</strong>.</p>
+
+              <h4>🔹 Contoh Fungsi dengan Parameter & Return:</h4>
+              <pre><code>int kali(int x, int y) {
+          return x * y;
+      }
+      </code></pre>
+
+              <h4>🔹 Fungsi Tanpa Parameter & Return:</h4>
+              <pre><code>void sapa() {
+          printf("Halo Dunia!");
+      }
+      </code></pre>
+
+              <h4>🔹 Fungsi dengan Parameter tapi Tanpa Return:</h4>
+              <pre><code>void tampilkan(char nama[]) {
+          printf("Halo, %s!", nama);
+      }
+      </code></pre>
+
+              <h4>🔹 Fungsi dengan Return tapi Tanpa Parameter:</h4>
+              <pre><code>int angkaTetap() {
+          return 10;
+      }
+      </code></pre>
+
+              <p>Parameter dan return memberikan fleksibilitas besar untuk membangun program modular dan efisien.</p>
+            `
+          },
+          {
+            title: "Variabel Lokal dan Global",
+            content: `
+              <p>Dalam fungsi, variabel bisa bersifat <strong>lokal</strong> (hanya berlaku di fungsi itu) atau <strong>global</strong> (bisa diakses semua fungsi).</p>
+
+              <h4>🔹 Variabel Lokal:</h4>
+              <pre><code>void contoh() {
+          int x = 5; // lokal hanya untuk fungsi ini
+          printf("%d", x);
+      }
+      </code></pre>
+
+              <h4>🔹 Variabel Global:</h4>
+              <pre><code>int y = 10; // global
+
+      void tampil() {
+          printf("%d", y); // bisa diakses di sini
+      }
+
+      void ubah() {
+          y = 20; // bisa diubah di sini juga
+      }
+      </code></pre>
+
+              <p>Gunakan variabel global dengan hati-hati, karena bisa menyebabkan konflik jika program besar dan kompleks.</p>
+            `
+          },
+          {
+            title: "Rekursi (Fungsi Memanggil Dirinya Sendiri)",
+            content: `
+              <p><strong>Rekursi</strong> adalah teknik di mana sebuah fungsi <strong>memanggil dirinya sendiri</strong> untuk menyelesaikan masalah yang lebih kecil dari masalah awal.</p>
+
+              <h4>🔹 Contoh Fungsi Rekursif: Faktorial</h4>
+              <pre><code>int faktorial(int n) {
+          if (n == 1)
+              return 1;
+          else
+              return n * faktorial(n - 1);
+      }
+      </code></pre>
+
+              <p><strong>Penjelasan:</strong>  
+              - Jika <code>n == 1</code>, fungsi berhenti (basis rekursi).  
+              - Jika tidak, fungsi memanggil dirinya dengan <code>n - 1</code>.</p>
+
+              <p>Hasil pemanggilan berulang akan dikalikan sampai kondisi berhenti terpenuhi.</p>
+
+              <h4>🔹 Output:</h4>
+              <pre><code>printf("%d", faktorial(5)); // Output: 120
+      </code></pre>
+
+              <p>Rekursi banyak digunakan dalam algoritma seperti pencarian, sorting, atau pemrosesan data struktur pohon.</p>
+            `
+          },
+          {
+            title: "Video: Belajar Fungsi dan Rekursi di C",
+            video: "https://www.youtube.com/embed/1g_jtn5Lx9g",
+            content: `
+              <p>Video ini menjelaskan konsep fungsi, parameter, variabel lokal & global, serta cara kerja rekursi dengan contoh sederhana.</p>
+              <p>Sangat cocok untuk memahami bagaimana cara membagi program besar menjadi fungsi-fungsi kecil yang efisien.</p>
+            `
+          }
+        ]
+      },
+
+      7: {
+        title: "Pointer (Penting tapi Nggak Perlu Terlalu Dalam)",
+        slides: [
+          {
+            title: "Pengertian Pointer",
+            content: `
+              <p><strong>Pointer</strong> adalah variabel yang menyimpan <em>alamat memori</em> dari variabel lain, bukan nilainya langsung.</p>
+
+              <p>Dengan pointer, kamu bisa mengakses, memanipulasi, atau mengoper variabel secara tidak langsung melalui alamat memorinya.</p>
+
+              <h4>🔹 Gambaran Sederhana:</h4>
+              <pre><code>int x = 10;
+      int *p;   // deklarasi pointer ke int
+      p = &x;   // p menyimpan alamat memori x
+      </code></pre>
+
+              <p><code>&</code> = mengambil alamat memori variabel.<br>
+              <code>*</code> = mengakses nilai di alamat yang ditunjuk pointer.</p>
+
+              <h4>🔹 Contoh Output:</h4>
+              <pre><code>printf("Alamat x: %p\\n", &x);
+      printf("Nilai x lewat pointer: %d", *p);
+      </code></pre>
+
+              <p>Pointer adalah fitur penting di C karena memberi kontrol langsung terhadap memori komputer.</p>
+            `
+          },
+          {
+            title: "Deklarasi & Penggunaan Dasar Pointer",
+            content: `
+              <p>Untuk mendeklarasikan pointer, gunakan tanda <code>*</code> di depan nama variabel.</p>
+
+              <h4>🔹 Contoh Dasar:</h4>
+              <pre><code>int a = 42;
+      int *ptr = &a;
+
+      printf("Nilai a = %d\\n", a);
+      printf("Alamat a = %p\\n", &a);
+      printf("Nilai ptr = %p\\n", ptr);
+      printf("Nilai yang ditunjuk ptr = %d", *ptr);
+      </code></pre>
+
+              <p>Pointer memiliki tipe data yang sesuai dengan variabel yang ditunjuknya, misalnya:</p>
+              <ul>
+                <li><code>int *p;</code> untuk integer</li>
+                <li><code>float *p;</code> untuk float</li>
+                <li><code>char *p;</code> untuk karakter atau string</li>
+              </ul>
+
+              <p>Kesalahan umum pemula adalah lupa menginisialisasi pointer (menyebabkan <em>undefined behavior</em>).</p>
+            `
+          },
+          {
+            title: "Pointer ke Variabel, Array, dan String",
+            content: `
+              <p>Pointer bisa digunakan untuk menunjuk ke berbagai jenis data — variabel tunggal, array, atau string.</p>
+
+              <h4>🔹 Pointer ke Variabel:</h4>
+              <pre><code>int x = 7;
+      int *p = &x;
+      printf("%d", *p); // Output: 7
+      </code></pre>
+
+              <h4>🔹 Pointer ke Array:</h4>
+              <pre><code>int angka[] = {10, 20, 30};
+      int *ptr = angka; // otomatis menunjuk ke indeks 0
+
+      printf("%d", *(ptr + 1)); // Output: 20
+      </code></pre>
+
+              <p>Pada dasarnya, <code>angka[i]</code> sama dengan <code>*(angka + i)</code>.</p>
+
+              <h4>🔹 Pointer ke String:</h4>
+              <pre><code>char *kata = "Halo";
+      printf("%s", kata); // Output: Halo
+      </code></pre>
+
+              <p>String sebenarnya adalah array karakter, sehingga bisa ditunjuk langsung dengan pointer bertipe <code>char *</code>.</p>
+            `
+          },
+          {
+            title: "Pointer & Fungsi (Pass by Reference)",
+            content: `
+              <p>Saat kamu mengirim variabel ke fungsi, secara default nilainya dikirim salinan (<strong>pass by value</strong>).</p>
+              <p>Tapi dengan pointer, kamu bisa mengirim alamatnya, sehingga fungsi bisa mengubah nilai aslinya (<strong>pass by reference</strong>).</p>
+
+              <h4>🔹 Contoh Tanpa Pointer:</h4>
+              <pre><code>void ubah(int x) {
+          x = 20;
+      }
+
+      int main() {
+          int a = 10;
+          ubah(a);
+          printf("%d", a); // Output: 10 (tidak berubah)
+      }
+      </code></pre>
+
+              <h4>🔹 Contoh Dengan Pointer:</h4>
+              <pre><code>void ubah(int *x) {
+          *x = 20;
+      }
+
+      int main() {
+          int a = 10;
+          ubah(&a);
+          printf("%d", a); // Output: 20 (berubah)
+      }
+      </code></pre>
+
+              <p>Pointer sering digunakan di fungsi agar bisa memodifikasi nilai asli dari variabel yang dikirim.</p>
+            `
+          },
+          {
+            title: "Pointer ke Pointer (Sedikit Pengenalan)",
+            content: `
+              <p>Pointer juga bisa menyimpan alamat dari pointer lain — disebut <strong>pointer ke pointer</strong> atau <code>**</code>.</p>
+
+              <h4>🔹 Contoh:</h4>
+              <pre><code>int a = 5;
+      int *p = &a;
+      int **pp = &p;
+
+      printf("Nilai a: %d\\n", a);
+      printf("Nilai via *p: %d\\n", *p);
+      printf("Nilai via **pp: %d", **pp);
+      </code></pre>
+
+              <p>Struktur ini biasanya digunakan dalam alokasi memori dinamis dan manipulasi data kompleks seperti array 2D atau pointer ke string.</p>
+
+              <p>Tapi untuk tahap ini, cukup pahami bahwa pointer bisa menunjuk ke pointer lain.</p>
+            `
+          },
+          {
+            title: "Video: Memahami Pointer di C untuk Pemula",
+            video: "https://www.youtube.com/embed/Z8MvY7zE3K0",
+            content: `
+              <p>Video ini menjelaskan pointer dengan cara visual: bagaimana alamat memori bekerja, bagaimana pointer menunjuk variabel, dan cara memanipulasi nilai melalui pointer.</p>
+              <p>Cocok banget buat kamu yang baru pertama kali belajar pointer agar cepat paham konsep dasarnya.</p>
+            `
+          }
+        ]
+      },
+
+      8: {
+        title: "Struktur Data Dasar di C",
+        slides: [
+          {
+            title: "Konsep Struktur Data di C",
+            content: `
+              <p>Pada bahasa C, kamu bisa membuat <strong>struktur data buatan sendiri</strong> untuk mengelompokkan beberapa variabel dengan tipe berbeda menjadi satu kesatuan.</p>
+              <p>Struktur data ini sangat berguna untuk merepresentasikan objek nyata seperti <em>mahasiswa</em>, <em>barang</em>, <em>pegawai</em>, dan sebagainya.</p>
+
+              <h4>🔹 Contoh Gambaran:</h4>
+              <pre><code>// Tanpa struct
+      char nama[30];
+      int umur;
+      float nilai;
+
+      // Dengan struct
+      struct Mahasiswa {
+        char nama[30];
+        int umur;
+        float nilai;
+      };
+      </code></pre>
+
+              <p>Dengan <code>struct</code>, data menjadi lebih terorganisir dan mudah dikelola.</p>
+            `
+          },
+          {
+            title: "struct (Struktur Data Buatan Sendiri)",
+            content: `
+              <p><strong>struct</strong> digunakan untuk membuat tipe data baru yang berisi beberapa variabel dengan tipe berbeda dalam satu unit.</p>
+
+              <h4>🔹 Contoh Penggunaan:</h4>
+              <pre><code>struct Mahasiswa {
+          char nama[30];
+          int umur;
+          float nilai;
+      };
+
+      int main() {
+          struct Mahasiswa mhs1;
+
+          strcpy(mhs1.nama, "Ali");
+          mhs1.umur = 20;
+          mhs1.nilai = 85.5;
+
+          printf("Nama: %s\\n", mhs1.nama);
+          printf("Umur: %d\\n", mhs1.umur);
+          printf("Nilai: %.2f", mhs1.nilai);
+      }
+      </code></pre>
+
+              <p>Struktur seperti ini sering digunakan untuk menyimpan data dalam bentuk tabel atau daftar (misalnya daftar mahasiswa, barang, dsb).</p>
+            `
+          },
+          {
+            title: "typedef untuk Penamaan Baru",
+            content: `
+              <p><strong>typedef</strong> digunakan untuk membuat nama alias (penamaan baru) terhadap tipe data yang sudah ada — termasuk <code>struct</code>.</p>
+              <p>Tujuannya agar kode lebih pendek dan mudah dibaca.</p>
+
+              <h4>🔹 Contoh Tanpa typedef:</h4>
+              <pre><code>struct Mahasiswa {
+          char nama[30];
+          int umur;
+          float nilai;
+      };
+
+      struct Mahasiswa m1;
+      </code></pre>
+
+              <h4>🔹 Contoh Dengan typedef:</h4>
+              <pre><code>typedef struct {
+          char nama[30];
+          int umur;
+          float nilai;
+      } Mahasiswa;
+
+      Mahasiswa m1;
+      </code></pre>
+
+              <p>Dengan <code>typedef</code>, kamu tidak perlu lagi menulis kata <code>struct</code> setiap kali membuat variabelnya.</p>
+            `
+          },
+          {
+            title: "enum (Enumeration)",
+            content: `
+              <p><strong>enum</strong> digunakan untuk membuat kumpulan konstanta dengan nama yang lebih mudah diingat.</p>
+              <p>Cocok untuk data yang memiliki pilihan tetap, seperti hari, bulan, status, atau level.</p>
+
+              <h4>🔹 Contoh:</h4>
+              <pre><code>enum Hari { SENIN, SELASA, RABU, KAMIS, JUMAT, SABTU, MINGGU };
+
+      int main() {
+          enum Hari hari_ini;
+          hari_ini = RABU;
+
+          printf("Nilai enum hari ini: %d", hari_ini); // Output: 2
+      }
+      </code></pre>
+
+              <p>Secara default, nilai enum dimulai dari 0 dan meningkat otomatis, tapi kamu juga bisa mengatur nilainya secara manual.</p>
+            `
+          },
+          {
+            title: "Array of Struct (Kumpulan Data Berstruktur)",
+            content: `
+              <p>Kamu bisa membuat <strong>array of struct</strong> untuk menyimpan banyak data dalam bentuk struktur yang sama.</p>
+              <p>Misalnya: daftar beberapa mahasiswa.</p>
+
+              <h4>🔹 Contoh:</h4>
+              <pre><code>typedef struct {
+          char nama[30];
+          int umur;
+          float nilai;
+      } Mahasiswa;
+
+      int main() {
+          Mahasiswa daftar[3] = {
+              {"Ali", 20, 88.5},
+              {"Budi", 21, 90.0},
+              {"Citra", 19, 85.0}
+          };
+
+          for (int i = 0; i < 3; i++) {
+              printf("%s - %d tahun - Nilai: %.2f\\n",
+                     daftar[i].nama, daftar[i].umur, daftar[i].nilai);
+          }
+      }
+      </code></pre>
+
+              <p>Array of struct sangat umum digunakan untuk menyimpan data tabel dalam program C.</p>
+            `
+          },
+          {
+            title: "Pointer ke Struct",
+            content: `
+              <p>Pointer juga bisa menunjuk ke <code>struct</code>. Ini berguna untuk efisiensi memori dan manipulasi data di fungsi.</p>
+
+              <h4>🔹 Contoh:</h4>
+              <pre><code>typedef struct {
+          char nama[30];
+          int umur;
+      } Orang;
+
+      int main() {
+          Orang o1 = {"Dina", 22};
+          Orang *ptr = &o1;
+
+          printf("Nama: %s\\n", ptr->nama);
+          printf("Umur: %d", ptr->umur);
+      }
+      </code></pre>
+
+              <p>Tanda <code>-></code> digunakan untuk mengakses anggota struct melalui pointer.</p>
+
+              <p>Contoh di atas sama dengan <code>(*ptr).nama</code>, tapi notasi <code>-></code> lebih umum digunakan karena lebih ringkas.</p>
+            `
+          },
+          {
+            title: "Video: Pengenalan struct, typedef, dan enum di C",
+            video: "https://www.youtube.com/embed/GGTxAqzZ3Dw",
+            content: `
+              <p>Video ini menjelaskan secara visual bagaimana <code>struct</code>, <code>typedef</code>, dan <code>enum</code> bekerja di bahasa C.</p>
+              <p>Kamu akan belajar cara mengelompokkan data, memberi nama baru pada tipe data, dan membuat konstanta bernama untuk meningkatkan keterbacaan program.</p>
+            `
+          }
+        ]
+      },
+
+      9: {
+        title: "File Handling di C",
+        slides: [
+          {
+            title: "Pengenalan File Handling",
+            content: `
+              <p>File handling di C memungkinkan program untuk <strong>membaca dan menulis data ke file</strong> di penyimpanan komputer (seperti <code>.txt</code> atau <code>.dat</code>).</p>
+              <p>Fitur ini penting untuk menyimpan data secara permanen, seperti data pengguna, catatan transaksi, atau hasil pemrosesan program.</p>
+
+              <h4>🔹 Fungsi utama file handling di C:</h4>
+              <ul>
+                <li><code>fopen()</code> – membuka file</li>
+                <li><code>fprintf()</code> / <code>fscanf()</code> – menulis dan membaca data dari file teks</li>
+                <li><code>fclose()</code> – menutup file</li>
+              </ul>
+
+              <p>Untuk bekerja dengan file, kamu perlu memahami <strong>file pointer</strong> yang merepresentasikan hubungan antara program dan file di sistem.</p>
+            `
+          },
+          {
+            title: "Membuka & Menutup File (fopen dan fclose)",
+            content: `
+              <p>Untuk memanipulasi file, pertama kamu harus membukanya dengan <code>fopen()</code>, dan setelah selesai digunakan, file harus ditutup dengan <code>fclose()</code>.</p>
+
+              <h4>🔹 Contoh Dasar:</h4>
+              <pre><code>#include &lt;stdio.h&gt;
+
+      int main() {
+          FILE *fp;                          // deklarasi file pointer
+          fp = fopen("data.txt", "w");       // buka file untuk ditulis
+
+          if (fp == NULL) {
+              printf("Gagal membuka file!\\n");
+              return 1;
+          }
+
+          fprintf(fp, "Halo, dunia file handling!\\n");
+          fclose(fp);                        // tutup file setelah selesai
+
+          printf("Data berhasil ditulis ke file.\\n");
+          return 0;
+      }
+      </code></pre>
+
+              <p><code>FILE *</code> digunakan sebagai pointer ke file yang sedang dibuka.</p>
+              <p>Selalu gunakan <code>fclose()</code> untuk menutup file agar data tersimpan dengan benar dan mencegah kebocoran memori.</p>
+            `
+          },
+          {
+            title: "Mode File di fopen()",
+            content: `
+              <p>Saat membuka file, kamu harus menentukan <strong>mode file</strong> agar compiler tahu bagaimana file itu digunakan.</p>
+
+              <h4>🔹 Mode yang tersedia:</h4>
+              <ul>
+                <li><code>"r"</code> – Membuka file untuk <strong>membaca</strong> (file harus sudah ada).</li>
+                <li><code>"w"</code> – Membuka file untuk <strong>menulis</strong> (jika sudah ada, isinya akan dihapus).</li>
+                <li><code>"a"</code> – Membuka file untuk <strong>menambahkan (append)</strong> di akhir file.</li>
+                <li><code>"r+"</code> – Membaca & menulis (tidak menghapus isi lama).</li>
+                <li><code>"w+"</code> – Menulis & membaca (menghapus isi lama).</li>
+                <li><code>"a+"</code> – Menambahkan & membaca dari file (tidak menghapus isi lama).</li>
+              </ul>
+
+              <h4>🔹 Contoh:</h4>
+              <pre><code>FILE *fp = fopen("laporan.txt", "a"); // buka file untuk append
+      fprintf(fp, "Tambah data baru\\n");
+      fclose(fp);
+      </code></pre>
+
+              <p>Pastikan mode file sesuai dengan kebutuhan programmu agar tidak kehilangan data secara tidak sengaja.</p>
+            `
+          },
+          {
+            title: "Menulis ke File (fprintf, fputs)",
+            content: `
+              <p>Untuk menulis ke file teks, kamu bisa menggunakan <code>fprintf()</code> atau <code>fputs()</code>.</p>
+
+              <h4>🔹 Contoh penggunaan <code>fprintf()</code>:</h4>
+              <pre><code>FILE *fp = fopen("output.txt", "w");
+      fprintf(fp, "Nama: %s\\nUmur: %d\\nNilai: %.2f", "Ali", 20, 88.5);
+      fclose(fp);
+      </code></pre>
+
+              <h4>🔹 Contoh penggunaan <code>fputs()</code>:</h4>
+              <pre><code>FILE *fp = fopen("pesan.txt", "a");
+      fputs("Baris baru ditambahkan!\\n", fp);
+      fclose(fp);
+      </code></pre>
+
+              <p><code>fprintf()</code> bekerja seperti <code>printf()</code> tapi menulis ke file, sedangkan <code>fputs()</code> hanya menulis string sederhana.</p>
+            `
+          },
+          {
+            title: "Membaca dari File (fscanf, fgets)",
+            content: `
+              <p>Untuk membaca data dari file, gunakan <code>fscanf()</code> atau <code>fgets()</code> tergantung jenis data yang dibaca.</p>
+
+              <h4>🔹 Contoh membaca teks terformat dengan <code>fscanf()</code>:</h4>
+              <pre><code>FILE *fp = fopen("output.txt", "r");
+      char nama[30];
+      int umur;
+      float nilai;
+
+      fscanf(fp, "Nama: %s\\nUmur: %d\\nNilai: %f", nama, &umur, &nilai);
+      printf("Data dari file: %s - %d - %.2f", nama, umur, nilai);
+
+      fclose(fp);
+      </code></pre>
+
+              <h4>🔹 Contoh membaca satu baris teks dengan <code>fgets()</code>:</h4>
+              <pre><code>FILE *fp = fopen("pesan.txt", "r");
+      char buffer[100];
+
+      while (fgets(buffer, sizeof(buffer), fp) != NULL) {
+          printf("%s", buffer);
+      }
+      fclose(fp);
+      </code></pre>
+
+              <p><code>fgets()</code> cocok untuk membaca baris demi baris dari file teks.</p>
+            `
+          },
+          {
+            title: "Konsep File Pointer (FILE *)",
+            content: `
+              <p><code>FILE *</code> adalah pointer khusus di bahasa C yang merepresentasikan koneksi ke file di sistem.</p>
+              <p>Saat kamu membuka file menggunakan <code>fopen()</code>, fungsi ini mengembalikan pointer ke objek <code>FILE</code>.</p>
+
+              <h4>🔹 Ilustrasi sederhana:</h4>
+              <pre><code>FILE *fp;              // deklarasi pointer file
+      fp = fopen("data.txt", "r");  // membuka file
+      // gunakan fp untuk baca/tulis
+      fclose(fp);             // tutup file
+      </code></pre>
+
+              <p>Tanpa file pointer, program tidak bisa tahu file mana yang sedang diakses. Jadi pointer ini wajib dalam semua operasi file.</p>
+            `
+          },
+          {
+            title: "Video: Dasar File Handling di C",
+            video: "https://www.youtube.com/embed/3bKuv4FfEoA",
+            content: `
+              <p>Video ini membahas langkah demi langkah cara membuka, menulis, membaca, dan menutup file di bahasa C.</p>
+              <p>Kamu juga akan memahami cara kerja <code>FILE *</code> serta perbedaan mode file seperti <em>read</em>, <em>write</em>, dan <em>append</em>.</p>
+            `
+          }
+        ]
+      },
+
+      10: {
+        title: "Memahami Memory & Dynamic Allocation di C",
+        slides: [
+          {
+            title: "Pengenalan Konsep Memory di C",
+            content: `
+              <p>Dalam bahasa C, memori adalah bagian penting karena C memberikan kontrol langsung terhadap bagaimana data disimpan dan dikelola.</p>
+
+              <p>Ketika program dijalankan, memori dibagi menjadi beberapa area utama:</p>
+              <ul>
+                <li><strong>Stack</strong> – digunakan untuk variabel lokal & pemanggilan fungsi (otomatis dikelola).</li>
+                <li><strong>Heap</strong> – digunakan untuk <em>dynamic memory allocation</em> (kamu harus kelola secara manual).</li>
+                <li><strong>Data Segment</strong> – menyimpan variabel global & statis.</li>
+                <li><strong>Code Segment</strong> – menyimpan instruksi program (fungsi, logika, dsb).</li>
+              </ul>
+
+              <p>Dynamic memory allocation digunakan saat kamu tidak tahu ukuran data di awal, misalnya saat membaca input dari pengguna yang panjangnya tidak pasti.</p>
+            `
+          },
+          {
+            title: "Konsep Dynamic Memory Allocation",
+            content: `
+              <p><strong>Dynamic Memory Allocation</strong> memungkinkan kita untuk memesan (allocate) memori secara manual di heap saat program berjalan.</p>
+
+              <p>Fungsi-fungsi utama yang digunakan dalam <code>&lt;stdlib.h&gt;</code> adalah:</p>
+              <ul>
+                <li><code>malloc()</code> – allocate memory tanpa inisialisasi.</li>
+                <li><code>calloc()</code> – allocate memory dengan inisialisasi nol.</li>
+                <li><code>realloc()</code> – ubah ukuran memori yang sudah dialokasikan.</li>
+                <li><code>free()</code> – bebaskan memori yang sudah tidak digunakan.</li>
+              </ul>
+
+              <p>Tanpa <code>free()</code>, memori akan tetap terpakai di heap dan menyebabkan <strong>memory leak</strong>.</p>
+            `
+          },
+          {
+            title: "Menggunakan malloc()",
+            content: `
+              <p><code>malloc()</code> digunakan untuk mengalokasikan blok memori berukuran tertentu (dalam byte) dan mengembalikan pointer ke blok tersebut.</p>
+
+              <h4>🔹 Sintaks:</h4>
+              <pre><code>ptr = (type*) malloc(size_in_bytes);</code></pre>
+
+              <h4>🔹 Contoh:</h4>
+              <pre><code>#include &lt;stdio.h&gt;
+      #include &lt;stdlib.h&gt;
+
+      int main() {
+          int *ptr;
+          int n, i;
+
+          printf("Masukkan jumlah elemen: ");
+          scanf("%d", &n);
+
+          ptr = (int*) malloc(n * sizeof(int)); // alokasi memori dinamis
+          if (ptr == NULL) {
+              printf("Alokasi gagal!\\n");
+              return 1;
+          }
+
+          for (i = 0; i < n; i++) {
+              ptr[i] = i + 1;
+          }
+
+          printf("Isi array: ");
+          for (i = 0; i < n; i++) {
+              printf("%d ", ptr[i]);
+          }
+
+          free(ptr); // membebaskan memori
+          return 0;
+      }
+      </code></pre>
+
+              <p>Fungsi <code>malloc()</code> tidak menginisialisasi nilai (isinya acak), jadi sebaiknya isi datanya sebelum digunakan.</p>
+            `
+          },
+          {
+            title: "Menggunakan calloc()",
+            content: `
+              <p><code>calloc()</code> mirip dengan <code>malloc()</code>, tapi secara otomatis mengisi semua memori dengan nilai 0.</p>
+
+              <h4>🔹 Sintaks:</h4>
+              <pre><code>ptr = (type*) calloc(number_of_elements, size_of_each_element);</code></pre>
+
+              <h4>🔹 Contoh:</h4>
+              <pre><code>#include &lt;stdio.h&gt;
+      #include &lt;stdlib.h&gt;
+
+      int main() {
+          int *ptr;
+          int n = 5, i;
+
+          ptr = (int*) calloc(n, sizeof(int)); // otomatis diisi nol
+          if (ptr == NULL) {
+              printf("Alokasi gagal!\\n");
+              return 1;
+          }
+
+          for (i = 0; i < n; i++) {
+              printf("%d ", ptr[i]);
+          }
+
+          free(ptr);
+          return 0;
+      }
+      </code></pre>
+
+              <p>Gunakan <code>calloc()</code> ketika kamu ingin memastikan semua nilai memori yang dialokasikan dimulai dari nol.</p>
+            `
+          },
+          {
+            title: "Mengubah Ukuran Memori (realloc)",
+            content: `
+              <p><code>realloc()</code> digunakan untuk mengubah ukuran blok memori yang sudah dialokasikan dengan <code>malloc()</code> atau <code>calloc()</code>.</p>
+
+              <h4>🔹 Contoh:</h4>
+              <pre><code>int *ptr;
+      int n = 3;
+      ptr = (int*) malloc(n * sizeof(int));
+
+      ptr[0] = 10; ptr[1] = 20; ptr[2] = 30;
+
+      // tambahkan ukuran array
+      n = 5;
+      ptr = (int*) realloc(ptr, n * sizeof(int));
+      ptr[3] = 40;
+      ptr[4] = 50;
+
+      for (int i = 0; i < n; i++) {
+          printf("%d ", ptr[i]);
+      }
+
+      free(ptr);
+      </code></pre>
+
+              <p><code>realloc()</code> membantu ketika ukuran data berubah saat runtime (contohnya saat menambah data user secara dinamis).</p>
+            `
+          },
+          {
+            title: "Membebaskan Memori (free)",
+            content: `
+              <p>Setiap kali kamu mengalokasikan memori dengan <code>malloc()</code> atau <code>calloc()</code>, kamu harus membebaskannya dengan <code>free()</code> setelah tidak digunakan lagi.</p>
+
+              <pre><code>int *ptr = (int*) malloc(5 * sizeof(int));
+      /* ... gunakan ptr ... */
+      free(ptr); // bebaskan memori
+      </code></pre>
+
+              <p>Tanpa <code>free()</code>, program dapat mengalami <strong>memory leak</strong> — yaitu kondisi di mana memori tetap terpakai padahal sudah tidak dibutuhkan.</p>
+            `
+          },
+          {
+            title: "Kesalahan Umum dalam Penggunaan Memori",
+            content: `
+              <ul>
+                <li>🔸 Mengakses memori setelah <code>free()</code> (undefined behavior).</li>
+                <li>🔸 Tidak memeriksa <code>NULL</code> setelah alokasi gagal.</li>
+                <li>🔸 Melakukan <code>free()</code> dua kali terhadap pointer yang sama.</li>
+                <li>🔸 Tidak menggunakan <code>sizeof()</code> dengan benar saat menghitung ukuran alokasi.</li>
+                <li>🔸 Lupa memanggil <code>free()</code> → menyebabkan memory leak.</li>
+              </ul>
+
+              <p>Pastikan untuk selalu memeriksa hasil alokasi dan membebaskan memori dengan benar setelah digunakan.</p>
+            `
+          },
+          {
+            title: "Video: Penjelasan malloc(), calloc(), dan free()",
+            video: "https://www.youtube.com/embed/bP9z3B2L3o8",
+            content: `
+              <p>Video ini menjelaskan konsep dasar manajemen memori di C dan cara menggunakan <code>malloc()</code>, <code>calloc()</code>, dan <code>free()</code> dengan contoh nyata.</p>
+              <p>Kamu juga akan melihat contoh kesalahan umum saat mengelola memori di heap.</p>
+            `
+          }
+        ]
+      },
+
+      11: {
+        title: "Debugging & Error Handling",
+        slides: [
+          {
+            title: "🧠 Pengantar Debugging & Error Handling",
+            content: `
+              <p>Dalam proses belajar pemrograman C, kamu pasti akan menemui error. Justru di situlah letak pentingnya <strong>debugging</strong> — proses menemukan dan memperbaiki kesalahan dalam kode.</p>
+              <p>Sementara itu, <strong>error handling</strong> digunakan untuk menangani kondisi error agar program tidak langsung berhenti secara tiba-tiba.</p>
+              <ul>
+                <li>🐞 Mengenal jenis-jenis error di C</li>
+                <li>🔍 Menggunakan debugger sederhana</li>
+                <li>⚠️ Memanfaatkan <code>assert()</code> dan pengecekan error manual</li>
+              </ul>
+            `
+          },
+
+          {
+            title: "⚙️ Jenis-Jenis Error di C",
+            content: `
+              <p>Ada tiga jenis utama error dalam bahasa C:</p>
+              <ul>
+                <li><strong>Syntax Error</strong> – Kesalahan aturan penulisan kode. Contoh: lupa tanda titik koma, tanda kurung tidak seimbang, dll.</li>
+                <li><strong>Logic Error</strong> – Program berjalan, tapi hasilnya tidak sesuai harapan karena logika salah.</li>
+                <li><strong>Runtime Error</strong> – Kesalahan yang terjadi saat program dijalankan, seperti pembagian dengan nol atau mengakses memori ilegal.</li>
+              </ul>
+
+              <pre><code>
+      // Contoh Syntax Error
+      printf("Hello World!") // titik koma hilang
+
+      // Contoh Logic Error
+      int a = 10, b = 5;
+      printf("%d", a - b); // seharusnya a + b
+
+      // Contoh Runtime Error
+      int x = 0;
+      printf("%d", 10 / x); // pembagian dengan nol
+              </code></pre>
+            `
+          },
+
+          {
+            title: "🔍 Menggunakan Debugger Sederhana",
+            content: `
+              <p>Debugger membantu kamu memeriksa jalannya program baris per baris, memantau nilai variabel, dan menemukan di mana kesalahan terjadi.</p>
+              <ul>
+                <li>Gunakan fitur <strong>Debug</strong> di IDE seperti Code::Blocks atau VS Code</li>
+                <li>Bisa juga dengan <strong>printf() debugging</strong> untuk melacak nilai variabel</li>
+                <li>Pelajari konsep <em>breakpoint</em>, <em>step over</em>, dan <em>watch variable</em></li>
+              </ul>
+
+              <pre><code>
+      // Contoh debugging manual dengan printf()
+      int total = 0;
+      for (int i = 0; i < 5; i++) {
+          total += i;
+          printf("Debug: i = %d, total = %d\\n", i, total);
+      }
+              </code></pre>
+
+              <p>Output seperti ini membantu kamu tahu alur program dan nilai variabel saat runtime.</p>
+            `
+          },
+
+          {
+            title: "⚠️ Penggunaan assert() dan Pengecekan Error",
+            content: `
+              <p><code>assert()</code> digunakan untuk memastikan kondisi tertentu benar saat program berjalan. Jika kondisi salah, program langsung berhenti dan memberi tahu lokasi error.</p>
+
+              <pre><code>
+      #include &lt;assert.h&gt;
+      #include &lt;stdio.h&gt;
+
+      int main() {
+          int umur = -5;
+          assert(umur &gt;= 0); // akan gagal karena umur negatif
+          printf("Umur valid: %d\\n", umur);
+          return 0;
+      }
+              </code></pre>
+
+              <p>Selain itu, biasakan juga melakukan pengecekan error manual.</p>
+              <pre><code>
+      FILE *f = fopen("data.txt", "r");
+      if (f == NULL) {
+          printf("Gagal membuka file!\\n");
+          return 1;
+      }
+              </code></pre>
+
+              <p>✅ Tujuan akhirnya adalah mencegah crash program dan membuatnya lebih aman serta mudah dipelihara.</p>
+            `
+          },
+
+          {
+            title: "🎬 Video Penjelasan Debugging & Error Handling",
+            content: `
+              <p>Tonton video berikut untuk memahami cara debugging dan menangani error di bahasa C secara visual dan praktis:</p>
+              <div class="video-container">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/n3Yui5T9C8c" title="Debugging C Programming Tutorial" frameborder="0" allowfullscreen></iframe>
+              </div>
+            `
+          }
+        ]
+      },
+
+      12: {
+        title: "Mini Project: Aplikasi Manajemen Mahasiswa (CRUD) — Step by Step",
+        slides: [
+          {
+            title: "Gambaran Proyek & Tujuan",
+            content: `
+              <p><strong>Proyek:</strong> Aplikasi konsol sederhana untuk <em>manajemen data mahasiswa</em> menggunakan bahasa C.</p>
+              <p><strong>Fitur utama:</strong> Tambah data, tampilkan daftar, cari, edit, hapus, serta simpan/muat data dari file.</p>
+              <p>Tujuan proyek ini adalah menggabungkan semua materi yang telah dipelajari: <strong>struct</strong>, <strong>array/dynamic memory</strong>, <strong>fungsi</strong>, <strong>pointer</strong>, <strong>file handling</strong>, dan <strong>debugging</strong>.</p>
+
+              <ul>
+                <li>📌 Praktik langsung konsep modularitas (fungsi)</li>
+                <li>📌 Latihan manipulasi memory dinamis dan pointer</li>
+                <li>📌 Simpan & muat data menggunakan file (persistensi sederhana)</li>
+              </ul>
+            `
+          },
+
+          {
+            title: "Persyaratan & Tools",
+            content: `
+              <p><strong>Tools:</strong> GCC (atau MinGW) dan editor/IDE (VS Code / Code::Blocks / Dev-C++).</p>
+              <p><strong>File:</strong> simpan kode sebagai <code>mahasiswa.c</code> dan data tersimpan di <code>data.dat</code> (format teks sederhana).</p>
+              <p><strong>Library yang digunakan:</strong> <code>&lt;stdio.h&gt;</code>, <code>&lt;stdlib.h&gt;</code>, <code>&lt;string.h&gt;</code>, <code>&lt;ctype.h&gt;</code>.</p>
+            `
+          },
+
+          {
+            title: "Desain Data Model",
+            content: `
+              <p>Kita gunakan <code>struct</code> untuk merepresentasikan mahasiswa:</p>
+              <pre><code>typedef struct {
+          char nim[16];
+          char nama[100];
+          int umur;
+          float ipk;
+      } Mahasiswa;</code></pre>
+
+              <p>Untuk menyimpan banyak mahasiswa, gunakan array dinamis (<code>Mahasiswa *list</code>) dengan variabel <code>count</code> dan <code>capacity</code> untuk mengelola ukuran (mirip vector sederhana).</p>
+            `
+          },
+
+          {
+            title: "Alur Program (Pseudocode & Menu)",
+            content: `
+              <p>Flow utama program:</p>
+              <pre><code>1. Muat data dari file (jika ada)
+      2. Tampilkan menu:
+         1) Tambah mahasiswa
+         2) Tampilkan semua
+         3) Cari menurut NIM
+         4) Edit data
+         5) Hapus data
+         6) Simpan ke file
+         7) Keluar
+      3. Ambil pilihan user dan panggil fungsi terkait
+      4. Saat keluar, simpan otomatis (opsional)</code></pre>
+
+              <p>Setiap operasi diimplementasikan sebagai fungsi terpisah untuk menjaga modularitas.</p>
+            `
+          },
+
+          {
+            title: "Fungsi-Fungsi Penting (Daftar Fungsi)",
+            content: `
+              <ul>
+                <li><code>void initList(...)</code> — inisialisasi array dinamis</li>
+                <li><code>void addMahasiswa(...)</code> — tambah entri, resize jika penuh</li>
+                <li><code>void printAll(...)</code> — tampilkan semua entri</li>
+                <li><code>int findByNIM(...)</code> — cari index berdasarkan NIM</li>
+                <li><code>void editMahasiswa(...)</code> — edit entri berdasarkan index</li>
+                <li><code>void deleteMahasiswa(...)</code> — hapus entri dan recompact array</li>
+                <li><code>int saveToFile(...)</code> / <code>int loadFromFile(...)</code> — file handling</li>
+                <li><code>void freeList(...)</code> — membebaskan memory</li>
+              </ul>
+            `
+          },
+
+          {
+            title: "Implementasi — Struktur & Inisialisasi List",
+            content: `
+              <pre><code>// Struktur & helper list
+      typedef struct {
+          char nim[16];
+          char nama[100];
+          int umur;
+          float ipk;
+      } Mahasiswa;
+
+      typedef struct {
+          Mahasiswa *data;
+          int count;
+          int capacity;
+      } ListMhs;
+
+      // Inisialisasi
+      void initList(ListMhs *list) {
+          list->count = 0;
+          list->capacity = 4;                 // mulai dengan kapasitas kecil
+          list->data = (Mahasiswa*) malloc(list->capacity * sizeof(Mahasiswa));
+          if (list->data == NULL) {
+              printf("Alokasi gagal!\\n");
+              exit(1);
+          }
+      }</code></pre>
+
+              <p>Gunakan <code>realloc()</code> saat perlu memperbesar kapasitas.</p>
+            `
+          },
+
+          {
+            title: "Implementasi — Menambah Mahasiswa (Resize Dinamis)",
+            content: `
+              <pre><code>void ensureCapacity(ListMhs *list) {
+          if (list->count >= list->capacity) {
+              list->capacity *= 2;
+              list->data = (Mahasiswa*) realloc(list->data, list->capacity * sizeof(Mahasiswa));
+              if (list->data == NULL) {
+                  printf("Re-allocation gagal!\\n");
+                  exit(1);
+              }
+          }
+      }
+
+      void addMahasiswa(ListMhs *list, Mahasiswa m) {
+          ensureCapacity(list);
+          list->data[list->count++] = m;
+      }</code></pre>
+
+              <p>Catatan: pastikan selalu mengecek <code>NULL</code> setelah <code>malloc/realloc</code>.</p>
+            `
+          },
+
+          {
+            title: "Implementasi — Menampilkan & Mencari",
+            content: `
+              <pre><code>void printAll(ListMhs *list) {
+          if (list->count == 0) {
+              printf("Belum ada data.\\n");
+              return;
+          }
+          for (int i = 0; i < list->count; i++) {
+              Mahasiswa *m = &list->data[i];
+              printf("%d. %s | %s | %d | %.2f\\n", i+1, m->nim, m->nama, m->umur, m->ipk);
+          }
+      }
+
+      int findByNIM(ListMhs *list, const char *nim) {
+          for (int i = 0; i < list->count; i++) {
+              if (strcmp(list->data[i].nim, nim) == 0) return i;
+          }
+          return -1;
+      }</code></pre>
+
+              <p>Gunakan <code>strcmp()</code> untuk perbandingan string (NIM).</p>
+            `
+          },
+
+          {
+            title: "Implementasi — Edit & Hapus",
+            content: `
+              <pre><code>void editMahasiswa(ListMhs *list, int idx) {
+          if (idx < 0 || idx >= list->count) return;
+          Mahasiswa *m = &list->data[idx];
+          printf("Edit nama (sekarang: %s): ", m->nama);
+          getchar(); // buang newline
+          fgets(m->nama, sizeof(m->nama), stdin);
+          m->nama[strcspn(m->nama, "\\n")] = '\\0';
+          // bisa tambahkan input umur/ipk serupa
+      }
+
+      void deleteMahasiswa(ListMhs *list, int idx) {
+          if (idx < 0 || idx >= list->count) return;
+          for (int i = idx; i < list->count - 1; i++) {
+              list->data[i] = list->data[i + 1];
+          }
+          list->count--;
+      }</code></pre>
+
+              <p>Hapus elemen dengan memindahkan elemen berikutnya ke kiri — sederhana dan efektif untuk aplikasi kecil.</p>
+            `
+          },
+
+          {
+            title: "Implementasi — Simpan & Muat dari File (File Handling)",
+            content: `
+              <pre><code>int saveToFile(ListMhs *list, const char *filename) {
+          FILE *fp = fopen(filename, "w");
+          if (!fp) return 0;
+          for (int i = 0; i < list->count; i++) {
+              Mahasiswa *m = &list->data[i];
+              fprintf(fp, "%s|%s|%d|%.2f\\n", m->nim, m->nama, m->umur, m->ipk);
+          }
+          fclose(fp);
+          return 1;
+      }
+
+      int loadFromFile(ListMhs *list, const char *filename) {
+          FILE *fp = fopen(filename, "r");
+          if (!fp) return 0;
+          char line[256];
+          while (fgets(line, sizeof(line), fp)) {
+              Mahasiswa m;
+              // parsing sederhana dengan strtok
+              char *token = strtok(line, "|");
+              if (!token) continue;
+              strncpy(m.nim, token, sizeof(m.nim));
+              token = strtok(NULL, "|");
+              if (!token) continue;
+              strncpy(m.nama, token, sizeof(m.nama));
+              token = strtok(NULL, "|");
+              m.umur = token ? atoi(token) : 0;
+              token = strtok(NULL, "|\\n");
+              m.ipk = token ? atof(token) : 0.0f;
+              addMahasiswa(list, m);
+          }
+          fclose(fp);
+          return 1;
+      }</code></pre>
+
+              <p>Gunakan pemisah yang konsisten (mis. <code>|</code>) untuk memudahkan parsing.</p>
+            `
+          },
+
+          {
+            title: "Implementasi — Menu Utama & Loop",
+            content: `
+              <pre><code>void menu() {
+          printf("1. Tambah\\n2. Tampilkan\\n3. Cari\\n4. Edit\\n5. Hapus\\n6. Simpan\\n7. Keluar\\n");
+      }
+
+      int main() {
+          ListMhs list;
+          initList(&list);
+          loadFromFile(&list, "data.dat");
+
+          int pilihan;
+          do {
+              menu();
+              printf("Pilih: ");
+              scanf("%d", &pilihan);
+              switch (pilihan) {
+                  case 1: { /* input data, panggil addMahasiswa */ break; }
+                  case 2: printAll(&list); break;
+                  case 3: { /* cari dan tampilkan */ break; }
+                  case 4: { /* cari, lalu edit */ break; }
+                  case 5: { /* cari, lalu delete */ break; }
+                  case 6: saveToFile(&list, "data.dat"); break;
+                  case 7: saveToFile(&list, "data.dat"); break;
+                  default: printf("Pilihan tidak valid\\n");
+              }
+          } while (pilihan != 7);
+
+          free(list.data);
+          return 0;
+      }</code></pre>
+
+              <p>Pastikan selalu menambahkan penanganan input newline (<code>getchar()</code>) saat diperlukan agar <code>fgets()</code> bekerja dengan baik.</p>
+            `
+          },
+
+          {
+            title: "Testing & Debugging",
+            content: `
+              <p>Langkah testing yang disarankan:</p>
+              <ol>
+                <li>Compile & jalankan, pastikan program tidak crash saat memuat file kosong.</li>
+                <li>Tambah beberapa data dan tampilkan, verifikasi output.</li>
+                <li>Simpan ke file, keluar, lalu jalankan ulang untuk memeriksa data termuat kembali.</li>
+                <li>Uji edit & delete, serta kasus tepi: hapus item terakhir, edit item pertama, cari NIM yang tidak ada.</li>
+                <li>Periksa kekeliruan memori dengan alat seperti <code>valgrind</code> (jika tersedia) untuk menemukan memory leak atau invalid access.</li>
+              </ol>
+
+              <p>Gunakan <code>printf()</code> untuk debugging cepat; tambahkan <code>assert()</code> untuk kondisi yang seharusnya selalu benar, mis. <code>assert(list.data != NULL)</code>.</p>
+            `
+          },
+
+          {
+            title: "Tips & Ekstensi Proyek",
+            content: `
+              <p>Setelah versi dasar berhasil, kamu bisa menambahkan fitur lanjutan:</p>
+              <ul>
+                <li>🔍 Pencarian lebih kaya (by name, range IPK)</li>
+                <li>📊 Sort data berdasarkan NIM / nama / IPK</li>
+                <li>🔁 Pagination ketika menampilkan daftar panjang</li>
+                <li>🔐 Validasi input (cek panjang NIM, range umur/IPK)</li>
+                <li>🧩 Konversi file ke format binary untuk efisiensi (fread/fwrite)</li>
+                <li>🧪 Unit test sederhana untuk fungsi-fungsi core</li>
+              </ul>
+
+              <p>Ini bagus untuk melatih debugging, desain data, dan manajemen memori lebih dalam.</p>
+            `
+          },
+
+          {
+            title: "Checklist Sebelum Selesai",
+            content: `
+              <ul>
+                <li>✅ Semua fungsi utama berfungsi (add, list, find, edit, delete)</li>
+                <li>✅ Data tersimpan & termuat dari file</li>
+                <li>✅ Tidak ada memory leak (free dipanggil saat keluar)</li>
+                <li>✅ Validasi input minimal (hindari buffer overflow)</li>
+                <li>✅ Kode terbagi rapi ke fungsi-fungsi (mudah dibaca)</li>
+              </ul>
+
+              <p>Jika semua terpenuhi, proyek ini sudah layak untuk dijadikan portofolio kecil 😄</p>
+            `
+          },
+
+          {
+            title: "Video: Contoh Proyek CRUD Sederhana di C",
+            content: `
+              <p>Tonton video contoh implementasi CRUD sederhana di C agar lebih jelas langkah-langkah dan pola kodenya.</p>
+              <div class="video-container">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/1g_jtn5Lx9g" title="C CRUD Tutorial" frameborder="0" allowfullscreen></iframe>
+              </div>
+            `
+          }
+        ]
+      }
+
+    };
+  </script>
+  <script src="../../assets/js/frontend.js"></script>
+</body>
+</html>
