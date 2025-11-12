@@ -317,2642 +317,1526 @@
     let slides = [];
 
     // Data konten untuk setiap modul
-    const moduleContent = {
-      1: {
-        title: "Pengenalan CSS",
-        slides: [
-          {
-            title: "Apa itu CSS",
-            content: `
-              <p><strong>CSS (Cascading Style Sheets)</strong> adalah bahasa yang digunakan untuk mengatur tampilan dan gaya elemen pada halaman web.</p>
-
-              <p>Jika HTML bertugas membangun <em>struktur</em> halaman, maka CSS berfungsi mempercantik dan mengatur <em>tampilan visual</em> seperti warna, ukuran teks, posisi elemen, dan layout.</p>
-
-              <p>CSS memungkinkan pemisahan antara struktur (HTML) dan gaya (CSS), sehingga kode lebih mudah dikelola dan halaman web lebih konsisten.</p>
-            `
-          },
-          {
-            title: "Sejarah Singkat CSS",
-            content: `
-              <ul>
-                <li><strong>1996</strong> – CSS1 dirilis oleh <em>W3C</em>, memperkenalkan konsep dasar styling seperti warna, font, dan spacing.</li>
-                <li><strong>1998</strong> – CSS2 hadir dengan fitur layout, positioning, dan media types.</li>
-                <li><strong>1999–2011</strong> – CSS3 dikembangkan menjadi modul-modul terpisah (flexbox, grid, animation, transition, dsb).</li>
-                <li><strong>CSS4</strong> – bukan versi resmi, tapi serangkaian proposal yang mengembangkan kemampuan CSS3 seperti selector level 4 dan fitur baru lainnya.</li>
-              </ul>
-
-              <p>Sekarang CSS terus berkembang dengan fitur modern seperti <strong>CSS Variables</strong>, <strong>Grid Layout</strong>, dan <strong>Subgrid</strong>.</p>
-            `
-          },
-          {
-            title: "Kegunaan CSS dalam Web Development",
-            content: `
-              <p>Beberapa fungsi utama CSS dalam pembuatan website:</p>
-              <ul>
-                <li>Mengatur warna teks, latar belakang, dan elemen visual.</li>
-                <li>Mengubah ukuran dan jenis font.</li>
-                <li>Membuat layout responsif dengan Flexbox atau Grid.</li>
-                <li>Menambahkan animasi dan transisi.</li>
-                <li>Mengatur posisi elemen (relative, absolute, fixed, sticky).</li>
-                <li>Membuat tampilan konsisten di seluruh halaman.</li>
-              </ul>
-            `
-          },
-          {
-            title: "Cara Kerja CSS",
-            content: `
-              <p>CSS bekerja dengan sistem selektor dan aturan. Browser membaca file CSS dan menerapkannya ke elemen HTML yang sesuai.</p>
-
-              <pre><code>h1 {
-        color: blue;
-        font-size: 24px;
-      }</code></pre>
-
-              <p>Penjelasan:</p>
-              <ul>
-                <li><code>h1</code> adalah <strong>selector</strong> — elemen HTML yang ingin diatur.</li>
-                <li><code>color</code> dan <code>font-size</code> adalah <strong>property</strong>.</li>
-                <li><code>blue</code> dan <code>24px</code> adalah <strong>value</strong>.</li>
-              </ul>
-
-              <p><strong>CSS</strong> disebut “Cascading” karena gaya dapat menimpa gaya lain berdasarkan urutan prioritas (specificity).</p>
-            `
-          },
-          {
-            title: "Perbedaan HTML vs CSS",
-            content: `
-              <table border="1" cellpadding="8">
-                <thead>
-                  <tr>
-                    <th>Aspek</th>
-                    <th>HTML</th>
-                    <th>CSS</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Fungsi</td>
-                    <td>Membuat struktur dan konten halaman.</td>
-                    <td>Mengatur tampilan dan gaya halaman.</td>
-                  </tr>
-                  <tr>
-                    <td>Bentuk</td>
-                    <td>Tag dan atribut.</td>
-                    <td>Selektor, properti, dan nilai.</td>
-                  </tr>
-                  <tr>
-                    <td>Contoh</td>
-                    <td><code>&lt;h1&gt;Judul&lt;/h1&gt;</code></td>
-                    <td><code>h1 { color: red; }</code></td>
-                  </tr>
-                  <tr>
-                    <td>Kaitan</td>
-                    <td>Dijalankan oleh browser sebagai struktur.</td>
-                    <td>Diterapkan pada elemen HTML.</td>
-                  </tr>
-                </tbody>
-              </table>
-            `
-          },
-          {
-            title: "Tools & Requirement",
-            content: `
-              <p>Untuk mulai belajar CSS, cukup siapkan alat berikut:</p>
-              <ul>
-                <li><strong>Browser:</strong> Chrome, Firefox, Edge, atau Safari (semua mendukung CSS modern).</li>
-                <li><strong>Code Editor:</strong> Visual Studio Code (disarankan), Sublime Text, atau Notepad++.</li>
-                <li><strong>Live Server Extension:</strong> (opsional) di VS Code untuk melihat hasil CSS secara langsung.</li>
-                <li><strong>DevTools:</strong> Alat bawaan browser untuk memeriksa dan mengedit style secara real-time.</li>
-              </ul>
-            `
-          },
-          {
-            title: "Menulis CSS Pertama Kali",
-            content: `
-              <p>CSS bisa ditulis dalam tiga cara:</p>
-              <ol>
-                <li><strong>Inline CSS</strong> — langsung di dalam tag HTML.</li>
-                <li><strong>Internal CSS</strong> — di dalam tag <code>&lt;style&gt;</code>.</li>
-                <li><strong>External CSS</strong> — di file terpisah dengan ekstensi <code>.css</code>.</li>
-              </ol>
-
-              <p>Contoh internal CSS:</p>
-              <pre><code>&lt;!DOCTYPE html&gt;
-      &lt;html&gt;
-        &lt;head&gt;
-          &lt;style&gt;
-            body {
-              background-color: #f0f0f0;
-            }
-            h1 {
-              color: darkblue;
-            }
-          &lt;/style&gt;
-        &lt;/head&gt;
-        &lt;body&gt;
-          &lt;h1&gt;Halo, CSS!&lt;/h1&gt;
-          &lt;p&gt;Ini contoh sederhana penggunaan CSS.&lt;/p&gt;
-        &lt;/body&gt;
-      &lt;/html&gt;</code></pre>
-
-              <p>Atau gunakan file eksternal <code>style.css</code> dan hubungkan seperti ini:</p>
-              <pre><code>&lt;link rel="stylesheet" href="style.css"&gt;</code></pre>
-            `
-          },
-          {
-            title: "Video: Pengenalan CSS dan Cara Kerjanya",
-            video: "https://www.youtube.com/embed/yfoY53QXEnI",
-            content: `
-              <p>Tonton video ini untuk memahami konsep dasar CSS, bagaimana ia bekerja bersama HTML, dan bagaimana menulis style pertama kamu.</p>
-              <p>Setelah menonton, cobalah membuat file <code>index.html</code> dan <code>style.css</code> sederhana untuk latihan.</p>
-            `
-          }
-        ]
+const moduleContent = {
+  7: {
+    title: "Ukuran, Box Model, & Display",
+    slides: [
+      {
+        title: "Pengenalan Box Model",
+        content: `
+          <p><strong>Box Model</strong> adalah konsep dasar CSS yang menjelaskan bagaimana ukuran dan ruang di sekitar elemen dihitung. Setiap elemen HTML dianggap sebagai sebuah kotak yang terdiri dari 4 lapisan:</p>
+          <ul>
+            <li><strong>Content</strong> – area isi elemen (teks, gambar, dll).</li>
+            <li><strong>Padding</strong> – ruang di antara konten dan border.</li>
+            <li><strong>Border</strong> – garis di sekeliling padding.</li>
+            <li><strong>Margin</strong> – jarak antara elemen dan elemen lainnya.</li>
+          </ul>
+          <pre><code>div.box {
+  width: 200px;
+  padding: 20px;
+  border: 5px solid #3498db;
+  margin: 10px;
+}</code></pre>
+          <p>Total lebar elemen = width + padding kiri/kanan + border kiri/kanan + margin kiri/kanan.</p>
+        `
       },
-
-      2: {
-        title: "Dasar Penulisan CSS",
-        slides: [
-          {
-            title: "Sintaks Dasar CSS",
-            content: `
-              <p>CSS bekerja berdasarkan aturan atau <strong>rule set</strong> yang menentukan bagaimana elemen HTML ditampilkan di browser.</p>
-
-              <p><strong>Struktur dasar penulisan CSS:</strong></p>
-              <pre><code>selector {
-        property: value;
-      }</code></pre>
-
-              <p><strong>Penjelasan:</strong></p>
-              <ul>
-                <li><strong>Selector</strong> → elemen HTML yang ingin diubah stylenya.</li>
-                <li><strong>Property</strong> → atribut tampilan yang ingin diatur (misalnya: color, font-size, background-color).</li>
-                <li><strong>Value</strong> → nilai untuk property tersebut.</li>
-              </ul>
-
-              <p><strong>Contoh:</strong></p>
-              <pre><code>h1 {
-        color: blue;
-        text-align: center;
-      }</code></pre>
-
-              <p>Kode di atas akan membuat semua elemen <code>&lt;h1&gt;</code> menjadi berwarna biru dan rata tengah.</p>
-            `
-          },
-          {
-            title: "Komentar dalam CSS",
-            content: `
-              <p>Komentar digunakan untuk memberi catatan dalam file CSS tanpa memengaruhi tampilan web.</p>
-
-              <pre><code>/* Ini komentar satu baris */
-
-      /*
-        Ini komentar multi-baris.
-        Kamu bisa menulis catatan di sini.
-      */
-
-      body {
-        background-color: #fafafa; /* memberi warna latar belakang */
-      }</code></pre>
-
-              <p><strong>Tips:</strong> Gunakan komentar untuk menjelaskan bagian kode atau menandai blok penting, terutama dalam file CSS yang panjang.</p>
-            `
-          },
-          {
-            title: "Struktur Rule Set dan Formatting Code yang Rapi",
-            content: `
-              <p>Menulis CSS dengan format yang rapi membantu membaca dan memelihara kode, terutama dalam proyek besar.</p>
-
-              <p><strong>Contoh format yang baik:</strong></p>
-              <pre><code>/* Gaya untuk heading */
-      h1 {
-        color: #333;
-        font-size: 32px;
-        font-weight: bold;
-        margin-bottom: 10px;
-      }
-
-      /* Gaya untuk paragraf */
-      p {
-        color: #555;
-        line-height: 1.6;
-        margin: 0 0 15px;
-      }</code></pre>
-
-              <p><strong>Pedoman umum:</strong></p>
-              <ul>
-                <li>Gunakan indentasi 2 atau 4 spasi secara konsisten.</li>
-                <li>Gunakan huruf kecil untuk nama property.</li>
-                <li>Simpan satu aturan per baris agar mudah dibaca.</li>
-                <li>Gunakan spasi setelah titik dua (<code>:</code>) antara property dan value.</li>
-                <li>Gunakan komentar untuk memisahkan bagian-bagian besar kode.</li>
-              </ul>
-            `
-          },
-          {
-            title: "Kesalahan Umum Penulisan CSS",
-            content: `
-              <p>Berikut beberapa kesalahan umum yang sering terjadi saat menulis CSS:</p>
-
-              <ul>
-                <li><strong>Tidak menutup kurung kurawal</strong> <code>}</code> atau titik koma <code>;</code>.</li>
-                <li><strong>Salah ketik nama property</strong> (misalnya <code>colorr</code>).</li>
-                <li><strong>Menggunakan tanda kutip berlebihan</strong> pada value.</li>
-                <li><strong>Mengabaikan urutan prioritas</strong> (selector lebih spesifik menimpa yang umum).</li>
-                <li><strong>Tidak memvalidasi CSS</strong> menggunakan alat seperti <a href="https://jigsaw.w3.org/css-validator/" target="_blank">W3C CSS Validator</a>.</li>
-              </ul>
-
-              <p><strong>Contoh kesalahan:</strong></p>
-              <pre><code>h1 {
-        color blue /* ❌ Kurang titik dua dan titik koma */
-      }</code></pre>
-
-              <p><strong>Penulisan yang benar:</strong></p>
-              <pre><code>h1 {
-        color: blue; /* ✅ Sudah benar */
-      }</code></pre>
-
-              <p>Biasakan memeriksa konsol browser (tab “Console” atau “Styles” di DevTools) untuk menemukan error CSS.</p>
-            `
-          },
-          {
-            title: "Video: Penulisan CSS yang Benar dan Rapi",
-            video: "https://www.youtube.com/embed/1PnVor36_40",
-            content: `
-              <p>Tonton video ini untuk memahami cara menulis CSS yang benar, mengenali kesalahan umum, dan membiasakan penulisan kode yang bersih dan konsisten.</p>
-              <p>Setelah menonton, coba tulis beberapa rule CSS dengan format yang rapi sesuai pedoman di atas.</p>
-            `
-          }
-        ]
+      {
+        title: "Mengatur Ukuran Elemen (width & height)",
+        content: `
+          <p>Properti <code>width</code> dan <code>height</code> digunakan untuk menentukan ukuran elemen. Kamu juga bisa menggunakan <code>min-width</code>, <code>max-width</code>, <code>min-height</code>, dan <code>max-height</code> untuk membatasi ukuran dinamis.</p>
+          <pre><code>div.container {
+  width: 80%;       /* proporsional terhadap parent */
+  max-width: 1200px; /* batas maksimal */
+  min-height: 300px; /* tinggi minimum */
+  height: auto;      /* menyesuaikan isi */
+}</code></pre>
+          <p><strong>Tips:</strong> Gunakan satuan <code>%</code> atau <code>vw/vh</code> agar lebih responsif terhadap ukuran layar.</p>
+        `
       },
-
-      3: {
-        title: "Menyisipkan CSS ke HTML",
-        slides: [
-          {
-            title: "Pendahuluan: Cara Menyisipkan CSS",
-            content: `
-              <p>CSS dapat diterapkan ke dokumen HTML dengan beberapa cara, tergantung kebutuhan dan skala proyek.</p>
-              <p>Tiga cara utama menyisipkan CSS:</p>
-              <ul>
-                <li><strong>Inline CSS</strong> — gaya langsung pada elemen HTML.</li>
-                <li><strong>Internal CSS</strong> — gaya ditulis di dalam tag <code>&lt;style&gt;</code> di bagian <code>&lt;head&gt;</code>.</li>
-                <li><strong>External CSS</strong> — gaya ditulis di file terpisah (ekstensi <code>.css</code>).</li>
-              </ul>
-              <p>Selain itu, kamu juga bisa <strong>mengimpor file CSS lain</strong> menggunakan <code>@import</code>.</p>
-            `
-          },
-          {
-            title: "Inline CSS",
-            content: `
-              <p><strong>Inline CSS</strong> digunakan langsung di dalam atribut <code>style</code> pada tag HTML.</p>
-
-              <pre><code>&lt;h1 style="color: blue; text-align: center;"&gt;Halo Dunia!&lt;/h1&gt;
-      &lt;p style="font-size: 18px; color: gray;"&gt;Ini contoh inline CSS.&lt;/p&gt;</code></pre>
-
-              <p><strong>Kelebihan:</strong></p>
-              <ul>
-                <li>Mudah dan cepat diterapkan untuk pengujian.</li>
-                <li>Tidak memerlukan file terpisah.</li>
-              </ul>
-
-              <p><strong>Kekurangan:</strong></p>
-              <ul>
-                <li>Tidak efisien untuk halaman besar.</li>
-                <li>Sulit dikelola dan melanggar prinsip pemisahan struktur & gaya.</li>
-              </ul>
-            `
-          },
-          {
-            title: "Internal CSS (Tag style)",
-            content: `
-              <p><strong>Internal CSS</strong> diletakkan di dalam tag <code>&lt;style&gt;</code> pada bagian <code>&lt;head&gt;</code>.</p>
-
-              <pre><code>&lt;!DOCTYPE html&gt;
-      &lt;html&gt;
-        &lt;head&gt;
-          &lt;style&gt;
-            body {
-              background-color: #f4f4f4;
-              font-family: Arial, sans-serif;
-            }
-            h1 {
-              color: darkgreen;
-            }
-          &lt;/style&gt;
-        &lt;/head&gt;
-        &lt;body&gt;
-          &lt;h1&gt;Contoh Internal CSS&lt;/h1&gt;
-          &lt;p&gt;Ini adalah halaman dengan gaya internal.&lt;/p&gt;
-        &lt;/body&gt;
-      &lt;/html&gt;</code></pre>
-
-              <p><strong>Kelebihan:</strong> mudah diterapkan untuk halaman tunggal.</p>
-              <p><strong>Kekurangan:</strong> gaya tidak bisa digunakan ulang di halaman lain.</p>
-            `
-          },
-          {
-            title: "External CSS (File .css)",
-            content: `
-              <p><strong>External CSS</strong> adalah metode terbaik dan paling direkomendasikan untuk proyek web besar.</p>
-              <p>Gaya ditulis dalam file terpisah (misalnya <code>style.css</code>) dan dihubungkan menggunakan tag <code>&lt;link&gt;</code>.</p>
-
-              <p><strong>File: index.html</strong></p>
-              <pre><code>&lt;!DOCTYPE html&gt;
-      &lt;html&gt;
-        &lt;head&gt;
-          &lt;link rel="stylesheet" href="style.css"&gt;
-        &lt;/head&gt;
-        &lt;body&gt;
-          &lt;h1&gt;Halo Dunia!&lt;/h1&gt;
-          &lt;p&gt;Ini halaman dengan CSS eksternal.&lt;/p&gt;
-        &lt;/body&gt;
-      &lt;/html&gt;</code></pre>
-
-              <p><strong>File: style.css</strong></p>
-              <pre><code>body {
-        background-color: #e0f7fa;
-      }
-
-      h1 {
-        color: #00796b;
-        text-align: center;
-      }</code></pre>
-
-              <p><strong>Kelebihan:</strong></p>
-              <ul>
-                <li>Memisahkan struktur dan gaya.</li>
-                <li>Gaya dapat digunakan ulang di banyak halaman.</li>
-                <li>Mudah dikelola dan diperbarui.</li>
-              </ul>
-            `
-          },
-          {
-            title: "Prioritas dan Urutan Pemanggilan Stylesheet",
-            content: `
-              <p>Jika ada beberapa sumber CSS (inline, internal, external), browser akan mengikuti urutan prioritas berikut:</p>
-              <ol>
-                <li><strong>Inline CSS</strong> → memiliki prioritas tertinggi.</li>
-                <li><strong>Internal CSS</strong> → prioritas menengah.</li>
-                <li><strong>External CSS</strong> → prioritas terendah (jika tidak ditimpa).</li>
-              </ol>
-
-              <p>Contoh kasus:</p>
-              <pre><code>&lt;h1 style="color: red;"&gt;Halo Dunia&lt;/h1&gt;</code></pre>
-              <p>Walau di <code>style.css</code> ditulis <code>h1 { color: blue; }</code>, hasil akhirnya tetap <strong>merah</strong> karena inline CSS lebih kuat.</p>
-
-              <p><strong>Catatan:</strong> Urutan tag <code>&lt;link&gt;</code> dalam <code>&lt;head&gt;</code> juga memengaruhi hasil, file yang dipanggil belakangan dapat menimpa gaya sebelumnya.</p>
-            `
-          },
-          {
-            title: "Mengimpor File CSS Lain dengan @import",
-            content: `
-              <p>Kamu bisa mengimpor file CSS lain menggunakan aturan <code>@import</code> di awal file CSS utama.</p>
-
-              <pre><code>/* File: main.css */
-      @import url("reset.css");
-      @import url("theme.css");
-
-      body {
-        font-family: Arial, sans-serif;
-      }</code></pre>
-
-              <p><strong>Kelebihan:</strong> rapi dan modular.</p>
-              <p><strong>Kekurangan:</strong> dapat memperlambat loading karena memuat file CSS tambahan secara berurutan.</p>
-
-              <p><strong>Rekomendasi:</strong> Gunakan <code>&lt;link&gt;</code> langsung di HTML jika performa jadi prioritas.</p>
-            `
-          },
-          {
-            title: "Video: Cara Menyisipkan CSS ke HTML",
-            video: "https://www.youtube.com/embed/qKoajPPWpmo",
-            content: `
-              <p>Tonton video ini untuk memahami tiga cara utama menyisipkan CSS ke HTML dan cara kerja prioritas stylesheet.</p>
-              <p>Setelah menonton, coba buat file <code>index.html</code> dan <code>style.css</code> untuk latihan menghubungkan eksternal CSS.</p>
-            `
-          }
-        ]
+      {
+        title: "Padding, Border, dan Margin",
+        content: `
+          <p>Tiga properti ini menentukan ruang di sekitar konten elemen:</p>
+          <pre><code>div.card {
+  padding: 16px;           /* jarak antara isi dan border */
+  border: 2px solid #ddd;  /* garis di sekeliling elemen */
+  margin: 20px;            /* jarak antar elemen */
+}</code></pre>
+          <ul>
+            <li><code>padding</code> – memberi ruang di dalam border.</li>
+            <li><code>border</code> – batas elemen.</li>
+            <li><code>margin</code> – ruang di luar border.</li>
+          </ul>
+          <p>Kamu bisa menentukan per sisi:</p>
+          <pre><code>padding: 10px 20px 30px 40px; /* top, right, bottom, left */
+margin-top: 20px;</code></pre>
+        `
       },
+      {
+        title: "Box-sizing: content-box vs border-box",
+        content: `
+          <p><code>box-sizing</code> menentukan bagaimana lebar dan tinggi elemen dihitung.</p>
+          <pre><code>/* Default */
+div.content {
+  box-sizing: content-box; /* width hanya menghitung area konten */
+}
 
-      4: {
-        title: "Selector & Spesifisitas",
-        slides: [
-          {
-            title: "Selector Dasar (Element, Class, ID)",
-            content: `
-              <p>Selector digunakan untuk memilih elemen HTML yang ingin diberi gaya. Tiga selector dasar yang paling umum digunakan adalah <strong>element</strong>, <strong>class</strong>, dan <strong>ID</strong>.</p>
-
-              <p><strong>Contoh:</strong></p>
-              <pre><code>/* Element selector */
-      p {
-        color: blue;
-      }
-
-      /* Class selector */
-      .text-merah {
-        color: red;
-      }
-
-      /* ID selector */
-      #judul {
-        font-size: 24px;
-      }</code></pre>
-
-              <p><strong>Catatan:</strong> Gunakan <code>class</code> untuk gaya yang digunakan berulang, dan <code>ID</code> untuk elemen unik di halaman.</p>
-            `
-          },
-          {
-            title: "Grouping Selector",
-            content: `
-              <p>Grouping selector memungkinkan kamu menerapkan gaya yang sama pada beberapa elemen sekaligus dengan memisahkan selector menggunakan koma (<code>,</code>).</p>
-
-              <pre><code>h1, h2, h3 {
-        color: navy;
-        text-transform: uppercase;
-      }</code></pre>
-
-              <p>Dengan cara ini, kamu tidak perlu menulis kode berulang untuk setiap elemen.</p>
-            `
-          },
-          {
-            title: "Universal Selector (*)",
-            content: `
-              <p>Universal selector (<code>*</code>) memilih semua elemen di halaman. Biasanya digunakan untuk reset gaya bawaan browser.</p>
-
-              <pre><code>* {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }</code></pre>
-
-              <p><strong>Tips:</strong> Gunakan dengan hati-hati, karena selector ini akan memengaruhi seluruh elemen di halaman.</p>
-            `
-          },
-          {
-            title: "Descendant, Child, & Sibling Selector",
-            content: `
-              <p>Selector ini digunakan untuk memilih elemen berdasarkan hubungannya di dalam struktur HTML.</p>
-
-              <pre><code>/* Descendant selector: elemen di dalam elemen lain */
-      div p {
-        color: gray;
-      }
-
-      /* Child selector: elemen langsung di bawah induknya */
-      div > p {
-        color: darkblue;
-      }
-
-      /* Adjacent sibling: elemen setelah elemen tertentu */
-      h2 + p {
-        font-style: italic;
-      }
-
-      /* General sibling: semua elemen saudara setelah elemen tertentu */
-      h2 ~ p {
-        color: purple;
-      }</code></pre>
-
-              <p><strong>Catatan:</strong> Selector ini penting untuk menargetkan struktur halaman kompleks tanpa menambah class berlebihan.</p>
-            `
-          },
-          {
-            title: "Attribute Selector",
-            content: `
-              <p>Attribute selector digunakan untuk menargetkan elemen yang memiliki atribut atau nilai tertentu.</p>
-
-              <pre><code>a[title] {
-        text-decoration: underline;
-      }
-
-      input[type="text"] {
-        border: 1px solid #ccc;
-      }
-
-      a[href*="youtube"] {
-        color: red;
-      }
-
-      a[href^="https"] {
-        color: green;
-      }
-
-      a[href$=".pdf"] {
-        color: orange;
-      }</code></pre>
-
-              <p><strong>Contoh:</strong> <code>a[href$=".pdf"]</code> akan memilih semua tautan yang mengarah ke file PDF.</p>
-            `
-          },
-          {
-            title: "Pseudo-class",
-            content: `
-              <p>Pseudo-class digunakan untuk menerapkan gaya pada keadaan tertentu dari elemen, seperti saat di-hover, di-klik, atau difokuskan.</p>
-
-              <pre><code>a:hover {
-        color: red;
-      }
-
-      button:focus {
-        outline: 2px solid blue;
-      }
-
-      input:disabled {
-        background-color: #eee;
-      }
-
-      li:nth-child(2) {
-        color: green;
-      }
-
-      li:nth-child(odd) {
-        background-color: #f2f2f2;
-      }</code></pre>
-
-              <p><strong>Tips:</strong> Pseudo-class membantu membuat interaksi pengguna lebih menarik dan dinamis.</p>
-            `
-          },
-          {
-            title: "Pseudo-element",
-            content: `
-              <p>Pseudo-element memungkinkan kamu menambahkan elemen virtual ke dalam elemen HTML tanpa menambah markup baru.</p>
-
-              <pre><code>p::first-letter {
-        font-size: 200%;
-        font-weight: bold;
-      }
-
-      p::selection {
-        background-color: yellow;
-      }
-
-      h1::before {
-        content: "★ ";
-        color: gold;
-      }
-
-      h1::after {
-        content: " ★";
-        color: gold;
-      }</code></pre>
-
-              <p><strong>Contoh:</strong> <code>::before</code> dan <code>::after</code> sering digunakan untuk membuat dekorasi visual seperti ikon atau tanda khusus.</p>
-            `
-          },
-          {
-            title: "Specificity & Prioritas Selector",
-            content: `
-              <p>Specificity menentukan aturan CSS mana yang lebih kuat jika beberapa selector menargetkan elemen yang sama.</p>
-
-              <ul>
-                <li>Inline style (paling kuat)</li>
-                <li>ID selector</li>
-                <li>Class, pseudo-class, dan attribute selector</li>
-                <li>Element selector dan pseudo-element</li>
-                <li>Urutan penulisan (yang terakhir menimpa yang sebelumnya)</li>
-              </ul>
-
-              <pre><code>p {
-        color: blue;
-      }
-
-      p.text-merah {
-        color: red; /* Lebih kuat karena pakai class */
-      }
-
-      #teks {
-        color: green; /* Lebih kuat lagi karena pakai ID */
-      }</code></pre>
-
-              <p><strong>Tips:</strong> Selalu jaga spesifisitas agar stylesheet tetap mudah dikelola.</p>
-            `
-          },
-          {
-            title: "!important dan Kapan Sebaiknya Dihindari",
-            content: `
-              <p><code>!important</code> digunakan untuk memaksa suatu gaya agar memiliki prioritas tertinggi, bahkan melebihi aturan spesifisitas biasa.</p>
-
-              <pre><code>p {
-        color: blue !important;
-      }</code></pre>
-
-              <p><strong>Peringatan:</strong> Gunakan hanya saat benar-benar perlu. Penggunaan berlebihan bisa membuat stylesheet sulit dikelola dan debugging jadi lebih rumit.</p>
-            `
-          }
-        ]
+/* Lebih umum dipakai */
+div.card {
+  box-sizing: border-box; /* width mencakup padding + border */
+}</code></pre>
+          <p><strong>border-box</strong> membuat layout lebih mudah diatur karena ukuran total elemen tidak bertambah akibat padding/border.</p>
+          <p>Biasanya, seluruh halaman diatur menggunakan:</p>
+          <pre><code>* {
+  box-sizing: border-box;
+}</code></pre>
+        `
       },
-
-      5: {
-        title: "Warna, Teks, dan Font",
-        slides: [
-          {
-            title: "Pengenalan Warna di CSS",
-            content: `
-              <p>CSS mendukung berbagai cara untuk menentukan warna pada elemen HTML. Warna bisa didefinisikan dengan <strong>nama warna</strong>, <strong>HEX</strong>, <strong>RGB/RGBA</strong>, atau <strong>HSL</strong>.</p>
-
-              <pre><code>/* Menggunakan nama warna */
-      h1 { color: red; }
-
-      /* Menggunakan kode HEX */
-      p { color: #3498db; }
-
-      /* Menggunakan RGB */
-      div { background-color: rgb(255, 200, 0); }
-
-      /* Menggunakan RGBA (dengan transparansi) */
-      section { background-color: rgba(0, 0, 0, 0.5); }
-
-      /* Menggunakan HSL */
-      footer { color: hsl(120, 50%, 40%); }</code></pre>
-
-              <p><strong>Tips:</strong> Gunakan <code>rgba()</code> atau <code>hsla()</code> untuk efek transparansi dan layering yang halus.</p>
-            `
-          },
-          {
-            title: "Properti Teks Dasar",
-            content: `
-              <p>CSS memiliki banyak properti untuk mengatur tampilan teks agar lebih mudah dibaca dan menarik.</p>
-
-              <pre><code>p {
-        color: #333;
-        font-size: 16px;
-        font-weight: 400;
-        text-align: justify;
-        line-height: 1.6;
-        letter-spacing: 0.5px;
-      }</code></pre>
-
-              <ul>
-                <li><code>color</code> – warna teks</li>
-                <li><code>font-size</code> – ukuran huruf</li>
-                <li><code>font-weight</code> – ketebalan huruf (100–900, atau bold)</li>
-                <li><code>text-align</code> – perataan teks (left, center, right, justify)</li>
-                <li><code>line-height</code> – jarak antar baris teks</li>
-                <li><code>letter-spacing</code> – jarak antar huruf</li>
-              </ul>
-
-              <p>Properti-properti ini sangat penting untuk menjaga keterbacaan teks di berbagai ukuran layar.</p>
-            `
-          },
-          {
-            title: "Font Families & Font Stack",
-            content: `
-              <p>Font family menentukan jenis huruf yang digunakan pada elemen teks. Biasanya ditulis dalam urutan fallback (font stack), untuk berjaga-jaga jika font utama tidak tersedia.</p>
-
-              <pre><code>body {
-        font-family: "Poppins", "Segoe UI", Arial, sans-serif;
-      }</code></pre>
-
-              <ul>
-                <li><code>sans-serif</code> – huruf tanpa kait (modern, bersih)</li>
-                <li><code>serif</code> – huruf dengan kait (klasik, formal)</li>
-                <li><code>monospace</code> – huruf lebar tetap (kode, terminal)</li>
-              </ul>
-
-              <p><strong>Tips:</strong> Selalu sertakan font generic seperti <code>sans-serif</code> di akhir stack agar browser tetap menampilkan font yang mirip.</p>
-            `
-          },
-          {
-            title: "Mengimpor Font dari Google Fonts",
-            content: `
-              <p>Google Fonts menyediakan ribuan font gratis yang bisa langsung digunakan di proyek web kamu.</p>
-
-              <p><strong>Cara 1 – lewat link di HTML:</strong></p>
-              <pre><code>&lt;link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet"&gt;</code></pre>
-
-              <p><strong>Cara 2 – lewat @import di CSS:</strong></p>
-              <pre><code>@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
-
-      body {
-        font-family: 'Poppins', sans-serif;
-      }</code></pre>
-
-              <p><strong>Tips:</strong> Gunakan hanya font yang dibutuhkan agar performa loading tetap cepat.</p>
-            `
-          },
-          {
-            title: "Text Decoration, Transform, dan Shadow",
-            content: `
-              <p>Untuk mempercantik teks, kamu bisa menambahkan dekorasi, efek kapitalisasi, dan bayangan.</p>
-
-              <pre><code>h1 {
-        text-decoration: underline;
-        text-transform: uppercase;
-        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-      }
-
-      a {
-        text-decoration: none;
-      }
-
-      p {
-        text-transform: capitalize;
-      }</code></pre>
-
-              <ul>
-                <li><code>text-decoration</code> – garis bawah, atas, atau coret (underline, overline, line-through)</li>
-                <li><code>text-transform</code> – ubah kapitalisasi (uppercase, lowercase, capitalize)</li>
-                <li><code>text-shadow</code> – menambahkan bayangan pada teks</li>
-              </ul>
-
-              <p><strong>Tips:</strong> Gunakan efek ini dengan hati-hati agar tidak mengganggu keterbacaan.</p>
-            `
-          },
-          {
-            title: "Responsive Text dengan clamp()",
-            content: `
-              <p>Fungsi <code>clamp()</code> memungkinkan ukuran teks menyesuaikan secara otomatis berdasarkan lebar layar, tanpa media query.</p>
-
-              <pre><code>h1 {
-        font-size: clamp(1.5rem, 5vw, 3rem);
-      }</code></pre>
-
-              <ul>
-                <li>Nilai pertama: ukuran minimum</li>
-                <li>Nilai kedua: ukuran ideal yang responsif terhadap viewport</li>
-                <li>Nilai ketiga: ukuran maksimum</li>
-              </ul>
-
-              <p><strong>Contoh:</strong> Saat layar kecil, teks berukuran 1.5rem. Saat layar melebar, ukurannya bisa membesar hingga 3rem.</p>
-            `
-          },
-          {
-            title: "Icon Font & SVG Text",
-            content: `
-              <p>Ikon dapat ditambahkan ke dalam teks menggunakan <strong>icon font</strong> seperti Font Awesome, atau dengan <strong>SVG</strong> agar lebih fleksibel dan tajam.</p>
-
-              <p><strong>Contoh menggunakan Font Awesome:</strong></p>
-              <pre><code>&lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"&gt;
-
-      &lt;h2&gt;&lt;i class="fa-solid fa-star"&gt;&lt;/i&gt; Favorit&lt;/h2&gt;</code></pre>
-
-              <p><strong>Contoh teks SVG:</strong></p>
-              <pre><code>&lt;svg width="400" height="100"&gt;
-        &lt;text x="50" y="50" fill="blue" font-size="32"&gt;Hello SVG&lt;/text&gt;
-      &lt;/svg&gt;</code></pre>
-
-              <p><strong>Tips:</strong> SVG lebih tajam di semua resolusi dan bisa dianimasikan menggunakan CSS atau JavaScript.</p>
-            `
-          },
-          {
-            title: "Video: Mengatur Warna, Teks, dan Font di CSS",
-            video: "https://www.youtube.com/embed/yfoY53QXEnI",
-            content: `
-              <p>Tonton video ini untuk memahami cara mengatur warna, teks, dan font di halaman web menggunakan CSS.</p>
-              <p>Setelah menonton, coba ubah warna teks, font, dan tambahkan efek bayangan menggunakan contoh kode di materi ini.</p>
-            `
-          }
-        ]
+      {
+        title: "Mengatur Overflow (Isi Berlebih)",
+        content: `
+          <p><code>overflow</code> digunakan untuk mengatur tampilan konten yang melebihi ukuran kotak.</p>
+          <pre><code>div.scroll-box {
+  width: 200px;
+  height: 100px;
+  overflow: auto;
+  border: 1px solid #aaa;
+}</code></pre>
+          <ul>
+            <li><code>visible</code> – default, isi keluar dari kotak.</li>
+            <li><code>hidden</code> – isi dipotong tanpa scrollbar.</li>
+            <li><code>scroll</code> – selalu tampil scrollbar.</li>
+            <li><code>auto</code> – scrollbar hanya muncul jika dibutuhkan.</li>
+          </ul>
+        `
       },
+      {
+        title: "Display: block, inline, inline-block, none",
+        content: `
+          <p>Properti <code>display</code> menentukan bagaimana elemen ditampilkan pada halaman.</p>
+          <pre><code>p {
+  display: block; /* elemen memenuhi satu baris penuh */
+}
 
-      6: {
-        title: "Background & Border",
-        slides: [
-          {
-            title: "Pengenalan Background di CSS",
-            content: `
-              <p>Properti <code>background</code> digunakan untuk memberikan warna, gambar, atau efek visual lain di belakang elemen HTML.</p>
+span {
+  display: inline; /* elemen sebaris, tidak bisa atur width/height */
+}
 
-              <pre><code>/* Warna latar belakang */
-      body {
-        background-color: #f0f0f0;
-      }
+button {
+  display: inline-block; /* inline tapi bisa atur ukuran */
+}
 
-      /* Gambar sebagai background */
-      div.hero {
-        background-image: url('images/bg-hero.jpg');
-      }
-
-      /* Mengatur posisi dan ukuran */
-      div.hero {
-        background-position: center;
-        background-size: cover;
-        background-repeat: no-repeat;
-      }</code></pre>
-
-              <ul>
-                <li><code>background-color</code> – menentukan warna latar belakang.</li>
-                <li><code>background-image</code> – menampilkan gambar sebagai background.</li>
-                <li><code>background-position</code> – mengatur posisi gambar (misal: <em>center, top, left</em>).</li>
-                <li><code>background-size</code> – menentukan ukuran gambar (<em>cover</em>, <em>contain</em>, atau nilai px/%).</li>
-                <li><code>background-repeat</code> – mengatur apakah gambar diulang (<em>repeat</em>, <em>no-repeat</em>).</li>
-              </ul>
-            `
-          },
-          {
-            title: "Background Attachment dan Efek Parallax",
-            content: `
-              <p>Dengan <code>background-attachment</code>, kamu bisa mengatur apakah background ikut bergerak dengan halaman atau tetap diam saat di-scroll.</p>
-
-              <pre><code>section.parallax {
-        background-image: url('images/parallax.jpg');
-        background-attachment: fixed;
-        background-size: cover;
-        background-position: center;
-      }</code></pre>
-
-              <ul>
-                <li><code>scroll</code> – background ikut bergerak (default).</li>
-                <li><code>fixed</code> – background diam di tempat (efek parallax sederhana).</li>
-                <li><code>local</code> – background ikut area scroll dari elemen itu sendiri.</li>
-              </ul>
-            `
-          },
-          {
-            title: "Multiple Background",
-            content: `
-              <p>Kamu bisa menumpuk beberapa background dalam satu elemen dengan memisahkan setiap layer menggunakan koma (<code>,</code>).</p>
-
-              <pre><code>div.multi-bg {
-        background-image: url('images/pattern.png'), url('images/hero.jpg');
-        background-position: top left, center;
-        background-repeat: repeat, no-repeat;
-        background-size: auto, cover;
-      }</code></pre>
-
-              <p>Layer pertama akan berada di atas layer berikutnya. Ini sering digunakan untuk kombinasi pola dan gambar besar.</p>
-            `
-          },
-          {
-            title: "Background Gradient (Linear & Radial)",
-            content: `
-              <p>CSS mendukung efek gradasi warna tanpa gambar, menggunakan <code>linear-gradient()</code> dan <code>radial-gradient()</code>.</p>
-
-              <pre><code>/* Linear gradient horizontal */
-      div.box {
-        background: linear-gradient(to right, #00b4db, #0083b0);
-      }
-
-      /* Linear gradient diagonal */
-      button {
-        background: linear-gradient(45deg, #ff7e5f, #feb47b);
-      }
-
-      /* Radial gradient */
-      div.circle {
-        background: radial-gradient(circle, #fbc2eb, #a6c1ee);
-      }</code></pre>
-
-              <p><strong>Tips:</strong> Gradien bisa dikombinasikan dengan transparansi untuk efek yang lebih halus dan modern.</p>
-            `
-          },
-          {
-            title: "Border: Style, Width, dan Color",
-            content: `
-              <p>Properti <code>border</code> digunakan untuk memberi garis di sekitar elemen.</p>
-
-              <pre><code>div.card {
-        border-style: solid;
-        border-width: 2px;
-        border-color: #3498db;
-      }
-
-      /* Penulisan singkat */
-      div.card {
-        border: 2px solid #3498db;
-      }</code></pre>
-
-              <ul>
-                <li><code>border-style</code> – jenis garis (solid, dotted, dashed, double, groove, ridge).</li>
-                <li><code>border-width</code> – ketebalan garis.</li>
-                <li><code>border-color</code> – warna garis.</li>
-              </ul>
-            `
-          },
-          {
-            title: "Border Radius (Sudut Membulat)",
-            content: `
-              <p><code>border-radius</code> digunakan untuk membuat sudut elemen menjadi melengkung.</p>
-
-              <pre><code>/* Membulatkan seluruh sudut */
-      img.avatar {
-        border-radius: 10px;
-      }
-
-      /* Membulatkan hanya sisi atas */
-      div.box {
-        border-top-left-radius: 15px;
-        border-top-right-radius: 15px;
-      }
-
-      /* Membuat bentuk lingkaran */
-      img.circle {
-        border-radius: 50%;
-      }</code></pre>
-
-              <p>Nilai bisa menggunakan <code>px</code>, <code>%</code>, atau kombinasi untuk efek asimetris.</p>
-            `
-          },
-          {
-            title: "Box Shadow & Text Shadow",
-            content: `
-              <p>CSS dapat menambahkan efek bayangan pada elemen atau teks untuk memberi kedalaman visual.</p>
-
-              <pre><code>/* Bayangan pada elemen */
-      div.card {
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-      }
-
-      /* Bayangan pada teks */
-      h1 {
-        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-      }</code></pre>
-
-              <ul>
-                <li><code>box-shadow</code> – format: <code>offset-x offset-y blur color</code></li>
-                <li><code>text-shadow</code> – sama seperti box-shadow tapi untuk teks</li>
-                <li>Bisa memiliki multiple shadow dipisahkan koma (<code>,</code>)</li>
-              </ul>
-
-              <p><strong>Tips:</strong> Gunakan opacity rendah agar efek bayangan terlihat natural.</p>
-            `
-          },
-          {
-            title: "Video: Background & Border di CSS",
-            video: "https://www.youtube.com/embed/jV8B24rSN5o",
-            content: `
-              <p>Tonton video ini untuk memahami cara mengatur background, border, dan efek visual lain di halaman web menggunakan CSS.</p>
-              <p>Setelah menonton, coba buat elemen dengan gambar background, sudut membulat, dan efek bayangan halus.</p>
-            `
-          }
-        ]
+div.hidden {
+  display: none; /* elemen hilang dari layout */
+}</code></pre>
+          <ul>
+            <li><strong>block</strong> – mulai baris baru dan bisa diatur ukurannya.</li>
+            <li><strong>inline</strong> – berada di satu baris dengan elemen lain.</li>
+            <li><strong>inline-block</strong> – kombinasi keduanya.</li>
+            <li><strong>none</strong> – menghapus elemen dari tampilan (beda dengan visibility).</li>
+          </ul>
+        `
       },
+      {
+        title: "Visibility vs Display",
+        content: `
+          <p>Keduanya bisa menyembunyikan elemen, tapi berbeda perilaku:</p>
+          <pre><code>div.hidden1 {
+  display: none; /* elemen hilang dari layout */
+}
 
-      7: {
-        title: "Ukuran, Box Model, & Display",
-        slides: [
-          {
-            title: "Pengenalan Box Model",
-            content: `
-              <p><strong>Box Model</strong> adalah konsep dasar CSS yang menjelaskan bagaimana ukuran dan ruang di sekitar elemen dihitung. Setiap elemen HTML dianggap sebagai sebuah kotak yang terdiri dari 4 lapisan:</p>
-              <ul>
-                <li><strong>Content</strong> – area isi elemen (teks, gambar, dll).</li>
-                <li><strong>Padding</strong> – ruang di antara konten dan border.</li>
-                <li><strong>Border</strong> – garis di sekeliling padding.</li>
-                <li><strong>Margin</strong> – jarak antara elemen dan elemen lainnya.</li>
-              </ul>
-
-              <pre><code>div.box {
-        width: 200px;
-        padding: 20px;
-        border: 5px solid #3498db;
-        margin: 10px;
-      }</code></pre>
-
-              <p>Total lebar elemen = width + padding kiri/kanan + border kiri/kanan + margin kiri/kanan.</p>
-            `
-          },
-          {
-            title: "Mengatur Ukuran Elemen (width & height)",
-            content: `
-              <p>Properti <code>width</code> dan <code>height</code> digunakan untuk menentukan ukuran elemen. Kamu juga bisa menggunakan <code>min-width</code>, <code>max-width</code>, <code>min-height</code>, dan <code>max-height</code> untuk membatasi ukuran dinamis.</p>
-
-              <pre><code>div.container {
-        width: 80%;       /* proporsional terhadap parent */
-        max-width: 1200px; /* batas maksimal */
-        min-height: 300px; /* tinggi minimum */
-        height: auto;      /* menyesuaikan isi */
-      }</code></pre>
-
-              <p><strong>Tips:</strong> Gunakan satuan <code>%</code> atau <code>vw/vh</code> agar lebih responsif terhadap ukuran layar.</p>
-            `
-          },
-          {
-            title: "Padding, Border, dan Margin",
-            content: `
-              <p>Tiga properti ini menentukan ruang di sekitar konten elemen:</p>
-
-              <pre><code>div.card {
-        padding: 16px;           /* jarak antara isi dan border */
-        border: 2px solid #ddd;  /* garis di sekeliling elemen */
-        margin: 20px;            /* jarak antar elemen */
-      }</code></pre>
-
-              <ul>
-                <li><code>padding</code> – memberi ruang di dalam border.</li>
-                <li><code>border</code> – batas elemen.</li>
-                <li><code>margin</code> – ruang di luar border.</li>
-              </ul>
-
-              <p>Kamu bisa menentukan per sisi:</p>
-
-              <pre><code>padding: 10px 20px 30px 40px; /* top, right, bottom, left */
-      margin-top: 20px;</code></pre>
-            `
-          },
-          {
-            title: "Box-sizing: content-box vs border-box",
-            content: `
-              <p><code>box-sizing</code> menentukan bagaimana lebar dan tinggi elemen dihitung.</p>
-
-              <pre><code>/* Default */
-      div.content {
-        box-sizing: content-box; /* width hanya menghitung area konten */
-      }
-
-      /* Lebih umum dipakai */
-      div.card {
-        box-sizing: border-box; /* width mencakup padding + border */
-      }</code></pre>
-
-              <p><strong>border-box</strong> membuat layout lebih mudah diatur karena ukuran total elemen tidak bertambah akibat padding/border.</p>
-
-              <p>Biasanya, seluruh halaman diatur menggunakan:</p>
-              <pre><code>* {
-        box-sizing: border-box;
-      }</code></pre>
-            `
-          },
-          {
-            title: "Mengatur Overflow (Isi Berlebih)",
-            content: `
-              <p><code>overflow</code> digunakan untuk mengatur tampilan konten yang melebihi ukuran kotak.</p>
-
-              <pre><code>div.scroll-box {
-        width: 200px;
-        height: 100px;
-        overflow: auto;
-        border: 1px solid #aaa;
-      }</code></pre>
-
-              <ul>
-                <li><code>visible</code> – default, isi keluar dari kotak.</li>
-                <li><code>hidden</code> – isi dipotong tanpa scrollbar.</li>
-                <li><code>scroll</code> – selalu tampil scrollbar.</li>
-                <li><code>auto</code> – scrollbar hanya muncul jika dibutuhkan.</li>
-              </ul>
-            `
-          },
-          {
-            title: "Display: block, inline, inline-block, none",
-            content: `
-              <p>Properti <code>display</code> menentukan bagaimana elemen ditampilkan pada halaman.</p>
-
-              <pre><code>p {
-        display: block; /* elemen memenuhi satu baris penuh */
-      }
-
-      span {
-        display: inline; /* elemen sebaris, tidak bisa atur width/height */
-      }
-
-      button {
-        display: inline-block; /* inline tapi bisa atur ukuran */
-      }
-
-      div.hidden {
-        display: none; /* elemen hilang dari layout */
-      }</code></pre>
-
-              <ul>
-                <li><strong>block</strong> – mulai baris baru dan bisa diatur ukurannya.</li>
-                <li><strong>inline</strong> – berada di satu baris dengan elemen lain.</li>
-                <li><strong>inline-block</strong> – kombinasi keduanya.</li>
-                <li><strong>none</strong> – menghapus elemen dari tampilan (beda dengan visibility).</li>
-              </ul>
-            `
-          },
-          {
-            title: "Visibility vs Display",
-            content: `
-              <p>Keduanya bisa menyembunyikan elemen, tapi berbeda perilaku:</p>
-
-              <pre><code>div.hidden1 {
-        display: none; /* elemen hilang dari layout */
-      }
-
-      div.hidden2 {
-        visibility: hidden; /* elemen tetap ada, tapi tidak terlihat */
-      }</code></pre>
-
-              <ul>
-                <li><code>display: none</code> – elemen hilang sepenuhnya.</li>
-                <li><code>visibility: hidden</code> – elemen masih mengambil ruang layout.</li>
-              </ul>
-            `
-          },
-          {
-            title: "Opacity dan z-index",
-            content: `
-              <p><strong>Opacity</strong> mengatur tingkat transparansi elemen, sedangkan <strong>z-index</strong> mengatur urutan tumpukan (layer).</p>
-
-              <pre><code>div.overlay {
-        opacity: 0.8;        /* transparansi */
-        position: absolute;
-        z-index: 10;          /* tampil di atas elemen lain */
-      }</code></pre>
-
-              <ul>
-                <li><code>opacity: 1</code> – sepenuhnya terlihat.</li>
-                <li><code>opacity: 0</code> – sepenuhnya transparan.</li>
-                <li><code>z-index</code> – bekerja hanya pada elemen dengan posisi non-static (relative, absolute, fixed).</li>
-              </ul>
-            `
-          },
-          {
-            title: "Video: Memahami Box Model & Display di CSS",
-            video: "https://www.youtube.com/embed/rIO5326FgPE",
-            content: `
-              <p>Tonton video ini untuk memahami konsep box model dan perbedaan display yang sering membingungkan pemula.</p>
-              <p>Setelah menonton, coba praktik dengan membuat card sederhana yang memiliki padding, border, dan bayangan.</p>
-            `
-          }
-        ]
+div.hidden2 {
+  visibility: hidden; /* elemen tetap ada, tapi tidak terlihat */
+}</code></pre>
+          <ul>
+            <li><code>display: none</code> – elemen hilang sepenuhnya.</li>
+            <li><code>visibility: hidden</code> – elemen masih mengambil ruang layout.</li>
+          </ul>
+        `
       },
-
-      8: {
-        title: "Layouting Dasar",
-        slides: [
-          {
-            title: "Pengenalan Layouting di CSS",
-            content: `
-              <p>Layouting adalah proses mengatur posisi, jarak, dan alur elemen di halaman web. Sebelum Flexbox dan Grid populer, layout diatur menggunakan kombinasi <code>position</code>, <code>float</code>, dan <code>display</code>.</p>
-              <p>Di materi ini kamu akan belajar dasar layouting menggunakan properti-properti klasik yang tetap penting untuk dipahami.</p>
-            `
-          },
-          {
-            title: "Position: static, relative, absolute, fixed, sticky",
-            content: `
-              <p>Properti <code>position</code> mengontrol bagaimana elemen ditempatkan di halaman.</p>
-
-              <ul>
-                <li><strong>static</strong> – posisi default (mengikuti alur dokumen).</li>
-                <li><strong>relative</strong> – bisa digeser dari posisi normal.</li>
-                <li><strong>absolute</strong> – keluar dari alur, posisinya relatif terhadap parent yang <em>positioned</em>.</li>
-                <li><strong>fixed</strong> – menempel pada viewport (tidak ikut scroll).</li>
-                <li><strong>sticky</strong> – bergeser seperti relative tapi menempel ketika discroll.</li>
-              </ul>
-
-              <pre><code>.static-box {
-        position: static;
-      }
-
-      .relative-box {
-        position: relative;
-        top: 10px; left: 20px;
-      }
-
-      .absolute-box {
-        position: absolute;
-        top: 0; right: 0;
-      }
-
-      .fixed-header {
-        position: fixed;
-        top: 0;
-        width: 100%;
-      }
-
-      .sticky-bar {
-        position: sticky;
-        top: 0;
-        background: yellow;
-      }</code></pre>
-
-              <p><strong>Catatan:</strong> Elemen dengan <code>position: absolute</code> akan mencari parent terdekat yang punya posisi <code>relative</code> atau lainnya untuk dijadikan patokan.</p>
-            `
-          },
-          {
-            title: "Float dan Clear",
-            content: `
-              <p><code>float</code> awalnya digunakan untuk mengatur teks agar mengalir di sekitar gambar, tapi juga sering dipakai untuk layout kolom.</p>
-
-              <pre><code>img.left {
-        float: left;
-        margin: 10px;
-      }
-
-      div.column {
-        float: left;
-        width: 50%;
-      }
-
-      div.clearfix::after {
-        content: "";
-        display: table;
-        clear: both;
-      }</code></pre>
-
-              <ul>
-                <li><strong>float: left/right</strong> – memindahkan elemen ke sisi kiri/kanan.</li>
-                <li><strong>clear: both</strong> – mencegah elemen bertumpuk dengan elemen yang difloat.</li>
-              </ul>
-
-              <p><strong>Tips:</strong> Saat ini float jarang dipakai untuk layout utama, tapi penting untuk memahami warisan konsep layout klasik.</p>
-            `
-          },
-          {
-            title: "Align dan Centering Manual",
-            content: `
-              <p>Mengatur posisi elemen di tengah bisa dilakukan dengan beberapa cara tergantung konteksnya.</p>
-
-              <p><strong>1. Horizontal centering (elemen block):</strong></p>
-              <pre><code>div.center {
-        width: 300px;
-        margin: 0 auto; /* tengah secara horizontal */
-      }</code></pre>
-
-              <p><strong>2. Horizontal centering (elemen inline):</strong></p>
-              <pre><code>.text-center {
-        text-align: center;
-      }</code></pre>
-
-              <p><strong>3. Vertical centering (cara klasik):</strong></p>
-              <pre><code>.vcenter {
-        position: relative;
-      }
-      .vcenter span {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-      }</code></pre>
-
-              <p><strong>Catatan:</strong> Flexbox dan Grid akan menggantikan cara manual ini nantinya, tapi penting tahu dasar-dasarnya.</p>
-            `
-          },
-          {
-            title: "Layout Menggunakan Inline-block",
-            content: `
-              <p>Sebelum Flexbox ada, layout sering dibuat dengan <code>display: inline-block</code>.</p>
-
-              <pre><code>.card {
-        display: inline-block;
-        width: 200px;
-        margin: 10px;
-        vertical-align: top;
-        background: #f8f8f8;
-      }</code></pre>
-
-              <p>Inline-block membuat elemen sejajar secara horizontal, tapi tetap bisa diatur ukurannya seperti elemen block.</p>
-
-              <p><strong>Masalah umum:</strong> akan muncul jarak kecil antar elemen karena spasi antar tag HTML. Solusinya adalah:</p>
-              <ul>
-                <li>Menghapus spasi antar tag HTML.</li>
-                <li>Atau men-set <code>font-size: 0;</code> pada parent container.</li>
-              </ul>
-            `
-          },
-          {
-            title: "Margin Auto Centering",
-            content: `
-              <p>Untuk menempatkan elemen di tengah secara horizontal, gunakan <code>margin: 0 auto</code>. Ini hanya berfungsi pada elemen block dengan lebar tertentu.</p>
-
-              <pre><code>.box {
-        width: 300px;
-        margin: 0 auto;
-        background: lightblue;
-      }</code></pre>
-
-              <p><strong>Contoh:</strong></p>
-              <pre><code>&lt;div class="box"&gt;Tengah Halaman&lt;/div&gt;</code></pre>
-
-              <p>Hasilnya: elemen akan berada tepat di tengah halaman secara horizontal.</p>
-            `
-          },
-          {
-            title: "Video: Dasar Layouting di CSS (Position & Float)",
-            video: "https://www.youtube.com/embed/0xMQfnTU6oo",
-            content: `
-              <p>Tonton video ini untuk memahami konsep dasar layouting klasik seperti <code>position</code>, <code>float</code>, dan cara menengahkan elemen dengan CSS.</p>
-              <p>Setelah memahami ini, kamu siap lanjut ke <strong>Flexbox</strong> — cara modern mengatur layout dengan lebih fleksibel.</p>
-            `
-          }
-        ]
+      {
+        title: "Opacity dan z-index",
+        content: `
+          <p><strong>Opacity</strong> mengatur tingkat transparansi elemen, sedangkan <strong>z-index</strong> mengatur urutan tumpukan (layer).</p>
+          <pre><code>div.overlay {
+  opacity: 0.8;        /* transparansi */
+  position: absolute;
+  z-index: 10;          /* tampil di atas elemen lain */
+}</code></pre>
+          <ul>
+            <li><code>opacity: 1</code> – sepenuhnya terlihat.</li>
+            <li><code>opacity: 0</code> – sepenuhnya transparan.</li>
+            <li><code>z-index</code> – bekerja hanya pada elemen dengan posisi non-static (relative, absolute, fixed).</li>
+          </ul>
+        `
       },
-
-      9: {
-        title: "Flexbox (Modern Layout)",
-        slides: [
-          {
-            title: "Pengenalan Flexbox",
-            content: `
-              <p><strong>Flexbox (Flexible Box Layout)</strong> adalah sistem layout modern di CSS yang dirancang untuk mengatur elemen secara efisien dalam satu dimensi — baik baris (row) maupun kolom (column).</p>
-              <p>Flexbox memudahkan kita untuk membuat layout yang fleksibel dan responsif tanpa perlu menggunakan float atau positioning manual.</p>
-              <p><strong>Kelebihan Flexbox:</strong></p>
-              <ul>
-                <li>Elemen otomatis menyesuaikan ukuran wadahnya.</li>
-                <li>Mudah mengatur posisi (tengah, rata kanan, kiri, bawah, atas).</li>
-                <li>Sangat cocok untuk layout navigasi, card, dan komponen UI modern.</li>
-              </ul>
-            `
-          },
-          {
-            title: "Mengaktifkan Flexbox: display: flex dan flex-direction",
-            content: `
-              <p>Untuk menggunakan Flexbox, atur elemen parent dengan <code>display: flex;</code>. Semua child-nya akan otomatis menjadi flex item.</p>
-
-              <pre><code>.container {
-        display: flex;
-        flex-direction: row; /* default: horizontal */
-      }</code></pre>
-
-              <ul>
-                <li><strong>row</strong> – elemen sejajar dari kiri ke kanan.</li>
-                <li><strong>row-reverse</strong> – dari kanan ke kiri.</li>
-                <li><strong>column</strong> – dari atas ke bawah.</li>
-                <li><strong>column-reverse</strong> – dari bawah ke atas.</li>
-              </ul>
-
-              <p><strong>Contoh:</strong></p>
-              <pre><code>&lt;div class="container"&gt;
-        &lt;div&gt;Box 1&lt;/div&gt;
-        &lt;div&gt;Box 2&lt;/div&gt;
-        &lt;div&gt;Box 3&lt;/div&gt;
-      &lt;/div&gt;</code></pre>
-            `
-          },
-          {
-            title: "Main Axis & Cross Axis",
-            content: `
-              <p>Konsep penting di Flexbox adalah dua sumbu:</p>
-              <ul>
-                <li><strong>Main Axis</strong>: sumbu utama — tergantung arah <code>flex-direction</code>.</li>
-                <li><strong>Cross Axis</strong>: sumbu tegak lurus terhadap main axis.</li>
-              </ul>
-
-              <p>Contohnya:</p>
-              <ul>
-                <li><code>flex-direction: row;</code> → main axis horizontal, cross axis vertikal.</li>
-                <li><code>flex-direction: column;</code> → main axis vertikal, cross axis horizontal.</li>
-              </ul>
-
-              <p>Ini penting untuk memahami properti seperti <code>justify-content</code> dan <code>align-items</code>.</p>
-            `
-          },
-          {
-            title: "Align Item: justify-content, align-items, align-content",
-            content: `
-              <p>Flexbox punya kontrol penuh untuk mengatur posisi elemen di sepanjang dua sumbu.</p>
-
-              <pre><code>.container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }</code></pre>
-
-              <ul>
-                <li><strong>justify-content</strong> – mengatur posisi di <em>main axis</em>:</li>
-                <ul>
-                  <li><code>flex-start</code> – ke kiri/atas</li>
-                  <li><code>center</code> – di tengah</li>
-                  <li><code>flex-end</code> – ke kanan/bawah</li>
-                  <li><code>space-between</code> – jarak rata, tanpa spasi di ujung</li>
-                  <li><code>space-around</code> – spasi di tiap sisi elemen</li>
-                  <li><code>space-evenly</code> – jarak sama di seluruh elemen</li>
-                </ul>
-                <li><strong>align-items</strong> – mengatur posisi di <em>cross axis</em>:</li>
-                <ul>
-                  <li><code>stretch</code> (default)</li>
-                  <li><code>center</code></li>
-                  <li><code>flex-start</code></li>
-                  <li><code>flex-end</code></li>
-                </ul>
-                <li><strong>align-content</strong> – hanya bekerja bila elemen membungkus ke beberapa baris (<code>flex-wrap: wrap</code>).</li>
-              </ul>
-            `
-          },
-          {
-            title: "Flex-wrap, Gap, dan Order",
-            content: `
-              <p>Flexbox memungkinkan elemen otomatis berpindah baris jika ruang tidak cukup dengan <code>flex-wrap</code>.</p>
-
-              <pre><code>.container {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-      }</code></pre>
-
-              <ul>
-                <li><strong>flex-wrap</strong>: menentukan apakah elemen membungkus (wrap) ke baris baru.</li>
-                <li><strong>gap</strong>: jarak antar elemen tanpa pakai margin.</li>
-                <li><strong>order</strong>: mengatur urutan tampil elemen tanpa ubah HTML-nya.</li>
-              </ul>
-
-              <pre><code>.item:nth-child(2) {
-        order: 3;
+      {
+        title: "Video: Memahami Box Model & Display di CSS",
+        video: "https://www.youtube.com/embed/rIO5326FgPE",
+        content: `
+          <p>Tonton video ini untuk memahami konsep box model dan perbedaan display yang sering membingungkan pemula.</p>
+          <p>Setelah menonton, coba praktik dengan membuat card sederhana yang memiliki padding, border, dan bayangan.</p>
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/rIO5326FgPE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        `
       }
-      .item:nth-child(3) {
-        order: 1;
-      }</code></pre>
-            `
-          },
-          {
-            title: "flex-grow, flex-shrink, dan flex-basis",
-            content: `
-              <p>Tiga properti ini digunakan untuk mengontrol ukuran elemen flex secara proporsional.</p>
+    ]
+  },
 
-              <ul>
-                <li><strong>flex-grow</strong>: seberapa besar elemen bisa tumbuh memenuhi ruang kosong.</li>
-                <li><strong>flex-shrink</strong>: seberapa besar elemen bisa menyusut jika ruang sempit.</li>
-                <li><strong>flex-basis</strong>: ukuran awal elemen sebelum disesuaikan.</li>
-              </ul>
-
-              <pre><code>.item {
-        flex-grow: 1;
-        flex-shrink: 1;
-        flex-basis: 200px;
-      }
-
-      /* shorthand */
-      .item {
-        flex: 1 1 200px;
-      }</code></pre>
-
-              <p><strong>Contoh:</strong> Jika tiga elemen punya <code>flex-grow: 1</code>, maka ruang sisa akan dibagi rata.</p>
-            `
-          },
-          {
-            title: "Layout Responsif Menggunakan Flexbox",
-            content: `
-              <p>Flexbox sangat ideal untuk layout responsif karena dapat menyesuaikan diri terhadap ukuran layar.</p>
-
-              <pre><code>.container {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-      }
-
-      .card {
-        flex: 1 1 300px;
-        margin: 10px;
-      }</code></pre>
-
-              <p>Ketika layar mengecil, elemen <code>.card</code> akan otomatis turun ke baris berikutnya tanpa pecah layout.</p>
-
-              <p><strong>Tips:</strong> Gunakan Flexbox untuk layout satu dimensi (baris atau kolom). Untuk dua dimensi (baris dan kolom sekaligus), gunakan <strong>CSS Grid</strong>.</p>
-            `
-          },
-          {
-            title: "Video: Panduan Lengkap Flexbox",
-            video: "https://www.youtube.com/embed/JJSoEo8JSnc",
-            content: `
-              <p>Tonton video ini untuk memahami semua properti penting Flexbox seperti <code>justify-content</code>, <code>align-items</code>, <code>flex-wrap</code>, dan bagaimana menggunakannya untuk membuat layout modern yang responsif.</p>
-            `
-          }
-        ]
+  8: {
+    title: "Layouting Dasar",
+    slides: [
+      {
+        title: "Pengenalan Layouting di CSS",
+        content: `
+          <p>Layouting adalah proses mengatur posisi, jarak, dan alur elemen di halaman web. Sebelum Flexbox dan Grid populer, layout diatur menggunakan kombinasi <code>position</code>, <code>float</code>, dan <code>display</code>.</p>
+          <p>Di materi ini kamu akan belajar dasar layouting menggunakan properti-properti klasik yang tetap penting untuk dipahami.</p>
+        `
       },
+      {
+        title: "Position: static, relative, absolute, fixed, sticky",
+        content: `
+          <p>Properti <code>position</code> mengontrol bagaimana elemen ditempatkan di halaman.</p>
+          <ul>
+            <li><strong>static</strong> – posisi default (mengikuti alur dokumen).</li>
+            <li><strong>relative</strong> – bisa digeser dari posisi normal.</li>
+            <li><strong>absolute</strong> – keluar dari alur, posisinya relatif terhadap parent yang <em>positioned</em>.</li>
+            <li><strong>fixed</strong> – menempel pada viewport (tidak ikut scroll).</li>
+            <li><strong>sticky</strong> – bergeser seperti relative tapi menempel ketika discroll.</li>
+          </ul>
+          <pre><code>.static-box {
+  position: static;
+}
 
-      10: {
-        title: "Grid Layout (2D Layout Modern)",
-        slides: [
-          {
-            title: "Konsep Grid System",
-            content: `
-              <p><strong>CSS Grid</strong> adalah sistem layout dua dimensi yang memungkinkan kamu mengatur elemen dalam baris dan kolom.</p>
+.relative-box {
+  position: relative;
+  top: 10px; left: 20px;
+}
 
-              <p>Grid cocok untuk membuat layout kompleks seperti dashboard, galeri, atau struktur halaman penuh.</p>
+.absolute-box {
+  position: absolute;
+  top: 0; right: 0;
+}
 
-              <p><strong>Contoh dasar:</strong></p>
-              <pre><code>.container {
-        display: grid;
-        grid-template-columns: 200px 1fr 200px;
-        grid-template-rows: auto auto;
-        gap: 20px;
-      }</code></pre>
+.fixed-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
 
-              <p>Di atas, kita membuat grid dengan 3 kolom dan 2 baris, serta jarak antar elemen sebesar <code>20px</code>.</p>
-            `
-          },
-          {
-            title: "Membuat Grid Container (display: grid)",
-            content: `
-              <p>Untuk mulai menggunakan Grid, set elemen induk menjadi <code>display: grid;</code>.</p>
-
-              <pre><code>.grid-container {
-        display: grid;
-      }</code></pre>
-
-              <p>Setelah itu, kamu bisa menentukan jumlah dan ukuran kolom/baris menggunakan properti <code>grid-template-columns</code> dan <code>grid-template-rows</code>.</p>
-            `
-          },
-          {
-            title: "grid-template-columns dan grid-template-rows",
-            content: `
-              <p>Gunakan properti ini untuk menentukan jumlah dan ukuran kolom/baris.</p>
-
-              <pre><code>.grid-container {
-        display: grid;
-        grid-template-columns: 100px 200px 1fr;
-        grid-template-rows: 150px auto;
-      }</code></pre>
-
-              <ul>
-                <li><code>100px</code> dan <code>200px</code>: ukuran kolom tetap.</li>
-                <li><code>1fr</code>: mengambil sisa ruang yang tersedia.</li>
-                <li><code>auto</code>: menyesuaikan dengan konten.</li>
-              </ul>
-            `
-          },
-          {
-            title: "Gap antar Elemen Grid",
-            content: `
-              <p><code>gap</code> digunakan untuk memberi jarak antar baris dan kolom.</p>
-
-              <pre><code>.grid-container {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 10px;
-      }</code></pre>
-
-              <p>Kamu juga bisa mengatur jarak berbeda untuk baris dan kolom:</p>
-              <pre><code>gap: 10px 20px; /* 10px baris, 20px kolom */</code></pre>
-            `
-          },
-          {
-            title: "Grid Line & Area Naming",
-            content: `
-              <p>Kamu dapat menamai area grid agar lebih mudah digunakan.</p>
-
-              <pre><code>.grid-container {
-        display: grid;
-        grid-template-areas:
-          "header header"
-          "sidebar main"
-          "footer footer";
-        grid-template-columns: 200px 1fr;
-        grid-template-rows: auto 1fr auto;
-      }
-
-      .header { grid-area: header; }
-      .sidebar { grid-area: sidebar; }
-      .main { grid-area: main; }
-      .footer { grid-area: footer; }</code></pre>
-
-              <p>Dengan cara ini, layout halaman bisa diatur secara semantik dan mudah dibaca.</p>
-            `
-          },
-          {
-            title: "Menentukan Posisi Grid Item",
-            content: `
-              <p>Item dalam grid bisa diatur posisinya dengan properti seperti:</p>
-              <ul>
-                <li><code>grid-column-start</code> dan <code>grid-column-end</code></li>
-                <li><code>grid-row-start</code> dan <code>grid-row-end</code></li>
-              </ul>
-
-              <pre><code>.item1 {
-        grid-column: 1 / 3; /* dari kolom 1 ke 3 */
-        grid-row: 1 / 2;   /* dari baris 1 ke 2 */
-      }</code></pre>
-
-              <p>Artinya item tersebut melebar dari kolom pertama hingga kolom ketiga.</p>
-            `
-          },
-          {
-            title: "Responsive Grid dengan auto-fit, auto-fill, dan minmax()",
-            content: `
-              <p>CSS Grid juga mendukung layout responsif tanpa media query.</p>
-
-              <pre><code>.gallery {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 15px;
-      }</code></pre>
-
-              <ul>
-                <li><code>auto-fit</code>: menyesuaikan jumlah kolom sesuai ruang yang tersedia.</li>
-                <li><code>minmax(200px, 1fr)</code>: kolom minimal 200px, maksimal 1fr.</li>
-              </ul>
-
-              <p>Dengan cara ini, grid akan otomatis menyesuaikan jumlah kolom saat layar mengecil atau membesar.</p>
-            `
-          },
-          {
-            title: "Perbandingan Flexbox vs Grid",
-            content: `
-              <table border="1" cellpadding="6" cellspacing="0">
-                <tr>
-                  <th>Fitur</th>
-                  <th>Flexbox</th>
-                  <th>Grid</th>
-                </tr>
-                <tr>
-                  <td>Dimensi</td>
-                  <td>Satu dimensi (baris <em>atau</em> kolom)</td>
-                  <td>Dua dimensi (baris <em>dan</em> kolom)</td>
-                </tr>
-                <tr>
-                  <td>Fleksibilitas</td>
-                  <td>Bagus untuk layout dinamis seperti navbar</td>
-                  <td>Ideal untuk layout terstruktur seperti halaman utama</td>
-                </tr>
-                <tr>
-                  <td>Alignment</td>
-                  <td>Menggunakan <code>justify-content</code> dan <code>align-items</code></td>
-                  <td>Menggunakan <code>grid-template</code> dan <code>area</code></td>
-                </tr>
-              </table>
-
-              <p><strong>Kesimpulan:</strong> Gunakan <code>Flexbox</code> untuk barisan elemen (1D), dan <code>Grid</code> untuk layout besar (2D).</p>
-            `
-          },
-          {
-            title: "Video: CSS Grid Layout Dasar",
-            video: "https://www.youtube.com/embed/EFafSYg-PkI",
-            content: `
-              <p>Tonton video ini untuk memahami konsep dan penerapan CSS Grid dari dasar.</p>
-            `
-          }
-        ]
+.sticky-bar {
+  position: sticky;
+  top: 0;
+  background: yellow;
+}</code></pre>
+          <p><strong>Catatan:</strong> Elemen dengan <code>position: absolute</code> akan mencari parent terdekat yang punya posisi <code>relative</code> atau lainnya untuk dijadikan patokan.</p>
+        `
       },
+      {
+        title: "Float dan Clear",
+        content: `
+          <p><code>float</code> awalnya digunakan untuk mengatur teks agar mengalir di sekitar gambar, tapi juga sering dipakai untuk layout kolom.</p>
+          <pre><code>img.left {
+  float: left;
+  margin: 10px;
+}
 
-      11: {
-        title: "Responsive Design & Media Query",
-        slides: [
-          {
-            title: "Konsep Responsive Design",
-            content: `
-              <p><strong>Responsive design</strong> berarti membuat tampilan website yang menyesuaikan ukuran layar perangkat pengguna — baik itu HP, tablet, atau desktop.</p>
+div.column {
+  float: left;
+  width: 50%;
+}
 
-              <p>Tujuannya agar konten tetap mudah dibaca dan diakses di berbagai ukuran layar tanpa harus melakukan zoom atau scroll berlebihan.</p>
-
-              <p><strong>Contoh sederhana:</strong></p>
-              <pre><code>img {
-        max-width: 100%;
-        height: auto;
-      }</code></pre>
-
-              <p>Dengan aturan di atas, gambar akan otomatis menyesuaikan lebar wadahnya tanpa keluar batas layar.</p>
-            `
-          },
-          {
-            title: "Breakpoints Umum (Mobile, Tablet, Desktop)",
-            content: `
-              <p><strong>Breakpoint</strong> adalah ukuran lebar layar di mana layout berubah untuk menyesuaikan tampilan.</p>
-
-              <table border="1" cellpadding="6" cellspacing="0">
-                <tr>
-                  <th>Perangkat</th>
-                  <th>Lebar (px)</th>
-                </tr>
-                <tr>
-                  <td>Mobile</td>
-                  <td>&lt; 768px</td>
-                </tr>
-                <tr>
-                  <td>Tablet</td>
-                  <td>768px – 1024px</td>
-                </tr>
-                <tr>
-                  <td>Desktop</td>
-                  <td>&gt; 1024px</td>
-                </tr>
-              </table>
-
-              <p>Ukuran ini fleksibel — kamu bisa menyesuaikan sesuai kebutuhan proyek.</p>
-            `
-          },
-          {
-            title: "@media Query Dasar",
-            content: `
-              <p>Media query digunakan untuk menerapkan CSS berdasarkan kondisi layar (misalnya lebar atau orientasi).</p>
-
-              <pre><code>/* Tampilan untuk layar kecil (mobile) */
-      @media (max-width: 768px) {
-        body {
-          background-color: lightblue;
-        }
-      }
-
-      /* Tampilan untuk layar besar (desktop) */
-      @media (min-width: 1024px) {
-        body {
-          background-color: lightgreen;
-        }
-      }</code></pre>
-
-              <p><strong>Penjelasan:</strong> CSS dalam blok <code>@media</code> hanya aktif saat kondisi tersebut terpenuhi.</p>
-            `
-          },
-          {
-            title: "@media Query Lanjutan",
-            content: `
-              <p>Kamu juga bisa menggabungkan beberapa kondisi menggunakan operator <code>and</code>, <code>not</code>, atau <code>only</code>.</p>
-
-              <pre><code>@media only screen and (min-width: 768px) and (max-width: 1024px) {
-        .container {
-          padding: 40px;
-        }
-      }</code></pre>
-
-              <p>Contoh di atas hanya berlaku untuk layar berukuran tablet.</p>
-
-              <p><strong>Tips:</strong> Gunakan media query dari kecil → besar (mobile first) agar kode lebih efisien.</p>
-            `
-          },
-          {
-            title: "Units Responsif: %, em, rem, vh, vw, fr",
-            content: `
-              <p>Gunakan satuan relatif agar elemen mudah menyesuaikan ukuran layar.</p>
-
-              <ul>
-                <li><code>%</code> – relatif terhadap elemen induk.</li>
-                <li><code>em</code> – relatif terhadap ukuran font elemen saat ini.</li>
-                <li><code>rem</code> – relatif terhadap ukuran font root (<code>html</code>).</li>
-                <li><code>vh</code> – 1% dari tinggi viewport.</li>
-                <li><code>vw</code> – 1% dari lebar viewport.</li>
-                <li><code>fr</code> – satuan untuk <em>Grid Layout</em> (bagian dari ruang yang tersedia).</li>
-              </ul>
-
-              <pre><code>.box {
-        width: 50vw;
-        height: 50vh;
-        font-size: 1.5rem;
-      }</code></pre>
-
-              <p>Dengan satuan ini, ukuran elemen akan menyesuaikan layar pengguna.</p>
-            `
-          },
-          {
-            title: "Responsive Font dan Layout",
-            content: `
-              <p>Ukuran teks dan layout sebaiknya juga responsif.</p>
-
-              <pre><code>h1 {
-        font-size: clamp(1.5rem, 2vw, 3rem);
-      }
-
-      .container {
-        width: min(90%, 1200px);
-      }</code></pre>
-
-              <p><strong>Penjelasan:</strong></p>
-              <ul>
-                <li><code>clamp(min, preferred, max)</code> menjaga ukuran tetap proporsional tanpa melebihi batas.</li>
-                <li><code>min()</code> memastikan lebar tidak melebihi batas maksimum.</li>
-              </ul>
-            `
-          },
-          {
-            title: "CSS clamp() & Fluid Layout",
-            content: `
-              <p><code>clamp()</code> digunakan untuk membuat ukuran yang fleksibel tapi tetap punya batas minimum dan maksimum.</p>
-
-              <pre><code>p {
-        font-size: clamp(14px, 2vw, 18px);
-      }</code></pre>
-
-              <p>Artinya: ukuran font minimum 14px, maksimum 18px, dan skala menyesuaikan 2% dari lebar layar.</p>
-
-              <p><strong>Fluid layout</strong> berarti ukuran elemen seperti container, padding, atau font bisa menyesuaikan layar secara otomatis tanpa media query tambahan.</p>
-            `
-          },
-          {
-            title: "Container Query (Fitur CSS Modern)",
-            content: `
-              <p><strong>Container Query</strong> memungkinkan elemen menyesuaikan gaya berdasarkan ukuran wadahnya, bukan layar penuh seperti media query.</p>
-
-              <pre><code>.card {
-        container-type: inline-size;
-      }
-
-      @container (min-width: 600px) {
-        .card-content {
-          display: flex;
-        }
-      }</code></pre>
-
-              <p>Dengan ini, komponen seperti <em>card</em> atau <em>section</em> bisa responsif meskipun berada di dalam container yang ukurannya berubah-ubah.</p>
-
-              <p><strong>Catatan:</strong> Fitur ini sudah didukung oleh browser modern seperti Chrome, Edge, dan Firefox terbaru.</p>
-            `
-          },
-          {
-            title: "Video: Responsive Design & Media Query",
-            video: "https://www.youtube.com/embed/srvUrASNj0s",
-            content: `
-              <p>Tonton video ini untuk memahami cara membuat layout web yang responsif menggunakan media query dan unit fleksibel.</p>
-            `
-          }
-        ]
+div.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}</code></pre>
+          <ul>
+            <li><strong>float: left/right</strong> – memindahkan elemen ke sisi kiri/kanan.</li>
+            <li><strong>clear: both</strong> – mencegah elemen bertumpuk dengan elemen yang difloat.</li>
+          </ul>
+          <p><strong>Tips:</strong> Saat ini float jarang dipakai untuk layout utama, tapi penting untuk memahami warisan konsep layout klasik.</p>
+        `
       },
-
-      12: {
-        title: "Transition, Animation, & Transform",
-        slides: [
-          {
-            title: "Transition Dasar",
-            content: `
-              <p><strong>Transition</strong> digunakan untuk membuat perubahan gaya (CSS property) menjadi halus ketika suatu keadaan berubah, misalnya saat hover.</p>
-
-              <pre><code>button {
-        background-color: royalblue;
-        color: white;
-        transition-property: background-color;
-        transition-duration: 0.3s;
-      }
-
-      button:hover {
-        background-color: dodgerblue;
-      }</code></pre>
-
-              <p><strong>Penjelasan:</strong></p>
-              <ul>
-                <li><code>transition-property</code>: menentukan properti yang ingin dianimasikan.</li>
-                <li><code>transition-duration</code>: durasi transisi dalam detik (s) atau milidetik (ms).</li>
-              </ul>
-            `
-          },
-          {
-            title: "Properti Transition Lengkap",
-            content: `
-              <p>Kamu juga bisa menulisnya dalam satu baris menggunakan shorthand:</p>
-
-              <pre><code>button {
-        transition: all 0.4s ease-in-out;
-      }</code></pre>
-
-              <p><strong>Struktur shorthand:</strong></p>
-              <pre><code>transition: [property] [duration] [timing-function] [delay];</code></pre>
-
-              <p><strong>Contoh dengan delay:</strong></p>
-              <pre><code>.box {
-        transition: transform 0.5s ease 0.2s;
-      }</code></pre>
-            `
-          },
-          {
-            title: "Transformasi 2D (scale, rotate, translate, skew)",
-            content: `
-              <p><strong>Transform</strong> digunakan untuk memutar, memperbesar, memindahkan, atau memiringkan elemen.</p>
-
-              <pre><code>.box {
-        width: 100px;
-        height: 100px;
-        background: coral;
-        transition: transform 0.3s ease;
-      }
-
-      .box:hover {
-        transform: scale(1.2) rotate(10deg) translateX(10px);
-      }</code></pre>
-
-              <ul>
-                <li><code>scale()</code> – memperbesar atau memperkecil ukuran.</li>
-                <li><code>rotate()</code> – memutar elemen (dalam derajat).</li>
-                <li><code>translate()</code> – memindahkan posisi (px, %, dsb).</li>
-                <li><code>skew()</code> – memiringkan elemen.</li>
-              </ul>
-            `
-          },
-          {
-            title: "Transformasi 3D",
-            content: `
-              <p>Transformasi juga bisa dilakukan dalam ruang 3D menggunakan <code>translateZ</code>, <code>rotateY</code>, dll.</p>
-
-              <pre><code>.card {
-        transform-style: preserve-3d;
-        transition: transform 0.6s;
-      }
-
-      .card:hover {
-        transform: rotateY(180deg);
-      }</code></pre>
-
-              <p><strong>Tips:</strong> Gunakan <code>perspective</code> di elemen induk untuk memberikan efek kedalaman 3D.</p>
-
-              <pre><code>.scene {
-        perspective: 1000px;
-      }</code></pre>
-            `
-          },
-          {
-            title: "Animation dengan @keyframes",
-            content: `
-              <p><strong>@keyframes</strong> digunakan untuk membuat animasi kompleks dengan beberapa tahap perubahan.</p>
-
-              <pre><code>@keyframes bounce {
-        0% { transform: translateY(0); }
-        50% { transform: translateY(-30px); }
-        100% { transform: translateY(0); }
-      }
-
-      .ball {
-        width: 50px;
-        height: 50px;
-        background: orange;
-        border-radius: 50%;
-        animation: bounce 1s ease-in-out infinite;
-      }</code></pre>
-
-              <p><strong>Penjelasan:</strong></p>
-              <ul>
-                <li><code>animation-name</code>: nama animasi (contoh: bounce).</li>
-                <li><code>animation-duration</code>: waktu satu siklus animasi.</li>
-                <li><code>animation-iteration-count</code>: berapa kali animasi dijalankan (<code>infinite</code> = tanpa henti).</li>
-              </ul>
-            `
-          },
-          {
-            title: "Timing Function (ease, linear, ease-in-out)",
-            content: `
-              <p><strong>Timing function</strong> mengontrol kecepatan animasi sepanjang waktu.</p>
-
-              <pre><code>.box {
-        transition: transform 0.6s ease-in-out;
-      }</code></pre>
-
-              <p><strong>Jenis timing function:</strong></p>
-              <ul>
-                <li><code>linear</code>: kecepatan konstan dari awal hingga akhir.</li>
-                <li><code>ease</code>: mulai dan berhenti perlahan.</li>
-                <li><code>ease-in</code>: mulai lambat, lalu cepat.</li>
-                <li><code>ease-out</code>: mulai cepat, lalu melambat di akhir.</li>
-                <li><code>ease-in-out</code>: lambat di awal dan akhir.</li>
-              </ul>
-            `
-          },
-          {
-            title: "Animation Delay, Iteration, & Direction",
-            content: `
-              <p>Kamu bisa mengatur kapan animasi mulai, berapa kali diulang, dan arah perulangannya.</p>
-
-              <pre><code>.loading {
-        animation-name: spin;
-        animation-duration: 2s;
-        animation-delay: 0.5s;
-        animation-iteration-count: infinite;
-        animation-direction: alternate;
-      }
-
-      @keyframes spin {
-        from { transform: rotate(0); }
-        to { transform: rotate(360deg); }
-      }</code></pre>
-
-              <p><strong>Penjelasan:</strong></p>
-              <ul>
-                <li><code>animation-delay</code>: menunda animasi.</li>
-                <li><code>animation-iteration-count</code>: jumlah pengulangan.</li>
-                <li><code>animation-direction</code>: arah animasi (normal, reverse, alternate, alternate-reverse).</li>
-              </ul>
-            `
-          },
-          {
-            title: "Animasi pada Pseudo-element",
-            content: `
-              <p>Animasi juga bisa diterapkan pada pseudo-element seperti <code>::before</code> atau <code>::after</code>.</p>
-
-              <pre><code>button::after {
-        content: '';
-        display: block;
-        height: 2px;
-        width: 0;
-        background: #fff;
-        transition: width 0.3s ease;
-      }
-
-      button:hover::after {
-        width: 100%;
-      }</code></pre>
-
-              <p>Efek ini sering digunakan untuk membuat animasi garis bawah (underline) saat hover.</p>
-            `
-          },
-          {
-            title: "Efek Hover & Animasi Halus Interaktif",
-            content: `
-              <p>Kombinasikan <code>transform</code> dan <code>transition</code> untuk membuat efek hover halus dan interaktif.</p>
-
-              <pre><code>.card {
-        background: #fff;
-        border-radius: 10px;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-      }
-
-      .card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-      }</code></pre>
-
-              <p>Efek seperti ini banyak digunakan di UI modern untuk meningkatkan interaksi visual.</p>
-            `
-          },
-          {
-            title: "Video: CSS Transition & Animation",
-            video: "https://www.youtube.com/embed/zHUpx90NerM",
-            content: `
-              <p>Tonton video ini untuk melihat bagaimana membuat animasi halus dan interaktif menggunakan CSS Transition, Transform, dan @keyframes Animation.</p>
-            `
-          }
-        ]
+      {
+        title: "Align dan Centering Manual",
+        content: `
+          <p>Mengatur posisi elemen di tengah bisa dilakukan dengan beberapa cara tergantung konteksnya.</p>
+          <p><strong>1. Horizontal centering (elemen block):</strong></p>
+          <pre><code>div.center {
+  width: 300px;
+  margin: 0 auto; /* tengah secara horizontal */
+}</code></pre>
+          <p><strong>2. Horizontal centering (elemen inline):</strong></p>
+          <pre><code>.text-center {
+  text-align: center;
+}</code></pre>
+          <p><strong>3. Vertical centering (cara klasik):</strong></p>
+          <pre><code>.vcenter {
+  position: relative;
+}
+.vcenter span {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}</code></pre>
+          <p><strong>Catatan:</strong> Flexbox dan Grid akan menggantikan cara manual ini nantinya, tapi penting tahu dasar-dasarnya.</p>
+        `
       },
-
-      13: {
-        title: "Pseudo-class, Pseudo-element, & State Styling",
-        slides: [
-          {
-            title: "Pengenalan Pseudo-class & Pseudo-element",
-            content: `
-              <p><strong>Pseudo-class</strong> digunakan untuk menargetkan <em>state</em> atau kondisi tertentu dari elemen (misal: ketika di-hover, diklik, atau valid).</p>
-              <p><strong>Pseudo-element</strong> digunakan untuk membuat dan men-style bagian tertentu dari elemen, seperti awal atau akhir isi.</p>
-
-              <pre><code>/* Contoh pseudo-class */
-      button:hover {
-        background-color: #4a90e2;
-      }
-
-      /* Contoh pseudo-element */
-      p::first-line {
-        font-weight: bold;
-      }</code></pre>
-
-              <ul>
-                <li>Pseudo-class diawali dengan <code>:</code></li>
-                <li>Pseudo-element diawali dengan <code>::</code></li>
-              </ul>
-            `
-          },
-          {
-            title: "Styling Link (visited, hover, active)",
-            content: `
-              <p>Link memiliki beberapa state yang dapat ditargetkan dengan pseudo-class:</p>
-
-              <pre><code>a:link {
-        color: #0066cc; /* link normal */
-      }
-
-      a:visited {
-        color: #800080; /* sudah dikunjungi */
-      }
-
-      a:hover {
-        color: #ff6600; /* saat disorot */
-      }
-
-      a:active {
-        color: #ff0000; /* saat diklik */
-      }</code></pre>
-
-              <p><strong>Urutan penting:</strong> <code>LVHA</code> — Link, Visited, Hover, Active</p>
-              <p>Jika urutan ini terbalik, hasil styling bisa tidak sesuai.</p>
-            `
-          },
-          {
-            title: "Form State: valid, invalid, checked, disabled",
-            content: `
-              <p>Pseudo-class juga bisa dipakai untuk styling form berdasarkan status input.</p>
-
-              <pre><code>input:valid {
-        border-color: #4caf50;
-      }
-
-      input:invalid {
-        border-color: #f44336;
-      }
-
-      input:disabled {
-        background-color: #eee;
-      }
-
-      input:checked + label {
-        font-weight: bold;
-        color: #4a90e2;
-      }</code></pre>
-
-              <p>Dengan ini, kamu bisa membuat form yang memberikan <strong>feedback visual</strong> otomatis tanpa JavaScript.</p>
-            `
-          },
-          {
-            title: "::before & ::after untuk Dekorasi",
-            content: `
-              <p><code>::before</code> dan <code>::after</code> digunakan untuk menambahkan konten dekoratif sebelum atau sesudah elemen utama.</p>
-
-              <pre><code>button::before {
-        content: "🔥 ";
-      }
-
-      button::after {
-        content: " 💪";
-      }</code></pre>
-
-              <p>Keduanya tidak mengubah isi HTML, tapi menambah elemen virtual di dalam DOM.</p>
-
-              <p>Contoh penggunaan lain:</p>
-              <pre><code>.card::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(to bottom right, #4a90e2, transparent);
-        opacity: 0.2;
-        z-index: 0;
-      }</code></pre>
-
-              <p>Efek seperti ini sering dipakai untuk <strong>dekorasi latar</strong> atau <strong>highlight efek</strong>.</p>
-            `
-          },
-          {
-            title: "Animasi Pseudo-element",
-            content: `
-              <p>Pseudo-element bisa digabung dengan animasi atau transition untuk efek interaktif.</p>
-
-              <pre><code>button {
-        position: relative;
-        overflow: hidden;
-        transition: color 0.3s;
-      }
-
-      button::after {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: #4a90e2;
-        transform: scaleX(0);
-        transform-origin: left;
-        transition: transform 0.3s;
-        z-index: -1;
-      }
-
-      button:hover {
-        color: white;
-      }
-
-      button:hover::after {
-        transform: scaleX(1);
-      }</code></pre>
-
-              <p>Efek ini menciptakan <strong>animasi garis atau overlay</strong> saat tombol di-hover tanpa JavaScript.</p>
-            `
-          },
-          {
-            title: "Video: Styling Interaktif dengan Pseudo-class & Element",
-            video: "https://www.youtube.com/embed/6vbgZnQrpbU",
-            content: `
-              <p>Tonton video ini untuk melihat bagaimana pseudo-class dan pseudo-element bisa digunakan untuk membuat interaksi UI yang menarik.</p>
-            `
-          }
-        ]
+      {
+        title: "Layout Menggunakan Inline-block",
+        content: `
+          <p>Sebelum Flexbox ada, layout sering dibuat dengan <code>display: inline-block</code>.</p>
+          <pre><code>.card {
+  display: inline-block;
+  width: 200px;
+  margin: 10px;
+  vertical-align: top;
+  background: #f8f8f8;
+}</code></pre>
+          <p>Inline-block membuat elemen sejajar secara horizontal, tapi tetap bisa diatur ukurannya seperti elemen block.</p>
+          <p><strong>Masalah umum:</strong> akan muncul jarak kecil antar elemen karena spasi antar tag HTML. Solusinya adalah:</p>
+          <ul>
+            <li>Menghapus spasi antar tag HTML.</li>
+            <li>Atau men-set <code>font-size: 0;</code> pada parent container.</li>
+          </ul>
+        `
       },
-
-      14: {
-        title: "Mini Project: Responsive Landing Page & Card Grid (Full CSS Practice)",
-        slides: [
-          {
-            title: "Project Overview",
-            content: `
-              <p>Tujuan: Membuat single-page landing website yang responsif dengan fitur:</p>
-              <ul>
-                <li>Header & Hero (semantik)</li>
-                <li>Grid kursus/cards menggunakan CSS Grid + Flexbox</li>
-                <li>Typography responsif dengan <code>clamp()</code></li>
-                <li>Theme switcher (light/dark) menggunakan CSS Variables + JS</li>
-                <li>Hover effects, transitions, pseudo-elements dekoratif</li>
-                <li>Modal detail card sederhana (CSS + sedikit JS)</li>
-                <li>Form subscribe sederhana (validasi HTML + state styling)</li>
-              </ul>
-
-              <p>Semua konsep CSS yang dipelajari akan diterapkan: variables, functions (calc/clamp), units (vw/vh/rem), background, border, box-shadow, flexbox, grid, media queries, animations, pseudo-elements, specificity, dan best practices.</p>
-            `
-          },
-
-          {
-            title: "1) Persiapan & Struktur Folder",
-            content: `
-              <p>Buat struktur project sederhana:</p>
-              <pre><code>mini-project/
-      ├─ index.html
-      ├─ assets/
-      │  ├─ css/
-      │  │  └─ style.css
-      │  ├─ js/
-      │  │  └─ main.js
-      │  └─ images/
-      │     ├─ hero.jpg
-      │     └─ course1.jpg
-      └─ favicon.png
-              </code></pre>
-
-              <p>Tools: VS Code + Live Server, Chrome DevTools.</p>
-            `
-          },
-
-          {
-            title: "2) Skeleton HTML (semantik dasar)",
-            content: `
-              <p>Buat file <code>index.html</code> dengan struktur semantik dasar dan link resource.</p>
-
-              <pre><code>&lt;!DOCTYPE html&gt;
-      &lt;html lang="id"&gt;
-        &lt;head&gt;
-          &lt;meta charset="utf-8"&gt;
-          &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
-          &lt;title&gt;WebCourse — Mini Project&lt;/title&gt;
-          &lt;link rel="icon" href="favicon.png"&gt;
-          &lt;link rel="stylesheet" href="assets/css/style.css"&gt;
-        &lt;/head&gt;
-        &lt;body&gt;
-          &lt;header class="site-header"&gt;...&lt;/header&gt;
-          &lt;main&gt;
-            &lt;section class="hero"&gt;...&lt;/section&gt;
-            &lt;section class="courses"&gt;...&lt;/section&gt;
-            &lt;section class="subscribe"&gt;...&lt;/section&gt;
-          &lt;/main&gt;
-          &lt;footer&gt;...&lt;/footer&gt;
-          &lt;script src="assets/js/main.js" defer&gt;&lt;/script&gt;
-        &lt;/body&gt;
-      &lt;/html&gt;</code></pre>
-            `
-          },
-
-          {
-            title: "3) CSS Variables & Reset Dasar",
-            content: `
-              <p>Di <code>style.css</code>, mulai dengan reset + definisi variable global di <code>:root</code>.</p>
-
-              <pre><code>/* reset & box-sizing */
-      *,
-      *::before,
-      *::after {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
+      {
+        title: "Margin Auto Centering",
+        content: `
+          <p>Untuk menempatkan elemen di tengah secara horizontal, gunakan <code>margin: 0 auto</code>. Ini hanya berfungsi pada elemen block dengan lebar tertentu.</p>
+          <pre><code>.box {
+  width: 300px;
+  margin: 0 auto;
+  background: lightblue;
+}</code></pre>
+          <p><strong>Contoh:</strong></p>
+          <pre><code>&lt;div class="box"&gt;Tengah Halaman&lt;/div&gt;</code></pre>
+          <p>Hasilnya: elemen akan berada tepat di tengah halaman secara horizontal.</p>
+        `
+      },
+      {
+        title: "Video: Dasar Layouting di CSS (Position & Float)",
+        video: "https://www.youtube.com/embed/0xMQfnTU6oo",
+        content: `
+          <p>Tonton video ini untuk memahami konsep dasar layouting klasik seperti <code>position</code>, <code>float</code>, dan cara menengahkan elemen dengan CSS.</p>
+          <p>Setelah memahami ini, kamu siap lanjut ke <strong>Flexbox</strong> — cara modern mengatur layout dengan lebih fleksibel.</p>
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/0xMQfnTU6oo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        `
       }
+    ]
+  },
 
-      /* CSS Variables (theming) */
-      :root {
-        --bg: #ffffff;
-        --card-bg: #ffffff;
-        --text: #111827;
-        --muted: #6b7280;
-        --primary: #0066ff;
-        --accent: #ff6b6b;
-        --radius: 12px;
-        --gap: 1.25rem;
-        --container-max: 1200px;
-        --shadow-1: 0 4px 12px rgba(16,24,40,0.06);
-        --shadow-2: 0 10px 30px rgba(2,6,23,0.2);
-        --transition: 0.28s ease;
+  9: {
+    title: "Flexbox (Modern Layout)",
+    slides: [
+      {
+        title: "Pengenalan Flexbox",
+        content: `
+          <p><strong>Flexbox (Flexible Box Layout)</strong> adalah sistem layout modern di CSS yang dirancang untuk mengatur elemen secara efisien dalam satu dimensi — baik baris (row) maupun kolom (column).</p>
+          <p>Flexbox memudahkan kita untuk membuat layout yang fleksibel dan responsif tanpa perlu menggunakan float atau positioning manual.</p>
+          <p><strong>Kelebihan Flexbox:</strong></p>
+          <ul>
+            <li>Elemen otomatis menyesuaikan ukuran wadahnya.</li>
+            <li>Mudah mengatur posisi (tengah, rata kanan, kiri, bawah, atas).</li>
+            <li>Sangat cocok untuk layout navigasi, card, dan komponen UI modern.</li>
+          </ul>
+        `
+      },
+      {
+        title: "Mengaktifkan Flexbox: display: flex dan flex-direction",
+        content: `
+          <p>Untuk menggunakan Flexbox, atur elemen parent dengan <code>display: flex;</code>. Semua child-nya akan otomatis menjadi flex item.</p>
+          <pre><code>.container {
+  display: flex;
+  flex-direction: row; /* default: horizontal */
+}</code></pre>
+          <ul>
+            <li><strong>row</strong> – elemen sejajar dari kiri ke kanan.</li>
+            <li><strong>row-reverse</strong> – dari kanan ke kiri.</li>
+            <li><strong>column</strong> – dari atas ke bawah.</li>
+            <li><strong>column-reverse</strong> – dari bawah ke atas.</li>
+          </ul>
+          <p><strong>Contoh:</strong></p>
+          <pre><code>&lt;div class="container"&gt;
+  &lt;div&gt;Box 1&lt;/div&gt;
+  &lt;div&gt;Box 2&lt;/div&gt;
+  &lt;div&gt;Box 3&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+        `
+      },
+      {
+        title: "Main Axis & Cross Axis",
+        content: `
+          <p>Konsep penting di Flexbox adalah dua sumbu:</p>
+          <ul>
+            <li><strong>Main Axis</strong>: sumbu utama — tergantung arah <code>flex-direction</code>.</li>
+            <li><strong>Cross Axis</strong>: sumbu tegak lurus terhadap main axis.</li>
+          </ul>
+          <p>Contohnya:</p>
+          <ul>
+            <li><code>flex-direction: row;</code> → main axis horizontal, cross axis vertikal.</li>
+            <li><code>flex-direction: column;</code> → main axis vertikal, cross axis horizontal.</li>
+          </ul>
+          <p>Ini penting untuk memahami properti seperti <code>justify-content</code> dan <code>align-items</code>.</p>
+        `
+      },
+      {
+        title: "Align Item: justify-content, align-items, align-content",
+        content: `
+          <p>Flexbox punya kontrol penuh untuk mengatur posisi elemen di sepanjang dua sumbu.</p>
+          <pre><code>.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}</code></pre>
+          <ul>
+            <li><strong>justify-content</strong> – mengatur posisi di <em>main axis</em>:</li>
+            <ul>
+              <li><code>flex-start</code> – ke kiri/atas</li>
+              <li><code>center</code> – di tengah</li>
+              <li><code>flex-end</code> – ke kanan/bawah</li>
+              <li><code>space-between</code> – jarak rata, tanpa spasi di ujung</li>
+              <li><code>space-around</code> – spasi di tiap sisi elemen</li>
+              <li><code>space-evenly</code> – jarak sama di seluruh elemen</li>
+            </ul>
+            <li><strong>align-items</strong> – mengatur posisi di <em>cross axis</em>:</li>
+            <ul>
+              <li><code>stretch</code> (default)</li>
+              <li><code>center</code></li>
+              <li><code>flex-start</code></li>
+              <li><code>flex-end</code></li>
+            </ul>
+            <li><strong>align-content</strong> – hanya bekerja bila elemen membungkus ke beberapa baris (<code>flex-wrap: wrap</code>).</li>
+          </ul>
+        `
+      },
+      {
+        title: "Flex-wrap, Gap, dan Order",
+        content: `
+          <p>Flexbox memungkinkan elemen otomatis berpindah baris jika ruang tidak cukup dengan <code>flex-wrap</code>.</p>
+          <pre><code>.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}</code></pre>
+          <ul>
+            <li><strong>flex-wrap</strong>: menentukan apakah elemen membungkus (wrap) ke baris baru.</li>
+            <li><strong>gap</strong>: jarak antar elemen tanpa pakai margin.</li>
+            <li><strong>order</strong>: mengatur urutan tampil elemen tanpa ubah HTML-nya.</li>
+          </ul>
+          <pre><code>.item:nth-child(2) {
+  order: 3;
+}
+.item:nth-child(3) {
+  order: 1;
+}</code></pre>
+        `
+      },
+      {
+        title: "flex-grow, flex-shrink, dan flex-basis",
+        content: `
+          <p>Tiga properti ini digunakan untuk mengontrol ukuran elemen flex secara proporsional.</p>
+          <ul>
+            <li><strong>flex-grow</strong>: seberapa besar elemen bisa tumbuh memenuhi ruang kosong.</li>
+            <li><strong>flex-shrink</strong>: seberapa besar elemen bisa menyusut jika ruang sempit.</li>
+            <li><strong>flex-basis</strong>: ukuran awal elemen sebelum disesuaikan.</li>
+          </ul>
+          <pre><code>.item {
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 200px;
+}
+
+/* shorthand */
+.item {
+  flex: 1 1 200px;
+}</code></pre>
+          <p><strong>Contoh:</strong> Jika tiga elemen punya <code>flex-grow: 1</code>, maka ruang sisa akan dibagi rata.</p>
+        `
+      },
+      {
+        title: "Layout Responsif Menggunakan Flexbox",
+        content: `
+          <p>Flexbox sangat ideal untuk layout responsif karena dapat menyesuaikan diri terhadap ukuran layar.</p>
+          <pre><code>.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.card {
+  flex: 1 1 300px;
+  margin: 10px;
+}</code></pre>
+          <p>Ketika layar mengecil, elemen <code>.card</code> akan otomatis turun ke baris berikutnya tanpa pecah layout.</p>
+          <p><strong>Tips:</strong> Gunakan Flexbox untuk layout satu dimensi (baris atau kolom). Untuk dua dimensi (baris dan kolom sekaligus), gunakan <strong>CSS Grid</strong>.</p>
+        `
+      },
+      {
+        title: "Video: Panduan Lengkap Flexbox",
+        video: "https://www.youtube.com/embed/JJSoEo8JSnc",
+        content: `
+          <p>Tonton video ini untuk memahami semua properti penting Flexbox seperti <code>justify-content</code>, <code>align-items</code>, <code>flex-wrap</code>, dan bagaimana menggunakannya untuk membuat layout modern yang responsif.</p>
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/JJSoEo8JSnc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        `
       }
+    ]
+  },
 
-      /* dark theme overrides */
-      body.dark {
-        --bg: #0f1724;
-        --card-bg: #081022;
-        --text: #e6eef8;
-        --muted: #94a3b8;
-      }</code></pre>
+  10: {
+    title: "Grid Layout (2D Layout Modern)",
+    slides: [
+      {
+        title: "Konsep Grid System",
+        content: `
+          <p><strong>CSS Grid</strong> adalah sistem layout dua dimensi yang memungkinkan kamu mengatur elemen dalam baris dan kolom.</p>
+          <p>Grid cocok untuk membuat layout kompleks seperti dashboard, galeri, atau struktur halaman penuh.</p>
+          <p><strong>Contoh dasar:</strong></p>
+          <pre><code>.container {
+  display: grid;
+  grid-template-columns: 200px 1fr 200px;
+  grid-template-rows: auto auto;
+  gap: 20px;
+}</code></pre>
+          <p>Di atas, kita membuat grid dengan 3 kolom dan 2 baris, serta jarak antar elemen sebesar <code>20px</code>.</p>
+        `
+      },
+      {
+        title: "Membuat Grid Container (display: grid)",
+        content: `
+          <p>Untuk mulai menggunakan Grid, set elemen induk menjadi <code>display: grid;</code>.</p>
+          <pre><code>.grid-container {
+  display: grid;
+}</code></pre>
+          <p>Setelah itu, kamu bisa menentukan jumlah dan ukuran kolom/baris menggunakan properti <code>grid-template-columns</code> dan <code>grid-template-rows</code>.</p>
+        `
+      },
+      {
+        title: "grid-template-columns dan grid-template-rows",
+        content: `
+          <p>Gunakan properti ini untuk menentukan jumlah dan ukuran kolom/baris.</p>
+          <pre><code>.grid-container {
+  display: grid;
+  grid-template-columns: 100px 200px 1fr;
+  grid-template-rows: 150px auto;
+}</code></pre>
+          <ul>
+            <li><code>100px</code> dan <code>200px</code>: ukuran kolom tetap.</li>
+            <li><code>1fr</code>: mengambil sisa ruang yang tersedia.</li>
+            <li><code>auto</code>: menyesuaikan dengan konten.</li>
+          </ul>
+        `
+      },
+      {
+        title: "Gap antar Elemen Grid",
+        content: `
+          <p><code>gap</code> digunakan untuk memberi jarak antar baris dan kolom.</p>
+          <pre><code>.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}</code></pre>
+          <p>Kamu juga bisa mengatur jarak berbeda untuk baris dan kolom:</p>
+          <pre><code>gap: 10px 20px; /* 10px baris, 20px kolom */</code></pre>
+        `
+      },
+      {
+        title: "Grid Line & Area Naming",
+        content: `
+          <p>Kamu dapat menamai area grid agar lebih mudah digunakan.</p>
+          <pre><code>.grid-container {
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "sidebar main"
+    "footer footer";
+  grid-template-columns: 200px 1fr;
+  grid-template-rows: auto 1fr auto;
+}
 
-              <p>Tip: Gunakan <code>--</code> variables untuk konsistensi warna, radius, spacing, dan shadow.</p>
-            `
-          },
-
-          {
-            title: "4) Base Typography & Responsive Font",
-            content: `
-              <p>Terapkan font stack & responsive typography dengan <code>clamp()</code>.</p>
-
-              <pre><code>html {
-        font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-        font-size: 16px;
-        background: var(--bg);
-        color: var(--text);
-        line-height: 1.6;
+.header { grid-area: header; }
+.sidebar { grid-area: sidebar; }
+.main { grid-area: main; }
+.footer { grid-area: footer; }</code></pre>
+          <p>Dengan cara ini, layout halaman bisa diatur secara semantik dan mudah dibaca.</p>
+        `
+      },
+      {
+        title: "Menentukan Posisi Grid Item",
+        content: `
+          <p>Item dalam grid bisa diatur posisinya dengan properti seperti:</p>
+          <ul>
+            <li><code>grid-column-start</code> dan <code>grid-column-end</code></li>
+            <li><code>grid-row-start</code> dan <code>grid-row-end</code></li>
+          </ul>
+          <pre><code>.item1 {
+  grid-column: 1 / 3; /* dari kolom 1 ke 3 */
+  grid-row: 1 / 2;   /* dari baris 1 ke 2 */
+}</code></pre>
+          <p>Artinya item tersebut melebar dari kolom pertama hingga kolom ketiga.</p>
+        `
+      },
+      {
+        title: "Responsive Grid dengan auto-fit, auto-fill, dan minmax()",
+        content: `
+          <p>CSS Grid juga mendukung layout responsif tanpa media query.</p>
+          <pre><code>.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+}</code></pre>
+          <ul>
+            <li><code>auto-fit</code>: menyesuaikan jumlah kolom sesuai ruang yang tersedia.</li>
+            <li><code>minmax(200px, 1fr)</code>: kolom minimal 200px, maksimal 1fr.</li>
+          </ul>
+          <p>Dengan cara ini, grid akan otomatis menyesuaikan jumlah kolom saat layar mengecil atau membesar.</p>
+        `
+      },
+      {
+        title: "Perbandingan Flexbox vs Grid",
+        content: `
+          <table border="1" cellpadding="6" cellspacing="0">
+            <tr>
+              <th>Fitur</th>
+              <th>Flexbox</th>
+              <th>Grid</th>
+            </tr>
+            <tr>
+              <td>Dimensi</td>
+              <td>Satu dimensi (baris <em>atau</em> kolom)</td>
+              <td>Dua dimensi (baris <em>dan</em> kolom)</td>
+            </tr>
+            <tr>
+              <td>Fleksibilitas</td>
+              <td>Bagus untuk layout dinamis seperti navbar</td>
+              <td>Ideal untuk layout terstruktur seperti halaman utama</td>
+            </tr>
+            <tr>
+              <td>Alignment</td>
+              <td>Menggunakan <code>justify-content</code> dan <code>align-items</code></td>
+              <td>Menggunakan <code>grid-template</code> dan <code>area</code></td>
+            </tr>
+          </table>
+          <p><strong>Kesimpulan:</strong> Gunakan <code>Flexbox</code> untuk barisan elemen (1D), dan <code>Grid</code> untuk layout besar (2D).</p>
+        `
+      },
+      {
+        title: "Video: CSS Grid Layout Dasar",
+        video: "https://www.youtube.com/embed/EFafSYg-PkI",
+        content: `
+          <p>Tonton video ini untuk memahami konsep dan penerapan CSS Grid dari dasar.</p>
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/EFafSYg-PkI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        `
       }
+    ]
+  },
 
-      .container {
-        width: min(95%, var(--container-max));
-        margin-inline: auto;
-        padding: 2rem 0;
+  11: {
+    title: "Responsive Design & Media Query",
+    slides: [
+      {
+        title: "Konsep Responsive Design",
+        content: `
+          <p><strong>Responsive design</strong> berarti membuat tampilan website yang menyesuaikan ukuran layar perangkat pengguna — baik itu HP, tablet, atau desktop.</p>
+          <p>Tujuannya agar konten tetap mudah dibaca dan diakses di berbagai ukuran layar tanpa harus melakukan zoom atau scroll berlebihan.</p>
+          <p><strong>Contoh sederhana:</strong></p>
+          <pre><code>img {
+  max-width: 100%;
+  height: auto;
+}</code></pre>
+          <p>Dengan aturan di atas, gambar akan otomatis menyesuaikan lebar wadahnya tanpa keluar batas layar.</p>
+        `
+      },
+      {
+        title: "Breakpoints Umum (Mobile, Tablet, Desktop)",
+        content: `
+          <p><strong>Breakpoint</strong> adalah ukuran lebar layar di mana layout berubah untuk menyesuaikan tampilan.</p>
+          <table border="1" cellpadding="6" cellspacing="0">
+            <tr>
+              <th>Perangkat</th>
+              <th>Lebar (px)</th>
+            </tr>
+            <tr>
+              <td>Mobile</td>
+              <td>&lt; 768px</td>
+            </tr>
+            <tr>
+              <td>Tablet</td>
+              <td>768px – 1024px</td>
+            </tr>
+            <tr>
+              <td>Desktop</td>
+              <td>&gt; 1024px</td>
+            </tr>
+          </table>
+          <p>Ukuran ini fleksibel — kamu bisa menyesuaikan sesuai kebutuhan proyek.</p>
+        `
+      },
+      {
+        title: "@media Query Dasar",
+        content: `
+          <p>Media query digunakan untuk menerapkan CSS berdasarkan kondisi layar (misalnya lebar atau orientasi).</p>
+          <pre><code>/* Tampilan untuk layar kecil (mobile) */
+@media (max-width: 768px) {
+  body {
+    background-color: lightblue;
+  }
+}
+
+/* Tampilan untuk layar besar (desktop) */
+@media (min-width: 1024px) {
+  body {
+    background-color: lightgreen;
+  }
+}</code></pre>
+          <p><strong>Penjelasan:</strong> CSS dalam blok <code>@media</code> hanya aktif saat kondisi tersebut terpenuhi.</p>
+        `
+      },
+      {
+        title: "@media Query Lanjutan",
+        content: `
+          <p>Kamu juga bisa menggabungkan beberapa kondisi menggunakan operator <code>and</code>, <code>not</code>, atau <code>only</code>.</p>
+          <pre><code>@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .container {
+    padding: 40px;
+  }
+}</code></pre>
+          <p>Contoh di atas hanya berlaku untuk layar berukuran tablet.</p>
+          <p><strong>Tips:</strong> Gunakan media query dari kecil → besar (mobile first) agar kode lebih efisien.</p>
+        `
+      },
+      {
+        title: "Units Responsif: %, em, rem, vh, vw, fr",
+        content: `
+          <p>Gunakan satuan relatif agar elemen mudah menyesuaikan ukuran layar.</p>
+          <ul>
+            <li><code>%</code> – relatif terhadap elemen induk.</li>
+            <li><code>em</code> – relatif terhadap ukuran font elemen saat ini.</li>
+            <li><code>rem</code> – relatif terhadap ukuran font root (<code>html</code>).</li>
+            <li><code>vh</code> – 1% dari tinggi viewport.</li>
+            <li><code>vw</code> – 1% dari lebar viewport.</li>
+            <li><code>fr</code> – satuan untuk <em>Grid Layout</em> (bagian dari ruang yang tersedia).</li>
+          </ul>
+          <pre><code>.box {
+  width: 50vw;
+  height: 50vh;
+  font-size: 1.5rem;
+}</code></pre>
+          <p>Dengan satuan ini, ukuran elemen akan menyesuaikan layar pengguna.</p>
+        `
+      },
+      {
+        title: "Responsive Font dan Layout",
+        content: `
+          <p>Ukuran teks dan layout sebaiknya juga responsif.</p>
+          <pre><code>h1 {
+  font-size: clamp(1.5rem, 2vw, 3rem);
+}
+
+.container {
+  width: min(90%, 1200px);
+}</code></pre>
+          <p><strong>Penjelasan:</strong></p>
+          <ul>
+            <li><code>clamp(min, preferred, max)</code> menjaga ukuran tetap proporsional tanpa melebihi batas.</li>
+            <li><code>min()</code> memastikan lebar tidak melebihi batas maksimum.</li>
+          </ul>
+        `
+      },
+      {
+        title: "CSS clamp() & Fluid Layout",
+        content: `
+          <p><code>clamp()</code> digunakan untuk membuat ukuran yang fleksibel tapi tetap punya batas minimum dan maksimum.</p>
+          <pre><code>p {
+  font-size: clamp(14px, 2vw, 18px);
+}</code></pre>
+          <p>Artinya: ukuran font minimum 14px, maksimum 18px, dan skala menyesuaikan 2% dari lebar layar.</p>
+          <p><strong>Fluid layout</strong> berarti ukuran elemen seperti container, padding, atau font bisa menyesuaikan layar secara otomatis tanpa media query tambahan.</p>
+        `
+      },
+      {
+        title: "Container Query (Fitur CSS Modern)",
+        content: `
+          <p><strong>Container Query</strong> memungkinkan elemen menyesuaikan gaya berdasarkan ukuran wadahnya, bukan layar penuh seperti media query.</p>
+          <pre><code>.card {
+  container-type: inline-size;
+}
+
+@container (min-width: 600px) {
+  .card-content {
+    display: flex;
+  }
+}</code></pre>
+          <p>Dengan ini, komponen seperti <em>card</em> atau <em>section</em> bisa responsif meskipun berada di dalam container yang ukurannya berubah-ubah.</p>
+          <p><strong>Catatan:</strong> Fitur ini sudah didukung oleh browser modern seperti Chrome, Edge, dan Firefox terbaru.</p>
+        `
+      },
+      {
+        title: "Video: Responsive Design & Media Query",
+        video: "https://www.youtube.com/embed/srvUrASNj0s",
+        content: `
+          <p>Tonton video ini untuk memahami cara membuat layout web yang responsif menggunakan media query dan unit fleksibel.</p>
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/srvUrASNj0s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        `
       }
+    ]
+  },
 
-      /* Responsive headings */
-      h1 {
-        font-size: clamp(1.6rem, 3.8vw, 2.8rem);
-        line-height: 1.05;
+  12: {
+    title: "Transition, Animation, & Transform",
+    slides: [
+      {
+        title: "Transition Dasar",
+        content: `
+          <p><strong>Transition</strong> digunakan untuk membuat perubahan gaya (CSS property) menjadi halus ketika suatu keadaan berubah, misalnya saat hover.</p>
+          <pre><code>button {
+  background-color: royalblue;
+  color: white;
+  transition-property: background-color;
+  transition-duration: 0.3s;
+}
+
+button:hover {
+  background-color: dodgerblue;
+}</code></pre>
+          <p><strong>Penjelasan:</strong></p>
+          <ul>
+            <li><code>transition-property</code>: menentukan properti yang ingin dianimasikan.</li>
+            <li><code>transition-duration</code>: durasi transisi dalam detik (s) atau milidetik (ms).</li>
+          </ul>
+        `
+      },
+      {
+        title: "Properti Transition Lengkap",
+        content: `
+          <p>Kamu juga bisa menulisnya dalam satu baris menggunakan shorthand:</p>
+          <pre><code>button {
+  transition: all 0.4s ease-in-out;
+}</code></pre>
+          <p><strong>Struktur shorthand:</strong></p>
+          <pre><code>transition: [property] [duration] [timing-function] [delay];</code></pre>
+          <p><strong>Contoh dengan delay:</strong></p>
+          <pre><code>.box {
+  transition: transform 0.5s ease 0.2s;
+}</code></pre>
+        `
+      },
+      {
+        title: "Transformasi 2D (scale, rotate, translate, skew)",
+        content: `
+          <p><strong>Transform</strong> digunakan untuk memutar, memperbesar, memindahkan, atau memiringkan elemen.</p>
+          <pre><code>.box {
+  width: 100px;
+  height: 100px;
+  background: coral;
+  transition: transform 0.3s ease;
+}
+
+.box:hover {
+  transform: scale(1.2) rotate(10deg) translateX(10px);
+}</code></pre>
+          <ul>
+            <li><code>scale()</code> – memperbesar atau memperkecil ukuran.</li>
+            <li><code>rotate()</code> – memutar elemen (dalam derajat).</li>
+            <li><code>translate()</code> – memindahkan posisi (px, %, dsb).</li>
+            <li><code>skew()</code> – memiringkan elemen.</li>
+          </ul>
+        `
+      },
+      {
+        title: "Transformasi 3D",
+        content: `
+          <p>Transformasi juga bisa dilakukan dalam ruang 3D menggunakan <code>translateZ</code>, <code>rotateY</code>, dll.</p>
+          <pre><code>.card {
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+}
+
+.card:hover {
+  transform: rotateY(180deg);
+}</code></pre>
+          <p><strong>Tips:</strong> Gunakan <code>perspective</code> di elemen induk untuk memberikan efek kedalaman 3D.</p>
+          <pre><code>.scene {
+  perspective: 1000px;
+}</code></pre>
+        `
+      },
+      {
+        title: "Animation dengan @keyframes",
+        content: `
+          <p><strong>@keyframes</strong> digunakan untuk membuat animasi kompleks dengan beberapa tahap perubahan.</p>
+          <pre><code>@keyframes bounce {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-30px); }
+  100% { transform: translateY(0); }
+}
+
+.ball {
+  width: 50px;
+  height: 50px;
+  background: orange;
+  border-radius: 50%;
+  animation: bounce 1s ease-in-out infinite;
+}</code></pre>
+          <p><strong>Penjelasan:</strong></p>
+          <ul>
+            <li><code>animation-name</code>: nama animasi (contoh: bounce).</li>
+            <li><code>animation-duration</code>: waktu satu siklus animasi.</li>
+            <li><code>animation-iteration-count</code>: berapa kali animasi dijalankan (<code>infinite</code> = tanpa henti).</li>
+          </ul>
+        `
+      },
+      {
+        title: "Timing Function (ease, linear, ease-in-out)",
+        content: `
+          <p><strong>Timing function</strong> mengontrol kecepatan animasi sepanjang waktu.</p>
+          <pre><code>.box {
+  transition: transform 0.6s ease-in-out;
+}</code></pre>
+          <p><strong>Jenis timing function:</strong></p>
+          <ul>
+            <li><code>linear</code>: kecepatan konstan dari awal hingga akhir.</li>
+            <li><code>ease</code>: mulai dan berhenti perlahan.</li>
+            <li><code>ease-in</code>: mulai lambat, lalu cepat.</li>
+            <li><code>ease-out</code>: mulai cepat, lalu melambat di akhir.</li>
+            <li><code>ease-in-out</code>: lambat di awal dan akhir.</li>
+          </ul>
+        `
+      },
+      {
+        title: "Animation Delay, Iteration, & Direction",
+        content: `
+          <p>Kamu bisa mengatur kapan animasi mulai, berapa kali diulang, dan arah perulangannya.</p>
+          <pre><code>.loading {
+  animation-name: spin;
+  animation-duration: 2s;
+  animation-delay: 0.5s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+@keyframes spin {
+  from { transform: rotate(0); }
+  to { transform: rotate(360deg); }
+}</code></pre>
+          <p><strong>Penjelasan:</strong></p>
+          <ul>
+            <li><code>animation-delay</code>: menunda animasi.</li>
+            <li><code>animation-iteration-count</code>: jumlah pengulangan.</li>
+            <li><code>animation-direction</code>: arah animasi (normal, reverse, alternate, alternate-reverse).</li>
+          </ul>
+        `
+      },
+      {
+        title: "Animasi pada Pseudo-element",
+        content: `
+          <p>Animasi juga bisa diterapkan pada pseudo-element seperti <code>::before</code> atau <code>::after</code>.</p>
+          <pre><code>button::after {
+  content: '';
+  display: block;
+  height: 2px;
+  width: 0;
+  background: #fff;
+  transition: width 0.3s ease;
+}
+
+button:hover::after {
+  width: 100%;
+}</code></pre>
+          <p>Efek ini sering digunakan untuk membuat animasi garis bawah (underline) saat hover.</p>
+        `
+      },
+      {
+        title: "Efek Hover & Animasi Halus Interaktif",
+        content: `
+          <p>Kombinasikan <code>transform</code> dan <code>transition</code> untuk membuat efek hover halus dan interaktif.</p>
+          <pre><code>.card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}</code></pre>
+          <p>Efek seperti ini banyak digunakan di UI modern untuk meningkatkan interaksi visual.</p>
+        `
+      },
+      {
+        title: "Video: CSS Transition & Animation",
+        video: "https://www.youtube.com/embed/zHUpx90NerM",
+        content: `
+          <p>Tonton video ini untuk melihat bagaimana membuat animasi halus dan interaktif menggunakan CSS Transition, Transform, dan @keyframes Animation.</p>
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/zHUpx90NerM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        `
       }
+    ]
+  },
 
-      h2 {
-        font-size: clamp(1.2rem, 2.6vw, 1.6rem);
-      }</code></pre>
+  13: {
+    title: "Pseudo-class, Pseudo-element, & State Styling",
+    slides: [
+      {
+        title: "Pengenalan Pseudo-class & Pseudo-element",
+        content: `
+          <p><strong>Pseudo-class</strong> digunakan untuk menargetkan <em>state</em> atau kondisi tertentu dari elemen (misal: ketika di-hover, diklik, atau valid).</p>
+          <p><strong>Pseudo-element</strong> digunakan untuk membuat dan men-style bagian tertentu dari elemen, seperti awal atau akhir isi.</p>
+          <pre><code>/* Contoh pseudo-class */
+button:hover {
+  background-color: #4a90e2;
+}
 
-              <p>Tip: pakai <code>min()</code>/<code>clamp()</code> untuk menjaga ukuran tetap proporsional.</p>
-            `
-          },
+/* Contoh pseudo-element */
+p::first-line {
+  font-weight: bold;
+}</code></pre>
+          <ul>
+            <li>Pseudo-class diawali dengan <code>:</code></li>
+            <li>Pseudo-element diawali dengan <code>::</code></li>
+          </ul>
+        `
+      },
+      {
+        title: "Styling Link (visited, hover, active)",
+        content: `
+          <p>Link memiliki beberapa state yang dapat ditargetkan dengan pseudo-class:</p>
+          <pre><code>a:link {
+  color: #0066cc; /* link normal */
+}
 
-          {
-            title: "5) Header & Nav (Flexbox)",
-            content: `
-              <p>Header menggunakan Flexbox untuk logo + nav + actions (theme toggle).</p>
+a:visited {
+  color: #800080; /* sudah dikunjungi */
+}
 
-              <pre><code>/* HTML (di &lt;header&gt;) */
-      &lt;div class="container header-inner"&gt;
-        &lt;a href="#" class="logo"&gt;WebCourse&lt;/a&gt;
-        &lt;nav class="nav"&gt;
-          &lt;a href="#courses"&gt;Kursus&lt;/a&gt;
-          &lt;a href="#subscribe"&gt;Subscribe&lt;/a&gt;
-        &lt;/nav&gt;
-        &lt;div class="actions"&gt;
-          &lt;button id="theme-toggle" aria-label="Toggle theme"&gt;🌓&lt;/button&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
+a:hover {
+  color: #ff6600; /* saat disorot */
+}
 
-      /* CSS */
-      .header-inner {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: var(--gap);
-        padding: 1rem 0;
-      }</code></pre>
+a:active {
+  color: #ff0000; /* saat diklik */
+}</code></pre>
+          <p><strong>Urutan penting:</strong> <code>LVHA</code> — Link, Visited, Hover, Active</p>
+          <p>Jika urutan ini terbalik, hasil styling bisa tidak sesuai.</p>
+        `
+      },
+      {
+        title: "Form State: valid, invalid, checked, disabled",
+        content: `
+          <p>Pseudo-class juga bisa dipakai untuk styling form berdasarkan status input.</p>
+          <pre><code>input:valid {
+  border-color: #4caf50;
+}
 
-              <p>Accessibility: tambahkan <code>aria-label</code> pada tombol dan gunakan <code>&lt;nav&gt;</code> semantik.</p>
-            `
-          },
+input:invalid {
+  border-color: #f44336;
+}
 
-          {
-            title: "6) Hero Section (Background, Gradient, Grid)",
-            content: `
-              <p>Hero memakai background image + linear-gradient overlay dan layout dua kolom (text + image) menggunakan Grid.</p>
+input:disabled {
+  background-color: #eee;
+}
 
-              <pre><code>/* HTML */
-      &lt;section class="hero"&gt;
-        &lt;div class="container hero-grid"&gt;
-          &lt;div class="hero-left"&gt;
-            &lt;h1&gt;Belajar HTML &amp; CSS dari Nol sampai Mahir&lt;/h1&gt;
-            &lt;p class="muted"&gt;Praktik langsung, project nyata, siap deploy.&lt;/p&gt;
-            &lt;a class="btn" href="#courses"&gt;Lihat Kursus&lt;/a&gt;
-          &lt;/div&gt;
-          &lt;div class="hero-right"&gt;
-            &lt;img src="assets/images/hero.jpg" alt="Hero image"&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
-      &lt;/section&gt;
+input:checked + label {
+  font-weight: bold;
+  color: #4a90e2;
+}</code></pre>
+          <p>Dengan ini, kamu bisa membuat form yang memberikan <strong>feedback visual</strong> otomatis tanpa JavaScript.</p>
+        `
+      },
+      {
+        title: "::before & ::after untuk Dekorasi",
+        content: `
+          <p><code>::before</code> dan <code>::after</code> digunakan untuk menambahkan konten dekoratif sebelum atau sesudah elemen utama.</p>
+          <pre><code>button::before {
+  content: "🔥 ";
+}
 
-      /* CSS */
-      .hero {
-        background: linear-gradient(180deg, rgba(0,0,0,0.04), rgba(0,0,0,0)) , url('../images/hero.jpg') center/cover no-repeat;
-        padding: 4rem 0;
+button::after {
+  content: " 💪";
+}</code></pre>
+          <p>Keduanya tidak mengubah isi HTML, tapi menambah elemen virtual di dalam DOM.</p>
+          <p>Contoh penggunaan lain:</p>
+          <pre><code>.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom right, #4a90e2, transparent);
+  opacity: 0.2;
+  z-index: 0;
+}</code></pre>
+          <p>Efek seperti ini sering dipakai untuk <strong>dekorasi latar</strong> atau <strong>highlight efek</strong>.</p>
+        `
+      },
+      {
+        title: "Animasi Pseudo-element",
+        content: `
+          <p>Pseudo-element bisa digabung dengan animasi atau transition untuk efek interaktif.</p>
+          <pre><code>button {
+  position: relative;
+  overflow: hidden;
+  transition: color 0.3s;
+}
+
+button::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #4a90e2;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s;
+  z-index: -1;
+}
+
+button:hover {
+  color: white;
+}
+
+button:hover::after {
+  transform: scaleX(1);
+}</code></pre>
+          <p>Efek ini menciptakan <strong>animasi garis atau overlay</strong> saat tombol di-hover tanpa JavaScript.</p>
+        `
+      },
+      {
+        title: "Video: Styling Interaktif dengan Pseudo-class & Element",
+        video: "https://www.youtube.com/embed/6vbgZnQrpbU",
+        content: `
+          <p>Tonton video ini untuk melihat bagaimana pseudo-class dan pseudo-element bisa digunakan untuk membuat interaksi UI yang menarik.</p>
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/6vbgZnQrpbU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        `
       }
-      .hero-grid {
-        display: grid;
-        grid-template-columns: 1fr 480px;
-        gap: 2rem;
-        align-items: center;
+    ]
+  },
+
+  14: {
+    title: "Mini Project: Responsive Landing Page & Card Grid (Full CSS Practice)",
+    slides: [
+      {
+        title: "Project Overview",
+        content: `
+          <p>Tujuan: Membuat single-page landing website yang responsif dengan fitur:</p>
+          <ul>
+            <li>Header & Hero (semantik)</li>
+            <li>Grid kursus/cards menggunakan CSS Grid + Flexbox</li>
+            <li>Typography responsif dengan <code>clamp()</code></li>
+            <li>Theme switcher (light/dark) menggunakan CSS Variables + JS</li>
+            <li>Hover effects, transitions, pseudo-elements dekoratif</li>
+            <li>Modal detail card sederhana (CSS + sedikit JS)</li>
+            <li>Form subscribe sederhana (validasi HTML + state styling)</li>
+          </ul>
+          <p>Semua konsep CSS yang dipelajari akan diterapkan: variables, functions (calc/clamp), units (vw/vh/rem), background, border, box-shadow, flexbox, grid, media queries, animations, pseudo-elements, specificity, dan best practices.</p>
+        `
+      },
+      {
+        title: "1) Persiapan & Struktur Folder",
+        content: `
+          <p>Buat struktur project sederhana:</p>
+          <pre><code>mini-project/
+├─ index.html
+├─ assets/
+│  ├─ css/
+│  │  └─ style.css
+│  ├─ js/
+│  │  └─ main.js
+│  └─ images/
+│     ├─ hero.jpg
+│     └─ course1.jpg
+└─ favicon.png</code></pre>
+          <p>Tools: VS Code + Live Server, Chrome DevTools.</p>
+        `
+      },
+      {
+        title: "2) Skeleton HTML (semantik dasar)",
+        content: `
+          <p>Buat file <code>index.html</code> dengan struktur semantik dasar dan link resource.</p>
+          <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="id"&gt;
+  &lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+    &lt;title&gt;WebCourse — Mini Project&lt;/title&gt;
+    &lt;link rel="icon" href="favicon.png"&gt;
+    &lt;link rel="stylesheet" href="assets/css/style.css"&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;header class="site-header"&gt;...&lt;/header&gt;
+    &lt;main&gt;
+      &lt;section class="hero"&gt;...&lt;/section&gt;
+      &lt;section class="courses"&gt;...&lt;/section&gt;
+      &lt;section class="subscribe"&gt;...&lt;/section&gt;
+    &lt;/main&gt;
+    &lt;footer&gt;...&lt;/footer&gt;
+    &lt;script src="assets/js/main.js" defer&gt;&lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+        `
+      },
+      {
+        title: "3) CSS Variables & Reset Dasar",
+        content: `
+          <p>Di <code>style.css</code>, mulai dengan reset + definisi variable global di <code>:root</code>.</p>
+          <pre><code>/* reset & box-sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* CSS Variables (theming) */
+:root {
+  --bg: #ffffff;
+  --card-bg: #ffffff;
+  --text: #111827;
+  --muted: #6b7280;
+  --primary: #0066ff;
+  --accent: #ff6b6b;
+  --radius: 12px;
+  --gap: 1.25rem;
+  --container-max: 1200px;
+  --shadow-1: 0 4px 12px rgba(16,24,40,0.06);
+  --shadow-2: 0 10px 30px rgba(2,6,23,0.2);
+  --transition: 0.28s ease;
+}
+
+/* dark theme overrides */
+body.dark {
+  --bg: #0f1724;
+  --card-bg: #081022;
+  --text: #e6eef8;
+  --muted: #94a3b8;
+}</code></pre>
+          <p>Tip: Gunakan <code>--</code> variables untuk konsistensi warna, radius, spacing, dan shadow.</p>
+        `
+      },
+      {
+        title: "4) Base Typography & Responsive Font",
+        content: `
+          <p>Terapkan font stack & responsive typography dengan <code>clamp()</code>.</p>
+          <pre><code>html {
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  font-size: 16px;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.container {
+  width: min(95%, var(--container-max));
+  margin-inline: auto;
+  padding: 2rem 0;
+}
+
+/* Responsive headings */
+h1 {
+  font-size: clamp(1.6rem, 3.8vw, 2.8rem);
+  line-height: 1.05;
+}
+
+h2 {
+  font-size: clamp(1.2rem, 2.6vw, 1.6rem);
+}</code></pre>
+          <p>Tip: pakai <code>min()</code>/<code>clamp()</code> untuk menjaga ukuran tetap proporsional.</p>
+        `
+      },
+      {
+        title: "5) Header & Nav (Flexbox)",
+        content: `
+          <p>Header menggunakan Flexbox untuk logo + nav + actions (theme toggle).</p>
+          <pre><code>&lt;div class="container header-inner"&gt;
+  &lt;a href="#" class="logo"&gt;WebCourse&lt;/a&gt;
+  &lt;nav class="nav"&gt;
+    &lt;a href="#courses"&gt;Kursus&lt;/a&gt;
+    &lt;a href="#subscribe"&gt;Subscribe&lt;/a&gt;
+  &lt;/nav&gt;
+  &lt;div class="actions"&gt;
+    &lt;button id="theme-toggle" aria-label="Toggle theme"&gt;🌓&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+/* CSS */
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--gap);
+  padding: 1rem 0;
+}</code></pre>
+          <p>Accessibility: tambahkan <code>aria-label</code> pada tombol dan gunakan <code>&lt;nav&gt;</code> semantik.</p>
+        `
+      },
+      {
+        title: "6) Hero Section (Background, Gradient, Grid)",
+        content: `
+          <p>Hero memakai background image + linear-gradient overlay dan layout dua kolom (text + image) menggunakan Grid.</p>
+          <pre><code>&lt;section class="hero"&gt;
+  &lt;div class="container hero-grid"&gt;
+    &lt;div class="hero-left"&gt;
+      &lt;h1&gt;Belajar HTML &amp; CSS dari Nol sampai Mahir&lt;/h1&gt;
+      &lt;p class="muted"&gt;Praktik langsung, project nyata, siap deploy.&lt;/p&gt;
+      &lt;a class="btn" href="#courses"&gt;Lihat Kursus&lt;/a&gt;
+    &lt;/div&gt;
+    &lt;div class="hero-right"&gt;
+      &lt;img src="assets/images/hero.jpg" alt="Hero image"&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/section&gt;
+
+/* CSS */
+.hero {
+  background: linear-gradient(180deg, rgba(0,0,0,0.04), rgba(0,0,0,0)) , url('../images/hero.jpg') center/cover no-repeat;
+  padding: 4rem 0;
+}
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 480px;
+  gap: 2rem;
+  align-items: center;
+}
+.hero-right img {
+  width: 100%;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-1);
+}
+
+/* responsive */
+@media (max-width: 900px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+  }
+  .hero-right { order: -1; } /* visual reordering */
+}</code></pre>
+        `
+      },
+      {
+        title: "7) Courses Grid (CSS Grid + Card Styling)",
+        content: `
+          <p>Buat section cards menggunakan responsive CSS Grid + card hover effect (transform + shadow).</p>
+          <pre><code>&lt;section id="courses" class="container courses-grid"&gt;
+  &lt;article class="card" data-id="1"&gt;
+    &lt;img src="assets/images/course1.jpg" alt="Course 1"&gt;
+    &lt;h3&gt;HTML Dasar&lt;/h3&gt;
+    &lt;p class="muted"&gt;4 Minggu • Beginner&lt;/p&gt;
+    &lt;button class="btn btn-small" data-open="1"&gt;Lihat&lt;/button&gt;
+  &lt;/article&gt;
+  &lt;!-- repeat cards --&gt;
+&lt;/section&gt;
+
+/* CSS */
+.courses-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.25rem;
+  margin-top: 2rem;
+}
+.card {
+  background: var(--card-bg);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow-1);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-2);
+}
+.card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}</code></pre>
+          <p>Gunakan <code>auto-fit</code> + <code>minmax()</code> untuk responsif otomatis.</p>
+        `
+      },
+      {
+        title: "8) Card Details Modal (JS + CSS Animations)",
+        content: `
+          <p>Modal sederhana: tampilkan overlay + modal dengan animasi (fade/scale). Gunakan JS untuk toggle kelas.</p>
+          <pre><code>/* CSS */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(2,6,23,0.6);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+.modal-backdrop.open { display: flex; }
+.modal {
+  width: min(90%, 720px);
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 1.25rem;
+  transform: scale(0.96);
+  opacity: 0;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+.modal-backdrop.open .modal {
+  transform: scale(1);
+  opacity: 1;
+}
+
+/* JS (main.js) */
+document.querySelectorAll('.card button').forEach(btn => {
+  btn.addEventListener('click', (e) => {
+    const id = e.currentTarget.dataset.open;
+    document.querySelector('.modal-backdrop').classList.add('open');
+    // load detail by id (optionally)
+  });
+});
+document.querySelector('.modal-close').addEventListener('click', () => {
+  document.querySelector('.modal-backdrop').classList.remove('open');
+});</code></pre>
+          <p>Efek: gunakan <code>transform</code> + <code>opacity</code> untuk animasi halus (aksesibel: fokus & ESC handler dapat ditambahkan).</p>
+        `
+      },
+      {
+        title: "9) Buttons, Pseudo-element Decorations & Hover Effects",
+        content: `
+          <p>Buat tombol bergaya dengan pseudo-element ::after untuk underline animation.</p>
+          <pre><code>.btn {
+  display: inline-block;
+  background: var(--primary);
+  color: #fff;
+  padding: 0.6rem 1rem;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+.btn::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 3px;
+  background: linear-gradient(90deg, rgba(255,255,255,0.2), rgba(255,255,255,0.0));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.35s ease;
+}
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-1);
+}
+.btn:hover::after {
+  transform: scaleX(1);
+}</code></pre>
+          <p>Pseudo-elements berguna untuk efek dekoratif tanpa markup tambahan.</p>
+        `
+      },
+      {
+        title: "10) Form Subscribe (HTML Validation & State Styling)",
+        content: `
+          <p>Form sederhana dengan atribut HTML <code>required</code> dan state styling (:valid/:invalid).</p>
+          <pre><code>&lt;form id="subscribe" class="subscribe-form"&gt;
+  &lt;label for="email"&gt;Email&lt;/label&gt;
+  &lt;input id="email" name="email" type="email" required placeholder="nama@domain.com"&gt;
+  &lt;button type="submit" class="btn"&gt;Subscribe&lt;/button&gt;
+&lt;/form&gt;
+
+/* CSS */
+.subscribe-form input:valid { border-color: #4caf50; }
+.subscribe-form input:invalid { border-color: #f44336; }
+.subscribe-form input:focus { outline: 2px solid rgba(0,102,255,0.12); }</code></pre>
+          <p>Tip: tampilkan message ARIA untuk aksesibilitas jika input invalid (aria-live regions).</p>
+        `
+      },
+      {
+        title: "11) Theme Toggle (Update CSS Variable via JS)",
+        content: `
+          <p>Buat tombol untuk toggle <code>dark</code> class pada <code>body</code>, sehingga variable berubah otomatis.</p>
+          <pre><code>/* HTML action already added (#theme-toggle) */
+
+/* JS */
+const toggle = document.getElementById('theme-toggle');
+toggle.addEventListener('click', () => {
+  document.body.classList.toggle('dark');
+  // simpan preferensi
+  localStorage.theme = document.body.classList.contains('dark') ? 'dark' : 'light';
+});
+
+// restore on load
+if (localStorage.theme === 'dark') document.body.classList.add('dark');</code></pre>
+          <p>Atau ubah variable langsung:</p>
+          <pre><code>document.documentElement.style.setProperty('--primary', '#ff6b6b');</code></pre>
+        `
+      },
+      {
+        title: "12) Responsive Breakpoints & Container Query (optional)",
+        content: `
+          <p>Tambahkan media queries untuk tweak layout dan gunakan container query untuk komponen yang perlu responsive pada konteksnya.</p>
+          <pre><code>@media (max-width: 900px) {
+  .header-inner { padding-inline: 1rem; }
+  .hero { padding: 2rem 0; }
+}
+
+/* contoh container query */
+.card {
+  container-type: inline-size;
+}
+@container (min-width: 400px) {
+  .card { display: flex; gap: 1rem; }
+}</code></pre>
+          <p>Container query membantu membuat komponen adaptif saat digunakan di berbagai konteks.</p>
+        `
+      },
+      {
+        title: "13) Accessibility & Best Practices",
+        content: `
+          <ul>
+            <li>Gunakan elemen semantik (&lt;header&gt;, &lt;main&gt;, &lt;nav&gt;, &lt;article&gt;, &lt;footer&gt;).</li>
+            <li>Pastikan kontras warna cukup untuk teks (WCAG minimal contrast).</li>
+            <li>Tambahkan <code>alt</code> pada gambar dan <code>aria-label</code> bila perlu.</li>
+            <li>Keyboard accessibility: fokuskan modal, tambahkan ESC handler, dan pastikan tombol dapat diakses via keyboard.</li>
+            <li>Jaga spesifisitas CSS agar mudah di-maintain, hindari overuse <code>!important</code>.</li>
+          </ul>
+        `
+      },
+      {
+        title: "14) Testing & Performance Tips",
+        content: `
+          <ul>
+            <li>Uji di berbagai ukuran layar & peramban (Chrome, Firefox, Safari).</li>
+            <li>Minify CSS untuk production dan compress gambar (webp jika perlu).</li>
+            <li>Gunakan <code>preload</code> untuk font penting dan inline critical CSS untuk hero area jika perlu.</li>
+            <li>Periksa accessibility dengan Lighthouse & validasi HTML/CSS (W3C).</li>
+          </ul>
+        `
+      },
+      {
+        title: "15) Deployment & Final Checklist",
+        content: `
+          <p>Langkah cepat deploy:</p>
+          <pre><code>git init
+git add .
+git commit -m "Initial mini project"
+git push origin main
+# lalu deploy ke Netlify / Vercel / GitHub Pages</code></pre>
+          <p>Final checklist sebelum publish:</p>
+          <ul>
+            <li>Semua asset ter-link dengan benar (relatif/absolut)</li>
+            <li>Semua gambar punya <code>alt</code></li>
+            <li>Form berfungsi & validasi aktif</li>
+            <li>Responsive checked & keyboard accessible</li>
+          </ul>
+        `
+      },
+      {
+        title: "Video: Build This Mini Project (Walkthrough)",
+        video: "https://www.youtube.com/embed/3q3FV65ZrUs",
+        content: `
+          <p>Tonton video walkthrough untuk langkah-langkah pembuatan dari awal sampai deploy.</p>
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/3q3FV65ZrUs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        `
       }
-      .hero-right img {
-        width: 100%;
-        border-radius: var(--radius);
-        box-shadow: var(--shadow-1);
-      }
-
-      /* responsive */
-      @media (max-width: 900px) {
-        .hero-grid {
-          grid-template-columns: 1fr;
-        }
-        .hero-right { order: -1; } /* visual reordering */
-      }</code></pre>
-            `
-          },
-
-          {
-            title: "7) Courses Grid (CSS Grid + Card Styling)",
-            content: `
-              <p>Buat section cards menggunakan responsive CSS Grid + card hover effect (transform + shadow).</p>
-
-              <pre><code>/* HTML sample for each card */
-      &lt;section id="courses" class="container courses-grid"&gt;
-        &lt;article class="card" data-id="1"&gt;
-          &lt;img src="assets/images/course1.jpg" alt="Course 1"&gt;
-          &lt;h3&gt;HTML Dasar&lt;/h3&gt;
-          &lt;p class="muted"&gt;4 Minggu • Beginner&lt;/p&gt;
-          &lt;button class="btn btn-small" data-open="1"&gt;Lihat&lt;/button&gt;
-        &lt;/article&gt;
-        &lt;!-- repeat cards --&gt;
-      &lt;/section&gt;
-
-      /* CSS */
-      .courses-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-        gap: 1.25rem;
-        margin-top: 2rem;
-      }
-      .card {
-        background: var(--card-bg);
-        border-radius: 12px;
-        overflow: hidden;
-        box-shadow: var(--shadow-1);
-        transition: transform var(--transition), box-shadow var(--transition);
-      }
-      .card:hover {
-        transform: translateY(-6px);
-        box-shadow: var(--shadow-2);
-      }
-      .card img {
-        width: 100%;
-        height: 160px;
-        object-fit: cover;
-      }</code></pre>
-
-              <p>Gunakan <code>auto-fit</code> + <code>minmax()</code> untuk responsif otomatis.</p>
-            `
-          },
-
-          {
-            title: "8) Card Details Modal (JS + CSS Animations)",
-            content: `
-              <p>Modal sederhana: tampilkan overlay + modal dengan animasi (fade/scale). Gunakan JS untuk toggle kelas.</p>
-
-              <pre><code>/* CSS */
-      .modal-backdrop {
-        position: fixed;
-        inset: 0;
-        background: rgba(2,6,23,0.6);
-        display: none;
-        align-items: center;
-        justify-content: center;
-        z-index: 9999;
-      }
-      .modal-backdrop.open { display: flex; }
-      .modal {
-        width: min(90%, 720px);
-        background: var(--card-bg);
-        border-radius: 12px;
-        padding: 1.25rem;
-        transform: scale(0.96);
-        opacity: 0;
-        transition: transform 0.25s ease, opacity 0.25s ease;
-      }
-      .modal-backdrop.open .modal {
-        transform: scale(1);
-        opacity: 1;
-      }
-
-      /* JS (main.js) */
-      document.querySelectorAll('.card button').forEach(btn => {
-        btn.addEventListener('click', (e) => {
-          const id = e.currentTarget.dataset.open;
-          document.querySelector('.modal-backdrop').classList.add('open');
-          // load detail by id (optionally)
-        });
-      });
-      document.querySelector('.modal-close').addEventListener('click', () => {
-        document.querySelector('.modal-backdrop').classList.remove('open');
-      });</code></pre>
-
-              <p>Efek: gunakan <code>transform</code> + <code>opacity</code> untuk animasi halus (aksesibel: fokus & ESC handler dapat ditambahkan).</p>
-            `
-          },
-
-          {
-            title: "9) Buttons, Pseudo-element Decorations & Hover Effects",
-            content: `
-              <p>Buat tombol bergaya dengan pseudo-element ::after untuk underline animation.</p>
-
-              <pre><code>.btn {
-        display: inline-block;
-        background: var(--primary);
-        color: #fff;
-        padding: 0.6rem 1rem;
-        border-radius: 10px;
-        position: relative;
-        overflow: hidden;
-        transition: transform var(--transition), box-shadow var(--transition);
-      }
-      .btn::after {
-        content: "";
-        position: absolute;
-        inset: auto 0 0 0;
-        height: 3px;
-        background: linear-gradient(90deg, rgba(255,255,255,0.2), rgba(255,255,255,0.0));
-        transform: scaleX(0);
-        transform-origin: left;
-        transition: transform 0.35s ease;
-      }
-      .btn:hover {
-        transform: translateY(-3px);
-        box-shadow: var(--shadow-1);
-      }
-      .btn:hover::after {
-        transform: scaleX(1);
-      }</code></pre>
-
-              <p>Pseudo-elements berguna untuk efek dekoratif tanpa markup tambahan.</p>
-            `
-          },
-
-          {
-            title: "10) Form Subscribe (HTML Validation & State Styling)",
-            content: `
-              <p>Form sederhana dengan atribut HTML <code>required</code> dan state styling (:valid/:invalid).</p>
-
-              <pre><code>&lt;form id="subscribe" class="subscribe-form"&gt;
-        &lt;label for="email"&gt;Email&lt;/label&gt;
-        &lt;input id="email" name="email" type="email" required placeholder="nama@domain.com"&gt;
-        &lt;button type="submit" class="btn"&gt;Subscribe&lt;/button&gt;
-      &lt;/form&gt;
-
-      /* CSS */
-      .subscribe-form input:valid { border-color: #4caf50; }
-      .subscribe-form input:invalid { border-color: #f44336; }
-      .subscribe-form input:focus { outline: 2px solid rgba(0,102,255,0.12); }</code></pre>
-
-              <p>Tip: tampilkan message ARIA untuk aksesibilitas jika input invalid (aria-live regions).</p>
-            `
-          },
-
-          {
-            title: "11) Theme Toggle (Update CSS Variable via JS)",
-            content: `
-              <p>Buat tombol untuk toggle <code>dark</code> class pada <code>body</code>, sehingga variable berubah otomatis.</p>
-
-              <pre><code>/* HTML action already added (#theme-toggle) */
-
-      /* JS */
-      const toggle = document.getElementById('theme-toggle');
-      toggle.addEventListener('click', () =&gt; {
-        document.body.classList.toggle('dark');
-        // simpan preferensi
-        localStorage.theme = document.body.classList.contains('dark') ? 'dark' : 'light';
-      });
-
-      // restore on load
-      if (localStorage.theme === 'dark') document.body.classList.add('dark');</code></pre>
-
-              <p>Atau ubah variable langsung:</p>
-              <pre><code>document.documentElement.style.setProperty('--primary', '#ff6b6b');</code></pre>
-            `
-          },
-
-          {
-            title: "12) Responsive Breakpoints & Container Query (optional)",
-            content: `
-              <p>Tambahkan media queries untuk tweak layout dan gunakan container query untuk komponen yang perlu responsive pada konteksnya.</p>
-
-              <pre><code>@media (max-width: 900px) {
-        .header-inner { padding-inline: 1rem; }
-        .hero { padding: 2rem 0; }
-      }
-
-      /* contoh container query */
-      .card {
-        container-type: inline-size;
-      }
-      @container (min-width: 400px) {
-        .card { display: flex; gap: 1rem; }
-      }</code></pre>
-
-              <p>Container query membantu membuat komponen adaptif saat digunakan di berbagai konteks.</p>
-            `
-          },
-
-          {
-            title: "13) Accessibility & Best Practices",
-            content: `
-              <ul>
-                <li>Gunakan elemen semantik (&lt;header&gt;, &lt;main&gt;, &lt;nav&gt;, &lt;article&gt;, &lt;footer&gt;).</li>
-                <li>Pastikan kontras warna cukup untuk teks (WCAG minimal contrast).</li>
-                <li>Tambahkan <code>alt</code> pada gambar dan <code>aria-label</code> bila perlu.</li>
-                <li>Keyboard accessibility: fokuskan modal, tambahkan ESC handler, dan pastikan tombol dapat diakses via keyboard.</li>
-                <li>Jaga spesifisitas CSS agar mudah di-maintain, hindari overuse <code>!important</code>.</li>
-              </ul>
-            `
-          },
-
-          {
-            title: "14) Testing & Performance Tips",
-            content: `
-              <ul>
-                <li>Uji di berbagai ukuran layar & peramban (Chrome, Firefox, Safari).</li>
-                <li>Minify CSS untuk production dan compress gambar (webp jika perlu).</li>
-                <li>Gunakan <code>preload</code> untuk font penting dan inline critical CSS untuk hero area jika perlu.</li>
-                <li>Periksa accessibility dengan Lighthouse & validasi HTML/CSS (W3C).</li>
-              </ul>
-            `
-          },
-
-          {
-            title: "15) Deployment & Final Checklist",
-            content: `
-              <p>Langkah cepat deploy:</p>
-              <pre><code>git init
-      git add .
-      git commit -m "Initial mini project"
-      git push origin main
-      # lalu deploy ke Netlify / Vercel / GitHub Pages</code></pre>
-
-              <p>Final checklist sebelum publish:</p>
-              <ul>
-                <li>Semua asset ter-link dengan benar (relatif/absolut)</li>
-                <li>Semua gambar punya <code>alt</code></li>
-                <li>Form berfungsi & validasi aktif</li>
-                <li>Responsive checked & keyboard accessible</li>
-              </ul>
-            `
-          },
-
-          {
-            title: "Video: Build This Mini Project (Walkthrough)",
-            video: "https://www.youtube.com/embed/3q3FV65ZrUs",
-            content: `
-              <p>Tonton video walkthrough untuk langkah-langkah pembuatan dari awal sampai deploy.</p>
-            `
-          }
-        ]
-      }
-    };
+    ]
+  }
+};
   </script>
   <script src="../../assets/js/frontend.js"></script>
 </body>
