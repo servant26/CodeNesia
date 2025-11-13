@@ -309,1401 +309,1451 @@
     let slides = [];
 
     // Data konten untuk setiap modul
-    const moduleContent = {
-      1: {
-        title: "Pengenalan TypeScript",
-        slides: [
-          {
-            title: "Sejarah Singkat TypeScript",
-            content: `
-              <p><strong>TypeScript</strong> pertama kali dirilis oleh <strong>Microsoft</strong> pada tahun 2012 di bawah pimpinan <em>Anders Hejlsberg</em>, arsitek utama bahasa <strong>C#</strong>.</p>
+const moduleContent = {
+  1: {
+    title: "Pengenalan TypeScript",
+    slides: [
+      {
+        title: "Sejarah Singkat TypeScript",
+        content: `
+          <p><strong>TypeScript</strong> pertama kali dirilis oleh <strong>Microsoft</strong> pada tahun 2012 di bawah pimpinan <em>Anders Hejlsberg</em>, arsitek utama bahasa <strong>C#</strong>.</p>
 
-              <p>Tujuan utamanya adalah untuk mengatasi kelemahan <strong>JavaScript</strong> dalam proyek berskala besar yang semakin kompleks. Dengan menambahkan sistem tipe (<em>type system</em>) dan fitur pemrograman berorientasi objek (OOP), TypeScript membantu developer menulis kode yang lebih <strong>terstruktur, aman, dan mudah dikelola</strong>.</p>
-            `
-          },
-          {
-            title: "Apa Itu TypeScript?",
-            content: `
-              <p><strong>TypeScript</strong> adalah <em>superset</em> dari JavaScript — artinya, semua kode JavaScript juga valid di TypeScript.</p>
-
-              <p>Perbedaannya terletak pada penambahan fitur seperti <strong>static typing</strong>, <strong>class</strong>, <strong>interface</strong>, serta <strong>compiler tools</strong> yang lebih canggih. Kode TypeScript perlu diubah (transpile) menjadi JavaScript sebelum dijalankan di browser atau Node.js.</p>
-
-              <pre><code class="language-ts">// Contoh kode TypeScript
-      let message: string = "Hello TypeScript!";
-      console.log(message);
-              </code></pre>
-            `
-          },
-          {
-            title: "Perbedaan TypeScript vs JavaScript",
-            content: `
-              <p>Berikut perbandingan utama antara <strong>JavaScript</strong> dan <strong>TypeScript</strong>:</p>
-
-              <table class="table table-bordered table-striped">
-                <thead>
-                  <tr>
-                    <th>Aspek</th>
-                    <th>JavaScript</th>
-                    <th>TypeScript</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Jenis Bahasa</td>
-                    <td>Dynamic typing</td>
-                    <td>Static typing</td>
-                  </tr>
-                  <tr>
-                    <td>Eksekusi</td>
-                    <td>Langsung dijalankan</td>
-                    <td>Perlu dikompilasi</td>
-                  </tr>
-                  <tr>
-                    <td>Error Checking</td>
-                    <td>Saat runtime</td>
-                    <td>Saat compile-time</td>
-                  </tr>
-                  <tr>
-                    <td>Fitur Modern</td>
-                    <td>Bergantung versi</td>
-                    <td>Mendukung fitur baru dengan tipe</td>
-                  </tr>
-                  <tr>
-                    <td>Dukungan IDE</td>
-                    <td>Terbatas</td>
-                    <td>Autocomplete & type hints kuat</td>
-                  </tr>
-                </tbody>
-              </table>
-
-              <p><strong>Kesimpulan:</strong> TypeScript memberi <em>jaminan tipe data</em> sehingga bug dapat dicegah bahkan sebelum kode dijalankan.</p>
-            `
-          },
-          {
-            title: "Kenapa Dipakai di Proyek Besar?",
-            content: `
-              <p><strong>TypeScript</strong> banyak digunakan oleh perusahaan besar seperti <strong>Microsoft</strong>, <strong>Google</strong>, <strong>Airbnb</strong>, dan <strong>Slack</strong>.</p>
-
-              <ul>
-                <li>✅ <strong>Type safety</strong> — mencegah error sejak awal.</li>
-                <li>⚙️ <strong>Scalability</strong> — mudah dikelola di proyek tim besar.</li>
-                <li>🧠 <strong>Tooling support</strong> — integrasi hebat dengan VSCode & linting tools.</li>
-                <li>🧩 <strong>Maintainability</strong> — kode lebih mudah dibaca dan diperluas.</li>
-              </ul>
-
-              <p>Inilah alasan mengapa banyak proyek modern seperti Angular dibangun sepenuhnya dengan TypeScript.</p>
-            `
-          },
-          {
-            title: "Cara Kerja TypeScript",
-            content: `
-              <p><strong>TypeScript</strong> tidak dapat dijalankan langsung oleh browser.</p>
-
-              <p>Berikut alur kerjanya:</p>
-              <ol>
-                <li>Developer menulis kode di file <code>.ts</code>.</li>
-                <li>Compiler TypeScript (<code>tsc</code>) mengubahnya menjadi JavaScript murni (<code>.js</code>).</li>
-                <li>File JavaScript hasil kompilasi dijalankan di browser atau Node.js.</li>
-              </ol>
-
-              <pre><code class="language-bash"># Contoh proses kompilasi
-      tsc index.ts
-      node index.js
-              </code></pre>
-
-              <p>Jadi, TypeScript adalah <strong>lapisan di atas JavaScript</strong> yang menambah keamanan dan struktur sebelum dijalankan.</p>
-            `
-          },
-          {
-            title: "Kelebihan & Kekurangan TypeScript",
-            content: `
-              <h5>Kelebihan:</h5>
-              <ul>
-                <li>Mendeteksi error sebelum runtime.</li>
-                <li>Lebih mudah di-maintain dan scalable.</li>
-                <li>Mendukung konsep OOP (class, interface, inheritance).</li>
-                <li>Dukungan tooling dan autocomplete sangat kuat.</li>
-              </ul>
-
-              <h5>Kekurangan:</h5>
-              <ul>
-                <li>Perlu proses compile tambahan.</li>
-                <li>Kurva belajar sedikit lebih tinggi.</li>
-                <li>Butuh konfigurasi ekstra untuk library lama.</li>
-              </ul>
-
-              <p><strong>Kesimpulan:</strong> TypeScript menggabungkan fleksibilitas JavaScript dengan keamanan tipe dari bahasa seperti Java atau C#.</p>
-            `
-          },
-          {
-            title: "Video: Pengenalan TypeScript",
-            content: `
-              <p>Berikut video pengantar untuk memahami dasar TypeScript:</p>
-
-              <div class="ratio ratio-16x9">
-                <iframe 
-                  src="https://www.youtube.com/embed/zQnBQ4tB3ZA"
-                  title="Pengenalan TypeScript untuk Pemula"
-                  allowfullscreen>
-                </iframe>
-              </div>
-            `
-          }
-        ]
+          <p>Tujuan utamanya adalah untuk mengatasi kelemahan <strong>JavaScript</strong> dalam proyek berskala besar yang semakin kompleks. Dengan menambahkan sistem tipe (<em>type system</em>) dan fitur pemrograman berorientasi objek (OOP), TypeScript membantu developer menulis kode yang lebih <strong>terstruktur, aman, dan mudah dikelola</strong>.</p>
+        `
       },
+      {
+        title: "Apa Itu TypeScript?",
+        content: `
+          <p><strong>TypeScript</strong> adalah <em>superset</em> dari JavaScript — artinya, semua kode JavaScript juga valid di TypeScript.</p>
 
-      2: {
-        title: "Persiapan & Instalasi",
-        slides: [
-          {
-            title: "Requirement Dasar",
-            content: `
-              <p>Sebelum mulai menggunakan <strong>TypeScript</strong>, pastikan kamu sudah memahami beberapa hal dasar berikut:</p>
+          <p>Perbedaannya terletak pada penambahan fitur seperti <strong>static typing</strong>, <strong>class</strong>, <strong>interface</strong>, serta <strong>compiler tools</strong> yang lebih canggih. Kode TypeScript perlu diubah (transpile) menjadi JavaScript sebelum dijalankan di browser atau Node.js.</p>
 
-              <ul>
-                <li>Pengetahuan dasar tentang <strong>JavaScript</strong> dan <strong>Node.js</strong>.</li>
-                <li>Sudah menginstal <strong>Node.js</strong> dan <strong>NPM</strong> di komputer.</li>
-                <li>Menggunakan text editor seperti <strong>Visual Studio Code (VSCode)</strong>.</li>
-                <li>Opsional: Familiar dengan <strong>command line</strong> untuk menjalankan perintah.</li>
-              </ul>
-
-              <p>TypeScript memerlukan Node.js untuk menjalankan compiler-nya (<code>tsc</code>), jadi pastikan sudah terpasang dengan benar.</p>
-
-              <pre><code class="language-bash"># Cek versi Node dan NPM
-      node -v
-      npm -v
-              </code></pre>
-            `
-          },
-          {
-            title: "Instalasi TypeScript Secara Global",
-            content: `
-              <p>Untuk mulai menggunakan TypeScript di semua proyek, instal <strong>TypeScript compiler</strong> secara global menggunakan NPM.</p>
-
-              <pre><code class="language-bash"># Instal TypeScript secara global
-      npm install -g typescript
-              </code></pre>
-
-              <p>Setelah selesai, periksa apakah instalasi berhasil:</p>
-
-              <pre><code class="language-bash"># Cek versi TypeScript
-      tsc -v
-              </code></pre>
-
-              <p>Jika muncul versi (misalnya <code>Version 5.4.2</code>), berarti TypeScript sudah berhasil diinstal.</p>
-            `
-          },
-          {
-            title: "Inisialisasi Proyek TypeScript",
-            content: `
-              <p>Untuk membuat proyek baru dengan konfigurasi TypeScript, jalankan perintah berikut di dalam folder proyek:</p>
-
-              <pre><code class="language-bash"># Inisialisasi proyek Node.js
-      npm init -y
-
-      # Instal TypeScript lokal
-      npm install typescript --save-dev
-
-      # Buat file konfigurasi TypeScript
-      npx tsc --init
-              </code></pre>
-
-              <p>Perintah di atas akan menghasilkan file <code>tsconfig.json</code> yang berisi pengaturan compiler TypeScript.</p>
-
-              <pre><code class="language-json">{
-        "compilerOptions": {
-          "target": "ES6",
-          "module": "commonjs",
-          "outDir": "./dist",
-          "rootDir": "./src",
-          "strict": true
-        }
-      }
-              </code></pre>
-
-              <p>File ini akan digunakan untuk mengatur bagaimana TypeScript dikompilasi menjadi JavaScript.</p>
-            `
-          },
-          {
-            title: "Struktur Folder Proyek TypeScript",
-            content: `
-              <p>Setelah inisialisasi, struktur proyek TypeScript biasanya seperti berikut:</p>
-
-              <pre><code class="language-bash">project/
-      │
-      ├── src/
-      │   └── index.ts
-      ├── dist/
-      │   └── index.js
-      ├── package.json
-      └── tsconfig.json
-              </code></pre>
-
-              <p>Semua file TypeScript kamu tulis di dalam folder <code>src</code>, dan hasil kompilasinya akan muncul di folder <code>dist</code>.</p>
-            `
-          },
-          {
-            title: "Menulis dan Menjalankan Kode TypeScript",
-            content: `
-              <p>Buat file pertama kamu di <code>src/index.ts</code>:</p>
-
-              <pre><code class="language-ts">// src/index.ts
-      let nama: string = "Ali";
-      console.log(\`Halo, \${nama}! Selamat datang di TypeScript.\`);
-              </code></pre>
-
-              <p>Kemudian jalankan perintah berikut untuk mengubah file TypeScript menjadi JavaScript:</p>
-
-              <pre><code class="language-bash"># Kompilasi TypeScript ke JavaScript
-      npx tsc
-              </code></pre>
-
-              <p>Setelah proses selesai, file <code>index.js</code> akan muncul di folder <code>dist/</code>. Jalankan file tersebut dengan Node.js:</p>
-
-              <pre><code class="language-bash">node dist/index.js
-              </code></pre>
-            `
-          },
-          {
-            title: "Menjalankan TypeScript Secara Langsung (Tanpa Compile Manual)",
-            content: `
-              <p>Untuk pengalaman pengembangan yang lebih cepat, kamu bisa menggunakan <strong>ts-node</strong> agar bisa menjalankan file <code>.ts</code> langsung tanpa perlu dikompilasi manual.</p>
-
-              <pre><code class="language-bash"># Instal ts-node
-      npm install -g ts-node
-
-      # Jalankan file TypeScript
-      ts-node src/index.ts
-              </code></pre>
-
-              <p>Dengan <code>ts-node</code>, setiap perubahan yang kamu buat bisa langsung dijalankan tanpa proses build tambahan.</p>
-            `
-          },
-          {
-            title: "Menggunakan TypeScript di Proyek Front-End",
-            content: `
-              <p>TypeScript juga bisa digunakan untuk proyek <strong>front-end</strong> seperti React atau Vue.</p>
-
-              <ul>
-                <li><strong>React:</strong> <code>npx create-react-app my-app --template typescript</code></li>
-                <li><strong>Vite:</strong> <code>npm create vite@latest my-project -- --template react-ts</code></li>
-                <li><strong>Vue:</strong> <code>npm init vue@latest</code> (pilih TypeScript saat konfigurasi)</li>
-              </ul>
-
-              <p>Dengan integrasi ini, kamu bisa mendapatkan fitur autocomplete, type checking, dan error detection langsung di editor.</p>
-
-              <pre><code class="language-tsx">// Contoh React + TypeScript
-      type Props = { name: string };
-
-      const Hello = ({ name }: Props) =&gt; {
-        return &lt;h1&gt;Halo, {name}!&lt;/h1&gt;;
-      };
-
-      export default Hello;
-              </code></pre>
-            `
-          }
-        ]
+          <pre><code class="language-ts">// Contoh kode TypeScript
+let message: string = "Hello TypeScript!";
+console.log(message);</code></pre>
+        `
       },
+      {
+        title: "Perbedaan TypeScript vs JavaScript",
+        content: `
+          <p>Berikut perbandingan utama antara <strong>JavaScript</strong> dan <strong>TypeScript</strong>:</p>
 
-      3: {
-        title: "Dasar TypeScript",
-        slides: [
-          {
-            title: "Tipe Data Dasar",
-            content: `
-              <p>TypeScript memiliki tipe data dasar yang mirip dengan JavaScript, namun dengan sistem tipe yang lebih ketat untuk mencegah error sejak dini.</p>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th>Aspek</th>
+                <th>JavaScript</th>
+                <th>TypeScript</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Jenis Bahasa</td>
+                <td>Dynamic typing</td>
+                <td>Static typing</td>
+              </tr>
+              <tr>
+                <td>Eksekusi</td>
+                <td>Langsung dijalankan</td>
+                <td>Perlu dikompilasi</td>
+              </tr>
+              <tr>
+                <td>Error Checking</td>
+                <td>Saat runtime</td>
+                <td>Saat compile-time</td>
+              </tr>
+              <tr>
+                <td>Fitur Modern</td>
+                <td>Bergantung versi</td>
+                <td>Mendukung fitur baru dengan tipe</td>
+              </tr>
+              <tr>
+                <td>Dukungan IDE</td>
+                <td>Terbatas</td>
+                <td>Autocomplete & type hints kuat</td>
+              </tr>
+            </tbody>
+          </table>
 
-              <ul>
-                <li><code>string</code> — untuk teks</li>
-                <li><code>number</code> — untuk angka</li>
-                <li><code>boolean</code> — untuk nilai benar/salah</li>
-                <li><code>null</code> dan <code>undefined</code> — untuk nilai kosong</li>
-                <li><code>any</code> — menonaktifkan pengecekan tipe (hindari jika bisa)</li>
-                <li><code>unknown</code> — mirip <code>any</code>, tapi lebih aman karena butuh pengecekan tipe sebelum digunakan</li>
-              </ul>
-
-              <pre><code class="language-ts">let nama: string = "Ali";
-      let umur: number = 21;
-      let aktif: boolean = true;
-      let kosong: null = null;
-      let tidakDidefinisikan: undefined = undefined;
-      let bebas: any = "bisa apa saja";
-      let aman: unknown = "harus dicek dulu";
-      </code></pre>
-            `
-          },
-          {
-            title: "Deklarasi Variabel",
-            content: `
-              <p>Kamu bisa mendeklarasikan variabel dengan <code>let</code>, <code>const</code>, atau <code>var</code> seperti di JavaScript, namun disarankan menggunakan <strong>let</strong> dan <strong>const</strong>.</p>
-
-              <pre><code class="language-ts">let nama: string = "Ali";
-      const umur: number = 21;
-      var aktif: boolean = true;
-      </code></pre>
-
-              <p><strong>Tips:</strong> gunakan <code>const</code> untuk nilai yang tidak berubah, dan <code>let</code> untuk nilai yang bisa diperbarui.</p>
-            `
-          },
-          {
-            title: "Type Annotation",
-            content: `
-              <p>Type annotation digunakan untuk menentukan tipe data secara eksplisit.</p>
-
-              <pre><code class="language-ts">let nama: string = "Ali";
-      let umur: number = 20;
-      let aktif: boolean = true;
-      </code></pre>
-
-              <p>Dengan cara ini, TypeScript akan memberi peringatan jika kamu mencoba memasukkan nilai dengan tipe berbeda.</p>
-
-              <pre><code class="language-ts">// Error
-      nama = 123; // ❌ Type 'number' tidak bisa ke 'string'
-      </code></pre>
-            `
-          },
-          {
-            title: "Type Inference",
-            content: `
-              <p>TypeScript dapat mengenali tipe data otomatis tanpa harus kamu tulis (disebut <strong>type inference</strong>).</p>
-
-              <pre><code class="language-ts">let nama = "Ali";      // otomatis string
-      let umur = 21;         // otomatis number
-      let aktif = true;      // otomatis boolean
-      </code></pre>
-
-              <p>Kamu tidak perlu menulis tipe secara eksplisit jika nilainya sudah jelas. Namun, untuk kode besar, menambahkan tipe bisa membantu keterbacaan.</p>
-            `
-          },
-          {
-            title: "Union Types",
-            content: `
-              <p><strong>Union type</strong> memungkinkan sebuah variabel memiliki lebih dari satu tipe data.</p>
-
-              <pre><code class="language-ts">let id: string | number;
-
-      id = 123;     // ✅ valid
-      id = "ABC";   // ✅ valid
-      id = true;    // ❌ error, bukan string atau number
-      </code></pre>
-
-              <p>Union types sering digunakan untuk nilai fleksibel seperti ID yang bisa berupa angka atau teks.</p>
-            `
-          },
-          {
-            title: "Type Alias",
-            content: `
-              <p><strong>Type alias</strong> digunakan untuk memberi nama baru pada tipe yang kompleks agar lebih mudah digunakan.</p>
-
-              <pre><code class="language-ts">type ID = string | number;
-
-      let userId: ID = 101;
-      let postId: ID = "POST-12";
-      </code></pre>
-
-              <p>Dengan cara ini, kamu bisa menggunakan <code>ID</code> berulang kali tanpa harus menulis union type-nya setiap kali.</p>
-            `
-          },
-          {
-            title: "Literal Types",
-            content: `
-              <p><strong>Literal types</strong> membatasi nilai variabel agar hanya bisa berisi nilai tertentu.</p>
-
-              <pre><code class="language-ts">type Role = "admin" | "user";
-
-      let role: Role;
-
-      role = "admin"; // ✅ valid
-      role = "user";  // ✅ valid
-      role = "guest"; // ❌ error
-      </code></pre>
-
-              <p>Literal types sangat berguna untuk role, status, atau mode aplikasi agar lebih terkontrol dan tidak salah ketik.</p>
-            `
-          }
-        ]
+          <p><strong>Kesimpulan:</strong> TypeScript memberi <em>jaminan tipe data</em> sehingga bug dapat dicegah bahkan sebelum kode dijalankan.</p>
+        `
       },
+      {
+        title: "Kenapa Dipakai di Proyek Besar?",
+        content: `
+          <p><strong>TypeScript</strong> banyak digunakan oleh perusahaan besar seperti <strong>Microsoft</strong>, <strong>Google</strong>, <strong>Airbnb</strong>, dan <strong>Slack</strong>.</p>
 
-      4: {
-        title: "Fungsi (Functions)",
-        slides: [
-          {
-            title: "Deklarasi Fungsi dengan Tipe Parameter & Return",
-            content: `
-              <p>Dalam TypeScript, kamu bisa menentukan tipe data untuk parameter dan nilai yang dikembalikan (return) agar fungsi lebih aman dan mudah dibaca.</p>
+          <ul>
+            <li>✅ <strong>Type safety</strong> — mencegah error sejak awal.</li>
+            <li>⚙️ <strong>Scalability</strong> — mudah dikelola di proyek tim besar.</li>
+            <li>🧠 <strong>Tooling support</strong> — integrasi hebat dengan VSCode & linting tools.</li>
+            <li>🧩 <strong>Maintainability</strong> — kode lebih mudah dibaca dan diperluas.</li>
+          </ul>
 
-              <pre><code class="language-ts">function tambah(a: number, b: number): number {
-        return a + b;
-      }
-
-      let hasil = tambah(5, 10); // hasil: 15
-      </code></pre>
-
-              <p>Pada contoh di atas, fungsi <code>tambah</code> hanya menerima parameter bertipe <strong>number</strong> dan wajib mengembalikan <strong>number</strong>.</p>
-            `
-          },
-          {
-            title: "Optional Parameter & Default Value",
-            content: `
-              <p>Kamu bisa membuat parameter bersifat opsional menggunakan tanda <code>?</code>, atau memberikan nilai default untuk parameter tertentu.</p>
-
-              <pre><code class="language-ts">function sapa(nama: string, sapaan?: string): string {
-        return \`\${sapaan || "Halo"}, \${nama}!\`;
-      }
-
-      function sapaDenganDefault(nama: string, sapaan: string = "Hai"): string {
-        return \`\${sapaan}, \${nama}!\`;
-      }
-
-      console.log(sapa("Ali")); // Halo, Ali!
-      console.log(sapaDenganDefault("Budi")); // Hai, Budi!
-      </code></pre>
-            `
-          },
-          {
-            title: "Arrow Function di TypeScript",
-            content: `
-              <p>Arrow function memiliki sintaks yang lebih ringkas, dan kamu tetap bisa menentukan tipe data parameter maupun nilai kembalian.</p>
-
-              <pre><code class="language-ts">const kali = (x: number, y: number): number => x * y;
-      console.log(kali(4, 5)); // 20
-      </code></pre>
-
-              <p>Tipe return bisa dihilangkan jika TypeScript dapat melakukan inferensi otomatis dari isi fungsi.</p>
-            `
-          },
-          {
-            title: "Function Overloading",
-            content: `
-              <p>Overloading memungkinkan satu fungsi memiliki beberapa bentuk parameter berbeda, dengan perilaku yang disesuaikan berdasarkan tipe input.</p>
-
-              <pre><code class="language-ts">function gabung(a: string, b: string): string;
-      function gabung(a: number, b: number): number;
-      function gabung(a: any, b: any): any {
-        return a + b;
-      }
-
-      console.log(gabung("Ali", "Khatami")); // "AliKhatami"
-      console.log(gabung(5, 10)); // 15
-      </code></pre>
-
-              <p>Ini membantu agar TypeScript mengenali tipe yang valid untuk kombinasi parameter tertentu.</p>
-            `
-          },
-          {
-            title: "Void, Never, dan Unknown Return Types",
-            content: `
-              <ul>
-                <li><strong>void</strong> — fungsi tidak mengembalikan nilai.</li>
-                <li><strong>never</strong> — fungsi tidak pernah selesai atau selalu melempar error.</li>
-                <li><strong>unknown</strong> — tipe return yang belum pasti, harus diperiksa sebelum digunakan.</li>
-              </ul>
-
-              <pre><code class="language-ts">function logPesan(msg: string): void {
-        console.log(msg);
-      }
-
-      function error(msg: string): never {
-        throw new Error(msg);
-      }
-
-      function prosesData(data: unknown) {
-        if (typeof data === "string") {
-          console.log(data.toUpperCase());
-        }
-      }
-      </code></pre>
-
-              <p>Tipe-tipe ini membantu menulis fungsi yang lebih aman dan terprediksi.</p>
-            `
-          }
-        ]
+          <p>Inilah alasan mengapa banyak proyek modern seperti Angular dibangun sepenuhnya dengan TypeScript.</p>
+        `
       },
+      {
+        title: "Cara Kerja TypeScript",
+        content: `
+          <p><strong>TypeScript</strong> tidak dapat dijalankan langsung oleh browser.</p>
 
-      5: {
-        title: "Objek, Array, & Tuple",
-        slides: [
-          {
-            title: "Penulisan Tipe Objek",
-            content: `
-              <p>Kamu bisa menentukan tipe objek secara eksplisit dengan menuliskan struktur dan tipe tiap propertinya.</p>
+          <p>Berikut alur kerjanya:</p>
+          <ol>
+            <li>Developer menulis kode di file <code>.ts</code>.</li>
+            <li>Compiler TypeScript (<code>tsc</code>) mengubahnya menjadi JavaScript murni (<code>.js</code>).</li>
+            <li>File JavaScript hasil kompilasi dijalankan di browser atau Node.js.</li>
+          </ol>
 
-              <pre><code class="language-ts">let pengguna: { nama: string; umur: number } = {
-        nama: "Ali",
-        umur: 22,
-      };
+          <pre><code class="language-bash"># Contoh proses kompilasi
+tsc index.ts
+node index.js</code></pre>
 
-      console.log(pengguna.nama); // Ali
-      </code></pre>
-
-              <p>Tipe objek membantu mencegah kesalahan penulisan properti atau penggunaan tipe yang tidak sesuai.</p>
-            `
-          },
-          {
-            title: "Optional Property (?)",
-            content: `
-              <p>Gunakan tanda <code>?</code> untuk menandai properti yang bersifat opsional — artinya, boleh ada atau tidak.</p>
-
-              <pre><code class="language-ts">type Mahasiswa = {
-        nama: string;
-        jurusan?: string; // opsional
-      };
-
-      let mhs1: Mahasiswa = { nama: "Budi" };
-      let mhs2: Mahasiswa = { nama: "Siti", jurusan: "Informatika" };
-      </code></pre>
-
-              <p>Ini berguna untuk data yang kadang tidak lengkap atau berbeda struktur.</p>
-            `
-          },
-          {
-            title: "Readonly Property",
-            content: `
-              <p>Gunakan kata kunci <code>readonly</code> untuk membuat properti yang tidak bisa diubah setelah diinisialisasi.</p>
-
-              <pre><code class="language-ts">type Produk = {
-        readonly id: number;
-        nama: string;
-      };
-
-      let item: Produk = { id: 1, nama: "Laptop" };
-      item.nama = "Monitor"; // ✅ boleh
-      // item.id = 2; ❌ Error: Cannot assign to 'id' because it is a read-only property.
-      </code></pre>
-
-              <p>Readonly property cocok untuk data tetap seperti ID atau kode unik.</p>
-            `
-          },
-          {
-            title: "Array di TypeScript",
-            content: `
-              <p>Terdapat dua cara utama menuliskan tipe array di TypeScript:</p>
-
-              <pre><code class="language-ts">let angka: number[] = [1, 2, 3];
-      let kata: Array<string> = ["halo", "dunia"];
-
-      angka.push(4);
-      kata.push("typescript");
-      </code></pre>
-
-              <p>Keduanya sama saja, tinggal pilih gaya penulisan yang kamu sukai.</p>
-            `
-          },
-          {
-            title: "Tuple",
-            content: `
-              <p><strong>Tuple</strong> adalah array dengan jumlah elemen tetap dan tipe yang spesifik di setiap posisinya.</p>
-
-              <pre><code class="language-ts">let data: [string, number] = ["Ali", 22];
-      console.log(data[0]); // "Ali"
-      console.log(data[1]); // 22
-      </code></pre>
-
-              <p>Tuple sering digunakan untuk mengembalikan lebih dari satu nilai dengan tipe berbeda dari sebuah fungsi.</p>
-            `
-          },
-          {
-            title: "Destructuring dengan Tipe",
-            content: `
-              <p>Kamu bisa melakukan <strong>destructuring</strong> pada objek atau array sambil tetap menjaga tipe datanya.</p>
-
-              <pre><code class="language-ts">const user = { nama: "Ali", umur: 22 };
-      const { nama, umur }: { nama: string; umur: number } = user;
-
-      const point: [number, number] = [10, 20];
-      const [x, y]: [number, number] = point;
-      </code></pre>
-
-              <p>Dengan destructuring bertipe, TypeScript tetap bisa memeriksa kesesuaian tipe tiap variabel.</p>
-            `
-          }
-        ]
+          <p>Jadi, TypeScript adalah <strong>lapisan di atas JavaScript</strong> yang menambah keamanan dan struktur sebelum dijalankan.</p>
+        `
       },
+      {
+        title: "Kelebihan & Kekurangan TypeScript",
+        content: `
+          <h5>Kelebihan:</h5>
+          <ul>
+            <li>Mendeteksi error sebelum runtime.</li>
+            <li>Lebih mudah di-maintain dan scalable.</li>
+            <li>Mendukung konsep OOP (class, interface, inheritance).</li>
+            <li>Dukungan tooling dan autocomplete sangat kuat.</li>
+          </ul>
 
-      6: {
-        title: "Interface & Type Alias",
-        slides: [
-          {
-            title: "Membuat dan Menggunakan Interface",
-            content: `
-              <p><strong>Interface</strong> digunakan untuk mendefinisikan struktur objek agar lebih mudah digunakan kembali di berbagai tempat.</p>
+          <h5>Kekurangan:</h5>
+          <ul>
+            <li>Perlu proses compile tambahan.</li>
+            <li>Kurva belajar sedikit lebih tinggi.</li>
+            <li>Butuh konfigurasi ekstra untuk library lama.</li>
+          </ul>
 
-              <pre><code class="language-ts">interface Pengguna {
-        nama: string;
-        umur: number;
-        aktif: boolean;
-      }
-
-      const user1: Pengguna = {
-        nama: "Ali",
-        umur: 22,
-        aktif: true,
-      };
-      </code></pre>
-
-              <p>Interface cocok untuk mendeskripsikan bentuk data atau kontrak objek dalam proyek besar.</p>
-            `
-          },
-          {
-            title: "Perbedaan Interface vs Type",
-            content: `
-              <p>Kedua fitur ini tampak mirip, tapi punya sedikit perbedaan fungsi dan fleksibilitas.</p>
-
-              <pre><code class="language-ts">// Menggunakan interface
-      interface Produk {
-        id: number;
-        nama: string;
-      }
-
-      // Menggunakan type alias
-      type Barang = {
-        id: number;
-        nama: string;
-      };
-      </code></pre>
-
-              <ul>
-                <li><strong>interface</strong> bisa di-<em>extend</em> atau diimplementasikan oleh class.</li>
-                <li><strong>type</strong> lebih fleksibel karena bisa dipakai untuk union, intersection, atau literal types.</li>
-              </ul>
-            `
-          },
-          {
-            title: "Interface Inheritance (extends)",
-            content: `
-              <p>Interface dapat mewarisi properti dari interface lain menggunakan kata kunci <code>extends</code>.</p>
-
-              <pre><code class="language-ts">interface Identitas {
-        id: number;
-      }
-
-      interface Pengguna extends Identitas {
-        nama: string;
-        email: string;
-      }
-
-      const admin: Pengguna = {
-        id: 1,
-        nama: "Ali",
-        email: "ali@example.com",
-      };
-      </code></pre>
-
-              <p>Ini membantu menjaga konsistensi struktur data antar berbagai tipe objek.</p>
-            `
-          },
-          {
-            title: "Intersection Types (&)",
-            content: `
-              <p><strong>Intersection types</strong> digunakan untuk menggabungkan beberapa tipe menjadi satu menggunakan simbol <code>&</code>.</p>
-
-              <pre><code class="language-ts">type A = { a: string };
-      type B = { b: number };
-
-      type Gabungan = A & B;
-
-      const data: Gabungan = { a: "halo", b: 123 };
-      </code></pre>
-
-              <p>Konsep ini mirip seperti <em>extends</em> pada interface, tapi bekerja pada <strong>type alias</strong>.</p>
-            `
-          },
-          {
-            title: "Implementasi Interface pada Class",
-            content: `
-              <p>Class bisa menerapkan satu atau lebih interface untuk memastikan strukturnya sesuai kontrak.</p>
-
-              <pre><code class="language-ts">interface Kendaraan {
-        merek: string;
-        jalan(): void;
-      }
-
-      class Mobil implements Kendaraan {
-        constructor(public merek: string) {}
-
-        jalan() {
-          console.log(\`\${this.merek} sedang berjalan...\`);
-        }
-      }
-
-      const avanza = new Mobil("Toyota");
-      avanza.jalan(); // Toyota sedang berjalan...
-      </code></pre>
-
-              <p>Dengan cara ini, TypeScript memastikan semua properti dan metode dari interface diimplementasikan dengan benar.</p>
-            `
-          }
-        ]
+          <p><strong>Kesimpulan:</strong> TypeScript menggabungkan fleksibilitas JavaScript dengan keamanan tipe dari bahasa seperti Java atau C#.</p>
+        `
       },
-
-      7: {
-        title: "Class & Object-Oriented Programming (OOP)",
-        slides: [
-          {
-            title: "Class & Constructor",
-            content: `
-              <p><strong>Class</strong> digunakan untuk membuat blueprint objek. 
-              Kamu bisa mendefinisikan properti dan metode di dalamnya, lalu membuat instance baru menggunakan <code>new</code>.</p>
-
-              <pre><code class="language-ts">class Hewan {
-        nama: string;
-
-        constructor(nama: string) {
-          this.nama = nama;
-        }
-
-        suara() {
-          console.log(\`\${this.nama} bersuara!\`);
-        }
+      {
+        title: "Video: Pengenalan TypeScript",
+        content: `
+          <div class="ratio ratio-16x9">
+            <iframe 
+              src="https://www.youtube.com/embed/zQnBQ4tB3ZA"
+              title="Pengenalan TypeScript untuk Pemula"
+              allowfullscreen>
+            </iframe>
+          </div>
+        `
       }
+    ]
+  },
 
-      const kucing = new Hewan("Kucing");
-      kucing.suara(); // Kucing bersuara!
-      </code></pre>
+  2: {
+    title: "Persiapan & Instalasi",
+    slides: [
+      {
+        title: "Requirement Dasar",
+        content: `
+          <p>Sebelum mulai menggunakan <strong>TypeScript</strong>, pastikan kamu sudah memahami beberapa hal dasar berikut:</p>
 
-              <p><strong>Constructor</strong> adalah fungsi khusus yang dipanggil otomatis saat membuat objek baru.</p>
-            `
-          },
-          {
-            title: "Access Modifiers (public, private, protected)",
-            content: `
-              <p>TypeScript memiliki tiga <strong>access modifiers</strong> untuk mengatur visibilitas properti atau metode dalam class:</p>
+          <ul>
+            <li>Pengetahuan dasar tentang <strong>JavaScript</strong> dan <strong>Node.js</strong>.</li>
+            <li>Sudah menginstal <strong>Node.js</strong> dan <strong>NPM</strong> di komputer.</li>
+            <li>Menggunakan text editor seperti <strong>Visual Studio Code (VSCode)</strong>.</li>
+            <li>Opsional: Familiar dengan <strong>command line</strong> untuk menjalankan perintah.</li>
+          </ul>
 
-              <ul>
-                <li><code>public</code> — bisa diakses dari mana saja (default).</li>
-                <li><code>private</code> — hanya bisa diakses di dalam class itu sendiri.</li>
-                <li><code>protected</code> — bisa diakses di class itu dan turunannya.</li>
-              </ul>
+          <p>TypeScript memerlukan Node.js untuk menjalankan compiler-nya (<code>tsc</code>), jadi pastikan sudah terpasang dengan benar.</p>
 
-              <pre><code class="language-ts">class Akun {
-        public nama: string;
-        private saldo: number;
-        protected level: string;
-
-        constructor(nama: string, saldo: number, level: string) {
-          this.nama = nama;
-          this.saldo = saldo;
-          this.level = level;
-        }
-
-        tampilkanSaldo() {
-          console.log(\`Saldo: \${this.saldo}\`);
-        }
-      }
-      </code></pre>
-
-              <p>Dengan begitu, kamu bisa menjaga data penting agar tidak diubah sembarangan dari luar class.</p>
-            `
-          },
-          {
-            title: "Readonly Property",
-            content: `
-              <p>Gunakan <code>readonly</code> untuk membuat properti yang tidak bisa diubah setelah diinisialisasi.</p>
-
-              <pre><code class="language-ts">class Pengguna {
-        readonly id: number;
-        nama: string;
-
-        constructor(id: number, nama: string) {
-          this.id = id;
-          this.nama = nama;
-        }
-      }
-
-      const user = new Pengguna(1, "Ali");
-      user.nama = "Budi"; // OK
-      // user.id = 2; ❌ Error: Cannot assign to 'id' because it is a read-only property.
-      </code></pre>
-
-              <p>Properti ini berguna untuk data yang seharusnya tetap, seperti ID unik.</p>
-            `
-          },
-          {
-            title: "Getter & Setter",
-            content: `
-              <p><strong>Getter</strong> dan <strong>Setter</strong> digunakan untuk mengatur cara membaca dan menulis nilai properti.</p>
-
-              <pre><code class="language-ts">class Mahasiswa {
-        private _nilai: number = 0;
-
-        get nilai() {
-          return this._nilai;
-        }
-
-        set nilai(v: number) {
-          if (v < 0 || v > 100) {
-            throw new Error("Nilai harus antara 0 - 100");
-          }
-          this._nilai = v;
-        }
-      }
-
-      const mhs = new Mahasiswa();
-      mhs.nilai = 90;
-      console.log(mhs.nilai); // 90
-      </code></pre>
-
-              <p>Dengan getter & setter, kamu bisa menjaga data agar tetap valid dan terkontrol.</p>
-            `
-          },
-          {
-            title: "Inheritance (extends)",
-            content: `
-              <p>Dengan <code>extends</code>, class dapat mewarisi properti dan metode dari class lain.</p>
-
-              <pre><code class="language-ts">class Hewan {
-        constructor(public nama: string) {}
-
-        suara() {
-          console.log(\`\${this.nama} bersuara!\`);
-        }
-      }
-
-      class Kucing extends Hewan {
-        suara() {
-          console.log(\`\${this.nama} mengeong!\`);
-        }
-      }
-
-      const kitty = new Kucing("Kitty");
-      kitty.suara(); // Kitty mengeong!
-      </code></pre>
-
-              <p>Inheritance membuat kode lebih efisien dan mudah dipelihara.</p>
-            `
-          },
-          {
-            title: "Abstract Class",
-            content: `
-              <p><strong>Abstract class</strong> digunakan sebagai blueprint untuk class lain, tapi tidak bisa diinstansiasi langsung.</p>
-
-              <pre><code class="language-ts">abstract class Bentuk {
-        abstract luas(): number;
-
-        deskripsi() {
-          console.log("Ini adalah bentuk geometri.");
-        }
-      }
-
-      class Persegi extends Bentuk {
-        constructor(private sisi: number) {
-          super();
-        }
-
-        luas() {
-          return this.sisi * this.sisi;
-        }
-      }
-
-      const kotak = new Persegi(5);
-      console.log(kotak.luas()); // 25
-      </code></pre>
-
-              <p>Abstract class memaksa class turunannya untuk mengimplementasikan metode tertentu.</p>
-            `
-          },
-          {
-            title: "Interface + Class Implementation",
-            content: `
-              <p>Kamu bisa menggunakan <strong>interface</strong> untuk menentukan kontrak yang harus diikuti oleh class.</p>
-
-              <pre><code class="language-ts">interface Kendaraan {
-        merek: string;
-        jalan(): void;
-      }
-
-      class Motor implements Kendaraan {
-        constructor(public merek: string) {}
-
-        jalan() {
-          console.log(\`\${this.merek} sedang melaju...\`);
-        }
-      }
-
-      const honda = new Motor("Honda");
-      honda.jalan(); // Honda sedang melaju...
-      </code></pre>
-
-              <p>Dengan cara ini, class dijamin memiliki struktur dan perilaku yang konsisten sesuai interface.</p>
-            `
-          }
-        ]
+          <pre><code class="language-bash"># Cek versi Node dan NPM
+node -v
+npm -v</code></pre>
+        `
       },
+      {
+        title: "Instalasi TypeScript Secara Global",
+        content: `
+          <p>Untuk mulai menggunakan TypeScript di semua proyek, instal <strong>TypeScript compiler</strong> secara global menggunakan NPM.</p>
 
-      8: {
-        title: "Enums, Generics, & Utility Types",
-        slides: [
-          {
-            title: "Enum (Enumerations)",
-            content: `
-              <p><strong>Enum</strong> digunakan untuk mendefinisikan sekumpulan nilai konstan yang memiliki nama, 
-              agar kode lebih mudah dibaca dan dikelola.</p>
+          <pre><code class="language-bash"># Instal TypeScript secara global
+npm install -g typescript</code></pre>
 
-              <pre><code class="language-ts">enum Role {
-        Admin,
-        User,
-        Guest,
-      }
+          <p>Setelah selesai, periksa apakah instalasi berhasil:</p>
 
-      const userRole: Role = Role.Admin;
+          <pre><code class="language-bash"># Cek versi TypeScript
+tsc -v</code></pre>
 
-      console.log(userRole); // 0
-      console.log(Role[0]); // "Admin"
-      </code></pre>
-
-              <p>Kamu juga bisa memberi nilai manual:</p>
-
-              <pre><code class="language-ts">enum Status {
-        Aktif = "AKTIF",
-        Nonaktif = "NONAKTIF",
-        Pending = "PENDING",
-      }
-
-      console.log(Status.Aktif); // "AKTIF"
-      </code></pre>
-
-              <p>Enum berguna untuk mendefinisikan tipe tetap seperti status, peran, atau level.</p>
-            `
-          },
-          {
-            title: "Generic Function",
-            content: `
-              <p><strong>Generics</strong> membuat fungsi, interface, atau class menjadi fleksibel tapi tetap aman secara tipe data.</p>
-
-              <pre><code class="language-ts">function identity&lt;T&gt;(value: T): T {
-        return value;
-      }
-
-      console.log(identity&lt;string&gt;("Halo")); // Halo
-      console.log(identity&lt;number&gt;(123));   // 123
-      </code></pre>
-
-              <p>Dengan generics, kamu bisa menulis satu fungsi yang bekerja untuk berbagai tipe tanpa kehilangan informasi tipe.</p>
-            `
-          },
-          {
-            title: "Generic Interface & Class",
-            content: `
-              <p>Kamu bisa menggunakan generics juga di interface dan class untuk membuat struktur yang lebih fleksibel.</p>
-
-              <pre><code class="language-ts">interface ApiResponse&lt;T&gt; {
-        data: T;
-        success: boolean;
-      }
-
-      const userResponse: ApiResponse&lt;{ nama: string }&gt; = {
-        data: { nama: "Ali" },
-        success: true,
-      };
-      </code></pre>
-
-              <pre><code class="language-ts">class Kotak&lt;T&gt; {
-        private isi: T;
-
-        constructor(value: T) {
-          this.isi = value;
-        }
-
-        ambil(): T {
-          return this.isi;
-        }
-      }
-
-      const box = new Kotak&lt;number&gt;(123);
-      console.log(box.ambil()); // 123
-      </code></pre>
-
-              <p>Generics membantu membuat class dan struktur data yang reusable tanpa mengorbankan keamanan tipe.</p>
-            `
-          },
-          {
-            title: "Constraint pada Generics",
-            content: `
-              <p>Kamu bisa membatasi tipe generik menggunakan <code>extends</code> agar hanya menerima tipe tertentu.</p>
-
-              <pre><code class="language-ts">function printLength&lt;T extends { length: number }&gt;(value: T) {
-        console.log(value.length);
-      }
-
-      printLength("Hello"); // 5
-      printLength([1, 2, 3]); // 3
-      // printLength(123); ❌ Error: number tidak punya properti length
-      </code></pre>
-
-              <p>Constraint memastikan hanya tipe yang sesuai kriteria tertentu yang bisa digunakan.</p>
-            `
-          },
-          {
-            title: "Built-in Utility Types",
-            content: `
-              <p>TypeScript menyediakan beberapa <strong>utility types</strong> untuk memodifikasi tipe dengan cepat dan efisien.</p>
-
-              <ul>
-                <li><code>Partial&lt;T&gt;</code> — menjadikan semua properti opsional.</li>
-                <li><code>Pick&lt;T, K&gt;</code> — mengambil sebagian properti dari tipe.</li>
-                <li><code>Omit&lt;T, K&gt;</code> — menghapus properti tertentu dari tipe.</li>
-                <li><code>Readonly&lt;T&gt;</code> — menjadikan semua properti hanya bisa dibaca.</li>
-                <li><code>Record&lt;K, T&gt;</code> — membuat objek dengan key dan value bertipe tertentu.</li>
-              </ul>
-
-              <pre><code class="language-ts">interface User {
-        id: number;
-        nama: string;
-        email: string;
-      }
-
-      // Partial
-      type UserUpdate = Partial&lt;User&gt;;
-
-      // Pick
-      type UserPreview = Pick&lt;User, "id" | "nama"&gt;;
-
-      // Omit
-      type UserNoEmail = Omit&lt;User, "email"&gt;;
-
-      // Readonly
-      type UserReadonly = Readonly&lt;User&gt;;
-
-      // Record
-      type UserRole = Record&lt;string, string&gt;;
-      </code></pre>
-
-              <p>Utility types sangat membantu untuk manipulasi tipe data tanpa harus menulis ulang definisinya.</p>
-            `
-          }
-        ]
+          <p>Jika muncul versi (misalnya <code>Version 5.4.2</code>), berarti TypeScript sudah berhasil diinstal.</p>
+        `
       },
+      {
+        title: "Inisialisasi Proyek TypeScript",
+        content: `
+          <p>Untuk membuat proyek baru dengan konfigurasi TypeScript, jalankan perintah berikut di dalam folder proyek:</p>
 
-      9: {
-        title: "Modul & Namespace",
-        slides: [
-          {
-            title: "Export & Import",
-            content: `
-              <p>TypeScript menggunakan sistem <strong>module</strong> agar kode bisa dipisah ke dalam beberapa file dan tetap saling terhubung.</p>
+          <pre><code class="language-bash"># Inisialisasi proyek Node.js
+npm init -y
 
-              <pre><code class="language-ts">// file: utils.ts
-      export function sapa(nama: string) {
-        return \`Halo, \${nama}!\`;
-      }
+# Instal TypeScript lokal
+npm install typescript --save-dev
 
-      // file: main.ts
-      import { sapa } from "./utils";
+# Buat file konfigurasi TypeScript
+npx tsc --init</code></pre>
 
-      console.log(sapa("Ali"));
-      </code></pre>
+          <p>Perintah di atas akan menghasilkan file <code>tsconfig.json</code> yang berisi pengaturan compiler TypeScript.</p>
 
-              <p>Dengan <code>export</code> dan <code>import</code>, kamu bisa memisahkan fungsi, class, dan tipe agar kode lebih terstruktur dan mudah dikelola.</p>
-            `
-          },
-          {
-            title: "Default Export",
-            content: `
-              <p>Kamu juga bisa mengekspor satu nilai utama dari file menggunakan <code>export default</code>.</p>
+          <pre><code class="language-json">{
+  "compilerOptions": {
+    "target": "ES6",
+    "module": "commonjs",
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "strict": true
+  }
+}</code></pre>
 
-              <pre><code class="language-ts">// file: math.ts
-      export default function tambah(a: number, b: number) {
-        return a + b;
-      }
-
-      // file: main.ts
-      import tambah from "./math";
-
-      console.log(tambah(3, 5)); // 8
-      </code></pre>
-
-              <p><code>export default</code> cocok digunakan jika file hanya berisi satu fungsi atau class utama.</p>
-            `
-          },
-          {
-            title: "Namespace vs Module",
-            content: `
-              <p>Sebelum modul ES6 populer, TypeScript menggunakan <strong>namespace</strong> untuk mengelompokkan kode dalam satu file.</p>
-
-              <pre><code class="language-ts">namespace Helper {
-        export function halo(nama: string) {
-          return \`Hai, \${nama}!\`;
-        }
-      }
-
-      console.log(Helper.halo("Ali"));
-      </code></pre>
-
-              <p>Sekarang, pendekatan modern lebih menyarankan menggunakan <strong>module</strong> (dengan <code>import/export</code>), 
-              karena lebih kompatibel dengan JavaScript dan framework modern seperti React, Angular, atau Node.js.</p>
-            `
-          },
-          {
-            title: "Organisasi File TypeScript di Proyek Besar",
-            content: `
-              <p>Dalam proyek besar, struktur folder dan modularisasi kode sangat penting untuk menjaga keteraturan.</p>
-
-              <pre><code class="language-bash">src/
-      ├── models/
-      │   └── user.ts
-      ├── services/
-      │   └── auth.ts
-      ├── utils/
-      │   └── helper.ts
-      ├── main.ts
-      └── tsconfig.json
-      </code></pre>
-
-              <p>Contoh isi file:</p>
-
-              <pre><code class="language-ts">// models/user.ts
-      export interface User {
-        id: number;
-        nama: string;
-        email: string;
-      }
-
-      // services/auth.ts
-      import { User } from "../models/user";
-
-      export function login(user: User) {
-        return \`\${user.nama} berhasil login!\`;
-      }
-
-      // main.ts
-      import { login } from "./services/auth";
-
-      console.log(login({ id: 1, nama: "Ali", email: "ali@example.com" }));
-      </code></pre>
-
-              <p>Dengan struktur seperti ini, proyek TypeScript akan lebih mudah di-maintain dan scalable.</p>
-            `
-          }
-        ]
+          <p>File ini akan digunakan untuk mengatur bagaimana TypeScript dikompilasi menjadi JavaScript.</p>
+        `
       },
+      {
+        title: "Struktur Folder Proyek TypeScript",
+        content: `
+          <p>Setelah inisialisasi, struktur proyek TypeScript biasanya seperti berikut:</p>
 
-      10: {
-        title: "TypeScript + JavaScript & Framework",
-        slides: [
-          {
-            title: "Menulis JavaScript dan TypeScript Bersama",
-            content: `
-              <p>TypeScript dapat berjalan berdampingan dengan JavaScript, terutama saat proses migrasi dari proyek lama.</p>
+          <pre><code class="language-bash">project/
+│
+├── src/
+│   └── index.ts
+├── dist/
+│   └── index.js
+├── package.json
+└── tsconfig.json</code></pre>
 
-              <pre><code class="language-bash">src/
-      ├── index.js
-      ├── helper.ts
-      └── tsconfig.json
-      </code></pre>
-
-              <p>Dengan konfigurasi <code>allowJs: true</code> di <code>tsconfig.json</code>, TypeScript bisa memahami file <code>.js</code> dan menambahkan tipe secara bertahap.</p>
-
-              <pre><code class="language-json">{
-        "compilerOptions": {
-          "allowJs": true,
-          "checkJs": true,
-          "outDir": "dist"
-        },
-        "include": ["src"]
-      }
-      </code></pre>
-            `
-          },
-          {
-            title: "Menambahkan Tipe pada File .js dengan //@ts-check",
-            content: `
-              <p>Kamu bisa mendapatkan manfaat TypeScript tanpa mengubah ekstensi file menjadi <code>.ts</code>.</p>
-
-              <pre><code class="language-js">// @ts-check
-
-      /**
-       * Menjumlahkan dua angka
-       * @param {number} a
-       * @param {number} b
-       */
-      function tambah(a, b) {
-        return a + b;
-      }
-
-      tambah("10", 5); // ❌ TypeScript memberi peringatan!
-      </code></pre>
-
-              <p>Komentar <code>JSDoc</code> membantu TypeScript mengenali tipe dan memberi peringatan langsung di file <code>.js</code>.</p>
-            `
-          },
-          {
-            title: "Menggunakan TypeScript dengan React",
-            content: `
-              <p>TypeScript bekerja sangat baik dengan <strong>React</strong>, membantu kamu menulis komponen dengan props yang aman dan mudah dibaca.</p>
-
-              <pre><code class="language-tsx">import React from "react";
-
-      type ButtonProps = {
-        label: string;
-        onClick?: () => void;
-      };
-
-      const Button: React.FC<ButtonProps> = ({ label, onClick }) => {
-        return &lt;button onClick={onClick}&gt;{label}&lt;/button&gt;;
-      };
-
-      export default Button;
-      </code></pre>
-
-              <p>TypeScript akan otomatis mendeteksi kesalahan jika props salah tipe atau lupa dikirim.</p>
-            `
-          },
-          {
-            title: "Menggunakan TypeScript dengan Node.js (Express)",
-            content: `
-              <p>TypeScript membuat kode backend dengan <strong>Express</strong> lebih aman dan mudah di-maintain.</p>
-
-              <pre><code class="language-ts">import express, { Request, Response } from "express";
-      const app = express();
-
-      app.get("/", (req: Request, res: Response) => {
-        res.send("Hello from TypeScript + Node.js!");
-      });
-
-      app.listen(3000, () => console.log("Server berjalan di http://localhost:3000"));
-      </code></pre>
-
-              <p>Dengan bantuan <code>@types/express</code>, semua tipe untuk <code>Request</code> dan <code>Response</code> sudah otomatis dikenali.</p>
-            `
-          },
-          {
-            title: "API Call dengan Axios (Typed Response)",
-            content: `
-              <p>TypeScript juga dapat menuliskan tipe data untuk hasil <strong>API</strong> agar lebih aman.</p>
-
-              <pre><code class="language-ts">import axios from "axios";
-
-      interface User {
-        id: number;
-        name: string;
-        email: string;
-      }
-
-      async function getUsers(): Promise&lt;User[]&gt; {
-        const response = await axios.get&lt;User[]&gt;("https://jsonplaceholder.typicode.com/users");
-        return response.data;
-      }
-
-      getUsers().then(users =&gt; {
-        console.log(users[0].name);
-      });
-      </code></pre>
-
-              <p>Dengan tipe <code>&lt;User[]&gt;</code>, TypeScript akan memberi peringatan jika kamu mengakses properti yang tidak ada di objek.</p>
-            `
-          }
-        ]
+          <p>Semua file TypeScript kamu tulis di dalam folder <code>src</code>, dan hasil kompilasinya akan muncul di folder <code>dist</code>.</p>
+        `
       },
+      {
+        title: "Menulis dan Menjalankan Kode TypeScript",
+        content: `
+          <p>Buat file pertama kamu di <code>src/index.ts</code>:</p>
 
-      11: {
-        title: "Error Handling & Type Narrowing",
-        slides: [
-          {
-            title: "try...catch dengan Tipe Error",
-            content: `
-              <p>TypeScript membantu memastikan penanganan error lebih aman dan eksplisit menggunakan <strong>try...catch</strong>.</p>
+          <pre><code class="language-ts">// src/index.ts
+let nama: string = "Ali";
+console.log(\`Halo, \${nama}! Selamat datang di TypeScript.\`);</code></pre>
 
-              <pre><code class="language-ts">function parseJSON(json: string): unknown {
-        try {
-          return JSON.parse(json);
-        } catch (err) {
-          if (err instanceof Error) {
-            console.error("Parsing gagal:", err.message);
-          }
-          return null;
-        }
-      }
+          <p>Kemudian jalankan perintah berikut untuk mengubah file TypeScript menjadi JavaScript:</p>
 
-      const data = parseJSON("{ invalid json }");
-      </code></pre>
+          <pre><code class="language-bash"># Kompilasi TypeScript ke JavaScript
+npx tsc</code></pre>
 
-              <p>Tipe <code>Error</code> digunakan untuk mengakses properti seperti <code>message</code> atau <code>stack</code> secara aman.</p>
-            `
-          },
-          {
-            title: "Type Guards (typeof, instanceof, in)",
-            content: `
-              <p><strong>Type Guards</strong> digunakan untuk mempersempit tipe data agar aman digunakan setelah pengecekan.</p>
+          <p>Setelah proses selesai, file <code>index.js</code> akan muncul di folder <code>dist/</code>. Jalankan file tersebut dengan Node.js:</p>
 
-              <pre><code class="language-ts">function cetakNilai(value: string | number) {
-        if (typeof value === "string") {
-          console.log(value.toUpperCase());
-        } else {
-          console.log(value.toFixed(2));
-        }
-      }
-
-      class Hewan { nama = "Kucing"; }
-      const obj = new Hewan();
-
-      if (obj instanceof Hewan) {
-        console.log(obj.nama);
-      }
-
-      interface User { nama: string; umur?: number }
-      const user: User = { nama: "Ali" };
-
-      if ("umur" in user) {
-        console.log(user.umur);
-      }
-      </code></pre>
-
-              <p>Dengan guard seperti <code>typeof</code>, <code>instanceof</code>, dan <code>in</code>, TypeScript tahu tipe yang tepat di setiap cabang logika.</p>
-            `
-          },
-          {
-            title: "Type Narrowing di Kondisi",
-            content: `
-              <p><strong>Type narrowing</strong> berarti TypeScript otomatis mempersempit tipe berdasarkan logika kondisional yang kamu tulis.</p>
-
-              <pre><code class="language-ts">function prosesInput(input: string | null) {
-        if (input) {
-          console.log(input.trim());
-        } else {
-          console.log("Tidak ada input");
-        }
-      }
-      </code></pre>
-
-              <p>Setelah <code>if (input)</code>, TypeScript tahu bahwa <code>input</code> bukan lagi <code>null</code>, jadi kamu bisa mengakses metode string tanpa error.</p>
-            `
-          },
-          {
-            title: "Non-null Assertion (!)",
-            content: `
-              <p>Operator <code>!</code> memberi tahu TypeScript bahwa nilai pasti tidak <code>null</code> atau <code>undefined</code>.</p>
-
-              <pre><code class="language-ts">const el = document.querySelector("#judul")!;
-      console.log(el.textContent);
-      </code></pre>
-
-              <p>Gunakan dengan hati-hati — operator ini memaksa TypeScript mempercayai kamu, jadi bisa berpotensi error runtime jika ternyata nilainya null.</p>
-            `
-          },
-          {
-            title: "Optional Chaining (?.)",
-            content: `
-              <p><strong>Optional chaining</strong> membuat akses properti lebih aman tanpa perlu cek berlapis.</p>
-
-              <pre><code class="language-ts">interface User {
-        nama: string;
-        alamat?: { kota?: string };
-      }
-
-      const user: User = { nama: "Ali" };
-
-      console.log(user.alamat?.kota ?? "Kota tidak tersedia");
-      </code></pre>
-
-              <p>Operator <code>?.</code> menghentikan evaluasi jika nilainya <code>undefined</code> atau <code>null</code>, 
-              sehingga mencegah error seperti <code>Cannot read property of undefined</code>.</p>
-            `
-          }
-        ]
+          <pre><code class="language-bash">node dist/index.js</code></pre>
+        `
       },
-      
-    };
+      {
+        title: "Menjalankan TypeScript Secara Langsung (Tanpa Compile Manual)",
+        content: `
+          <p>Untuk pengalaman pengembangan yang lebih cepat, kamu bisa menggunakan <strong>ts-node</strong> agar bisa menjalankan file <code>.ts</code> langsung tanpa perlu dikompilasi manual.</p>
+
+          <pre><code class="language-bash"># Instal ts-node
+npm install -g ts-node
+
+# Jalankan file TypeScript
+ts-node src/index.ts</code></pre>
+
+          <p>Dengan <code>ts-node</code>, setiap perubahan yang kamu buat bisa langsung dijalankan tanpa proses build tambahan.</p>
+        `
+      },
+      {
+        title: "Menggunakan TypeScript di Proyek Front-End",
+        content: `
+          <p>TypeScript juga bisa digunakan untuk proyek <strong>front-end</strong> seperti React atau Vue.</p>
+
+          <ul>
+            <li><strong>React:</strong> <code>npx create-react-app my-app --template typescript</code></li>
+            <li><strong>Vite:</strong> <code>npm create vite@latest my-project -- --template react-ts</code></li>
+            <li><strong>Vue:</strong> <code>npm init vue@latest</code> (pilih TypeScript saat konfigurasi)</li>
+          </ul>
+
+          <p>Dengan integrasi ini, kamu bisa mendapatkan fitur autocomplete, type checking, dan error detection langsung di editor.</p>
+
+          <pre><code class="language-tsx">// Contoh React + TypeScript
+type Props = { name: string };
+
+const Hello = ({ name }: Props) => {
+  return &lt;h1&gt;Halo, {name}!&lt;/h1&gt;;
+};
+
+export default Hello;</code></pre>
+        `
+      },
+      {
+        title: "Video: Persiapan TypeScript",
+        content: `
+          <div class="ratio ratio-16x9">
+            <iframe 
+              src="https://www.youtube.com/embed/dpg7j1Ql9X4"
+              title="Persiapan dan Instalasi TypeScript"
+              allowfullscreen>
+            </iframe>
+          </div>
+        `
+      }
+    ]
+  },
+
+  3: {
+    title: "Dasar TypeScript",
+    slides: [
+      {
+        title: "Tipe Data Dasar",
+        content: `
+          <p>TypeScript memiliki tipe data dasar yang mirip dengan JavaScript, namun dengan sistem tipe yang lebih ketat untuk mencegah error sejak dini.</p>
+
+          <ul>
+            <li><code>string</code> — untuk teks</li>
+            <li><code>number</code> — untuk angka</li>
+            <li><code>boolean</code> — untuk nilai benar/salah</li>
+            <li><code>null</code> dan <code>undefined</code> — untuk nilai kosong</li>
+            <li><code>any</code> — menonaktifkan pengecekan tipe (hindari jika bisa)</li>
+            <li><code>unknown</code> — mirip <code>any</code>, tapi lebih aman karena butuh pengecekan tipe sebelum digunakan</li>
+          </ul>
+
+          <pre><code class="language-ts">let nama: string = "Ali";
+let umur: number = 21;
+let aktif: boolean = true;
+let kosong: null = null;
+let tidakDidefinisikan: undefined = undefined;
+let bebas: any = "bisa apa saja";
+let aman: unknown = "harus dicek dulu";</code></pre>
+        `
+      },
+      {
+        title: "Deklarasi Variabel",
+        content: `
+          <p>Kamu bisa mendeklarasikan variabel dengan <code>let</code>, <code>const</code>, atau <code>var</code> seperti di JavaScript, namun disarankan menggunakan <strong>let</strong> dan <strong>const</strong>.</p>
+
+          <pre><code class="language-ts">let nama: string = "Ali";
+const umur: number = 21;
+var aktif: boolean = true;</code></pre>
+
+          <p><strong>Tips:</strong> gunakan <code>const</code> untuk nilai yang tidak berubah, dan <code>let</code> untuk nilai yang bisa diperbarui.</p>
+        `
+      },
+      {
+        title: "Type Annotation",
+        content: `
+          <p>Type annotation digunakan untuk menentukan tipe data secara eksplisit.</p>
+
+          <pre><code class="language-ts">let nama: string = "Ali";
+let umur: number = 20;
+let aktif: boolean = true;</code></pre>
+
+          <p>Dengan cara ini, TypeScript akan memberi peringatan jika kamu mencoba memasukkan nilai dengan tipe berbeda.</p>
+
+          <pre><code class="language-ts">// Error
+nama = 123; // ❌ Type 'number' tidak bisa ke 'string'</code></pre>
+        `
+      },
+      {
+        title: "Type Inference",
+        content: `
+          <p>TypeScript dapat mengenali tipe data otomatis tanpa harus kamu tulis (disebut <strong>type inference</strong>).</p>
+
+          <pre><code class="language-ts">let nama = "Ali";      // otomatis string
+let umur = 21;         // otomatis number
+let aktif = true;      // otomatis boolean</code></pre>
+
+          <p>Kamu tidak perlu menulis tipe secara eksplisit jika nilainya sudah jelas. Namun, untuk kode besar, menambahkan tipe bisa membantu keterbacaan.</p>
+        `
+      },
+      {
+        title: "Union Types",
+        content: `
+          <p><strong>Union type</strong> memungkinkan sebuah variabel memiliki lebih dari satu tipe data.</p>
+
+          <pre><code class="language-ts">let id: string | number;
+
+id = 123;     // ✅ valid
+id = "ABC";   // ✅ valid
+id = true;    // ❌ error, bukan string atau number</code></pre>
+
+          <p>Union types sering digunakan untuk nilai fleksibel seperti ID yang bisa berupa angka atau teks.</p>
+        `
+      },
+      {
+        title: "Type Alias",
+        content: `
+          <p><strong>Type alias</strong> digunakan untuk memberi nama baru pada tipe yang kompleks agar lebih mudah digunakan.</p>
+
+          <pre><code class="language-ts">type ID = string | number;
+
+let userId: ID = 101;
+let postId: ID = "POST-12";</code></pre>
+
+          <p>Dengan cara ini, kamu bisa menggunakan <code>ID</code> berulang kali tanpa harus menulis union type-nya setiap kali.</p>
+        `
+      },
+      {
+        title: "Literal Types",
+        content: `
+          <p><strong>Literal types</strong> membatasi nilai variabel agar hanya bisa berisi nilai tertentu.</p>
+
+          <pre><code class="language-ts">type Role = "admin" | "user";
+
+let role: Role;
+
+role = "admin"; // ✅ valid
+role = "user";  // ✅ valid
+role = "guest"; // ❌ error</code></pre>
+
+          <p>Literal types sangat berguna untuk role, status, atau mode aplikasi agar lebih terkontrol dan tidak salah ketik.</p>
+        `
+      },
+      {
+        title: "Video: Dasar TypeScript",
+        content: `
+          <div class="ratio ratio-16x9">
+            <iframe 
+              src="https://www.youtube.com/embed/dNor6g2poE0"
+              title="Dasar-dasar TypeScript"
+              allowfullscreen>
+            </iframe>
+          </div>
+        `
+      }
+    ]
+  },
+
+  4: {
+    title: "Fungsi (Functions)",
+    slides: [
+      {
+        title: "Deklarasi Fungsi dengan Tipe Parameter & Return",
+        content: `
+          <p>Dalam TypeScript, kamu bisa menentukan tipe data untuk parameter dan nilai yang dikembalikan (return) agar fungsi lebih aman dan mudah dibaca.</p>
+
+          <pre><code class="language-ts">function tambah(a: number, b: number): number {
+  return a + b;
+}
+
+let hasil = tambah(5, 10); // hasil: 15</code></pre>
+
+          <p>Pada contoh di atas, fungsi <code>tambah</code> hanya menerima parameter bertipe <strong>number</strong> dan wajib mengembalikan <strong>number</strong>.</p>
+        `
+      },
+      {
+        title: "Optional Parameter & Default Value",
+        content: `
+          <p>Kamu bisa membuat parameter bersifat opsional menggunakan tanda <code>?</code>, atau memberikan nilai default untuk parameter tertentu.</p>
+
+          <pre><code class="language-ts">function sapa(nama: string, sapaan?: string): string {
+  return \`\${sapaan || "Halo"}, \${nama}!\`;
+}
+
+function sapaDenganDefault(nama: string, sapaan: string = "Hai"): string {
+  return \`\${sapaan}, \${nama}!\`;
+}
+
+console.log(sapa("Ali")); // Halo, Ali!
+console.log(sapaDenganDefault("Budi")); // Hai, Budi!</code></pre>
+        `
+      },
+      {
+        title: "Arrow Function di TypeScript",
+        content: `
+          <p>Arrow function memiliki sintaks yang lebih ringkas, dan kamu tetap bisa menentukan tipe data parameter maupun nilai kembalian.</p>
+
+          <pre><code class="language-ts">const kali = (x: number, y: number): number => x * y;
+console.log(kali(4, 5)); // 20</code></pre>
+
+          <p>Tipe return bisa dihilangkan jika TypeScript dapat melakukan inferensi otomatis dari isi fungsi.</p>
+        `
+      },
+      {
+        title: "Function Overloading",
+        content: `
+          <p>Overloading memungkinkan satu fungsi memiliki beberapa bentuk parameter berbeda, dengan perilaku yang disesuaikan berdasarkan tipe input.</p>
+
+          <pre><code class="language-ts">function gabung(a: string, b: string): string;
+function gabung(a: number, b: number): number;
+function gabung(a: any, b: any): any {
+  return a + b;
+}
+
+console.log(gabung("Ali", "Khatami")); // "AliKhatami"
+console.log(gabung(5, 10)); // 15</code></pre>
+
+          <p>Ini membantu agar TypeScript mengenali tipe yang valid untuk kombinasi parameter tertentu.</p>
+        `
+      },
+      {
+        title: "Void, Never, dan Unknown Return Types",
+        content: `
+          <ul>
+            <li><strong>void</strong> — fungsi tidak mengembalikan nilai.</li>
+            <li><strong>never</strong> — fungsi tidak pernah selesai atau selalu melempar error.</li>
+            <li><strong>unknown</strong> — tipe return yang belum pasti, harus diperiksa sebelum digunakan.</li>
+          </ul>
+
+          <pre><code class="language-ts">function logPesan(msg: string): void {
+  console.log(msg);
+}
+
+function error(msg: string): never {
+  throw new Error(msg);
+}
+
+function prosesData(data: unknown) {
+  if (typeof data === "string") {
+    console.log(data.toUpperCase());
+  }
+}</code></pre>
+
+          <p>Tipe-tipe ini membantu menulis fungsi yang lebih aman dan terprediksi.</p>
+        `
+      },
+      {
+        title: "Video: Fungsi TypeScript",
+        content: `
+          <div class="ratio ratio-16x9">
+            <iframe 
+              src="https://www.youtube.com/embed/nViEqpgAxHE"
+              title="Fungsi dalam TypeScript"
+              allowfullscreen>
+            </iframe>
+          </div>
+        `
+      }
+    ]
+  },
+
+  5: {
+    title: "Objek, Array, & Tuple",
+    slides: [
+      {
+        title: "Penulisan Tipe Objek",
+        content: `
+          <p>Kamu bisa menentukan tipe objek secara eksplisit dengan menuliskan struktur dan tipe tiap propertinya.</p>
+
+          <pre><code class="language-ts">let pengguna: { nama: string; umur: number } = {
+  nama: "Ali",
+  umur: 22,
+};
+
+console.log(pengguna.nama); // Ali</code></pre>
+
+          <p>Tipe objek membantu mencegah kesalahan penulisan properti atau penggunaan tipe yang tidak sesuai.</p>
+        `
+      },
+      {
+        title: "Optional Property (?)",
+        content: `
+          <p>Gunakan tanda <code>?</code> untuk menandai properti yang bersifat opsional — artinya, boleh ada atau tidak.</p>
+
+          <pre><code class="language-ts">type Mahasiswa = {
+  nama: string;
+  jurusan?: string; // opsional
+};
+
+let mhs1: Mahasiswa = { nama: "Budi" };
+let mhs2: Mahasiswa = { nama: "Siti", jurusan: "Informatika" };</code></pre>
+
+          <p>Ini berguna untuk data yang kadang tidak lengkap atau berbeda struktur.</p>
+        `
+      },
+      {
+        title: "Readonly Property",
+        content: `
+          <p>Gunakan kata kunci <code>readonly</code> untuk membuat properti yang tidak bisa diubah setelah diinisialisasi.</p>
+
+          <pre><code class="language-ts">type Produk = {
+  readonly id: number;
+  nama: string;
+};
+
+let item: Produk = { id: 1, nama: "Laptop" };
+item.nama = "Monitor"; // ✅ boleh
+// item.id = 2; ❌ Error: Cannot assign to 'id' because it is a read-only property.</code></pre>
+
+          <p>Readonly property cocok untuk data tetap seperti ID atau kode unik.</p>
+        `
+      },
+      {
+        title: "Array di TypeScript",
+        content: `
+          <p>Terdapat dua cara utama menuliskan tipe array di TypeScript:</p>
+
+          <pre><code class="language-ts">let angka: number[] = [1, 2, 3];
+let kata: Array<string> = ["halo", "dunia"];
+
+angka.push(4);
+kata.push("typescript");</code></pre>
+
+          <p>Keduanya sama saja, tinggal pilih gaya penulisan yang kamu sukai.</p>
+        `
+      },
+      {
+        title: "Tuple",
+        content: `
+          <p><strong>Tuple</strong> adalah array dengan jumlah elemen tetap dan tipe yang spesifik di setiap posisinya.</p>
+
+          <pre><code class="language-ts">let data: [string, number] = ["Ali", 22];
+console.log(data[0]); // "Ali"
+console.log(data[1]); // 22</code></pre>
+
+          <p>Tuple sering digunakan untuk mengembalikan lebih dari satu nilai dengan tipe berbeda dari sebuah fungsi.</p>
+        `
+      },
+      {
+        title: "Destructuring dengan Tipe",
+        content: `
+          <p>Kamu bisa melakukan <strong>destructuring</strong> pada objek atau array sambil tetap menjaga tipe datanya.</p>
+
+          <pre><code class="language-ts">const user = { nama: "Ali", umur: 22 };
+const { nama, umur }: { nama: string; umur: number } = user;
+
+const point: [number, number] = [10, 20];
+const [x, y]: [number, number] = point;</code></pre>
+
+          <p>Dengan destructuring bertipe, TypeScript tetap bisa memeriksa kesesuaian tipe tiap variabel.</p>
+        `
+      },
+      {
+        title: "Video: Objek dan Array TypeScript",
+        content: `
+          <div class="ratio ratio-16x9">
+            <iframe 
+              src="https://www.youtube.com/embed/9ooK2XjL5cY"
+              title="Objek dan Array dalam TypeScript"
+              allowfullscreen>
+            </iframe>
+          </div>
+        `
+      }
+    ]
+  },
+
+  6: {
+    title: "Interface & Type Alias",
+    slides: [
+      {
+        title: "Membuat dan Menggunakan Interface",
+        content: `
+          <p><strong>Interface</strong> digunakan untuk mendefinisikan struktur objek agar lebih mudah digunakan kembali di berbagai tempat.</p>
+
+          <pre><code class="language-ts">interface Pengguna {
+  nama: string;
+  umur: number;
+  aktif: boolean;
+}
+
+const user1: Pengguna = {
+  nama: "Ali",
+  umur: 22,
+  aktif: true,
+};</code></pre>
+
+          <p>Interface cocok untuk mendeskripsikan bentuk data atau kontrak objek dalam proyek besar.</p>
+        `
+      },
+      {
+        title: "Perbedaan Interface vs Type",
+        content: `
+          <p>Kedua fitur ini tampak mirip, tapi punya sedikit perbedaan fungsi dan fleksibilitas.</p>
+
+          <pre><code class="language-ts">// Menggunakan interface
+interface Produk {
+  id: number;
+  nama: string;
+}
+
+// Menggunakan type alias
+type Barang = {
+  id: number;
+  nama: string;
+};</code></pre>
+
+          <ul>
+            <li><strong>interface</strong> bisa di-<em>extend</em> atau diimplementasikan oleh class.</li>
+            <li><strong>type</strong> lebih fleksibel karena bisa dipakai untuk union, intersection, atau literal types.</li>
+          </ul>
+        `
+      },
+      {
+        title: "Interface Inheritance (extends)",
+        content: `
+          <p>Interface dapat mewarisi properti dari interface lain menggunakan kata kunci <code>extends</code>.</p>
+
+          <pre><code class="language-ts">interface Identitas {
+  id: number;
+}
+
+interface Pengguna extends Identitas {
+  nama: string;
+  email: string;
+}
+
+const admin: Pengguna = {
+  id: 1,
+  nama: "Ali",
+  email: "ali@example.com",
+};</code></pre>
+
+          <p>Ini membantu menjaga konsistensi struktur data antar berbagai tipe objek.</p>
+        `
+      },
+      {
+        title: "Intersection Types (&)",
+        content: `
+          <p><strong>Intersection types</strong> digunakan untuk menggabungkan beberapa tipe menjadi satu menggunakan simbol <code>&</code>.</p>
+
+          <pre><code class="language-ts">type A = { a: string };
+type B = { b: number };
+
+type Gabungan = A & B;
+
+const data: Gabungan = { a: "halo", b: 123 };</code></pre>
+
+          <p>Konsep ini mirip seperti <em>extends</em> pada interface, tapi bekerja pada <strong>type alias</strong>.</p>
+        `
+      },
+      {
+        title: "Implementasi Interface pada Class",
+        content: `
+          <p>Class bisa menerapkan satu atau lebih interface untuk memastikan strukturnya sesuai kontrak.</p>
+
+          <pre><code class="language-ts">interface Kendaraan {
+  merek: string;
+  jalan(): void;
+}
+
+class Mobil implements Kendaraan {
+  constructor(public merek: string) {}
+
+  jalan() {
+    console.log(\`\${this.merek} sedang berjalan...\`);
+  }
+}
+
+const avanza = new Mobil("Toyota");
+avanza.jalan(); // Toyota sedang berjalan...</code></pre>
+
+          <p>Dengan cara ini, TypeScript memastikan semua properti dan metode dari interface diimplementasikan dengan benar.</p>
+        `
+      },
+      {
+        title: "Video: Interface dan Type Alias",
+        content: `
+          <div class="ratio ratio-16x9">
+            <iframe 
+              src="https://www.youtube.com/embed/0fMVPyH8T04"
+              title="Interface dan Type Alias TypeScript"
+              allowfullscreen>
+            </iframe>
+          </div>
+        `
+      }
+    ]
+  },
+
+  7: {
+    title: "Class & Object-Oriented Programming (OOP)",
+    slides: [
+      {
+        title: "Class & Constructor",
+        content: `
+          <p><strong>Class</strong> digunakan untuk membuat blueprint objek. 
+          Kamu bisa mendefinisikan properti dan metode di dalamnya, lalu membuat instance baru menggunakan <code>new</code>.</p>
+
+          <pre><code class="language-ts">class Hewan {
+  nama: string;
+
+  constructor(nama: string) {
+    this.nama = nama;
+  }
+
+  suara() {
+    console.log(\`\${this.nama} bersuara!\`);
+  }
+}
+
+const kucing = new Hewan("Kucing");
+kucing.suara(); // Kucing bersuara!</code></pre>
+
+          <p><strong>Constructor</strong> adalah fungsi khusus yang dipanggil otomatis saat membuat objek baru.</p>
+        `
+      },
+      {
+        title: "Access Modifiers (public, private, protected)",
+        content: `
+          <p>TypeScript memiliki tiga <strong>access modifiers</strong> untuk mengatur visibilitas properti atau metode dalam class:</p>
+
+          <ul>
+            <li><code>public</code> — bisa diakses dari mana saja (default).</li>
+            <li><code>private</code> — hanya bisa diakses di dalam class itu sendiri.</li>
+            <li><code>protected</code> — bisa diakses di class itu dan turunannya.</li>
+          </ul>
+
+          <pre><code class="language-ts">class Akun {
+  public nama: string;
+  private saldo: number;
+  protected level: string;
+
+  constructor(nama: string, saldo: number, level: string) {
+    this.nama = nama;
+    this.saldo = saldo;
+    this.level = level;
+  }
+
+  tampilkanSaldo() {
+    console.log(\`Saldo: \${this.saldo}\`);
+  }
+}</code></pre>
+
+          <p>Dengan begitu, kamu bisa menjaga data penting agar tidak diubah sembarangan dari luar class.</p>
+        `
+      },
+      {
+        title: "Readonly Property",
+        content: `
+          <p>Gunakan <code>readonly</code> untuk membuat properti yang tidak bisa diubah setelah diinisialisasi.</p>
+
+          <pre><code class="language-ts">class Pengguna {
+  readonly id: number;
+  nama: string;
+
+  constructor(id: number, nama: string) {
+    this.id = id;
+    this.nama = nama;
+  }
+}
+
+const user = new Pengguna(1, "Ali");
+user.nama = "Budi"; // OK
+// user.id = 2; ❌ Error: Cannot assign to 'id' because it is a read-only property.</code></pre>
+
+          <p>Properti ini berguna untuk data yang seharusnya tetap, seperti ID unik.</p>
+        `
+      },
+      {
+        title: "Getter & Setter",
+        content: `
+          <p><strong>Getter</strong> dan <strong>Setter</strong> digunakan untuk mengatur cara membaca dan menulis nilai properti.</p>
+
+          <pre><code class="language-ts">class Mahasiswa {
+  private _nilai: number = 0;
+
+  get nilai() {
+    return this._nilai;
+  }
+
+  set nilai(v: number) {
+    if (v < 0 || v > 100) {
+      throw new Error("Nilai harus antara 0 - 100");
+    }
+    this._nilai = v;
+  }
+}
+
+const mhs = new Mahasiswa();
+mhs.nilai = 90;
+console.log(mhs.nilai); // 90</code></pre>
+
+          <p>Dengan getter & setter, kamu bisa menjaga data agar tetap valid dan terkontrol.</p>
+        `
+      },
+      {
+        title: "Inheritance (extends)",
+        content: `
+          <p>Dengan <code>extends</code>, class dapat mewarisi properti dan metode dari class lain.</p>
+
+          <pre><code class="language-ts">class Hewan {
+  constructor(public nama: string) {}
+
+  suara() {
+    console.log(\`\${this.nama} bersuara!\`);
+  }
+}
+
+class Kucing extends Hewan {
+  suara() {
+    console.log(\`\${this.nama} mengeong!\`);
+  }
+}
+
+const kitty = new Kucing("Kitty");
+kitty.suara(); // Kitty mengeong!</code></pre>
+
+          <p>Inheritance membuat kode lebih efisien dan mudah dipelihara.</p>
+        `
+      },
+      {
+        title: "Abstract Class",
+        content: `
+          <p><strong>Abstract class</strong> digunakan sebagai blueprint untuk class lain, tapi tidak bisa diinstansiasi langsung.</p>
+
+          <pre><code class="language-ts">abstract class Bentuk {
+  abstract luas(): number;
+
+  deskripsi() {
+    console.log("Ini adalah bentuk geometri.");
+  }
+}
+
+class Persegi extends Bentuk {
+  constructor(private sisi: number) {
+    super();
+  }
+
+  luas() {
+    return this.sisi * this.sisi;
+  }
+}
+
+const kotak = new Persegi(5);
+console.log(kotak.luas()); // 25</code></pre>
+
+          <p>Abstract class memaksa class turunannya untuk mengimplementasikan metode tertentu.</p>
+        `
+      },
+      {
+        title: "Interface + Class Implementation",
+        content: `
+          <p>Kamu bisa menggunakan <strong>interface</strong> untuk menentukan kontrak yang harus diikuti oleh class.</p>
+
+          <pre><code class="language-ts">interface Kendaraan {
+  merek: string;
+  jalan(): void;
+}
+
+class Motor implements Kendaraan {
+  constructor(public merek: string) {}
+
+  jalan() {
+    console.log(\`\${this.merek} sedang melaju...\`);
+  }
+}
+
+const honda = new Motor("Honda");
+honda.jalan(); // Honda sedang melaju...</code></pre>
+
+          <p>Dengan cara ini, class dijamin memiliki struktur dan perilaku yang konsisten sesuai interface.</p>
+        `
+      },
+      {
+        title: "Video: OOP TypeScript",
+        content: `
+          <div class="ratio ratio-16x9">
+            <iframe 
+              src="https://www.youtube.com/embed/6BozY3ZYWds"
+              title="OOP dalam TypeScript"
+              allowfullscreen>
+            </iframe>
+          </div>
+        `
+      }
+    ]
+  },
+
+  8: {
+    title: "Enums, Generics, & Utility Types",
+    slides: [
+      {
+        title: "Enum (Enumerations)",
+        content: `
+          <p><strong>Enum</strong> digunakan untuk mendefinisikan sekumpulan nilai konstan yang memiliki nama, 
+          agar kode lebih mudah dibaca dan dikelola.</p>
+
+          <pre><code class="language-ts">enum Role {
+  Admin,
+  User,
+  Guest,
+}
+
+const userRole: Role = Role.Admin;
+
+console.log(userRole); // 0
+console.log(Role[0]); // "Admin"</code></pre>
+
+          <p>Kamu juga bisa memberi nilai manual:</p>
+
+          <pre><code class="language-ts">enum Status {
+  Aktif = "AKTIF",
+  Nonaktif = "NONAKTIF",
+  Pending = "PENDING",
+}
+
+console.log(Status.Aktif); // "AKTIF"</code></pre>
+
+          <p>Enum berguna untuk mendefinisikan tipe tetap seperti status, peran, atau level.</p>
+        `
+      },
+      {
+        title: "Generic Function",
+        content: `
+          <p><strong>Generics</strong> membuat fungsi, interface, atau class menjadi fleksibel tapi tetap aman secara tipe data.</p>
+
+          <pre><code class="language-ts">function identity<T>(value: T): T {
+  return value;
+}
+
+console.log(identity<string>("Halo")); // Halo
+console.log(identity<number>(123));   // 123</code></pre>
+
+          <p>Dengan generics, kamu bisa menulis satu fungsi yang bekerja untuk berbagai tipe tanpa kehilangan informasi tipe.</p>
+        `
+      },
+      {
+        title: "Generic Interface & Class",
+        content: `
+          <p>Kamu bisa menggunakan generics juga di interface dan class untuk membuat struktur yang lebih fleksibel.</p>
+
+          <pre><code class="language-ts">interface ApiResponse<T> {
+  data: T;
+  success: boolean;
+}
+
+const userResponse: ApiResponse<{ nama: string }> = {
+  data: { nama: "Ali" },
+  success: true,
+};</code></pre>
+
+          <pre><code class="language-ts">class Kotak<T> {
+  private isi: T;
+
+  constructor(value: T) {
+    this.isi = value;
+  }
+
+  ambil(): T {
+    return this.isi;
+  }
+}
+
+const box = new Kotak<number>(123);
+console.log(box.ambil()); // 123</code></pre>
+
+          <p>Generics membantu membuat class dan struktur data yang reusable tanpa mengorbankan keamanan tipe.</p>
+        `
+      },
+      {
+        title: "Constraint pada Generics",
+        content: `
+          <p>Kamu bisa membatasi tipe generik menggunakan <code>extends</code> agar hanya menerima tipe tertentu.</p>
+
+          <pre><code class="language-ts">function printLength<T extends { length: number }>(value: T) {
+  console.log(value.length);
+}
+
+printLength("Hello"); // 5
+printLength([1, 2, 3]); // 3
+// printLength(123); ❌ Error: number tidak punya properti length</code></pre>
+
+          <p>Constraint memastikan hanya tipe yang sesuai kriteria tertentu yang bisa digunakan.</p>
+        `
+      },
+      {
+        title: "Built-in Utility Types",
+        content: `
+          <p>TypeScript menyediakan beberapa <strong>utility types</strong> untuk memodifikasi tipe dengan cepat dan efisien.</p>
+
+          <ul>
+            <li><code>Partial<T></code> — menjadikan semua properti opsional.</li>
+            <li><code>Pick<T, K></code> — mengambil sebagian properti dari tipe.</li>
+            <li><code>Omit<T, K></code> — menghapus properti tertentu dari tipe.</li>
+            <li><code>Readonly<T></code> — menjadikan semua properti hanya bisa dibaca.</li>
+            <li><code>Record<K, T></code> — membuat objek dengan key dan value bertipe tertentu.</li>
+          </ul>
+
+          <pre><code class="language-ts">interface User {
+  id: number;
+  nama: string;
+  email: string;
+}
+
+// Partial
+type UserUpdate = Partial<User>;
+
+// Pick
+type UserPreview = Pick<User, "id" | "nama">;
+
+// Omit
+type UserNoEmail = Omit<User, "email">;
+
+// Readonly
+type UserReadonly = Readonly<User>;
+
+// Record
+type UserRole = Record<string, string>;</code></pre>
+
+          <p>Utility types sangat membantu untuk manipulasi tipe data tanpa harus menulis ulang definisinya.</p>
+        `
+      },
+      {
+        title: "Video: Generics TypeScript",
+        content: `
+          <div class="ratio ratio-16x9">
+            <iframe 
+              src="https://www.youtube.com/embed/7W667JLo4tI"
+              title="Generics dalam TypeScript"
+              allowfullscreen>
+            </iframe>
+          </div>
+        `
+      }
+    ]
+  },
+
+  9: {
+    title: "Modul & Namespace",
+    slides: [
+      {
+        title: "Export & Import",
+        content: `
+          <p>TypeScript menggunakan sistem <strong>module</strong> agar kode bisa dipisah ke dalam beberapa file dan tetap saling terhubung.</p>
+
+          <pre><code class="language-ts">// file: utils.ts
+export function sapa(nama: string) {
+  return \`Halo, \${nama}!\`;
+}
+
+// file: main.ts
+import { sapa } from "./utils";
+
+console.log(sapa("Ali"));</code></pre>
+
+          <p>Dengan <code>export</code> dan <code>import</code>, kamu bisa memisahkan fungsi, class, dan tipe agar kode lebih terstruktur dan mudah dikelola.</p>
+        `
+      },
+      {
+        title: "Default Export",
+        content: `
+          <p>Kamu juga bisa mengekspor satu nilai utama dari file menggunakan <code>export default</code>.</p>
+
+          <pre><code class="language-ts">// file: math.ts
+export default function tambah(a: number, b: number) {
+  return a + b;
+}
+
+// file: main.ts
+import tambah from "./math";
+
+console.log(tambah(3, 5)); // 8</code></pre>
+
+          <p><code>export default</code> cocok digunakan jika file hanya berisi satu fungsi atau class utama.</p>
+        `
+      },
+      {
+        title: "Namespace vs Module",
+        content: `
+          <p>Sebelum modul ES6 populer, TypeScript menggunakan <strong>namespace</strong> untuk mengelompokkan kode dalam satu file.</p>
+
+          <pre><code class="language-ts">namespace Helper {
+  export function halo(nama: string) {
+    return \`Hai, \${nama}!\`;
+  }
+}
+
+console.log(Helper.halo("Ali"));</code></pre>
+
+          <p>Sekarang, pendekatan modern lebih menyarankan menggunakan <strong>module</strong> (dengan <code>import/export</code>), 
+          karena lebih kompatibel dengan JavaScript dan framework modern seperti React, Angular, atau Node.js.</p>
+        `
+      },
+      {
+        title: "Organisasi File TypeScript di Proyek Besar",
+        content: `
+          <p>Dalam proyek besar, struktur folder dan modularisasi kode sangat penting untuk menjaga keteraturan.</p>
+
+          <pre><code class="language-bash">src/
+├── models/
+│   └── user.ts
+├── services/
+│   └── auth.ts
+├── utils/
+│   └── helper.ts
+├── main.ts
+└── tsconfig.json</code></pre>
+
+          <p>Contoh isi file:</p>
+
+          <pre><code class="language-ts">// models/user.ts
+export interface User {
+  id: number;
+  nama: string;
+  email: string;
+}
+
+// services/auth.ts
+import { User } from "../models/user";
+
+export function login(user: User) {
+  return \`\${user.nama} berhasil login!\`;
+}
+
+// main.ts
+import { login } from "./services/auth";
+
+console.log(login({ id: 1, nama: "Ali", email: "ali@example.com" }));</code></pre>
+
+          <p>Dengan struktur seperti ini, proyek TypeScript akan lebih mudah di-maintain dan scalable.</p>
+        `
+      },
+      {
+        title: "Video: Modul TypeScript",
+        content: `
+          <div class="ratio ratio-16x9">
+            <iframe 
+              src="https://www.youtube.com/embed/fk7MppuZh-8"
+              title="Modul dalam TypeScript"
+              allowfullscreen>
+            </iframe>
+          </div>
+        `
+      }
+    ]
+  },
+
+  10: {
+    title: "TypeScript + JavaScript & Framework",
+    slides: [
+      {
+        title: "Menulis JavaScript dan TypeScript Bersama",
+        content: `
+          <p>TypeScript dapat berjalan berdampingan dengan JavaScript, terutama saat proses migrasi dari proyek lama.</p>
+
+          <pre><code class="language-bash">src/
+├── index.js
+├── helper.ts
+└── tsconfig.json</code></pre>
+
+          <p>Dengan konfigurasi <code>allowJs: true</code> di <code>tsconfig.json</code>, TypeScript bisa memahami file <code>.js</code> dan menambahkan tipe secara bertahap.</p>
+
+          <pre><code class="language-json">{
+  "compilerOptions": {
+    "allowJs": true,
+    "checkJs": true,
+    "outDir": "dist"
+  },
+  "include": ["src"]
+}</code></pre>
+        `
+      },
+      {
+        title: "Menambahkan Tipe pada File .js dengan //@ts-check",
+        content: `
+          <p>Kamu bisa mendapatkan manfaat TypeScript tanpa mengubah ekstensi file menjadi <code>.ts</code>.</p>
+
+          <pre><code class="language-js">// @ts-check
+
+/**
+ * Menjumlahkan dua angka
+ * @param {number} a
+ * @param {number} b
+ */
+function tambah(a, b) {
+  return a + b;
+}
+
+tambah("10", 5); // ❌ TypeScript memberi peringatan!</code></pre>
+
+          <p>Komentar <code>JSDoc</code> membantu TypeScript mengenali tipe dan memberi peringatan langsung di file <code>.js</code>.</p>
+        `
+      },
+      {
+        title: "Menggunakan TypeScript dengan React",
+        content: `
+          <p>TypeScript bekerja sangat baik dengan <strong>React</strong>, membantu kamu menulis komponen dengan props yang aman dan mudah dibaca.</p>
+
+          <pre><code class="language-tsx">import React from "react";
+
+type ButtonProps = {
+  label: string;
+  onClick?: () => void;
+};
+
+const Button: React.FC<ButtonProps> = ({ label, onClick }) => {
+  return &lt;button onClick={onClick}&gt;{label}&lt;/button&gt;;
+};
+
+export default Button;</code></pre>
+
+          <p>TypeScript akan otomatis mendeteksi kesalahan jika props salah tipe atau lupa dikirim.</p>
+        `
+      },
+      {
+        title: "Menggunakan TypeScript dengan Node.js (Express)",
+        content: `
+          <p>TypeScript membuat kode backend dengan <strong>Express</strong> lebih aman dan mudah di-maintain.</p>
+
+          <pre><code class="language-ts">import express, { Request, Response } from "express";
+const app = express();
+
+app.get("/", (req: Request, res: Response) => {
+  res.send("Hello from TypeScript + Node.js!");
+});
+
+app.listen(3000, () => console.log("Server berjalan di http://localhost:3000"));</code></pre>
+
+          <p>Dengan bantuan <code>@types/express</code>, semua tipe untuk <code>Request</code> dan <code>Response</code> sudah otomatis dikenali.</p>
+        `
+      },
+      {
+        title: "API Call dengan Axios (Typed Response)",
+        content: `
+          <p>TypeScript juga dapat menuliskan tipe data untuk hasil <strong>API</strong> agar lebih aman.</p>
+
+          <pre><code class="language-ts">import axios from "axios";
+
+interface User {
+  id: number;
+  name: string;
+  email: string;
+}
+
+async function getUsers(): Promise<User[]> {
+  const response = await axios.get<User[]>("https://jsonplaceholder.typicode.com/users");
+  return response.data;
+}
+
+getUsers().then(users => {
+  console.log(users[0].name);
+});</code></pre>
+
+          <p>Dengan tipe <code>&lt;User[]&gt;</code>, TypeScript akan memberi peringatan jika kamu mengakses properti yang tidak ada di objek.</p>
+        `
+      },
+      {
+        title: "Video: TypeScript dengan Framework",
+        content: `
+          <div class="ratio ratio-16x9">
+            <iframe 
+              src="https://www.youtube.com/embed/uh-_X3hR1-c"
+              title="TypeScript dengan React dan Node.js"
+              allowfullscreen>
+            </iframe>
+          </div>
+        `
+      }
+    ]
+  },
+
+  11: {
+    title: "Error Handling & Type Narrowing",
+    slides: [
+      {
+        title: "try...catch dengan Tipe Error",
+        content: `
+          <p>TypeScript membantu memastikan penanganan error lebih aman dan eksplisit menggunakan <strong>try...catch</strong>.</p>
+
+          <pre><code class="language-ts">function parseJSON(json: string): unknown {
+  try {
+    return JSON.parse(json);
+  } catch (err) {
+    if (err instanceof Error) {
+      console.error("Parsing gagal:", err.message);
+    }
+    return null;
+  }
+}
+
+const data = parseJSON("{ invalid json }");</code></pre>
+
+          <p>Tipe <code>Error</code> digunakan untuk mengakses properti seperti <code>message</code> atau <code>stack</code> secara aman.</p>
+        `
+      },
+      {
+        title: "Type Guards (typeof, instanceof, in)",
+        content: `
+          <p><strong>Type Guards</strong> digunakan untuk mempersempit tipe data agar aman digunakan setelah pengecekan.</p>
+
+          <pre><code class="language-ts">function cetakNilai(value: string | number) {
+  if (typeof value === "string") {
+    console.log(value.toUpperCase());
+  } else {
+    console.log(value.toFixed(2));
+  }
+}
+
+class Hewan { nama = "Kucing"; }
+const obj = new Hewan();
+
+if (obj instanceof Hewan) {
+  console.log(obj.nama);
+}
+
+interface User { nama: string; umur?: number }
+const user: User = { nama: "Ali" };
+
+if ("umur" in user) {
+  console.log(user.umur);
+}</code></pre>
+
+          <p>Dengan guard seperti <code>typeof</code>, <code>instanceof</code>, dan <code>in</code>, TypeScript tahu tipe yang tepat di setiap cabang logika.</p>
+        `
+      },
+      {
+        title: "Type Narrowing di Kondisi",
+        content: `
+          <p><strong>Type narrowing</strong> berarti TypeScript otomatis mempersempit tipe berdasarkan logika kondisional yang kamu tulis.</p>
+
+          <pre><code class="language-ts">function prosesInput(input: string | null) {
+  if (input) {
+    console.log(input.trim());
+  } else {
+    console.log("Tidak ada input");
+  }
+}</code></pre>
+
+          <p>Setelah <code>if (input)</code>, TypeScript tahu bahwa <code>input</code> bukan lagi <code>null</code>, jadi kamu bisa mengakses metode string tanpa error.</p>
+        `
+      },
+      {
+        title: "Non-null Assertion (!)",
+        content: `
+          <p>Operator <code>!</code> memberi tahu TypeScript bahwa nilai pasti tidak <code>null</code> atau <code>undefined</code>.</p>
+
+          <pre><code class="language-ts">const el = document.querySelector("#judul")!;
+console.log(el.textContent);</code></pre>
+
+          <p>Gunakan dengan hati-hati — operator ini memaksa TypeScript mempercayai kamu, jadi bisa berpotensi error runtime jika ternyata nilainya null.</p>
+        `
+      },
+      {
+        title: "Optional Chaining (?.)",
+        content: `
+          <p><strong>Optional chaining</strong> membuat akses properti lebih aman tanpa perlu cek berlapis.</p>
+
+          <pre><code class="language-ts">interface User {
+  nama: string;
+  alamat?: { kota?: string };
+}
+
+const user: User = { nama: "Ali" };
+
+console.log(user.alamat?.kota ?? "Kota tidak tersedia");</code></pre>
+
+          <p>Operator <code>?.</code> menghentikan evaluasi jika nilainya <code>undefined</code> atau <code>null</code>, 
+          sehingga mencegah error seperti <code>Cannot read property of undefined</code>.</p>
+        `
+      },
+      {
+        title: "Video: Error Handling TypeScript",
+        content: `
+          <div class="ratio ratio-16x9">
+            <iframe 
+              src="https://www.youtube.com/embed/yaFD-tWk6vI"
+              title="Error Handling dalam TypeScript"
+              allowfullscreen>
+            </iframe>
+          </div>
+        `
+      }
+    ]
+  }
+};
   </script>
   <script src="../../assets/js/frontend.js"></script>
 </body>
