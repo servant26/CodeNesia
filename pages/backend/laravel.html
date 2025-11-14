@@ -325,2518 +325,2517 @@
     let slides = [];
 
     // Data konten untuk setiap modul
-    const moduleContent = {
-      1: {
-        title: "Pengenalan Laravel",
-        slides: [
-          {
-            title: "Apa itu Laravel?",
-            content: `
-              <p><strong>Laravel</strong> adalah <em>framework PHP</em> modern yang dirancang untuk mempermudah pembuatan aplikasi web dengan struktur yang rapi, efisien, dan aman.</p>
+const moduleContent = {
+  1: {
+    title: "Pengenalan Laravel",
+    slides: [
+      {
+        title: "Apa itu Laravel?",
+        content: `
+          <p><strong>Laravel</strong> adalah <em>framework PHP</em> modern yang dirancang untuk mempermudah pembuatan aplikasi web dengan struktur yang rapi, efisien, dan aman.</p>
 
-              <p>Framework ini bersifat <strong>open-source</strong> dan dikembangkan oleh <strong>Taylor Otwell</strong> pertama kali pada tahun <strong>2011</strong>.</p>
+          <p>Framework ini bersifat <strong>open-source</strong> dan dikembangkan oleh <strong>Taylor Otwell</strong> pertama kali pada tahun <strong>2011</strong>.</p>
 
-              <p>Laravel mengusung konsep <strong>MVC (Model–View–Controller)</strong> untuk memisahkan logika bisnis, tampilan, dan pengelolaan data agar kode lebih terstruktur dan mudah dikembangkan.</p>
+          <p>Laravel mengusung konsep <strong>MVC (Model–View–Controller)</strong> untuk memisahkan logika bisnis, tampilan, dan pengelolaan data agar kode lebih terstruktur dan mudah dikembangkan.</p>
 
-              <p>Dengan sintaks yang elegan dan banyak fitur bawaan seperti <strong>Routing, Eloquent ORM, Blade Template, Authentication,</strong> dan lain-lain, Laravel menjadi salah satu framework PHP paling populer di dunia.</p>
-            `
-          },
-          {
-            title: "Sejarah Singkat Laravel",
-            content: `
-              <ul>
-                <li><strong>2011</strong> – Laravel pertama kali dirilis oleh <em>Taylor Otwell</em> sebagai alternatif dari CodeIgniter yang saat itu belum mendukung fitur modern seperti autentikasi bawaan.</li>
-                <li><strong>Laravel 4 (2013)</strong> – Diresapi ulang total menggunakan komponen <strong>Symfony</strong>, membawa konsep composer dan artisan command.</li>
-                <li><strong>Laravel 5 (2015)</strong> – Menambahkan sistem middleware, service provider, dan struktur aplikasi yang lebih rapi.</li>
-                <li><strong>Laravel 6–8 (2019–2021)</strong> – Pembaruan besar seperti Job batching, model factory baru, dan Jetstream/Breeze untuk autentikasi.</li>
-                <li><strong>Laravel 9–11 (2022–2024)</strong> – Dukungan PHP terbaru, fitur queue & event lebih cepat, serta syntax route/controller lebih sederhana.</li>
-              </ul>
-
-              <p>Hingga kini, Laravel terus berkembang dan menjadi framework utama dalam ekosistem PHP modern.</p>
-            `
-          },
-          {
-            title: "Kenapa Laravel Populer?",
-            content: `
-              <p>Ada banyak framework PHP, tapi Laravel menonjol karena:</p>
-              <ul>
-                <li>💡 <strong>Syntax Elegan & Mudah Dibaca</strong> – cocok untuk pemula maupun profesional.</li>
-                <li>⚙️ <strong>Banyak Fitur Bawaan</strong> – routing, validation, auth, file upload, email, queue, dan lainnya.</li>
-                <li>🔐 <strong>Keamanan Kuat</strong> – melindungi dari serangan umum seperti SQL Injection & XSS.</li>
-                <li>🧩 <strong>Ekosistem Lengkap</strong> – ada Laravel Jetstream, Breeze, Livewire, dan Filament.</li>
-                <li>🚀 <strong>Community & Dokumentasi Hebat</strong> – banyak tutorial, forum, dan dukungan global.</li>
-              </ul>
-
-              <p>Semua ini membuat Laravel menjadi pilihan utama untuk membuat aplikasi web profesional dengan cepat dan efisien.</p>
-            `
-          },
-          {
-            title: "Konsep MVC (Model–View–Controller)",
-            content: `
-              <p><strong>MVC</strong> adalah pola arsitektur utama dalam Laravel yang memisahkan tiga bagian utama aplikasi:</p>
-              <ul>
-                <li><strong>Model</strong> – menangani data dan logika database (biasanya menggunakan Eloquent ORM).</li>
-                <li><strong>View</strong> – bertanggung jawab untuk menampilkan data (menggunakan Blade Template).</li>
-                <li><strong>Controller</strong> – penghubung antara Model dan View, menangani request dan mengatur respons.</li>
-              </ul>
-
-              <p>Dengan konsep MVC, aplikasi jadi lebih mudah dipelihara, di-debug, dan dikembangkan oleh banyak developer secara bersamaan.</p>
-            `
-          },
-          {
-            title: "Struktur Folder Laravel",
-            content: `
-              <p>Setiap proyek Laravel memiliki struktur folder yang terorganisir:</p>
-              <ul>
-                <li><code>app/</code> – berisi logika utama seperti model, controller, dan middleware.</li>
-                <li><code>routes/</code> – tempat mendefinisikan URL aplikasi (<code>web.php</code> dan <code>api.php</code>).</li>
-                <li><code>resources/</code> – berisi view (Blade), file CSS, JS, dan aset frontend lainnya.</li>
-                <li><code>database/</code> – berisi migration, seeder, dan factory untuk data.</li>
-                <li><code>public/</code> – folder akses publik (CSS, JS, gambar).</li>
-                <li><code>.env</code> – file konfigurasi environment (database, app key, dsb).</li>
-              </ul>
-
-              <p>Memahami struktur ini penting agar kamu tahu di mana harus menulis kode tertentu dalam proyek Laravel.</p>
-            `
-          },
-          {
-            title: "Alur Kerja Laravel (Request → Route → Controller → View)",
-            content: `
-              <p>Proses dasar ketika user mengakses halaman Laravel:</p>
-              <ol>
-                <li><strong>Request</strong> – user membuka URL di browser.</li>
-                <li><strong>Route</strong> – Laravel mengecek file <code>routes/web.php</code> untuk menentukan ke mana request diarahkan.</li>
-                <li><strong>Controller</strong> – route mengarahkan ke fungsi controller tertentu untuk memproses data.</li>
-                <li><strong>Model</strong> – controller berinteraksi dengan database lewat model (jika dibutuhkan).</li>
-                <li><strong>View</strong> – hasil diproses dan ditampilkan ke user melalui file Blade di <code>resources/views</code>.</li>
-              </ol>
-
-              <p>Alur ini membuat pengembangan Laravel lebih terstruktur, mudah di-debug, dan efisien.</p>
-            `
-          },
-          {
-            title: "Video: Pengenalan Laravel untuk Pemula",
-            video: "https://www.youtube.com/embed/ImtZ5yENzgE",
-            content: `
-              <p>Tonton video ini untuk memahami dasar Laravel, cara kerjanya, serta kenapa framework ini begitu populer di kalangan developer PHP.</p>
-              <p>Video ini akan membantumu memahami gambaran besar sebelum masuk ke tahap instalasi dan konfigurasi.</p>
-            `
-          }
-        ]
+          <p>Dengan sintaks yang elegan dan banyak fitur bawaan seperti <strong>Routing, Eloquent ORM, Blade Template, Authentication,</strong> dan lain-lain, Laravel menjadi salah satu framework PHP paling populer di dunia.</p>
+        `
       },
+      {
+        title: "Sejarah Singkat Laravel",
+        content: `
+          <ul>
+            <li><strong>2011</strong> – Laravel pertama kali dirilis oleh <em>Taylor Otwell</em> sebagai alternatif dari CodeIgniter yang saat itu belum mendukung fitur modern seperti autentikasi bawaan.</li>
+            <li><strong>Laravel 4 (2013)</strong> – Diresapi ulang total menggunakan komponen <strong>Symfony</strong>, membawa konsep composer dan artisan command.</li>
+            <li><strong>Laravel 5 (2015)</strong> – Menambahkan sistem middleware, service provider, dan struktur aplikasi yang lebih rapi.</li>
+            <li><strong>Laravel 6–8 (2019–2021)</strong> – Pembaruan besar seperti Job batching, model factory baru, dan Jetstream/Breeze untuk autentikasi.</li>
+            <li><strong>Laravel 9–11 (2022–2024)</strong> – Dukungan PHP terbaru, fitur queue & event lebih cepat, serta syntax route/controller lebih sederhana.</li>
+          </ul>
 
-      2: {
-        title: "Persiapan Lingkungan Laravel",
-        slides: [
-          {
-            title: "Persiapan Awal Sebelum Belajar Laravel",
-            content: `
-              <p>Sebelum mulai membuat proyek Laravel, kamu perlu menyiapkan lingkungan pengembangan yang sesuai agar Laravel bisa dijalankan dengan lancar.</p>
-
-              <p>Laravel membutuhkan beberapa komponen utama:</p>
-              <ul>
-                <li><strong>PHP</strong> – bahasa utama Laravel.</li>
-                <li><strong>Composer</strong> – pengelola dependensi Laravel.</li>
-                <li><strong>Laravel Installer</strong> (opsional) – alat cepat untuk membuat proyek baru.</li>
-                <li><strong>Database</strong> – seperti MySQL atau PostgreSQL untuk menyimpan data aplikasi.</li>
-              </ul>
-
-              <p>Langkah-langkah di bawah ini akan membantumu menyiapkan semuanya dari nol.</p>
-            `
-          },
-          {
-            title: "Install PHP",
-            content: `
-              <p>Laravel dibangun menggunakan <strong>PHP</strong>, jadi langkah pertama adalah memastikan PHP sudah terpasang di komputermu.</p>
-
-              <h4>Versi PHP yang disarankan:</h4>
-              <ul>
-                <li><strong>Laravel 11</strong> → minimal PHP 8.2</li>
-                <li><strong>Laravel 10</strong> → minimal PHP 8.1</li>
-              </ul>
-
-              <p>Kamu bisa menginstal PHP melalui:</p>
-              <ul>
-                <li><strong>XAMPP / Laragon / WAMP</strong> – sudah termasuk PHP, Apache, dan MySQL.</li>
-                <li><strong>Manual Install</strong> – unduh dari situs resmi <a href="https://www.php.net/downloads" target="_blank">php.net</a>.</li>
-              </ul>
-
-              <p>Setelah terinstal, cek versi PHP kamu dengan perintah berikut di terminal:</p>
-              <pre><code>php -v</code></pre>
-
-              <p>Jika muncul versi PHP, artinya instalasi berhasil ✅</p>
-            `
-          },
-          {
-            title: "Install Composer",
-            content: `
-              <p><strong>Composer</strong> adalah <em>dependency manager</em> untuk PHP. Laravel menggunakan Composer untuk mengunduh semua library yang dibutuhkan.</p>
-
-              <p>Langkah-langkah instalasi:</p>
-              <ol>
-                <li>Buka situs resmi: <a href="https://getcomposer.org/download/" target="_blank">getcomposer.org</a></li>
-                <li>Unduh Composer sesuai sistem operasi (Windows/Mac/Linux).</li>
-                <li>Ikuti langkah instalasi sampai selesai.</li>
-                <li>Buka terminal dan ketik perintah berikut:</li>
-              </ol>
-
-              <pre><code>composer -V</code></pre>
-
-              <p>Jika muncul versi Composer, berarti sudah berhasil terpasang 🎉</p>
-
-              <p>Composer akan digunakan untuk menginstal Laravel dan package lain nantinya.</p>
-            `
-          },
-          {
-            title: "Install Laravel",
-            content: `
-              <p>Setelah Composer terinstal, sekarang saatnya memasang <strong>Laravel</strong>.</p>
-
-              <h4>1️⃣ Instal via Composer (paling umum)</h4>
-              <pre><code>composer create-project laravel/laravel nama-proyek</code></pre>
-
-              <h4>2️⃣ Instal via Laravel Installer (opsional)</h4>
-              <pre><code>composer global require laravel/installer
-      laravel new nama-proyek</code></pre>
-
-              <p>Setelah instalasi selesai, masuk ke folder proyekmu:</p>
-              <pre><code>cd nama-proyek</code></pre>
-
-              <p>Lalu jalankan server lokal:</p>
-              <pre><code>php artisan serve</code></pre>
-
-              <p>Buka browser dan kunjungi <code>http://localhost:8000</code>  
-              Jika muncul halaman “Laravel”, berarti kamu berhasil membuat proyek pertamamu! 🚀</p>
-            `
-          },
-          {
-            title: "Mengenal File .env dan Konfigurasi Database",
-            content: `
-              <p>File <code>.env</code> adalah tempat untuk menyimpan <strong>konfigurasi environment</strong> seperti nama aplikasi, database, dan API key.</p>
-
-              <p>Contoh bagian penting dari file <code>.env</code>:</p>
-              <pre><code>
-      APP_NAME="Laravel"
-      APP_ENV=local
-      APP_DEBUG=true
-      APP_URL=http://localhost
-
-      DB_CONNECTION=mysql
-      DB_HOST=127.0.0.1
-      DB_PORT=3306
-      DB_DATABASE=laravel_db
-      DB_USERNAME=root
-      DB_PASSWORD=
-              </code></pre>
-
-              <p>Ubah bagian <strong>DB_*</strong> sesuai pengaturan database di komputer kamu.</p>
-
-              <p>Laravel secara otomatis membaca file <code>.env</code> ini untuk menyesuaikan konfigurasi di berbagai lingkungan (lokal, staging, production).</p>
-            `
-          },
-          {
-            title: "Struktur Awal Proyek Laravel",
-            content: `
-              <p>Setelah Laravel berhasil dibuat, kamu akan melihat beberapa folder penting. Berikut penjelasan singkatnya:</p>
-
-              <ul>
-                <li><code>app/</code> – berisi kode utama aplikasi seperti model, controller, dan middleware.</li>
-                <li><code>bootstrap/</code> – berisi file yang menjalankan proses awal aplikasi Laravel.</li>
-                <li><code>config/</code> – tempat semua file konfigurasi (app, database, mail, dll).</li>
-                <li><code>database/</code> – berisi migration, seeder, dan factory untuk data.</li>
-                <li><code>public/</code> – folder yang diakses browser (CSS, JS, gambar, index.php).</li>
-                <li><code>resources/</code> – berisi file view (Blade), CSS, JS, dan aset frontend.</li>
-                <li><code>routes/</code> – tempat mendefinisikan semua rute aplikasi (web.php & api.php).</li>
-                <li><code>storage/</code> – tempat menyimpan file sementara, cache, dan log.</li>
-                <li><code>.env</code> – file konfigurasi environment.</li>
-              </ul>
-
-              <p>Memahami struktur ini akan mempermudah kamu menulis kode dengan benar dan menemukan file yang dibutuhkan dengan cepat.</p>
-            `
-          },
-          {
-            title: "Video: Instalasi & Persiapan Laravel di Lokal",
-            video: "https://www.youtube.com/embed/ImtZ5yENzgE",
-            content: `
-              <p>Tonton video ini untuk mempelajari cara menginstal PHP, Composer, dan Laravel dengan benar di komputer lokal.</p>
-              <p>Video ini juga menjelaskan cara menjalankan server Laravel dan mengenal struktur folder proyeknya.</p>
-              <p>Setelah menonton, kamu sudah siap untuk mulai membuat aplikasi Laravel pertamamu! 💻</p>
-            `
-          }
-        ]
+          <p>Hingga kini, Laravel terus berkembang dan menjadi framework utama dalam ekosistem PHP modern.</p>
+        `
       },
+      {
+        title: "Kenapa Laravel Populer?",
+        content: `
+          <p>Ada banyak framework PHP, tapi Laravel menonjol karena:</p>
+          <ul>
+            <li>💡 <strong>Syntax Elegan & Mudah Dibaca</strong> – cocok untuk pemula maupun profesional.</li>
+            <li>⚙️ <strong>Banyak Fitur Bawaan</strong> – routing, validation, auth, file upload, email, queue, dan lainnya.</li>
+            <li>🔐 <strong>Keamanan Kuat</strong> – melindungi dari serangan umum seperti SQL Injection & XSS.</li>
+            <li>🧩 <strong>Ekosistem Lengkap</strong> – ada Laravel Jetstream, Breeze, Livewire, dan Filament.</li>
+            <li>🚀 <strong>Community & Dokumentasi Hebat</strong> – banyak tutorial, forum, dan dukungan global.</li>
+          </ul>
 
-      3: {
-        title: "Routing Dasar di Laravel",
-        slides: [
-          {
-            title: "Apa itu Routing di Laravel?",
-            content: `
-              <p><strong>Routing</strong> di Laravel berfungsi untuk mengatur ke mana sebuah URL akan diarahkan dan apa yang akan ditampilkan kepada pengguna.</p>
-
-              <p>Semua route web biasanya didefinisikan di file <code>routes/web.php</code>.</p>
-
-              <p>Routing ini adalah bagian penting dari konsep <strong>MVC</strong>, di mana:</p>
-              <ul>
-                <li><strong>Route</strong> menentukan URL dan logika yang dijalankan.</li>
-                <li><strong>Controller</strong> berisi logika aplikasi.</li>
-                <li><strong>View</strong> menampilkan hasil ke pengguna.</li>
-              </ul>
-
-              <p>Dengan memahami routing, kamu bisa mengatur alur halaman web dengan mudah dan rapi.</p>
-            `
-          },
-          {
-            title: "Membuat Route Dasar di web.php",
-            content: `
-              <p>File <code>routes/web.php</code> digunakan untuk mendefinisikan semua route aplikasi web kamu.</p>
-
-              <pre><code>
-      // routes/web.php
-      Route::get('/', function () {
-          return 'Selamat datang di Laravel!';
-      });
-              </code></pre>
-
-              <p>Penjelasan:</p>
-              <ul>
-                <li><code>Route::get()</code> → Menangani permintaan HTTP GET.</li>
-                <li><code>'/'</code> → URL yang diakses di browser.</li>
-                <li><code>function()</code> → Aksi yang dijalankan saat URL diakses.</li>
-              </ul>
-
-              <p>Contoh route yang menampilkan halaman:</p>
-
-              <pre><code>
-      Route::get('/about', function () {
-          return view('about');
-      });
-              </code></pre>
-
-              <p>Route di atas akan menampilkan file <code>resources/views/about.blade.php</code> saat URL <code>/about</code> diakses.</p>
-            `
-          },
-          {
-            title: "Route dengan Parameter",
-            content: `
-              <p>Kamu bisa menambahkan parameter di URL untuk mengirim data ke route.</p>
-
-              <pre><code>
-      Route::get('/user/{id}', function ($id) {
-          return "ID User: " . $id;
-      });
-              </code></pre>
-
-              <p>Jika kamu buka <code>http://localhost:8000/user/12</code> maka hasilnya:</p>
-              <pre><code>ID User: 12</code></pre>
-
-              <p>Parameter juga bisa bersifat <strong>opsional</strong> dengan memberikan nilai default:</p>
-
-              <pre><code>
-      Route::get('/user/{name?}', function ($name = 'Guest') {
-          return "Halo, $name!";
-      });
-              </code></pre>
-
-              <p>Jika kamu akses <code>/user</code>, maka hasilnya: <strong>Halo, Guest!</strong></p>
-            `
-          },
-          {
-            title: "Route dengan Nama (Named Route)",
-            content: `
-              <p>Laravel memungkinkan kamu memberi nama pada route agar mudah dipanggil atau diarahkan tanpa menulis URL secara manual.</p>
-
-              <pre><code>
-      Route::get('/dashboard', function () {
-          return view('dashboard');
-      })->name('dashboard');
-              </code></pre>
-
-              <p>Kemudian kamu bisa melakukan redirect atau membuat link dengan nama route tersebut:</p>
-
-              <pre><code>
-      // Redirect ke named route
-      return redirect()->route('dashboard');
-
-      // Blade link
-      &lt;a href="{{ route('dashboard') }}"&gt;Ke Dashboard&lt;/a&gt;
-              </code></pre>
-
-              <p>Named route memudahkan saat kamu ingin mengubah struktur URL tanpa harus mengganti semua tautan yang sudah ada.</p>
-            `
-          },
-          {
-            title: "Mengarahkan Route ke Controller",
-            content: `
-              <p>Daripada menulis logika langsung di route, kamu bisa memisahkannya ke dalam <strong>Controller</strong> agar lebih rapi.</p>
-
-              <pre><code>
-      use App\Http\Controllers\UserController;
-
-      Route::get('/user', [UserController::class, 'index']);
-              </code></pre>
-
-              <p>Isi dari <code>UserController</code> bisa seperti ini:</p>
-
-              <pre><code>
-      // app/Http/Controllers/UserController.php
-      namespace App\Http\Controllers;
-
-      use Illuminate\Http\Request;
-
-      class UserController extends Controller {
-          public function index() {
-              return view('user.index');
-          }
-      }
-              </code></pre>
-
-              <p>Dengan cara ini, setiap route bisa diarahkan ke fungsi tertentu dalam controller, sesuai dengan konsep <strong>MVC</strong>.</p>
-            `
-          },
-          {
-            title: "Route untuk Halaman Statis",
-            content: `
-              <p>Jika kamu hanya ingin menampilkan halaman statis tanpa logika tambahan, gunakan <code>Route::view()</code>.</p>
-
-              <pre><code>
-      Route::view('/contact', 'contact');
-      Route::view('/about', 'about');
-              </code></pre>
-
-              <p>Perintah di atas akan langsung menampilkan file:</p>
-              <ul>
-                <li><code>resources/views/contact.blade.php</code></li>
-                <li><code>resources/views/about.blade.php</code></li>
-              </ul>
-
-              <p>Metode ini cocok untuk halaman sederhana seperti “Tentang Kami” atau “Kontak”.</p>
-            `
-          },
-          {
-            title: "Video: Dasar Routing di Laravel",
-            video: "https://www.youtube.com/embed/ImtZ5yENzgE",
-            content: `
-              <p>Tonton video ini untuk memahami konsep dasar routing di Laravel secara visual 🎥</p>
-              <p>Kamu akan belajar cara membuat route, mengarahkan ke controller, dan menampilkan view di browser.</p>
-            `
-          }
-        ]
+          <p>Semua ini membuat Laravel menjadi pilihan utama untuk membuat aplikasi web profesional dengan cepat dan efisien.</p>
+        `
       },
+      {
+        title: "Konsep MVC (Model–View–Controller)",
+        content: `
+          <p><strong>MVC</strong> adalah pola arsitektur utama dalam Laravel yang memisahkan tiga bagian utama aplikasi:</p>
+          <ul>
+            <li><strong>Model</strong> – menangani data dan logika database (biasanya menggunakan Eloquent ORM).</li>
+            <li><strong>View</strong> – bertanggung jawab untuk menampilkan data (menggunakan Blade Template).</li>
+            <li><strong>Controller</strong> – penghubung antara Model dan View, menangani request dan mengatur respons.</li>
+          </ul>
 
-      4: {
-        title: "View & Blade Template",
-        slides: [
-          {
-            title: "Apa itu Blade Template Engine?",
-            content: `
-              <p><strong>Blade</strong> adalah <em>template engine</em> bawaan Laravel yang digunakan untuk membuat tampilan halaman (view).</p>
-
-              <p>Blade memudahkan kita untuk menulis HTML yang dinamis menggunakan sintaks sederhana seperti <code>{{ }}</code> dan <code>@if</code>, <code>@foreach</code>.</p>
-
-              <p>Keunggulan Blade:</p>
-              <ul>
-                <li>🔹 Mudah digunakan dan cepat dipelajari.</li>
-                <li>🔹 Mendukung logika pemrograman (if, loop, dsb).</li>
-                <li>🔹 Bisa menggunakan <strong>layout</strong> dan <strong>partial</strong> untuk menghindari kode duplikat.</li>
-                <li>🔹 Secara otomatis mengamankan output (HTML escaping) agar terhindar dari XSS.</li>
-              </ul>
-
-              <p>Semua file Blade menggunakan ekstensi <code>.blade.php</code> dan disimpan di folder <code>resources/views</code>.</p>
-            `
-          },
-          {
-            title: "Membuat View di Folder resources/views",
-            content: `
-              <p>Semua tampilan Laravel berada di folder <code>resources/views</code>.</p>
-
-              <p>Contoh membuat view baru:</p>
-
-              <pre><code>
-      // File: resources/views/home.blade.php
-      &lt;!DOCTYPE html&gt;
-      &lt;html&gt;
-      &lt;head&gt;
-        &lt;title&gt;Halaman Utama&lt;/title&gt;
-      &lt;/head&gt;
-      &lt;body&gt;
-        &lt;h1&gt;Selamat Datang di Laravel!&lt;/h1&gt;
-      &lt;/body&gt;
-      &lt;/html&gt;
-              </code></pre>
-
-              <p>Lalu, tampilkan view tersebut dari route:</p>
-
-              <pre><code>
-      // routes/web.php
-      Route::get('/', function () {
-          return view('home');
-      });
-              </code></pre>
-
-              <p>Laravel otomatis mencari file <code>resources/views/home.blade.php</code>.</p>
-            `
-          },
-          {
-            title: "Menampilkan Data dari Controller ke View",
-            content: `
-              <p>Kamu bisa mengirim data dari controller (atau route) ke view menggunakan parameter kedua dari fungsi <code>view()</code>.</p>
-
-              <pre><code>
-      // routes/web.php
-      Route::get('/user', function () {
-          return view('user', ['name' => 'Ali Khatami', 'age' => 22]);
-      });
-              </code></pre>
-
-              <p>Kemudian di dalam view:</p>
-
-              <pre><code>
-      // resources/views/user.blade.php
-      &lt;h1&gt;Profil Pengguna&lt;/h1&gt;
-      &lt;p&gt;Nama: {{ $name }}&lt;/p&gt;
-      &lt;p&gt;Umur: {{ $age }} tahun&lt;/p&gt;
-              </code></pre>
-
-              <p>Output di browser:</p>
-              <pre><code>
-      Nama: Ali Khatami  
-      Umur: 22 tahun
-              </code></pre>
-            `
-          },
-          {
-            title: "Sintaks Dasar Blade",
-            content: `
-              <p>Blade memiliki sintaks sederhana untuk menampilkan data dan menulis logika.</p>
-
-              <h4>🟢 Menampilkan Data</h4>
-              <pre><code>
-      &lt;p&gt;Nama: {{ $name }}&lt;/p&gt; 
-      // Blade otomatis mengamankan karakter HTML
-              </code></pre>
-
-              <h4>🟡 Kondisi (If / Else)</h4>
-              <pre><code>
-      @if($age >= 18)
-        &lt;p&gt;Kamu sudah dewasa&lt;/p&gt;
-      @else
-        &lt;p&gt;Masih di bawah umur&lt;/p&gt;
-      @endif
-              </code></pre>
-
-              <h4>🔵 Perulangan (Loop)</h4>
-              <pre><code>
-      @foreach($users as $user)
-        &lt;li&gt;{{ $user }}&lt;/li&gt;
-      @endforeach
-              </code></pre>
-
-              <h4>🟣 Komentar di Blade</h4>
-              <pre><code>
-      {{-- Ini tidak akan muncul di HTML hasil render --}}
-              </code></pre>
-
-              <p>Blade juga mendukung sintaks lain seperti <code>@for</code>, <code>@while</code>, <code>@switch</code>, dan masih banyak lagi.</p>
-            `
-          },
-          {
-            title: "Membuat Layout Utama (extends, section, yield)",
-            content: `
-              <p>Blade mendukung sistem <strong>layout</strong> agar kode HTML tidak berulang di tiap halaman.</p>
-
-              <h4>📁 Layout utama</h4>
-              <pre><code>
-      // resources/views/layouts/main.blade.php
-      &lt;!DOCTYPE html&gt;
-      &lt;html&gt;
-      &lt;head&gt;
-        &lt;title&gt;@yield('title') - Laravel App&lt;/title&gt;
-      &lt;/head&gt;
-      &lt;body&gt;
-        &lt;header&gt;&lt;h1&gt;Header Situs&lt;/h1&gt;&lt;/header&gt;
-
-        &lt;main&gt;
-          @yield('content')
-        &lt;/main&gt;
-
-        &lt;footer&gt;&lt;p&gt;© 2025 Laravel Belajar&lt;/p&gt;&lt;/footer&gt;
-      &lt;/body&gt;
-      &lt;/html&gt;
-              </code></pre>
-
-              <h4>📄 Halaman yang menggunakan layout</h4>
-              <pre><code>
-      // resources/views/home.blade.php
-      @extends('layouts.main')
-
-      @section('title', 'Halaman Utama')
-
-      @section('content')
-        &lt;h2&gt;Selamat Datang di Halaman Utama&lt;/h2&gt;
-        &lt;p&gt;Ini konten dari halaman home.&lt;/p&gt;
-      @endsection
-              </code></pre>
-
-              <p>Dengan sistem ini, kamu hanya perlu menulis bagian unik tiap halaman tanpa menyalin struktur HTML berulang kali.</p>
-            `
-          },
-          {
-            title: "Include Partial View (header, footer, dsb)",
-            content: `
-              <p>Untuk bagian yang sering digunakan di banyak halaman (seperti header, navbar, atau footer), gunakan <code>@include</code>.</p>
-
-              <pre><code>
-      // resources/views/partials/header.blade.php
-      &lt;header&gt;
-        &lt;h1&gt;Laravel Tutorial&lt;/h1&gt;
-      &lt;/header&gt;
-              </code></pre>
-
-              <p>Kemudian panggil di layout utama:</p>
-
-              <pre><code>
-      // resources/views/layouts/main.blade.php
-      &lt;body&gt;
-        @include('partials.header')
-
-        &lt;main&gt;
-          @yield('content')
-        &lt;/main&gt;
-
-        @include('partials.footer')
-      &lt;/body&gt;
-              </code></pre>
-
-              <p>Dengan <code>@include</code>, kamu bisa memecah tampilan jadi bagian kecil agar lebih terstruktur dan mudah dikelola.</p>
-            `
-          },
-          {
-            title: "Video: Dasar View & Blade di Laravel",
-            video: "https://www.youtube.com/embed/qvBZevK1HPo",
-            content: `
-              <p>Tonton video ini untuk memahami cara kerja <strong>Blade Template</strong> di Laravel 🎨</p>
-              <p>Video ini menjelaskan bagaimana membuat view, layout, dan cara mengirim data dari controller ke view.</p>
-            `
-          }
-        ]
+          <p>Dengan konsep MVC, aplikasi jadi lebih mudah dipelihara, di-debug, dan dikembangkan oleh banyak developer secara bersamaan.</p>
+        `
       },
-
-      5: {
-        title: "Controller",
-        slides: [
-          {
-            title: "Apa Itu Controller di Laravel?",
-            content: `
-              <p><strong>Controller</strong> adalah bagian penting di Laravel yang berfungsi untuk memisahkan logika aplikasi dari route.</p>
-              <p>Kalau di route hanya mendefinisikan URL dan arah tujuan, maka controller yang menampung logika bisnis, memproses data, lalu mengembalikannya ke view.</p>
-              <p>Dengan cara ini, struktur proyek jadi lebih <strong>teratur, rapi, dan mudah dikelola</strong>.</p>
-            `
-          },
-          {
-            title: "Membuat Controller dengan Artisan",
-            content: `
-              <p>Kamu bisa membuat controller baru dengan perintah:</p>
-
-              <pre><code>
-      php artisan make:controller UserController
-              </code></pre>
-
-              <p>Setelah dijalankan, file baru akan muncul di <code>app/Http/Controllers/UserController.php</code>.</p>
-
-              <p>Contoh isi awal controller:</p>
-
-              <pre><code>
-      &lt;?php
-
-      namespace App\\Http\\Controllers;
-
-      use Illuminate\\Http\\Request;
-
-      class UserController extends Controller
       {
-          //
-      }
-              </code></pre>
+        title: "Struktur Folder Laravel",
+        content: `
+          <p>Setiap proyek Laravel memiliki struktur folder yang terorganisir:</p>
+          <ul>
+            <li><code>app/</code> – berisi logika utama seperti model, controller, dan middleware.</li>
+            <li><code>routes/</code> – tempat mendefinisikan URL aplikasi (<code>web.php</code> dan <code>api.php</code>).</li>
+            <li><code>resources/</code> – berisi view (Blade), file CSS, JS, dan aset frontend lainnya.</li>
+            <li><code>database/</code> – berisi migration, seeder, dan factory untuk data.</li>
+            <li><code>public/</code> – folder akses publik (CSS, JS, gambar).</li>
+            <li><code>.env</code> – file konfigurasi environment (database, app key, dsb).</li>
+          </ul>
 
-              <p>Controller ini nantinya akan digunakan untuk memproses permintaan dari route dan menampilkan halaman view.</p>
-            `
-          },
-          {
-            title: "Fungsi Controller dan Cara Mengembalikan View",
-            content: `
-              <p>Controller biasanya berisi beberapa <strong>method</strong> (fungsi) untuk menangani permintaan.</p>
-
-              <p>Contoh sederhana:</p>
-              <pre><code>
-      public function index()
-      {
-          $nama = "Ali Khatami";
-          return view('user.index', ['nama' =&gt; $nama]);
-      }
-              </code></pre>
-
-              <p>Lalu buat file view di <code>resources/views/user/index.blade.php</code>:</p>
-              <pre><code>
-      &lt;h1&gt;Halo, {{ $nama }}!&lt;/h1&gt;
-              </code></pre>
-
-              <p>Hasilnya: halaman akan menampilkan teks “Halo, Ali Khatami!”.</p>
-            `
-          },
-          {
-            title: "Controller dengan Parameter",
-            content: `
-              <p>Kamu bisa menerima data dari URL melalui parameter.</p>
-
-              <p>Contoh di route:</p>
-              <pre><code>
-      Route::get('/user/{id}', [UserController::class, 'show']);
-              </code></pre>
-
-              <p>Lalu di controller:</p>
-              <pre><code>
-      public function show($id)
-      {
-          return "Menampilkan user dengan ID: " . $id;
-      }
-              </code></pre>
-
-              <p>Saat membuka <code>http://localhost:8000/user/7</code>, maka akan muncul teks “Menampilkan user dengan ID: 7”.</p>
-            `
-          },
-          {
-            title: "Menghubungkan Route ke Controller",
-            content: `
-              <p>Controller dihubungkan lewat route agar Laravel tahu method mana yang harus dipanggil.</p>
-
-              <p>Contohnya:</p>
-              <pre><code>
-      use App\\Http\\Controllers\\UserController;
-
-      Route::get('/user', [UserController::class, 'index']);
-      Route::get('/user/{id}', [UserController::class, 'show']);
-              </code></pre>
-
-              <p>Setiap kali URL diakses, Laravel otomatis menjalankan method yang sesuai di dalam controller tersebut.</p>
-            `
-          },
-          {
-            title: "Resource Controller (Untuk CRUD)",
-            content: `
-              <p>Laravel menyediakan <strong>Resource Controller</strong> untuk membuat struktur CRUD lengkap (Create, Read, Update, Delete) secara otomatis.</p>
-
-              <p>Buat dengan perintah:</p>
-              <pre><code>
-      php artisan make:controller PostController --resource
-              </code></pre>
-
-              <p>Controller ini otomatis punya 7 method:</p>
-
-              <ul>
-                <li><strong>index()</strong> – menampilkan semua data</li>
-                <li><strong>create()</strong> – menampilkan form tambah data</li>
-                <li><strong>store()</strong> – menyimpan data baru</li>
-                <li><strong>show()</strong> – menampilkan 1 data</li>
-                <li><strong>edit()</strong> – menampilkan form edit</li>
-                <li><strong>update()</strong> – memperbarui data</li>
-                <li><strong>destroy()</strong> – menghapus data</li>
-              </ul>
-
-              <p>Daftarkan route-nya agar otomatis terhubung:</p>
-              <pre><code>
-      Route::resource('posts', PostController::class);
-              </code></pre>
-
-              <p>Kamu bisa melihat semua route yang dibuat dengan perintah:</p>
-              <pre><code>
-      php artisan route:list
-              </code></pre>
-            `
-          },
-          {
-            title: "Video: Belajar Controller di Laravel",
-            video: "https://www.youtube.com/embed/zpW8F8k5P1k",
-            content: `
-              <p>Tonton video ini untuk memahami bagaimana cara kerja Controller di Laravel, serta bagaimana menghubungkannya dengan route dan view.</p>
-              <p>Di video ini juga dijelaskan penggunaan <strong>resource controller</strong> untuk CRUD secara praktis.</p>
-            `
-          }
-        ]
+          <p>Memahami struktur ini penting agar kamu tahu di mana harus menulis kode tertentu dalam proyek Laravel.</p>
+        `
       },
-
-      6: {
-        title: "Model, Migration & Database",
-        slides: [
-          {
-            title: "Pengenalan Model, Migration, dan Eloquent",
-            content: `
-              <p>Laravel memiliki tiga komponen penting untuk bekerja dengan database:</p>
-
-              <ul>
-                <li><strong>Model</strong> — representasi tabel dalam bentuk kelas PHP.</li>
-                <li><strong>Migration</strong> — file yang berisi blueprint struktur tabel database.</li>
-                <li><strong>Eloquent ORM</strong> — sistem ORM Laravel untuk mengakses dan mengelola data database dengan sintaks PHP yang mudah.</li>
-              </ul>
-
-              <p>Dengan ketiganya, kamu bisa mengelola database secara efisien tanpa harus menulis query SQL manual.</p>
-            `
-          },
-          {
-            title: "Konfigurasi Koneksi Database di .env",
-            content: `
-              <p>Laravel menyimpan konfigurasi koneksi database di file <code>.env</code> di root proyek.</p>
-
-              <pre><code>
-      DB_CONNECTION=mysql
-      DB_HOST=127.0.0.1
-      DB_PORT=3306
-      DB_DATABASE=laravel_db
-      DB_USERNAME=root
-      DB_PASSWORD=
-              </code></pre>
-
-              <p>Pastikan database dengan nama yang sesuai sudah dibuat di <strong>phpMyAdmin</strong> atau <strong>MySQL</strong>.</p>
-
-              <p>Jika sudah, kamu bisa mengetes koneksi dengan menjalankan migration default Laravel.</p>
-            `
-          },
-          {
-            title: "Membuat Migration",
-            content: `
-              <p>Migration digunakan untuk membuat dan mengubah struktur tabel secara versioning.</p>
-
-              <p>Buat migration baru dengan perintah:</p>
-
-              <pre><code>
-      php artisan make:migration create_posts_table
-              </code></pre>
-
-              <p>File migration akan tersimpan di <code>database/migrations/</code>.</p>
-
-              <p>Contoh isi migration:</p>
-
-              <pre><code>
-      public function up(): void
       {
-          Schema::create('posts', function (Blueprint $table) {
-              $table->id();
-              $table->string('judul');
-              $table->text('konten');
-              $table->timestamps();
-          });
-      }
-              </code></pre>
+        title: "Alur Kerja Laravel (Request → Route → Controller → View)",
+        content: `
+          <p>Proses dasar ketika user mengakses halaman Laravel:</p>
+          <ol>
+            <li><strong>Request</strong> – user membuka URL di browser.</li>
+            <li><strong>Route</strong> – Laravel mengecek file <code>routes/web.php</code> untuk menentukan ke mana request diarahkan.</li>
+            <li><strong>Controller</strong> – route mengarahkan ke fungsi controller tertentu untuk memproses data.</li>
+            <li><strong>Model</strong> – controller berinteraksi dengan database lewat model (jika dibutuhkan).</li>
+            <li><strong>View</strong> – hasil diproses dan ditampilkan ke user melalui file Blade di <code>resources/views</code>.</li>
+          </ol>
 
-              <p>Jalankan migration untuk membuat tabel di database:</p>
-
-              <pre><code>
-      php artisan migrate
-              </code></pre>
-            `
-          },
-          {
-            title: "Membuat Model",
-            content: `
-              <p><strong>Model</strong> adalah representasi tabel di database. Setiap model biasanya berhubungan dengan satu tabel.</p>
-
-              <p>Buat model dengan perintah:</p>
-
-              <pre><code>
-      php artisan make:model Post
-              </code></pre>
-
-              <p>Secara default, model <code>Post</code> akan terhubung ke tabel <code>posts</code>.</p>
-
-              <p>Contoh model sederhana:</p>
-
-              <pre><code>
-      &lt;?php
-
-      namespace App\\Models;
-
-      use Illuminate\\Database\\Eloquent\\Model;
-
-      class Post extends Model
-      {
-          protected $fillable = ['judul', 'konten'];
-      }
-              </code></pre>
-
-              <p>Properti <code>$fillable</code> menentukan kolom mana saja yang boleh diisi secara massal (mass assignment).</p>
-            `
-          },
-          {
-            title: "Dasar Eloquent ORM",
-            content: `
-              <p><strong>Eloquent ORM</strong> memudahkan kamu untuk melakukan operasi database dengan sintaks PHP yang simpel.</p>
-
-              <h4>🟢 Ambil Semua Data</h4>
-              <pre><code>
-      $posts = Post::all();
-              </code></pre>
-
-              <h4>🔵 Ambil Data Berdasarkan ID</h4>
-              <pre><code>
-      $post = Post::find(1);
-              </code></pre>
-
-              <h4>🟡 Menambahkan Data Baru</h4>
-              <pre><code>
-      Post::create([
-          'judul' =&gt; 'Judul Pertama',
-          'konten' =&gt; 'Ini isi postingan pertama.'
-      ]);
-              </code></pre>
-
-              <h4>🟣 Mengupdate Data</h4>
-              <pre><code>
-      $post = Post::find(1);
-      $post-&gt;update(['judul' =&gt; 'Judul Diperbarui']);
-              </code></pre>
-
-              <h4>🔴 Menghapus Data</h4>
-              <pre><code>
-      $post = Post::find(1);
-      $post-&gt;delete();
-              </code></pre>
-
-              <p>Eloquent sangat intuitif — kamu bisa membaca data layaknya bekerja dengan objek PHP biasa.</p>
-            `
-          },
-          {
-            title: "Seeder & Factory untuk Data Dummy",
-            content: `
-              <p>Laravel menyediakan <strong>Seeder</strong> dan <strong>Factory</strong> untuk membuat data palsu (dummy) secara cepat.</p>
-
-              <h4>🧱 Membuat Seeder</h4>
-              <pre><code>
-      php artisan make:seeder PostSeeder
-              </code></pre>
-
-              <p>Edit file di <code>database/seeders/PostSeeder.php</code>:</p>
-
-              <pre><code>
-      public function run(): void
-      {
-          \\App\\Models\\Post::create([
-              'judul' =&gt; 'Contoh Judul',
-              'konten' =&gt; 'Isi konten contoh.'
-          ]);
-      }
-              </code></pre>
-
-              <p>Jalankan seeder:</p>
-              <pre><code>
-      php artisan db:seed --class=PostSeeder
-              </code></pre>
-
-              <h4>🧪 Membuat Factory</h4>
-              <pre><code>
-      php artisan make:factory PostFactory --model=Post
-              </code></pre>
-
-              <p>Edit <code>database/factories/PostFactory.php</code>:</p>
-
-              <pre><code>
-      public function definition(): array
-      {
-          return [
-              'judul' =&gt; fake()-&gt;sentence(),
-              'konten' =&gt; fake()-&gt;paragraph(),
-          ];
-      }
-              </code></pre>
-
-              <p>Lalu generate data dummy:</p>
-              <pre><code>
-      Post::factory()-&gt;count(10)-&gt;create();
-              </code></pre>
-            `
-          },
-          {
-            title: "Video: Model, Migration, dan Eloquent ORM",
-            video: "https://www.youtube.com/embed/bT1g2x2c1gY",
-            content: `
-              <p>Tonton video ini untuk memahami cara kerja <strong>Model</strong>, <strong>Migration</strong>, dan <strong>Eloquent ORM</strong> secara visual.</p>
-              <p>Video ini juga menunjukkan cara membuat tabel, menghubungkan model, serta melakukan CRUD dengan sintaks yang mudah dipahami.</p>
-            `
-          }
-        ]
+          <p>Alur ini membuat pengembangan Laravel lebih terstruktur, mudah di-debug, dan efisien.</p>
+        `
       },
-
-      7: {
-        title: "CRUD (Create, Read, Update, Delete)",
-        slides: [
-          {
-            title: "Tujuan & Gambaran Umum",
-            content: `
-              <p>Pada tahap ini kamu akan belajar membangun fitur <strong>CRUD (Create, Read, Update, Delete)</strong> secara lengkap menggunakan Laravel.</p>
-              <p>CRUD adalah inti dari hampir semua aplikasi web — digunakan untuk <strong>mengelola data</strong> seperti menambah, menampilkan, mengedit, dan menghapus.</p>
-
-              <p>Di materi ini kamu akan belajar:</p>
-              <ul>
-                <li>Menampilkan data dari database (Read)</li>
-                <li>Menambah data baru melalui form (Create)</li>
-                <li>Mengedit dan memperbarui data (Update)</li>
-                <li>Menghapus data (Delete)</li>
-                <li>Melakukan validasi input</li>
-                <li>Menampilkan pesan notifikasi (flash message)</li>
-                <li>Menambahkan pagination untuk daftar data</li>
-              </ul>
-
-              <p>Tujuannya: supaya kamu bisa membuat <strong>fitur CRUD lengkap</strong> seperti pada aplikasi manajemen pengguna, produk, atau artikel.</p>
-            `
-          },
-          {
-            title: "Menampilkan Data (Read)",
-            content: `
-              <p>Langkah pertama adalah menampilkan data dari database menggunakan <strong>Eloquent ORM</strong>.</p>
-
-              <pre><code>
-      // Controller
-      public function index() {
-        $users = User::paginate(10); // ambil data 10 per halaman
-        return view('users.index', compact('users'));
+      {
+        title: "Video: Pengenalan Laravel untuk Pemula",
+        video: "https://www.youtube.com/embed/ImtZ5yENzgE",
+        content: `
+          <p>Tonton video ini untuk memahami dasar Laravel, cara kerjanya, serta kenapa framework ini begitu populer di kalangan developer PHP.</p>
+          <p>Video ini akan membantumu memahami gambaran besar sebelum masuk ke tahap instalasi dan konfigurasi.</p>
+        `
       }
-              </code></pre>
+    ]
+  },
 
-              <p>Di file Blade:</p>
-              <pre><code>
-      @foreach ($users as $user)
-        &lt;tr&gt;
-          &lt;td&gt;{{ $user->name }}&lt;/td&gt;
-          &lt;td&gt;{{ $user->email }}&lt;/td&gt;
-        &lt;/tr&gt;
-      @endforeach
+  2: {
+    title: "Persiapan Lingkungan Laravel",
+    slides: [
+      {
+        title: "Persiapan Awal Sebelum Belajar Laravel",
+        content: `
+          <p>Sebelum mulai membuat proyek Laravel, kamu perlu menyiapkan lingkungan pengembangan yang sesuai agar Laravel bisa dijalankan dengan lancar.</p>
 
-      {{ $users->links() }} <!-- pagination -->
-              </code></pre>
+          <p>Laravel membutuhkan beberapa komponen utama:</p>
+          <ul>
+            <li><strong>PHP</strong> – bahasa utama Laravel.</li>
+            <li><strong>Composer</strong> – pengelola dependensi Laravel.</li>
+            <li><strong>Laravel Installer</strong> (opsional) – alat cepat untuk membuat proyek baru.</li>
+            <li><strong>Database</strong> – seperti MySQL atau PostgreSQL untuk menyimpan data aplikasi.</li>
+          </ul>
 
-              <p>Dengan ini kamu sudah bisa menampilkan data pengguna dari tabel <code>users</code> di database.</p>
-            `
-          },
-          {
-            title: "Menambah Data (Create)",
-            content: `
-              <p>Buat form untuk menambah data baru:</p>
-              <pre><code>
-      &lt;form action="{{ route('users.store') }}" method="POST"&gt;
-        @csrf
-        &lt;input type="text" name="name" placeholder="Nama"&gt;
-        &lt;input type="email" name="email" placeholder="Email"&gt;
-        &lt;button type="submit"&gt;Simpan&lt;/button&gt;
-      &lt;/form&gt;
-              </code></pre>
-
-              <p>Di controller:</p>
-              <pre><code>
-      public function store(Request $request) {
-        $request->validate([
-          'name' => 'required|min:3',
-          'email' => 'required|email|unique:users'
-        ]);
-
-        User::create($request->all());
-        return redirect()->route('users.index')->with('success', 'Data berhasil ditambahkan!');
-      }
-              </code></pre>
-
-              <p>Pastikan model <code>User</code> memiliki properti <code>$fillable</code> agar mass assignment bisa dilakukan.</p>
-            `
-          },
-          {
-            title: "Edit & Update Data",
-            content: `
-              <p>Untuk mengedit data, tampilkan form dengan nilai lama yang sudah ada.</p>
-              <pre><code>
-      &lt;form action="{{ route('users.update', $user->id) }}" method="POST"&gt;
-        @csrf
-        @method('PUT')
-        &lt;input type="text" name="name" value="{{ $user->name }}"&gt;
-        &lt;input type="email" name="email" value="{{ $user->email }}"&gt;
-        &lt;button type="submit"&gt;Update&lt;/button&gt;
-      &lt;/form&gt;
-              </code></pre>
-
-              <p>Di controller:</p>
-              <pre><code>
-      public function update(Request $request, $id) {
-        $request->validate([
-          'name' => 'required|min:3',
-          'email' => 'required|email|unique:users,email,' . $id
-        ]);
-
-        $user = User::findOrFail($id);
-        $user->update($request->all());
-
-        return redirect()->route('users.index')->with('success', 'Data berhasil diperbarui!');
-      }
-              </code></pre>
-            `
-          },
-          {
-            title: "Menghapus Data (Delete)",
-            content: `
-              <p>Untuk menghapus data, buat tombol dengan method <code>DELETE</code>:</p>
-
-              <pre><code>
-      &lt;form action="{{ route('users.destroy', $user->id) }}" method="POST" onsubmit="return confirm('Yakin hapus?')"&gt;
-        @csrf
-        @method('DELETE')
-        &lt;button type="submit"&gt;Hapus&lt;/button&gt;
-      &lt;/form&gt;
-              </code></pre>
-
-              <p>Di controller:</p>
-              <pre><code>
-      public function destroy($id) {
-        User::findOrFail($id)->delete();
-        return redirect()->route('users.index')->with('success', 'Data berhasil dihapus!');
-      }
-              </code></pre>
-            `
-          },
-          {
-            title: "Validasi Input & Flash Message",
-            content: `
-              <p>Gunakan validasi untuk memastikan data sesuai aturan.</p>
-
-              <pre><code>
-      $request->validate([
-        'name' => 'required|min:3',
-        'email' => 'required|email'
-      ]);
-              </code></pre>
-
-              <p>Setelah aksi berhasil, tambahkan notifikasi (flash message):</p>
-
-              <pre><code>
-      return redirect()->route('users.index')->with('success', 'Data tersimpan!');
-              </code></pre>
-
-              <p>Di Blade:</p>
-              <pre><code>
-      @if(session('success'))
-        &lt;div class="alert alert-success"&gt;{{ session('success') }}&lt;/div&gt;
-      @endif
-              </code></pre>
-            `
-          },
-          {
-            title: "Pagination Sederhana",
-            content: `
-              <p>Pagination memudahkan pembagian data menjadi beberapa halaman.</p>
-
-              <pre><code>
-      // Controller
-      $users = User::paginate(10);
-              </code></pre>
-
-              <pre><code>
-      <!-- View -->
-      {{ $users->links() }}
-              </code></pre>
-
-              <p>Laravel otomatis membuat navigasi halaman (Next, Previous, dll) agar tampilan lebih rapi.</p>
-            `
-          },
-          {
-            title: "Video: Membuat CRUD Lengkap di Laravel",
-            video: "https://www.youtube.com/embed/ImtZ5yENzgE",
-            content: `
-              <p>Video ini akan memandu kamu membuat fitur CRUD lengkap di Laravel mulai dari routing, controller, form, hingga flash message.</p>
-              <p>Ikuti langkah-langkahnya dan coba praktek langsung di proyekmu 🔥</p>
-            `
-          }
-        ]
+          <p>Langkah-langkah di bawah ini akan membantumu menyiapkan semuanya dari nol.</p>
+        `
       },
+      {
+        title: "Install PHP",
+        content: `
+          <p>Laravel dibangun menggunakan <strong>PHP</strong>, jadi langkah pertama adalah memastikan PHP sudah terpasang di komputermu.</p>
 
-      8: {
-        title: "Authentication (Login, Register, Logout)",
-        slides: [
-          {
-            title: "Tujuan & Gambaran Umum",
-            content: `
-              <p>Pada tahap ini, kamu akan belajar membuat sistem <strong>autentikasi pengguna</strong> — yaitu proses login, register, dan logout.</p>
-              <p>Dengan autentikasi, aplikasi bisa membedakan antara pengguna yang sudah login dan yang belum (guest), serta mengatur akses berdasarkan status tersebut.</p>
+          <h4>Versi PHP yang disarankan:</h4>
+          <ul>
+            <li><strong>Laravel 11</strong> → minimal PHP 8.2</li>
+            <li><strong>Laravel 10</strong> → minimal PHP 8.1</li>
+          </ul>
 
-              <p>Di materi ini kamu akan mempelajari:</p>
-              <ul>
-                <li>Menjalankan <code>php artisan ui</code> atau <code>breeze</code> untuk scaffolding cepat (opsional)</li>
-                <li>Membuat sistem login & register secara manual</li>
-                <li>Menerapkan <strong>middleware auth</strong> dan <strong>guest</strong></li>
-                <li>Menampilkan data user yang sedang login</li>
-                <li>Membuat fitur logout</li>
-              </ul>
+          <p>Kamu bisa menginstal PHP melalui:</p>
+          <ul>
+            <li><strong>XAMPP / Laragon / WAMP</strong> – sudah termasuk PHP, Apache, dan MySQL.</li>
+            <li><strong>Manual Install</strong> – unduh dari situs resmi <a href="https://www.php.net/downloads" target="_blank">php.net</a>.</li>
+          </ul>
 
-              <p>Tujuannya: agar kamu bisa membuat sistem login dasar yang aman dan efisien tanpa harus menggunakan package tambahan.</p>
-            `
-          },
-          {
-            title: "Opsi Cepat: Laravel UI atau Breeze",
-            content: `
-              <p>Laravel menyediakan dua opsi cepat untuk membuat autentikasi otomatis:</p>
-              <ul>
-                <li><strong>Laravel UI</strong> (untuk Blade + Bootstrap)</li>
-                <li><strong>Laravel Breeze</strong> (untuk Blade, React, Vue, atau Inertia)</li>
-              </ul>
+          <p>Setelah terinstal, cek versi PHP kamu dengan perintah berikut di terminal:</p>
+          <pre><code>php -v</code></pre>
 
-              <pre><code>
-      # Laravel UI (Blade + Bootstrap)
-      composer require laravel/ui
-      php artisan ui bootstrap --auth
-      npm install && npm run dev
-
-      # Laravel Breeze
-      composer require laravel/breeze --dev
-      php artisan breeze:install
-      npm install && npm run dev
-      php artisan migrate
-              </code></pre>
-
-              <p>Kedua cara ini akan membuatkan <strong>form login, register, logout, dan proteksi route</strong> secara otomatis.</p>
-              <p>Namun, jika kamu ingin lebih memahami dasarnya — kita akan buat manual di langkah berikutnya.</p>
-            `
-          },
-          {
-            title: "Membuat Form Register Manual",
-            content: `
-              <p>Langkah pertama adalah membuat form register sederhana di Blade:</p>
-
-              <pre><code>
-      &lt;form action="{{ route('register.post') }}" method="POST"&gt;
-        @csrf
-        &lt;input type="text" name="name" placeholder="Nama Lengkap"&gt;
-        &lt;input type="email" name="email" placeholder="Email"&gt;
-        &lt;input type="password" name="password" placeholder="Password"&gt;
-        &lt;button type="submit"&gt;Daftar&lt;/button&gt;
-      &lt;/form&gt;
-              </code></pre>
-
-              <p>Di controller:</p>
-              <pre><code>
-      use Illuminate\\Support\\Facades\\Hash;
-      use App\\Models\\User;
-
-      public function registerPost(Request $request) {
-        $request->validate([
-          'name' => 'required',
-          'email' => 'required|email|unique:users',
-          'password' => 'required|min:6'
-        ]);
-
-        User::create([
-          'name' => $request->name,
-          'email' => $request->email,
-          'password' => Hash::make($request->password)
-        ]);
-
-        return redirect()->route('login')->with('success', 'Akun berhasil dibuat!');
-      }
-              </code></pre>
-
-              <p>Pastikan model <code>User</code> memiliki <code>$fillable</code> yang sesuai.</p>
-            `
-          },
-          {
-            title: "Membuat Form Login Manual",
-            content: `
-              <p>Selanjutnya, buat form login di Blade:</p>
-              <pre><code>
-      &lt;form action="{{ route('login.post') }}" method="POST"&gt;
-        @csrf
-        &lt;input type="email" name="email" placeholder="Email"&gt;
-        &lt;input type="password" name="password" placeholder="Password"&gt;
-        &lt;button type="submit"&gt;Login&lt;/button&gt;
-      &lt;/form&gt;
-              </code></pre>
-
-              <p>Di controller:</p>
-              <pre><code>
-      use Illuminate\\Support\\Facades\\Auth;
-
-      public function loginPost(Request $request) {
-        $credentials = $request->only('email', 'password');
-
-        if (Auth::attempt($credentials)) {
-          $request->session()->regenerate();
-          return redirect()->intended('dashboard');
-        }
-
-        return back()->withErrors(['email' => 'Email atau password salah!']);
-      }
-              </code></pre>
-
-              <p>Jika login berhasil, user akan diarahkan ke halaman dashboard.</p>
-            `
-          },
-          {
-            title: "Menampilkan Data User Login",
-            content: `
-              <p>Laravel menyediakan helper <code>Auth::user()</code> untuk mendapatkan data pengguna yang sedang login.</p>
-
-              <pre><code>
-      @if (Auth::check())
-        &lt;p&gt;Halo, {{ Auth::user()->name }}!&lt;/p&gt;
-      @endif
-              </code></pre>
-
-              <p>Kamu juga bisa menggunakannya di controller:</p>
-              <pre><code>
-      $user = Auth::user();
-      return view('dashboard', compact('user'));
-              </code></pre>
-            `
-          },
-          {
-            title: "Middleware Auth dan Guest",
-            content: `
-              <p>Gunakan <strong>middleware</strong> untuk mengatur akses halaman:</p>
-
-              <pre><code>
-      // Hanya untuk user yang sudah login
-      Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth');
-
-      // Hanya untuk tamu (belum login)
-      Route::get('/login', [AuthController::class, 'showLogin'])->middleware('guest');
-              </code></pre>
-
-              <p>Jika user mencoba mengakses halaman tanpa login, mereka akan diarahkan ke halaman login secara otomatis.</p>
-            `
-          },
-          {
-            title: "Logout User",
-            content: `
-              <p>Untuk keluar dari sesi login, gunakan <code>Auth::logout()</code>.</p>
-
-              <pre><code>
-      public function logout(Request $request) {
-        Auth::logout();
-        $request->session()->invalidate();
-        $request->session()->regenerateToken();
-
-        return redirect('/login')->with('success', 'Berhasil logout!');
-      }
-              </code></pre>
-
-              <p>Buat tombol logout di Blade:</p>
-              <pre><code>
-      &lt;form action="{{ route('logout') }}" method="POST"&gt;
-        @csrf
-        &lt;button type="submit"&gt;Logout&lt;/button&gt;
-      &lt;/form&gt;
-              </code></pre>
-            `
-          },
-          {
-            title: "Video: Membuat Login & Register Manual di Laravel",
-            video: "https://www.youtube.com/embed/7UZGN6Wk9yE",
-            content: `
-              <p>Video ini menjelaskan langkah-langkah membuat sistem autentikasi manual di Laravel — mulai dari register, login, middleware, hingga logout.</p>
-              <p>Tonton dan ikuti praktiknya untuk memahami alur autentikasi dengan baik 🔐</p>
-            `
-          }
-        ]
+          <p>Jika muncul versi PHP, artinya instalasi berhasil ✅</p>
+        `
       },
-
-      9: {
-        title: "Middleware & Proteksi Halaman",
-        slides: [
-          {
-            title: "Tujuan & Konsep Dasar Middleware",
-            content: `
-              <p><strong>Middleware</strong> adalah lapisan perantara antara <em>request</em> (permintaan dari user) dan <em>response</em> (balasan dari server).</p>
-              <p>Fungsinya untuk <strong>memeriksa, memfilter, atau memodifikasi</strong> permintaan sebelum diteruskan ke controller.</p>
-              <p>Biasanya digunakan untuk:</p>
-              <ul>
-                <li>🔐 Mengecek apakah user sudah login</li>
-                <li>🧩 Membatasi akses berdasarkan role (admin, user, guest)</li>
-                <li>🚧 Mencegah akses halaman tanpa izin</li>
-              </ul>
-
-              <p>Contoh alur kerja Middleware:</p>
-              <pre><code>
-      Request → Middleware (cek login/role) → Controller → View
-              </code></pre>
-            `
-          },
-          {
-            title: "Middleware Bawaan Laravel",
-            content: `
-              <p>Laravel sudah menyediakan beberapa <strong>middleware default</strong> yang bisa langsung digunakan:</p>
-              <ul>
-                <li><code>auth</code> – memastikan user sudah login</li>
-                <li><code>guest</code> – memastikan user belum login</li>
-                <li><code>verified</code> – hanya untuk user yang sudah verifikasi email</li>
-                <li><code>throttle</code> – membatasi jumlah request (anti spam / rate limit)</li>
-              </ul>
-
-              <p>Contoh penggunaannya di route:</p>
-              <pre><code>
-      Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth');
-              </code></pre>
-            `
-          },
-          {
-            title: "Membuat Middleware Sendiri",
-            content: `
-              <p>Untuk membuat middleware kustom, gunakan perintah artisan berikut:</p>
-              <pre><code>
-      php artisan make:middleware CekAdmin
-              </code></pre>
-
-              <p>Kemudian buka file yang dibuat di <code>app/Http/Middleware/CekAdmin.php</code> dan ubah logikanya seperti berikut:</p>
-              <pre><code>
-      public function handle($request, Closure $next)
       {
-          if (Auth::user()->role !== 'admin') {
-              return redirect('/')->with('error', 'Akses ditolak!');
-          }
+        title: "Install Composer",
+        content: `
+          <p><strong>Composer</strong> adalah <em>dependency manager</em> untuk PHP. Laravel menggunakan Composer untuk mengunduh semua library yang dibutuhkan.</p>
 
-          return $next($request);
-      }
-              </code></pre>
+          <p>Langkah-langkah instalasi:</p>
+          <ol>
+            <li>Buka situs resmi: <a href="https://getcomposer.org/download/" target="_blank">getcomposer.org</a></li>
+            <li>Unduh Composer sesuai sistem operasi (Windows/Mac/Linux).</li>
+            <li>Ikuti langkah instalasi sampai selesai.</li>
+            <li>Buka terminal dan ketik perintah berikut:</li>
+          </ol>
 
-              <p>Middleware ini akan menolak semua user yang bukan admin dan mengarahkan mereka kembali ke halaman utama.</p>
-            `
-          },
-          {
-            title: "Mendaftarkan dan Menggunakan Middleware",
-            content: `
-              <p>Setelah membuat middleware, daftarkan di file <code>app/Http/Kernel.php</code> pada bagian <code>$routeMiddleware</code>:</p>
+          <pre><code>composer -V</code></pre>
 
-              <pre><code>
-      'admin' => \App\Http\Middleware\CekAdmin::class,
-              </code></pre>
+          <p>Jika muncul versi Composer, berarti sudah berhasil terpasang 🎉</p>
 
-              <p>Lalu gunakan middleware tersebut di route:</p>
-              <pre><code>
-      // Hanya user login yang bisa akses
-      Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth');
-
-      // Hanya admin yang bisa akses
-      Route::get('/admin', [AdminController::class, 'index'])->middleware('admin');
-
-      // Hanya guest (belum login)
-      Route::get('/login', [AuthController::class, 'showLogin'])->middleware('guest');
-              </code></pre>
-            `
-          },
-          {
-            title: "Proteksi Halaman & Redirect",
-            content: `
-              <p>Jika user mencoba mengakses halaman tanpa izin, kamu bisa melakukan redirect dan menampilkan pesan peringatan.</p>
-              <pre><code>
-      return redirect('/')->with('error', 'Kamu tidak punya akses ke halaman ini!');
-              </code></pre>
-
-              <p>Selain itu, kamu bisa menambahkan middleware ke <strong>group route</strong> agar lebih rapi:</p>
-              <pre><code>
-      Route::middleware(['auth', 'admin'])->group(function () {
-          Route::get('/admin/dashboard', [AdminController::class, 'index']);
-          Route::get('/admin/users', [UserController::class, 'index']);
-      });
-              </code></pre>
-
-              <p>Dengan cara ini, semua route di dalam group hanya bisa diakses oleh admin yang sudah login.</p>
-            `
-          },
-          {
-            title: "Video: Mengenal & Menggunakan Middleware di Laravel",
-            video: "https://www.youtube.com/embed/9i9t7B8T_1k",
-            content: `
-              <p>Tonton video ini untuk memahami cara kerja Middleware di Laravel serta penerapannya dalam proteksi halaman dan role user.</p>
-              <p>Setelah menonton, coba buat sendiri Middleware sederhana untuk membatasi akses ke halaman admin 🚀</p>
-            `
-          }
-        ]
+          <p>Composer akan digunakan untuk menginstal Laravel dan package lain nantinya.</p>
+        `
       },
-
-      10: {
-        title: "Relasi Eloquent (Database Relationship)",
-        slides: [
-          {
-            title: "Tujuan & Konsep Relasi Eloquent",
-            content: `
-              <p>Dalam database, tabel sering kali <strong>berhubungan</strong> satu sama lain — misalnya, satu user bisa punya banyak postingan, atau satu produk bisa dimiliki banyak kategori.</p>
-              <p>Di Laravel, hubungan ini dikelola oleh <strong>Eloquent ORM</strong> menggunakan relasi seperti:</p>
-              <ul>
-                <li>👥 <strong>One to One</strong> – satu data punya satu pasangan</li>
-                <li>📚 <strong>One to Many</strong> – satu data punya banyak data lain</li>
-                <li>🔗 <strong>Many to Many</strong> – banyak data saling terhubung satu sama lain</li>
-              </ul>
-
-              <p>Relasi membantu kita mengambil data antar tabel dengan mudah tanpa query SQL yang rumit.</p>
-            `
-          },
-          {
-            title: "One to One Relationship",
-            content: `
-              <p>Relasi <strong>One to One</strong> artinya satu baris di tabel A hanya berhubungan dengan satu baris di tabel B.</p>
-              <p>Contoh: satu user hanya punya satu profil.</p>
-
-              <p>Struktur tabel:</p>
-              <pre><code>
-      users
-        id
-        name
-
-      profiles
-        id
-        user_id
-        bio
-              </code></pre>
-
-              <p>Model <code>User</code>:</p>
-              <pre><code>
-      public function profile()
       {
-          return $this->hasOne(Profile::class);
-      }
-              </code></pre>
+        title: "Install Laravel",
+        content: `
+          <p>Setelah Composer terinstal, sekarang saatnya memasang <strong>Laravel</strong>.</p>
 
-              <p>Model <code>Profile</code>:</p>
-              <pre><code>
-      public function user()
-      {
-          return $this->belongsTo(User::class);
-      }
-              </code></pre>
+          <h4>1️⃣ Instal via Composer (paling umum)</h4>
+          <pre><code>composer create-project laravel/laravel nama-proyek</code></pre>
 
-              <p>Mengambil data relasi:</p>
-              <pre><code>
-      $user = User::find(1);
-      echo $user->profile->bio;
-              </code></pre>
-            `
-          },
-          {
-            title: "One to Many Relationship",
-            content: `
-              <p>Relasi <strong>One to Many</strong> artinya satu baris di tabel A bisa berhubungan dengan banyak baris di tabel B.</p>
-              <p>Contoh: satu user bisa punya banyak postingan.</p>
+          <h4>2️⃣ Instal via Laravel Installer (opsional)</h4>
+          <pre><code>composer global require laravel/installer
+laravel new nama-proyek</code></pre>
 
-              <pre><code>
-      users
-        id
-        name
+          <p>Setelah instalasi selesai, masuk ke folder proyekmu:</p>
+          <pre><code>cd nama-proyek</code></pre>
 
-      posts
-        id
-        user_id
-        title
-        body
-              </code></pre>
+          <p>Lalu jalankan server lokal:</p>
+          <pre><code>php artisan serve</code></pre>
 
-              <p>Model <code>User</code>:</p>
-              <pre><code>
-      public function posts()
-      {
-          return $this->hasMany(Post::class);
-      }
-              </code></pre>
-
-              <p>Model <code>Post</code>:</p>
-              <pre><code>
-      public function user()
-      {
-          return $this->belongsTo(User::class);
-      }
-              </code></pre>
-
-              <p>Mengambil semua postingan milik user:</p>
-              <pre><code>
-      $user = User::find(1);
-      foreach ($user->posts as $post) {
-          echo $post->title;
-      }
-              </code></pre>
-            `
-          },
-          {
-            title: "Many to Many Relationship",
-            content: `
-              <p>Relasi <strong>Many to Many</strong> digunakan jika banyak data di tabel A bisa terhubung dengan banyak data di tabel B.</p>
-              <p>Contoh: satu siswa bisa mengambil banyak pelajaran, dan satu pelajaran bisa diambil oleh banyak siswa.</p>
-
-              <p>Kita membutuhkan tabel pivot:</p>
-              <pre><code>
-      students
-        id
-        name
-
-      subjects
-        id
-        title
-
-      student_subject
-        student_id
-        subject_id
-              </code></pre>
-
-              <p>Model <code>Student</code>:</p>
-              <pre><code>
-      public function subjects()
-      {
-          return $this->belongsToMany(Subject::class);
-      }
-              </code></pre>
-
-              <p>Model <code>Subject</code>:</p>
-              <pre><code>
-      public function students()
-      {
-          return $this->belongsToMany(Student::class);
-      }
-              </code></pre>
-
-              <p>Mengambil data relasi:</p>
-              <pre><code>
-      $student = Student::find(1);
-      foreach ($student->subjects as $subject) {
-          echo $subject->title;
-      }
-              </code></pre>
-            `
-          },
-          {
-            title: "Menampilkan Data Relasi di View",
-            content: `
-              <p>Untuk menampilkan data relasi di Blade View, cukup kirim data dari controller:</p>
-              <pre><code>
-      public function index() {
-          $users = User::with('posts')->get();
-          return view('user.index', compact('users'));
-      }
-              </code></pre>
-
-              <p>Dan di file <code>user/index.blade.php</code>:</p>
-              <pre><code>
-      @foreach($users as $user)
-        &lt;h3&gt;{{ $user->name }}&lt;/h3&gt;
-        &lt;ul&gt;
-          @foreach($user->posts as $post)
-            &lt;li&gt;{{ $post->title }}&lt;/li&gt;
-          @endforeach
-        &lt;/ul&gt;
-      @endforeach
-              </code></pre>
-
-              <p>Dengan <code>with()</code>, Eloquent otomatis mengambil data relasi tanpa query tambahan (dikenal sebagai <strong>eager loading</strong>).</p>
-            `
-          },
-          {
-            title: "Video: Relasi Eloquent di Laravel (One to One, One to Many, Many to Many)",
-            video: "https://www.youtube.com/embed/x_HC8oLZ4Lg",
-            content: `
-              <p>Tonton video ini untuk memahami cara kerja dan penerapan relasi antar model di Laravel menggunakan Eloquent ORM.</p>
-              <p>Setelah menonton, coba praktikkan membuat relasi <strong>user – posts</strong> dan tampilkan hasilnya di halaman view 🔗</p>
-            `
-          }
-        ]
+          <p>Buka browser dan kunjungi <code>http://localhost:8000</code>  
+          Jika muncul halaman "Laravel", berarti kamu berhasil membuat proyek pertamamu! 🚀</p>
+        `
       },
+      {
+        title: "Mengenal File .env dan Konfigurasi Database",
+        content: `
+          <p>File <code>.env</code> adalah tempat untuk menyimpan <strong>konfigurasi environment</strong> seperti nama aplikasi, database, dan API key.</p>
 
-      11: {
-        title: "Blade & Frontend Lanjutan",
-        slides: [
-          {
-            title: "Tujuan & Gambaran Umum",
-            content: `
-              <p>Pada tahap ini, kamu akan belajar membuat tampilan Laravel yang lebih <strong>dinamis, rapi, dan profesional</strong>.</p>
-              <p>Kita akan memanfaatkan fitur lanjutan dari <strong>Blade Template Engine</strong> dan mengintegrasikan <strong>CSS Framework</strong> modern seperti Bootstrap atau Tailwind untuk mempercantik antarmuka.</p>
+          <p>Contoh bagian penting dari file <code>.env</code>:</p>
+          <pre><code>
+APP_NAME="Laravel"
+APP_ENV=local
+APP_DEBUG=true
+APP_URL=http://localhost
 
-              <ul>
-                <li>🔧 <strong>Komponen Blade</strong> — menulis UI yang bisa digunakan berulang.</li>
-                <li>🧩 <strong>Template multi-halaman</strong> — membangun layout dengan struktur konsisten.</li>
-                <li>🎨 <strong>Integrasi CSS Framework</strong> — membuat tampilan lebih menarik dan responsif.</li>
-                <li>💬 <strong>Notifikasi</strong> — menampilkan pesan interaktif seperti sukses, error, atau warning.</li>
-              </ul>
-            `
-          },
-          {
-            title: "Membuat Komponen Blade (<x-component />)",
-            content: `
-              <p><strong>Blade Components</strong> memungkinkan kita membuat potongan kode HTML yang bisa digunakan berulang di berbagai halaman — mirip seperti komponen di React atau Vue.</p>
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=laravel_db
+DB_USERNAME=root
+DB_PASSWORD=
+          </code></pre>
 
-              <p>Membuat komponen baru:</p>
-              <pre><code>
-      php artisan make:component Alert
-              </code></pre>
+          <p>Ubah bagian <strong>DB_*</strong> sesuai pengaturan database di komputer kamu.</p>
 
-              <p>Hasilnya akan membuat dua file:</p>
-              <ul>
-                <li><code>app/View/Components/Alert.php</code></li>
-                <li><code>resources/views/components/alert.blade.php</code></li>
-              </ul>
-
-              <p>Contoh isi <code>alert.blade.php</code>:</p>
-              <pre><code>
-      &lt;div class="alert alert-{{ $type }}"&gt;
-        {{ $message }}
-      &lt;/div&gt;
-              </code></pre>
-
-              <p>Menggunakannya di view:</p>
-              <pre><code>
-      &lt;x-alert type="success" message="Data berhasil disimpan!" /&gt;
-              </code></pre>
-
-              <p>Dengan komponen, UI kamu jadi lebih modular dan mudah dikelola 💡</p>
-            `
-          },
-          {
-            title: "Template Layout Multi-Halaman",
-            content: `
-              <p>Untuk menjaga konsistensi antar halaman, gunakan konsep <strong>layout utama</strong> di Blade.</p>
-              <p>Buat layout utama di <code>resources/views/layouts/main.blade.php</code>:</p>
-
-              <pre><code>
-      &lt;!DOCTYPE html&gt;
-      &lt;html&gt;
-      &lt;head&gt;
-        &lt;title&gt;@yield('title') - MyApp&lt;/title&gt;
-        &lt;link rel="stylesheet" href="{{ asset('css/app.css') }}"&gt;
-      &lt;/head&gt;
-      &lt;body&gt;
-        @include('partials.navbar')
-        &lt;div class="container"&gt;
-          @yield('content')
-        &lt;/div&gt;
-      &lt;/body&gt;
-      &lt;/html&gt;
-              </code></pre>
-
-              <p>Lalu di halaman lain, gunakan:</p>
-              <pre><code>
-      @extends('layouts.main')
-
-      @section('title', 'Dashboard')
-
-      @section('content')
-        &lt;h1&gt;Selamat datang di Dashboard&lt;/h1&gt;
-      @endsection
-              </code></pre>
-
-              <p>Dengan cara ini, kamu bisa punya struktur halaman yang konsisten tanpa duplikasi kode.</p>
-            `
-          },
-          {
-            title: "Integrasi CSS Framework (Bootstrap / Tailwind)",
-            content: `
-              <p>Kamu bisa memilih framework CSS favoritmu untuk mempercepat pembuatan UI.</p>
-
-              <h4>🔹 Menggunakan Bootstrap</h4>
-              <pre><code>
-      npm install bootstrap
-              </code></pre>
-              <p>Kemudian impor di <code>resources/js/app.js</code>:</p>
-              <pre><code>
-      import 'bootstrap/dist/css/bootstrap.min.css';
-      import 'bootstrap';
-              </code></pre>
-
-              <h4>🔹 Menggunakan Tailwind CSS</h4>
-              <pre><code>
-      npm install -D tailwindcss
-      npx tailwindcss init
-              </code></pre>
-              <p>Edit <code>tailwind.config.js</code> dan tambahkan path Blade:</p>
-              <pre><code>
-      content: [
-        "./resources/**/*.blade.php",
-        "./resources/**/*.js",
-        "./resources/**/*.vue",
-      ],
-              </code></pre>
-
-              <p>Kemudian import Tailwind di <code>resources/css/app.css</code>:</p>
-              <pre><code>
-      @tailwind base;
-      @tailwind components;
-      @tailwind utilities;
-              </code></pre>
-
-              <p>Terakhir, jalankan:</p>
-              <pre><code>
-      npm run dev
-              </code></pre>
-
-              <p>Laravel kini siap tampil kece dan responsif 💅</p>
-            `
-          },
-          {
-            title: "Menampilkan Notifikasi (SweetAlert / Toastr)",
-            content: `
-              <p>Laravel bisa menampilkan notifikasi interaktif menggunakan <strong>SweetAlert2</strong> atau <strong>Toastr</strong>.</p>
-
-              <h4>1️⃣ Install SweetAlert2</h4>
-              <pre><code>
-      npm install sweetalert2
-              </code></pre>
-
-              <p>Gunakan di Blade:</p>
-              <pre><code>
-      &lt;script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"&gt;&lt;/script&gt;
-
-      @if(session('success'))
-        &lt;script&gt;
-          Swal.fire({
-            icon: 'success',
-            title: 'Berhasil!',
-            text: '{{ session('success') }}'
-          })
-        &lt;/script&gt;
-      @endif
-              </code></pre>
-
-              <h4>2️⃣ Alternatif: Toastr Notification</h4>
-              <pre><code>
-      &lt;link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet"&gt;
-      &lt;script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"&gt;&lt;/script&gt;
-
-      @if(session('error'))
-        &lt;script&gt;
-          toastr.error('{{ session('error') }}')
-        &lt;/script&gt;
-      @endif
-              </code></pre>
-
-              <p>Dengan notifikasi ini, pengalaman pengguna jadi lebih interaktif dan informatif ⚡</p>
-            `
-          },
-          {
-            title: "Video: Blade Components & Frontend Laravel Modern",
-            video: "https://www.youtube.com/embed/UGf6bYd5F8o",
-            content: `
-              <p>Video ini menjelaskan bagaimana membangun tampilan modern di Laravel menggunakan <strong>Blade Components</strong>, <strong>Tailwind CSS</strong>, dan <strong>SweetAlert</strong>.</p>
-              <p>Setelah menonton, coba buat komponen alert dan layout utama untuk proyekmu sendiri 🎨</p>
-            `
-          }
-        ]
+          <p>Laravel secara otomatis membaca file <code>.env</code> ini untuk menyesuaikan konfigurasi di berbagai lingkungan (lokal, staging, production).</p>
+        `
       },
-
-      12: {
-        title: "File Upload & Storage",
-        slides: [
-          {
-            title: "Tujuan & Gambaran Umum",
-            content: `
-              <p>Pada tahap ini, kamu akan belajar bagaimana cara <strong>mengunggah (upload)</strong> file ke sistem <strong>storage Laravel</strong>, menampilkannya di halaman web, dan menghapus file tersebut saat data dihapus.</p>
-              <p>Materi ini sangat penting karena hampir semua aplikasi web modern memiliki fitur upload — seperti upload foto profil, dokumen, atau gambar produk.</p>
-
-              <ul>
-                <li>📤 <strong>Membuat form upload</strong> untuk kirim file ke server.</li>
-                <li>💾 <strong>Menyimpan file ke storage</strong> Laravel.</li>
-                <li>🖼️ <strong>Menampilkan file di view</strong> menggunakan URL publik.</li>
-                <li>🗑️ <strong>Hapus file otomatis</strong> saat data dihapus.</li>
-              </ul>
-            `
-          },
-          {
-            title: "Membuat Form Upload",
-            content: `
-              <p>Buat form upload di view kamu (misal <code>create.blade.php</code>):</p>
-              <pre><code>
-      &lt;form action="{{ route('upload.store') }}" method="POST" enctype="multipart/form-data"&gt;
-        @csrf
-        &lt;input type="file" name="gambar" class="form-control"&gt;
-        &lt;button type="submit" class="btn btn-primary"&gt;Upload&lt;/button&gt;
-      &lt;/form&gt;
-              </code></pre>
-
-              <p>Pastikan menambahkan atribut <code>enctype="multipart/form-data"</code> agar file bisa terkirim dengan benar.</p>
-            `
-          },
-          {
-            title: "Menyimpan File ke Storage",
-            content: `
-              <p>Laravel menyediakan helper <code>store()</code> untuk menyimpan file ke folder <code>storage/app</code>. Contoh di controller:</p>
-              <pre><code>
-      public function store(Request $request)
       {
-          $request->validate([
-              'gambar' =&gt; 'required|image|mimes:jpg,png,jpeg|max:2048',
-          ]);
+        title: "Struktur Awal Proyek Laravel",
+        content: `
+          <p>Setelah Laravel berhasil dibuat, kamu akan melihat beberapa folder penting. Berikut penjelasan singkatnya:</p>
 
-          $path = $request-&gt;file('gambar')-&gt;store('public/uploads');
+          <ul>
+            <li><code>app/</code> – berisi kode utama aplikasi seperti model, controller, dan middleware.</li>
+            <li><code>bootstrap/</code> – berisi file yang menjalankan proses awal aplikasi Laravel.</li>
+            <li><code>config/</code> – tempat semua file konfigurasi (app, database, mail, dll).</li>
+            <li><code>database/</code> – berisi migration, seeder, dan factory untuk data.</li>
+            <li><code>public/</code> – folder yang diakses browser (CSS, JS, gambar, index.php).</li>
+            <li><code>resources/</code> – berisi file view (Blade), CSS, JS, dan aset frontend.</li>
+            <li><code>routes/</code> – tempat mendefinisikan semua rute aplikasi (web.php & api.php).</li>
+            <li><code>storage/</code> – tempat menyimpan file sementara, cache, dan log.</li>
+            <li><code>.env</code> – file konfigurasi environment.</li>
+          </ul>
 
-          // Simpan path ke database (opsional)
-          // Model::create(['path' =&gt; $path]);
-
-          return back()-&gt;with('success', 'File berhasil diupload!');
-      }
-              </code></pre>
-
-              <p>Secara default, file akan tersimpan di folder <code>storage/app/public/uploads</code>.</p>
-            `
-          },
-          {
-            title: "Menampilkan File di View",
-            content: `
-              <p>Agar file bisa diakses publik, jalankan perintah berikut:</p>
-              <pre><code>
-      php artisan storage:link
-              </code></pre>
-
-              <p>Ini akan membuat link simbolik dari <code>storage</code> ke <code>public/storage</code>.</p>
-
-              <p>Kemudian tampilkan gambar di Blade:</p>
-              <pre><code>
-      &lt;img src="{{ Storage::url($data-&gt;path) }}" alt="Gambar" width="200"&gt;
-              </code></pre>
-
-              <p>Atau jika kamu menyimpan nama file saja:</p>
-              <pre><code>
-      &lt;img src="{{ asset('storage/uploads/' . $data-&gt;gambar) }}" alt="Foto"&gt;
-              </code></pre>
-            `
-          },
-          {
-            title: "Menghapus File Saat Data Dihapus",
-            content: `
-              <p>Untuk menjaga agar storage tidak penuh, hapus file saat data dihapus.</p>
-              <pre><code>
-      use Illuminate\\Support\\Facades\\Storage;
-
-      public function destroy($id)
-      {
-          $data = Model::findOrFail($id);
-
-          // Hapus file dari storage
-          Storage::delete($data-&gt;path);
-
-          // Hapus data dari database
-          $data-&gt;delete();
-
-          return back()-&gt;with('success', 'Data dan file berhasil dihapus!');
-      }
-              </code></pre>
-
-              <p>Dengan cara ini, file yang tidak dibutuhkan akan ikut terhapus secara otomatis.</p>
-            `
-          },
-          {
-            title: "Video: Upload File & Storage di Laravel",
-            video: "https://www.youtube.com/embed/1n9gS6b0r2c",
-            content: `
-              <p>Video ini membahas langkah demi langkah cara membuat fitur upload file di Laravel, mulai dari form hingga menampilkan hasilnya di halaman web.</p>
-              <p>Tonton sampai selesai dan coba praktikkan di proyekmu sendiri 📦</p>
-            `
-          }
-        ]
+          <p>Memahami struktur ini akan mempermudah kamu menulis kode dengan benar dan menemukan file yang dibutuhkan dengan cepat.</p>
+        `
       },
-
-      13: {
-        title: "Fitur Tambahan Umum",
-        slides: [
-          {
-            title: "Tujuan & Gambaran Umum",
-            content: `
-              <p>Pada tahap ini, kamu akan menambahkan berbagai <strong>fitur pendukung</strong> yang sering digunakan di aplikasi web modern.</p>
-              <p>Fitur-fitur ini akan membuat aplikasi Laravel-mu lebih <strong>lengkap, interaktif, dan profesional</strong>.</p>
-
-              <ul>
-                <li>📄 <strong>Pagination</strong> — membagi data panjang menjadi beberapa halaman.</li>
-                <li>🔍 <strong>Pencarian (Search)</strong> — menemukan data berdasarkan kata kunci.</li>
-                <li>⚙️ <strong>Filter & Sorting</strong> — mengatur urutan dan tampilan data sesuai kebutuhan.</li>
-                <li>📧 <strong>Email Notifikasi</strong> — mengirim pesan otomatis ke pengguna.</li>
-                <li>📊 <strong>Export / Import</strong> — menyimpan atau mengambil data dari Excel atau PDF.</li>
-              </ul>
-            `
-          },
-          {
-            title: "Pagination (Halaman Data)",
-            content: `
-              <p>Laravel menyediakan sistem pagination otomatis lewat metode <code>paginate()</code>.</p>
-
-              <pre><code>
-      public function index()
       {
-          $users = User::paginate(10);
-          return view('users.index', compact('users'));
+        title: "Video: Instalasi & Persiapan Laravel di Lokal",
+        video: "https://www.youtube.com/embed/ImtZ5yENzgE",
+        content: `
+          <p>Tonton video ini untuk mempelajari cara menginstal PHP, Composer, dan Laravel dengan benar di komputer lokal.</p>
+          <p>Video ini juga menjelaskan cara menjalankan server Laravel dan mengenal struktur folder proyeknya.</p>
+          <p>Setelah menonton, kamu sudah siap untuk mulai membuat aplikasi Laravel pertamamu! 💻</p>
+        `
       }
-              </code></pre>
+    ]
+  },
 
-              <p>Lalu tampilkan di Blade:</p>
-
-              <pre><code>
-      @foreach ($users as $user)
-        &lt;p&gt;{{ $user-&gt;name }}&lt;/p&gt;
-      @endforeach
-
-      {{ $users-&gt;links() }}
-              </code></pre>
-
-              <p>Pagination Laravel otomatis men-generate tombol navigasi antar halaman dengan styling Bootstrap atau Tailwind 💨</p>
-            `
-          },
-          {
-            title: "Pencarian Data (Search)",
-            content: `
-              <p>Untuk menambahkan fitur pencarian sederhana, gunakan query <code>where</code> dengan input dari form.</p>
-
-              <pre><code>
-      public function index(Request $request)
+  3: {
+    title: "Routing Dasar di Laravel",
+    slides: [
       {
-          $search = $request-&gt;input('search');
-          $users = User::when($search, function($query, $search) {
-              return $query-&gt;where('name', 'like', "%{$search}%");
-          })-&gt;paginate(10);
+        title: "Apa itu Routing di Laravel?",
+        content: `
+          <p><strong>Routing</strong> di Laravel berfungsi untuk mengatur ke mana sebuah URL akan diarahkan dan apa yang akan ditampilkan kepada pengguna.</p>
 
-          return view('users.index', compact('users', 'search'));
-      }
-              </code></pre>
+          <p>Semua route web biasanya didefinisikan di file <code>routes/web.php</code>.</p>
 
-              <p>Di view:</p>
+          <p>Routing ini adalah bagian penting dari konsep <strong>MVC</strong>, di mana:</p>
+          <ul>
+            <li><strong>Route</strong> menentukan URL dan logika yang dijalankan.</li>
+            <li><strong>Controller</strong> berisi logika aplikasi.</li>
+            <li><strong>View</strong> menampilkan hasil ke pengguna.</li>
+          </ul>
 
-              <pre><code>
-      &lt;form method="GET" action="{{ route('users.index') }}"&gt;
-        &lt;input type="text" name="search" value="{{ $search }}" placeholder="Cari nama..."&gt;
-        &lt;button type="submit"&gt;Cari&lt;/button&gt;
-      &lt;/form&gt;
-              </code></pre>
-
-              <p>Hasil pencarian akan otomatis menampilkan data sesuai kata kunci 🔎</p>
-            `
-          },
-          {
-            title: "Filter & Sorting Data",
-            content: `
-              <p>Untuk membuat filter sederhana (misal berdasarkan role atau urutan nama), gunakan kombinasi <code>where</code> dan <code>orderBy</code>.</p>
-
-              <pre><code>
-      public function index(Request $request)
-      {
-          $role = $request-&gt;input('role');
-          $sort = $request-&gt;input('sort', 'asc');
-
-          $users = User::when($role, fn($q) =&gt; $q-&gt;where('role', $role))
-                       -&gt;orderBy('name', $sort)
-                       -&gt;paginate(10);
-
-          return view('users.index', compact('users', 'role', 'sort'));
-      }
-              </code></pre>
-
-              <p>Di Blade:</p>
-
-              <pre><code>
-      &lt;form method="GET"&gt;
-        &lt;select name="role"&gt;
-          &lt;option value=""&gt;Semua Role&lt;/option&gt;
-          &lt;option value="admin"&gt;Admin&lt;/option&gt;
-          &lt;option value="user"&gt;User&lt;/option&gt;
-        &lt;/select&gt;
-
-        &lt;select name="sort"&gt;
-          &lt;option value="asc"&gt;A-Z&lt;/option&gt;
-          &lt;option value="desc"&gt;Z-A&lt;/option&gt;
-        &lt;/select&gt;
-
-        &lt;button type="submit"&gt;Terapkan&lt;/button&gt;
-      &lt;/form&gt;
-              </code></pre>
-
-              <p>Dengan ini, pengguna bisa memfilter dan mengurutkan data sesuai kebutuhan 🔧</p>
-            `
-          },
-          {
-            title: "Email Notifikasi Dasar",
-            content: `
-              <p>Laravel punya sistem email bawaan berbasis <strong>Mailable</strong>. Jalankan perintah:</p>
-
-              <pre><code>
-      php artisan make:mail NotifikasiUser
-              </code></pre>
-
-              <p>Contoh di <code>NotifikasiUser.php</code>:</p>
-              <pre><code>
-      public function build()
-      {
-          return $this-&gt;subject('Selamat Datang!')
-                      -&gt;view('emails.welcome');
-      }
-              </code></pre>
-
-              <p>Kirim email dari controller:</p>
-              <pre><code>
-      use App\\Mail\\NotifikasiUser;
-      use Illuminate\\Support\\Facades\\Mail;
-
-      Mail::to('user@example.com')-&gt;send(new NotifikasiUser());
-              </code></pre>
-
-              <p>Jangan lupa konfigurasi SMTP di <code>.env</code> agar email bisa terkirim ✉️</p>
-            `
-          },
-          {
-            title: "Export / Import Excel & PDF (Opsional)",
-            content: `
-              <p>Laravel mendukung export dan import data menggunakan package populer seperti <strong>Maatwebsite Excel</strong> dan <strong>DomPDF</strong>.</p>
-
-              <h4>📤 Export Excel</h4>
-              <pre><code>
-      composer require maatwebsite/excel
-              </code></pre>
-
-              <p>Buat export class:</p>
-              <pre><code>
-      php artisan make:export UsersExport --model=User
-              </code></pre>
-
-              <p>Di controller:</p>
-              <pre><code>
-      use Maatwebsite\\Excel\\Facades\\Excel;
-      use App\\Exports\\UsersExport;
-
-      return Excel::download(new UsersExport, 'users.xlsx');
-              </code></pre>
-
-              <h4>🧾 Export PDF</h4>
-              <pre><code>
-      composer require barryvdh/laravel-dompdf
-              </code></pre>
-
-              <p>Di controller:</p>
-              <pre><code>
-      use Barryvdh\\DomPDF\\Facade\\Pdf;
-
-      $pdf = Pdf::loadView('pdf.users', ['users' =&gt; User::all()]);
-      return $pdf-&gt;download('users.pdf');
-              </code></pre>
-
-              <p>Dengan dua fitur ini, kamu bisa membuat laporan dan ekspor data dengan mudah 📈</p>
-            `
-          },
-          {
-            title: "Video: Fitur Tambahan Laravel (Pagination, Search, Filter)",
-            video: "https://www.youtube.com/embed/HdJ6wQEYx7E",
-            content: `
-              <p>Video ini membahas cara menambahkan fitur umum seperti pagination, pencarian, dan filter di Laravel secara praktis.</p>
-              <p>Tonton sampai habis untuk memahami implementasi real-nya dalam proyekmu 💬</p>
-            `
-          }
-        ]
+          <p>Dengan memahami routing, kamu bisa mengatur alur halaman web dengan mudah dan rapi.</p>
+        `
       },
+      {
+        title: "Membuat Route Dasar di web.php",
+        content: `
+          <p>File <code>routes/web.php</code> digunakan untuk mendefinisikan semua route aplikasi web kamu.</p>
 
-      14: {
-        title: "Artisan & Maintenance",
-        slides: [
-          {
-            title: "Tujuan & Gambaran Umum",
-            content: `
-              <p>Pada tahap ini, kamu akan belajar menggunakan <strong>Artisan Command</strong> untuk mengelola dan memelihara proyek Laravel dengan efisien.</p>
-              <p>Selain itu, kamu juga akan memahami bagaimana melakukan <strong>debugging</strong> dan <strong>maintenance</strong> agar aplikasi tetap stabil dan cepat.</p>
+          <pre><code>
+// routes/web.php
+Route::get('/', function () {
+    return 'Selamat datang di Laravel!';
+});
+          </code></pre>
 
-              <ul>
-                <li>⚙️ <strong>Perintah dasar Artisan</strong> — mengelola route, cache, dan file konfigurasi.</li>
-                <li>🚀 <strong>Optimasi & Cache</strong> — mempercepat performa aplikasi.</li>
-                <li>🪲 <strong>Debugging & Log</strong> — menemukan dan memperbaiki error dengan cepat.</li>
-              </ul>
-            `
-          },
-          {
-            title: "Perintah Dasar Artisan",
-            content: `
-              <p><strong>Artisan</strong> adalah command-line tool bawaan Laravel yang digunakan untuk berbagai tugas, seperti membuat controller, migration, atau membersihkan cache.</p>
+          <p>Penjelasan:</p>
+          <ul>
+            <li><code>Route::get()</code> → Menangani permintaan HTTP GET.</li>
+            <li><code>'/'</code> → URL yang diakses di browser.</li>
+            <li><code>function()</code> → Aksi yang dijalankan saat URL diakses.</li>
+          </ul>
 
-              <pre><code>
-      # Menampilkan semua perintah yang tersedia
-      php artisan list
+          <p>Contoh route yang menampilkan halaman:</p>
 
-      # Menampilkan semua route yang terdaftar
-      php artisan route:list
+          <pre><code>
+Route::get('/about', function () {
+    return view('about');
+});
+          </code></pre>
 
-      # Membuat controller baru
-      php artisan make:controller NamaController
-
-      # Membuat model dengan migration
-      php artisan make:model NamaModel -m
-
-      # Menjalankan migration
-      php artisan migrate
-              </code></pre>
-
-              <p>Artisan membantu mempercepat proses pengembangan dan menjaga struktur proyek tetap rapi ⚡</p>
-            `
-          },
-          {
-            title: "Perintah Maintenance & Cache",
-            content: `
-              <p>Laravel memiliki sistem cache untuk meningkatkan performa. Berikut beberapa perintah penting:</p>
-
-              <pre><code>
-      # Membersihkan cache konfigurasi
-      php artisan config:clear
-
-      # Membuat cache konfigurasi baru
-      php artisan config:cache
-
-      # Membersihkan cache route
-      php artisan route:clear
-
-      # Membuat cache route baru
-      php artisan route:cache
-
-      # Membersihkan cache view
-      php artisan view:clear
-              </code></pre>
-
-              <p>Kamu juga bisa menonaktifkan sementara aplikasi saat maintenance:</p>
-
-              <pre><code>
-      # Mengaktifkan mode maintenance
-      php artisan down
-
-      # Menonaktifkan mode maintenance
-      php artisan up
-              </code></pre>
-
-              <p>Fitur ini berguna saat kamu ingin melakukan update tanpa mengganggu pengguna aktif 🔧</p>
-            `
-          },
-          {
-            title: "Debugging (Log, dd(), dump())",
-            content: `
-              <p>Laravel menyediakan berbagai cara untuk <strong>debugging</strong> — menemukan penyebab error dan menganalisis alur kode.</p>
-
-              <h4>🪣 Menggunakan <code>dd()</code> dan <code>dump()</code></h4>
-              <pre><code>
-      dd($variable);   // Dump and Die — tampilkan isi variabel dan hentikan eksekusi
-      dump($variable); // Hanya tampilkan isi variabel tanpa menghentikan eksekusi
-              </code></pre>
-
-              <p>Contoh penggunaan:</p>
-              <pre><code>
-      $user = User::find(1);
-      dd($user);
-              </code></pre>
-
-              <h4>📜 Melihat Log Error</h4>
-              <p>Setiap error atau exception akan otomatis dicatat di file log:</p>
-              <pre><code>
-      storage/logs/laravel.log
-              </code></pre>
-
-              <p>Kamu bisa menambahkan log manual dengan:</p>
-              <pre><code>
-      use Illuminate\\Support\\Facades\\Log;
-
-      Log::info('Data user berhasil disimpan');
-      Log::error('Terjadi kesalahan saat menyimpan data');
-              </code></pre>
-
-              <p>Dengan log ini, kamu bisa melacak masalah tanpa harus menampilkan error ke pengguna 👨‍🔧</p>
-            `
-          },
-          {
-            title: "Video: Laravel Artisan & Maintenance",
-            video: "https://www.youtube.com/embed/XyHgJRcdJ_s",
-            content: `
-              <p>Video ini menjelaskan berbagai perintah <strong>Artisan</strong> yang sering digunakan, cara membersihkan cache, dan tips melakukan maintenance aplikasi Laravel dengan aman.</p>
-              <p>Tonton sampai habis untuk memahami praktik terbaik menjaga aplikasi tetap optimal dan bebas error 💪</p>
-            `
-          }
-        ]
+          <p>Route di atas akan menampilkan file <code>resources/views/about.blade.php</code> saat URL <code>/about</code> diakses.</p>
+        `
       },
+      {
+        title: "Route dengan Parameter",
+        content: `
+          <p>Kamu bisa menambahkan parameter di URL untuk mengirim data ke route.</p>
 
-      15: {
-        title: "Project Akhir (Wajib Dikerjakan)",
-        slides: [
-          {
-            title: "Tujuan & Gambaran Project",
-            content: `
-              <p>Pada project akhir ini, kamu akan membuat sebuah aplikasi web sederhana yang menggabungkan semua konsep Laravel yang telah dipelajari.</p>
+          <pre><code>
+Route::get('/user/{id}', function ($id) {
+    return "ID User: " . $id;
+});
+          </code></pre>
 
-              <p><strong>Contoh Project:</strong> <em>Sistem Reservasi Ruangan (Booking Aula)</em></p>
+          <p>Jika kamu buka <code>http://localhost:8000/user/12</code> maka hasilnya:</p>
+          <pre><code>ID User: 12</code></pre>
 
-              <p>Fitur utama yang akan dibuat:</p>
-              <ul>
-                <li>🔐 Autentikasi (register, login, logout)</li>
-                <li>🧾 CRUD untuk entitas: Users (admin/user), Rooms, Bookings</li>
-                <li>🔗 Relasi Eloquent (User - Booking, Room - Booking)</li>
-                <li>📁 Upload foto ruangan</li>
-                <li>🛡️ Middleware untuk proteksi & role admin</li>
-                <li>🔎 Pencarian & pagination pada daftar booking</li>
-                <li>🧪 Seeder & Factory untuk data dummy</li>
-              </ul>
+          <p>Parameter juga bisa bersifat <strong>opsional</strong> dengan memberikan nilai default:</p>
 
-              <p>Tujuan: agar setelah menyelesaikan project ini kamu paham alur penuh pembuatan aplikasi Laravel dari setup sampai deployment ringan.</p>
-            `
-          },
-          {
-            title: "Persiapan & Struktur Project",
-            content: `
-              <p>Langkah awal — buat proyek baru dan siapkan environment:</p>
-              <pre><code>
-      composer create-project laravel/laravel reservasi-aula
-      cd reservasi-aula
-      cp .env.example .env
-      php artisan key:generate
-      # konfig .env: DB_CONNECTION, DB_DATABASE, DB_USERNAME, DB_PASSWORD
-              </code></pre>
+          <pre><code>
+Route::get('/user/{name?}', function ($name = 'Guest') {
+    return "Halo, $name!";
+});
+          </code></pre>
 
-              <p>Instal paket tambahan (opsional):</p>
-              <pre><code>
-      composer require laravel/breeze --dev
-      php artisan breeze:install
-      npm install && npm run dev
-      php artisan migrate
-              </code></pre>
+          <p>Jika kamu akses <code>/user</code>, maka hasilnya: <strong>Halo, Guest!</strong></p>
+        `
+      },
+      {
+        title: "Route dengan Nama (Named Route)",
+        content: `
+          <p>Laravel memungkinkan kamu memberi nama pada route agar mudah dipanggil atau diarahkan tanpa menulis URL secara manual.</p>
 
-              <p>Struktur penting yang akan sering digunakan:</p>
-              <ul>
-                <li><code>app/Models</code> – model</li>
-                <li><code>app/Http/Controllers</code> – controller</li>
-                <li><code>routes/web.php</code> – route web</li>
-                <li><code>resources/views</code> – blade view</li>
-                <li><code>database/migrations</code> – migration</li>
-              </ul>
-            `
-          },
-          {
-            title: "Database: Migration & Model (Rooms, Bookings)",
-            content: `
-              <p>Buat migration & model untuk <code>rooms</code> dan <code>bookings</code>:</p>
-              <pre><code>
-      php artisan make:model Room -m
-      php artisan make:model Booking -m
-              </code></pre>
+          <pre><code>
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');
+          </code></pre>
 
-              <p>Contoh migration <code>create_rooms_table</code>:</p>
-              <pre><code>
-      Schema::create('rooms', function (Blueprint $table) {
+          <p>Kemudian kamu bisa melakukan redirect atau membuat link dengan nama route tersebut:</p>
+
+          <pre><code>
+// Redirect ke named route
+return redirect()->route('dashboard');
+
+// Blade link
+&lt;a href="{{ route('dashboard') }}"&gt;Ke Dashboard&lt;/a&gt;
+          </code></pre>
+
+          <p>Named route memudahkan saat kamu ingin mengubah struktur URL tanpa harus mengganti semua tautan yang sudah ada.</p>
+        `
+      },
+      {
+        title: "Mengarahkan Route ke Controller",
+        content: `
+          <p>Daripada menulis logika langsung di route, kamu bisa memisahkannya ke dalam <strong>Controller</strong> agar lebih rapi.</p>
+
+          <pre><code>
+use App\\Http\\Controllers\\UserController;
+
+Route::get('/user', [UserController::class, 'index']);
+          </code></pre>
+
+          <p>Isi dari <code>UserController</code> bisa seperti ini:</p>
+
+          <pre><code>
+// app/Http/Controllers/UserController.php
+namespace App\\Http\\Controllers;
+
+use Illuminate\\Http\\Request;
+
+class UserController extends Controller {
+    public function index() {
+        return view('user.index');
+    }
+}
+          </code></pre>
+
+          <p>Dengan cara ini, setiap route bisa diarahkan ke fungsi tertentu dalam controller, sesuai dengan konsep <strong>MVC</strong>.</p>
+        `
+      },
+      {
+        title: "Route untuk Halaman Statis",
+        content: `
+          <p>Jika kamu hanya ingin menampilkan halaman statis tanpa logika tambahan, gunakan <code>Route::view()</code>.</p>
+
+          <pre><code>
+Route::view('/contact', 'contact');
+Route::view('/about', 'about');
+          </code></pre>
+
+          <p>Perintah di atas akan langsung menampilkan file:</p>
+          <ul>
+            <li><code>resources/views/contact.blade.php</code></li>
+            <li><code>resources/views/about.blade.php</code></li>
+          </ul>
+
+          <p>Metode ini cocok untuk halaman sederhana seperti "Tentang Kami" atau "Kontak".</p>
+        `
+      },
+      {
+        title: "Video: Dasar Routing di Laravel",
+        video: "https://www.youtube.com/embed/ImtZ5yENzgE",
+        content: `
+          <p>Tonton video ini untuk memahami konsep dasar routing di Laravel secara visual 🎥</p>
+          <p>Kamu akan belajar cara membuat route, mengarahkan ke controller, dan menampilkan view di browser.</p>
+        `
+      }
+    ]
+  },
+
+  4: {
+    title: "View & Blade Template",
+    slides: [
+      {
+        title: "Apa itu Blade Template Engine?",
+        content: `
+          <p><strong>Blade</strong> adalah <em>template engine</em> bawaan Laravel yang digunakan untuk membuat tampilan halaman (view).</p>
+
+          <p>Blade memudahkan kita untuk menulis HTML yang dinamis menggunakan sintaks sederhana seperti <code>{{ }}</code> dan <code>@if</code>, <code>@foreach</code>.</p>
+
+          <p>Keunggulan Blade:</p>
+          <ul>
+            <li>🔹 Mudah digunakan dan cepat dipelajari.</li>
+            <li>🔹 Mendukung logika pemrograman (if, loop, dsb).</li>
+            <li>🔹 Bisa menggunakan <strong>layout</strong> dan <strong>partial</strong> untuk menghindari kode duplikat.</li>
+            <li>🔹 Secara otomatis mengamankan output (HTML escaping) agar terhindar dari XSS.</li>
+          </ul>
+
+          <p>Semua file Blade menggunakan ekstensi <code>.blade.php</code> dan disimpan di folder <code>resources/views</code>.</p>
+        `
+      },
+      {
+        title: "Membuat View di Folder resources/views",
+        content: `
+          <p>Semua tampilan Laravel berada di folder <code>resources/views</code>.</p>
+
+          <p>Contoh membuat view baru:</p>
+
+          <pre><code>
+// File: resources/views/home.blade.php
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;Halaman Utama&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Selamat Datang di Laravel!&lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+          </code></pre>
+
+          <p>Lalu, tampilkan view tersebut dari route:</p>
+
+          <pre><code>
+// routes/web.php
+Route::get('/', function () {
+    return view('home');
+});
+          </code></pre>
+
+          <p>Laravel otomatis mencari file <code>resources/views/home.blade.php</code>.</p>
+        `
+      },
+      {
+        title: "Menampilkan Data dari Controller ke View",
+        content: `
+          <p>Kamu bisa mengirim data dari controller (atau route) ke view menggunakan parameter kedua dari fungsi <code>view()</code>.</p>
+
+          <pre><code>
+// routes/web.php
+Route::get('/user', function () {
+    return view('user', ['name' => 'Ali Khatami', 'age' => 22]);
+});
+          </code></pre>
+
+          <p>Kemudian di dalam view:</p>
+
+          <pre><code>
+// resources/views/user.blade.php
+&lt;h1&gt;Profil Pengguna&lt;/h1&gt;
+&lt;p&gt;Nama: {{ $name }}&lt;/p&gt;
+&lt;p&gt;Umur: {{ $age }} tahun&lt;/p&gt;
+          </code></pre>
+
+          <p>Output di browser:</p>
+          <pre><code>
+Nama: Ali Khatami  
+Umur: 22 tahun
+          </code></pre>
+        `
+      },
+      {
+        title: "Sintaks Dasar Blade",
+        content: `
+          <p>Blade memiliki sintaks sederhana untuk menampilkan data dan menulis logika.</p>
+
+          <h4>🟢 Menampilkan Data</h4>
+          <pre><code>
+&lt;p&gt;Nama: {{ $name }}&lt;/p&gt; 
+// Blade otomatis mengamankan karakter HTML
+          </code></pre>
+
+          <h4>🟡 Kondisi (If / Else)</h4>
+          <pre><code>
+@if($age >= 18)
+  &lt;p&gt;Kamu sudah dewasa&lt;/p&gt;
+@else
+  &lt;p&gt;Masih di bawah umur&lt;/p&gt;
+@endif
+          </code></pre>
+
+          <h4>🔵 Perulangan (Loop)</h4>
+          <pre><code>
+@foreach($users as $user)
+  &lt;li&gt;{{ $user }}&lt;/li&gt;
+@endforeach
+          </code></pre>
+
+          <h4>🟣 Komentar di Blade</h4>
+          <pre><code>
+{{-- Ini tidak akan muncul di HTML hasil render --}}
+          </code></pre>
+
+          <p>Blade juga mendukung sintaks lain seperti <code>@for</code>, <code>@while</code>, <code>@switch</code>, dan masih banyak lagi.</p>
+        `
+      },
+      {
+        title: "Membuat Layout Utama (extends, section, yield)",
+        content: `
+          <p>Blade mendukung sistem <strong>layout</strong> agar kode HTML tidak berulang di tiap halaman.</p>
+
+          <h4>📁 Layout utama</h4>
+          <pre><code>
+// resources/views/layouts/main.blade.php
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;@yield('title') - Laravel App&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;header&gt;&lt;h1&gt;Header Situs&lt;/h1&gt;&lt;/header&gt;
+
+  &lt;main&gt;
+    @yield('content')
+  &lt;/main&gt;
+
+  &lt;footer&gt;&lt;p&gt;© 2025 Laravel Belajar&lt;/p&gt;&lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+          </code></pre>
+
+          <h4>📄 Halaman yang menggunakan layout</h4>
+          <pre><code>
+// resources/views/home.blade.php
+@extends('layouts.main')
+
+@section('title', 'Halaman Utama')
+
+@section('content')
+  &lt;h2&gt;Selamat Datang di Halaman Utama&lt;/h2&gt;
+  &lt;p&gt;Ini konten dari halaman home.&lt;/p&gt;
+@endsection
+          </code></pre>
+
+          <p>Dengan sistem ini, kamu hanya perlu menulis bagian unik tiap halaman tanpa menyalin struktur HTML berulang kali.</p>
+        `
+      },
+      {
+        title: "Include Partial View (header, footer, dsb)",
+        content: `
+          <p>Untuk bagian yang sering digunakan di banyak halaman (seperti header, navbar, atau footer), gunakan <code>@include</code>.</p>
+
+          <pre><code>
+// resources/views/partials/header.blade.php
+&lt;header&gt;
+  &lt;h1&gt;Laravel Tutorial&lt;/h1&gt;
+&lt;/header&gt;
+          </code></pre>
+
+          <p>Kemudian panggil di layout utama:</p>
+
+          <pre><code>
+// resources/views/layouts/main.blade.php
+&lt;body&gt;
+  @include('partials.header')
+
+  &lt;main&gt;
+    @yield('content')
+  &lt;/main&gt;
+
+  @include('partials.footer')
+&lt;/body&gt;
+          </code></pre>
+
+          <p>Dengan <code>@include</code>, kamu bisa memecah tampilan jadi bagian kecil agar lebih terstruktur dan mudah dikelola.</p>
+        `
+      },
+      {
+        title: "Video: Dasar View & Blade di Laravel",
+        video: "https://www.youtube.com/embed/qvBZevK1HPo",
+        content: `
+          <p>Tonton video ini untuk memahami cara kerja <strong>Blade Template</strong> di Laravel 🎨</p>
+          <p>Video ini menjelaskan bagaimana membuat view, layout, dan cara mengirim data dari controller ke view.</p>
+        `
+      }
+    ]
+  },
+
+  5: {
+    title: "Controller",
+    slides: [
+      {
+        title: "Apa Itu Controller di Laravel?",
+        content: `
+          <p><strong>Controller</strong> adalah bagian penting di Laravel yang berfungsi untuk memisahkan logika aplikasi dari route.</p>
+          <p>Kalau di route hanya mendefinisikan URL dan arah tujuan, maka controller yang menampung logika bisnis, memproses data, lalu mengembalikannya ke view.</p>
+          <p>Dengan cara ini, struktur proyek jadi lebih <strong>teratur, rapi, dan mudah dikelola</strong>.</p>
+        `
+      },
+      {
+        title: "Membuat Controller dengan Artisan",
+        content: `
+          <p>Kamu bisa membuat controller baru dengan perintah:</p>
+
+          <pre><code>
+php artisan make:controller UserController
+          </code></pre>
+
+          <p>Setelah dijalankan, file baru akan muncul di <code>app/Http/Controllers/UserController.php</code>.</p>
+
+          <p>Contoh isi awal controller:</p>
+
+          <pre><code>
+&lt;?php
+
+namespace App\\Http\\Controllers;
+
+use Illuminate\\Http\\Request;
+
+class UserController extends Controller
+{
+    //
+}
+          </code></pre>
+
+          <p>Controller ini nantinya akan digunakan untuk memproses permintaan dari route dan menampilkan halaman view.</p>
+        `
+      },
+      {
+        title: "Fungsi Controller dan Cara Mengembalikan View",
+        content: `
+          <p>Controller biasanya berisi beberapa <strong>method</strong> (fungsi) untuk menangani permintaan.</p>
+
+          <p>Contoh sederhana:</p>
+          <pre><code>
+public function index()
+{
+    $nama = "Ali Khatami";
+    return view('user.index', ['nama' => $nama]);
+}
+          </code></pre>
+
+          <p>Lalu buat file view di <code>resources/views/user/index.blade.php</code>:</p>
+          <pre><code>
+&lt;h1&gt;Halo, {{ $nama }}!&lt;/h1&gt;
+          </code></pre>
+
+          <p>Hasilnya: halaman akan menampilkan teks "Halo, Ali Khatami!".</p>
+        `
+      },
+      {
+        title: "Controller dengan Parameter",
+        content: `
+          <p>Kamu bisa menerima data dari URL melalui parameter.</p>
+
+          <p>Contoh di route:</p>
+          <pre><code>
+Route::get('/user/{id}', [UserController::class, 'show']);
+          </code></pre>
+
+          <p>Lalu di controller:</p>
+          <pre><code>
+public function show($id)
+{
+    return "Menampilkan user dengan ID: " . $id;
+}
+          </code></pre>
+
+          <p>Saat membuka <code>http://localhost:8000/user/7</code>, maka akan muncul teks "Menampilkan user dengan ID: 7".</p>
+        `
+      },
+      {
+        title: "Menghubungkan Route ke Controller",
+        content: `
+          <p>Controller dihubungkan lewat route agar Laravel tahu method mana yang harus dipanggil.</p>
+
+          <p>Contohnya:</p>
+          <pre><code>
+use App\\Http\\Controllers\\UserController;
+
+Route::get('/user', [UserController::class, 'index']);
+Route::get('/user/{id}', [UserController::class, 'show']);
+          </code></pre>
+
+          <p>Setiap kali URL diakses, Laravel otomatis menjalankan method yang sesuai di dalam controller tersebut.</p>
+        `
+      },
+      {
+        title: "Resource Controller (Untuk CRUD)",
+        content: `
+          <p>Laravel menyediakan <strong>Resource Controller</strong> untuk membuat struktur CRUD lengkap (Create, Read, Update, Delete) secara otomatis.</p>
+
+          <p>Buat dengan perintah:</p>
+          <pre><code>
+php artisan make:controller PostController --resource
+          </code></pre>
+
+          <p>Controller ini otomatis punya 7 method:</p>
+
+          <ul>
+            <li><strong>index()</strong> – menampilkan semua data</li>
+            <li><strong>create()</strong> – menampilkan form tambah data</li>
+            <li><strong>store()</strong> – menyimpan data baru</li>
+            <li><strong>show()</strong> – menampilkan 1 data</li>
+            <li><strong>edit()</strong> – menampilkan form edit</li>
+            <li><strong>update()</strong> – memperbarui data</li>
+            <li><strong>destroy()</strong> – menghapus data</li>
+          </ul>
+
+          <p>Daftarkan route-nya agar otomatis terhubung:</p>
+          <pre><code>
+Route::resource('posts', PostController::class);
+          </code></pre>
+
+          <p>Kamu bisa melihat semua route yang dibuat dengan perintah:</p>
+          <pre><code>
+php artisan route:list
+          </code></pre>
+        `
+      },
+      {
+        title: "Video: Belajar Controller di Laravel",
+        video: "https://www.youtube.com/embed/zpW8F8k5P1k",
+        content: `
+          <p>Tonton video ini untuk memahami bagaimana cara kerja Controller di Laravel, serta bagaimana menghubungkannya dengan route dan view.</p>
+          <p>Di video ini juga dijelaskan penggunaan <strong>resource controller</strong> untuk CRUD secara praktis.</p>
+        `
+      }
+    ]
+  },
+
+  6: {
+    title: "Model, Migration & Database",
+    slides: [
+      {
+        title: "Pengenalan Model, Migration, dan Eloquent",
+        content: `
+          <p>Laravel memiliki tiga komponen penting untuk bekerja dengan database:</p>
+
+          <ul>
+            <li><strong>Model</strong> — representasi tabel dalam bentuk kelas PHP.</li>
+            <li><strong>Migration</strong> — file yang berisi blueprint struktur tabel database.</li>
+            <li><strong>Eloquent ORM</strong> — sistem ORM Laravel untuk mengakses dan mengelola data database dengan sintaks PHP yang mudah.</li>
+          </ul>
+
+          <p>Dengan ketiganya, kamu bisa mengelola database secara efisien tanpa harus menulis query SQL manual.</p>
+        `
+      },
+      {
+        title: "Konfigurasi Koneksi Database di .env",
+        content: `
+          <p>Laravel menyimpan konfigurasi koneksi database di file <code>.env</code> di root proyek.</p>
+
+          <pre><code>
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=laravel_db
+DB_USERNAME=root
+DB_PASSWORD=
+          </code></pre>
+
+          <p>Pastikan database dengan nama yang sesuai sudah dibuat di <strong>phpMyAdmin</strong> atau <strong>MySQL</strong>.</p>
+
+          <p>Jika sudah, kamu bisa mengetes koneksi dengan menjalankan migration default Laravel.</p>
+        `
+      },
+      {
+        title: "Membuat Migration",
+        content: `
+          <p>Migration digunakan untuk membuat dan mengubah struktur tabel secara versioning.</p>
+
+          <p>Buat migration baru dengan perintah:</p>
+
+          <pre><code>
+php artisan make:migration create_posts_table
+          </code></pre>
+
+          <p>File migration akan tersimpan di <code>database/migrations/</code>.</p>
+
+          <p>Contoh isi migration:</p>
+
+          <pre><code>
+public function up(): void
+{
+    Schema::create('posts', function (Blueprint $table) {
         $table->id();
-        $table->string('name');
-        $table->text('description')->nullable();
-        $table->string('image')->nullable(); // untuk upload gambar
+        $table->string('judul');
+        $table->text('konten');
         $table->timestamps();
-      });
-              </code></pre>
+    });
+}
+          </code></pre>
 
-              <p>Contoh migration <code>create_bookings_table</code>:</p>
-              <pre><code>
-      Schema::create('bookings', function (Blueprint $table) {
-        $table->id();
-        $table->foreignId('user_id')->constrained()->onDelete('cascade');
-        $table->foreignId('room_id')->constrained()->onDelete('cascade');
-        $table->date('date');
-        $table->time('start_time');
-        $table->time('end_time');
-        $table->string('status')->default('pending');
-        $table->timestamps();
-      });
-              </code></pre>
+          <p>Jalankan migration untuk membuat tabel di database:</p>
 
-              <p>Jalankan migration:</p>
-              <pre><code>
-      php artisan migrate
-              </code></pre>
-            `
-          },
-          {
-            title: "Relasi Model & Eloquent",
-            content: `
-              <p>Definisikan relasi di model:</p>
-              <pre><code>
-      // app/Models/User.php
-      public function bookings() {
-        return $this->hasMany(Booking::class);
-      }
-
-      // app/Models/Room.php
-      public function bookings() {
-        return $this->hasMany(Booking::class);
-      }
-
-      // app/Models/Booking.php
-      public function user() {
-        return $this->belongsTo(User::class);
-      }
-      public function room() {
-        return $this->belongsTo(Room::class);
-      }
-              </code></pre>
-
-              <p>Gunakan eager loading saat mengambil data:</p>
-              <pre><code>
-      $bookings = Booking::with(['user','room'])->paginate(10);
-              </code></pre>
-            `
-          },
-          {
-            title: "Controller, Routing & Resource Controller",
-            content: `
-              <p>Buat resource controller untuk CRUD:</p>
-              <pre><code>
-      php artisan make:controller RoomController --resource
-      php artisan make:controller BookingController --resource
-              </code></pre>
-
-              <p>Daftarkan route resource di <code>routes/web.php</code>:</p>
-              <pre><code>
-      Route::resource('rooms', RoomController::class)->middleware('auth');
-      Route::resource('bookings', BookingController::class)->middleware('auth');
-              </code></pre>
-
-              <p>Tambahkan route khusus untuk admin (group middleware):</p>
-              <pre><code>
-      Route::middleware(['auth','admin'])->group(function () {
-        Route::resource('rooms', RoomController::class);
-      });
-              </code></pre>
-            `
-          },
-          {
-            title: "View & Blade: Form CRUD & Upload Gambar",
-            content: `
-              <p>Contoh form create room (upload gambar):</p>
-              <pre><code>
-      &lt;form action="{{ route('rooms.store') }}" method="POST" enctype="multipart/form-data"&gt;
-        @csrf
-        &lt;input type="text" name="name" required&gt;
-        &lt;textarea name="description"&gt;&lt;/textarea&gt;
-        &lt;input type="file" name="image"&gt;
-        &lt;button type="submit"&gt;Simpan&lt;/button&gt;
-      &lt;/form&gt;
-              </code></pre>
-
-              <p>Controller store menangani upload:</p>
-              <pre><code>
-      public function store(Request $request) {
-        $request->validate([
-          'name' => 'required',
-          'image' => 'nullable|image|max:2048'
-        ]);
-
-        $path = $request->file('image') ? $request->file('image')->store('public/rooms') : null;
-
-        Room::create([
-          'name' => $request->name,
-          'description' => $request->description,
-          'image' => $path
-        ]);
-
-        return redirect()->route('rooms.index')->with('success','Room dibuat!');
-      }
-              </code></pre>
-
-              <p>Tampilkan gambar di view:</p>
-              <pre><code>
-      &lt;img src="{{ Storage::url($room->image) }}" alt="Gambar Room" width="200"&gt;
-              </code></pre>
-            `
-          },
-          {
-            title: "Booking Logic, Validasi & Proteksi (Middleware)",
-            content: `
-              <p>Logika utama booking (di BookingController@store):</p>
-              <pre><code>
-      $request->validate([
-        'room_id' => 'required|exists:rooms,id',
-        'date' => 'required|date',
-        'start_time' => 'required',
-        'end_time' => 'required|after:start_time'
-      ]);
-
-      // Cek bentrok booking di jam yg sama
-      $conflict = Booking::where('room_id', $request->room_id)
-        ->where('date', $request->date)
-        ->where(function($q) use($request){
-          $q->whereBetween('start_time', [$request->start_time, $request->end_time])
-            ->orWhereBetween('end_time', [$request->start_time, $request->end_time]);
-        })->exists();
-
-      if($conflict){
-        return back()->with('error','Waktu sudah dibooking!');
-      }
-
-      // Simpan booking
-      Booking::create([...]);
-              </code></pre>
-
-              <p>Gunakan middleware <code>auth</code> untuk memastikan hanya user terautentikasi yang bisa booking, dan middleware custom <code>admin</code> untuk halaman manajemen ruangan.</p>
-            `
-          },
-          {
-            title: "Search, Pagination & Flash Message",
-            content: `
-              <p>Tambahkan pencarian & pagination di daftar booking:</p>
-              <pre><code>
-      public function index(Request $request){
-        $q = $request->input('q');
-        $bookings = Booking::with('room','user')
-          ->when($q, fn($query) =&gt; $query-&gt;whereHas('room', fn($q2) =&gt; $q2-&gt;where('name','like',"%{$q}%")))
-          -&gt;orderBy('date','desc')
-          -&gt;paginate(10);
-
-        return view('bookings.index', compact('bookings','q'));
-      }
-              </code></pre>
-
-              <p>Tampilkan flash message di layout utama:</p>
-              <pre><code>
-      @if(session('success'))
-        &lt;div class="alert alert-success"&gt;{{ session('success') }}&lt;/div&gt;
-      @endif
-      @if(session('error'))
-        &lt;div class="alert alert-danger"&gt;{{ session('error') }}&lt;/div&gt;
-      @endif
-              </code></pre>
-            `
-          },
-          {
-            title: "Seeder, Factory & Testing Singkat",
-            content: `
-              <p>Buat factory & seeder untuk mengisi data awal:</p>
-              <pre><code>
-      php artisan make:factory RoomFactory --model=Room
-      php artisan make:seeder RoomSeeder
-      php artisan db:seed --class=RoomSeeder
-              </code></pre>
-
-              <p>Contoh generate 10 booking dummy:</p>
-              <pre><code>
-      Booking::factory()->count(10)->create();
-              </code></pre>
-
-              <p>Testing singkat (feature test) untuk memastikan booking tidak bentrok:</p>
-              <pre><code>
-      public function test_booking_conflict()
+          <pre><code>
+php artisan migrate
+          </code></pre>
+        `
+      },
       {
-        // buat data, lakukan post booking, assert session error jika bentrok
-      }
-              </code></pre>
-            `
-          },
-          {
-            title: "Deployment Ringan & Checklist Sebelum Selesai",
-            content: `
-              <p>Checklist sebelum deploy:</p>
-              <ul>
-                <li>✅ Set <code>APP_ENV=production</code> & <code>APP_DEBUG=false</code></li>
-                <li>✅ Jalankan <code>php artisan config:cache</code> & <code>php artisan route:cache</code></li>
-                <li>✅ Pastikan storage link: <code>php artisan storage:link</code></li>
-                <li>✅ Backup database & lakukan migration di server</li>
-                <li>✅ Atur cron / scheduler (jika perlu)</li>
-              </ul>
+        title: "Membuat Model",
+        content: `
+          <p><strong>Model</strong> adalah representasi tabel di database. Setiap model biasanya berhubungan dengan satu tabel.</p>
 
-              <p>Deploy sederhana ke VPS atau shared hosting (upload build, atur virtual host, set permission & .env).</p>
-            `
-          },
-          {
-            title: "Video: Membangun Aplikasi Reservasi Lengkap di Laravel",
-            video: "https://www.youtube.com/embed/ImtZ5yENzgE",
-            content: `
-              <p>Tonton video ini untuk panduan lengkap pembuatan aplikasi reservasi dari awal sampai akhir — termasuk autentikasi, CRUD, upload file, validasi waktu booking, dan deployment sederhana.</p>
-              <p>Video di atas akan memandu langkah demi langkah. Setelah menonton, langsung praktikkan modul per modul agar lebih cepat paham 🔧</p>
-            `
-          }
-        ]
-      }
+          <p>Buat model dengan perintah:</p>
 
-    };
+          <pre><code>
+php artisan make:model Post
+          </code></pre>
+
+          <p>Secara default, model <code>Post</code> akan terhubung ke tabel <code>posts</code>.</p>
+
+          <p>Contoh model sederhana:</p>
+
+          <pre><code>
+&lt;?php
+
+namespace App\\Models;
+
+use Illuminate\\Database\\Eloquent\\Model;
+
+class Post extends Model
+{
+    protected $fillable = ['judul', 'konten'];
+}
+          </code></pre>
+
+          <p>Properti <code>$fillable</code> menentukan kolom mana saja yang boleh diisi secara massal (mass assignment).</p>
+        `
+      },
+      {
+        title: "Dasar Eloquent ORM",
+        content: `
+          <p><strong>Eloquent ORM</strong> memudahkan kamu untuk melakukan operasi database dengan sintaks PHP yang simpel.</p>
+
+          <h4>🟢 Ambil Semua Data</h4>
+          <pre><code>
+$posts = Post::all();
+          </code></pre>
+
+          <h4>🔵 Ambil Data Berdasarkan ID</h4>
+          <pre><code>
+$post = Post::find(1);
+          </code></pre>
+
+          <h4>🟡 Menambahkan Data Baru</h4>
+          <pre><code>
+Post::create([
+    'judul' => 'Judul Pertama',
+    'konten' => 'Ini isi postingan pertama.'
+]);
+          </code></pre>
+
+          <h4>🟣 Mengupdate Data</h4>
+          <pre><code>
+$post = Post::find(1);
+$post->update(['judul' => 'Judul Diperbarui']);
+          </code></pre>
+
+          <h4>🔴 Menghapus Data</h4>
+          <pre><code>
+$post = Post::find(1);
+$post->delete();
+          </code></pre>
+
+          <p>Eloquent sangat intuitif — kamu bisa membaca data layaknya bekerja dengan objek PHP biasa.</p>
+        `
+      },
+      {
+        title: "Seeder & Factory untuk Data Dummy",
+        content: `
+          <p>Laravel menyediakan <strong>Seeder</strong> dan <strong>Factory</strong> untuk membuat data palsu (dummy) secara cepat.</p>
+
+          <h4>🧱 Membuat Seeder</h4>
+          <pre><code>
+php artisan make:seeder PostSeeder
+          </code></pre>
+
+          <p>Edit file di <code>database/seeders/PostSeeder.php</code>:</p>
+
+          <pre><code>
+public function run(): void
+{
+    \\App\\Models\\Post::create([
+        'judul' => 'Contoh Judul',
+        'konten' => 'Isi konten contoh.'
+    ]);
+}
+          </code></pre>
+
+          <p>Jalankan seeder:</p>
+          <pre><code>
+php artisan db:seed --class=PostSeeder
+          </code></pre>
+
+          <h4>🧪 Membuat Factory</h4>
+          <pre><code>
+php artisan make:factory PostFactory --model=Post
+          </code></pre>
+
+          <p>Edit <code>database/factories/PostFactory.php</code>:</p>
+
+          <pre><code>
+public function definition(): array
+{
+    return [
+        'judul' => fake()->sentence(),
+        'konten' => fake()->paragraph(),
+    ];
+}
+          </code></pre>
+
+          <p>Lalu generate data dummy:</p>
+          <pre><code>
+Post::factory()->count(10)->create();
+          </code></pre>
+        `
+      },
+      {
+        title: "Video: Model, Migration, dan Eloquent ORM",
+        video: "https://www.youtube.com/embed/bT1g2x2c1gY",
+        content: `
+          <p>Tonton video ini untuk memahami cara kerja <strong>Model</strong>, <strong>Migration</strong>, dan <strong>Eloquent ORM</strong> secara visual.</p>
+          <p>Video ini juga menunjukkan cara membuat tabel, menghubungkan model, serta melakukan CRUD dengan sintaks yang mudah dipahami.</p>
+        `
+      }
+    ]
+  },
+
+  7: {
+    title: "CRUD (Create, Read, Update, Delete)",
+    slides: [
+      {
+        title: "Tujuan & Gambaran Umum",
+        content: `
+          <p>Pada tahap ini kamu akan belajar membangun fitur <strong>CRUD (Create, Read, Update, Delete)</strong> secara lengkap menggunakan Laravel.</p>
+          <p>CRUD adalah inti dari hampir semua aplikasi web — digunakan untuk <strong>mengelola data</strong> seperti menambah, menampilkan, mengedit, dan menghapus.</p>
+
+          <p>Di materi ini kamu akan belajar:</p>
+          <ul>
+            <li>Menampilkan data dari database (Read)</li>
+            <li>Menambah data baru melalui form (Create)</li>
+            <li>Mengedit dan memperbarui data (Update)</li>
+            <li>Menghapus data (Delete)</li>
+            <li>Melakukan validasi input</li>
+            <li>Menampilkan pesan notifikasi (flash message)</li>
+            <li>Menambahkan pagination untuk daftar data</li>
+          </ul>
+
+          <p>Tujuannya: supaya kamu bisa membuat <strong>fitur CRUD lengkap</strong> seperti pada aplikasi manajemen pengguna, produk, atau artikel.</p>
+        `
+      },
+      {
+        title: "Menampilkan Data (Read)",
+        content: `
+          <p>Langkah pertama adalah menampilkan data dari database menggunakan <strong>Eloquent ORM</strong>.</p>
+
+          <pre><code>
+// Controller
+public function index() {
+  $users = User::paginate(10); // ambil data 10 per halaman
+  return view('users.index', compact('users'));
+}
+          </code></pre>
+
+          <p>Di file Blade:</p>
+          <pre><code>
+@foreach ($users as $user)
+  &lt;tr&gt;
+    &lt;td&gt;{{ $user->name }}&lt;/td&gt;
+    &lt;td&gt;{{ $user->email }}&lt;/td&gt;
+  &lt;/tr&gt;
+@endforeach
+
+{{ $users->links() }} <!-- pagination -->
+          </code></pre>
+
+          <p>Dengan ini kamu sudah bisa menampilkan data pengguna dari tabel <code>users</code> di database.</p>
+        `
+      },
+      {
+        title: "Menambah Data (Create)",
+        content: `
+          <p>Buat form untuk menambah data baru:</p>
+          <pre><code>
+&lt;form action="{{ route('users.store') }}" method="POST"&gt;
+  @csrf
+  &lt;input type="text" name="name" placeholder="Nama"&gt;
+  &lt;input type="email" name="email" placeholder="Email"&gt;
+  &lt;button type="submit"&gt;Simpan&lt;/button&gt;
+&lt;/form&gt;
+          </code></pre>
+
+          <p>Di controller:</p>
+          <pre><code>
+public function store(Request $request) {
+  $request->validate([
+    'name' => 'required|min:3',
+    'email' => 'required|email|unique:users'
+  ]);
+
+  User::create($request->all());
+  return redirect()->route('users.index')->with('success', 'Data berhasil ditambahkan!');
+}
+          </code></pre>
+
+          <p>Pastikan model <code>User</code> memiliki properti <code>$fillable</code> agar mass assignment bisa dilakukan.</p>
+        `
+      },
+      {
+        title: "Edit & Update Data",
+        content: `
+          <p>Untuk mengedit data, tampilkan form dengan nilai lama yang sudah ada.</p>
+          <pre><code>
+&lt;form action="{{ route('users.update', $user->id) }}" method="POST"&gt;
+  @csrf
+  @method('PUT')
+  &lt;input type="text" name="name" value="{{ $user->name }}"&gt;
+  &lt;input type="email" name="email" value="{{ $user->email }}"&gt;
+  &lt;button type="submit"&gt;Update&lt;/button&gt;
+&lt;/form&gt;
+          </code></pre>
+
+          <p>Di controller:</p>
+          <pre><code>
+public function update(Request $request, $id) {
+  $request->validate([
+    'name' => 'required|min:3',
+    'email' => 'required|email|unique:users,email,' . $id
+  ]);
+
+  $user = User::findOrFail($id);
+  $user->update($request->all());
+
+  return redirect()->route('users.index')->with('success', 'Data berhasil diperbarui!');
+}
+          </code></pre>
+        `
+      },
+      {
+        title: "Menghapus Data (Delete)",
+        content: `
+          <p>Untuk menghapus data, buat tombol dengan method <code>DELETE</code>:</p>
+
+          <pre><code>
+&lt;form action="{{ route('users.destroy', $user->id) }}" method="POST" onsubmit="return confirm('Yakin hapus?')"&gt;
+  @csrf
+  @method('DELETE')
+  &lt;button type="submit"&gt;Hapus&lt;/button&gt;
+&lt;/form&gt;
+          </code></pre>
+
+          <p>Di controller:</p>
+          <pre><code>
+public function destroy($id) {
+  User::findOrFail($id)->delete();
+  return redirect()->route('users.index')->with('success', 'Data berhasil dihapus!');
+}
+          </code></pre>
+        `
+      },
+      {
+        title: "Validasi Input & Flash Message",
+        content: `
+          <p>Gunakan validasi untuk memastikan data sesuai aturan.</p>
+
+          <pre><code>
+$request->validate([
+  'name' => 'required|min:3',
+  'email' => 'required|email'
+]);
+          </code></pre>
+
+          <p>Setelah aksi berhasil, tambahkan notifikasi (flash message):</p>
+
+          <pre><code>
+return redirect()->route('users.index')->with('success', 'Data tersimpan!');
+          </code></pre>
+
+          <p>Di Blade:</p>
+          <pre><code>
+@if(session('success'))
+  &lt;div class="alert alert-success"&gt;{{ session('success') }}&lt;/div&gt;
+@endif
+          </code></pre>
+        `
+      },
+      {
+        title: "Pagination Sederhana",
+        content: `
+          <p>Pagination memudahkan pembagian data menjadi beberapa halaman.</p>
+
+          <pre><code>
+// Controller
+$users = User::paginate(10);
+          </code></pre>
+
+          <pre><code>
+<!-- View -->
+{{ $users->links() }}
+          </code></pre>
+
+          <p>Laravel otomatis membuat navigasi halaman (Next, Previous, dll) agar tampilan lebih rapi.</p>
+        `
+      },
+      {
+        title: "Video: Membuat CRUD Lengkap di Laravel",
+        video: "https://www.youtube.com/embed/ImtZ5yENzgE",
+        content: `
+          <p>Video ini akan memandu kamu membuat fitur CRUD lengkap di Laravel mulai dari routing, controller, form, hingga flash message.</p>
+          <p>Ikuti langkah-langkahnya dan coba praktek langsung di proyekmu 🔥</p>
+        `
+      }
+    ]
+  },
+
+  8: {
+    title: "Authentication (Login, Register, Logout)",
+    slides: [
+      {
+        title: "Tujuan & Gambaran Umum",
+        content: `
+          <p>Pada tahap ini, kamu akan belajar membuat sistem <strong>autentikasi pengguna</strong> — yaitu proses login, register, dan logout.</p>
+          <p>Dengan autentikasi, aplikasi bisa membedakan antara pengguna yang sudah login dan yang belum (guest), serta mengatur akses berdasarkan status tersebut.</p>
+
+          <p>Di materi ini kamu akan mempelajari:</p>
+          <ul>
+            <li>Menjalankan <code>php artisan ui</code> atau <code>breeze</code> untuk scaffolding cepat (opsional)</li>
+            <li>Membuat sistem login & register secara manual</li>
+            <li>Menerapkan <strong>middleware auth</strong> dan <strong>guest</strong></li>
+            <li>Menampilkan data user yang sedang login</li>
+            <li>Membuat fitur logout</li>
+          </ul>
+
+          <p>Tujuannya: agar kamu bisa membuat sistem login dasar yang aman dan efisien tanpa harus menggunakan package tambahan.</p>
+        `
+      },
+      {
+        title: "Opsi Cepat: Laravel UI atau Breeze",
+        content: `
+          <p>Laravel menyediakan dua opsi cepat untuk membuat autentikasi otomatis:</p>
+          <ul>
+            <li><strong>Laravel UI</strong> (untuk Blade + Bootstrap)</li>
+            <li><strong>Laravel Breeze</strong> (untuk Blade, React, Vue, atau Inertia)</li>
+          </ul>
+
+          <pre><code>
+# Laravel UI (Blade + Bootstrap)
+composer require laravel/ui
+php artisan ui bootstrap --auth
+npm install && npm run dev
+
+# Laravel Breeze
+composer require laravel/breeze --dev
+php artisan breeze:install
+npm install && npm run dev
+php artisan migrate
+          </code></pre>
+
+          <p>Kedua cara ini akan membuatkan <strong>form login, register, logout, dan proteksi route</strong> secara otomatis.</p>
+          <p>Namun, jika kamu ingin lebih memahami dasarnya — kita akan buat manual di langkah berikutnya.</p>
+        `
+      },
+      {
+        title: "Membuat Form Register Manual",
+        content: `
+          <p>Langkah pertama adalah membuat form register sederhana di Blade:</p>
+
+          <pre><code>
+&lt;form action="{{ route('register.post') }}" method="POST"&gt;
+  @csrf
+  &lt;input type="text" name="name" placeholder="Nama Lengkap"&gt;
+  &lt;input type="email" name="email" placeholder="Email"&gt;
+  &lt;input type="password" name="password" placeholder="Password"&gt;
+  &lt;button type="submit"&gt;Daftar&lt;/button&gt;
+&lt;/form&gt;
+          </code></pre>
+
+          <p>Di controller:</p>
+          <pre><code>
+use Illuminate\\Support\\Facades\\Hash;
+use App\\Models\\User;
+
+public function registerPost(Request $request) {
+  $request->validate([
+    'name' => 'required',
+    'email' => 'required|email|unique:users',
+    'password' => 'required|min:6'
+  ]);
+
+  User::create([
+    'name' => $request->name,
+    'email' => $request->email,
+    'password' => Hash::make($request->password)
+  ]);
+
+  return redirect()->route('login')->with('success', 'Akun berhasil dibuat!');
+}
+          </code></pre>
+
+          <p>Pastikan model <code>User</code> memiliki <code>$fillable</code> yang sesuai.</p>
+        `
+      },
+      {
+        title: "Membuat Form Login Manual",
+        content: `
+          <p>Selanjutnya, buat form login di Blade:</p>
+          <pre><code>
+&lt;form action="{{ route('login.post') }}" method="POST"&gt;
+  @csrf
+  &lt;input type="email" name="email" placeholder="Email"&gt;
+  &lt;input type="password" name="password" placeholder="Password"&gt;
+  &lt;button type="submit"&gt;Login&lt;/button&gt;
+&lt;/form&gt;
+          </code></pre>
+
+          <p>Di controller:</p>
+          <pre><code>
+use Illuminate\\Support\\Facades\\Auth;
+
+public function loginPost(Request $request) {
+  $credentials = $request->only('email', 'password');
+
+  if (Auth::attempt($credentials)) {
+    $request->session()->regenerate();
+    return redirect()->intended('dashboard');
+  }
+
+  return back()->withErrors(['email' => 'Email atau password salah!']);
+}
+          </code></pre>
+
+          <p>Jika login berhasil, user akan diarahkan ke halaman dashboard.</p>
+        `
+      },
+      {
+        title: "Menampilkan Data User Login",
+        content: `
+          <p>Laravel menyediakan helper <code>Auth::user()</code> untuk mendapatkan data pengguna yang sedang login.</p>
+
+          <pre><code>
+@if (Auth::check())
+  &lt;p&gt;Halo, {{ Auth::user()->name }}!&lt;/p&gt;
+@endif
+          </code></pre>
+
+          <p>Kamu juga bisa menggunakannya di controller:</p>
+          <pre><code>
+$user = Auth::user();
+return view('dashboard', compact('user'));
+          </code></pre>
+        `
+      },
+      {
+        title: "Middleware Auth dan Guest",
+        content: `
+          <p>Gunakan <strong>middleware</strong> untuk mengatur akses halaman:</p>
+
+          <pre><code>
+// Hanya untuk user yang sudah login
+Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth');
+
+// Hanya untuk tamu (belum login)
+Route::get('/login', [AuthController::class, 'showLogin'])->middleware('guest');
+          </code></pre>
+
+          <p>Jika user mencoba mengakses halaman tanpa login, mereka akan diarahkan ke halaman login secara otomatis.</p>
+        `
+      },
+      {
+        title: "Logout User",
+        content: `
+          <p>Untuk keluar dari sesi login, gunakan <code>Auth::logout()</code>.</p>
+
+          <pre><code>
+public function logout(Request $request) {
+  Auth::logout();
+  $request->session()->invalidate();
+  $request->session()->regenerateToken();
+
+  return redirect('/login')->with('success', 'Berhasil logout!');
+}
+          </code></pre>
+
+          <p>Buat tombol logout di Blade:</p>
+          <pre><code>
+&lt;form action="{{ route('logout') }}" method="POST"&gt;
+  @csrf
+  &lt;button type="submit"&gt;Logout&lt;/button&gt;
+&lt;/form&gt;
+          </code></pre>
+        `
+      },
+      {
+        title: "Video: Membuat Login & Register Manual di Laravel",
+        video: "https://www.youtube.com/embed/7UZGN6Wk9yE",
+        content: `
+          <p>Video ini menjelaskan langkah-langkah membuat sistem autentikasi manual di Laravel — mulai dari register, login, middleware, hingga logout.</p>
+          <p>Tonton dan ikuti praktiknya untuk memahami alur autentikasi dengan baik 🔐</p>
+        `
+      }
+    ]
+  },
+
+  9: {
+    title: "Middleware & Proteksi Halaman",
+    slides: [
+      {
+        title: "Tujuan & Konsep Dasar Middleware",
+        content: `
+          <p><strong>Middleware</strong> adalah lapisan perantara antara <em>request</em> (permintaan dari user) dan <em>response</em> (balasan dari server).</p>
+          <p>Fungsinya untuk <strong>memeriksa, memfilter, atau memodifikasi</strong> permintaan sebelum diteruskan ke controller.</p>
+          <p>Biasanya digunakan untuk:</p>
+          <ul>
+            <li>🔐 Mengecek apakah user sudah login</li>
+            <li>🧩 Membatasi akses berdasarkan role (admin, user, guest)</li>
+            <li>🚧 Mencegah akses halaman tanpa izin</li>
+          </ul>
+
+          <p>Contoh alur kerja Middleware:</p>
+          <pre><code>
+Request → Middleware (cek login/role) → Controller → View
+          </code></pre>
+        `
+      },
+      {
+        title: "Middleware Bawaan Laravel",
+        content: `
+          <p>Laravel sudah menyediakan beberapa <strong>middleware default</strong> yang bisa langsung digunakan:</p>
+          <ul>
+            <li><code>auth</code> – memastikan user sudah login</li>
+            <li><code>guest</code> – memastikan user belum login</li>
+            <li><code>verified</code> – hanya untuk user yang sudah verifikasi email</li>
+            <li><code>throttle</code> – membatasi jumlah request (anti spam / rate limit)</li>
+          </ul>
+
+          <p>Contoh penggunaannya di route:</p>
+          <pre><code>
+Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth');
+          </code></pre>
+        `
+      },
+      {
+        title: "Membuat Middleware Sendiri",
+        content: `
+          <p>Untuk membuat middleware kustom, gunakan perintah artisan berikut:</p>
+          <pre><code>
+php artisan make:middleware CekAdmin
+          </code></pre>
+
+          <p>Kemudian buka file yang dibuat di <code>app/Http/Middleware/CekAdmin.php</code> dan ubah logikanya seperti berikut:</p>
+          <pre><code>
+public function handle($request, Closure $next)
+{
+    if (Auth::user()->role !== 'admin') {
+        return redirect('/')->with('error', 'Akses ditolak!');
+    }
+
+    return $next($request);
+}
+          </code></pre>
+
+          <p>Middleware ini akan menolak semua user yang bukan admin dan mengarahkan mereka kembali ke halaman utama.</p>
+        `
+      },
+      {
+        title: "Mendaftarkan dan Menggunakan Middleware",
+        content: `
+          <p>Setelah membuat middleware, daftarkan di file <code>app/Http/Kernel.php</code> pada bagian <code>$routeMiddleware</code>:</p>
+
+          <pre><code>
+'admin' => \\App\\Http\\Middleware\\CekAdmin::class,
+          </code></pre>
+
+          <p>Lalu gunakan middleware tersebut di route:</p>
+          <pre><code>
+// Hanya user login yang bisa akses
+Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth');
+
+// Hanya admin yang bisa akses
+Route::get('/admin', [AdminController::class, 'index'])->middleware('admin');
+
+// Hanya guest (belum login)
+Route::get('/login', [AuthController::class, 'showLogin'])->middleware('guest');
+          </code></pre>
+        `
+      },
+      {
+        title: "Proteksi Halaman & Redirect",
+        content: `
+          <p>Jika user mencoba mengakses halaman tanpa izin, kamu bisa melakukan redirect dan menampilkan pesan peringatan.</p>
+          <pre><code>
+return redirect('/')->with('error', 'Kamu tidak punya akses ke halaman ini!');
+          </code></pre>
+
+          <p>Selain itu, kamu bisa menambahkan middleware ke <strong>group route</strong> agar lebih rapi:</p>
+          <pre><code>
+Route::middleware(['auth', 'admin'])->group(function () {
+    Route::get('/admin/dashboard', [AdminController::class, 'index']);
+    Route::get('/admin/users', [UserController::class, 'index']);
+});
+          </code></pre>
+
+          <p>Dengan cara ini, semua route di dalam group hanya bisa diakses oleh admin yang sudah login.</p>
+        `
+      },
+      {
+        title: "Video: Mengenal & Menggunakan Middleware di Laravel",
+        video: "https://www.youtube.com/embed/9i9t7B8T_1k",
+        content: `
+          <p>Tonton video ini untuk memahami cara kerja Middleware di Laravel serta penerapannya dalam proteksi halaman dan role user.</p>
+          <p>Setelah menonton, coba buat sendiri Middleware sederhana untuk membatasi akses ke halaman admin 🚀</p>
+        `
+      }
+    ]
+  },
+
+  10: {
+    title: "Relasi Eloquent (Database Relationship)",
+    slides: [
+      {
+        title: "Tujuan & Konsep Relasi Eloquent",
+        content: `
+          <p>Dalam database, tabel sering kali <strong>berhubungan</strong> satu sama lain — misalnya, satu user bisa punya banyak postingan, atau satu produk bisa dimiliki banyak kategori.</p>
+          <p>Di Laravel, hubungan ini dikelola oleh <strong>Eloquent ORM</strong> menggunakan relasi seperti:</p>
+          <ul>
+            <li>👥 <strong>One to One</strong> – satu data punya satu pasangan</li>
+            <li>📚 <strong>One to Many</strong> – satu data punya banyak data lain</li>
+            <li>🔗 <strong>Many to Many</strong> – banyak data saling terhubung satu sama lain</li>
+          </ul>
+
+          <p>Relasi membantu kita mengambil data antar tabel dengan mudah tanpa query SQL yang rumit.</p>
+        `
+      },
+      {
+        title: "One to One Relationship",
+        content: `
+          <p>Relasi <strong>One to One</strong> artinya satu baris di tabel A hanya berhubungan dengan satu baris di tabel B.</p>
+          <p>Contoh: satu user hanya punya satu profil.</p>
+
+          <p>Struktur tabel:</p>
+          <pre><code>
+users
+  id
+  name
+
+profiles
+  id
+  user_id
+  bio
+          </code></pre>
+
+          <p>Model <code>User</code>:</p>
+          <pre><code>
+public function profile()
+{
+    return $this->hasOne(Profile::class);
+}
+          </code></pre>
+
+          <p>Model <code>Profile</code>:</p>
+          <pre><code>
+public function user()
+{
+    return $this->belongsTo(User::class);
+}
+          </code></pre>
+
+          <p>Mengambil data relasi:</p>
+          <pre><code>
+$user = User::find(1);
+echo $user->profile->bio;
+          </code></pre>
+        `
+      },
+      {
+        title: "One to Many Relationship",
+        content: `
+          <p>Relasi <strong>One to Many</strong> artinya satu baris di tabel A bisa berhubungan dengan banyak baris di tabel B.</p>
+          <p>Contoh: satu user bisa punya banyak postingan.</p>
+
+          <pre><code>
+users
+  id
+  name
+
+posts
+  id
+  user_id
+  title
+  body
+          </code></pre>
+
+          <p>Model <code>User</code>:</p>
+          <pre><code>
+public function posts()
+{
+    return $this->hasMany(Post::class);
+}
+          </code></pre>
+
+          <p>Model <code>Post</code>:</p>
+          <pre><code>
+public function user()
+{
+    return $this->belongsTo(User::class);
+}
+          </code></pre>
+
+          <p>Mengambil semua postingan milik user:</p>
+          <pre><code>
+$user = User::find(1);
+foreach ($user->posts as $post) {
+    echo $post->title;
+}
+          </code></pre>
+        `
+      },
+      {
+        title: "Many to Many Relationship",
+        content: `
+          <p>Relasi <strong>Many to Many</strong> digunakan jika banyak data di tabel A bisa terhubung dengan banyak data di tabel B.</p>
+          <p>Contoh: satu siswa bisa mengambil banyak pelajaran, dan satu pelajaran bisa diambil oleh banyak siswa.</p>
+
+          <p>Kita membutuhkan tabel pivot:</p>
+          <pre><code>
+students
+  id
+  name
+
+subjects
+  id
+  title
+
+student_subject
+  student_id
+  subject_id
+          </code></pre>
+
+          <p>Model <code>Student</code>:</p>
+          <pre><code>
+public function subjects()
+{
+    return $this->belongsToMany(Subject::class);
+}
+          </code></pre>
+
+          <p>Model <code>Subject</code>:</p>
+          <pre><code>
+public function students()
+{
+    return $this->belongsToMany(Student::class);
+}
+          </code></pre>
+
+          <p>Mengambil data relasi:</p>
+          <pre><code>
+$student = Student::find(1);
+foreach ($student->subjects as $subject) {
+    echo $subject->title;
+}
+          </code></pre>
+        `
+      },
+      {
+        title: "Menampilkan Data Relasi di View",
+        content: `
+          <p>Untuk menampilkan data relasi di Blade View, cukup kirim data dari controller:</p>
+          <pre><code>
+public function index() {
+    $users = User::with('posts')->get();
+    return view('user.index', compact('users'));
+}
+          </code></pre>
+
+          <p>Dan di file <code>user/index.blade.php</code>:</p>
+          <pre><code>
+@foreach($users as $user)
+  &lt;h3&gt;{{ $user->name }}&lt;/h3&gt;
+  &lt;ul&gt;
+    @foreach($user->posts as $post)
+      &lt;li&gt;{{ $post->title }}&lt;/li&gt;
+    @endforeach
+  &lt;/ul&gt;
+@endforeach
+          </code></pre>
+
+          <p>Dengan <code>with()</code>, Eloquent otomatis mengambil data relasi tanpa query tambahan (dikenal sebagai <strong>eager loading</strong>).</p>
+        `
+      },
+      {
+        title: "Video: Relasi Eloquent di Laravel (One to One, One to Many, Many to Many)",
+        video: "https://www.youtube.com/embed/x_HC8oLZ4Lg",
+        content: `
+          <p>Tonton video ini untuk memahami cara kerja dan penerapan relasi antar model di Laravel menggunakan Eloquent ORM.</p>
+          <p>Setelah menonton, coba praktikkan membuat relasi <strong>user – posts</strong> dan tampilkan hasilnya di halaman view 🔗</p>
+        `
+      }
+    ]
+  },
+
+  11: {
+    title: "Blade & Frontend Lanjutan",
+    slides: [
+      {
+        title: "Tujuan & Gambaran Umum",
+        content: `
+          <p>Pada tahap ini, kamu akan belajar membuat tampilan Laravel yang lebih <strong>dinamis, rapi, dan profesional</strong>.</p>
+          <p>Kita akan memanfaatkan fitur lanjutan dari <strong>Blade Template Engine</strong> dan mengintegrasikan <strong>CSS Framework</strong> modern seperti Bootstrap atau Tailwind untuk mempercantik antarmuka.</p>
+
+          <ul>
+            <li>🔧 <strong>Komponen Blade</strong> — menulis UI yang bisa digunakan berulang.</li>
+            <li>🧩 <strong>Template multi-halaman</strong> — membangun layout dengan struktur konsisten.</li>
+            <li>🎨 <strong>Integrasi CSS Framework</strong> — membuat tampilan lebih menarik dan responsif.</li>
+            <li>💬 <strong>Notifikasi</strong> — menampilkan pesan interaktif seperti sukses, error, atau warning.</li>
+          </ul>
+        `
+      },
+      {
+        title: "Membuat Komponen Blade (<x-component />)",
+        content: `
+          <p><strong>Blade Components</strong> memungkinkan kita membuat potongan kode HTML yang bisa digunakan berulang di berbagai halaman — mirip seperti komponen di React atau Vue.</p>
+
+          <p>Membuat komponen baru:</p>
+          <pre><code>
+php artisan make:component Alert
+          </code></pre>
+
+          <p>Hasilnya akan membuat dua file:</p>
+          <ul>
+            <li><code>app/View/Components/Alert.php</code></li>
+            <li><code>resources/views/components/alert.blade.php</code></li>
+          </ul>
+
+          <p>Contoh isi <code>alert.blade.php</code>:</p>
+          <pre><code>
+&lt;div class="alert alert-{{ $type }}"&gt;
+  {{ $message }}
+&lt;/div&gt;
+          </code></pre>
+
+          <p>Menggunakannya di view:</p>
+          <pre><code>
+&lt;x-alert type="success" message="Data berhasil disimpan!" /&gt;
+          </code></pre>
+
+          <p>Dengan komponen, UI kamu jadi lebih modular dan mudah dikelola 💡</p>
+        `
+      },
+      {
+        title: "Template Layout Multi-Halaman",
+        content: `
+          <p>Untuk menjaga konsistensi antar halaman, gunakan konsep <strong>layout utama</strong> di Blade.</p>
+          <p>Buat layout utama di <code>resources/views/layouts/main.blade.php</code>:</p>
+
+          <pre><code>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;@yield('title') - MyApp&lt;/title&gt;
+  &lt;link rel="stylesheet" href="{{ asset('css/app.css') }}"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  @include('partials.navbar')
+  &lt;div class="container"&gt;
+    @yield('content')
+  &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+          </code></pre>
+
+          <p>Lalu di halaman lain, gunakan:</p>
+          <pre><code>
+@extends('layouts.main')
+
+@section('title', 'Dashboard')
+
+@section('content')
+  &lt;h1&gt;Selamat datang di Dashboard&lt;/h1&gt;
+@endsection
+          </code></pre>
+
+          <p>Dengan cara ini, kamu bisa punya struktur halaman yang konsisten tanpa duplikasi kode.</p>
+        `
+      },
+      {
+        title: "Integrasi CSS Framework (Bootstrap / Tailwind)",
+        content: `
+          <p>Kamu bisa memilih framework CSS favoritmu untuk mempercepat pembuatan UI.</p>
+
+          <h4>🔹 Menggunakan Bootstrap</h4>
+          <pre><code>
+npm install bootstrap
+          </code></pre>
+          <p>Kemudian impor di <code>resources/js/app.js</code>:</p>
+          <pre><code>
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap';
+          </code></pre>
+
+          <h4>🔹 Menggunakan Tailwind CSS</h4>
+          <pre><code>
+npm install -D tailwindcss
+npx tailwindcss init
+          </code></pre>
+          <p>Edit <code>tailwind.config.js</code> dan tambahkan path Blade:</p>
+          <pre><code>
+content: [
+  "./resources/**/*.blade.php",
+  "./resources/**/*.js",
+  "./resources/**/*.vue",
+],
+          </code></pre>
+
+          <p>Kemudian import Tailwind di <code>resources/css/app.css</code>:</p>
+          <pre><code>
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+          </code></pre>
+
+          <p>Terakhir, jalankan:</p>
+          <pre><code>
+npm run dev
+          </code></pre>
+
+          <p>Laravel kini siap tampil kece dan responsif 💅</p>
+        `
+      },
+      {
+        title: "Menampilkan Notifikasi (SweetAlert / Toastr)",
+        content: `
+          <p>Laravel bisa menampilkan notifikasi interaktif menggunakan <strong>SweetAlert2</strong> atau <strong>Toastr</strong>.</p>
+
+          <h4>1️⃣ Install SweetAlert2</h4>
+          <pre><code>
+npm install sweetalert2
+          </code></pre>
+
+          <p>Gunakan di Blade:</p>
+          <pre><code>
+&lt;script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"&gt;&lt;/script&gt;
+
+@if(session('success'))
+  &lt;script&gt;
+    Swal.fire({
+      icon: 'success',
+      title: 'Berhasil!',
+      text: '{{ session('success') }}'
+    })
+  &lt;/script&gt;
+@endif
+          </code></pre>
+
+          <h4>2️⃣ Alternatif: Toastr Notification</h4>
+          <pre><code>
+&lt;link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet"&gt;
+&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"&gt;&lt;/script&gt;
+
+@if(session('error'))
+  &lt;script&gt;
+    toastr.error('{{ session('error') }}')
+  &lt;/script&gt;
+@endif
+          </code></pre>
+
+          <p>Dengan notifikasi ini, pengalaman pengguna jadi lebih interaktif dan informatif ⚡</p>
+        `
+      },
+      {
+        title: "Video: Blade Components & Frontend Laravel Modern",
+        video: "https://www.youtube.com/embed/UGf6bYd5F8o",
+        content: `
+          <p>Video ini menjelaskan bagaimana membangun tampilan modern di Laravel menggunakan <strong>Blade Components</strong>, <strong>Tailwind CSS</strong>, dan <strong>SweetAlert</strong>.</p>
+          <p>Setelah menonton, coba buat komponen alert dan layout utama untuk proyekmu sendiri 🎨</p>
+        `
+      }
+    ]
+  },
+
+  12: {
+    title: "File Upload & Storage",
+    slides: [
+      {
+        title: "Tujuan & Gambaran Umum",
+        content: `
+          <p>Pada tahap ini, kamu akan belajar bagaimana cara <strong>mengunggah (upload)</strong> file ke sistem <strong>storage Laravel</strong>, menampilkannya di halaman web, dan menghapus file tersebut saat data dihapus.</p>
+          <p>Materi ini sangat penting karena hampir semua aplikasi web modern memiliki fitur upload — seperti upload foto profil, dokumen, atau gambar produk.</p>
+
+          <ul>
+            <li>📤 <strong>Membuat form upload</strong> untuk kirim file ke server.</li>
+            <li>💾 <strong>Menyimpan file ke storage</strong> Laravel.</li>
+            <li>🖼️ <strong>Menampilkan file di view</strong> menggunakan URL publik.</li>
+            <li>🗑️ <strong>Hapus file otomatis</strong> saat data dihapus.</li>
+          </ul>
+        `
+      },
+      {
+        title: "Membuat Form Upload",
+        content: `
+          <p>Buat form upload di view kamu (misal <code>create.blade.php</code>):</p>
+          <pre><code>
+&lt;form action="{{ route('upload.store') }}" method="POST" enctype="multipart/form-data"&gt;
+  @csrf
+  &lt;input type="file" name="gambar" class="form-control"&gt;
+  &lt;button type="submit" class="btn btn-primary"&gt;Upload&lt;/button&gt;
+&lt;/form&gt;
+          </code></pre>
+
+          <p>Pastikan menambahkan atribut <code>enctype="multipart/form-data"</code> agar file bisa terkirim dengan benar.</p>
+        `
+      },
+      {
+        title: "Menyimpan File ke Storage",
+        content: `
+          <p>Laravel menyediakan helper <code>store()</code> untuk menyimpan file ke folder <code>storage/app</code>. Contoh di controller:</p>
+          <pre><code>
+public function store(Request $request)
+{
+    $request->validate([
+        'gambar' => 'required|image|mimes:jpg,png,jpeg|max:2048',
+    ]);
+
+    $path = $request->file('gambar')->store('public/uploads');
+
+    // Simpan path ke database (opsional)
+    // Model::create(['path' => $path]);
+
+    return back()->with('success', 'File berhasil diupload!');
+}
+          </code></pre>
+
+          <p>Secara default, file akan tersimpan di folder <code>storage/app/public/uploads</code>.</p>
+        `
+      },
+      {
+        title: "Menampilkan File di View",
+        content: `
+          <p>Agar file bisa diakses publik, jalankan perintah berikut:</p>
+          <pre><code>
+php artisan storage:link
+          </code></pre>
+
+          <p>Ini akan membuat link simbolik dari <code>storage</code> ke <code>public/storage</code>.</p>
+
+          <p>Kemudian tampilkan gambar di Blade:</p>
+          <pre><code>
+&lt;img src="{{ Storage::url($data->path) }}" alt="Gambar" width="200"&gt;
+          </code></pre>
+
+          <p>Atau jika kamu menyimpan nama file saja:</p>
+          <pre><code>
+&lt;img src="{{ asset('storage/uploads/' . $data->gambar) }}" alt="Foto"&gt;
+          </code></pre>
+        `
+      },
+      {
+        title: "Menghapus File Saat Data Dihapus",
+        content: `
+          <p>Untuk menjaga agar storage tidak penuh, hapus file saat data dihapus.</p>
+          <pre><code>
+use Illuminate\\Support\\Facades\\Storage;
+
+public function destroy($id)
+{
+    $data = Model::findOrFail($id);
+
+    // Hapus file dari storage
+    Storage::delete($data->path);
+
+    // Hapus data dari database
+    $data->delete();
+
+    return back()->with('success', 'Data dan file berhasil dihapus!');
+}
+          </code></pre>
+
+          <p>Dengan cara ini, file yang tidak dibutuhkan akan ikut terhapus secara otomatis.</p>
+        `
+      },
+      {
+        title: "Video: Upload File & Storage di Laravel",
+        video: "https://www.youtube.com/embed/1n9gS6b0r2c",
+        content: `
+          <p>Video ini membahas langkah demi langkah cara membuat fitur upload file di Laravel, mulai dari form hingga menampilkan hasilnya di halaman web.</p>
+          <p>Tonton sampai selesai dan coba praktikkan di proyekmu sendiri 📦</p>
+        `
+      }
+    ]
+  },
+
+  13: {
+    title: "Fitur Tambahan Umum",
+    slides: [
+      {
+        title: "Tujuan & Gambaran Umum",
+        content: `
+          <p>Pada tahap ini, kamu akan menambahkan berbagai <strong>fitur pendukung</strong> yang sering digunakan di aplikasi web modern.</p>
+          <p>Fitur-fitur ini akan membuat aplikasi Laravel-mu lebih <strong>lengkap, interaktif, dan profesional</strong>.</p>
+
+          <ul>
+            <li>📄 <strong>Pagination</strong> — membagi data panjang menjadi beberapa halaman.</li>
+            <li>🔍 <strong>Pencarian (Search)</strong> — menemukan data berdasarkan kata kunci.</li>
+            <li>⚙️ <strong>Filter & Sorting</strong> — mengatur urutan dan tampilan data sesuai kebutuhan.</li>
+            <li>📧 <strong>Email Notifikasi</strong> — mengirim pesan otomatis ke pengguna.</li>
+            <li>📊 <strong>Export / Import</strong> — menyimpan atau mengambil data dari Excel atau PDF.</li>
+          </ul>
+        `
+      },
+      {
+        title: "Pagination (Halaman Data)",
+        content: `
+          <p>Laravel menyediakan sistem pagination otomatis lewat metode <code>paginate()</code>.</p>
+
+          <pre><code>
+public function index()
+{
+    $users = User::paginate(10);
+    return view('users.index', compact('users'));
+}
+          </code></pre>
+
+          <p>Lalu tampilkan di Blade:</p>
+
+          <pre><code>
+@foreach ($users as $user)
+  &lt;p&gt;{{ $user->name }}&lt;/p&gt;
+@endforeach
+
+{{ $users->links() }}
+          </code></pre>
+
+          <p>Pagination Laravel otomatis men-generate tombol navigasi antar halaman dengan styling Bootstrap atau Tailwind 💨</p>
+        `
+      },
+      {
+        title: "Pencarian Data (Search)",
+        content: `
+          <p>Untuk menambahkan fitur pencarian sederhana, gunakan query <code>where</code> dengan input dari form.</p>
+
+          <pre><code>
+public function index(Request $request)
+{
+    $search = $request->input('search');
+    $users = User::when($search, function($query, $search) {
+        return $query->where('name', 'like', "%{$search}%");
+    })->paginate(10);
+
+    return view('users.index', compact('users', 'search'));
+}
+          </code></pre>
+
+          <p>Di view:</p>
+
+          <pre><code>
+&lt;form method="GET" action="{{ route('users.index') }}"&gt;
+  &lt;input type="text" name="search" value="{{ $search }}" placeholder="Cari nama..."&gt;
+  &lt;button type="submit"&gt;Cari&lt;/button&gt;
+&lt;/form&gt;
+          </code></pre>
+
+          <p>Hasil pencarian akan otomatis menampilkan data sesuai kata kunci 🔎</p>
+        `
+      },
+      {
+        title: "Filter & Sorting Data",
+        content: `
+          <p>Untuk membuat filter sederhana (misal berdasarkan role atau urutan nama), gunakan kombinasi <code>where</code> dan <code>orderBy</code>.</p>
+
+          <pre><code>
+public function index(Request $request)
+{
+    $role = $request->input('role');
+    $sort = $request->input('sort', 'asc');
+
+    $users = User::when($role, fn($q) => $q->where('role', $role))
+                 ->orderBy('name', $sort)
+                 ->paginate(10);
+
+    return view('users.index', compact('users', 'role', 'sort'));
+}
+          </code></pre>
+
+          <p>Di Blade:</p>
+
+          <pre><code>
+&lt;form method="GET"&gt;
+  &lt;select name="role"&gt;
+    &lt;option value=""&gt;Semua Role&lt;/option&gt;
+    &lt;option value="admin"&gt;Admin&lt;/option&gt;
+    &lt;option value="user"&gt;User&lt;/option&gt;
+  &lt;/select&gt;
+
+  &lt;select name="sort"&gt;
+    &lt;option value="asc"&gt;A-Z&lt;/option&gt;
+    &lt;option value="desc"&gt;Z-A&lt;/option&gt;
+  &lt;/select&gt;
+
+  &lt;button type="submit"&gt;Terapkan&lt;/button&gt;
+&lt;/form&gt;
+          </code></pre>
+
+          <p>Dengan ini, pengguna bisa memfilter dan mengurutkan data sesuai kebutuhan 🔧</p>
+        `
+      },
+      {
+        title: "Email Notifikasi Dasar",
+        content: `
+          <p>Laravel punya sistem email bawaan berbasis <strong>Mailable</strong>. Jalankan perintah:</p>
+
+          <pre><code>
+php artisan make:mail NotifikasiUser
+          </code></pre>
+
+          <p>Contoh di <code>NotifikasiUser.php</code>:</p>
+          <pre><code>
+public function build()
+{
+    return $this->subject('Selamat Datang!')
+                ->view('emails.welcome');
+}
+          </code></pre>
+
+          <p>Kirim email dari controller:</p>
+          <pre><code>
+use App\\Mail\\NotifikasiUser;
+use Illuminate\\Support\\Facades\\Mail;
+
+Mail::to('user@example.com')->send(new NotifikasiUser());
+          </code></pre>
+
+          <p>Jangan lupa konfigurasi SMTP di <code>.env</code> agar email bisa terkirim ✉️</p>
+        `
+      },
+      {
+        title: "Export / Import Excel & PDF (Opsional)",
+        content: `
+          <p>Laravel mendukung export dan import data menggunakan package populer seperti <strong>Maatwebsite Excel</strong> dan <strong>DomPDF</strong>.</p>
+
+          <h4>📤 Export Excel</h4>
+          <pre><code>
+composer require maatwebsite/excel
+          </code></pre>
+
+          <p>Buat export class:</p>
+          <pre><code>
+php artisan make:export UsersExport --model=User
+          </code></pre>
+
+          <p>Di controller:</p>
+          <pre><code>
+use Maatwebsite\\Excel\\Facades\\Excel;
+use App\\Exports\\UsersExport;
+
+return Excel::download(new UsersExport, 'users.xlsx');
+          </code></pre>
+
+          <h4>🧾 Export PDF</h4>
+          <pre><code>
+composer require barryvdh/laravel-dompdf
+          </code></pre>
+
+          <p>Di controller:</p>
+          <pre><code>
+use Barryvdh\\DomPDF\\Facade\\Pdf;
+
+$pdf = Pdf::loadView('pdf.users', ['users' => User::all()]);
+return $pdf->download('users.pdf');
+          </code></pre>
+
+          <p>Dengan dua fitur ini, kamu bisa membuat laporan dan ekspor data dengan mudah 📈</p>
+        `
+      },
+      {
+        title: "Video: Fitur Tambahan Laravel (Pagination, Search, Filter)",
+        video: "https://www.youtube.com/embed/HdJ6wQEYx7E",
+        content: `
+          <p>Video ini membahas cara menambahkan fitur umum seperti pagination, pencarian, dan filter di Laravel secara praktis.</p>
+          <p>Tonton sampai habis untuk memahami implementasi real-nya dalam proyekmu 💬</p>
+        `
+      }
+    ]
+  },
+
+  14: {
+    title: "Artisan & Maintenance",
+    slides: [
+      {
+        title: "Tujuan & Gambaran Umum",
+        content: `
+          <p>Pada tahap ini, kamu akan belajar menggunakan <strong>Artisan Command</strong> untuk mengelola dan memelihara proyek Laravel dengan efisien.</p>
+          <p>Selain itu, kamu juga akan memahami bagaimana melakukan <strong>debugging</strong> dan <strong>maintenance</strong> agar aplikasi tetap stabil dan cepat.</p>
+
+          <ul>
+            <li>⚙️ <strong>Perintah dasar Artisan</strong> — mengelola route, cache, dan file konfigurasi.</li>
+            <li>🚀 <strong>Optimasi & Cache</strong> — mempercepat performa aplikasi.</li>
+            <li>🪲 <strong>Debugging & Log</strong> — menemukan dan memperbaiki error dengan cepat.</li>
+          </ul>
+        `
+      },
+      {
+        title: "Perintah Dasar Artisan",
+        content: `
+          <p><strong>Artisan</strong> adalah command-line tool bawaan Laravel yang digunakan untuk berbagai tugas, seperti membuat controller, migration, atau membersihkan cache.</p>
+
+          <pre><code>
+# Menampilkan semua perintah yang tersedia
+php artisan list
+
+# Menampilkan semua route yang terdaftar
+php artisan route:list
+
+# Membuat controller baru
+php artisan make:controller NamaController
+
+# Membuat model dengan migration
+php artisan make:model NamaModel -m
+
+# Menjalankan migration
+php artisan migrate
+          </code></pre>
+
+          <p>Artisan membantu mempercepat proses pengembangan dan menjaga struktur proyek tetap rapi ⚡</p>
+        `
+      },
+      {
+        title: "Perintah Maintenance & Cache",
+        content: `
+          <p>Laravel memiliki sistem cache untuk meningkatkan performa. Berikut beberapa perintah penting:</p>
+
+          <pre><code>
+# Membersihkan cache konfigurasi
+php artisan config:clear
+
+# Membuat cache konfigurasi baru
+php artisan config:cache
+
+# Membersihkan cache route
+php artisan route:clear
+
+# Membuat cache route baru
+php artisan route:cache
+
+# Membersihkan cache view
+php artisan view:clear
+          </code></pre>
+
+          <p>Kamu juga bisa menonaktifkan sementara aplikasi saat maintenance:</p>
+
+          <pre><code>
+# Mengaktifkan mode maintenance
+php artisan down
+
+# Menonaktifkan mode maintenance
+php artisan up
+          </code></pre>
+
+          <p>Fitur ini berguna saat kamu ingin melakukan update tanpa mengganggu pengguna aktif 🔧</p>
+        `
+      },
+      {
+        title: "Debugging (Log, dd(), dump())",
+        content: `
+          <p>Laravel menyediakan berbagai cara untuk <strong>debugging</strong> — menemukan penyebab error dan menganalisis alur kode.</p>
+
+          <h4>🪣 Menggunakan <code>dd()</code> dan <code>dump()</code></h4>
+          <pre><code>
+dd($variable);   // Dump and Die — tampilkan isi variabel dan hentikan eksekusi
+dump($variable); // Hanya tampilkan isi variabel tanpa menghentikan eksekusi
+          </code></pre>
+
+          <p>Contoh penggunaan:</p>
+          <pre><code>
+$user = User::find(1);
+dd($user);
+          </code></pre>
+
+          <h4>📜 Melihat Log Error</h4>
+          <p>Setiap error atau exception akan otomatis dicatat di file log:</p>
+          <pre><code>
+storage/logs/laravel.log
+          </code></pre>
+
+          <p>Kamu bisa menambahkan log manual dengan:</p>
+          <pre><code>
+use Illuminate\\Support\\Facades\\Log;
+
+Log::info('Data user berhasil disimpan');
+Log::error('Terjadi kesalahan saat menyimpan data');
+          </code></pre>
+
+          <p>Dengan log ini, kamu bisa melacak masalah tanpa harus menampilkan error ke pengguna 👨‍🔧</p>
+        `
+      },
+      {
+        title: "Video: Laravel Artisan & Maintenance",
+        video: "https://www.youtube.com/embed/XyHgJRcdJ_s",
+        content: `
+          <p>Video ini menjelaskan berbagai perintah <strong>Artisan</strong> yang sering digunakan, cara membersihkan cache, dan tips melakukan maintenance aplikasi Laravel dengan aman.</p>
+          <p>Tonton sampai habis untuk memahami praktik terbaik menjaga aplikasi tetap optimal dan bebas error 💪</p>
+        `
+      }
+    ]
+  },
+
+  15: {
+    title: "Project Akhir (Wajib Dikerjakan)",
+    slides: [
+      {
+        title: "Tujuan & Gambaran Project",
+        content: `
+          <p>Pada project akhir ini, kamu akan membuat sebuah aplikasi web sederhana yang menggabungkan semua konsep Laravel yang telah dipelajari.</p>
+
+          <p><strong>Contoh Project:</strong> <em>Sistem Reservasi Ruangan (Booking Aula)</em></p>
+
+          <p>Fitur utama yang akan dibuat:</p>
+          <ul>
+            <li>🔐 Autentikasi (register, login, logout)</li>
+            <li>🧾 CRUD untuk entitas: Users (admin/user), Rooms, Bookings</li>
+            <li>🔗 Relasi Eloquent (User - Booking, Room - Booking)</li>
+            <li>📁 Upload foto ruangan</li>
+            <li>🛡️ Middleware untuk proteksi & role admin</li>
+            <li>🔎 Pencarian & pagination pada daftar booking</li>
+            <li>🧪 Seeder & Factory untuk data dummy</li>
+          </ul>
+
+          <p>Tujuan: agar setelah menyelesaikan project ini kamu paham alur penuh pembuatan aplikasi Laravel dari setup sampai deployment ringan.</p>
+        `
+      },
+      {
+        title: "Persiapan & Struktur Project",
+        content: `
+          <p>Langkah awal — buat proyek baru dan siapkan environment:</p>
+          <pre><code>
+composer create-project laravel/laravel reservasi-aula
+cd reservasi-aula
+cp .env.example .env
+php artisan key:generate
+# konfig .env: DB_CONNECTION, DB_DATABASE, DB_USERNAME, DB_PASSWORD
+          </code></pre>
+
+          <p>Instal paket tambahan (opsional):</p>
+          <pre><code>
+composer require laravel/breeze --dev
+php artisan breeze:install
+npm install && npm run dev
+php artisan migrate
+          </code></pre>
+
+          <p>Struktur penting yang akan sering digunakan:</p>
+          <ul>
+            <li><code>app/Models</code> – model</li>
+            <li><code>app/Http/Controllers</code> – controller</li>
+            <li><code>routes/web.php</code> – route web</li>
+            <li><code>resources/views</code> – blade view</li>
+            <li><code>database/migrations</code> – migration</li>
+          </ul>
+        `
+      },
+      {
+        title: "Database: Migration & Model (Rooms, Bookings)",
+        content: `
+          <p>Buat migration & model untuk <code>rooms</code> dan <code>bookings</code>:</p>
+          <pre><code>
+php artisan make:model Room -m
+php artisan make:model Booking -m
+          </code></pre>
+
+          <p>Contoh migration <code>create_rooms_table</code>:</p>
+          <pre><code>
+Schema::create('rooms', function (Blueprint $table) {
+  $table->id();
+  $table->string('name');
+  $table->text('description')->nullable();
+  $table->string('image')->nullable(); // untuk upload gambar
+  $table->timestamps();
+});
+          </code></pre>
+
+          <p>Contoh migration <code>create_bookings_table</code>:</p>
+          <pre><code>
+Schema::create('bookings', function (Blueprint $table) {
+  $table->id();
+  $table->foreignId('user_id')->constrained()->onDelete('cascade');
+  $table->foreignId('room_id')->constrained()->onDelete('cascade');
+  $table->date('date');
+  $table->time('start_time');
+  $table->time('end_time');
+  $table->string('status')->default('pending');
+  $table->timestamps();
+});
+          </code></pre>
+
+          <p>Jalankan migration:</p>
+          <pre><code>
+php artisan migrate
+          </code></pre>
+        `
+      },
+      {
+        title: "Relasi Model & Eloquent",
+        content: `
+          <p>Definisikan relasi di model:</p>
+          <pre><code>
+// app/Models/User.php
+public function bookings() {
+  return $this->hasMany(Booking::class);
+}
+
+// app/Models/Room.php
+public function bookings() {
+  return $this->hasMany(Booking::class);
+}
+
+// app/Models/Booking.php
+public function user() {
+  return $this->belongsTo(User::class);
+}
+public function room() {
+  return $this->belongsTo(Room::class);
+}
+          </code></pre>
+
+          <p>Gunakan eager loading saat mengambil data:</p>
+          <pre><code>
+$bookings = Booking::with(['user','room'])->paginate(10);
+          </code></pre>
+        `
+      },
+      {
+        title: "Controller, Routing & Resource Controller",
+        content: `
+          <p>Buat resource controller untuk CRUD:</p>
+          <pre><code>
+php artisan make:controller RoomController --resource
+php artisan make:controller BookingController --resource
+          </code></pre>
+
+          <p>Daftarkan route resource di <code>routes/web.php</code>:</p>
+          <pre><code>
+Route::resource('rooms', RoomController::class)->middleware('auth');
+Route::resource('bookings', BookingController::class)->middleware('auth');
+          </code></pre>
+
+          <p>Tambahkan route khusus untuk admin (group middleware):</p>
+          <pre><code>
+Route::middleware(['auth','admin'])->group(function () {
+  Route::resource('rooms', RoomController::class);
+});
+          </code></pre>
+        `
+      },
+      {
+        title: "View & Blade: Form CRUD & Upload Gambar",
+        content: `
+          <p>Contoh form create room (upload gambar):</p>
+          <pre><code>
+&lt;form action="{{ route('rooms.store') }}" method="POST" enctype="multipart/form-data"&gt;
+  @csrf
+  &lt;input type="text" name="name" required&gt;
+  &lt;textarea name="description"&gt;&lt;/textarea&gt;
+  &lt;input type="file" name="image"&gt;
+  &lt;button type="submit"&gt;Simpan&lt;/button&gt;
+&lt;/form&gt;
+          </code></pre>
+
+          <p>Controller store menangani upload:</p>
+          <pre><code>
+public function store(Request $request) {
+  $request->validate([
+    'name' => 'required',
+    'image' => 'nullable|image|max:2048'
+  ]);
+
+  $path = $request->file('image') ? $request->file('image')->store('public/rooms') : null;
+
+  Room::create([
+    'name' => $request->name,
+    'description' => $request->description,
+    'image' => $path
+  ]);
+
+  return redirect()->route('rooms.index')->with('success','Room dibuat!');
+}
+          </code></pre>
+
+          <p>Tampilkan gambar di view:</p>
+          <pre><code>
+&lt;img src="{{ Storage::url($room->image) }}" alt="Gambar Room" width="200"&gt;
+          </code></pre>
+        `
+      },
+      {
+        title: "Booking Logic, Validasi & Proteksi (Middleware)",
+        content: `
+          <p>Logika utama booking (di BookingController@store):</p>
+          <pre><code>
+$request->validate([
+  'room_id' => 'required|exists:rooms,id',
+  'date' => 'required|date',
+  'start_time' => 'required',
+  'end_time' => 'required|after:start_time'
+]);
+
+// Cek bentrok booking di jam yg sama
+$conflict = Booking::where('room_id', $request->room_id)
+  ->where('date', $request->date)
+  ->where(function($q) use($request){
+    $q->whereBetween('start_time', [$request->start_time, $request->end_time])
+      ->orWhereBetween('end_time', [$request->start_time, $request->end_time]);
+  })->exists();
+
+if($conflict){
+  return back()->with('error','Waktu sudah dibooking!');
+}
+
+// Simpan booking
+Booking::create([...]);
+          </code></pre>
+
+          <p>Gunakan middleware <code>auth</code> untuk memastikan hanya user terautentikasi yang bisa booking, dan middleware custom <code>admin</code> untuk halaman manajemen ruangan.</p>
+        `
+      },
+      {
+        title: "Search, Pagination & Flash Message",
+        content: `
+          <p>Tambahkan pencarian & pagination di daftar booking:</p>
+          <pre><code>
+public function index(Request $request){
+  $q = $request->input('q');
+  $bookings = Booking::with('room','user')
+    ->when($q, fn($query) => $query->whereHas('room', fn($q2) => $q2->where('name','like',"%{$q}%")))
+    ->orderBy('date','desc')
+    ->paginate(10);
+
+  return view('bookings.index', compact('bookings','q'));
+}
+          </code></pre>
+
+          <p>Tampilkan flash message di layout utama:</p>
+          <pre><code>
+@if(session('success'))
+  &lt;div class="alert alert-success"&gt;{{ session('success') }}&lt;/div&gt;
+@endif
+@if(session('error'))
+  &lt;div class="alert alert-danger"&gt;{{ session('error') }}&lt;/div&gt;
+@endif
+          </code></pre>
+        `
+      },
+      {
+        title: "Seeder, Factory & Testing Singkat",
+        content: `
+          <p>Buat factory & seeder untuk mengisi data awal:</p>
+          <pre><code>
+php artisan make:factory RoomFactory --model=Room
+php artisan make:seeder RoomSeeder
+php artisan db:seed --class=RoomSeeder
+          </code></pre>
+
+          <p>Contoh generate 10 booking dummy:</p>
+          <pre><code>
+Booking::factory()->count(10)->create();
+          </code></pre>
+
+          <p>Testing singkat (feature test) untuk memastikan booking tidak bentrok:</p>
+          <pre><code>
+public function test_booking_conflict()
+{
+  // buat data, lakukan post booking, assert session error jika bentrok
+}
+          </code></pre>
+        `
+      },
+      {
+        title: "Deployment Ringan & Checklist Sebelum Selesai",
+        content: `
+          <p>Checklist sebelum deploy:</p>
+          <ul>
+            <li>✅ Set <code>APP_ENV=production</code> & <code>APP_DEBUG=false</code></li>
+            <li>✅ Jalankan <code>php artisan config:cache</code> & <code>php artisan route:cache</code></li>
+            <li>✅ Pastikan storage link: <code>php artisan storage:link</code></li>
+            <li>✅ Backup database & lakukan migration di server</li>
+            <li>✅ Atur cron / scheduler (jika perlu)</li>
+          </ul>
+
+          <p>Deploy sederhana ke VPS atau shared hosting (upload build, atur virtual host, set permission & .env).</p>
+        `
+      },
+      {
+        title: "Video: Membangun Aplikasi Reservasi Lengkap di Laravel",
+        video: "https://www.youtube.com/embed/ImtZ5yENzgE",
+        content: `
+          <p>Tonton video ini untuk panduan lengkap pembuatan aplikasi reservasi dari awal sampai akhir — termasuk autentikasi, CRUD, upload file, validasi waktu booking, dan deployment sederhana.</p>
+          <p>Video di atas akan memandu langkah demi langkah. Setelah menonton, langsung praktikkan modul per modul agar lebih cepat paham 🔧</p>
+        `
+      }
+    ]
+  }
+};
   </script>
   <script src="../../assets/js/frontend.js"></script>
 </body>
