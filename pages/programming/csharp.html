@@ -316,2508 +316,2323 @@
     let slides = [];
 
     // Data konten untuk setiap modul
-    const moduleContent = {
-      1: {
-        title: "🧱 Pengenalan C#",
-        slides: [
-          {
-            title: "Sejarah Singkat C#",
-            content: `
-              <p><strong>C#</strong> (dibaca: <em>See Sharp</em>) dikembangkan oleh <strong>Microsoft</strong> pada awal tahun <strong>2000</strong> sebagai bagian dari inisiatif <strong>.NET Framework</strong>.</p>
+const moduleContent = {
+  1: {
+    title: "🧱 Pengenalan C#",
+    slides: [
+      {
+        title: "Sejarah Singkat C#",
+        content: `
+          <p><strong>C#</strong> (dibaca: <em>See Sharp</em>) dikembangkan oleh <strong>Microsoft</strong> pada awal tahun <strong>2000</strong> sebagai bagian dari inisiatif <strong>.NET Framework</strong>.</p>
 
-              <p>Bahasa ini dipimpin oleh <strong>Anders Hejlsberg</strong>, yang juga berperan penting dalam pengembangan <em>Turbo Pascal</em> dan <em>Delphi</em>.</p>
+          <p>Bahasa ini dipimpin oleh <strong>Anders Hejlsberg</strong>, yang juga berperan penting dalam pengembangan <em>Turbo Pascal</em> dan <em>Delphi</em>.</p>
 
-              <ul>
-                <li><strong>1999</strong> – Awal pengembangan internal oleh Microsoft.</li>
-                <li><strong>2000</strong> – Diperkenalkan bersamaan dengan .NET Framework.</li>
-                <li><strong>2002</strong> – Versi pertama C# (1.0) dirilis untuk publik.</li>
-                <li><strong>2010–2020</strong> – Muncul versi modern seperti C# 6.0 hingga C# 8.0 dengan fitur-fitur baru seperti <em>lambda</em>, <em>async/await</em>, dan <em>pattern matching</em>.</li>
-                <li><strong>2020+</strong> – Dengan hadirnya <strong>.NET Core</strong> dan <strong>.NET 5+</strong>, C# kini <strong>cross-platform</strong> dan bisa berjalan di Windows, macOS, dan Linux.</li>
-              </ul>
+          <ul>
+            <li><strong>1999</strong> – Awal pengembangan internal oleh Microsoft.</li>
+            <li><strong>2000</strong> – Diperkenalkan bersamaan dengan .NET Framework.</li>
+            <li><strong>2002</strong> – Versi pertama C# (1.0) dirilis untuk publik.</li>
+            <li><strong>2010–2020</strong> – Muncul versi modern seperti C# 6.0 hingga C# 8.0 dengan fitur-fitur baru seperti <em>lambda</em>, <em>async/await</em>, dan <em>pattern matching</em>.</li>
+            <li><strong>2020+</strong> – Dengan hadirnya <strong>.NET Core</strong> dan <strong>.NET 5+</strong>, C# kini <strong>cross-platform</strong> dan bisa berjalan di Windows, macOS, dan Linux.</li>
+          </ul>
 
-              <p>Sejak awal, tujuan utama C# adalah menjadi bahasa modern, aman, dan produktif untuk pengembangan aplikasi di ekosistem Microsoft — dan kini berkembang jauh melampaui itu.</p>
-            `
-          },
-          {
-            title: "Pengertian & Karakteristik Utama C#",
-            content: `
-              <p><strong>C#</strong> adalah bahasa pemrograman <strong>modern</strong>, <strong>berorientasi objek</strong>, dan <strong>berbasis komponen</strong> yang dikembangkan oleh Microsoft.</p>
-
-              <h4>Karakteristik Utama:</h4>
-              <ul>
-                <li>⚙️ <strong>Modern & Aman</strong> – dirancang untuk menghindari kesalahan umum seperti akses memori ilegal.</li>
-                <li>🧩 <strong>Object-Oriented</strong> – mendukung class, object, inheritance, polymorphism, dan encapsulation.</li>
-                <li>📦 <strong>Terintegrasi dengan .NET</strong> – bisa menggunakan ribuan library bawaan .NET.</li>
-                <li>🚀 <strong>Cross-Platform</strong> – bisa dijalankan di Windows, Linux, dan macOS melalui .NET Core / .NET 8.</li>
-                <li>💻 <strong>Strongly Typed</strong> – setiap variabel harus memiliki tipe data yang jelas.</li>
-                <li>📚 <strong>Garbage Collector</strong> – manajemen memori otomatis tanpa perlu menghapus alokasi manual.</li>
-              </ul>
-
-              <p>C# dirancang agar mudah digunakan seperti Java, namun tetap memiliki performa dan kekuatan seperti C++.</p>
-            `
-          },
-          {
-            title: "Perbandingan Singkat: C vs C++ vs Java vs C#",
-            content: `
-              <p>Berikut perbandingan umum antara C#, C, C++, dan Java:</p>
-
-              <table border="1" cellpadding="6" cellspacing="0" style="border-collapse: collapse; width: 100%;">
-                <thead>
-                  <tr>
-                    <th>Aspek</th>
-                    <th>C</th>
-                    <th>C++</th>
-                    <th>Java</th>
-                    <th>C#</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Paradigma</td>
-                    <td>Prosedural</td>
-                    <td>Prosedural & OOP</td>
-                    <td>OOP</td>
-                    <td>OOP & Component-Oriented</td>
-                  </tr>
-                  <tr>
-                    <td>Memory Management</td>
-                    <td>Manual (pointer)</td>
-                    <td>Manual (pointer & RAII)</td>
-                    <td>Otomatis (GC)</td>
-                    <td>Otomatis (GC)</td>
-                  </tr>
-                  <tr>
-                    <td>Platform</td>
-                    <td>Native</td>
-                    <td>Native</td>
-                    <td>JVM (Java Virtual Machine)</td>
-                    <td>.NET Runtime (CLR)</td>
-                  </tr>
-                  <tr>
-                    <td>Syntax</td>
-                    <td>Low-level</td>
-                    <td>Kompleks tapi fleksibel</td>
-                    <td>Lebih sederhana</td>
-                    <td>Sederhana & konsisten</td>
-                  </tr>
-                  <tr>
-                    <td>Tujuan Utama</td>
-                    <td>Sistem & embedded</td>
-                    <td>Game, sistem, software</td>
-                    <td>Aplikasi portable & enterprise</td>
-                    <td>Aplikasi modern di ekosistem .NET</td>
-                  </tr>
-                </tbody>
-              </table>
-
-              <p>Secara sederhana, C# menggabungkan kekuatan C++ dan kemudahan Java, dengan dukungan penuh dari ekosistem Microsoft.</p>
-            `
-          },
-          {
-            title: "Kelebihan & Kekurangan C#",
-            content: `
-              <h4>✅ Kelebihan:</h4>
-              <ul>
-                <li>🧩 <strong>Terintegrasi dengan .NET</strong> – akses ke library besar dan framework kuat.</li>
-                <li>💻 <strong>Multi-platform</strong> – dukungan Windows, Linux, macOS, Android, dan iOS.</li>
-                <li>⚙️ <strong>Garbage Collector</strong> – pengelolaan memori otomatis, lebih aman dan efisien.</li>
-                <li>🧠 <strong>Mudah dipelajari</strong> – sintaks mirip Java dan C++, cocok untuk pemula.</li>
-                <li>📚 <strong>Komunitas besar</strong> – banyak dokumentasi, kursus, dan framework open-source.</li>
-                <li>🚀 <strong>Performa tinggi</strong> – terutama sejak hadirnya .NET Core dan .NET 5+.</li>
-              </ul>
-
-              <h4>⚠️ Kekurangan:</h4>
-              <ul>
-                <li>🔒 <strong>Tergantung ekosistem .NET</strong> – sulit dipakai tanpa .NET Runtime.</li>
-                <li>📦 <strong>Ukuran file aplikasi besar</strong> – runtime dan dependency sering menambah ukuran build.</li>
-                <li>🖥️ <strong>Kurang cocok untuk sistem tingkat rendah</strong> seperti OS kernel atau driver.</li>
-              </ul>
-
-              <p>Meskipun begitu, C# tetap menjadi salah satu bahasa paling produktif dan efisien untuk pengembangan modern.</p>
-            `
-          },
-          {
-            title: "Bidang Penggunaan C#",
-            content: `
-              <p>C# digunakan di berbagai bidang teknologi berkat fleksibilitasnya:</p>
-
-              <ul>
-                <li>🖥️ <strong>Aplikasi Desktop</strong> – Windows Forms, WPF, dan MAUI.</li>
-                <li>🌐 <strong>Web Development</strong> – ASP.NET dan Blazor.</li>
-                <li>📱 <strong>Mobile App</strong> – Xamarin / .NET MAUI untuk Android & iOS.</li>
-                <li>🎮 <strong>Game Development</strong> – digunakan di <strong>Unity Engine</strong>.</li>
-                <li>☁️ <strong>Cloud & API</strong> – integrasi kuat dengan Azure dan RESTful API.</li>
-                <li>🤖 <strong>IoT & Automation</strong> – dapat digunakan untuk embedded dan otomasi perangkat.</li>
-              </ul>
-
-              <p>Dengan dukungan besar dari Microsoft dan komunitas, C# menjadi bahasa serbaguna yang cocok untuk berbagai jenis proyek modern.</p>
-            `
-          },
-          {
-            title: "Video: Sejarah & Pengantar C#",
-            video: "https://www.youtube.com/embed/pSiIHe2uZ2w",
-            content: `
-              <p>Tonton video ini untuk memahami asal-usul C#, bagaimana Microsoft mengembangkannya bersama .NET Framework, dan bagaimana C# berevolusi menjadi bahasa lintas platform.</p>
-              <p>Video ini juga memberikan gambaran singkat tentang sintaks dasar dan potensi besar C# di dunia pemrograman modern.</p>
-            `
-          }
-        ]
+          <p>Sejak awal, tujuan utama C# adalah menjadi bahasa modern, aman, dan produktif untuk pengembangan aplikasi di ekosistem Microsoft — dan kini berkembang jauh melampaui itu.</p>
+        `
       },
-
-      2: {
-        title: "⚙️ Persiapan & Tools",
-        slides: [
-          {
-            title: "Instalasi .NET SDK & Tools Pendukung",
-            content: `
-              <p>Sebelum mulai menulis program dengan <strong>C#</strong>, kita perlu menyiapkan lingkungan pengembangannya terlebih dahulu.</p>
-
-              <h4>🔧 Langkah-langkah Instalasi:</h4>
-              <ol>
-                <li>
-                  <strong>Install .NET SDK</strong><br>
-                  Unduh dari situs resmi Microsoft: 
-                  <a href="https://dotnet.microsoft.com/download" target="_blank">https://dotnet.microsoft.com/download</a><br>
-                  Pilih versi terbaru (.NET 6 atau .NET 8).
-                </li>
-                <li>
-                  <strong>Install IDE (Editor)</strong>
-                  <ul>
-                    <li>💻 <strong>Visual Studio</strong> – lengkap, cocok untuk proyek besar (Windows).</li>
-                    <li>🧠 <strong>Visual Studio Code</strong> – ringan, fleksibel, cocok untuk semua OS.</li>
-                  </ul>
-                </li>
-                <li>
-                  <strong>Cek Instalasi</strong><br>
-                  Buka terminal atau CMD, ketik:
-                  <pre><code>dotnet --version</code></pre>
-                  Jika muncul nomor versi, berarti instalasi berhasil.
-                </li>
-              </ol>
-
-              <p>Dengan setup ini, kamu sudah siap menulis dan menjalankan kode C# dari mana saja, baik di Windows, macOS, maupun Linux.</p>
-            `
-          },
-          {
-            title: "Struktur Dasar Program C#",
-            content: `
-              <p>Program C# tersusun dari beberapa elemen penting seperti <strong>namespace</strong>, <strong>class</strong>, dan <strong>method Main()</strong>.</p>
-
-              <pre><code class="language-csharp">
-      using System;
-
-      namespace HelloWorldApp
       {
-          class Program
-          {
-              static void Main(string[] args)
-              {
-                  Console.WriteLine("Hello, World!");
-              }
-          }
-      }
-              </code></pre>
+        title: "Pengertian & Karakteristik Utama C#",
+        content: `
+          <p><strong>C#</strong> adalah bahasa pemrograman <strong>modern</strong>, <strong>berorientasi objek</strong>, dan <strong>berbasis komponen</strong> yang dikembangkan oleh Microsoft.</p>
 
-              <h4>🧩 Penjelasan Struktur:</h4>
-              <ul>
-                <li><strong>using System;</strong> – mengimpor namespace bawaan .NET agar bisa memakai <code>Console</code>.</li>
-                <li><strong>namespace HelloWorldApp</strong> – area logis untuk mengelompokkan class agar tidak bentrok nama.</li>
-                <li><strong>class Program</strong> – tempat utama kode dijalankan.</li>
-                <li><strong>static void Main()</strong> – titik awal eksekusi program (setara dengan fungsi <code>main()</code> di C/C++).</li>
-              </ul>
+          <h4>Karakteristik Utama:</h4>
+          <ul>
+            <li>⚙️ <strong>Modern & Aman</strong> – dirancang untuk menghindari kesalahan umum seperti akses memori ilegal.</li>
+            <li>🧩 <strong>Object-Oriented</strong> – mendukung class, object, inheritance, polymorphism, dan encapsulation.</li>
+            <li>📦 <strong>Terintegrasi dengan .NET</strong> – bisa menggunakan ribuan library bawaan .NET.</li>
+            <li>🚀 <strong>Cross-Platform</strong> – bisa dijalankan di Windows, Linux, dan macOS melalui .NET Core / .NET 8.</li>
+            <li>💻 <strong>Strongly Typed</strong> – setiap variabel harus memiliki tipe data yang jelas.</li>
+            <li>📚 <strong>Garbage Collector</strong> – manajemen memori otomatis tanpa perlu menghapus alokasi manual.</li>
+          </ul>
 
-              <p>Struktur ini adalah dasar semua program C# — dari aplikasi kecil hingga proyek besar.</p>
-            `
-          },
-          {
-            title: "Membuat & Menjalankan Program Pertama",
-            content: `
-              <h4>🪄 Langkah-langkah membuat program pertama:</h4>
-              <ol>
-                <li>Buka terminal atau Visual Studio Code.</li>
-                <li>Buat folder baru untuk proyekmu:
-                  <pre><code>mkdir HelloWorld</code></pre>
-                </li>
-                <li>Masuk ke folder tersebut:
-                  <pre><code>cd HelloWorld</code></pre>
-                </li>
-                <li>Buat project baru dengan template console:
-                  <pre><code>dotnet new console</code></pre>
-                </li>
-                <li>Jalankan program:
-                  <pre><code>dotnet run</code></pre>
-                </li>
-              </ol>
-
-              <p>Output yang muncul:</p>
-              <pre><code>Hello, World!</code></pre>
-
-              <p>🎉 Selamat! Kamu baru saja menjalankan program C# pertamamu menggunakan .NET CLI.</p>
-            `
-          },
-          {
-            title: "Struktur Project C# (.NET)",
-            content: `
-              <p>Setelah membuat project dengan <code>dotnet new console</code>, kamu akan melihat beberapa file & folder otomatis terbentuk.</p>
-
-              <h4>📁 Struktur Folder:</h4>
-              <pre><code>
-      HelloWorld/
-      │
-      ├── bin/               # Folder hasil build (output executable)
-      ├── obj/               # Folder sementara untuk data kompilasi
-      ├── Program.cs         # File utama tempat kode ditulis
-      └── HelloWorld.csproj  # File konfigurasi project (.NET project file)
-              </code></pre>
-
-              <h4>🧠 Penjelasan Singkat:</h4>
-              <ul>
-                <li><strong>Program.cs</strong> – berisi kode utama (entry point).</li>
-                <li><strong>.csproj</strong> – menyimpan informasi tentang framework, dependency, dan konfigurasi build.</li>
-                <li><strong>bin/</strong> – hasil akhir dari kompilasi (file .exe atau .dll).</li>
-                <li><strong>obj/</strong> – file sementara selama proses build berlangsung.</li>
-              </ul>
-
-              <p>Struktur ini adalah standar di semua project C# berbasis .NET, sehingga mudah dikelola dan dipindahkan antar sistem.</p>
-            `
-          },
-          {
-            title: "Video: Setup & Hello World C#",
-            video: "https://www.youtube.com/embed/gfkTfcpWqAY",
-            content: `
-              <p>Tonton video ini untuk melihat langkah-langkah instalasi .NET SDK, setup Visual Studio Code, dan cara membuat program C# pertama dari nol.</p>
-              <p>Video ini akan membantu kamu memahami proses kerja <strong>dotnet CLI</strong> dan struktur project C# secara visual.</p>
-            `
-          }
-        ]
+          <p>C# dirancang agar mudah digunakan seperti Java, namun tetap memiliki performa dan kekuatan seperti C++.</p>
+        `
       },
+      {
+        title: "Perbandingan Singkat: C vs C++ vs Java vs C#",
+        content: `
+          <p>Berikut perbandingan umum antara C#, C, C++, dan Java:</p>
 
-      3: {
-        title: "🔤 Dasar Bahasa Pemrograman",
-        slides: [
-          {
-            title: "Tipe Data dalam C#",
-            content: `
-              <p>Setiap variabel di <strong>C#</strong> memiliki <strong>tipe data</strong> yang menentukan jenis nilai yang dapat disimpan. C# adalah <strong>strongly typed language</strong>, artinya tipe data harus jelas.</p>
+          <table border="1" cellpadding="6" cellspacing="0" style="border-collapse: collapse; width: 100%;">
+            <thead>
+              <tr>
+                <th>Aspek</th>
+                <th>C</th>
+                <th>C++</th>
+                <th>Java</th>
+                <th>C#</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Paradigma</td>
+                <td>Prosedural</td>
+                <td>Prosedural & OOP</td>
+                <td>OOP</td>
+                <td>OOP & Component-Oriented</td>
+              </tr>
+              <tr>
+                <td>Memory Management</td>
+                <td>Manual (pointer)</td>
+                <td>Manual (pointer & RAII)</td>
+                <td>Otomatis (GC)</td>
+                <td>Otomatis (GC)</td>
+              </tr>
+              <tr>
+                <td>Platform</td>
+                <td>Native</td>
+                <td>Native</td>
+                <td>JVM (Java Virtual Machine)</td>
+                <td>.NET Runtime (CLR)</td>
+              </tr>
+              <tr>
+                <td>Syntax</td>
+                <td>Low-level</td>
+                <td>Kompleks tapi fleksibel</td>
+                <td>Lebih sederhana</td>
+                <td>Sederhana & konsisten</td>
+              </tr>
+              <tr>
+                <td>Tujuan Utama</td>
+                <td>Sistem & embedded</td>
+                <td>Game, sistem, software</td>
+                <td>Aplikasi portable & enterprise</td>
+                <td>Aplikasi modern di ekosistem .NET</td>
+              </tr>
+            </tbody>
+          </table>
 
-              <h4>📘 Tipe Data Umum:</h4>
-              <table border="1" cellpadding="6" cellspacing="0" style="border-collapse: collapse; width: 100%;">
-                <thead>
-                  <tr>
-                    <th>Tipe Data</th>
-                    <th>Ukuran</th>
-                    <th>Contoh Nilai</th>
-                    <th>Keterangan</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td><code>int</code></td>
-                    <td>4 byte</td>
-                    <td>42</td>
-                    <td>Bilangan bulat</td>
-                  </tr>
-                  <tr>
-                    <td><code>float</code></td>
-                    <td>4 byte</td>
-                    <td>3.14f</td>
-                    <td>Bilangan pecahan (butuh akhiran <code>f</code>)</td>
-                  </tr>
-                  <tr>
-                    <td><code>double</code></td>
-                    <td>8 byte</td>
-                    <td>3.14159</td>
-                    <td>Bilangan pecahan dengan presisi tinggi</td>
-                  </tr>
-                  <tr>
-                    <td><code>bool</code></td>
-                    <td>1 byte</td>
-                    <td>true / false</td>
-                    <td>Nilai logika (benar atau salah)</td>
-                  </tr>
-                  <tr>
-                    <td><code>char</code></td>
-                    <td>2 byte</td>
-                    <td>'A'</td>
-                    <td>Karakter tunggal</td>
-                  </tr>
-                  <tr>
-                    <td><code>string</code></td>
-                    <td>–</td>
-                    <td>"Halo Dunia"</td>
-                    <td>Teks (kumpulan karakter)</td>
-                  </tr>
-                  <tr>
-                    <td><code>var</code></td>
-                    <td>–</td>
-                    <td>var x = 10;</td>
-                    <td>Menentukan tipe otomatis berdasarkan nilai</td>
-                  </tr>
-                </tbody>
-              </table>
-
-              <p>C# juga memiliki tipe data lainnya seperti <code>decimal</code>, <code>byte</code>, dan <code>long</code> untuk kebutuhan lebih spesifik.</p>
-            `
-          },
-          {
-            title: "Variabel & Konstanta",
-            content: `
-              <p><strong>Variabel</strong> digunakan untuk menyimpan data, sedangkan <strong>konstanta</strong> menyimpan nilai yang tidak dapat diubah.</p>
-
-              <h4>🧩 Contoh Variabel:</h4>
-              <pre><code class="language-csharp">
-      int usia = 20;
-      string nama = "Ali";
-      bool aktif = true;
-              </code></pre>
-
-              <p>Variabel dapat diubah nilainya selama program berjalan.</p>
-
-              <h4>🔒 Contoh Konstanta:</h4>
-              <pre><code class="language-csharp">
-      const double PI = 3.14159;
-      const string APLIKASI = "Kalkulator Sederhana";
-              </code></pre>
-
-              <p>Konstanta harus diberi nilai saat dideklarasikan dan tidak dapat diubah setelah itu.</p>
-
-              <h4>💡 Tips:</h4>
-              <ul>
-                <li>Gunakan <code>camelCase</code> untuk nama variabel (<code>totalHarga</code>).</li>
-                <li>Gunakan <code>UPPER_CASE</code> untuk konstanta (<code>MAX_VALUE</code>).</li>
-              </ul>
-            `
-          },
-          {
-            title: "Operator dalam C#",
-            content: `
-              <p>Operator digunakan untuk melakukan operasi pada variabel dan nilai. Berikut beberapa kelompok operator penting di C#:</p>
-
-              <h4>🧮 Operator Aritmatika:</h4>
-              <pre><code>+, -, *, /, %</code></pre>
-              <p>Contoh:</p>
-              <pre><code class="language-csharp">int hasil = 10 + 5; // hasil = 15</code></pre>
-
-              <h4>🔁 Operator Perbandingan:</h4>
-              <pre><code>==, !=, >, <, >=, <=</code></pre>
-              <p>Contoh:</p>
-              <pre><code class="language-csharp">bool sama = (a == b);</code></pre>
-
-              <h4>⚙️ Operator Logika:</h4>
-              <pre><code>&&, ||, !</code></pre>
-              <p>Contoh:</p>
-              <pre><code class="language-csharp">
-      bool login = (username == "admin" && password == "1234");
-              </code></pre>
-
-              <h4>📦 Operator Penugasan:</h4>
-              <pre><code>=, +=, -=, *=, /=, %=</code></pre>
-              <p>Contoh:</p>
-              <pre><code class="language-csharp">
-      int x = 5;
-      x += 3; // sama dengan x = x + 3
-              </code></pre>
-
-              <p>Operator membantu mengolah data dan membuat logika program menjadi lebih dinamis dan efisien.</p>
-            `
-          },
-          {
-            title: "Input & Output (Console)",
-            content: `
-              <p>Untuk berinteraksi dengan pengguna, C# menggunakan kelas <code>Console</code> dari namespace <code>System</code>.</p>
-
-              <h4>📤 Output ke Layar:</h4>
-              <pre><code class="language-csharp">
-      Console.WriteLine("Halo Dunia!");
-      Console.Write("Masukkan nama Anda: ");
-              </code></pre>
-
-              <p><code>WriteLine()</code> menampilkan teks diikuti baris baru, sedangkan <code>Write()</code> tidak membuat baris baru.</p>
-
-              <h4>📥 Input dari Pengguna:</h4>
-              <pre><code class="language-csharp">
-      Console.Write("Masukkan nama: ");
-      string nama = Console.ReadLine();
-
-      Console.WriteLine("Halo, " + nama + "!");
-              </code></pre>
-
-              <p>Semua input dari <code>ReadLine()</code> berbentuk string. Jika ingin diubah menjadi angka, gunakan konversi tipe:</p>
-
-              <pre><code class="language-csharp">
-      Console.Write("Masukkan umur: ");
-      int umur = Convert.ToInt32(Console.ReadLine());
-      Console.WriteLine("Umur kamu: " + umur);
-              </code></pre>
-
-              <p>Dengan cara ini, program dapat menerima dan memproses data dari pengguna secara interaktif.</p>
-            `
-          },
-          {
-            title: "Video: Dasar Pemrograman C#",
-            video: "https://www.youtube.com/embed/0QUgvfuKvWU",
-            content: `
-              <p>Tonton video ini untuk memahami dasar-dasar pemrograman C#: tipe data, variabel, operator, dan cara membuat input/output sederhana.</p>
-              <p>Video ini cocok untuk pemula yang ingin memahami bagaimana logika dasar bekerja dalam bahasa C#.</p>
-            `
-          }
-        ]
+          <p>Secara sederhana, C# menggabungkan kekuatan C++ dan kemudahan Java, dengan dukungan penuh dari ekosistem Microsoft.</p>
+        `
       },
-
-      4: {
-        title: "🔁 Kontrol Alur Program",
-        slides: [
-          {
-            title: "🧭 Percabangan (if, else if, else)",
-            content: `
-              <p>Dalam C#, percabangan digunakan untuk mengambil keputusan berdasarkan kondisi tertentu. Struktur yang paling umum adalah <code>if</code>, <code>else if</code>, dan <code>else</code>.</p>
-
-              <h4>📘 Contoh:</h4>
-              <pre><code class="language-csharp">
-      int nilai = 85;
-
-      if (nilai >= 90)
       {
-          Console.WriteLine("Nilai A");
-      }
-      else if (nilai >= 75)
-      {
-          Console.WriteLine("Nilai B");
-      }
-      else
-      {
-          Console.WriteLine("Nilai C");
-      }
-              </code></pre>
+        title: "Kelebihan & Kekurangan C#",
+        content: `
+          <h4>✅ Kelebihan:</h4>
+          <ul>
+            <li>🧩 <strong>Terintegrasi dengan .NET</strong> – akses ke library besar dan framework kuat.</li>
+            <li>💻 <strong>Multi-platform</strong> – dukungan Windows, Linux, macOS, Android, dan iOS.</li>
+            <li>⚙️ <strong>Garbage Collector</strong> – pengelolaan memori otomatis, lebih aman dan efisien.</li>
+            <li>🧠 <strong>Mudah dipelajari</strong> – sintaks mirip Java dan C++, cocok untuk pemula.</li>
+            <li>📚 <strong>Komunitas besar</strong> – banyak dokumentasi, kursus, dan framework open-source.</li>
+            <li>🚀 <strong>Performa tinggi</strong> – terutama sejak hadirnya .NET Core dan .NET 5+.</li>
+          </ul>
 
-              <p><strong>Penjelasan:</strong></p>
-              <ul>
-                <li>Kondisi di dalam <code>if</code> harus bernilai <code>true</code> atau <code>false</code>.</li>
-                <li>Jika kondisi pertama tidak terpenuhi, program lanjut ke <code>else if</code> atau <code>else</code>.</li>
-              </ul>
-            `
-          },
-          {
-            title: "🔀 Percabangan switch",
-            content: `
-              <p>Struktur <code>switch</code> digunakan untuk memeriksa banyak kondisi dengan nilai tetap. Lebih rapi dibanding banyak <code>if-else</code>.</p>
+          <h4>⚠️ Kekurangan:</h4>
+          <ul>
+            <li>🔒 <strong>Tergantung ekosistem .NET</strong> – sulit dipakai tanpa .NET Runtime.</li>
+            <li>📦 <strong>Ukuran file aplikasi besar</strong> – runtime dan dependency sering menambah ukuran build.</li>
+            <li>🖥️ <strong>Kurang cocok untuk sistem tingkat rendah</strong> seperti OS kernel atau driver.</li>
+          </ul>
 
-              <h4>📘 Contoh:</h4>
-              <pre><code class="language-csharp">
-      Console.Write("Masukkan hari (1-3): ");
-      int hari = Convert.ToInt32(Console.ReadLine());
-
-      switch (hari)
-      {
-          case 1:
-              Console.WriteLine("Senin");
-              break;
-          case 2:
-              Console.WriteLine("Selasa");
-              break;
-          case 3:
-              Console.WriteLine("Rabu");
-              break;
-          default:
-              Console.WriteLine("Hari tidak dikenal");
-              break;
-      }
-              </code></pre>
-
-              <p>Gunakan <code>break</code> agar program keluar dari blok <code>switch</code> setelah satu case dijalankan.</p>
-            `
-          },
-          {
-            title: "🔂 Perulangan (for, while, do-while)",
-            content: `
-              <p>Perulangan digunakan untuk menjalankan blok kode berulang kali selama kondisi terpenuhi.</p>
-
-              <h4>📘 for loop:</h4>
-              <pre><code class="language-csharp">
-      for (int i = 1; i <= 5; i++)
-      {
-          Console.WriteLine("Perulangan ke-" + i);
-      }
-              </code></pre>
-
-              <h4>📘 while loop:</h4>
-              <pre><code class="language-csharp">
-      int i = 1;
-      while (i <= 5)
-      {
-          Console.WriteLine("Angka: " + i);
-          i++;
-      }
-              </code></pre>
-
-              <h4>📘 do-while loop:</h4>
-              <pre><code class="language-csharp">
-      int j = 1;
-      do
-      {
-          Console.WriteLine("Do-While ke-" + j);
-          j++;
-      } while (j <= 5);
-              </code></pre>
-
-              <p><strong>Perbedaan utama:</strong> <code>while</code> mengecek kondisi di awal, sedangkan <code>do-while</code> mengecek di akhir (jadi pasti dijalankan minimal satu kali).</p>
-            `
-          },
-          {
-            title: "🔁 foreach loop",
-            content: `
-              <p><code>foreach</code> digunakan untuk melakukan iterasi (perulangan) pada elemen dalam koleksi seperti array atau list.</p>
-
-              <h4>📘 Contoh:</h4>
-              <pre><code class="language-csharp">
-      string[] buah = { "Apel", "Jeruk", "Mangga" };
-
-      foreach (string item in buah)
-      {
-          Console.WriteLine("Buah: " + item);
-      }
-              </code></pre>
-
-              <p><strong>Kelebihan:</strong></p>
-              <ul>
-                <li>Lebih ringkas dari <code>for</code>.</li>
-                <li>Tidak perlu indeks manual.</li>
-              </ul>
-            `
-          },
-          {
-            title: "🛑 break, continue, dan return",
-            content: `
-              <p>Ketiga kata kunci ini mengatur bagaimana perulangan atau fungsi berperilaku saat kondisi tertentu terjadi.</p>
-
-              <h4>📘 break:</h4>
-              <pre><code class="language-csharp">
-      for (int i = 1; i <= 5; i++)
-      {
-          if (i == 3) break;
-          Console.WriteLine(i);
-      }
-      // Output: 1, 2
-              </code></pre>
-
-              <h4>📘 continue:</h4>
-              <pre><code class="language-csharp">
-      for (int i = 1; i <= 5; i++)
-      {
-          if (i == 3) continue;
-          Console.WriteLine(i);
-      }
-      // Output: 1, 2, 4, 5
-              </code></pre>
-
-              <h4>📘 return:</h4>
-              <pre><code class="language-csharp">
-      void TampilkanPesan()
-      {
-          Console.Write("Masukkan angka: ");
-          int angka = Convert.ToInt32(Console.ReadLine());
-          if (angka < 0) return;
-          Console.WriteLine("Angka kamu: " + angka);
-      }
-              </code></pre>
-
-              <p><strong>Kesimpulan:</strong></p>
-              <ul>
-                <li><code>break</code> → keluar dari loop.</li>
-                <li><code>continue</code> → skip iterasi saat ini, lanjut ke berikutnya.</li>
-                <li><code>return</code> → keluar dari fungsi sepenuhnya.</li>
-              </ul>
-            `
-          },
-          {
-            title: "⚖️ Ternary Operator",
-            content: `
-              <p>Ternary operator adalah bentuk singkat dari pernyataan <code>if-else</code>.</p>
-
-              <h4>🧩 Sintaks:</h4>
-              <pre><code class="language-csharp">
-      (condition) ? value_if_true : value_if_false;
-              </code></pre>
-
-              <h4>📘 Contoh:</h4>
-              <pre><code class="language-csharp">
-      int umur = 20;
-      string status = (umur >= 18) ? "Dewasa" : "Anak-anak";
-      Console.WriteLine(status);
-              </code></pre>
-
-              <p>Cocok digunakan saat logika sederhana cukup ditulis dalam satu baris.</p>
-            `
-          },
-          {
-            title: "🎬 Video: Kontrol Alur Program C#",
-            video: "https://www.youtube.com/embed/IVz20_LFppY",
-            content: `
-              <p>Tonton video ini untuk memahami cara kerja percabangan, perulangan, dan kontrol alur dalam C#.</p>
-              <p>Kamu akan melihat contoh nyata penggunaan <code>if</code>, <code>switch</code>, <code>for</code>, <code>foreach</code>, serta penggunaan <code>break</code> dan <code>continue</code> di dunia nyata.</p>
-            `
-          }
-        ]
+          <p>Meskipun begitu, C# tetap menjadi salah satu bahasa paling produktif dan efisien untuk pengembangan modern.</p>
+        `
       },
-
-      5: {
-        title: "📦 Array & Koleksi Data",
-        slides: [
-          {
-            title: "📘 Array Satu Dimensi",
-            content: `
-              <p><strong>Array</strong> adalah struktur data yang menyimpan sekumpulan elemen dengan tipe yang sama dalam satu variabel.</p>
-
-              <h4>🧩 Contoh Array 1 Dimensi:</h4>
-              <pre><code class="language-csharp">
-      int[] angka = { 10, 20, 30, 40, 50 };
-
-      Console.WriteLine(angka[0]);  // Output: 10
-      Console.WriteLine(angka[3]);  // Output: 40
-
-      // Menampilkan seluruh elemen array
-      for (int i = 0; i < angka.Length; i++)
       {
-          Console.WriteLine("Index " + i + ": " + angka[i]);
-      }
-              </code></pre>
+        title: "Bidang Penggunaan C#",
+        content: `
+          <p>C# digunakan di berbagai bidang teknologi berkat fleksibilitasnya:</p>
 
-              <p><strong>Keterangan:</strong></p>
-              <ul>
-                <li>Indeks dimulai dari 0.</li>
-                <li><code>Length</code> digunakan untuk mengetahui panjang array.</li>
-                <li>Array bersifat statis (ukurannya tetap setelah dibuat).</li>
-              </ul>
-            `
-          },
-          {
-            title: "🧱 Array Multidimensi",
-            content: `
-              <p><strong>Array multidimensi</strong> digunakan untuk menyimpan data dalam bentuk tabel (baris dan kolom).</p>
+          <ul>
+            <li>🖥️ <strong>Aplikasi Desktop</strong> – Windows Forms, WPF, dan MAUI.</li>
+            <li>🌐 <strong>Web Development</strong> – ASP.NET dan Blazor.</li>
+            <li>📱 <strong>Mobile App</strong> – Xamarin / .NET MAUI untuk Android & iOS.</li>
+            <li>🎮 <strong>Game Development</strong> – digunakan di <strong>Unity Engine</strong>.</li>
+            <li>☁️ <strong>Cloud & API</strong> – integrasi kuat dengan Azure dan RESTful API.</li>
+            <li>🤖 <strong>IoT & Automation</strong> – dapat digunakan untuk embedded dan otomasi perangkat.</li>
+          </ul>
 
-              <h4>📘 Contoh Array 2 Dimensi:</h4>
-              <pre><code class="language-csharp">
-      int[,] matriks = {
-          { 1, 2, 3 },
-          { 4, 5, 6 },
-          { 7, 8, 9 }
-      };
-
-      // Mengakses elemen
-      Console.WriteLine(matriks[0, 2]);  // Output: 3
-
-      // Menampilkan semua elemen
-      for (int i = 0; i < 3; i++)
-      {
-          for (int j = 0; j < 3; j++)
-          {
-              Console.Write(matriks[i, j] + " ");
-          }
-          Console.WriteLine();
-      }
-              </code></pre>
-
-              <p><strong>Catatan:</strong> Array 2D berguna untuk representasi data seperti papan permainan, tabel, atau matriks matematika.</p>
-            `
-          },
-          {
-            title: "📋 List (Daftar Dinamis)",
-            content: `
-              <p><strong>List</strong> adalah versi dinamis dari array yang bisa menambah atau menghapus elemen secara fleksibel. List berasal dari namespace <code>System.Collections.Generic</code>.</p>
-
-              <h4>📘 Contoh:</h4>
-              <pre><code class="language-csharp">
-      using System.Collections.Generic;
-
-      List<string> nama = new List<string>();
-      nama.Add("Ali");
-      nama.Add("Budi");
-      nama.Add("Citra");
-
-      Console.WriteLine("Jumlah elemen: " + nama.Count);
-
-      foreach (string item in nama)
-      {
-          Console.WriteLine(item);
-      }
-
-      nama.Remove("Budi"); // Menghapus elemen
-      Console.WriteLine("Setelah dihapus:");
-      foreach (string item in nama)
-      {
-          Console.WriteLine(item);
-      }
-              </code></pre>
-
-              <p><strong>Kelebihan:</strong></p>
-              <ul>
-                <li>Dapat bertambah/berkurang tanpa harus menentukan ukuran awal.</li>
-                <li>Mudah diakses seperti array menggunakan indeks.</li>
-              </ul>
-            `
-          },
-          {
-            title: "🗂️ Dictionary (Key-Value Pair)",
-            content: `
-              <p><strong>Dictionary</strong> menyimpan data dalam bentuk pasangan <em>key</em> dan <em>value</em>. Setiap key harus unik.</p>
-
-              <h4>📘 Contoh:</h4>
-              <pre><code class="language-csharp">
-      using System.Collections.Generic;
-
-      Dictionary<string, string> negara = new Dictionary<string, string>();
-      negara["ID"] = "Indonesia";
-      negara["US"] = "Amerika Serikat";
-      negara["JP"] = "Jepang";
-
-      Console.WriteLine(negara["ID"]); // Output: Indonesia
-
-      foreach (var item in negara)
-      {
-          Console.WriteLine(item.Key + " - " + item.Value);
-      }
-              </code></pre>
-
-              <p><strong>Catatan:</strong> Dictionary sangat berguna untuk menyimpan data yang mudah dicari berdasarkan kunci, misalnya ID, username, atau kode produk.</p>
-            `
-          },
-          {
-            title: "🧱 Queue (Antrian)",
-            content: `
-              <p><strong>Queue</strong> bekerja dengan prinsip <strong>FIFO (First In, First Out)</strong> — elemen pertama yang masuk akan keluar lebih dulu.</p>
-
-              <h4>📘 Contoh:</h4>
-              <pre><code class="language-csharp">
-      using System.Collections.Generic;
-
-      Queue<string> antrian = new Queue<string>();
-      antrian.Enqueue("Ali");
-      antrian.Enqueue("Budi");
-      antrian.Enqueue("Citra");
-
-      Console.WriteLine("Keluar: " + antrian.Dequeue());
-      Console.WriteLine("Yang berikutnya: " + antrian.Peek());
-              </code></pre>
-
-              <p><strong>Keterangan:</strong></p>
-              <ul>
-                <li><code>Enqueue()</code> untuk menambah ke antrian.</li>
-                <li><code>Dequeue()</code> untuk mengeluarkan elemen pertama.</li>
-                <li><code>Peek()</code> melihat elemen terdepan tanpa menghapusnya.</li>
-              </ul>
-            `
-          },
-          {
-            title: "🧩 Stack (Tumpukan)",
-            content: `
-              <p><strong>Stack</strong> bekerja dengan prinsip <strong>LIFO (Last In, First Out)</strong> — elemen terakhir yang dimasukkan keluar lebih dulu.</p>
-
-              <h4>📘 Contoh:</h4>
-              <pre><code class="language-csharp">
-      using System.Collections.Generic;
-
-      Stack<string> tumpukan = new Stack<string>();
-      tumpukan.Push("Merah");
-      tumpukan.Push("Hijau");
-      tumpukan.Push("Biru");
-
-      Console.WriteLine("Keluar: " + tumpukan.Pop());
-      Console.WriteLine("Puncak stack: " + tumpukan.Peek());
-              </code></pre>
-
-              <p><strong>Keterangan:</strong></p>
-              <ul>
-                <li><code>Push()</code> menambahkan ke tumpukan.</li>
-                <li><code>Pop()</code> mengambil elemen terakhir.</li>
-                <li><code>Peek()</code> melihat elemen terakhir tanpa menghapusnya.</li>
-              </ul>
-            `
-          },
-          {
-            title: "🔁 Foreach Loop pada Koleksi",
-            content: `
-              <p><code>foreach</code> digunakan untuk menelusuri setiap elemen dalam koleksi seperti <code>List</code>, <code>Dictionary</code>, <code>Queue</code>, atau <code>Stack</code>.</p>
-
-              <h4>📘 Contoh List:</h4>
-              <pre><code class="language-csharp">
-      List<int> angka = new List<int> { 1, 2, 3, 4, 5 };
-
-      foreach (int item in angka)
-      {
-          Console.WriteLine(item);
-      }
-              </code></pre>
-
-              <h4>📘 Contoh Dictionary:</h4>
-              <pre><code class="language-csharp">
-      Dictionary<string, int> umur = new Dictionary<string, int>
-      {
-          { "Ali", 20 },
-          { "Budi", 22 },
-          { "Citra", 21 }
-      };
-
-      foreach (var data in umur)
-      {
-          Console.WriteLine(data.Key + " berumur " + data.Value + " tahun");
-      }
-              </code></pre>
-
-              <p><strong>Keunggulan foreach:</strong></p>
-              <ul>
-                <li>Tidak perlu tahu panjang koleksi.</li>
-                <li>Lebih aman karena tidak bisa mengubah koleksi saat iterasi.</li>
-              </ul>
-            `
-          },
-          {
-            title: "🎬 Video: Array & Koleksi Data C#",
-            video: "https://www.youtube.com/embed/88lxRj3PoZc",
-            content: `
-              <p>Tonton video ini untuk memahami cara kerja array, list, dictionary, queue, dan stack di C#.</p>
-              <p>Video ini akan membantu kamu melihat bagaimana struktur data ini digunakan dalam proyek nyata secara interaktif.</p>
-            `
-          }
-        ]
+          <p>Dengan dukungan besar dari Microsoft dan komunitas, C# menjadi bahasa serbaguna yang cocok untuk berbagai jenis proyek modern.</p>
+        `
       },
-
-      6: {
-        title: "🧩 Fungsi (Method)",
-        slides: [
-          {
-            title: "📘 Pengantar Fungsi (Method)",
-            content: `
-              <p>Dalam C#, <strong>method</strong> adalah blok kode yang digunakan untuk menjalankan tugas tertentu dan dapat dipanggil berkali-kali. Method membantu membuat program lebih modular dan mudah dipelihara.</p>
-
-              <h4>🧩 Struktur Dasar Method:</h4>
-              <pre><code class="language-csharp">
-      returnType NamaMethod(parameter)
       {
-          // Isi kode
-          return value;
+        title: "Video: Sejarah & Pengantar C#",
+        video: "https://www.youtube.com/embed/pSiIHe2uZ2w",
+        content: `
+          <p>Tonton video ini untuk memahami asal-usul C#, bagaimana Microsoft mengembangkannya bersama .NET Framework, dan bagaimana C# berevolusi menjadi bahasa lintas platform.</p>
+          <p>Video ini juga memberikan gambaran singkat tentang sintaks dasar dan potensi besar C# di dunia pemrograman modern.</p>
+        `
       }
-              </code></pre>
+    ]
+  },
 
-              <h4>📘 Contoh:</h4>
-              <pre><code class="language-csharp">
-      void SapaPengguna()
+  2: {
+    title: "⚙️ Persiapan & Tools",
+    slides: [
       {
-          Console.WriteLine("Halo, selamat datang di C#!");
-      }
+        title: "Instalasi .NET SDK & Tools Pendukung",
+        content: `
+          <p>Sebelum mulai menulis program dengan <strong>C#</strong>, kita perlu menyiapkan lingkungan pengembangannya terlebih dahulu.</p>
 
-      // Pemanggilan method
-      SapaPengguna();
-              </code></pre>
-
-              <p><strong>Keterangan:</strong></p>
+          <h4>🔧 Langkah-langkah Instalasi:</h4>
+          <ol>
+            <li>
+              <strong>Install .NET SDK</strong><br>
+              Unduh dari situs resmi Microsoft: 
+              <a href="https://dotnet.microsoft.com/download" target="_blank">https://dotnet.microsoft.com/download</a><br>
+              Pilih versi terbaru (.NET 6 atau .NET 8).
+            </li>
+            <li>
+              <strong>Install IDE (Editor)</strong>
               <ul>
-                <li><code>void</code> → method tidak mengembalikan nilai.</li>
-                <li>Nama method mengikuti aturan penamaan PascalCase (huruf pertama besar).</li>
+                <li>💻 <strong>Visual Studio</strong> – lengkap, cocok untuk proyek besar (Windows).</li>
+                <li>🧠 <strong>Visual Studio Code</strong> – ringan, fleksibel, cocok untuk semua OS.</li>
               </ul>
-            `
-          },
-          {
-            title: "🎯 Parameter & Nilai Balik (return)",
-            content: `
-              <p>Method bisa menerima parameter dan mengembalikan nilai dengan kata kunci <code>return</code>.</p>
+            </li>
+            <li>
+              <strong>Cek Instalasi</strong><br>
+              Buka terminal atau CMD, ketik:
+              <pre><code>dotnet --version</code></pre>
+              Jika muncul nomor versi, berarti instalasi berhasil.
+            </li>
+          </ol>
 
-              <h4>📘 Contoh dengan Parameter:</h4>
-              <pre><code class="language-csharp">
-      void TampilkanPesan(string nama)
-      {
-          Console.WriteLine("Halo, " + nama + "!");
-      }
-
-      TampilkanPesan("Ali");  // Output: Halo, Ali!
-              </code></pre>
-
-              <h4>📘 Contoh dengan Nilai Balik:</h4>
-              <pre><code class="language-csharp">
-      int Tambah(int a, int b)
-      {
-          return a + b;
-      }
-
-      int hasil = Tambah(5, 3);
-      Console.WriteLine("Hasil: " + hasil);  // Output: 8
-              </code></pre>
-
-              <p><strong>Catatan:</strong> tipe data pada <code>return</code> harus sesuai dengan deklarasi method-nya.</p>
-            `
-          },
-          {
-            title: "🔁 Overloading Method",
-            content: `
-              <p><strong>Method Overloading</strong> adalah kemampuan membuat beberapa method dengan nama sama, tetapi parameter berbeda (jumlah atau tipe datanya).</p>
-
-              <h4>📘 Contoh:</h4>
-              <pre><code class="language-csharp">
-      int HitungLuas(int sisi)
-      {
-          return sisi * sisi;
-      }
-
-      int HitungLuas(int panjang, int lebar)
-      {
-          return panjang * lebar;
-      }
-
-      Console.WriteLine("Luas persegi: " + HitungLuas(5));          // Output: 25
-      Console.WriteLine("Luas persegi panjang: " + HitungLuas(5, 8)); // Output: 40
-              </code></pre>
-
-              <p><strong>Kelebihan:</strong> Overloading membuat kode lebih fleksibel dan mudah dibaca karena menggunakan nama method yang sama untuk operasi serupa.</p>
-            `
-          },
-          {
-            title: "⚙️ Parameter Khusus: ref, out, dan params",
-            content: `
-              <p>C# menyediakan beberapa jenis parameter khusus yang memberi kontrol lebih dalam pengiriman data ke method.</p>
-
-              <h4>📘 1. ref parameter</h4>
-              <p>Memungkinkan method mengubah nilai variabel yang dikirim.</p>
-              <pre><code class="language-csharp">
-      void TambahLima(ref int x)
-      {
-          x += 5;
-      }
-
-      int angka = 10;
-      TambahLima(ref angka);
-      Console.WriteLine(angka); // Output: 15
-              </code></pre>
-
-              <h4>📘 2. out parameter</h4>
-              <p>Digunakan untuk mengembalikan lebih dari satu nilai dari method.</p>
-              <pre><code class="language-csharp">
-      void Hitung(int a, int b, out int tambah, out int kali)
-      {
-          tambah = a + b;
-          kali = a * b;
-      }
-
-      Hitung(3, 4, out int hasilTambah, out int hasilKali);
-      Console.WriteLine("Tambah: " + hasilTambah + ", Kali: " + hasilKali);
-              </code></pre>
-
-              <h4>📘 3. params parameter</h4>
-              <p>Memungkinkan pengiriman banyak argumen sekaligus sebagai array.</p>
-              <pre><code class="language-csharp">
-      int Jumlahkan(params int[] angka)
-      {
-          int total = 0;
-          foreach (int i in angka)
-          {
-              total += i;
-          }
-          return total;
-      }
-
-      Console.WriteLine(Jumlahkan(1, 2, 3, 4, 5)); // Output: 15
-              </code></pre>
-
-              <p><strong>Kesimpulan:</strong></p>
-              <ul>
-                <li><code>ref</code> → ubah nilai variabel asli.</li>
-                <li><code>out</code> → kembalikan nilai tambahan.</li>
-                <li><code>params</code> → kirim jumlah argumen tak terbatas.</li>
-              </ul>
-            `
-          },
-          {
-            title: "🔄 Rekursi (Recursive Function)",
-            content: `
-              <p><strong>Rekursi</strong> adalah teknik di mana method memanggil dirinya sendiri untuk menyelesaikan masalah yang lebih kecil hingga mencapai kondisi berhenti (base case).</p>
-
-              <h4>📘 Contoh Faktorial:</h4>
-              <pre><code class="language-csharp">
-      int Faktorial(int n)
-      {
-          if (n == 1)
-              return 1;
-          else
-              return n * Faktorial(n - 1);
-      }
-
-      Console.WriteLine(Faktorial(5)); // Output: 120
-              </code></pre>
-
-              <p><strong>Keterangan:</strong></p>
-              <ul>
-                <li>Pastikan selalu ada kondisi berhenti (base case), agar tidak terjadi infinite recursion.</li>
-                <li>Rekursi cocok untuk masalah seperti faktorial, pencarian pohon, dan traversal struktur data.</li>
-              </ul>
-            `
-          },
-          {
-            title: "🎬 Video: Fungsi & Method di C#",
-            video: "https://www.youtube.com/embed/uy-yf0fBMoM",
-            content: `
-              <p>Tonton video ini untuk memahami konsep method di C#, mulai dari dasar pembuatan, parameter, nilai balik, hingga rekursi.</p>
-              <p>Video ini juga menjelaskan bagaimana method membantu membuat kode lebih efisien dan terstruktur.</p>
-            `
-          }
-        ]
+          <p>Dengan setup ini, kamu sudah siap menulis dan menjalankan kode C# dari mana saja, baik di Windows, macOS, maupun Linux.</p>
+        `
       },
-
-      7: {
-        title: "🧱 Konsep Object-Oriented Programming (OOP)",
-        slides: [
-          {
-            title: "🧠 Pengantar OOP (Object-Oriented Programming)",
-            content: `
-              <p><strong>Object-Oriented Programming (OOP)</strong> adalah paradigma pemrograman yang berfokus pada objek — yaitu representasi dari entitas dunia nyata yang memiliki data (atribut) dan perilaku (method).</p>
-
-              <h4>🎯 Tujuan OOP:</h4>
-              <ul>
-                <li>Mempermudah pengorganisasian kode.</li>
-                <li>Meminimalkan duplikasi (reusability).</li>
-                <li>Membuat program lebih fleksibel dan mudah dipelihara.</li>
-              </ul>
-
-              <p>Empat pilar utama OOP:</p>
-              <ul>
-                <li><strong>Encapsulation</strong> 🧩 — Menyembunyikan detail internal objek.</li>
-                <li><strong>Inheritance</strong> 🧬 — Pewarisan fitur antar class.</li>
-                <li><strong>Polymorphism</strong> 🎭 — Kemampuan method berperilaku berbeda.</li>
-                <li><strong>Abstraction</strong> 🌫️ — Menyembunyikan kompleksitas dan hanya menampilkan hal penting.</li>
-              </ul>
-            `
-          },
-          {
-            title: "🏗️ Class & Object",
-            content: `
-              <p><strong>Class</strong> adalah cetak biru (blueprint) dari objek, sedangkan <strong>Object</strong> adalah instance (hasil nyata) dari class tersebut.</p>
-
-              <h4>📘 Contoh:</h4>
-              <pre><code class="language-csharp">
-      class Mobil
       {
-          public string merk;
-          public string warna;
+        title: "Struktur Dasar Program C#",
+        content: `
+          <p>Program C# tersusun dari beberapa elemen penting seperti <strong>namespace</strong>, <strong>class</strong>, dan <strong>method Main()</strong>.</p>
 
-          public void Jalankan()
-          {
-              Console.WriteLine(merk + " sedang berjalan...");
-          }
-      }
+          <pre><code class="language-csharp">using System;
 
-      Mobil m1 = new Mobil();
-      m1.merk = "Toyota";
-      m1.warna = "Merah";
-      m1.Jalankan();
-              </code></pre>
+namespace HelloWorldApp
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Hello, World!");
+        }
+    }
+}</code></pre>
 
-              <p><strong>Keterangan:</strong></p>
-              <ul>
-                <li><code>class</code> digunakan untuk mendefinisikan template.</li>
-                <li><code>object</code> dibuat menggunakan keyword <code>new</code>.</li>
-              </ul>
-            `
-          },
-          {
-            title: "⚙️ Field, Property, dan Method",
-            content: `
-              <p>Dalam class, kita bisa mendefinisikan:</p>
-              <ul>
-                <li><strong>Field</strong> → variabel dalam class.</li>
-                <li><strong>Property</strong> → akses aman ke field.</li>
-                <li><strong>Method</strong> → perilaku (aksi) dari objek.</li>
-              </ul>
+          <h4>🧩 Penjelasan Struktur:</h4>
+          <ul>
+            <li><strong>using System;</strong> – mengimpor namespace bawaan .NET agar bisa memakai <code>Console</code>.</li>
+            <li><strong>namespace HelloWorldApp</strong> – area logis untuk mengelompokkan class agar tidak bentrok nama.</li>
+            <li><strong>class Program</strong> – tempat utama kode dijalankan.</li>
+            <li><strong>static void Main()</strong> – titik awal eksekusi program (setara dengan fungsi <code>main()</code> di C/C++).</li>
+          </ul>
 
-              <h4>📘 Contoh:</h4>
-              <pre><code class="language-csharp">
-      class Hewan
-      {
-          private string nama;  // field (tertutup)
-          public int umur;      // field (terbuka)
-
-          // Property untuk akses aman ke field private
-          public string Nama
-          {
-              get { return nama; }
-              set { nama = value; }
-          }
-
-          public void Suara()
-          {
-              Console.WriteLine(nama + " mengeluarkan suara!");
-          }
-      }
-
-      Hewan kucing = new Hewan();
-      kucing.Nama = "Mimi";
-      kucing.umur = 2;
-      kucing.Suara();
-              </code></pre>
-            `
-          },
-          {
-            title: "🏗️ Constructor & Destructor",
-            content: `
-              <p><strong>Constructor</strong> dipanggil otomatis saat objek dibuat. Sedangkan <strong>Destructor</strong> dijalankan ketika objek dihapus dari memori.</p>
-
-              <h4>📘 Contoh Constructor:</h4>
-              <pre><code class="language-csharp">
-      class Orang
-      {
-          public string nama;
-
-          // Constructor
-          public Orang(string n)
-          {
-              nama = n;
-              Console.WriteLine("Objek " + nama + " dibuat!");
-          }
-
-          // Destructor
-          ~Orang()
-          {
-              Console.WriteLine("Objek " + nama + " dihapus!");
-          }
-      }
-
-      Orang o1 = new Orang("Ali");
-              </code></pre>
-
-              <p>Constructor berguna untuk inisialisasi awal, sedangkan destructor jarang digunakan karena C# memiliki garbage collector otomatis.</p>
-            `
-          },
-          {
-            title: "🧬 Inheritance (Pewarisan)",
-            content: `
-              <p><strong>Inheritance</strong> memungkinkan suatu class mewarisi properti dan method dari class lain.</p>
-
-              <h4>📘 Contoh:</h4>
-              <pre><code class="language-csharp">
-      class Kendaraan
-      {
-          public void Jalan()
-          {
-              Console.WriteLine("Kendaraan berjalan...");
-          }
-      }
-
-      class Mobil : Kendaraan
-      {
-          public void Klakson()
-          {
-              Console.WriteLine("Mobil membunyikan klakson!");
-          }
-      }
-
-      Mobil avanza = new Mobil();
-      avanza.Jalan();     // Pewarisan dari Kendaraan
-      avanza.Klakson();
-              </code></pre>
-
-              <p><strong>Catatan:</strong> Class turunan (child) mewarisi semua anggota class induk (parent), kecuali konstruktor dan destructor.</p>
-            `
-          },
-          {
-            title: "🎭 Polymorphism (Override & Overload)",
-            content: `
-              <p><strong>Polymorphism</strong> berarti "banyak bentuk". Dalam C#, ini bisa berupa:</p>
-              <ul>
-                <li><strong>Overload</strong> — beberapa method dengan nama sama tapi parameter berbeda.</li>
-                <li><strong>Override</strong> — method diubah perilakunya di class turunan.</li>
-              </ul>
-
-              <h4>📘 Contoh Override:</h4>
-              <pre><code class="language-csharp">
-      class Hewan
-      {
-          public virtual void Suara()
-          {
-              Console.WriteLine("Hewan bersuara...");
-          }
-      }
-
-      class Kucing : Hewan
-      {
-          public override void Suara()
-          {
-              Console.WriteLine("Meong!");
-          }
-      }
-
-      Hewan h = new Kucing();
-      h.Suara(); // Output: Meong!
-              </code></pre>
-
-              <p>Gunakan <code>virtual</code> dan <code>override</code> untuk mengaktifkan polymorphism dinamis.</p>
-            `
-          },
-          {
-            title: "🧩 Encapsulation (Akses Modifier)",
-            content: `
-              <p><strong>Encapsulation</strong> adalah penyembunyian detail internal suatu class agar tidak bisa diakses langsung dari luar.</p>
-
-              <h4>🔐 Akses Modifier di C#:</h4>
-              <ul>
-                <li><code>public</code> → bisa diakses dari mana saja.</li>
-                <li><code>private</code> → hanya bisa diakses di class yang sama.</li>
-                <li><code>protected</code> → bisa diakses oleh class turunan.</li>
-                <li><code>internal</code> → hanya bisa diakses dalam satu assembly/project.</li>
-              </ul>
-
-              <h4>📘 Contoh:</h4>
-              <pre><code class="language-csharp">
-      class Akun
-      {
-          private string password = "12345";
-
-          public void Login(string input)
-          {
-              if (input == password)
-                  Console.WriteLine("Login berhasil!");
-              else
-                  Console.WriteLine("Password salah!");
-          }
-      }
-
-      Akun a = new Akun();
-      a.Login("12345"); // Output: Login berhasil!
-              </code></pre>
-            `
-          },
-          {
-            title: "🌫️ Abstraction (Abstract Class & Interface)",
-            content: `
-              <p><strong>Abstraction</strong> adalah konsep menyembunyikan detail implementasi dan hanya menampilkan fungsionalitas penting.</p>
-
-              <h4>📘 Abstract Class:</h4>
-              <pre><code class="language-csharp">
-      abstract class Bentuk
-      {
-          public abstract void Gambar();
-      }
-
-      class Lingkaran : Bentuk
-      {
-          public override void Gambar()
-          {
-              Console.WriteLine("Menggambar lingkaran...");
-          }
-      }
-
-      Bentuk b = new Lingkaran();
-      b.Gambar();
-              </code></pre>
-
-              <h4>📘 Interface:</h4>
-              <pre><code class="language-csharp">
-      interface IKendaraan
-      {
-          void Bergerak();
-      }
-
-      class Motor : IKendaraan
-      {
-          public void Bergerak()
-          {
-              Console.WriteLine("Motor bergerak di jalan!");
-          }
-      }
-
-      IKendaraan m = new Motor();
-      m.Bergerak();
-              </code></pre>
-
-              <p><strong>Perbedaan:</strong></p>
-              <ul>
-                <li><code>abstract class</code> → bisa punya method dengan isi dan tanpa isi.</li>
-                <li><code>interface</code> → semua method wajib diimplementasikan oleh class turunan.</li>
-              </ul>
-            `
-          },
-          {
-            title: "🎬 Video: Konsep OOP di C#",
-            video: "https://www.youtube.com/embed/GhQdlIFylQ8",
-            content: `
-              <p>Tonton video ini untuk memahami OOP di C#: dari konsep class, object, inheritance, hingga polymorphism.</p>
-              <p>Video ini sangat membantu untuk memahami bagaimana struktur kode C# dibuat lebih modular dan efisien menggunakan prinsip OOP.</p>
-            `
-          }
-        ]
+          <p>Struktur ini adalah dasar semua program C# — dari aplikasi kecil hingga proyek besar.</p>
+        `
       },
-
-      8: {
-        title: "🧰 Error Handling",
-        slides: [
-          {
-            title: "🧠 Pengantar Error Handling",
-            content: `
-              <p>Dalam pemrograman C#, error bisa terjadi kapan saja — misalnya karena pembagian dengan nol, file tidak ditemukan, atau input pengguna yang salah.</p>
-              <p>Untuk mencegah program berhenti secara tiba-tiba, kita menggunakan <strong>Error Handling</strong> dengan blok <code>try-catch-finally</code>.</p>
-
-              <h4>🎯 Tujuan Error Handling:</h4>
-              <ul>
-                <li>Mencegah program crash saat error terjadi.</li>
-                <li>Memberikan pesan kesalahan yang lebih informatif.</li>
-                <li>Menangani error dengan cara yang terkontrol.</li>
-              </ul>
-            `
-          },
-          {
-            title: "⚙️ Struktur Try, Catch, Finally",
-            content: `
-              <p>Blok <code>try</code> berisi kode yang mungkin menyebabkan error, sedangkan <code>catch</code> menangani error-nya. Blok <code>finally</code> dijalankan selalu, baik ada error maupun tidak.</p>
-
-              <h4>📘 Contoh:</h4>
-              <pre><code class="language-csharp">
-      try
       {
-          int a = 10;
-          int b = 0;
-          int hasil = a / b;
-          Console.WriteLine("Hasil: " + hasil);
-      }
-      catch (DivideByZeroException e)
-      {
-          Console.WriteLine("Error: " + e.Message);
-      }
-      finally
-      {
-          Console.WriteLine("Program selesai dijalankan.");
-      }
-              </code></pre>
+        title: "Membuat & Menjalankan Program Pertama",
+        content: `
+          <h4>🪄 Langkah-langkah membuat program pertama:</h4>
+          <ol>
+            <li>Buka terminal atau Visual Studio Code.</li>
+            <li>Buat folder baru untuk proyekmu:
+              <pre><code>mkdir HelloWorld</code></pre>
+            </li>
+            <li>Masuk ke folder tersebut:
+              <pre><code>cd HelloWorld</code></pre>
+            </li>
+            <li>Buat project baru dengan template console:
+              <pre><code>dotnet new console</code></pre>
+            </li>
+            <li>Jalankan program:
+              <pre><code>dotnet run</code></pre>
+            </li>
+          </ol>
 
-              <p><strong>Keterangan:</strong></p>
-              <ul>
-                <li><code>try</code> → tempatkan kode yang berpotensi error.</li>
-                <li><code>catch</code> → menangkap jenis error tertentu.</li>
-                <li><code>finally</code> → dijalankan selalu, berguna untuk membersihkan resource (misal: menutup file).</li>
-              </ul>
-            `
-          },
-          {
-            title: "🚨 Menangani Beberapa Jenis Exception",
-            content: `
-              <p>Kamu bisa menggunakan beberapa blok <code>catch</code> untuk menangani error yang berbeda-beda.</p>
+          <p>Output yang muncul:</p>
+          <pre><code>Hello, World!</code></pre>
 
-              <h4>📘 Contoh:</h4>
-              <pre><code class="language-csharp">
-      try
-      {
-          int[] angka = { 1, 2, 3 };
-          Console.WriteLine(angka[5]); // Index tidak valid
-      }
-      catch (IndexOutOfRangeException e)
-      {
-          Console.WriteLine("Kesalahan index: " + e.Message);
-      }
-      catch (Exception e)
-      {
-          Console.WriteLine("Kesalahan umum: " + e.Message);
-      }
-              </code></pre>
-
-              <p><strong>Tips:</strong> Selalu letakkan <code>catch (Exception)</code> di paling bawah, agar tidak menutupi jenis error yang lebih spesifik.</p>
-            `
-          },
-          {
-            title: "💥 Melempar Exception Sendiri (Throw)",
-            content: `
-              <p>Kamu bisa membuat error secara manual menggunakan keyword <code>throw</code>. Biasanya digunakan untuk validasi data atau kondisi yang tidak diizinkan.</p>
-
-              <h4>📘 Contoh:</h4>
-              <pre><code class="language-csharp">
-      static void Bagi(int a, int b)
-      {
-          if (b == 0)
-          {
-              throw new DivideByZeroException("Tidak bisa membagi dengan nol!");
-          }
-          Console.WriteLine("Hasil: " + (a / b));
-      }
-
-      try
-      {
-          Bagi(10, 0);
-      }
-      catch (Exception e)
-      {
-          Console.WriteLine("Terjadi error: " + e.Message);
-      }
-              </code></pre>
-
-              <p><strong>Catatan:</strong> <code>throw</code> akan menghentikan eksekusi method dan mengirimkan error ke blok <code>catch</code> terdekat.</p>
-            `
-          },
-          {
-            title: "🧩 Membuat Custom Exception",
-            content: `
-              <p>Kamu bisa membuat <strong>custom exception</strong> sendiri agar error lebih spesifik dan mudah dipahami.</p>
-
-              <h4>📘 Contoh:</h4>
-              <pre><code class="language-csharp">
-      class UmurTidakValidException : Exception
-      {
-          public UmurTidakValidException(string pesan) : base(pesan)
-          {
-          }
-      }
-
-      class Program
-      {
-          static void CekUmur(int umur)
-          {
-              if (umur < 0)
-              {
-                  throw new UmurTidakValidException("Umur tidak boleh negatif!");
-              }
-              Console.WriteLine("Umur valid: " + umur);
-          }
-
-          static void Main()
-          {
-              try
-              {
-                  CekUmur(-5);
-              }
-              catch (UmurTidakValidException e)
-              {
-                  Console.WriteLine("Kesalahan: " + e.Message);
-              }
-          }
-      }
-              </code></pre>
-
-              <p>Dengan custom exception, kamu bisa memberikan nama error yang sesuai dengan konteks programmu.</p>
-            `
-          },
-          {
-            title: "🎬 Video: Error Handling di C#",
-            video: "https://www.youtube.com/embed/RmD6Ja3P2dY",
-            content: `
-              <p>Tonton video ini untuk memahami konsep <strong>try-catch-finally</strong> di C#, cara melempar (throw) error sendiri, dan cara membuat custom exception.</p>
-              <p>Video ini juga menunjukkan bagaimana cara debugging error dengan Visual Studio.</p>
-            `
-          }
-        ]
+          <p>🎉 Selamat! Kamu baru saja menjalankan program C# pertamamu menggunakan .NET CLI.</p>
+        `
       },
+      {
+        title: "Struktur Project C# (.NET)",
+        content: `
+          <p>Setelah membuat project dengan <code>dotnet new console</code>, kamu akan melihat beberapa file & folder otomatis terbentuk.</p>
 
-      9: {
-        title: "📚 String & Manipulasi Data",
-        slides: [
-          {
-            title: "🔤 Operasi Dasar pada String",
-            content: `
-              <p>String adalah kumpulan karakter yang digunakan untuk menyimpan teks. Di C#, string termasuk tipe data <strong>reference</strong> dan bersifat <strong>immutable</strong> (tidak bisa diubah setelah dibuat).</p>
+          <h4>📁 Struktur Folder:</h4>
+          <pre><code>HelloWorld/
+│
+├── bin/               # Folder hasil build (output executable)
+├── obj/               # Folder sementara untuk data kompilasi
+├── Program.cs         # File utama tempat kode ditulis
+└── HelloWorld.csproj  # File konfigurasi project (.NET project file)</code></pre>
 
-              <h4>🧩 Contoh Deklarasi & Penggunaan:</h4>
-              <pre><code class="language-csharp">
-      string nama = "Ali";
-      string pesan = "Selamat datang, " + nama + "!";
-      Console.WriteLine(pesan);
-              </code></pre>
+          <h4>🧠 Penjelasan Singkat:</h4>
+          <ul>
+            <li><strong>Program.cs</strong> – berisi kode utama (entry point).</li>
+            <li><strong>.csproj</strong> – menyimpan informasi tentang framework, dependency, dan konfigurasi build.</li>
+            <li><strong>bin/</strong> – hasil akhir dari kompilasi (file .exe atau .dll).</li>
+            <li><strong>obj/</strong> – file sementara selama proses build berlangsung.</li>
+          </ul>
 
-              <h4>📦 String Interpolation:</h4>
-              <p>Kamu bisa menggabungkan teks dan variabel dengan cara yang lebih mudah menggunakan <strong>string interpolation</strong> (<code>$"{...}"</code>).</p>
-
-              <pre><code class="language-csharp">
-      string nama = "Ali";
-      int umur = 21;
-      Console.WriteLine($"Halo, nama saya {nama}, umur saya {umur} tahun.");
-              </code></pre>
-
-              <p>Interpolation membuat kode lebih rapi dan mudah dibaca dibandingkan concatenation dengan tanda <code>+</code>.</p>
-            `
-          },
-          {
-            title: "🧰 Fungsi-Fungsi String Bawaan",
-            content: `
-              <p>C# menyediakan banyak <strong>method bawaan</strong> dalam class <code>System.String</code> untuk memanipulasi teks.</p>
-
-              <h4>📘 Contoh:</h4>
-              <pre><code class="language-csharp">
-      string kalimat = "Belajar C# itu menyenangkan!";
-
-      Console.WriteLine(kalimat.ToUpper());      // BELAJAR C# ITU MENYENANGKAN!
-      Console.WriteLine(kalimat.ToLower());      // belajar c# itu menyenangkan!
-      Console.WriteLine(kalimat.Substring(8, 2)); // "C#"
-      Console.WriteLine(kalimat.Replace("menyenangkan", "mudah")); // ganti kata
-      Console.WriteLine(kalimat.Contains("C#")); // true
-      Console.WriteLine(kalimat.Length);          // jumlah karakter
-              </code></pre>
-
-              <h4>📚 Daftar Method Umum:</h4>
-              <ul>
-                <li><code>ToUpper()</code> / <code>ToLower()</code> – ubah huruf besar/kecil.</li>
-                <li><code>Substring()</code> – ambil sebagian string.</li>
-                <li><code>Replace()</code> – ganti teks tertentu.</li>
-                <li><code>Trim()</code> – hapus spasi di awal/akhir.</li>
-                <li><code>Contains()</code> – cek apakah string mengandung teks tertentu.</li>
-                <li><code>Length</code> – panjang string.</li>
-              </ul>
-            `
-          },
-          {
-            title: "🔢 Parsing & Konversi Data",
-            content: `
-              <p>Sering kali kita perlu mengubah string menjadi angka, terutama saat membaca input dari pengguna.</p>
-
-              <h4>📘 Contoh:</h4>
-              <pre><code class="language-csharp">
-      string input = "25";
-      int angka1 = int.Parse(input);           // cara 1
-      int angka2 = Convert.ToInt32(input);     // cara 2
-
-      Console.WriteLine(angka1 + angka2); // 50
-              </code></pre>
-
-              <h4>⚠️ Catatan Penting:</h4>
-              <ul>
-                <li><code>int.Parse()</code> akan error jika input bukan angka valid.</li>
-                <li><code>Convert.ToInt32()</code> lebih aman karena bisa menangani nilai <code>null</code>.</li>
-              </ul>
-
-              <p>Untuk menghindari error, gunakan <code>int.TryParse()</code> agar program tidak crash jika input tidak valid:</p>
-
-              <pre><code class="language-csharp">
-      string teks = "abc";
-      if (int.TryParse(teks, out int hasil))
-          Console.WriteLine($"Berhasil: {hasil}");
-      else
-          Console.WriteLine("Input tidak valid!");
-              </code></pre>
-            `
-          },
-          {
-            title: "⏰ DateTime & TimeSpan",
-            content: `
-              <p>C# memiliki tipe data khusus untuk menangani tanggal dan waktu, yaitu <strong>DateTime</strong> dan <strong>TimeSpan</strong>.</p>
-
-              <h4>📘 Contoh DateTime:</h4>
-              <pre><code class="language-csharp">
-      DateTime sekarang = DateTime.Now;
-      Console.WriteLine("Sekarang: " + sekarang);
-
-      DateTime ulangTahun = new DateTime(2003, 5, 14);
-      Console.WriteLine("Ulang tahun: " + ulangTahun.ToShortDateString());
-
-      // Format kustom
-      Console.WriteLine(sekarang.ToString("dd MMMM yyyy HH:mm"));
-              </code></pre>
-
-              <h4>📏 Contoh TimeSpan:</h4>
-              <pre><code class="language-csharp">
-      DateTime mulai = DateTime.Now;
-      DateTime selesai = mulai.AddHours(2).AddMinutes(30);
-
-      TimeSpan durasi = selesai - mulai;
-      Console.WriteLine($"Durasi: {durasi.TotalMinutes} menit");
-              </code></pre>
-
-              <h4>🧠 Kegunaan:</h4>
-              <ul>
-                <li>🗓️ Menghitung selisih waktu antar tanggal.</li>
-                <li>⏱️ Mengukur durasi suatu proses.</li>
-                <li>📅 Menampilkan tanggal dalam format tertentu.</li>
-              </ul>
-            `
-          },
-          {
-            title: "🎬 Video: String & DateTime di C#",
-            video: "https://www.youtube.com/embed/dO5BzUoVg6U",
-            content: `
-              <p>Tonton video ini untuk memahami manipulasi string, konversi data, dan penggunaan <strong>DateTime</strong> & <strong>TimeSpan</strong> dalam C#.</p>
-              <p>Video ini menjelaskan contoh langsung dalam Visual Studio agar kamu bisa melihat hasilnya secara real-time.</p>
-            `
-          }
-        ]
+          <p>Struktur ini adalah standar di semua project C# berbasis .NET, sehingga mudah dikelola dan dipindahkan antar sistem.</p>
+        `
       },
-
-      10: {
-        title: "📦 File Handling",
-        slides: [
-          {
-            title: "🧠 Pengantar File Handling di C#",
-            content: `
-              <p><strong>File Handling</strong> adalah cara program berinteraksi dengan file di penyimpanan komputer — seperti membaca, menulis, atau memeriksa keberadaan file.</p>
-              <p>C# menyediakan berbagai class di namespace <code>System.IO</code> untuk mengelola file dan folder.</p>
-
-              <h4>📚 Class Penting dalam File Handling:</h4>
-              <ul>
-                <li><code>File</code> – operasi dasar (buat, baca, tulis, hapus file).</li>
-                <li><code>StreamReader</code> & <code>StreamWriter</code> – membaca & menulis file teks.</li>
-                <li><code>Directory</code> – bekerja dengan folder (buat, hapus, cek isi folder).</li>
-                <li><code>Path</code> – manipulasi path file (gabung, ambil ekstensi, nama file, dll).</li>
-              </ul>
-
-              <p>Dengan File Handling, kamu bisa menyimpan data, membuat log, atau membaca konfigurasi dari file eksternal.</p>
-            `
-          },
-          {
-            title: "📖 Membaca & Menulis File dengan System.IO.File",
-            content: `
-              <p>Class <code>File</code> menyediakan method statis yang sangat mudah digunakan untuk membaca dan menulis teks.</p>
-
-              <h4>📘 Contoh: Menulis File</h4>
-              <pre><code class="language-csharp">
-      using System;
-      using System.IO;
-
-      class Program
       {
-          static void Main()
-          {
-              string path = "data.txt";
-              string isi = "Halo dari C#!";
-
-              File.WriteAllText(path, isi);
-              Console.WriteLine("File berhasil ditulis!");
-          }
+        title: "Video: Setup & Hello World C#",
+        video: "https://www.youtube.com/embed/gfkTfcpWqAY",
+        content: `
+          <p>Tonton video ini untuk melihat langkah-langkah instalasi .NET SDK, setup Visual Studio Code, dan cara membuat program C# pertama dari nol.</p>
+          <p>Video ini akan membantu kamu memahami proses kerja <strong>dotnet CLI</strong> dan struktur project C# secara visual.</p>
+        `
       }
-              </code></pre>
+    ]
+  },
 
-              <h4>📘 Contoh: Membaca File</h4>
-              <pre><code class="language-csharp">
-      string path = "data.txt";
-      if (File.Exists(path))
+  3: {
+    title: "🔤 Dasar Bahasa Pemrograman",
+    slides: [
       {
-          string teks = File.ReadAllText(path);
-          Console.WriteLine("Isi file: " + teks);
-      }
-      else
-      {
-          Console.WriteLine("File tidak ditemukan!");
-      }
-              </code></pre>
+        title: "Tipe Data dalam C#",
+        content: `
+          <p>Setiap variabel di <strong>C#</strong> memiliki <strong>tipe data</strong> yang menentukan jenis nilai yang dapat disimpan. C# adalah <strong>strongly typed language</strong>, artinya tipe data harus jelas.</p>
 
-              <p><strong>Note:</strong> Gunakan <code>File.AppendAllText()</code> untuk menambahkan teks ke file tanpa menimpanya.</p>
-            `
-          },
-          {
-            title: "📜 Membaca & Menulis File dengan StreamReader / StreamWriter",
-            content: `
-              <p>Untuk membaca atau menulis file besar, gunakan <strong>StreamReader</strong> dan <strong>StreamWriter</strong> agar lebih efisien.</p>
+          <h4>📘 Tipe Data Umum:</h4>
+          <table border="1" cellpadding="6" cellspacing="0" style="border-collapse: collapse; width: 100%;">
+            <thead>
+              <tr>
+                <th>Tipe Data</th>
+                <th>Ukuran</th>
+                <th>Contoh Nilai</th>
+                <th>Keterangan</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>int</code></td>
+                <td>4 byte</td>
+                <td>42</td>
+                <td>Bilangan bulat</td>
+              </tr>
+              <tr>
+                <td><code>float</code></td>
+                <td>4 byte</td>
+                <td>3.14f</td>
+                <td>Bilangan pecahan (butuh akhiran <code>f</code>)</td>
+              </tr>
+              <tr>
+                <td><code>double</code></td>
+                <td>8 byte</td>
+                <td>3.14159</td>
+                <td>Bilangan pecahan dengan presisi tinggi</td>
+              </tr>
+              <tr>
+                <td><code>bool</code></td>
+                <td>1 byte</td>
+                <td>true / false</td>
+                <td>Nilai logika (benar atau salah)</td>
+              </tr>
+              <tr>
+                <td><code>char</code></td>
+                <td>2 byte</td>
+                <td>'A'</td>
+                <td>Karakter tunggal</td>
+              </tr>
+              <tr>
+                <td><code>string</code></td>
+                <td>–</td>
+                <td>"Halo Dunia"</td>
+                <td>Teks (kumpulan karakter)</td>
+              </tr>
+              <tr>
+                <td><code>var</code></td>
+                <td>–</td>
+                <td>var x = 10;</td>
+                <td>Menentukan tipe otomatis berdasarkan nilai</td>
+              </tr>
+            </tbody>
+          </table>
 
-              <h4>📘 Contoh: Menulis File</h4>
-              <pre><code class="language-csharp">
-      using (StreamWriter writer = new StreamWriter("catatan.txt"))
-      {
-          writer.WriteLine("Baris pertama");
-          writer.WriteLine("Baris kedua");
-      }
-      Console.WriteLine("File catatan.txt berhasil dibuat!");
-              </code></pre>
-
-              <h4>📘 Contoh: Membaca File</h4>
-              <pre><code class="language-csharp">
-      using (StreamReader reader = new StreamReader("catatan.txt"))
-      {
-          string baris;
-          while ((baris = reader.ReadLine()) != null)
-          {
-              Console.WriteLine(baris);
-          }
-      }
-              </code></pre>
-
-              <p><strong>Penjelasan:</strong></p>
-              <ul>
-                <li><code>using</code> memastikan file tertutup otomatis setelah selesai digunakan.</li>
-                <li><code>ReadLine()</code> membaca teks per baris, cocok untuk file log atau data teks panjang.</li>
-              </ul>
-            `
-          },
-          {
-            title: "📂 Mengecek File & Folder",
-            content: `
-              <p>Kamu bisa mengecek apakah file atau folder ada, serta membuat folder baru menggunakan class <code>File</code> dan <code>Directory</code>.</p>
-
-              <h4>📘 Contoh:</h4>
-              <pre><code class="language-csharp">
-      string filePath = "data.txt";
-      string folderPath = "Dokumen";
-
-      // Mengecek keberadaan file
-      if (File.Exists(filePath))
-          Console.WriteLine("File ditemukan!");
-      else
-          Console.WriteLine("File tidak ditemukan!");
-
-      // Mengecek folder & membuat jika belum ada
-      if (!Directory.Exists(folderPath))
-      {
-          Directory.CreateDirectory(folderPath);
-          Console.WriteLine("Folder baru dibuat: " + folderPath);
-      }
-              </code></pre>
-
-              <p>Dengan ini, program kamu bisa memastikan struktur penyimpanan sudah siap sebelum menulis file.</p>
-            `
-          },
-          {
-            title: "🧾 Membuat Log Sederhana ke File Teks",
-            content: `
-              <p>Salah satu penggunaan umum File Handling adalah membuat <strong>log aktivitas</strong> aplikasi.</p>
-              <p>Log berguna untuk mencatat kapan suatu peristiwa terjadi, seperti error atau tindakan pengguna.</p>
-
-              <h4>📘 Contoh:</h4>
-              <pre><code class="language-csharp">
-      using System;
-      using System.IO;
-
-      class Logger
-      {
-          static string logPath = "log.txt";
-
-          public static void TulisLog(string pesan)
-          {
-              string waktu = DateTime.Now.ToString("dd-MM-yyyy HH:mm:ss");
-              string baris = $"[{waktu}] {pesan}";
-              File.AppendAllText(logPath, baris + Environment.NewLine);
-          }
-
-          static void Main()
-          {
-              TulisLog("Program dimulai");
-              TulisLog("User login berhasil");
-              TulisLog("Program selesai");
-              Console.WriteLine("Log disimpan di log.txt");
-          }
-      }
-              </code></pre>
-
-              <p>📂 File log ini akan menyimpan semua aktivitas penting dan bisa kamu buka kapan saja untuk debugging.</p>
-            `
-          },
-          {
-            title: "🎬 Video: File Handling di C#",
-            video: "https://www.youtube.com/embed/8VGjY_TP2cY",
-            content: `
-              <p>Tonton video ini untuk memahami cara membaca dan menulis file di C#, menggunakan <strong>System.IO</strong>, <strong>StreamReader</strong>, dan <strong>StreamWriter</strong>.</p>
-              <p>Video ini juga menunjukkan bagaimana cara membuat log aplikasi dan memeriksa keberadaan file atau folder di Visual Studio.</p>
-            `
-          }
-        ]
+          <p>C# juga memiliki tipe data lainnya seperti <code>decimal</code>, <code>byte</code>, dan <code>long</code> untuk kebutuhan lebih spesifik.</p>
+        `
       },
-
-      11: {
-        title: "⚙️ Namespace & Organisasi Kode",
-        slides: [
-          {
-            title: "🧠 Pengantar Namespace di C#",
-            content: `
-              <p><strong>Namespace</strong> digunakan untuk mengelompokkan class, interface, dan struktur agar kode tetap rapi dan tidak bentrok dengan nama lain.</p>
-              <p>Dalam proyek besar, namespace membantu memisahkan logika program berdasarkan fungsinya, misalnya <code>ProjectName.Models</code>, <code>ProjectName.Controllers</code>, dan <code>ProjectName.Utils</code>.</p>
-
-              <h4>📘 Contoh Sederhana:</h4>
-              <pre><code class="language-csharp">
-      namespace BelajarCSharp
       {
-          class Program
-          {
-              static void Main()
-              {
-                  Console.WriteLine("Halo dari namespace BelajarCSharp!");
-              }
-          }
-      }
-              </code></pre>
+        title: "Variabel & Konstanta",
+        content: `
+          <p><strong>Variabel</strong> digunakan untuk menyimpan data, sedangkan <strong>konstanta</strong> menyimpan nilai yang tidak dapat diubah.</p>
 
-              <p>Namespace bisa dianggap seperti "folder virtual" di dalam kode — menyusun class agar lebih terstruktur.</p>
-            `
-          },
-          {
-            title: "🏗️ Struktur Namespace & Organisasi File",
-            content: `
-              <p>Dalam proyek besar, kita sering membagi program menjadi beberapa file <code>.cs</code> agar lebih mudah dikelola.</p>
+          <h4>🧩 Contoh Variabel:</h4>
+          <pre><code class="language-csharp">int usia = 20;
+string nama = "Ali";
+bool aktif = true;</code></pre>
 
-              <h4>📁 Contoh Struktur Folder:</h4>
-              <pre><code>
-      📦 ProyekAplikasi
-       ┣ 📂 Models
-       ┃ ┗─ Mahasiswa.cs
-       ┣ 📂 Utils
-       ┃ ┗─ Helper.cs
-       ┗─ Program.cs
-              </code></pre>
+          <p>Variabel dapat diubah nilainya selama program berjalan.</p>
 
-              <h4>📘 Contoh Isi File:</h4>
+          <h4>🔒 Contoh Konstanta:</h4>
+          <pre><code class="language-csharp">const double PI = 3.14159;
+const string APLIKASI = "Kalkulator Sederhana";</code></pre>
 
-              <strong>Mahasiswa.cs</strong>
-              <pre><code class="language-csharp">
-      namespace ProyekAplikasi.Models
-      {
-          public class Mahasiswa
-          {
-              public string Nama { get; set; }
-              public int Umur { get; set; }
-          }
-      }
-              </code></pre>
+          <p>Konstanta harus diberi nilai saat dideklarasikan dan tidak dapat diubah setelah itu.</p>
 
-              <strong>Helper.cs</strong>
-              <pre><code class="language-csharp">
-      namespace ProyekAplikasi.Utils
-      {
-          public static class Helper
-          {
-              public static void CetakJudul(string judul)
-              {
-                  Console.WriteLine("=== " + judul + " ===");
-              }
-          }
-      }
-              </code></pre>
-
-              <strong>Program.cs</strong>
-              <pre><code class="language-csharp">
-      using ProyekAplikasi.Models;
-      using ProyekAplikasi.Utils;
-
-      namespace ProyekAplikasi
-      {
-          class Program
-          {
-              static void Main()
-              {
-                  Helper.CetakJudul("Data Mahasiswa");
-
-                  Mahasiswa m = new Mahasiswa { Nama = "Ali", Umur = 21 };
-                  Console.WriteLine($"{m.Nama} - {m.Umur} tahun");
-              }
-          }
-      }
-              </code></pre>
-
-              <p>💡 Setiap file bisa punya namespace sendiri, tapi biasanya semua masih dalam satu root namespace yang sama.</p>
-            `
-          },
-          {
-            title: "📥 Menggunakan using untuk Import Library",
-            content: `
-              <p><strong>using</strong> digunakan untuk mengimpor namespace lain agar class di dalamnya bisa langsung dipakai tanpa menulis nama lengkapnya.</p>
-
-              <h4>📘 Contoh Tanpa using:</h4>
-              <pre><code class="language-csharp">
-      class Program
-      {
-          static void Main()
-          {
-              System.Console.WriteLine("Halo dunia!");
-          }
-      }
-              </code></pre>
-
-              <h4>📘 Contoh Dengan using:</h4>
-              <pre><code class="language-csharp">
-      using System;
-
-      class Program
-      {
-          static void Main()
-          {
-              Console.WriteLine("Halo dunia!");
-          }
-      }
-              </code></pre>
-
-              <p><strong>using</strong> membuat kode lebih pendek dan mudah dibaca.</p>
-              <p>Kita juga bisa membuat <strong>alias</strong> untuk namespace yang panjang:</p>
-
-              <pre><code class="language-csharp">
-      using ProyekUtils = ProyekAplikasi.Utils;
-
-      class Program
-      {
-          static void Main()
-          {
-              ProyekUtils.Helper.CetakJudul("Halo dari alias namespace!");
-          }
-      }
-              </code></pre>
-            `
-          },
-          {
-            title: "🧭 Best Practice: Organisasi Kode Rapi",
-            content: `
-              <h4>✅ Tips Menyusun Kode di C#:</h4>
-              <ul>
-                <li>Gunakan namespace yang konsisten, sesuai struktur folder.</li>
-                <li>Simpan satu class utama per file <code>.cs</code>.</li>
-                <li>Gunakan folder terpisah untuk <strong>Models</strong>, <strong>Services</strong>, <strong>Controllers</strong>, dll.</li>
-                <li>Tambahkan komentar atau ringkasan di awal file class.</li>
-                <li>Gunakan <code>partial class</code> jika ingin memecah class besar ke beberapa file.</li>
-              </ul>
-
-              <h4>📘 Contoh Struktur Namespace Besar:</h4>
-              <pre><code>
-      MyApp
-       ┣ MyApp.Models
-       ┣ MyApp.Services
-       ┣ MyApp.Controllers
-       ┗ MyApp.Helpers
-              </code></pre>
-
-              <p>Dengan organisasi namespace yang rapi, proyek akan mudah di-maintain dan scalable.</p>
-            `
-          },
-          {
-            title: "🎬 Video: Namespace & Struktur Proyek C#",
-            video: "https://www.youtube.com/embed/NfFOD9KNDtA",
-            content: `
-              <p>Tonton video ini untuk memahami bagaimana cara menggunakan <strong>namespace</strong>, <strong>using</strong>, dan mengorganisasi proyek C# menjadi beberapa file agar lebih profesional dan mudah dikembangkan.</p>
-            `
-          }
-        ]
+          <h4>💡 Tips:</h4>
+          <ul>
+            <li>Gunakan <code>camelCase</code> untuk nama variabel (<code>totalHarga</code>).</li>
+            <li>Gunakan <code>UPPER_CASE</code> untuk konstanta (<code>MAX_VALUE</code>).</li>
+          </ul>
+        `
       },
-
-      12: {
-        title: "🧠 Collection & LINQ (Pengenalan Dasar)",
-        slides: [
-          {
-            title: "🔍 Apa itu LINQ?",
-            content: `
-              <p><strong>LINQ (Language Integrated Query)</strong> adalah fitur di C# yang memungkinkan kita untuk melakukan query (seperti di SQL) langsung pada data koleksi seperti <code>List</code>, <code>Array</code>, atau bahkan database.</p>
-              <p>Dengan LINQ, kamu bisa melakukan <strong>filtering, sorting, grouping, dan selecting</strong> data dengan cara yang lebih mudah dan bersih.</p>
-
-              <h4>📘 Contoh Tanpa LINQ:</h4>
-              <pre><code class="language-csharp">
-      List<int> angka = new List<int> { 1, 2, 3, 4, 5 };
-      List<int> genap = new List<int>();
-
-      foreach (int n in angka)
       {
-          if (n % 2 == 0)
-              genap.Add(n);
-      }
+        title: "Operator dalam C#",
+        content: `
+          <p>Operator digunakan untuk melakukan operasi pada variabel dan nilai. Berikut beberapa kelompok operator penting di C#:</p>
 
-      foreach (int n in genap)
-          Console.WriteLine(n);
-              </code></pre>
+          <h4>🧮 Operator Aritmatika:</h4>
+          <pre><code>+, -, *, /, %</code></pre>
+          <p>Contoh:</p>
+          <pre><code class="language-csharp">int hasil = 10 + 5; // hasil = 15</code></pre>
 
-              <h4>📘 Contoh Dengan LINQ:</h4>
-              <pre><code class="language-csharp">
-      using System.Linq;
+          <h4>🔁 Operator Perbandingan:</h4>
+          <pre><code>==, !=, >, <, >=, <=</code></pre>
+          <p>Contoh:</p>
+          <pre><code class="language-csharp">bool sama = (a == b);</code></pre>
 
-      List<int> angka = new List<int> { 1, 2, 3, 4, 5 };
-      var genap = angka.Where(n => n % 2 == 0);
+          <h4>⚙️ Operator Logika:</h4>
+          <pre><code>&&, ||, !</code></pre>
+          <p>Contoh:</p>
+          <pre><code class="language-csharp">bool login = (username == "admin" && password == "1234");</code></pre>
 
-      foreach (int n in genap)
-          Console.WriteLine(n);
-              </code></pre>
+          <h4>📦 Operator Penugasan:</h4>
+          <pre><code>=, +=, -=, *=, /=, %=</code></pre>
+          <p>Contoh:</p>
+          <pre><code class="language-csharp">int x = 5;
+x += 3; // sama dengan x = x + 3</code></pre>
 
-              <p>Lebih singkat dan mudah dibaca, bukan? Inilah kekuatan LINQ.</p>
-            `
-          },
-          {
-            title: "📋 Filter, Sort, dan Select Data dari List",
-            content: `
-              <p>LINQ dapat digunakan untuk <strong>memfilter</strong> (Where), <strong>mengurutkan</strong> (OrderBy/OrderByDescending), dan <strong>memilih</strong> (Select) data dari koleksi.</p>
-
-              <h4>📘 Contoh:</h4>
-              <pre><code class="language-csharp">
-      using System;
-      using System.Collections.Generic;
-      using System.Linq;
-
-      class Program
-      {
-          static void Main()
-          {
-              List<string> nama = new List<string> { "Ali", "Budi", "Citra", "Dewi", "Bayu" };
-
-              // Filter: nama yang dimulai dengan huruf 'B'
-              var filterB = nama.Where(n => n.StartsWith("B"));
-
-              // Sort: urutkan nama ascending
-              var urut = nama.OrderBy(n => n);
-
-              // Select: ubah jadi huruf besar semua
-              var kapital = nama.Select(n => n.ToUpper());
-
-              Console.WriteLine("Nama dengan huruf B:");
-              foreach (var n in filterB)
-                  Console.WriteLine(n);
-
-              Console.WriteLine("\\nNama diurutkan:");
-              foreach (var n in urut)
-                  Console.WriteLine(n);
-
-              Console.WriteLine("\\nNama kapital:");
-              foreach (var n in kapital)
-                  Console.WriteLine(n);
-          }
-      }
-              </code></pre>
-
-              <p>💡 LINQ bekerja seperti pipeline: hasil dari satu query bisa diteruskan ke query lain.</p>
-            `
-          },
-          {
-            title: "⚡ Anonymous Type & Lambda Expression Dasar",
-            content: `
-              <p>LINQ sering menggunakan <strong>lambda expression</strong> (<code>=></code>) untuk menulis fungsi singkat langsung di dalam query.</p>
-
-              <h4>📘 Contoh Lambda Expression:</h4>
-              <pre><code class="language-csharp">
-      List<int> angka = new List<int> { 10, 20, 30, 40 };
-      var hasil = angka.Select(x => x / 10); // setiap angka dibagi 10
-
-      foreach (var x in hasil)
-          Console.WriteLine(x);
-              </code></pre>
-
-              <p><code>x => x / 10</code> artinya: "untuk setiap x, kembalikan hasil x dibagi 10".</p>
-
-              <hr/>
-
-              <h4>📘 Anonymous Type</h4>
-              <p>Anonymous type digunakan untuk membuat objek tanpa harus mendefinisikan class.</p>
-
-              <pre><code class="language-csharp">
-      var mahasiswa = new[] {
-          new { Nama = "Ali", Umur = 20 },
-          new { Nama = "Budi", Umur = 22 },
-          new { Nama = "Citra", Umur = 19 }
-      };
-
-      var dewasa = mahasiswa.Where(m => m.Umur >= 20);
-
-      foreach (var m in dewasa)
-          Console.WriteLine($"{m.Nama} ({m.Umur})");
-              </code></pre>
-
-              <p>Anonymous type sangat berguna dalam query LINQ ketika kamu hanya butuh data tertentu dari sebuah objek.</p>
-            `
-          },
-          {
-            title: "💡 Kombinasi LINQ dengan Lambda",
-            content: `
-              <p>Kamu bisa menggabungkan beberapa operasi LINQ dalam satu baris, misalnya untuk filter dan sort sekaligus.</p>
-
-              <pre><code class="language-csharp">
-      var data = new List<int> { 5, 2, 9, 1, 6, 3 };
-
-      var hasil = data
-          .Where(x => x > 3)
-          .OrderByDescending(x => x)
-          .Select(x => $"Angka: {x}");
-
-      foreach (var item in hasil)
-          Console.WriteLine(item);
-              </code></pre>
-
-              <p>💬 Ini sangat efisien dan ekspresif, cocok untuk data processing ringan di C#.</p>
-            `
-          },
-          {
-            title: "🎬 Video: Pengenalan LINQ di C#",
-            video: "https://www.youtube.com/embed/6xHXYmAfVnw",
-            content: `
-              <p>Tonton video ini untuk memahami dasar <strong>LINQ</strong>, penggunaan <strong>lambda expression</strong>, dan cara melakukan operasi <strong>filter, sort, dan select</strong> data pada koleksi di C#.</p>
-            `
-          }
-        ]
+          <p>Operator membantu mengolah data dan membuat logika program menjadi lebih dinamis dan efisien.</p>
+        `
       },
-
-      13: {
-        title: "🧱 Modular & Reusable Code",
-        slides: [
-          {
-            title: "🔧 Konsep Modular & Reusable Code",
-            content: `
-              <p><strong>Modular programming</strong> adalah cara menyusun kode agar setiap bagian (modul) memiliki tugas tertentu dan bisa digunakan kembali di tempat lain.</p>
-              <p>Dengan pendekatan modular, kode jadi lebih mudah di-maintain, diuji, dan dikembangkan.</p>
-
-              <h4>📘 Contoh Tanpa Modular:</h4>
-              <pre><code class="language-csharp">
-      Console.WriteLine("Halo, Ali!");
-      Console.WriteLine("Halo, Budi!");
-      Console.WriteLine("Halo, Citra!");
-              </code></pre>
-
-              <h4>📘 Contoh Dengan Modular (Gunakan Fungsi):</h4>
-              <pre><code class="language-csharp">
-      void Sapa(string nama)
       {
-          Console.WriteLine($"Halo, {nama}!");
-      }
+        title: "Input & Output (Console)",
+        content: `
+          <p>Untuk berinteraksi dengan pengguna, C# menggunakan kelas <code>Console</code> dari namespace <code>System</code>.</p>
 
-      Sapa("Ali");
-      Sapa("Budi");
-      Sapa("Citra");
-              </code></pre>
+          <h4>📤 Output ke Layar:</h4>
+          <pre><code class="language-csharp">Console.WriteLine("Halo Dunia!");
+Console.Write("Masukkan nama Anda: ");</code></pre>
 
-              <p>Modularitas bisa diperluas ke level <strong>class</strong> dan <strong>file terpisah</strong> agar kode lebih rapi dan reusable.</p>
-            `
-          },
-          {
-            title: "🏗️ Membuat Class Helper / Utility",
-            content: `
-              <p><strong>Class Helper</strong> atau <strong>Utility Class</strong> digunakan untuk menyimpan method umum yang bisa digunakan di berbagai bagian program.</p>
+          <p><code>WriteLine()</code> menampilkan teks diikuti baris baru, sedangkan <code>Write()</code> tidak membuat baris baru.</p>
 
-              <pre><code class="language-csharp">
-      // File: MathHelper.cs
-      public class MathHelper
-      {
-          public static int Tambah(int a, int b)
-          {
-              return a + b;
-          }
+          <h4>📥 Input dari Pengguna:</h4>
+          <pre><code class="language-csharp">Console.Write("Masukkan nama: ");
+string nama = Console.ReadLine();
 
-          public static int Kali(int a, int b)
-          {
-              return a * b;
-          }
-      }
+Console.WriteLine("Halo, " + nama + "!");</code></pre>
 
-      // File: Program.cs
-      class Program
-      {
-          static void Main()
-          {
-              Console.WriteLine(MathHelper.Tambah(5, 3)); // Output: 8
-              Console.WriteLine(MathHelper.Kali(4, 6));   // Output: 24
-          }
-      }
-              </code></pre>
+          <p>Semua input dari <code>ReadLine()</code> berbentuk string. Jika ingin diubah menjadi angka, gunakan konversi tipe:</p>
 
-              <p>Dengan membuat <strong>helper class</strong>, kamu bisa memisahkan fungsi umum dari logika utama, membuat kode lebih bersih dan reusable.</p>
-            `
-          },
-          {
-            title: "⚙️ Static Class & Static Method",
-            content: `
-              <p>Class <strong>static</strong> tidak bisa diinstansiasi (tidak bisa dibuat objeknya). Semua method di dalamnya juga harus static.</p>
+          <pre><code class="language-csharp">Console.Write("Masukkan umur: ");
+int umur = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Umur kamu: " + umur);</code></pre>
 
-              <p>Biasanya digunakan untuk fungsi umum seperti logika matematika, format teks, atau konversi.</p>
-
-              <pre><code class="language-csharp">
-      public static class TextHelper
-      {
-          public static string Capitalize(string text)
-          {
-              if (string.IsNullOrEmpty(text))
-                  return text;
-
-              return char.ToUpper(text[0]) + text.Substring(1).ToLower();
-          }
-      }
-
-      class Program
-      {
-          static void Main()
-          {
-              Console.WriteLine(TextHelper.Capitalize("halo dunia")); // Output: Halo dunia
-          }
-      }
-              </code></pre>
-
-              <p>💡 Karena static, kamu bisa langsung memanggil method tanpa membuat objek.</p>
-            `
-          },
-          {
-            title: "🧩 Extension Method Sederhana",
-            content: `
-              <p><strong>Extension Method</strong> memungkinkan kita menambahkan method baru ke tipe data atau class yang sudah ada — tanpa harus mengubah definisinya.</p>
-
-              <h4>📘 Contoh:</h4>
-              <pre><code class="language-csharp">
-      public static class StringExtension
-      {
-          public static string ToTitleCase(this string text)
-          {
-              if (string.IsNullOrEmpty(text))
-                  return text;
-
-              return System.Globalization.CultureInfo.CurrentCulture.TextInfo.ToTitleCase(text.ToLower());
-          }
-      }
-
-      class Program
-      {
-          static void Main()
-          {
-              string nama = "ali khatami";
-              Console.WriteLine(nama.ToTitleCase()); // Output: Ali Khatami
-          }
-      }
-              </code></pre>
-
-              <p>Perhatikan kata kunci <code>this</code> di parameter pertama — itu yang membuat method bisa digunakan seolah milik tipe tersebut.</p>
-            `
-          },
-          {
-            title: "🧱 Project Referensi Antar File",
-            content: `
-              <p>Dalam proyek besar, kamu akan sering membagi kode ke beberapa file agar lebih terorganisir.</p>
-
-              <h4>📘 Contoh Struktur Folder:</h4>
-              <pre><code>
-      MyApp/
-      ├── Program.cs
-      ├── Helpers/
-      │   └── MathHelper.cs
-      └── Models/
-          └── User.cs
-              </code></pre>
-
-              <h4>📘 File: Models/User.cs</h4>
-              <pre><code class="language-csharp">
-      namespace MyApp.Models
-      {
-          public class User
-          {
-              public string Nama { get; set; }
-              public int Umur { get; set; }
-          }
-      }
-              </code></pre>
-
-              <h4>📘 File: Program.cs</h4>
-              <pre><code class="language-csharp">
-      using MyApp.Models;
-      using MyApp.Helpers;
-
-      class Program
-      {
-          static void Main()
-          {
-              User u = new User { Nama = "Ali", Umur = 21 };
-              Console.WriteLine($"Nama: {u.Nama}, Umur: {u.Umur}");
-          }
-      }
-              </code></pre>
-
-              <p>Gunakan <code>namespace</code> dan <code>using</code> agar setiap file bisa saling terhubung tanpa menumpuk kode di satu tempat.</p>
-            `
-          },
-          {
-            title: "🎥 Video: Modular & Reusable Code di C#",
-            video: "https://www.youtube.com/embed/Z6DrIE3tFvM",
-            content: `
-              <p>Tonton video ini untuk memahami bagaimana menyusun <strong>kode modular dan reusable</strong> di C#, membuat <strong>helper class</strong>, dan menerapkan <strong>extension method</strong> dengan cara yang efisien.</p>
-            `
-          }
-        ]
+          <p>Dengan cara ini, program dapat menerima dan memproses data dari pengguna secara interaktif.</p>
+        `
       },
-
-      14: {
-        title: "💻 Project Akhir: Aplikasi Kasir Sederhana (Console App Non-OOP)",
-        slides: [
-          {
-            title: "🧾 Ringkasan Project",
-            content: `
-              <p>Kita akan membuat <strong>Aplikasi Kasir Sederhana</strong> berbasis <em>Console</em> tanpa OOP.</p>
-              <p>Proyek ini mencakup penerapan dari materi <strong>1–13</strong> (tanpa OOP), seperti: variabel, tipe data, kontrol alur, array/list, method, error handling, file I/O, dan LINQ sederhana.</p>
-              <p><strong>Fitur utama:</strong></p>
-              <ul>
-                <li>Menambah barang ke daftar</li>
-                <li>Menampilkan daftar barang</li>
-                <li>Menghitung total belanja</li>
-                <li>Menyimpan transaksi ke file</li>
-              </ul>
-            `
-          },
-          {
-            title: "⚙️ 1) Struktur Project",
-            content: `
-              <p>Buat project baru:</p>
-              <pre><code>
-      dotnet new console -n KasirApp
-      cd KasirApp
-              </code></pre>
-
-              <p>Struktur file sederhana:</p>
-              <pre><code>
-      KasirApp/
-      ├── Program.cs
-      ├── Data/
-      │   └── transaksi.txt
-              </code></pre>
-
-              <p>Semua kode akan ditulis di <code>Program.cs</code> agar lebih mudah dipahami.</p>
-            `
-          },
-          {
-            title: "📥 2) Variabel & Data Awal",
-            content: `
-              <p>Kita buat daftar barang dan list untuk menampung keranjang belanja.</p>
-
-              <pre><code class="language-csharp">
-      using System;
-      using System.Collections.Generic;
-      using System.IO;
-      using System.Linq;
-
-      class Program
       {
-          static void Main()
-          {
-              string[] namaBarang = { "Roti", "Susu", "Kopi", "Gula", "Teh" };
-              int[] hargaBarang = { 10000, 15000, 12000, 8000, 7000 };
-
-              List<string> keranjang = new List<string>();
-              bool jalan = true;
-
-              while (jalan)
-              {
-                  TampilkanMenu();
-                  Console.Write("Pilih menu: ");
-                  string pilih = Console.ReadLine();
-
-                  switch (pilih)
-                  {
-                      case "1": LihatBarang(namaBarang, hargaBarang); break;
-                      case "2": TambahBarang(keranjang, namaBarang); break;
-                      case "3": HitungTotal(keranjang, namaBarang, hargaBarang); break;
-                      case "4": SimpanTransaksi(keranjang); break;
-                      case "0": jalan = false; break;
-                      default: Console.WriteLine("Pilihan tidak valid!"); break;
-                  }
-              }
-          }
+        title: "Video: Dasar Pemrograman C#",
+        video: "https://www.youtube.com/embed/0QUgvfuKvWU",
+        content: `
+          <p>Tonton video ini untuk memahami dasar-dasar pemrograman C#: tipe data, variabel, operator, dan cara membuat input/output sederhana.</p>
+          <p>Video ini cocok untuk pemula yang ingin memahami bagaimana logika dasar bekerja dalam bahasa C#.</p>
+        `
       }
-              </code></pre>
-            `
-          },
-          {
-            title: "🧾 3) Menampilkan Menu & Daftar Barang",
-            content: `
-              <p>Tambahkan method <code>TampilkanMenu()</code> dan <code>LihatBarang()</code> untuk menampilkan opsi & daftar barang.</p>
+    ]
+  },
 
-              <pre><code class="language-csharp">
-      static void TampilkanMenu()
+  4: {
+    title: "🔁 Kontrol Alur Program",
+    slides: [
       {
-          Console.WriteLine("\\n===== APLIKASI KASIR =====");
-          Console.WriteLine("1. Lihat daftar barang");
-          Console.WriteLine("2. Tambah ke keranjang");
-          Console.WriteLine("3. Hitung total belanja");
-          Console.WriteLine("4. Simpan transaksi ke file");
-          Console.WriteLine("0. Keluar");
-      }
+        title: "🧭 Percabangan (if, else if, else)",
+        content: `
+          <p>Dalam C#, percabangan digunakan untuk mengambil keputusan berdasarkan kondisi tertentu. Struktur yang paling umum adalah <code>if</code>, <code>else if</code>, dan <code>else</code>.</p>
 
-      static void LihatBarang(string[] nama, int[] harga)
+          <h4>📘 Contoh:</h4>
+          <pre><code class="language-csharp">int nilai = 85;
+
+if (nilai >= 90)
+{
+    Console.WriteLine("Nilai A");
+}
+else if (nilai >= 75)
+{
+    Console.WriteLine("Nilai B");
+}
+else
+{
+    Console.WriteLine("Nilai C");
+}</code></pre>
+
+          <p><strong>Penjelasan:</strong></p>
+          <ul>
+            <li>Kondisi di dalam <code>if</code> harus bernilai <code>true</code> atau <code>false</code>.</li>
+            <li>Jika kondisi pertama tidak terpenuhi, program lanjut ke <code>else if</code> atau <code>else</code>.</li>
+          </ul>
+        `
+      },
       {
-          Console.WriteLine("\\nDaftar Barang:");
-          for (int i = 0; i < nama.Length; i++)
-          {
-              Console.WriteLine($"{i + 1}. {nama[i]} - Rp{harga[i]}");
-          }
-      }
-              </code></pre>
-            `
-          },
-          {
-            title: "🛒 4) Menambahkan Barang ke Keranjang",
-            content: `
-              <p>Gunakan <code>List</code> dan validasi sederhana untuk menambah barang.</p>
+        title: "🔀 Percabangan switch",
+        content: `
+          <p>Struktur <code>switch</code> digunakan untuk memeriksa banyak kondisi dengan nilai tetap. Lebih rapi dibanding banyak <code>if-else</code>.</p>
 
-              <pre><code class="language-csharp">
-      static void TambahBarang(List<string> keranjang, string[] namaBarang)
+          <h4>📘 Contoh:</h4>
+          <pre><code class="language-csharp">Console.Write("Masukkan hari (1-3): ");
+int hari = Convert.ToInt32(Console.ReadLine());
+
+switch (hari)
+{
+    case 1:
+        Console.WriteLine("Senin");
+        break;
+    case 2:
+        Console.WriteLine("Selasa");
+        break;
+    case 3:
+        Console.WriteLine("Rabu");
+        break;
+    default:
+        Console.WriteLine("Hari tidak dikenal");
+        break;
+}</code></pre>
+
+          <p>Gunakan <code>break</code> agar program keluar dari blok <code>switch</code> setelah satu case dijalankan.</p>
+        `
+      },
       {
-          Console.Write("Masukkan nomor barang: ");
-          if (int.TryParse(Console.ReadLine(), out int nomor))
-          {
-              if (nomor >= 1 && nomor <= namaBarang.Length)
-              {
-                  keranjang.Add(namaBarang[nomor - 1]);
-                  Console.WriteLine($"✅ {namaBarang[nomor - 1]} ditambahkan ke keranjang!");
-              }
-              else Console.WriteLine("❌ Nomor tidak valid.");
-          }
-          else Console.WriteLine("❌ Input harus angka!");
-      }
-              </code></pre>
-            `
-          },
-          {
-            title: "💰 5) Menghitung Total Belanja (LINQ)",
-            content: `
-              <p>Gunakan <code>LINQ</code> untuk menghitung total harga barang dalam keranjang.</p>
+        title: "🔂 Perulangan (for, while, do-while)",
+        content: `
+          <p>Perulangan digunakan untuk menjalankan blok kode berulang kali selama kondisi terpenuhi.</p>
 
-              <pre><code class="language-csharp">
-      static void HitungTotal(List<string> keranjang, string[] nama, int[] harga)
+          <h4>📘 for loop:</h4>
+          <pre><code class="language-csharp">for (int i = 1; i <= 5; i++)
+{
+    Console.WriteLine("Perulangan ke-" + i);
+}</code></pre>
+
+          <h4>📘 while loop:</h4>
+          <pre><code class="language-csharp">int i = 1;
+while (i <= 5)
+{
+    Console.WriteLine("Angka: " + i);
+    i++;
+}</code></pre>
+
+          <h4>📘 do-while loop:</h4>
+          <pre><code class="language-csharp">int j = 1;
+do
+{
+    Console.WriteLine("Do-While ke-" + j);
+    j++;
+} while (j <= 5);</code></pre>
+
+          <p><strong>Perbedaan utama:</strong> <code>while</code> mengecek kondisi di awal, sedangkan <code>do-while</code> mengecek di akhir (jadi pasti dijalankan minimal satu kali).</p>
+        `
+      },
       {
-          if (keranjang.Count == 0)
-          {
-              Console.WriteLine("Keranjang kosong!");
-              return;
-          }
+        title: "🔁 foreach loop",
+        content: `
+          <p><code>foreach</code> digunakan untuk melakukan iterasi (perulangan) pada elemen dalam koleksi seperti array atau list.</p>
 
-          int total = keranjang
-              .Select(item => harga[Array.IndexOf(nama, item)])
-              .Sum();
+          <h4>📘 Contoh:</h4>
+          <pre><code class="language-csharp">string[] buah = { "Apel", "Jeruk", "Mangga" };
 
-          Console.WriteLine("\\nIsi Keranjang:");
-          keranjang.ForEach(item => Console.WriteLine("- " + item));
-          Console.WriteLine($"Total Belanja: Rp{total}");
-      }
-              </code></pre>
+foreach (string item in buah)
+{
+    Console.WriteLine("Buah: " + item);
+}</code></pre>
 
-              <p>Di sini kita menerapkan konsep <strong>array, list, LINQ, dan looping</strong>.</p>
-            `
-          },
-          {
-            title: "📂 6) Menyimpan Transaksi ke File",
-            content: `
-              <p>Gunakan <code>System.IO.File.AppendAllText</code> untuk menyimpan transaksi sederhana ke file teks.</p>
-
-              <pre><code class="language-csharp">
-      static void SimpanTransaksi(List<string> keranjang)
+          <p><strong>Kelebihan:</strong></p>
+          <ul>
+            <li>Lebih ringkas dari <code>for</code>.</li>
+            <li>Tidak perlu indeks manual.</li>
+          </ul>
+        `
+      },
       {
-          if (keranjang.Count == 0)
-          {
-              Console.WriteLine("Keranjang kosong, tidak ada yang disimpan.");
-              return;
-          }
+        title: "🛑 break, continue, dan return",
+        content: `
+          <p>Ketiga kata kunci ini mengatur bagaimana perulangan atau fungsi berperilaku saat kondisi tertentu terjadi.</p>
 
-          string filePath = "Data/transaksi.txt";
-          Directory.CreateDirectory("Data");
+          <h4>📘 break:</h4>
+          <pre><code class="language-csharp">for (int i = 1; i <= 5; i++)
+{
+    if (i == 3) break;
+    Console.WriteLine(i);
+}
+// Output: 1, 2</code></pre>
 
-          string waktu = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
-          string data = $"[{waktu}] {string.Join(", ", keranjang)}{Environment.NewLine}";
+          <h4>📘 continue:</h4>
+          <pre><code class="language-csharp">for (int i = 1; i <= 5; i++)
+{
+    if (i == 3) continue;
+    Console.WriteLine(i);
+}
+// Output: 1, 2, 4, 5</code></pre>
 
-          try
-          {
-              File.AppendAllText(filePath, data);
-              Console.WriteLine("💾 Transaksi berhasil disimpan!");
-              keranjang.Clear();
-          }
-          catch (Exception ex)
-          {
-              Console.WriteLine("Terjadi error saat menyimpan: " + ex.Message);
-          }
+          <h4>📘 return:</h4>
+          <pre><code class="language-csharp">void TampilkanPesan()
+{
+    Console.Write("Masukkan angka: ");
+    int angka = Convert.ToInt32(Console.ReadLine());
+    if (angka < 0) return;
+    Console.WriteLine("Angka kamu: " + angka);
+}</code></pre>
+
+          <p><strong>Kesimpulan:</strong></p>
+          <ul>
+            <li><code>break</code> → keluar dari loop.</li>
+            <li><code>continue</code> → skip iterasi saat ini, lanjut ke berikutnya.</li>
+            <li><code>return</code> → keluar dari fungsi sepenuhnya.</li>
+          </ul>
+        `
+      },
+      {
+        title: "⚖️ Ternary Operator",
+        content: `
+          <p>Ternary operator adalah bentuk singkat dari pernyataan <code>if-else</code>.</p>
+
+          <h4>🧩 Sintaks:</h4>
+          <pre><code class="language-csharp">(condition) ? value_if_true : value_if_false;</code></pre>
+
+          <h4>📘 Contoh:</h4>
+          <pre><code class="language-csharp">int umur = 20;
+string status = (umur >= 18) ? "Dewasa" : "Anak-anak";
+Console.WriteLine(status);</code></pre>
+
+          <p>Cocok digunakan saat logika sederhana cukup ditulis dalam satu baris.</p>
+        `
+      },
+      {
+        title: "🎬 Video: Kontrol Alur Program C#",
+        video: "https://www.youtube.com/embed/IVz20_LFppY",
+        content: `
+          <p>Tonton video ini untuk memahami cara kerja percabangan, perulangan, dan kontrol alur dalam C#.</p>
+          <p>Kamu akan melihat contoh nyata penggunaan <code>if</code>, <code>switch</code>, <code>for</code>, <code>foreach</code>, serta penggunaan <code>break</code> dan <code>continue</code> di dunia nyata.</p>
+        `
       }
-              </code></pre>
+    ]
+  },
 
-              <p>Bagian ini menerapkan <strong>file handling, string manipulation, try-catch</strong>, dan <strong>list clearing</strong>.</p>
-            `
-          },
-          {
-            title: "🧠 7) Ringkasan Penerapan Materi",
-            content: `
-              <ul>
-                <li><strong>Tipe data:</strong> int, string, array, list</li>
-                <li><strong>Operator & kontrol alur:</strong> if, switch, loop</li>
-                <li><strong>Method:</strong> modularisasi fungsi</li>
-                <li><strong>LINQ:</strong> menghitung total belanja</li>
-                <li><strong>File Handling:</strong> menyimpan transaksi</li>
-                <li><strong>Error Handling:</strong> try-catch pada penyimpanan file</li>
-                <li><strong>String:</strong> manipulasi teks & format output</li>
-              </ul>
+  5: {
+    title: "📦 Array & Koleksi Data",
+    slides: [
+      {
+        title: "📘 Array Satu Dimensi",
+        content: `
+          <p><strong>Array</strong> adalah struktur data yang menyimpan sekumpulan elemen dengan tipe yang sama dalam satu variabel.</p>
 
-              <p>Dengan proyek ini kamu sudah menerapkan semua dasar C# tanpa OOP secara nyata dan bermanfaat.</p>
-            `
-          },
-          {
-            title: "🎬 Video Tutorial: C# Kasir Console App Step-by-step",
-            video: "https://www.youtube.com/embed/8GF1T7zjH4A",
-            content: `
-              <p>Tonton video ini untuk melihat contoh pembuatan aplikasi kasir sederhana dari awal sampai bisa dijalankan.</p>
-              <p>Video menjelaskan cara membuat menu, input data, menghitung total, dan menyimpan hasil transaksi.</p>
-            `
-          }
-        ]
+          <h4>🧩 Contoh Array 1 Dimensi:</h4>
+          <pre><code class="language-csharp">int[] angka = { 10, 20, 30, 40, 50 };
+
+Console.WriteLine(angka[0]);  // Output: 10
+Console.WriteLine(angka[3]);  // Output: 40
+
+// Menampilkan seluruh elemen array
+for (int i = 0; i < angka.Length; i++)
+{
+    Console.WriteLine("Index " + i + ": " + angka[i]);
+}</code></pre>
+
+          <p><strong>Keterangan:</strong></p>
+          <ul>
+            <li>Indeks dimulai dari 0.</li>
+            <li><code>Length</code> digunakan untuk mengetahui panjang array.</li>
+            <li>Array bersifat statis (ukurannya tetap setelah dibuat).</li>
+          </ul>
+        `
+      },
+      {
+        title: "🧱 Array Multidimensi",
+        content: `
+          <p><strong>Array multidimensi</strong> digunakan untuk menyimpan data dalam bentuk tabel (baris dan kolom).</p>
+
+          <h4>📘 Contoh Array 2 Dimensi:</h4>
+          <pre><code class="language-csharp">int[,] matriks = {
+    { 1, 2, 3 },
+    { 4, 5, 6 },
+    { 7, 8, 9 }
+};
+
+// Mengakses elemen
+Console.WriteLine(matriks[0, 2]);  // Output: 3
+
+// Menampilkan semua elemen
+for (int i = 0; i < 3; i++)
+{
+    for (int j = 0; j < 3; j++)
+    {
+        Console.Write(matriks[i, j] + " ");
+    }
+    Console.WriteLine();
+}</code></pre>
+
+          <p><strong>Catatan:</strong> Array 2D berguna untuk representasi data seperti papan permainan, tabel, atau matriks matematika.</p>
+        `
+      },
+      {
+        title: "📋 List (Daftar Dinamis)",
+        content: `
+          <p><strong>List</strong> adalah versi dinamis dari array yang bisa menambah atau menghapus elemen secara fleksibel. List berasal dari namespace <code>System.Collections.Generic</code>.</p>
+
+          <h4>📘 Contoh:</h4>
+          <pre><code class="language-csharp">using System.Collections.Generic;
+
+List<string> nama = new List<string>();
+nama.Add("Ali");
+nama.Add("Budi");
+nama.Add("Citra");
+
+Console.WriteLine("Jumlah elemen: " + nama.Count);
+
+foreach (string item in nama)
+{
+    Console.WriteLine(item);
+}
+
+nama.Remove("Budi"); // Menghapus elemen
+Console.WriteLine("Setelah dihapus:");
+foreach (string item in nama)
+{
+    Console.WriteLine(item);
+}</code></pre>
+
+          <p><strong>Kelebihan:</strong></p>
+          <ul>
+            <li>Dapat bertambah/berkurang tanpa harus menentukan ukuran awal.</li>
+            <li>Mudah diakses seperti array menggunakan indeks.</li>
+          </ul>
+        `
+      },
+      {
+        title: "🗂️ Dictionary (Key-Value Pair)",
+        content: `
+          <p><strong>Dictionary</strong> menyimpan data dalam bentuk pasangan <em>key</em> dan <em>value</em>. Setiap key harus unik.</p>
+
+          <h4>📘 Contoh:</h4>
+          <pre><code class="language-csharp">using System.Collections.Generic;
+
+Dictionary<string, string> negara = new Dictionary<string, string>();
+negara["ID"] = "Indonesia";
+negara["US"] = "Amerika Serikat";
+negara["JP"] = "Jepang";
+
+Console.WriteLine(negara["ID"]); // Output: Indonesia
+
+foreach (var item in negara)
+{
+    Console.WriteLine(item.Key + " - " + item.Value);
+}</code></pre>
+
+          <p><strong>Catatan:</strong> Dictionary sangat berguna untuk menyimpan data yang mudah dicari berdasarkan kunci, misalnya ID, username, atau kode produk.</p>
+        `
+      },
+      {
+        title: "🧱 Queue (Antrian)",
+        content: `
+          <p><strong>Queue</strong> bekerja dengan prinsip <strong>FIFO (First In, First Out)</strong> — elemen pertama yang masuk akan keluar lebih dulu.</p>
+
+          <h4>📘 Contoh:</h4>
+          <pre><code class="language-csharp">using System.Collections.Generic;
+
+Queue<string> antrian = new Queue<string>();
+antrian.Enqueue("Ali");
+antrian.Enqueue("Budi");
+antrian.Enqueue("Citra");
+
+Console.WriteLine("Keluar: " + antrian.Dequeue());
+Console.WriteLine("Yang berikutnya: " + antrian.Peek());</code></pre>
+
+          <p><strong>Keterangan:</strong></p>
+          <ul>
+            <li><code>Enqueue()</code> untuk menambah ke antrian.</li>
+            <li><code>Dequeue()</code> untuk mengeluarkan elemen pertama.</li>
+            <li><code>Peek()</code> melihat elemen terdepan tanpa menghapusnya.</li>
+          </ul>
+        `
+      },
+      {
+        title: "🧩 Stack (Tumpukan)",
+        content: `
+          <p><strong>Stack</strong> bekerja dengan prinsip <strong>LIFO (Last In, First Out)</strong> — elemen terakhir yang dimasukkan keluar lebih dulu.</p>
+
+          <h4>📘 Contoh:</h4>
+          <pre><code class="language-csharp">using System.Collections.Generic;
+
+Stack<string> tumpukan = new Stack<string>();
+tumpukan.Push("Merah");
+tumpukan.Push("Hijau");
+tumpukan.Push("Biru");
+
+Console.WriteLine("Keluar: " + tumpukan.Pop());
+Console.WriteLine("Puncak stack: " + tumpukan.Peek());</code></pre>
+
+          <p><strong>Keterangan:</strong></p>
+          <ul>
+            <li><code>Push()</code> menambahkan ke tumpukan.</li>
+            <li><code>Pop()</code> mengambil elemen terakhir.</li>
+            <li><code>Peek()</code> melihat elemen terakhir tanpa menghapusnya.</li>
+          </ul>
+        `
+      },
+      {
+        title: "🔁 Foreach Loop pada Koleksi",
+        content: `
+          <p><code>foreach</code> digunakan untuk menelusuri setiap elemen dalam koleksi seperti <code>List</code>, <code>Dictionary</code>, <code>Queue</code>, atau <code>Stack</code>.</p>
+
+          <h4>📘 Contoh List:</h4>
+          <pre><code class="language-csharp">List<int> angka = new List<int> { 1, 2, 3, 4, 5 };
+
+foreach (int item in angka)
+{
+    Console.WriteLine(item);
+}</code></pre>
+
+          <h4>📘 Contoh Dictionary:</h4>
+          <pre><code class="language-csharp">Dictionary<string, int> umur = new Dictionary<string, int>
+{
+    { "Ali", 20 },
+    { "Budi", 22 },
+    { "Citra", 21 }
+};
+
+foreach (var data in umur)
+{
+    Console.WriteLine(data.Key + " berumur " + data.Value + " tahun");
+}</code></pre>
+
+          <p><strong>Keunggulan foreach:</strong></p>
+          <ul>
+            <li>Tidak perlu tahu panjang koleksi.</li>
+            <li>Lebih aman karena tidak bisa mengubah koleksi saat iterasi.</li>
+          </ul>
+        `
+      },
+      {
+        title: "🎬 Video: Array & Koleksi Data C#",
+        video: "https://www.youtube.com/embed/88lxRj3PoZc",
+        content: `
+          <p>Tonton video ini untuk memahami cara kerja array, list, dictionary, queue, dan stack di C#.</p>
+          <p>Video ini akan membantu kamu melihat bagaimana struktur data ini digunakan dalam proyek nyata secara interaktif.</p>
+        `
       }
+    ]
+  },
 
-    };
+  6: {
+    title: "🧩 Fungsi (Method)",
+    slides: [
+      {
+        title: "📘 Pengantar Fungsi (Method)",
+        content: `
+          <p>Dalam C#, <strong>method</strong> adalah blok kode yang digunakan untuk menjalankan tugas tertentu dan dapat dipanggil berkali-kali. Method membantu membuat program lebih modular dan mudah dipelihara.</p>
+
+          <h4>🧩 Struktur Dasar Method:</h4>
+          <pre><code class="language-csharp">returnType NamaMethod(parameter)
+{
+    // Isi kode
+    return value;
+}</code></pre>
+
+          <h4>📘 Contoh:</h4>
+          <pre><code class="language-csharp">void SapaPengguna()
+{
+    Console.WriteLine("Halo, selamat datang di C#!");
+}
+
+// Pemanggilan method
+SapaPengguna();</code></pre>
+
+          <p><strong>Keterangan:</strong></p>
+          <ul>
+            <li><code>void</code> → method tidak mengembalikan nilai.</li>
+            <li>Nama method mengikuti aturan penamaan PascalCase (huruf pertama besar).</li>
+          </ul>
+        `
+      },
+      {
+        title: "🎯 Parameter & Nilai Balik (return)",
+        content: `
+          <p>Method bisa menerima parameter dan mengembalikan nilai dengan kata kunci <code>return</code>.</p>
+
+          <h4>📘 Contoh dengan Parameter:</h4>
+          <pre><code class="language-csharp">void TampilkanPesan(string nama)
+{
+    Console.WriteLine("Halo, " + nama + "!");
+}
+
+TampilkanPesan("Ali");  // Output: Halo, Ali!</code></pre>
+
+          <h4>📘 Contoh dengan Nilai Balik:</h4>
+          <pre><code class="language-csharp">int Tambah(int a, int b)
+{
+    return a + b;
+}
+
+int hasil = Tambah(5, 3);
+Console.WriteLine("Hasil: " + hasil);  // Output: 8</code></pre>
+
+          <p><strong>Catatan:</strong> tipe data pada <code>return</code> harus sesuai dengan deklarasi method-nya.</p>
+        `
+      },
+      {
+        title: "🔁 Overloading Method",
+        content: `
+          <p><strong>Method Overloading</strong> adalah kemampuan membuat beberapa method dengan nama sama, tetapi parameter berbeda (jumlah atau tipe datanya).</p>
+
+          <h4>📘 Contoh:</h4>
+          <pre><code class="language-csharp">int HitungLuas(int sisi)
+{
+    return sisi * sisi;
+}
+
+int HitungLuas(int panjang, int lebar)
+{
+    return panjang * lebar;
+}
+
+Console.WriteLine("Luas persegi: " + HitungLuas(5));          // Output: 25
+Console.WriteLine("Luas persegi panjang: " + HitungLuas(5, 8)); // Output: 40</code></pre>
+
+          <p><strong>Kelebihan:</strong> Overloading membuat kode lebih fleksibel dan mudah dibaca karena menggunakan nama method yang sama untuk operasi serupa.</p>
+        `
+      },
+      {
+        title: "⚙️ Parameter Khusus: ref, out, dan params",
+        content: `
+          <p>C# menyediakan beberapa jenis parameter khusus yang memberi kontrol lebih dalam pengiriman data ke method.</p>
+
+          <h4>📘 1. ref parameter</h4>
+          <p>Memungkinkan method mengubah nilai variabel yang dikirim.</p>
+          <pre><code class="language-csharp">void TambahLima(ref int x)
+{
+    x += 5;
+}
+
+int angka = 10;
+TambahLima(ref angka);
+Console.WriteLine(angka); // Output: 15</code></pre>
+
+          <h4>📘 2. out parameter</h4>
+          <p>Digunakan untuk mengembalikan lebih dari satu nilai dari method.</p>
+          <pre><code class="language-csharp">void Hitung(int a, int b, out int tambah, out int kali)
+{
+    tambah = a + b;
+    kali = a * b;
+}
+
+Hitung(3, 4, out int hasilTambah, out int hasilKali);
+Console.WriteLine("Tambah: " + hasilTambah + ", Kali: " + hasilKali);</code></pre>
+
+          <h4>📘 3. params parameter</h4>
+          <p>Memungkinkan pengiriman banyak argumen sekaligus sebagai array.</p>
+          <pre><code class="language-csharp">int Jumlahkan(params int[] angka)
+{
+    int total = 0;
+    foreach (int i in angka)
+    {
+        total += i;
+    }
+    return total;
+}
+
+Console.WriteLine(Jumlahkan(1, 2, 3, 4, 5)); // Output: 15</code></pre>
+
+          <p><strong>Kesimpulan:</strong></p>
+          <ul>
+            <li><code>ref</code> → ubah nilai variabel asli.</li>
+            <li><code>out</code> → kembalikan nilai tambahan.</li>
+            <li><code>params</code> → kirim jumlah argumen tak terbatas.</li>
+          </ul>
+        `
+      },
+      {
+        title: "🔄 Rekursi (Recursive Function)",
+        content: `
+          <p><strong>Rekursi</strong> adalah teknik di mana method memanggil dirinya sendiri untuk menyelesaikan masalah yang lebih kecil hingga mencapai kondisi berhenti (base case).</p>
+
+          <h4>📘 Contoh Faktorial:</h4>
+          <pre><code class="language-csharp">int Faktorial(int n)
+{
+    if (n == 1)
+        return 1;
+    else
+        return n * Faktorial(n - 1);
+}
+
+Console.WriteLine(Faktorial(5)); // Output: 120</code></pre>
+
+          <p><strong>Keterangan:</strong></p>
+          <ul>
+            <li>Pastikan selalu ada kondisi berhenti (base case), agar tidak terjadi infinite recursion.</li>
+            <li>Rekursi cocok untuk masalah seperti faktorial, pencarian pohon, dan traversal struktur data.</li>
+          </ul>
+        `
+      },
+      {
+        title: "🎬 Video: Fungsi & Method di C#",
+        video: "https://www.youtube.com/embed/uy-yf0fBMoM",
+        content: `
+          <p>Tonton video ini untuk memahami konsep method di C#, mulai dari dasar pembuatan, parameter, nilai balik, hingga rekursi.</p>
+          <p>Video ini juga menjelaskan bagaimana method membantu membuat kode lebih efisien dan terstruktur.</p>
+        `
+      }
+    ]
+  },
+
+  7: {
+    title: "🧱 Konsep Object-Oriented Programming (OOP)",
+    slides: [
+      {
+        title: "🧠 Pengantar OOP (Object-Oriented Programming)",
+        content: `
+          <p><strong>Object-Oriented Programming (OOP)</strong> adalah paradigma pemrograman yang berfokus pada objek — yaitu representasi dari entitas dunia nyata yang memiliki data (atribut) dan perilaku (method).</p>
+
+          <h4>🎯 Tujuan OOP:</h4>
+          <ul>
+            <li>Mempermudah pengorganisasian kode.</li>
+            <li>Meminimalkan duplikasi (reusability).</li>
+            <li>Membuat program lebih fleksibel dan mudah dipelihara.</li>
+          </ul>
+
+          <p>Empat pilar utama OOP:</p>
+          <ul>
+            <li><strong>Encapsulation</strong> 🧩 — Menyembunyikan detail internal objek.</li>
+            <li><strong>Inheritance</strong> 🧬 — Pewarisan fitur antar class.</li>
+            <li><strong>Polymorphism</strong> 🎭 — Kemampuan method berperilaku berbeda.</li>
+            <li><strong>Abstraction</strong> 🌫️ — Menyembunyikan kompleksitas dan hanya menampilkan hal penting.</li>
+          </ul>
+        `
+      },
+      {
+        title: "🏗️ Class & Object",
+        content: `
+          <p><strong>Class</strong> adalah cetak biru (blueprint) dari objek, sedangkan <strong>Object</strong> adalah instance (hasil nyata) dari class tersebut.</p>
+
+          <h4>📘 Contoh:</h4>
+          <pre><code class="language-csharp">class Mobil
+{
+    public string merk;
+    public string warna;
+
+    public void Jalankan()
+    {
+        Console.WriteLine(merk + " sedang berjalan...");
+    }
+}
+
+Mobil m1 = new Mobil();
+m1.merk = "Toyota";
+m1.warna = "Merah";
+m1.Jalankan();</code></pre>
+
+          <p><strong>Keterangan:</strong></p>
+          <ul>
+            <li><code>class</code> digunakan untuk mendefinisikan template.</li>
+            <li><code>object</code> dibuat menggunakan keyword <code>new</code>.</li>
+          </ul>
+        `
+      },
+      {
+        title: "⚙️ Field, Property, dan Method",
+        content: `
+          <p>Dalam class, kita bisa mendefinisikan:</p>
+          <ul>
+            <li><strong>Field</strong> → variabel dalam class.</li>
+            <li><strong>Property</strong> → akses aman ke field.</li>
+            <li><strong>Method</strong> → perilaku (aksi) dari objek.</li>
+          </ul>
+
+          <h4>📘 Contoh:</h4>
+          <pre><code class="language-csharp">class Hewan
+{
+    private string nama;  // field (tertutup)
+    public int umur;      // field (terbuka)
+
+    // Property untuk akses aman ke field private
+    public string Nama
+    {
+        get { return nama; }
+        set { nama = value; }
+    }
+
+    public void Suara()
+    {
+        Console.WriteLine(nama + " mengeluarkan suara!");
+    }
+}
+
+Hewan kucing = new Hewan();
+kucing.Nama = "Mimi";
+kucing.umur = 2;
+kucing.Suara();</code></pre>
+        `
+      },
+      {
+        title: "🏗️ Constructor & Destructor",
+        content: `
+          <p><strong>Constructor</strong> dipanggil otomatis saat objek dibuat. Sedangkan <strong>Destructor</strong> dijalankan ketika objek dihapus dari memori.</p>
+
+          <h4>📘 Contoh Constructor:</h4>
+          <pre><code class="language-csharp">class Orang
+{
+    public string nama;
+
+    // Constructor
+    public Orang(string n)
+    {
+        nama = n;
+        Console.WriteLine("Objek " + nama + " dibuat!");
+    }
+
+    // Destructor
+    ~Orang()
+    {
+        Console.WriteLine("Objek " + nama + " dihapus!");
+    }
+}
+
+Orang o1 = new Orang("Ali");</code></pre>
+
+          <p>Constructor berguna untuk inisialisasi awal, sedangkan destructor jarang digunakan karena C# memiliki garbage collector otomatis.</p>
+        `
+      },
+      {
+        title: "🧬 Inheritance (Pewarisan)",
+        content: `
+          <p><strong>Inheritance</strong> memungkinkan suatu class mewarisi properti dan method dari class lain.</p>
+
+          <h4>📘 Contoh:</h4>
+          <pre><code class="language-csharp">class Kendaraan
+{
+    public void Jalan()
+    {
+        Console.WriteLine("Kendaraan berjalan...");
+    }
+}
+
+class Mobil : Kendaraan
+{
+    public void Klakson()
+    {
+        Console.WriteLine("Mobil membunyikan klakson!");
+    }
+}
+
+Mobil avanza = new Mobil();
+avanza.Jalan();     // Pewarisan dari Kendaraan
+avanza.Klakson();</code></pre>
+
+          <p><strong>Catatan:</strong> Class turunan (child) mewarisi semua anggota class induk (parent), kecuali konstruktor dan destructor.</p>
+        `
+      },
+      {
+        title: "🎭 Polymorphism (Override & Overload)",
+        content: `
+          <p><strong>Polymorphism</strong> berarti "banyak bentuk". Dalam C#, ini bisa berupa:</p>
+          <ul>
+            <li><strong>Overload</strong> — beberapa method dengan nama sama tapi parameter berbeda.</li>
+            <li><strong>Override</strong> — method diubah perilakunya di class turunan.</li>
+          </ul>
+
+          <h4>📘 Contoh Override:</h4>
+          <pre><code class="language-csharp">class Hewan
+{
+    public virtual void Suara()
+    {
+        Console.WriteLine("Hewan bersuara...");
+    }
+}
+
+class Kucing : Hewan
+{
+    public override void Suara()
+    {
+        Console.WriteLine("Meong!");
+    }
+}
+
+Hewan h = new Kucing();
+h.Suara(); // Output: Meong!</code></pre>
+
+          <p>Gunakan <code>virtual</code> dan <code>override</code> untuk mengaktifkan polymorphism dinamis.</p>
+        `
+      },
+      {
+        title: "🧩 Encapsulation (Akses Modifier)",
+        content: `
+          <p><strong>Encapsulation</strong> adalah penyembunyian detail internal suatu class agar tidak bisa diakses langsung dari luar.</p>
+
+          <h4>🔐 Akses Modifier di C#:</h4>
+          <ul>
+            <li><code>public</code> → bisa diakses dari mana saja.</li>
+            <li><code>private</code> → hanya bisa diakses di class yang sama.</li>
+            <li><code>protected</code> → bisa diakses oleh class turunan.</li>
+            <li><code>internal</code> → hanya bisa diakses dalam satu assembly/project.</li>
+          </ul>
+
+          <h4>📘 Contoh:</h4>
+          <pre><code class="language-csharp">class Akun
+{
+    private string password = "12345";
+
+    public void Login(string input)
+    {
+        if (input == password)
+            Console.WriteLine("Login berhasil!");
+        else
+            Console.WriteLine("Password salah!");
+    }
+}
+
+Akun a = new Akun();
+a.Login("12345"); // Output: Login berhasil!</code></pre>
+        `
+      },
+      {
+        title: "🌫️ Abstraction (Abstract Class & Interface)",
+        content: `
+          <p><strong>Abstraction</strong> adalah konsep menyembunyikan detail implementasi dan hanya menampilkan fungsionalitas penting.</p>
+
+          <h4>📘 Abstract Class:</h4>
+          <pre><code class="language-csharp">abstract class Bentuk
+{
+    public abstract void Gambar();
+}
+
+class Lingkaran : Bentuk
+{
+    public override void Gambar()
+    {
+        Console.WriteLine("Menggambar lingkaran...");
+    }
+}
+
+Bentuk b = new Lingkaran();
+b.Gambar();</code></pre>
+
+          <h4>📘 Interface:</h4>
+          <pre><code class="language-csharp">interface IKendaraan
+{
+    void Bergerak();
+}
+
+class Motor : IKendaraan
+{
+    public void Bergerak()
+    {
+        Console.WriteLine("Motor bergerak di jalan!");
+    }
+}
+
+IKendaraan m = new Motor();
+m.Bergerak();</code></pre>
+
+          <p><strong>Perbedaan:</strong></p>
+          <ul>
+            <li><code>abstract class</code> → bisa punya method dengan isi dan tanpa isi.</li>
+            <li><code>interface</code> → semua method wajib diimplementasikan oleh class turunan.</li>
+          </ul>
+        `
+      },
+      {
+        title: "🎬 Video: Konsep OOP di C#",
+        video: "https://www.youtube.com/embed/GhQdlIFylQ8",
+        content: `
+          <p>Tonton video ini untuk memahami OOP di C#: dari konsep class, object, inheritance, hingga polymorphism.</p>
+          <p>Video ini sangat membantu untuk memahami bagaimana struktur kode C# dibuat lebih modular dan efisien menggunakan prinsip OOP.</p>
+        `
+      }
+    ]
+  },
+
+  8: {
+    title: "🧰 Error Handling",
+    slides: [
+      {
+        title: "🧠 Pengantar Error Handling",
+        content: `
+          <p>Dalam pemrograman C#, error bisa terjadi kapan saja — misalnya karena pembagian dengan nol, file tidak ditemukan, atau input pengguna yang salah.</p>
+          <p>Untuk mencegah program berhenti secara tiba-tiba, kita menggunakan <strong>Error Handling</strong> dengan blok <code>try-catch-finally</code>.</p>
+
+          <h4>🎯 Tujuan Error Handling:</h4>
+          <ul>
+            <li>Mencegah program crash saat error terjadi.</li>
+            <li>Memberikan pesan kesalahan yang lebih informatif.</li>
+            <li>Menangani error dengan cara yang terkontrol.</li>
+          </ul>
+        `
+      },
+      {
+        title: "⚙️ Struktur Try, Catch, Finally",
+        content: `
+          <p>Blok <code>try</code> berisi kode yang mungkin menyebabkan error, sedangkan <code>catch</code> menangani error-nya. Blok <code>finally</code> dijalankan selalu, baik ada error maupun tidak.</p>
+
+          <h4>📘 Contoh:</h4>
+          <pre><code class="language-csharp">try
+{
+    int a = 10;
+    int b = 0;
+    int hasil = a / b;
+    Console.WriteLine("Hasil: " + hasil);
+}
+catch (DivideByZeroException e)
+{
+    Console.WriteLine("Error: " + e.Message);
+}
+finally
+{
+    Console.WriteLine("Program selesai dijalankan.");
+}</code></pre>
+
+          <p><strong>Keterangan:</strong></p>
+          <ul>
+            <li><code>try</code> → tempatkan kode yang berpotensi error.</li>
+            <li><code>catch</code> → menangkap jenis error tertentu.</li>
+            <li><code>finally</code> → dijalankan selalu, berguna untuk membersihkan resource (misal: menutup file).</li>
+          </ul>
+        `
+      },
+      {
+        title: "🚨 Menangani Beberapa Jenis Exception",
+        content: `
+          <p>Kamu bisa menggunakan beberapa blok <code>catch</code> untuk menangani error yang berbeda-beda.</p>
+
+          <h4>📘 Contoh:</h4>
+          <pre><code class="language-csharp">try
+{
+    int[] angka = { 1, 2, 3 };
+    Console.WriteLine(angka[5]); // Index tidak valid
+}
+catch (IndexOutOfRangeException e)
+{
+    Console.WriteLine("Kesalahan index: " + e.Message);
+}
+catch (Exception e)
+{
+    Console.WriteLine("Kesalahan umum: " + e.Message);
+}</code></pre>
+
+          <p><strong>Tips:</strong> Selalu letakkan <code>catch (Exception)</code> di paling bawah, agar tidak menutupi jenis error yang lebih spesifik.</p>
+        `
+      },
+      {
+        title: "💥 Melempar Exception Sendiri (Throw)",
+        content: `
+          <p>Kamu bisa membuat error secara manual menggunakan keyword <code>throw</code>. Biasanya digunakan untuk validasi data atau kondisi yang tidak diizinkan.</p>
+
+          <h4>📘 Contoh:</h4>
+          <pre><code class="language-csharp">static void Bagi(int a, int b)
+{
+    if (b == 0)
+    {
+        throw new DivideByZeroException("Tidak bisa membagi dengan nol!");
+    }
+    Console.WriteLine("Hasil: " + (a / b));
+}
+
+try
+{
+    Bagi(10, 0);
+}
+catch (Exception e)
+{
+    Console.WriteLine("Terjadi error: " + e.Message);
+}</code></pre>
+
+          <p><strong>Catatan:</strong> <code>throw</code> akan menghentikan eksekusi method dan mengirimkan error ke blok <code>catch</code> terdekat.</p>
+        `
+      },
+      {
+        title: "🧩 Membuat Custom Exception",
+        content: `
+          <p>Kamu bisa membuat <strong>custom exception</strong> sendiri agar error lebih spesifik dan mudah dipahami.</p>
+
+          <h4>📘 Contoh:</h4>
+          <pre><code class="language-csharp">class UmurTidakValidException : Exception
+{
+    public UmurTidakValidException(string pesan) : base(pesan)
+    {
+    }
+}
+
+class Program
+{
+    static void CekUmur(int umur)
+    {
+        if (umur < 0)
+        {
+            throw new UmurTidakValidException("Umur tidak boleh negatif!");
+        }
+        Console.WriteLine("Umur valid: " + umur);
+    }
+
+    static void Main()
+    {
+        try
+        {
+            CekUmur(-5);
+        }
+        catch (UmurTidakValidException e)
+        {
+            Console.WriteLine("Kesalahan: " + e.Message);
+        }
+    }
+}</code></pre>
+
+          <p>Dengan custom exception, kamu bisa memberikan nama error yang sesuai dengan konteks programmu.</p>
+        `
+      },
+      {
+        title: "🎬 Video: Error Handling di C#",
+        video: "https://www.youtube.com/embed/RmD6Ja3P2dY",
+        content: `
+          <p>Tonton video ini untuk memahami konsep <strong>try-catch-finally</strong> di C#, cara melempar (throw) error sendiri, dan cara membuat custom exception.</p>
+          <p>Video ini juga menunjukkan bagaimana cara debugging error dengan Visual Studio.</p>
+        `
+      }
+    ]
+  },
+
+  9: {
+    title: "📚 String & Manipulasi Data",
+    slides: [
+      {
+        title: "🔤 Operasi Dasar pada String",
+        content: `
+          <p>String adalah kumpulan karakter yang digunakan untuk menyimpan teks. Di C#, string termasuk tipe data <strong>reference</strong> dan bersifat <strong>immutable</strong> (tidak bisa diubah setelah dibuat).</p>
+
+          <h4>🧩 Contoh Deklarasi & Penggunaan:</h4>
+          <pre><code class="language-csharp">string nama = "Ali";
+string pesan = "Selamat datang, " + nama + "!";
+Console.WriteLine(pesan);</code></pre>
+
+          <h4>📦 String Interpolation:</h4>
+          <p>Kamu bisa menggabungkan teks dan variabel dengan cara yang lebih mudah menggunakan <strong>string interpolation</strong> (<code>$"{...}"</code>).</p>
+
+          <pre><code class="language-csharp">string nama = "Ali";
+int umur = 21;
+Console.WriteLine($"Halo, nama saya {nama}, umur saya {umur} tahun.");</code></pre>
+
+          <p>Interpolation membuat kode lebih rapi dan mudah dibaca dibandingkan concatenation dengan tanda <code>+</code>.</p>
+        `
+      },
+      {
+        title: "🧰 Fungsi-Fungsi String Bawaan",
+        content: `
+          <p>C# menyediakan banyak <strong>method bawaan</strong> dalam class <code>System.String</code> untuk memanipulasi teks.</p>
+
+          <h4>📘 Contoh:</h4>
+          <pre><code class="language-csharp">string kalimat = "Belajar C# itu menyenangkan!";
+
+Console.WriteLine(kalimat.ToUpper());      // BELAJAR C# ITU MENYENANGKAN!
+Console.WriteLine(kalimat.ToLower());      // belajar c# itu menyenangkan!
+Console.WriteLine(kalimat.Substring(8, 2)); // "C#"
+Console.WriteLine(kalimat.Replace("menyenangkan", "mudah")); // ganti kata
+Console.WriteLine(kalimat.Contains("C#")); // true
+Console.WriteLine(kalimat.Length);          // jumlah karakter</code></pre>
+
+          <h4>📚 Daftar Method Umum:</h4>
+          <ul>
+            <li><code>ToUpper()</code> / <code>ToLower()</code> – ubah huruf besar/kecil.</li>
+            <li><code>Substring()</code> – ambil sebagian string.</li>
+            <li><code>Replace()</code> – ganti teks tertentu.</li>
+            <li><code>Trim()</code> – hapus spasi di awal/akhir.</li>
+            <li><code>Contains()</code> – cek apakah string mengandung teks tertentu.</li>
+            <li><code>Length</code> – panjang string.</li>
+          </ul>
+        `
+      },
+      {
+        title: "🔢 Parsing & Konversi Data",
+        content: `
+          <p>Sering kali kita perlu mengubah string menjadi angka, terutama saat membaca input dari pengguna.</p>
+
+          <h4>📘 Contoh:</h4>
+          <pre><code class="language-csharp">string input = "25";
+int angka1 = int.Parse(input);           // cara 1
+int angka2 = Convert.ToInt32(input);     // cara 2
+
+Console.WriteLine(angka1 + angka2); // 50</code></pre>
+
+          <h4>⚠️ Catatan Penting:</h4>
+          <ul>
+            <li><code>int.Parse()</code> akan error jika input bukan angka valid.</li>
+            <li><code>Convert.ToInt32()</code> lebih aman karena bisa menangani nilai <code>null</code>.</li>
+          </ul>
+
+          <p>Untuk menghindari error, gunakan <code>int.TryParse()</code> agar program tidak crash jika input tidak valid:</p>
+
+          <pre><code class="language-csharp">string teks = "abc";
+if (int.TryParse(teks, out int hasil))
+    Console.WriteLine($"Berhasil: {hasil}");
+else
+    Console.WriteLine("Input tidak valid!");</code></pre>
+        `
+      },
+      {
+        title: "⏰ DateTime & TimeSpan",
+        content: `
+          <p>C# memiliki tipe data khusus untuk menangani tanggal dan waktu, yaitu <strong>DateTime</strong> dan <strong>TimeSpan</strong>.</p>
+
+          <h4>📘 Contoh DateTime:</h4>
+          <pre><code class="language-csharp">DateTime sekarang = DateTime.Now;
+Console.WriteLine("Sekarang: " + sekarang);
+
+DateTime ulangTahun = new DateTime(2003, 5, 14);
+Console.WriteLine("Ulang tahun: " + ulangTahun.ToShortDateString());
+
+// Format kustom
+Console.WriteLine(sekarang.ToString("dd MMMM yyyy HH:mm"));</code></pre>
+
+          <h4>📏 Contoh TimeSpan:</h4>
+          <pre><code class="language-csharp">DateTime mulai = DateTime.Now;
+DateTime selesai = mulai.AddHours(2).AddMinutes(30);
+
+TimeSpan durasi = selesai - mulai;
+Console.WriteLine($"Durasi: {durasi.TotalMinutes} menit");</code></pre>
+
+          <h4>🧠 Kegunaan:</h4>
+          <ul>
+            <li>🗓️ Menghitung selisih waktu antar tanggal.</li>
+            <li>⏱️ Mengukur durasi suatu proses.</li>
+            <li>📅 Menampilkan tanggal dalam format tertentu.</li>
+          </ul>
+        `
+      },
+      {
+        title: "🎬 Video: String & DateTime di C#",
+        video: "https://www.youtube.com/embed/dO5BzUoVg6U",
+        content: `
+          <p>Tonton video ini untuk memahami manipulasi string, konversi data, dan penggunaan <strong>DateTime</strong> & <strong>TimeSpan</strong> dalam C#.</p>
+          <p>Video ini menjelaskan contoh langsung dalam Visual Studio agar kamu bisa melihat hasilnya secara real-time.</p>
+        `
+      }
+    ]
+  },
+
+  10: {
+    title: "📦 File Handling",
+    slides: [
+      {
+        title: "🧠 Pengantar File Handling di C#",
+        content: `
+          <p><strong>File Handling</strong> adalah cara program berinteraksi dengan file di penyimpanan komputer — seperti membaca, menulis, atau memeriksa keberadaan file.</p>
+          <p>C# menyediakan berbagai class di namespace <code>System.IO</code> untuk mengelola file dan folder.</p>
+
+          <h4>📚 Class Penting dalam File Handling:</h4>
+          <ul>
+            <li><code>File</code> – operasi dasar (buat, baca, tulis, hapus file).</li>
+            <li><code>StreamReader</code> & <code>StreamWriter</code> – membaca & menulis file teks.</li>
+            <li><code>Directory</code> – bekerja dengan folder (buat, hapus, cek isi folder).</li>
+            <li><code>Path</code> – manipulasi path file (gabung, ambil ekstensi, nama file, dll).</li>
+          </ul>
+
+          <p>Dengan File Handling, kamu bisa menyimpan data, membuat log, atau membaca konfigurasi dari file eksternal.</p>
+        `
+      },
+      {
+        title: "📖 Membaca & Menulis File dengan System.IO.File",
+        content: `
+          <p>Class <code>File</code> menyediakan method statis yang sangat mudah digunakan untuk membaca dan menulis teks.</p>
+
+          <h4>📘 Contoh: Menulis File</h4>
+          <pre><code class="language-csharp">using System;
+using System.IO;
+
+class Program
+{
+    static void Main()
+    {
+        string path = "data.txt";
+        string isi = "Halo dari C#!";
+
+        File.WriteAllText(path, isi);
+        Console.WriteLine("File berhasil ditulis!");
+    }
+}</code></pre>
+
+          <h4>📘 Contoh: Membaca File</h4>
+          <pre><code class="language-csharp">string path = "data.txt";
+if (File.Exists(path))
+{
+    string teks = File.ReadAllText(path);
+    Console.WriteLine("Isi file: " + teks);
+}
+else
+{
+    Console.WriteLine("File tidak ditemukan!");
+}</code></pre>
+
+          <p><strong>Note:</strong> Gunakan <code>File.AppendAllText()</code> untuk menambahkan teks ke file tanpa menimpanya.</p>
+        `
+      },
+      {
+        title: "📜 Membaca & Menulis File dengan StreamReader / StreamWriter",
+        content: `
+          <p>Untuk membaca atau menulis file besar, gunakan <strong>StreamReader</strong> dan <strong>StreamWriter</strong> agar lebih efisien.</p>
+
+          <h4>📘 Contoh: Menulis File</h4>
+          <pre><code class="language-csharp">using (StreamWriter writer = new StreamWriter("catatan.txt"))
+{
+    writer.WriteLine("Baris pertama");
+    writer.WriteLine("Baris kedua");
+}
+Console.WriteLine("File catatan.txt berhasil dibuat!");</code></pre>
+
+          <h4>📘 Contoh: Membaca File</h4>
+          <pre><code class="language-csharp">using (StreamReader reader = new StreamReader("catatan.txt"))
+{
+    string baris;
+    while ((baris = reader.ReadLine()) != null)
+    {
+        Console.WriteLine(baris);
+    }
+}</code></pre>
+
+          <p><strong>Penjelasan:</strong></p>
+          <ul>
+            <li><code>using</code> memastikan file tertutup otomatis setelah selesai digunakan.</li>
+            <li><code>ReadLine()</code> membaca teks per baris, cocok untuk file log atau data teks panjang.</li>
+          </ul>
+        `
+      },
+      {
+        title: "📂 Mengecek File & Folder",
+        content: `
+          <p>Kamu bisa mengecek apakah file atau folder ada, serta membuat folder baru menggunakan class <code>File</code> dan <code>Directory</code>.</p>
+
+          <h4>📘 Contoh:</h4>
+          <pre><code class="language-csharp">string filePath = "data.txt";
+string folderPath = "Dokumen";
+
+// Mengecek keberadaan file
+if (File.Exists(filePath))
+    Console.WriteLine("File ditemukan!");
+else
+    Console.WriteLine("File tidak ditemukan!");
+
+// Mengecek folder & membuat jika belum ada
+if (!Directory.Exists(folderPath))
+{
+    Directory.CreateDirectory(folderPath);
+    Console.WriteLine("Folder baru dibuat: " + folderPath);
+}</code></pre>
+
+          <p>Dengan ini, program kamu bisa memastikan struktur penyimpanan sudah siap sebelum menulis file.</p>
+        `
+      },
+      {
+        title: "🧾 Membuat Log Sederhana ke File Teks",
+        content: `
+          <p>Salah satu penggunaan umum File Handling adalah membuat <strong>log aktivitas</strong> aplikasi.</p>
+          <p>Log berguna untuk mencatat kapan suatu peristiwa terjadi, seperti error atau tindakan pengguna.</p>
+
+          <h4>📘 Contoh:</h4>
+          <pre><code class="language-csharp">using System;
+using System.IO;
+
+class Logger
+{
+    static string logPath = "log.txt";
+
+    public static void TulisLog(string pesan)
+    {
+        string waktu = DateTime.Now.ToString("dd-MM-yyyy HH:mm:ss");
+        string baris = $"[{waktu}] {pesan}";
+        File.AppendAllText(logPath, baris + Environment.NewLine);
+    }
+
+    static void Main()
+    {
+        TulisLog("Program dimulai");
+        TulisLog("User login berhasil");
+        TulisLog("Program selesai");
+        Console.WriteLine("Log disimpan di log.txt");
+    }
+}</code></pre>
+
+          <p>📂 File log ini akan menyimpan semua aktivitas penting dan bisa kamu buka kapan saja untuk debugging.</p>
+        `
+      },
+      {
+        title: "🎬 Video: File Handling di C#",
+        video: "https://www.youtube.com/embed/8VGjY_TP2cY",
+        content: `
+          <p>Tonton video ini untuk memahami cara membaca dan menulis file di C#, menggunakan <strong>System.IO</strong>, <strong>StreamReader</strong>, dan <strong>StreamWriter</strong>.</p>
+          <p>Video ini juga menunjukkan bagaimana cara membuat log aplikasi dan memeriksa keberadaan file atau folder di Visual Studio.</p>
+        `
+      }
+    ]
+  },
+
+  11: {
+    title: "⚙️ Namespace & Organisasi Kode",
+    slides: [
+      {
+        title: "🧠 Pengantar Namespace di C#",
+        content: `
+          <p><strong>Namespace</strong> digunakan untuk mengelompokkan class, interface, dan struktur agar kode tetap rapi dan tidak bentrok dengan nama lain.</p>
+          <p>Dalam proyek besar, namespace membantu memisahkan logika program berdasarkan fungsinya, misalnya <code>ProjectName.Models</code>, <code>ProjectName.Controllers</code>, dan <code>ProjectName.Utils</code>.</p>
+
+          <h4>📘 Contoh Sederhana:</h4>
+          <pre><code class="language-csharp">namespace BelajarCSharp
+{
+    class Program
+    {
+        static void Main()
+        {
+            Console.WriteLine("Halo dari namespace BelajarCSharp!");
+        }
+    }
+}</code></pre>
+
+          <p>Namespace bisa dianggap seperti "folder virtual" di dalam kode — menyusun class agar lebih terstruktur.</p>
+        `
+      },
+      {
+        title: "🏗️ Struktur Namespace & Organisasi File",
+        content: `
+          <p>Dalam proyek besar, kita sering membagi program menjadi beberapa file <code>.cs</code> agar lebih mudah dikelola.</p>
+
+          <h4>📁 Contoh Struktur Folder:</h4>
+          <pre><code>📦 ProyekAplikasi
+ ┣ 📂 Models
+ ┃ ┗─ Mahasiswa.cs
+ ┣ 📂 Utils
+ ┃ ┗─ Helper.cs
+ ┗─ Program.cs</code></pre>
+
+          <h4>📘 Contoh Isi File:</h4>
+
+          <strong>Mahasiswa.cs</strong>
+          <pre><code class="language-csharp">namespace ProyekAplikasi.Models
+{
+    public class Mahasiswa
+    {
+        public string Nama { get; set; }
+        public int Umur { get; set; }
+    }
+}</code></pre>
+
+          <strong>Helper.cs</strong>
+          <pre><code class="language-csharp">namespace ProyekAplikasi.Utils
+{
+    public static class Helper
+    {
+        public static void CetakJudul(string judul)
+        {
+            Console.WriteLine("=== " + judul + " ===");
+        }
+    }
+}</code></pre>
+
+          <strong>Program.cs</strong>
+          <pre><code class="language-csharp">using ProyekAplikasi.Models;
+using ProyekAplikasi.Utils;
+
+namespace ProyekAplikasi
+{
+    class Program
+    {
+        static void Main()
+        {
+            Helper.CetakJudul("Data Mahasiswa");
+
+            Mahasiswa m = new Mahasiswa { Nama = "Ali", Umur = 21 };
+            Console.WriteLine($"{m.Nama} - {m.Umur} tahun");
+        }
+    }
+}</code></pre>
+
+          <p>💡 Setiap file bisa punya namespace sendiri, tapi biasanya semua masih dalam satu root namespace yang sama.</p>
+        `
+      },
+      {
+        title: "📥 Menggunakan using untuk Import Library",
+        content: `
+          <p><strong>using</strong> digunakan untuk mengimpor namespace lain agar class di dalamnya bisa langsung dipakai tanpa menulis nama lengkapnya.</p>
+
+          <h4>📘 Contoh Tanpa using:</h4>
+          <pre><code class="language-csharp">class Program
+{
+    static void Main()
+    {
+        System.Console.WriteLine("Halo dunia!");
+    }
+}</code></pre>
+
+          <h4>📘 Contoh Dengan using:</h4>
+          <pre><code class="language-csharp">using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Halo dunia!");
+    }
+}</code></pre>
+
+          <p><strong>using</strong> membuat kode lebih pendek dan mudah dibaca.</p>
+          <p>Kita juga bisa membuat <strong>alias</strong> untuk namespace yang panjang:</p>
+
+          <pre><code class="language-csharp">using ProyekUtils = ProyekAplikasi.Utils;
+
+class Program
+{
+    static void Main()
+    {
+        ProyekUtils.Helper.CetakJudul("Halo dari alias namespace!");
+    }
+}</code></pre>
+        `
+      },
+      {
+        title: "🧭 Best Practice: Organisasi Kode Rapi",
+        content: `
+          <h4>✅ Tips Menyusun Kode di C#:</h4>
+          <ul>
+            <li>Gunakan namespace yang konsisten, sesuai struktur folder.</li>
+            <li>Simpan satu class utama per file <code>.cs</code>.</li>
+            <li>Gunakan folder terpisah untuk <strong>Models</strong>, <strong>Services</strong>, <strong>Controllers</strong>, dll.</li>
+            <li>Tambahkan komentar atau ringkasan di awal file class.</li>
+            <li>Gunakan <code>partial class</code> jika ingin memecah class besar ke beberapa file.</li>
+          </ul>
+
+          <h4>📘 Contoh Struktur Namespace Besar:</h4>
+          <pre><code>MyApp
+ ┣ MyApp.Models
+ ┣ MyApp.Services
+ ┣ MyApp.Controllers
+ ┗ MyApp.Helpers</code></pre>
+
+          <p>Dengan organisasi namespace yang rapi, proyek akan mudah di-maintain dan scalable.</p>
+        `
+      },
+      {
+        title: "🎬 Video: Namespace & Struktur Proyek C#",
+        video: "https://www.youtube.com/embed/NfFOD9KNDtA",
+        content: `
+          <p>Tonton video ini untuk memahami bagaimana cara menggunakan <strong>namespace</strong>, <strong>using</strong>, dan mengorganisasi proyek C# menjadi beberapa file agar lebih profesional dan mudah dikembangkan.</p>
+        `
+      }
+    ]
+  },
+
+  12: {
+    title: "🧠 Collection & LINQ (Pengenalan Dasar)",
+    slides: [
+      {
+        title: "🔍 Apa itu LINQ?",
+        content: `
+          <p><strong>LINQ (Language Integrated Query)</strong> adalah fitur di C# yang memungkinkan kita untuk melakukan query (seperti di SQL) langsung pada data koleksi seperti <code>List</code>, <code>Array</code>, atau bahkan database.</p>
+          <p>Dengan LINQ, kamu bisa melakukan <strong>filtering, sorting, grouping, dan selecting</strong> data dengan cara yang lebih mudah dan bersih.</p>
+
+          <h4>📘 Contoh Tanpa LINQ:</h4>
+          <pre><code class="language-csharp">List<int> angka = new List<int> { 1, 2, 3, 4, 5 };
+List<int> genap = new List<int>();
+
+foreach (int n in angka)
+{
+    if (n % 2 == 0)
+        genap.Add(n);
+}
+
+foreach (int n in genap)
+    Console.WriteLine(n);</code></pre>
+
+          <h4>📘 Contoh Dengan LINQ:</h4>
+          <pre><code class="language-csharp">using System.Linq;
+
+List<int> angka = new List<int> { 1, 2, 3, 4, 5 };
+var genap = angka.Where(n => n % 2 == 0);
+
+foreach (int n in genap)
+    Console.WriteLine(n);</code></pre>
+
+          <p>Lebih singkat dan mudah dibaca, bukan? Inilah kekuatan LINQ.</p>
+        `
+      },
+      {
+        title: "📋 Filter, Sort, dan Select Data dari List",
+        content: `
+          <p>LINQ dapat digunakan untuk <strong>memfilter</strong> (Where), <strong>mengurutkan</strong> (OrderBy/OrderByDescending), dan <strong>memilih</strong> (Select) data dari koleksi.</p>
+
+          <h4>📘 Contoh:</h4>
+          <pre><code class="language-csharp">using System;
+using System.Collections.Generic;
+using System.Linq;
+
+class Program
+{
+    static void Main()
+    {
+        List<string> nama = new List<string> { "Ali", "Budi", "Citra", "Dewi", "Bayu" };
+
+        // Filter: nama yang dimulai dengan huruf 'B'
+        var filterB = nama.Where(n => n.StartsWith("B"));
+
+        // Sort: urutkan nama ascending
+        var urut = nama.OrderBy(n => n);
+
+        // Select: ubah jadi huruf besar semua
+        var kapital = nama.Select(n => n.ToUpper());
+
+        Console.WriteLine("Nama dengan huruf B:");
+        foreach (var n in filterB)
+            Console.WriteLine(n);
+
+        Console.WriteLine("\\nNama diurutkan:");
+        foreach (var n in urut)
+            Console.WriteLine(n);
+
+        Console.WriteLine("\\nNama kapital:");
+        foreach (var n in kapital)
+            Console.WriteLine(n);
+    }
+}</code></pre>
+
+          <p>💡 LINQ bekerja seperti pipeline: hasil dari satu query bisa diteruskan ke query lain.</p>
+        `
+      },
+      {
+        title: "⚡ Anonymous Type & Lambda Expression Dasar",
+        content: `
+          <p>LINQ sering menggunakan <strong>lambda expression</strong> (<code>=></code>) untuk menulis fungsi singkat langsung di dalam query.</p>
+
+          <h4>📘 Contoh Lambda Expression:</h4>
+          <pre><code class="language-csharp">List<int> angka = new List<int> { 10, 20, 30, 40 };
+var hasil = angka.Select(x => x / 10); // setiap angka dibagi 10
+
+foreach (var x in hasil)
+    Console.WriteLine(x);</code></pre>
+
+          <p><code>x => x / 10</code> artinya: "untuk setiap x, kembalikan hasil x dibagi 10".</p>
+
+          <hr/>
+
+          <h4>📘 Anonymous Type</h4>
+          <p>Anonymous type digunakan untuk membuat objek tanpa harus mendefinisikan class.</p>
+
+          <pre><code class="language-csharp">var mahasiswa = new[] {
+    new { Nama = "Ali", Umur = 20 },
+    new { Nama = "Budi", Umur = 22 },
+    new { Nama = "Citra", Umur = 19 }
+};
+
+var dewasa = mahasiswa.Where(m => m.Umur >= 20);
+
+foreach (var m in dewasa)
+    Console.WriteLine($"{m.Nama} ({m.Umur})");</code></pre>
+
+          <p>Anonymous type sangat berguna dalam query LINQ ketika kamu hanya butuh data tertentu dari sebuah objek.</p>
+        `
+      },
+      {
+        title: "💡 Kombinasi LINQ dengan Lambda",
+        content: `
+          <p>Kamu bisa menggabungkan beberapa operasi LINQ dalam satu baris, misalnya untuk filter dan sort sekaligus.</p>
+
+          <pre><code class="language-csharp">var data = new List<int> { 5, 2, 9, 1, 6, 3 };
+
+var hasil = data
+    .Where(x => x > 3)
+    .OrderByDescending(x => x)
+    .Select(x => $"Angka: {x}");
+
+foreach (var item in hasil)
+    Console.WriteLine(item);</code></pre>
+
+          <p>💬 Ini sangat efisien dan ekspresif, cocok untuk data processing ringan di C#.</p>
+        `
+      },
+      {
+        title: "🎬 Video: Pengenalan LINQ di C#",
+        video: "https://www.youtube.com/embed/6xHXYmAfVnw",
+        content: `
+          <p>Tonton video ini untuk memahami dasar <strong>LINQ</strong>, penggunaan <strong>lambda expression</strong>, dan cara melakukan operasi <strong>filter, sort, dan select</strong> data pada koleksi di C#.</p>
+        `
+      }
+    ]
+  },
+
+  13: {
+    title: "🧱 Modular & Reusable Code",
+    slides: [
+      {
+        title: "🔧 Konsep Modular & Reusable Code",
+        content: `
+          <p><strong>Modular programming</strong> adalah cara menyusun kode agar setiap bagian (modul) memiliki tugas tertentu dan bisa digunakan kembali di tempat lain.</p>
+          <p>Dengan pendekatan modular, kode jadi lebih mudah di-maintain, diuji, dan dikembangkan.</p>
+
+          <h4>📘 Contoh Tanpa Modular:</h4>
+          <pre><code class="language-csharp">Console.WriteLine("Halo, Ali!");
+Console.WriteLine("Halo, Budi!");
+Console.WriteLine("Halo, Citra!");</code></pre>
+
+          <h4>📘 Contoh Dengan Modular (Gunakan Fungsi):</h4>
+          <pre><code class="language-csharp">void Sapa(string nama)
+{
+    Console.WriteLine($"Halo, {nama}!");
+}
+
+Sapa("Ali");
+Sapa("Budi");
+Sapa("Citra");</code></pre>
+
+          <p>Modularitas bisa diperluas ke level <strong>class</strong> dan <strong>file terpisah</strong> agar kode lebih rapi dan reusable.</p>
+        `
+      },
+      {
+        title: "🏗️ Membuat Class Helper / Utility",
+        content: `
+          <p><strong>Class Helper</strong> atau <strong>Utility Class</strong> digunakan untuk menyimpan method umum yang bisa digunakan di berbagai bagian program.</p>
+
+          <pre><code class="language-csharp">// File: MathHelper.cs
+public class MathHelper
+{
+    public static int Tambah(int a, int b)
+    {
+        return a + b;
+    }
+
+    public static int Kali(int a, int b)
+    {
+        return a * b;
+    }
+}
+
+// File: Program.cs
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine(MathHelper.Tambah(5, 3)); // Output: 8
+        Console.WriteLine(MathHelper.Kali(4, 6));   // Output: 24
+    }
+}</code></pre>
+
+          <p>Dengan membuat <strong>helper class</strong>, kamu bisa memisahkan fungsi umum dari logika utama, membuat kode lebih bersih dan reusable.</p>
+        `
+      },
+      {
+        title: "⚙️ Static Class & Static Method",
+        content: `
+          <p>Class <strong>static</strong> tidak bisa diinstansiasi (tidak bisa dibuat objeknya). Semua method di dalamnya juga harus static.</p>
+
+          <p>Biasanya digunakan untuk fungsi umum seperti logika matematika, format teks, atau konversi.</p>
+
+          <pre><code class="language-csharp">public static class TextHelper
+{
+    public static string Capitalize(string text)
+    {
+        if (string.IsNullOrEmpty(text))
+            return text;
+
+        return char.ToUpper(text[0]) + text.Substring(1).ToLower();
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine(TextHelper.Capitalize("halo dunia")); // Output: Halo dunia
+    }
+}</code></pre>
+
+          <p>💡 Karena static, kamu bisa langsung memanggil method tanpa membuat objek.</p>
+        `
+      },
+      {
+        title: "🧩 Extension Method Sederhana",
+        content: `
+          <p><strong>Extension Method</strong> memungkinkan kita menambahkan method baru ke tipe data atau class yang sudah ada — tanpa harus mengubah definisinya.</p>
+
+          <h4>📘 Contoh:</h4>
+          <pre><code class="language-csharp">public static class StringExtension
+{
+    public static string ToTitleCase(this string text)
+    {
+        if (string.IsNullOrEmpty(text))
+            return text;
+
+        return System.Globalization.CultureInfo.CurrentCulture.TextInfo.ToTitleCase(text.ToLower());
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        string nama = "ali khatami";
+        Console.WriteLine(nama.ToTitleCase()); // Output: Ali Khatami
+    }
+}</code></pre>
+
+          <p>Perhatikan kata kunci <code>this</code> di parameter pertama — itu yang membuat method bisa digunakan seolah milik tipe tersebut.</p>
+        `
+      },
+      {
+        title: "🧱 Project Referensi Antar File",
+        content: `
+          <p>Dalam proyek besar, kamu akan sering membagi kode ke beberapa file agar lebih terorganisir.</p>
+
+          <h4>📘 Contoh Struktur Folder:</h4>
+          <pre><code>MyApp/
+├── Program.cs
+├── Helpers/
+│   └── MathHelper.cs
+└── Models/
+    └── User.cs</code></pre>
+
+          <h4>📘 File: Models/User.cs</h4>
+          <pre><code class="language-csharp">namespace MyApp.Models
+{
+    public class User
+    {
+        public string Nama { get; set; }
+        public int Umur { get; set; }
+    }
+}</code></pre>
+
+          <h4>📘 File: Program.cs</h4>
+          <pre><code class="language-csharp">using MyApp.Models;
+using MyApp.Helpers;
+
+class Program
+{
+    static void Main()
+    {
+        User u = new User { Nama = "Ali", Umur = 21 };
+        Console.WriteLine($"Nama: {u.Nama}, Umur: {u.Umur}");
+    }
+}</code></pre>
+
+          <p>Gunakan <code>namespace</code> dan <code>using</code> agar setiap file bisa saling terhubung tanpa menumpuk kode di satu tempat.</p>
+        `
+      },
+      {
+        title: "🎥 Video: Modular & Reusable Code di C#",
+        video: "https://www.youtube.com/embed/Z6DrIE3tFvM",
+        content: `
+          <p>Tonton video ini untuk memahami bagaimana menyusun <strong>kode modular dan reusable</strong> di C#, membuat <strong>helper class</strong>, dan menerapkan <strong>extension method</strong> dengan cara yang efisien.</p>
+        `
+      }
+    ]
+  },
+
+  14: {
+    title: "💻 Project Akhir: Aplikasi Kasir Sederhana (Console App Non-OOP)",
+    slides: [
+      {
+        title: "🧾 Ringkasan Project",
+        content: `
+          <p>Kita akan membuat <strong>Aplikasi Kasir Sederhana</strong> berbasis <em>Console</em> tanpa OOP.</p>
+          <p>Proyek ini mencakup penerapan dari materi <strong>1–13</strong> (tanpa OOP), seperti: variabel, tipe data, kontrol alur, array/list, method, error handling, file I/O, dan LINQ sederhana.</p>
+          <p><strong>Fitur utama:</strong></p>
+          <ul>
+            <li>Menambah barang ke daftar</li>
+            <li>Menampilkan daftar barang</li>
+            <li>Menghitung total belanja</li>
+            <li>Menyimpan transaksi ke file</li>
+          </ul>
+        `
+      },
+      {
+        title: "⚙️ 1) Struktur Project",
+        content: `
+          <p>Buat project baru:</p>
+          <pre><code>dotnet new console -n KasirApp
+cd KasirApp</code></pre>
+
+          <p>Struktur file sederhana:</p>
+          <pre><code>KasirApp/
+├── Program.cs
+├── Data/
+│   └── transaksi.txt</code></pre>
+
+          <p>Semua kode akan ditulis di <code>Program.cs</code> agar lebih mudah dipahami.</p>
+        `
+      },
+      {
+        title: "📥 2) Variabel & Data Awal",
+        content: `
+          <p>Kita buat daftar barang dan list untuk menampung keranjang belanja.</p>
+
+          <pre><code class="language-csharp">using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+
+class Program
+{
+    static void Main()
+    {
+        string[] namaBarang = { "Roti", "Susu", "Kopi", "Gula", "Teh" };
+        int[] hargaBarang = { 10000, 15000, 12000, 8000, 7000 };
+
+        List<string> keranjang = new List<string>();
+        bool jalan = true;
+
+        while (jalan)
+        {
+            TampilkanMenu();
+            Console.Write("Pilih menu: ");
+            string pilih = Console.ReadLine();
+
+            switch (pilih)
+            {
+                case "1": LihatBarang(namaBarang, hargaBarang); break;
+                case "2": TambahBarang(keranjang, namaBarang); break;
+                case "3": HitungTotal(keranjang, namaBarang, hargaBarang); break;
+                case "4": SimpanTransaksi(keranjang); break;
+                case "0": jalan = false; break;
+                default: Console.WriteLine("Pilihan tidak valid!"); break;
+            }
+        }
+    }
+}</code></pre>
+        `
+      },
+      {
+        title: "🧾 3) Menampilkan Menu & Daftar Barang",
+        content: `
+          <p>Tambahkan method <code>TampilkanMenu()</code> dan <code>LihatBarang()</code> untuk menampilkan opsi & daftar barang.</p>
+
+          <pre><code class="language-csharp">static void TampilkanMenu()
+{
+    Console.WriteLine("\\n===== APLIKASI KASIR =====");
+    Console.WriteLine("1. Lihat daftar barang");
+    Console.WriteLine("2. Tambah ke keranjang");
+    Console.WriteLine("3. Hitung total belanja");
+    Console.WriteLine("4. Simpan transaksi ke file");
+    Console.WriteLine("0. Keluar");
+}
+
+static void LihatBarang(string[] nama, int[] harga)
+{
+    Console.WriteLine("\\nDaftar Barang:");
+    for (int i = 0; i < nama.Length; i++)
+    {
+        Console.WriteLine($"{i + 1}. {nama[i]} - Rp{harga[i]}");
+    }
+}</code></pre>
+        `
+      },
+      {
+        title: "🛒 4) Menambahkan Barang ke Keranjang",
+        content: `
+          <p>Gunakan <code>List</code> dan validasi sederhana untuk menambah barang.</p>
+
+          <pre><code class="language-csharp">static void TambahBarang(List<string> keranjang, string[] namaBarang)
+{
+    Console.Write("Masukkan nomor barang: ");
+    if (int.TryParse(Console.ReadLine(), out int nomor))
+    {
+        if (nomor >= 1 && nomor <= namaBarang.Length)
+        {
+            keranjang.Add(namaBarang[nomor - 1]);
+            Console.WriteLine($"✅ {namaBarang[nomor - 1]} ditambahkan ke keranjang!");
+        }
+        else Console.WriteLine("❌ Nomor tidak valid.");
+    }
+    else Console.WriteLine("❌ Input harus angka!");
+}</code></pre>
+        `
+      },
+      {
+        title: "💰 5) Menghitung Total Belanja (LINQ)",
+        content: `
+          <p>Gunakan <code>LINQ</code> untuk menghitung total harga barang dalam keranjang.</p>
+
+          <pre><code class="language-csharp">static void HitungTotal(List<string> keranjang, string[] nama, int[] harga)
+{
+    if (keranjang.Count == 0)
+    {
+        Console.WriteLine("Keranjang kosong!");
+        return;
+    }
+
+    int total = keranjang
+        .Select(item => harga[Array.IndexOf(nama, item)])
+        .Sum();
+
+    Console.WriteLine("\\nIsi Keranjang:");
+    keranjang.ForEach(item => Console.WriteLine("- " + item));
+    Console.WriteLine($"Total Belanja: Rp{total}");
+}</code></pre>
+
+          <p>Di sini kita menerapkan konsep <strong>array, list, LINQ, dan looping</strong>.</p>
+        `
+      },
+      {
+        title: "📂 6) Menyimpan Transaksi ke File",
+        content: `
+          <p>Gunakan <code>System.IO.File.AppendAllText</code> untuk menyimpan transaksi sederhana ke file teks.</p>
+
+          <pre><code class="language-csharp">static void SimpanTransaksi(List<string> keranjang)
+{
+    if (keranjang.Count == 0)
+    {
+        Console.WriteLine("Keranjang kosong, tidak ada yang disimpan.");
+        return;
+    }
+
+    string filePath = "Data/transaksi.txt";
+    Directory.CreateDirectory("Data");
+
+    string waktu = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+    string data = $"[{waktu}] {string.Join(", ", keranjang)}{Environment.NewLine}";
+
+    try
+    {
+        File.AppendAllText(filePath, data);
+        Console.WriteLine("💾 Transaksi berhasil disimpan!");
+        keranjang.Clear();
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine("Terjadi error saat menyimpan: " + ex.Message);
+    }
+}</code></pre>
+
+          <p>Bagian ini menerapkan <strong>file handling, string manipulation, try-catch</strong>, dan <strong>list clearing</strong>.</p>
+        `
+      },
+      {
+        title: "🧠 7) Ringkasan Penerapan Materi",
+        content: `
+          <ul>
+            <li><strong>Tipe data:</strong> int, string, array, list</li>
+            <li><strong>Operator & kontrol alur:</strong> if, switch, loop</li>
+            <li><strong>Method:</strong> modularisasi fungsi</li>
+            <li><strong>LINQ:</strong> menghitung total belanja</li>
+            <li><strong>File Handling:</strong> menyimpan transaksi</li>
+            <li><strong>Error Handling:</strong> try-catch pada penyimpanan file</li>
+            <li><strong>String:</strong> manipulasi teks & format output</li>
+          </ul>
+
+          <p>Dengan proyek ini kamu sudah menerapkan semua dasar C# tanpa OOP secara nyata dan bermanfaat.</p>
+        `
+      },
+      {
+        title: "🎬 Video Tutorial: C# Kasir Console App Step-by-step",
+        video: "https://www.youtube.com/embed/8GF1T7zjH4A",
+        content: `
+          <p>Tonton video ini untuk melihat contoh pembuatan aplikasi kasir sederhana dari awal sampai bisa dijalankan.</p>
+          <p>Video menjelaskan cara membuat menu, input data, menghitung total, dan menyimpan hasil transaksi.</p>
+        `
+      }
+    ]
+  }
+};
   </script>
   <script src="../../assets/js/frontend.js"></script>
 </body>
