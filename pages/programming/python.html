@@ -280,1465 +280,1347 @@
     let slides = [];
 
     // Data konten untuk setiap modul
-    const moduleContent = {
-      1: {
-        title: "🐍 Sejarah & Pengenalan Python",
-        slides: [
-          {
-            title: "Sejarah Singkat Python",
-            content: `
-              <p><strong>Python</strong> dikembangkan oleh <strong>Guido van Rossum</strong> pada akhir tahun <strong>1980-an</strong> dan resmi dirilis pertama kali pada <strong>1991</strong>.</p>
+const moduleContent = {
+  1: {
+    title: "🐍 Sejarah & Pengenalan Python",
+    slides: [
+      {
+        title: "Sejarah Singkat Python",
+        content: `
+          <p><strong>Python</strong> dikembangkan oleh <strong>Guido van Rossum</strong> pada akhir tahun <strong>1980-an</strong> dan resmi dirilis pertama kali pada <strong>1991</strong>.</p>
 
-              <p>Guido mengembangkan Python di <strong>Centrum Wiskunde & Informatica (CWI)</strong> di Belanda sebagai penerus dari bahasa <em>ABC</em>, dengan tujuan menciptakan bahasa yang mudah dipahami dan efisien untuk tugas-tugas umum pemrograman.</p>
+          <p>Guido mengembangkan Python di <strong>Centrum Wiskunde & Informatica (CWI)</strong> di Belanda sebagai penerus dari bahasa <em>ABC</em>, dengan tujuan menciptakan bahasa yang mudah dipahami dan efisien untuk tugas-tugas umum pemrograman.</p>
 
-              <ul>
-                <li><strong>1989</strong> – Guido mulai membuat Python selama liburan Natal.</li>
-                <li><strong>1991</strong> – Rilis publik pertama Python (versi 0.9.0) dengan fitur seperti exception handling dan fungsi.</li>
-                <li><strong>2000</strong> – Python 2.0 dirilis dengan dukungan Unicode dan garbage collection otomatis.</li>
-                <li><strong>2008</strong> – Python 3.0 diluncurkan, membawa banyak perubahan besar yang tidak kompatibel dengan versi 2.</li>
-                <li><strong>2020</strong> – Dukungan resmi untuk Python 2 dihentikan.</li>
-              </ul>
+          <ul>
+            <li><strong>1989</strong> – Guido mulai membuat Python selama liburan Natal.</li>
+            <li><strong>1991</strong> – Rilis publik pertama Python (versi 0.9.0) dengan fitur seperti exception handling dan fungsi.</li>
+            <li><strong>2000</strong> – Python 2.0 dirilis dengan dukungan Unicode dan garbage collection otomatis.</li>
+            <li><strong>2008</strong> – Python 3.0 diluncurkan, membawa banyak perubahan besar yang tidak kompatibel dengan versi 2.</li>
+            <li><strong>2020</strong> – Dukungan resmi untuk Python 2 dihentikan.</li>
+          </ul>
 
-              <p>Nama “Python” diambil dari grup komedi Inggris <strong>Monty Python</strong>, bukan dari ular. Karena itu, dokumentasi Python sering menyelipkan humor ringan sebagai ciri khasnya.</p>
-            `
-          },
-          {
-            title: "Filosofi Python: Simple is Better than Complex",
-            content: `
-              <p>Python memiliki filosofi desain yang disebut <strong>“The Zen of Python”</strong>, yang bisa kamu lihat dengan mengetik <code>import this</code> di terminal Python.</p>
-
-              <h4>Beberapa prinsip utamanya:</h4>
-              <ul>
-                <li><strong>Beautiful is better than ugly</strong> – Kode sebaiknya enak dibaca.</li>
-                <li><strong>Simple is better than complex</strong> – Sederhana lebih baik daripada rumit.</li>
-                <li><strong>Readability counts</strong> – Keterbacaan kode adalah hal utama.</li>
-                <li><strong>There should be one — and preferably only one — obvious way to do it</strong> – Python menghindari banyak cara untuk melakukan hal yang sama.</li>
-              </ul>
-
-              <p>Filosofi ini menjadikan Python sangat populer di kalangan pemula maupun profesional karena mudah dibaca dan dipahami, bahkan oleh non-programmer.</p>
-            `
-          },
-          {
-            title: "Versi Python: 2 vs 3",
-            content: `
-              <p>Python mengalami transisi besar dari versi <strong>2.x</strong> ke <strong>3.x</strong>. Keduanya memiliki perbedaan penting yang memengaruhi kompatibilitas kode.</p>
-
-              <table border="1" cellpadding="6" cellspacing="0" style="border-collapse: collapse; width: 100%;">
-                <thead>
-                  <tr>
-                    <th>Fitur</th>
-                    <th>Python 2</th>
-                    <th>Python 3</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Print</td>
-                    <td><code>print "Hello"</code></td>
-                    <td><code>print("Hello")</code></td>
-                  </tr>
-                  <tr>
-                    <td>Tipe String</td>
-                    <td>ASCII secara default</td>
-                    <td>Unicode secara default</td>
-                  </tr>
-                  <tr>
-                    <td>Division</td>
-                    <td><code>5/2 = 2</code></td>
-                    <td><code>5/2 = 2.5</code></td>
-                  </tr>
-                  <tr>
-                    <td>Kompatibilitas</td>
-                    <td>Sudah tidak didukung (EOL)</td>
-                    <td>Masih aktif dikembangkan</td>
-                  </tr>
-                </tbody>
-              </table>
-
-              <p>Saat ini, <strong>Python 3</strong> adalah versi standar yang digunakan oleh semua developer, dengan update rutin seperti 3.8, 3.9, hingga 3.12.</p>
-            `
-          },
-          {
-            title: "Kelebihan & Kekurangan Python",
-            content: `
-              <h4>✅ Kelebihan Python:</h4>
-              <ul>
-                <li>🧠 <strong>Mudah dipelajari</strong> – sintaks sederhana, mirip bahasa manusia.</li>
-                <li>📚 <strong>Library lengkap</strong> – tersedia ribuan modul siap pakai untuk berbagai kebutuhan (AI, data, web, dll).</li>
-                <li>⚙️ <strong>Cross-platform</strong> – bisa dijalankan di Windows, macOS, Linux tanpa ubah kode.</li>
-                <li>🤝 <strong>Komunitas besar</strong> – dukungan luas dari developer di seluruh dunia.</li>
-                <li>🧩 <strong>Integrasi mudah</strong> – bisa digabung dengan C, C++, Java, atau .NET.</li>
-              </ul>
-
-              <h4>⚠️ Kekurangan Python:</h4>
-              <ul>
-                <li>🐢 <strong>Lebih lambat</strong> dibanding C/C++ karena bersifat interpreted.</li>
-                <li>📦 <strong>Tidak ideal untuk mobile</strong> – jarang digunakan untuk aplikasi Android/iOS native.</li>
-                <li>💾 <strong>Konsumsi memori lebih besar</strong> pada aplikasi skala besar.</li>
-              </ul>
-
-              <p>Meskipun begitu, kemudahan dan fleksibilitas Python membuatnya menjadi salah satu bahasa yang paling disukai di dunia.</p>
-            `
-          },
-          {
-            title: "Bidang Penggunaan Python",
-            content: `
-              <p>Python sangat serbaguna dan digunakan di berbagai bidang teknologi modern:</p>
-
-              <ul>
-                <li>📊 <strong>Data Science & Machine Learning</strong> – menggunakan library seperti <code>NumPy</code>, <code>Pandas</code>, <code>Scikit-learn</code>, dan <code>TensorFlow</code>.</li>
-                <li>🌐 <strong>Web Development</strong> – dengan framework populer seperti <code>Django</code> dan <code>Flask</code>.</li>
-                <li>🤖 <strong>Automation & Scripting</strong> – untuk tugas otomatis seperti scraping, testing, dan administrasi sistem.</li>
-                <li>🧠 <strong>Artificial Intelligence</strong> – untuk NLP, computer vision, dan deep learning.</li>
-                <li>🖥️ <strong>Software Development</strong> – membangun aplikasi CLI, GUI (dengan Tkinter atau PyQt).</li>
-                <li>🎮 <strong>Game Development</strong> – dengan library seperti <code>Pygame</code>.</li>
-              </ul>
-
-              <p>Fleksibilitas inilah yang menjadikan Python disebut sebagai <em>“bahasa serbaguna masa kini”</em>.</p>
-            `
-          },
-          {
-            title: "Video: Sejarah & Pengantar Python",
-            video: "https://www.youtube.com/embed/x7X9w_GIm1s",
-            content: `
-              <p>Tonton video ini untuk memahami sejarah Python, filosofi “The Zen of Python”, serta bagaimana bahasa ini berkembang menjadi salah satu yang paling populer di dunia.</p>
-              <p>Video ini juga menjelaskan perbedaan Python 2 dan 3 serta alasan mengapa Python sangat disukai oleh pemula dan profesional.</p>
-            `
-          }
-        ]
+          <p>Nama "Python" diambil dari grup komedi Inggris <strong>Monty Python</strong>, bukan dari ular. Karena itu, dokumentasi Python sering menyelipkan humor ringan sebagai ciri khasnya.</p>
+        `
       },
+      {
+        title: "Filosofi Python: Simple is Better than Complex",
+        content: `
+          <p>Python memiliki filosofi desain yang disebut <strong>"The Zen of Python"</strong>, yang bisa kamu lihat dengan mengetik <code>import this</code> di terminal Python.</p>
 
-      2: {
-        title: "⚙️ Persiapan & Requirement",
-        slides: [
-          {
-            title: "Instalasi Python",
-            content: `
-              <p>Sebelum mulai ngoding, kamu perlu <strong>menginstal Python</strong> di komputer. Berikut langkah-langkahnya:</p>
+          <h4>Beberapa prinsip utamanya:</h4>
+          <ul>
+            <li><strong>Beautiful is better than ugly</strong> – Kode sebaiknya enak dibaca.</li>
+            <li><strong>Simple is better than complex</strong> – Sederhana lebih baik daripada rumit.</li>
+            <li><strong>Readability counts</strong> – Keterbacaan kode adalah hal utama.</li>
+            <li><strong>There should be one — and preferably only one — obvious way to do it</strong> – Python menghindari banyak cara untuk melakukan hal yang sama.</li>
+          </ul>
 
-              <h4>💻 Windows:</h4>
+          <p>Filosofi ini menjadikan Python sangat populer di kalangan pemula maupun profesional karena mudah dibaca dan dipahami, bahkan oleh non-programmer.</p>
+        `
+      },
+      {
+        title: "Versi Python: 2 vs 3",
+        content: `
+          <p>Python mengalami transisi besar dari versi <strong>2.x</strong> ke <strong>3.x</strong>. Keduanya memiliki perbedaan penting yang memengaruhi kompatibilitas kode.</p>
+
+          <table border="1" cellpadding="6" cellspacing="0" style="border-collapse: collapse; width: 100%;">
+            <thead>
+              <tr>
+                <th>Fitur</th>
+                <th>Python 2</th>
+                <th>Python 3</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Print</td>
+                <td><code>print "Hello"</code></td>
+                <td><code>print("Hello")</code></td>
+              </tr>
+              <tr>
+                <td>Tipe String</td>
+                <td>ASCII secara default</td>
+                <td>Unicode secara default</td>
+              </tr>
+              <tr>
+                <td>Division</td>
+                <td><code>5/2 = 2</code></td>
+                <td><code>5/2 = 2.5</code></td>
+              </tr>
+              <tr>
+                <td>Kompatibilitas</td>
+                <td>Sudah tidak didukung (EOL)</td>
+                <td>Masih aktif dikembangkan</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Saat ini, <strong>Python 3</strong> adalah versi standar yang digunakan oleh semua developer, dengan update rutin seperti 3.8, 3.9, hingga 3.12.</p>
+        `
+      },
+      {
+        title: "Kelebihan & Kekurangan Python",
+        content: `
+          <h4>✅ Kelebihan Python:</h4>
+          <ul>
+            <li>🧠 <strong>Mudah dipelajari</strong> – sintaks sederhana, mirip bahasa manusia.</li>
+            <li>📚 <strong>Library lengkap</strong> – tersedia ribuan modul siap pakai untuk berbagai kebutuhan (AI, data, web, dll).</li>
+            <li>⚙️ <strong>Cross-platform</strong> – bisa dijalankan di Windows, macOS, Linux tanpa ubah kode.</li>
+            <li>🤝 <strong>Komunitas besar</strong> – dukungan luas dari developer di seluruh dunia.</li>
+            <li>🧩 <strong>Integrasi mudah</strong> – bisa digabung dengan C, C++, Java, atau .NET.</li>
+          </ul>
+
+          <h4>⚠️ Kekurangan Python:</h4>
+          <ul>
+            <li>🐢 <strong>Lebih lambat</strong> dibanding C/C++ karena bersifat interpreted.</li>
+            <li>📦 <strong>Tidak ideal untuk mobile</strong> – jarang digunakan untuk aplikasi Android/iOS native.</li>
+            <li>💾 <strong>Konsumsi memori lebih besar</strong> pada aplikasi skala besar.</li>
+          </ul>
+
+          <p>Meskipun begitu, kemudahan dan fleksibilitas Python membuatnya menjadi salah satu bahasa yang paling disukai di dunia.</p>
+        `
+      },
+      {
+        title: "Bidang Penggunaan Python",
+        content: `
+          <p>Python sangat serbaguna dan digunakan di berbagai bidang teknologi modern:</p>
+
+          <ul>
+            <li>📊 <strong>Data Science & Machine Learning</strong> – menggunakan library seperti <code>NumPy</code>, <code>Pandas</code>, <code>Scikit-learn</code>, dan <code>TensorFlow</code>.</li>
+            <li>🌐 <strong>Web Development</strong> – dengan framework populer seperti <code>Django</code> dan <code>Flask</code>.</li>
+            <li>🤖 <strong>Automation & Scripting</strong> – untuk tugas otomatis seperti scraping, testing, dan administrasi sistem.</li>
+            <li>🧠 <strong>Artificial Intelligence</strong> – untuk NLP, computer vision, dan deep learning.</li>
+            <li>🖥️ <strong>Software Development</strong> – membangun aplikasi CLI, GUI (dengan Tkinter atau PyQt).</li>
+            <li>🎮 <strong>Game Development</strong> – dengan library seperti <code>Pygame</code>.</li>
+          </ul>
+
+          <p>Fleksibilitas inilah yang menjadikan Python disebut sebagai <em>"bahasa serbaguna masa kini"</em>.</p>
+        `
+      },
+      {
+        title: "Video: Sejarah & Pengantar Python",
+        video: "https://www.youtube.com/embed/x7X9w_GIm1s",
+        content: `
+          <p>Tonton video ini untuk memahami sejarah Python, filosofi "The Zen of Python", serta bagaimana bahasa ini berkembang menjadi salah satu yang paling populer di dunia.</p>
+          <p>Video ini juga menjelaskan perbedaan Python 2 dan 3 serta alasan mengapa Python sangat disukai oleh pemula dan profesional.</p>
+        `
+      }
+    ]
+  },
+
+  2: {
+    title: "⚙️ Persiapan & Requirement",
+    slides: [
+      {
+        title: "Instalasi Python",
+        content: `
+          <p>Sebelum mulai ngoding, kamu perlu <strong>menginstal Python</strong> di komputer. Berikut langkah-langkahnya:</p>
+
+          <h4>💻 Windows:</h4>
+          <ul>
+            <li>Kunjungi situs resmi <a href="https://www.python.org/downloads/" target="_blank">python.org/downloads</a>.</li>
+            <li>Pilih versi terbaru (disarankan: Python 3.x).</li>
+            <li>Centang opsi <strong>"Add Python to PATH"</strong> saat instalasi agar bisa diakses dari terminal.</li>
+            <li>Buka <code>cmd</code> dan ketik <code>python --version</code> untuk memastikan instalasi berhasil.</li>
+          </ul>
+
+          <h4>🧠 macOS & Linux:</h4>
+          <ul>
+            <li>Biasanya sudah terinstal secara default.</li>
+            <li>Untuk memastikan, buka terminal dan ketik <code>python3 --version</code>.</li>
+            <li>Jika belum ada, install dengan perintah:
               <ul>
-                <li>Kunjungi situs resmi <a href="https://www.python.org/downloads/" target="_blank">python.org/downloads</a>.</li>
-                <li>Pilih versi terbaru (disarankan: Python 3.x).</li>
-                <li>Centang opsi <strong>"Add Python to PATH"</strong> saat instalasi agar bisa diakses dari terminal.</li>
-                <li>Buka <code>cmd</code> dan ketik <code>python --version</code> untuk memastikan instalasi berhasil.</li>
+                <li><code>brew install python</code> (macOS, via Homebrew)</li>
+                <li><code>sudo apt install python3</code> (Ubuntu/Linux)</li>
               </ul>
+            </li>
+          </ul>
 
-              <h4>🧠 macOS & Linux:</h4>
-              <ul>
-                <li>Biasanya sudah terinstal secara default.</li>
-                <li>Untuk memastikan, buka terminal dan ketik <code>python3 --version</code>.</li>
-                <li>Jika belum ada, install dengan perintah:
-                  <ul>
-                    <li><code>brew install python</code> (macOS, via Homebrew)</li>
-                    <li><code>sudo apt install python3</code> (Ubuntu/Linux)</li>
-                  </ul>
-                </li>
-              </ul>
+          <p>Python sudah siap digunakan! 🎉</p>
+        `
+      },
+      {
+        title: "Cara Pakai IDLE, VS Code, atau Terminal",
+        content: `
+          <p>Setelah Python terinstal, kamu bisa menulis dan menjalankan kode dengan beberapa cara:</p>
 
-              <p>Python sudah siap digunakan! 🎉</p>
-            `
-          },
-          {
-            title: "Cara Pakai IDLE, VS Code, atau Terminal",
-            content: `
-              <p>Setelah Python terinstal, kamu bisa menulis dan menjalankan kode dengan beberapa cara:</p>
+          <h4>1️⃣ IDLE (Python Editor Bawaan)</h4>
+          <ul>
+            <li>Sudah terinstal bersama Python.</li>
+            <li>Buka aplikasi <strong>IDLE</strong>, lalu pilih <em>File → New File</em>.</li>
+            <li>Tulis kode Python, lalu tekan <kbd>F5</kbd> untuk menjalankan.</li>
+          </ul>
 
-              <h4>1️⃣ IDLE (Python Editor Bawaan)</h4>
-              <ul>
-                <li>Sudah terinstal bersama Python.</li>
-                <li>Buka aplikasi <strong>IDLE</strong>, lalu pilih <em>File → New File</em>.</li>
-                <li>Tulis kode Python, lalu tekan <kbd>F5</kbd> untuk menjalankan.</li>
-              </ul>
+          <h4>2️⃣ VS Code</h4>
+          <ul>
+            <li>Instal <strong>Visual Studio Code</strong> dan ekstensi <strong>Python</strong>.</li>
+            <li>Buka folder proyek, buat file baru <code>program.py</code>.</li>
+            <li>Jalankan dengan menekan <kbd>Ctrl + F5</kbd> atau melalui terminal VS Code.</li>
+          </ul>
 
-              <h4>2️⃣ VS Code</h4>
-              <ul>
-                <li>Instal <strong>Visual Studio Code</strong> dan ekstensi <strong>Python</strong>.</li>
-                <li>Buka folder proyek, buat file baru <code>program.py</code>.</li>
-                <li>Jalankan dengan menekan <kbd>Ctrl + F5</kbd> atau melalui terminal VS Code.</li>
-              </ul>
-
-              <h4>3️⃣ Terminal / Command Prompt</h4>
-              <ul>
-                <li>Tulis kode di file bernama <code>hello.py</code>.</li>
-                <li>Buka terminal dan jalankan:
-                  <pre><code>python hello.py</code></pre>
-                </li>
-              </ul>
-
-              <p>Cara mana pun bisa digunakan — pilih yang paling nyaman buat kamu.</p>
-            `
-          },
-          {
-            title: "Menjalankan Script Python (.py)",
-            content: `
-              <p>File Python memiliki ekstensi <code>.py</code>. Kamu bisa menjalankannya dengan mudah melalui terminal atau IDE.</p>
-
-              <h4>🧩 Contoh:</h4>
-              <pre><code>
-      # file: hello.py
-      print("Halo Dunia!")
-              </code></pre>
-
-              <p>Jalankan dengan perintah:</p>
+          <h4>3️⃣ Terminal / Command Prompt</h4>
+          <ul>
+            <li>Tulis kode di file bernama <code>hello.py</code>.</li>
+            <li>Buka terminal dan jalankan:
               <pre><code>python hello.py</code></pre>
+            </li>
+          </ul>
 
-              <p>Hasilnya:</p>
-              <pre><code>Halo Dunia!</code></pre>
-
-              <p>Python akan mengeksekusi file dari atas ke bawah, jadi urutan baris penting!</p>
-            `
-          },
-          {
-            title: "Dasar Input & Output di Python",
-            content: `
-              <p>Python punya dua fungsi utama untuk berinteraksi dengan pengguna:</p>
-
-              <ul>
-                <li><code>print()</code> → untuk menampilkan output ke layar.</li>
-                <li><code>input()</code> → untuk menerima input dari pengguna.</li>
-              </ul>
-
-              <h4>🧩 Contoh:</h4>
-              <pre><code>
-      nama = input("Siapa namamu? ")
-      print("Halo,", nama)
-              </code></pre>
-
-              <p>🖥️ Output di terminal:</p>
-              <pre><code>
-      Siapa namamu? Ali
-      Halo, Ali
-              </code></pre>
-
-              <p>Mudah banget, kan? 😄</p>
-            `
-          },
-          {
-            title: "Komentar di Python",
-            content: `
-              <p>Komentar digunakan untuk memberi catatan dalam kode agar lebih mudah dipahami.</p>
-
-              <h4>📝 Jenis komentar:</h4>
-              <ul>
-                <li><strong>Komentar satu baris:</strong> diawali dengan tanda pagar <code>#</code>.</li>
-                <li><strong>Komentar banyak baris:</strong> bisa menggunakan tanda kutip tiga <code>''' ... '''</code> atau <code>""" ... """</code>.</li>
-              </ul>
-
-              <h4>🧩 Contoh:</h4>
-              <pre><code>
-      # Ini adalah komentar satu baris
-      print("Halo Dunia!")  # Komentar di akhir baris
-
-      '''
-      Ini adalah komentar
-      yang terdiri dari
-      beberapa baris
-      '''
-              </code></pre>
-
-              <p>Komentar tidak dijalankan oleh program — hanya untuk dokumentasi atau penjelasan kode.</p>
-            `
-          },
-          {
-            title: "Struktur Program Python (Indentation & Block)",
-            content: `
-              <p>Tidak seperti bahasa lain yang memakai kurung kurawal <code>{ }</code>, Python menggunakan <strong>indentasi</strong> (spasi) untuk menentukan blok kode.</p>
-
-              <h4>📐 Contoh:</h4>
-              <pre><code>
-      if True:
-          print("Ini di dalam blok if")
-          print("Masih di dalam blok yang sama")
-      print("Ini di luar blok")
-              </code></pre>
-
-              <p>⚠️ Hati-hati! Indentasi salah bisa menyebabkan error:</p>
-              <pre><code>
-      if True:
-      print("Error!")  # ❌ Tidak diindent
-              </code></pre>
-
-              <p>Biasanya Python menggunakan 4 spasi untuk setiap indentasi. Konsistensi sangat penting dalam penulisan kode Python!</p>
-            `
-          },
-          {
-            title: "Video: Instalasi & Dasar Penggunaan Python",
-            video: "https://www.youtube.com/embed/Y8Tko2YC5hA",
-            content: `
-              <p>Tonton video ini untuk panduan lengkap instalasi Python, penggunaan IDLE dan VS Code, serta cara menjalankan program Python pertama kamu.</p>
-              <p>Video ini juga memperlihatkan cara menggunakan <code>print()</code>, <code>input()</code>, dan penjelasan indentasi di Python.</p>
-            `
-          }
-        ]
+          <p>Cara mana pun bisa digunakan — pilih yang paling nyaman buat kamu.</p>
+        `
       },
+      {
+        title: "Menjalankan Script Python (.py)",
+        content: `
+          <p>File Python memiliki ekstensi <code>.py</code>. Kamu bisa menjalankannya dengan mudah melalui terminal atau IDE.</p>
 
-      3: {
-        title: "🧮 Dasar Pemrograman Python",
-        slides: [
-          {
-            title: "Tipe Data Dasar di Python",
-            content: `
-              <p>Python memiliki beberapa <strong>tipe data dasar</strong> yang sering digunakan dalam pemrograman sehari-hari.</p>
+          <h4>🧩 Contoh:</h4>
+          <pre><code># file: hello.py
+print("Halo Dunia!")</code></pre>
 
-              <h4>🧩 Tipe Data Utama:</h4>
-              <ul>
-                <li><strong>int</strong> → bilangan bulat, misal: <code>10</code>, <code>-5</code></li>
-                <li><strong>float</strong> → bilangan desimal, misal: <code>3.14</code>, <code>-0.5</code></li>
-                <li><strong>str</strong> → teks (string), misal: <code>"Halo"</code>, <code>'Python'</code></li>
-                <li><strong>bool</strong> → nilai logika, hanya <code>True</code> atau <code>False</code></li>
-              </ul>
+          <p>Jalankan dengan perintah:</p>
+          <pre><code>python hello.py</code></pre>
 
-              <h4>🧠 Contoh:</h4>
-              <pre><code>
-      a = 10          # int
-      b = 3.5         # float
-      c = "Python"    # str
-      d = True        # bool
+          <p>Hasilnya:</p>
+          <pre><code>Halo Dunia!</code></pre>
 
-      print(type(a))  # <class 'int'>
-      print(type(c))  # <class 'str'>
-              </code></pre>
-
-              <p>Python mendeteksi tipe data secara otomatis — kamu tidak perlu mendeklarasikan tipe seperti di C atau Java.</p>
-            `
-          },
-          {
-            title: "Variabel & Penamaan Variabel",
-            content: `
-              <p>Variabel digunakan untuk menyimpan data di memori agar bisa digunakan kembali.</p>
-
-              <h4>🧩 Contoh sederhana:</h4>
-              <pre><code>
-      nama = "Ali"
-      umur = 21
-      tinggi = 170.5
-
-      print("Nama saya", nama)
-      print("Umur:", umur)
-      print("Tinggi:", tinggi)
-              </code></pre>
-
-              <h4>📋 Aturan Penamaan Variabel:</h4>
-              <ul>
-                <li>Hanya boleh mengandung huruf, angka, dan garis bawah <code>_</code>.</li>
-                <li>Tidak boleh diawali dengan angka.</li>
-                <li>Bersifat <strong>case-sensitive</strong> → <code>nama</code> ≠ <code>Nama</code>.</li>
-                <li>Gunakan nama deskriptif seperti <code>total_harga</code> bukan <code>x</code>.</li>
-              </ul>
-
-              <p>Python tidak butuh kata kunci seperti <code>var</code> atau <code>let</code> untuk mendeklarasikan variabel.</p>
-            `
-          },
-          {
-            title: "Operator Aritmatika, Logika, & Perbandingan",
-            content: `
-              <p>Operator digunakan untuk melakukan perhitungan dan logika dalam program Python.</p>
-
-              <h4>➕ Operator Aritmatika:</h4>
-              <pre><code>
-      a = 10
-      b = 3
-
-      print(a + b)  # 13 (penjumlahan)
-      print(a - b)  # 7  (pengurangan)
-      print(a * b)  # 30 (perkalian)
-      print(a / b)  # 3.333...
-      print(a // b) # 3 (pembagian bulat)
-      print(a % b)  # 1 (sisa bagi)
-      print(a ** b) # 1000 (pangkat)
-              </code></pre>
-
-              <h4>⚖️ Operator Perbandingan:</h4>
-              <pre><code>
-      print(a == b)  # False
-      print(a != b)  # True
-      print(a > b)   # True
-      print(a <= b)  # False
-              </code></pre>
-
-              <h4>🔁 Operator Logika:</h4>
-              <pre><code>
-      x = True
-      y = False
-
-      print(x and y)  # False
-      print(x or y)   # True
-      print(not x)    # False
-              </code></pre>
-
-              <p>Operator ini sangat penting untuk pengambilan keputusan dalam program (misalnya dalam struktur <code>if</code>).</p>
-            `
-          },
-          {
-            title: "Casting (Konversi Tipe Data)",
-            content: `
-              <p>Python memungkinkan konversi antar tipe data menggunakan fungsi bawaan seperti <code>int()</code>, <code>float()</code>, dan <code>str()</code>.</p>
-
-              <h4>🧩 Contoh:</h4>
-              <pre><code>
-      angka_str = "10"
-      angka_int = int(angka_str)
-      angka_float = float(angka_int)
-
-      print(angka_str, type(angka_str))   # '10' <class 'str'>
-      print(angka_int, type(angka_int))   # 10 <class 'int'>
-      print(angka_float, type(angka_float)) # 10.0 <class 'float'>
-              </code></pre>
-
-              <h4>⚠️ Catatan:</h4>
-              <ul>
-                <li>Pastikan nilai bisa dikonversi — misalnya <code>"abc"</code> tidak bisa jadi <code>int</code>.</li>
-                <li>Konversi string ke angka hanya bisa jika isinya numerik.</li>
-              </ul>
-            `
-          },
-          {
-            title: "Manipulasi String (Slice, Format, Method Umum)",
-            content: `
-              <p>String di Python sangat fleksibel — kamu bisa memotong, menggabungkan, dan memformat teks dengan mudah.</p>
-
-              <h4>✂️ Slice (memotong string):</h4>
-              <pre><code>
-      teks = "Python"
-      print(teks[0])     # P
-      print(teks[0:3])   # Pyt
-      print(teks[-1])    # n
-      print(teks[::-1])  # nohtyP (dibalik)
-              </code></pre>
-
-              <h4>🧩 Format string:</h4>
-              <pre><code>
-      nama = "Ali"
-      umur = 21
-      print("Halo, nama saya {} dan umur saya {} tahun.".format(nama, umur))
-      print(f"Halo, nama saya {nama} dan umur saya {umur} tahun.")  # f-string
-              </code></pre>
-
-              <h4>🔠 Method umum string:</h4>
-              <pre><code>
-      teks = "python programming"
-      print(teks.upper())     # PYTHON PROGRAMMING
-      print(teks.lower())     # python programming
-      print(teks.title())     # Python Programming
-      print(teks.replace("python", "java")) # java programming
-      print("python" in teks) # True
-              </code></pre>
-
-              <p>String manipulation penting dalam pengolahan teks, input pengguna, dan tampilan output program.</p>
-            `
-          },
-          {
-            title: "Video: Dasar Pemrograman Python",
-            video: "https://www.youtube.com/embed/_uQrJ0TkZlc",
-            content: `
-              <p>Tonton video ini untuk memahami konsep dasar pemrograman Python seperti tipe data, variabel, operator, casting, dan manipulasi string.</p>
-              <p>Video ini cocok bagi pemula yang baru belajar Python dan ingin memahami dasar-dasar logika pemrograman.</p>
-            `
-          }
-        ]
+          <p>Python akan mengeksekusi file dari atas ke bawah, jadi urutan baris penting!</p>
+        `
       },
+      {
+        title: "Dasar Input & Output di Python",
+        content: `
+          <p>Python punya dua fungsi utama untuk berinteraksi dengan pengguna:</p>
 
-      4: {
-        title: "🔁 Percabangan & Perulangan",
-        slides: [
-          {
-            title: "🧠 Konsep Percabangan & Perulangan",
-            content: `
-              <p>Dalam Python, <strong>percabangan</strong> digunakan untuk membuat keputusan berdasarkan kondisi tertentu, sedangkan <strong>perulangan</strong> digunakan untuk mengeksekusi kode berulang kali.</p>
-              <p>Keduanya adalah pondasi penting dalam logika pemrograman.</p>
-            `
-          },
-          {
-            title: "🧩 If, Elif, Else",
-            content: `
-              <p>Percabangan digunakan untuk menentukan alur program berdasarkan kondisi tertentu.</p>
-              <pre><code class="language-python">
-      x = 10
-      if x > 0:
-          print("Positif")
-      elif x == 0:
-          print("Nol")
-      else:
-          print("Negatif")
-              </code></pre>
-              <p>Gunakan <code>if</code> untuk kondisi utama, <code>elif</code> untuk alternatif tambahan, dan <code>else</code> untuk kondisi selain itu.</p>
-            `
-          },
-          {
-            title: "🏗️ Nested If",
-            content: `
-              <p><strong>Nested if</strong> berarti kita menulis pernyataan if di dalam if lainnya.</p>
-              <pre><code class="language-python">
-      x = 15
-      if x > 0:
-          if x < 20:
-              print("Antara 0 dan 20")
-          else:
-              print("Lebih dari atau sama dengan 20")
-      else:
-          print("Negatif")
-              </code></pre>
-            `
-          },
-          {
-            title: "🔁 While Loop",
-            content: `
-              <p><code>while</code> loop digunakan untuk menjalankan blok kode selama kondisi bernilai True.</p>
-              <pre><code class="language-python">
-      count = 0
-      while count < 5:
-          print("Hitung:", count)
-          count += 1
-              </code></pre>
-              <p>Hati-hati, jika kondisi tidak pernah False, maka akan terjadi <strong>infinite loop</strong>.</p>
-            `
-          },
-          {
-            title: "🔂 For Loop",
-            content: `
-              <p><code>for</code> digunakan untuk iterasi melalui urutan (seperti list, string, atau range).</p>
-              <pre><code class="language-python">
-      for i in range(5):
-          print("Iterasi ke-", i)
-              </code></pre>
-              <p><code>range(5)</code> menghasilkan urutan 0–4.</p>
-            `
-          },
-          {
-            title: "⛔ Loop Control: break, continue, pass",
-            content: `
-              <ul>
-                <li><strong>break</strong> → keluar dari loop sepenuhnya.</li>
-                <li><strong>continue</strong> → lompat ke iterasi berikutnya.</li>
-                <li><strong>pass</strong> → tidak melakukan apa pun (placeholder).</li>
-              </ul>
-              <pre><code class="language-python">
-      for i in range(5):
-          if i == 2:
-              continue  # skip iterasi ke-2
-          if i == 4:
-              break     # berhenti di i=4
-          print(i)
-              </code></pre>
-            `
-          },
-          {
-            title: "🔢 Looping dengan range() dan enumerate()",
-            content: `
-              <p><code>range()</code> digunakan untuk menghasilkan angka berurutan, sedangkan <code>enumerate()</code> berguna untuk mendapatkan indeks dan nilai sekaligus.</p>
-              <pre><code class="language-python">
-      buah = ["apel", "jeruk", "mangga"]
+          <ul>
+            <li><code>print()</code> → untuk menampilkan output ke layar.</li>
+            <li><code>input()</code> → untuk menerima input dari pengguna.</li>
+          </ul>
 
-      # Menggunakan range()
-      for i in range(len(buah)):
-          print(i, buah[i])
+          <h4>🧩 Contoh:</h4>
+          <pre><code>nama = input("Siapa namamu? ")
+print("Halo,", nama)</code></pre>
 
-      # Menggunakan enumerate()
-      for index, nama in enumerate(buah):
-          print(index, nama)
-              </code></pre>
-            `
-          },
-          {
-            title: "🎥 Video Pembelajaran",
-            content: `
-              <iframe width="560" height="315" 
-                src="https://www.youtube.com/embed/xX8ex4L3bPM" 
-                title="Percabangan & Perulangan Python" 
-                frameborder="0" allowfullscreen></iframe>
-            `
-          }
-        ]
+          <p>🖥️ Output di terminal:</p>
+          <pre><code>Siapa namamu? Ali
+Halo, Ali</code></pre>
+
+          <p>Mudah banget, kan? 😄</p>
+        `
       },
+      {
+        title: "Komentar di Python",
+        content: `
+          <p>Komentar digunakan untuk memberi catatan dalam kode agar lebih mudah dipahami.</p>
 
-      5: {
-        title: "📦 Struktur Data",
-        slides: [
-          {
-            title: "🧠 Pengenalan Struktur Data di Python",
-            content: `
-              <p>Python memiliki beberapa tipe struktur data bawaan yang sangat fleksibel dan mudah digunakan. 
-              Struktur data ini memungkinkan kita untuk menyimpan dan mengelola koleksi data dengan berbagai cara.</p>
-              <ul>
-                <li><strong>List</strong> → urutan data yang bisa diubah (mutable)</li>
-                <li><strong>Tuple</strong> → urutan data yang tidak bisa diubah (immutable)</li>
-                <li><strong>Set</strong> → kumpulan data unik, tidak berurutan</li>
-                <li><strong>Dictionary</strong> → pasangan <code>key:value</code></li>
-              </ul>
-            `
-          },
-          {
-            title: "📋 List – Membuat, Akses, Ubah, Hapus",
-            content: `
-              <p><strong>List</strong> adalah struktur data paling umum di Python. Bisa berisi berbagai tipe data dan diubah kapan saja.</p>
-              <pre><code class="language-python">
-      # Membuat list
-      buah = ["apel", "jeruk", "mangga"]
+          <h4>📝 Jenis komentar:</h4>
+          <ul>
+            <li><strong>Komentar satu baris:</strong> diawali dengan tanda pagar <code>#</code>.</li>
+            <li><strong>Komentar banyak baris:</strong> bisa menggunakan tanda kutip tiga <code>''' ... '''</code> atau <code>""" ... """</code>.</li>
+          </ul>
 
-      # Akses elemen
-      print(buah[0])      # apel
-      print(buah[-1])     # mangga
+          <h4>🧩 Contoh:</h4>
+          <pre><code># Ini adalah komentar satu baris
+print("Halo Dunia!")  # Komentar di akhir baris
 
-      # Ubah elemen
-      buah[1] = "pisang"
+'''
+Ini adalah komentar
+yang terdiri dari
+beberapa baris
+'''</code></pre>
 
-      # Tambah & hapus
-      buah.append("melon")
-      buah.remove("apel")
+          <p>Komentar tidak dijalankan oleh program — hanya untuk dokumentasi atau penjelasan kode.</p>
+        `
+      },
+      {
+        title: "Struktur Program Python (Indentation & Block)",
+        content: `
+          <p>Tidak seperti bahasa lain yang memakai kurung kurawal <code>{ }</code>, Python menggunakan <strong>indentasi</strong> (spasi) untuk menentukan blok kode.</p>
 
-      print(buah)  # ['pisang', 'mangga', 'melon']
-              </code></pre>
-            `
-          },
-          {
-            title: "📦 Tuple – Immutable Collection",
-            content: `
-              <p><strong>Tuple</strong> mirip dengan list, tapi isinya <strong>tidak bisa diubah</strong> setelah dibuat. Biasanya digunakan untuk data yang bersifat tetap.</p>
-              <pre><code class="language-python">
-      # Membuat tuple
-      koordinat = (10, 20)
+          <h4>📐 Contoh:</h4>
+          <pre><code>if True:
+    print("Ini di dalam blok if")
+    print("Masih di dalam blok yang sama")
+print("Ini di luar blok")</code></pre>
 
-      # Akses elemen
-      print(koordinat[0])  # 10
+          <p>⚠️ Hati-hati! Indentasi salah bisa menyebabkan error:</p>
+          <pre><code>if True:
+print("Error!")  # ❌ Tidak diindent</code></pre>
 
-      # koordinat[0] = 15 ❌ -> akan error karena tuple immutable
-              </code></pre>
-              <p>Tuple lebih cepat dan aman dibanding list, cocok untuk data konstan.</p>
-            `
-          },
-          {
-            title: "🧩 Set – Kumpulan Unik",
-            content: `
-              <p><strong>Set</strong> menyimpan elemen unik (tanpa duplikat) dan tidak memiliki urutan tertentu.</p>
-              <pre><code class="language-python">
-      # Membuat set
-      angka = {1, 2, 3, 3, 2}
-      print(angka)  # {1, 2, 3} -> duplikat otomatis dihapus
-
-      # Operasi set
-      ganjil = {1, 3, 5, 7}
-      genap = {2, 4, 6, 8}
-      print(ganjil.union(genap))     # gabungan
-      print(ganjil.intersection({1, 5, 9}))  # irisan
-              </code></pre>
-            `
-          },
-          {
-            title: "🗝️ Dictionary – Pasangan Key-Value",
-            content: `
-              <p><strong>Dictionary</strong> menyimpan data dalam format <code>key: value</code>. Sangat berguna untuk data terstruktur seperti identitas atau konfigurasi.</p>
-              <pre><code class="language-python">
-      # Membuat dictionary
-      mahasiswa = {
-          "nama": "Budi",
-          "umur": 20,
-          "jurusan": "Informatika"
+          <p>Biasanya Python menggunakan 4 spasi untuk setiap indentasi. Konsistensi sangat penting dalam penulisan kode Python!</p>
+        `
+      },
+      {
+        title: "Video: Instalasi & Dasar Penggunaan Python",
+        video: "https://www.youtube.com/embed/Y8Tko2YC5hA",
+        content: `
+          <p>Tonton video ini untuk panduan lengkap instalasi Python, penggunaan IDLE dan VS Code, serta cara menjalankan program Python pertama kamu.</p>
+          <p>Video ini juga memperlihatkan cara menggunakan <code>print()</code>, <code>input()</code>, dan penjelasan indentasi di Python.</p>
+        `
       }
+    ]
+  },
 
-      # Akses data
-      print(mahasiswa["nama"])
+  3: {
+    title: "🧮 Dasar Pemrograman Python",
+    slides: [
+      {
+        title: "Tipe Data Dasar di Python",
+        content: `
+          <p>Python memiliki beberapa <strong>tipe data dasar</strong> yang sering digunakan dalam pemrograman sehari-hari.</p>
 
-      # Tambah / ubah
-      mahasiswa["umur"] = 21
-      mahasiswa["alamat"] = "Samarinda"
+          <h4>🧩 Tipe Data Utama:</h4>
+          <ul>
+            <li><strong>int</strong> → bilangan bulat, misal: <code>10</code>, <code>-5</code></li>
+            <li><strong>float</strong> → bilangan desimal, misal: <code>3.14</code>, <code>-0.5</code></li>
+            <li><strong>str</strong> → teks (string), misal: <code>"Halo"</code>, <code>'Python'</code></li>
+            <li><strong>bool</strong> → nilai logika, hanya <code>True</code> atau <code>False</code></li>
+          </ul>
 
-      # Hapus
-      del mahasiswa["jurusan"]
+          <h4>🧠 Contoh:</h4>
+          <pre><code>a = 10          # int
+b = 3.5         # float
+c = "Python"    # str
+d = True        # bool
 
-      print(mahasiswa)
-              </code></pre>
-            `
-          },
-          {
-            title: "🪆 Nested Data (Struktur Bersarang)",
-            content: `
-              <p>Kamu bisa membuat struktur data di dalam struktur lain, misalnya <strong>list di dalam dictionary</strong> atau sebaliknya.</p>
-              <pre><code class="language-python">
-      # List di dalam dictionary
-      kelas = {
-          "nama": "IF-1",
-          "anggota": ["Budi", "Siti", "Rina"]
+print(type(a))  # <class 'int'>
+print(type(c))  # <class 'str'></code></pre>
+
+          <p>Python mendeteksi tipe data secara otomatis — kamu tidak perlu mendeklarasikan tipe seperti di C atau Java.</p>
+        `
+      },
+      {
+        title: "Variabel & Penamaan Variabel",
+        content: `
+          <p>Variabel digunakan untuk menyimpan data di memori agar bisa digunakan kembali.</p>
+
+          <h4>🧩 Contoh sederhana:</h4>
+          <pre><code>nama = "Ali"
+umur = 21
+tinggi = 170.5
+
+print("Nama saya", nama)
+print("Umur:", umur)
+print("Tinggi:", tinggi)</code></pre>
+
+          <h4>📋 Aturan Penamaan Variabel:</h4>
+          <ul>
+            <li>Hanya boleh mengandung huruf, angka, dan garis bawah <code>_</code>.</li>
+            <li>Tidak boleh diawali dengan angka.</li>
+            <li>Bersifat <strong>case-sensitive</strong> → <code>nama</code> ≠ <code>Nama</code>.</li>
+            <li>Gunakan nama deskriptif seperti <code>total_harga</code> bukan <code>x</code>.</li>
+          </ul>
+
+          <p>Python tidak butuh kata kunci seperti <code>var</code> atau <code>let</code> untuk mendeklarasikan variabel.</p>
+        `
+      },
+      {
+        title: "Operator Aritmatika, Logika, & Perbandingan",
+        content: `
+          <p>Operator digunakan untuk melakukan perhitungan dan logika dalam program Python.</p>
+
+          <h4>➕ Operator Aritmatika:</h4>
+          <pre><code>a = 10
+b = 3
+
+print(a + b)  # 13 (penjumlahan)
+print(a - b)  # 7  (pengurangan)
+print(a * b)  # 30 (perkalian)
+print(a / b)  # 3.333...
+print(a // b) # 3 (pembagian bulat)
+print(a % b)  # 1 (sisa bagi)
+print(a ** b) # 1000 (pangkat)</code></pre>
+
+          <h4>⚖️ Operator Perbandingan:</h4>
+          <pre><code>print(a == b)  # False
+print(a != b)  # True
+print(a > b)   # True
+print(a <= b)  # False</code></pre>
+
+          <h4>🔁 Operator Logika:</h4>
+          <pre><code>x = True
+y = False
+
+print(x and y)  # False
+print(x or y)   # True
+print(not x)    # False</code></pre>
+
+          <p>Operator ini sangat penting untuk pengambilan keputusan dalam program (misalnya dalam struktur <code>if</code>).</p>
+        `
+      },
+      {
+        title: "Casting (Konversi Tipe Data)",
+        content: `
+          <p>Python memungkinkan konversi antar tipe data menggunakan fungsi bawaan seperti <code>int()</code>, <code>float()</code>, dan <code>str()</code>.</p>
+
+          <h4>🧩 Contoh:</h4>
+          <pre><code>angka_str = "10"
+angka_int = int(angka_str)
+angka_float = float(angka_int)
+
+print(angka_str, type(angka_str))   # '10' <class 'str'>
+print(angka_int, type(angka_int))   # 10 <class 'int'>
+print(angka_float, type(angka_float)) # 10.0 <class 'float'></code></pre>
+
+          <h4>⚠️ Catatan:</h4>
+          <ul>
+            <li>Pastikan nilai bisa dikonversi — misalnya <code>"abc"</code> tidak bisa jadi <code>int</code>.</li>
+            <li>Konversi string ke angka hanya bisa jika isinya numerik.</li>
+          </ul>
+        `
+      },
+      {
+        title: "Manipulasi String (Slice, Format, Method Umum)",
+        content: `
+          <p>String di Python sangat fleksibel — kamu bisa memotong, menggabungkan, dan memformat teks dengan mudah.</p>
+
+          <h4>✂️ Slice (memotong string):</h4>
+          <pre><code>teks = "Python"
+print(teks[0])     # P
+print(teks[0:3])   # Pyt
+print(teks[-1])    # n
+print(teks[::-1])  # nohtyP (dibalik)</code></pre>
+
+          <h4>🧩 Format string:</h4>
+          <pre><code>nama = "Ali"
+umur = 21
+print("Halo, nama saya {} dan umur saya {} tahun.".format(nama, umur))
+print(f"Halo, nama saya {nama} dan umur saya {umur} tahun.")  # f-string</code></pre>
+
+          <h4>🔠 Method umum string:</h4>
+          <pre><code>teks = "python programming"
+print(teks.upper())     # PYTHON PROGRAMMING
+print(teks.lower())     # python programming
+print(teks.title())     # Python Programming
+print(teks.replace("python", "java")) # java programming
+print("python" in teks) # True</code></pre>
+
+          <p>String manipulation penting dalam pengolahan teks, input pengguna, dan tampilan output program.</p>
+        `
+      },
+      {
+        title: "Video: Dasar Pemrograman Python",
+        video: "https://www.youtube.com/embed/_uQrJ0TkZlc",
+        content: `
+          <p>Tonton video ini untuk memahami konsep dasar pemrograman Python seperti tipe data, variabel, operator, casting, dan manipulasi string.</p>
+          <p>Video ini cocok bagi pemula yang baru belajar Python dan ingin memahami dasar-dasar logika pemrograman.</p>
+        `
       }
+    ]
+  },
 
-      # Dictionary di dalam list
-      data = [
-          {"nama": "Ali", "nilai": 85},
-          {"nama": "Dina", "nilai": 90}
-      ]
-
-      print(kelas["anggota"][1])  # Siti
-      print(data[0]["nama"])      # Ali
-              </code></pre>
-              <p>Struktur bersarang ini sering digunakan dalam data JSON dan pemrograman web.</p>
-            `
-          },
-          {
-            title: "🎥 Video Pembelajaran",
-            content: `
-              <iframe width="560" height="315"
-                src="https://www.youtube.com/embed/W8KRzm-HUcc"
-                title="Struktur Data Python (List, Tuple, Set, Dictionary)"
-                frameborder="0" allowfullscreen></iframe>
-            `
-          }
-        ]
+  4: {
+    title: "🔁 Percabangan & Perulangan",
+    slides: [
+      {
+        title: "🧠 Konsep Percabangan & Perulangan",
+        content: `
+          <p>Dalam Python, <strong>percabangan</strong> digunakan untuk membuat keputusan berdasarkan kondisi tertentu, sedangkan <strong>perulangan</strong> digunakan untuk mengeksekusi kode berulang kali.</p>
+          <p>Keduanya adalah pondasi penting dalam logika pemrograman.</p>
+        `
       },
-
-      6: {
-        title: "🧩 Fungsi (Function)",
-        slides: [
-          {
-            title: "🧠 Pengenalan Fungsi di Python",
-            content: `
-              <p><strong>Fungsi</strong> adalah blok kode yang dirancang untuk melakukan tugas tertentu dan dapat digunakan kembali kapan saja. 
-              Dengan fungsi, kode jadi lebih terstruktur, efisien, dan mudah dipelihara.</p>
-              <pre><code class="language-python">
-      def sapa():
-          print("Halo, selamat datang di Python!")
-          
-      sapa()  # Pemanggilan fungsi
-              </code></pre>
-            `
-          },
-          {
-            title: "⚙️ Definisi & Pemanggilan Fungsi",
-            content: `
-              <p>Gunakan kata kunci <code>def</code> untuk mendefinisikan fungsi, dan panggil dengan menulis nama fungsinya.</p>
-              <pre><code class="language-python">
-      def halo():
-          print("Halo Dunia!")
-
-      # Pemanggilan fungsi
-      halo()
-              </code></pre>
-              <p>Fungsi dapat dipanggil berkali-kali tanpa menulis ulang logika yang sama.</p>
-            `
-          },
-          {
-            title: "📥 Parameter dan Return Value",
-            content: `
-              <p>Fungsi bisa menerima <strong>parameter</strong> (input) dan mengembalikan nilai dengan <code>return</code>.</p>
-              <pre><code class="language-python">
-      def tambah(a, b):
-          hasil = a + b
-          return hasil
-
-      print(tambah(5, 3))  # Output: 8
-              </code></pre>
-              <p>Parameter membantu fungsi menjadi lebih fleksibel.</p>
-            `
-          },
-          {
-            title: "⚙️ Default Parameter & Keyword Argument",
-            content: `
-              <p>Kamu bisa memberikan nilai default pada parameter, dan juga memanggil fungsi dengan <strong>keyword argument</strong>.</p>
-              <pre><code class="language-python">
-      def sapa(nama="Teman"):
-          print(f"Halo, {nama}!")
-
-      sapa()              # Halo, Teman!
-      sapa("Budi")        # Halo, Budi!
-
-      def hitung_luas(p, l):
-          return p * l
-
-      print(hitung_luas(l=4, p=6))  # Bisa ubah urutan dengan keyword
-              </code></pre>
-            `
-          },
-          {
-            title: "🌍 Scope Variabel (Global & Local)",
-            content: `
-              <p>Setiap variabel di dalam fungsi memiliki <strong>scope</strong> atau jangkauan tertentu:</p>
-              <ul>
-                <li><strong>Local</strong>: hanya bisa diakses dalam fungsi</li>
-                <li><strong>Global</strong>: bisa diakses di seluruh program</li>
-              </ul>
-              <pre><code class="language-python">
-      x = 10  # variabel global
-
-      def ubah():
-          x = 5  # variabel lokal
-          print("Nilai lokal:", x)
-
-      ubah()
-      print("Nilai global:", x)
-              </code></pre>
-              <p>Gunakan <code>global</code> jika ingin mengubah variabel global dari dalam fungsi.</p>
-            `
-          },
-          {
-            title: "⚡ Lambda Function (Fungsi Anonim)",
-            content: `
-              <p><strong>Lambda</strong> adalah fungsi kecil tanpa nama, biasanya digunakan untuk operasi singkat.</p>
-              <pre><code class="language-python">
-      # Fungsi biasa
-      def kali(x):
-          return x * 2
-
-      # Lambda function
-      kali2 = lambda x: x * 2
-
-      print(kali(5))   # 10
-      print(kali2(5))  # 10
-              </code></pre>
-              <p>Biasanya digunakan bersama fungsi seperti <code>map()</code>, <code>filter()</code>, atau <code>sorted()</code>.</p>
-            `
-          },
-          {
-            title: "🔁 Rekursi Sederhana",
-            content: `
-              <p><strong>Rekursi</strong> adalah teknik fungsi memanggil dirinya sendiri. 
-              Biasanya digunakan untuk menyelesaikan masalah yang dapat dipecah menjadi submasalah serupa (misalnya faktorial).</p>
-              <pre><code class="language-python">
-      def faktorial(n):
-          if n == 1:
-              return 1
-          else:
-              return n * faktorial(n - 1)
-
-      print(faktorial(5))  # Output: 120
-              </code></pre>
-              <p>Pastikan selalu ada <strong>base case</strong> agar tidak terjadi infinite recursion!</p>
-            `
-          },
-          {
-            title: "🎥 Video Pembelajaran",
-            content: `
-              <iframe width="560" height="315"
-                src="https://www.youtube.com/embed/9Os0o3wzS_I"
-                title="Belajar Fungsi di Python (Def, Return, Parameter, Lambda, Rekursi)"
-                frameborder="0" allowfullscreen></iframe>
-            `
-          }
-        ]
+      {
+        title: "🧩 If, Elif, Else",
+        content: `
+          <p>Percabangan digunakan untuk menentukan alur program berdasarkan kondisi tertentu.</p>
+          <pre><code class="language-python">x = 10
+if x > 0:
+    print("Positif")
+elif x == 0:
+    print("Nol")
+else:
+    print("Negatif")</code></pre>
+          <p>Gunakan <code>if</code> untuk kondisi utama, <code>elif</code> untuk alternatif tambahan, dan <code>else</code> untuk kondisi selain itu.</p>
+        `
       },
-
-      7: {
-        title: "⚠️ Error & Exception Handling",
-        slides: [
-          {
-            title: "🧠 Jenis Error di Python",
-            content: `
-              <p>Dalam pemrograman Python, error terbagi menjadi dua jenis utama:</p>
-              <ul>
-                <li><strong>Syntax Error</strong> – Kesalahan pada penulisan kode (struktur tidak sesuai aturan Python).</li>
-                <li><strong>Runtime Error (Exception)</strong> – Kesalahan yang terjadi saat program dijalankan.</li>
-              </ul>
-
-              <pre><code class="language-python">
-      # Contoh Syntax Error
-      print("Halo Dunia"    # Kurang tanda tutup kurung
-
-      # Contoh Runtime Error
-      print(10 / 0)  # ZeroDivisionError
-              </code></pre>
-
-              <p>Syntax error terdeteksi sebelum program dijalankan, sedangkan exception terjadi saat program sedang berjalan.</p>
-            `
-          },
-          {
-            title: "🧩 Penanganan Error dengan try–except",
-            content: `
-              <p>Gunakan blok <code>try</code>–<code>except</code> untuk menangani error tanpa menghentikan program.</p>
-              <pre><code class="language-python">
-      try:
-          angka = int(input("Masukkan angka: "))
-          print("Hasil:", 10 / angka)
-      except ValueError:
-          print("❌ Input harus berupa angka!")
-      except ZeroDivisionError:
-          print("❌ Tidak bisa dibagi dengan nol!")
-              </code></pre>
-
-              <p>Jika error terjadi di dalam blok <code>try</code>, maka Python akan langsung mengeksekusi blok <code>except</code> yang sesuai.</p>
-            `
-          },
-          {
-            title: "✅ Menggunakan else dan finally",
-            content: `
-              <p>Selain <code>try</code> dan <code>except</code>, kamu juga bisa menggunakan:</p>
-              <ul>
-                <li><strong>else</strong> – dijalankan jika tidak ada error di dalam <code>try</code>.</li>
-                <li><strong>finally</strong> – dijalankan selalu, entah ada error atau tidak.</li>
-              </ul>
-
-              <pre><code class="language-python">
-      try:
-          x = int(input("Masukkan angka: "))
-      except ValueError:
-          print("Input tidak valid.")
-      else:
-          print("Tidak ada error, nilai x adalah:", x)
-      finally:
-          print("Program selesai dijalankan.")
-              </code></pre>
-
-              <p>Blok <code>finally</code> sering digunakan untuk menutup file, koneksi database, atau membersihkan resource lainnya.</p>
-            `
-          },
-          {
-            title: "🚨 Membuat Exception Sendiri (raise)",
-            content: `
-              <p>Kamu dapat membuat error atau <strong>exception</strong> sendiri dengan menggunakan perintah <code>raise</code>.</p>
-              <pre><code class="language-python">
-      def cek_umur(umur):
-          if umur < 0:
-              raise ValueError("Umur tidak boleh negatif!")
-          elif umur < 17:
-              print("Kamu belum cukup umur.")
-          else:
-              print("Kamu sudah dewasa.")
-
-      try:
-          cek_umur(-5)
-      except ValueError as e:
-          print("Terjadi error:", e)
-              </code></pre>
-
-              <p>Dengan <code>raise</code>, kamu bisa mengontrol jalannya program dan memberikan pesan error yang lebih informatif.</p>
-            `
-          },
-          {
-            title: "🎥 Video Pembelajaran",
-            content: `
-              <iframe width="560" height="315"
-                src="https://www.youtube.com/embed/NIWwJbo-9_8"
-                title="Belajar Error & Exception Handling di Python (try, except, else, finally, raise)"
-                frameborder="0" allowfullscreen></iframe>
-            `
-          }
-        ]
+      {
+        title: "🏗️ Nested If",
+        content: `
+          <p><strong>Nested if</strong> berarti kita menulis pernyataan if di dalam if lainnya.</p>
+          <pre><code class="language-python">x = 15
+if x > 0:
+    if x < 20:
+        print("Antara 0 dan 20")
+    else:
+        print("Lebih dari atau sama dengan 20")
+else:
+    print("Negatif")</code></pre>
+        `
       },
-
-      8: {
-        title: "🧠 OOP (Object Oriented Programming)",
-        slides: [
-          {
-            title: "🧩 Konsep Class & Object",
-            content: `
-              <p><strong>OOP (Object-Oriented Programming)</strong> adalah paradigma pemrograman yang berfokus pada <em>objek</em> — yaitu gabungan data (atribut) dan perilaku (method).</p>
-              <ul>
-                <li><strong>Class</strong> → cetak biru (blueprint) untuk membuat objek.</li>
-                <li><strong>Object</strong> → hasil konkret dari class.</li>
-              </ul>
-
-              <pre><code class="language-python">
-      # Membuat class
-      class Mobil:
-          def nyalakan(self):
-              print("Mobil dinyalakan")
-
-      # Membuat object dari class
-      avanza = Mobil()
-      avanza.nyalakan()
-              </code></pre>
-
-              <p>Class menentukan struktur dan perilaku, sedangkan object adalah “instance” nyata dari class tersebut.</p>
-            `
-          },
-          {
-            title: "⚙️ Attribute dan Method",
-            content: `
-              <p><strong>Attribute</strong> adalah variabel di dalam class, sedangkan <strong>method</strong> adalah fungsi di dalam class.</p>
-              <pre><code class="language-python">
-      class Mobil:
-          def __init__(self, merk, warna):
-              self.merk = merk      # attribute
-              self.warna = warna    # attribute
-
-          def info(self):           # method
-              print(f"Mobil {self.merk} berwarna {self.warna}")
-
-      # Membuat objek
-      mobil1 = Mobil("Toyota", "Hitam")
-      mobil1.info()
-              </code></pre>
-
-              <p>Setiap <code>self</code> mewakili objek yang sedang digunakan, mirip seperti “this” di bahasa lain seperti Java atau C#.</p>
-            `
-          },
-          {
-            title: "🏗️ Constructor (__init__)",
-            content: `
-              <p><strong>Constructor</strong> adalah method khusus yang otomatis dijalankan saat objek dibuat. 
-              Di Python, constructor disebut <code>__init__()</code>.</p>
-
-              <pre><code class="language-python">
-      class Hewan:
-          def __init__(self, nama, jenis):
-              self.nama = nama
-              self.jenis = jenis
-              print(f"Hewan {self.nama} dari jenis {self.jenis} telah dibuat!")
-
-      kucing = Hewan("Milo", "Kucing")
-              </code></pre>
-
-              <p>Constructor sering digunakan untuk inisialisasi data awal dalam objek.</p>
-            `
-          },
-          {
-            title: "🧬 Inheritance (Pewarisan)",
-            content: `
-              <p><strong>Inheritance</strong> memungkinkan satu class mewarisi atribut dan method dari class lain.</p>
-              <pre><code class="language-python">
-      class Hewan:
-          def bersuara(self):
-              print("Hewan ini bersuara.")
-
-      class Kucing(Hewan):
-          def meong(self):
-              print("Meong~")
-
-      milo = Kucing()
-      milo.bersuara()  # diwarisi dari Hewan
-      milo.meong()     # milik Kucing sendiri
-              </code></pre>
-
-              <p>Dengan pewarisan, kamu bisa membuat hierarki class yang lebih efisien dan terorganisir.</p>
-            `
-          },
-          {
-            title: "🌀 Method Overriding",
-            content: `
-              <p><strong>Overriding</strong> berarti menimpa method dari parent class agar memiliki perilaku berbeda di subclass.</p>
-              <pre><code class="language-python">
-      class Hewan:
-          def bersuara(self):
-              print("Hewan ini bersuara.")
-
-      class Anjing(Hewan):
-          def bersuara(self):  # override method
-              print("Guk guk!")
-
-      dog = Anjing()
-      dog.bersuara()  # Output: Guk guk!
-              </code></pre>
-
-              <p>Overriding memungkinkan subclass menyesuaikan perilaku tanpa mengubah class induknya.</p>
-            `
-          },
-          {
-            title: "🔒 Encapsulation & 🔁 Polymorphism (Sederhana)",
-            content: `
-              <h4>🔒 Encapsulation</h4>
-              <p>Melindungi data agar tidak diakses langsung dari luar class (menggunakan prefix <code>_</code> atau <code>__</code>).</p>
-              <pre><code class="language-python">
-      class AkunBank:
-          def __init__(self, saldo):
-              self.__saldo = saldo  # atribut privat
-
-          def lihat_saldo(self):
-              print("Saldo:", self.__saldo)
-
-          def setor(self, jumlah):
-              self.__saldo += jumlah
-
-      akun = AkunBank(1000)
-      akun.lihat_saldo()
-      akun.setor(500)
-      akun.lihat_saldo()
-              </code></pre>
-
-              <h4>🔁 Polymorphism</h4>
-              <p>Polymorphism memungkinkan penggunaan method yang sama pada class berbeda.</p>
-              <pre><code class="language-python">
-      class Kucing:
-          def bersuara(self):
-              print("Meong~")
-
-      class Anjing:
-          def bersuara(self):
-              print("Guk guk!")
-
-      for hewan in [Kucing(), Anjing()]:
-          hewan.bersuara()
-              </code></pre>
-
-              <p>Meski objek berbeda jenis, method yang sama dapat dipanggil karena berbagi “interface” yang mirip.</p>
-            `
-          },
-          {
-            title: "🎥 Video Pembelajaran",
-            content: `
-              <iframe width="560" height="315"
-                src="https://www.youtube.com/embed/JeznW_7DlB0"
-                title="Belajar OOP Python (Class, Object, Inheritance, Encapsulation, Polymorphism)"
-                frameborder="0" allowfullscreen></iframe>
-            `
-          }
-        ]
+      {
+        title: "🔁 While Loop",
+        content: `
+          <p><code>while</code> loop digunakan untuk menjalankan blok kode selama kondisi bernilai True.</p>
+          <pre><code class="language-python">count = 0
+while count < 5:
+    print("Hitung:", count)
+    count += 1</code></pre>
+          <p>Hati-hati, jika kondisi tidak pernah False, maka akan terjadi <strong>infinite loop</strong>.</p>
+        `
       },
+      {
+        title: "🔂 For Loop",
+        content: `
+          <p><code>for</code> digunakan untuk iterasi melalui urutan (seperti list, string, atau range).</p>
+          <pre><code class="language-python">for i in range(5):
+    print("Iterasi ke-", i)</code></pre>
+          <p><code>range(5)</code> menghasilkan urutan 0–4.</p>
+        `
+      },
+      {
+        title: "⛔ Loop Control: break, continue, pass",
+        content: `
+          <ul>
+            <li><strong>break</strong> → keluar dari loop sepenuhnya.</li>
+            <li><strong>continue</strong> → lompat ke iterasi berikutnya.</li>
+            <li><strong>pass</strong> → tidak melakukan apa pun (placeholder).</li>
+          </ul>
+          <pre><code class="language-python">for i in range(5):
+    if i == 2:
+        continue  # skip iterasi ke-2
+    if i == 4:
+        break     # berhenti di i=4
+    print(i)</code></pre>
+        `
+      },
+      {
+        title: "🔢 Looping dengan range() dan enumerate()",
+        content: `
+          <p><code>range()</code> digunakan untuk menghasilkan angka berurutan, sedangkan <code>enumerate()</code> berguna untuk mendapatkan indeks dan nilai sekaligus.</p>
+          <pre><code class="language-python">buah = ["apel", "jeruk", "mangga"]
 
-      9: {
-        title: "🔧 Project Akhir: Aplikasi Perpustakaan Sederhana (Console)",
-        slides: [
-          {
-            title: "Gambaran Proyek",
-            content: `
-              <p>Di proyek ini kita membuat <strong>aplikasi manajemen perpustakaan sederhana</strong> yang berjalan di terminal. 
-              Tujuan: menerapkan semua materi yang sudah dipelajari — instalasi, I/O, tipe data, struktur data, percabangan, perulangan, fungsi, OOP, exception, lambda, dan rekursi.</p>
+# Menggunakan range()
+for i in range(len(buah)):
+    print(i, buah[i])
 
-              <p>Fitur singkat:</p>
-              <ul>
-                <li>Menambah buku</li>
-                <li>Melihat daftar buku</li>
-                <li>Mencari buku (filter & lambda)</li>
-                <li>Pinjam & kembalikan buku (validasi & exception)</li>
-                <li>Simpan & muat data ke file JSON</li>
-              </ul>
-
-              <p>Struktur file (saran):</p>
-              <pre><code>
-      perpus/
-      ├─ main.py         # entrypoint (menu & loop)
-      ├─ models.py       # class: Book, Member, Library
-      ├─ storage.py      # fungsi baca/tulis file (JSON)
-      └─ utils.py        # helper (validasi, kalkulasi rekursif, dll)
-              </code></pre>
-            `
-          },
-          {
-            title: "Step 1 — models.py: Class & Inheritance",
-            content: `
-              <p>Di sini kita pakai OOP: class <code>Book</code>, <code>Member</code>, dan <code>Library</code>. Ada enkapsulasi, constructor, inheritance sederhana.</p>
-
-              <pre><code class="language-python">
-      # models.py
-      import datetime
-
-      class Book:
-          def __init__(self, id, title, author, qty=1):
-              self.id = id                # int / str (tipe dasar)
-              self.title = title          # str
-              self.author = author        # str
-              self.qty = qty              # int
-
-          def to_dict(self):
-              return {"id": self.id, "title": self.title, "author": self.author, "qty": self.qty}
-
-
-      class Member:
-          def __init__(self, member_id, name):
-              self.member_id = member_id
-              self.name = name
-              self.borrowed = []  # list menyimpan dict buku yang dipinjam
-
-          def borrow(self, book_id):
-              self.borrowed.append({"book_id": book_id, "date": str(datetime.date.today())})
-
-          def return_book(self, book_id):
-              for b in self.borrowed:
-                  if b["book_id"] == book_id:
-                      self.borrowed.remove(b)
-                      return True
-              return False
-
-
-      # Admin mewarisi Member (contoh inheritance)
-      class Admin(Member):
-          def __init__(self, member_id, name, level=1):
-              super().__init__(member_id, name)
-              self.level = level  # attribute tambahan untuk Admin
-              # method override contoh:
-          def borrow(self, book_id):
-              # Admin bisa mengambil buku tanpa tercatat (misal)
-              print(f"Admin {self.name} mengambil buku {book_id} (tidak tercatat di borrowed).")
-              return None
-              </code></pre>
-
-              <p>Penjelasan singkat: <code>__init__</code> = constructor, <code>to_dict()</code> untuk serialisasi ke JSON.</p>
-            `
-          },
-          {
-            title: "Step 2 — storage.py: Simpan & Muat (I/O + Exception)",
-            content: `
-              <p>Menyimpan data perpustakaan (list of dict) ke file JSON. Gunakan try–except untuk menangani error file.</p>
-
-              <pre><code class="language-python">
-      # storage.py
-      import json
-
-      def save_data(path, data):
-          try:
-              with open(path, "w", encoding="utf-8") as f:
-                  json.dump(data, f, ensure_ascii=False, indent=2)
-          except IOError as e:
-              raise IOError("Gagal menyimpan data: " + str(e))
-
-      def load_data(path):
-          try:
-              with open(path, "r", encoding="utf-8") as f:
-                  return json.load(f)
-          except FileNotFoundError:
-              return None
-          except json.JSONDecodeError:
-              raise ValueError("File rusak atau bukan format JSON")
-              </code></pre>
-
-              <p>Catatan: gunakan <code>raise</code> untuk meneruskan exception bila perlu.</p>
-            `
-          },
-          {
-            title: "Step 3 — utils.py: Fungsi, Lambda, Casting, Rekursi",
-            content: `
-              <p>Beberapa helper: validasi input, fungsi format, pencarian pakai lambda & map, serta contoh rekursi sederhana.</p>
-
-              <pre><code class="language-python">
-      # utils.py
-      from models import Book, Member
-
-      def input_int(prompt):
-          while True:
-              s = input(prompt)
-              try:
-                  return int(s)  # casting
-              except ValueError:
-                  print("Masukkan angka yang valid!")
-
-      # contoh lambda + filter untuk mencari buku berdasarkan kata kunci
-      def search_books(books, keyword):
-          return list(filter(lambda b: keyword.lower() in b["title"].lower() or keyword.lower() in b["author"].lower(), books))
-
-      # contoh rekursi sederhana: hitung denda bertingkat (misal)
-      def fine_recursive(days):
-          # base case
-          if days <= 0:
-              return 0
-          # denda tiap hari bertambah 1000 per hari (contoh)
-          return 1000 + fine_recursive(days - 1)
-              </code></pre>
-
-              <p>Fungsi <code>input_int</code> menunjukkan penggunaan input() & try/except untuk casting dan validasi.</p>
-            `
-          },
-          {
-            title: "Step 4 — main.py: Menu Utama (Loop, If, For, Break/Continue)",
-            content: `
-              <p>Menu utama menjalankan loop <code>while True</code>, menampilkan pilihan, dan memanggil fungsi sesuai opsi. Contoh implementasi ringkas:</p>
-
-              <pre><code class="language-python">
-      # main.py (ringkasan)
-      from models import Book, Member, Admin
-      from storage import save_data, load_data
-      from utils import input_int, search_books, fine_recursive
-      import os
-
-      DATA_PATH = "perpus_data.json"
-
-      def load_or_init():
-          raw = load_data(DATA_PATH)
-          if raw is None:
-              return {"books": [], "members": []}
-          return raw
-
-      def save_all(db):
-          save_data(DATA_PATH, db)
-
-      def show_books(db):
-          books = db["books"]
-          if not books:
-              print("Belum ada buku.")
-              return
-          for i, b in enumerate(books):  # enumerate -> index & value
-              print(i, b["id"], b["title"], "-", b["author"], "(qty:", b["qty"], ")")
-
-      def add_book(db):
-          id = input("ID buku: ")
-          title = input("Judul: ")
-          author = input("Penulis: ")
-          qty = input_int("Jumlah: ")
-          db["books"].append({"id": id, "title": title, "author": author, "qty": qty})
-          print("Buku ditambahkan.")
-
-      def borrow_book(db):
-          member_id = input("ID Member: ")
-          # cari member (contoh sederhana)
-          member = next((m for m in db["members"] if m["member_id"] == member_id), None)
-          if not member:
-              print("Member tidak ditemukan.")
-              return
-          book_id = input("ID Buku yang dipinjam: ")
-          book = next((b for b in db["books"] if b["id"] == book_id), None)
-          if not book or book["qty"] <= 0:
-              print("Buku tidak tersedia.")
-              return
-          # update qty & catat peminjaman
-          book["qty"] -= 1
-          member["borrowed"].append({"book_id": book_id, "date": "2025-10-28"})
-          print("Sukses meminjam buku.")
-
-      def main():
-          db = load_or_init()
-          while True:
-              print("\\n== Perpustakaan Sederhana ==")
-              print("1. Lihat buku")
-              print("2. Tambah buku")
-              print("3. Cari buku")
-              print("4. Pinjam buku")
-              print("5. Simpan & Keluar")
-              pilihan = input_int("Pilih menu: ")
-
-              if pilihan == 1:
-                  show_books(db)
-              elif pilihan == 2:
-                  add_book(db)
-              elif pilihan == 3:
-                  keyword = input("Masukkan kata kunci: ")
-                  hasil = search_books(db["books"], keyword)
-                  for h in hasil:
-                      print(h["id"], h["title"], "-", h["author"])
-              elif pilihan == 4:
-                  borrow_book(db)
-              elif pilihan == 5:
-                  save_all(db)
-                  print("Data disimpan. Sampai jumpa!")
-                  break
-              else:
-                  print("Pilihan tidak valid.")
-              
-      if __name__ == "__main__":
-          main()
-              </code></pre>
-
-              <p>Penjelasan: loop utama menggunakan <code>while True</code>. Gunakan <code>break</code> untuk keluar. <code>next(..., None)</code> berguna untuk pencarian cepat.</p>
-            `
-          },
-          {
-            title: "Step 5 — Struktur Data & Nested Data",
-            content: `
-              <p>Contoh struktur data yang dipakai di DB (nested):</p>
-              <pre><code>
-      db = {
-        "books": [
-          {"id": "B001", "title": "Python Dasar", "author": "A", "qty": 3},
-          {"id": "B002", "title": "Algoritma", "author": "B", "qty": 2}
-        ],
-        "members": [
-          {"member_id": "M001", "name": "Ali", "borrowed": [{"book_id":"B001","date":"2025-10-28"}]},
-          {"member_id": "M002", "name": "Siti", "borrowed": []}
-        ]
+# Menggunakan enumerate()
+for index, nama in enumerate(buah):
+    print(index, nama)</code></pre>
+        `
+      },
+      {
+        title: "Video: Percabangan & Perulangan Python",
+        video: "https://www.youtube.com/embed/xX8ex4L3bPM",
+        content: `
+          <p>Tonton video ini untuk memahami konsep percabangan dan perulangan di Python secara lebih mendalam.</p>
+          <p>Video ini cocok untuk memperkuat pemahaman tentang kontrol alur program.</p>
+        `
       }
-              </code></pre>
+    ]
+  },
 
-              <p>Di sini kita menggunakan <strong>list</strong>, <strong>dict</strong>, dan <strong>nested list/dict</strong> (contoh: list of dicts).</p>
-            `
-          },
-          {
-            title: "Step 6 — Exception Handling Lengkap",
-            content: `
-              <p>Contoh lengkap penanganan error saat load/save dan input:</p>
-              <pre><code class="language-python">
-      try:
-          db = load_data(DATA_PATH)
-          if db is None:
-              db = {"books": [], "members": []}
-      except ValueError as e:
-          print("File data rusak:", e)
-          db = {"books": [], "members": []}
-      except Exception as e:
-          print("Terjadi error tak terduga:", e)
-          db = {"books": [], "members": []}
-              </code></pre>
-
-              <p>Selalu gunakan <code>except</code> yang spesifik dahulu, baru <code>except Exception</code> umum jika perlu.</p>
-            `
-          },
-          {
-            title: "Step 7 — Contoh Penggunaan Lambda, map, filter, sorted",
-            content: `
-              <p>Beberapa operasi singkat dengan lambda dan built-in:</p>
-              <pre><code class="language-python">
-      # ambil semua judul buku
-      all_titles = list(map(lambda b: b["title"], db["books"]))
-
-      # filter buku yang tersedia (qty > 0)
-      available = list(filter(lambda b: b["qty"] > 0, db["books"]))
-
-      # sortir buku berdasarkan judul
-      sorted_by_title = sorted(db["books"], key=lambda b: b["title"])
-              </code></pre>
-
-              <p>Ini menunjukkan penggunaan lambda, map, filter, dan sorted dengan key function.</p>
-            `
-          },
-          {
-            title: "Step 8 — Contoh Rekursi (Penggunaan dalam Proyek)",
-            content: `
-              <p>Kita tambahkan fungsi rekursif untuk menghitung denda bertingkat (contoh educational):</p>
-              <pre><code class="language-python">
-      # hitung denda total jika denda per hari bertambah (misal hari ke-1 = 1000, hari ke-2 = 2000, dst)
-      def escalating_fine(days):
-          if days <= 0:
-              return 0
-          return days * 1000 + escalating_fine(days - 1)
-
-      print(escalating_fine(3))  # 3*1000 + 2*1000 + 1*1000 = 6000
-              </code></pre>
-
-              <p>Gunakan ini saat menghitung total denda peminjaman yang telat.</p>
-            `
-          },
-          {
-            title: "Step 9 — Testing & Contoh Run (Contoh Input/Output)",
-            content: `
-              <p>Contoh alur saat dijalankan (simulasi):</p>
-              <pre><code>
-      == Perpustakaan Sederhana ==
-      1. Lihat buku
-      2. Tambah buku
-      3. Cari buku
-      4. Pinjam buku
-      5. Simpan & Keluar
-      Pilih menu: 2
-      ID buku: B001
-      Judul: Python Dasar
-      Penulis: Rudi
-      Jumlah: 3
-      Buku ditambahkan.
-
-      Pilih menu: 1
-      0 B001 Python Dasar - Rudi (qty: 3)
-
-      Pilih menu: 4
-      ID Member: M001
-      ID Buku yang dipinjam: B001
-      Sukses meminjam buku.
-
-      Pilih menu: 5
-      Data disimpan. Sampai jumpa!
-              </code></pre>
-
-              <p>Gunakan sample data di awal agar cepat coba fitur. Pastikan selalu menyimpan (menu 5) sebelum keluar.</p>
-            `
-          },
-          {
-            title: "Tips & Best Practices",
-            content: `
-              <ul>
-                <li>Gunakan <strong>virtual environment</strong> (venv) untuk proyek nyata.</li>
-                <li>Pisahkan modul: models, storage, utils, dan main untuk keterbacaan.</li>
-                <li>Gunakan <code>try/except</code> pada IO file dan validasi input pengguna.</li>
-                <li>Tambahkan <strong>unit tests</strong> jika proyek berkembang.</li>
-                <li>Dokumentasikan fungsi dengan docstring singkat.</li>
-              </ul>
-            `
-          },
-          {
-            title: "Sumber & Video Tutorial",
-            content: `
-              <p>Berikut video yang menjelaskan pembuatan proyek serupa langkah demi langkah.</p>
-              <iframe width="560" height="315"
-                src="https://www.youtube.com/embed/8ext9G7xspg"
-                title="Python Project Tutorial - Build a Library Management System"
-                frameborder="0" allowfullscreen></iframe>
-            `
-          }
-        ]
+  5: {
+    title: "📦 Struktur Data",
+    slides: [
+      {
+        title: "🧠 Pengenalan Struktur Data di Python",
+        content: `
+          <p>Python memiliki beberapa tipe struktur data bawaan yang sangat fleksibel dan mudah digunakan. 
+          Struktur data ini memungkinkan kita untuk menyimpan dan mengelola koleksi data dengan berbagai cara.</p>
+          <ul>
+            <li><strong>List</strong> → urutan data yang bisa diubah (mutable)</li>
+            <li><strong>Tuple</strong> → urutan data yang tidak bisa diubah (immutable)</li>
+            <li><strong>Set</strong> → kumpulan data unik, tidak berurutan</li>
+            <li><strong>Dictionary</strong> → pasangan <code>key:value</code></li>
+          </ul>
+        `
       },
+      {
+        title: "📋 List – Membuat, Akses, Ubah, Hapus",
+        content: `
+          <p><strong>List</strong> adalah struktur data paling umum di Python. Bisa berisi berbagai tipe data dan diubah kapan saja.</p>
+          <pre><code class="language-python"># Membuat list
+buah = ["apel", "jeruk", "mangga"]
 
-    };
+# Akses elemen
+print(buah[0])      # apel
+print(buah[-1])     # mangga
+
+# Ubah elemen
+buah[1] = "pisang"
+
+# Tambah & hapus
+buah.append("melon")
+buah.remove("apel")
+
+print(buah)  # ['pisang', 'mangga', 'melon']</code></pre>
+        `
+      },
+      {
+        title: "📦 Tuple – Immutable Collection",
+        content: `
+          <p><strong>Tuple</strong> mirip dengan list, tapi isinya <strong>tidak bisa diubah</strong> setelah dibuat. Biasanya digunakan untuk data yang bersifat tetap.</p>
+          <pre><code class="language-python"># Membuat tuple
+koordinat = (10, 20)
+
+# Akses elemen
+print(koordinat[0])  # 10
+
+# koordinat[0] = 15 ❌ -> akan error karena tuple immutable</code></pre>
+          <p>Tuple lebih cepat dan aman dibanding list, cocok untuk data konstan.</p>
+        `
+      },
+      {
+        title: "🧩 Set – Kumpulan Unik",
+        content: `
+          <p><strong>Set</strong> menyimpan elemen unik (tanpa duplikat) dan tidak memiliki urutan tertentu.</p>
+          <pre><code class="language-python"># Membuat set
+angka = {1, 2, 3, 3, 2}
+print(angka)  # {1, 2, 3} -> duplikat otomatis dihapus
+
+# Operasi set
+ganjil = {1, 3, 5, 7}
+genap = {2, 4, 6, 8}
+print(ganjil.union(genap))     # gabungan
+print(ganjil.intersection({1, 5, 9}))  # irisan</code></pre>
+        `
+      },
+      {
+        title: "🗝️ Dictionary – Pasangan Key-Value",
+        content: `
+          <p><strong>Dictionary</strong> menyimpan data dalam format <code>key: value</code>. Sangat berguna untuk data terstruktur seperti identitas atau konfigurasi.</p>
+          <pre><code class="language-python"># Membuat dictionary
+mahasiswa = {
+    "nama": "Budi",
+    "umur": 20,
+    "jurusan": "Informatika"
+}
+
+# Akses data
+print(mahasiswa["nama"])
+
+# Tambah / ubah
+mahasiswa["umur"] = 21
+mahasiswa["alamat"] = "Samarinda"
+
+# Hapus
+del mahasiswa["jurusan"]
+
+print(mahasiswa)</code></pre>
+        `
+      },
+      {
+        title: "🪆 Nested Data (Struktur Bersarang)",
+        content: `
+          <p>Kamu bisa membuat struktur data di dalam struktur lain, misalnya <strong>list di dalam dictionary</strong> atau sebaliknya.</p>
+          <pre><code class="language-python"># List di dalam dictionary
+kelas = {
+    "nama": "IF-1",
+    "anggota": ["Budi", "Siti", "Rina"]
+}
+
+# Dictionary di dalam list
+data = [
+    {"nama": "Ali", "nilai": 85},
+    {"nama": "Dina", "nilai": 90}
+]
+
+print(kelas["anggota"][1])  # Siti
+print(data[0]["nama"])      # Ali</code></pre>
+          <p>Struktur bersarang ini sering digunakan dalam data JSON dan pemrograman web.</p>
+        `
+      },
+      {
+        title: "Video: Struktur Data Python",
+        video: "https://www.youtube.com/embed/W8KRzm-HUcc",
+        content: `
+          <p>Tonton video ini untuk memahami penggunaan struktur data Python seperti List, Tuple, Set, dan Dictionary secara mendalam.</p>
+          <p>Video ini cocok untuk memperkuat pemahaman tentang pengelolaan data di Python.</p>
+        `
+      }
+    ]
+  },
+
+  6: {
+    title: "🧩 Fungsi (Function)",
+    slides: [
+      {
+        title: "🧠 Pengenalan Fungsi di Python",
+        content: `
+          <p><strong>Fungsi</strong> adalah blok kode yang dirancang untuk melakukan tugas tertentu dan dapat digunakan kembali kapan saja. 
+          Dengan fungsi, kode jadi lebih terstruktur, efisien, dan mudah dipelihara.</p>
+          <pre><code class="language-python">def sapa():
+    print("Halo, selamat datang di Python!")
+    
+sapa()  # Pemanggilan fungsi</code></pre>
+        `
+      },
+      {
+        title: "⚙️ Definisi & Pemanggilan Fungsi",
+        content: `
+          <p>Gunakan kata kunci <code>def</code> untuk mendefinisikan fungsi, dan panggil dengan menulis nama fungsinya.</p>
+          <pre><code class="language-python">def halo():
+    print("Halo Dunia!")
+
+# Pemanggilan fungsi
+halo()</code></pre>
+          <p>Fungsi dapat dipanggil berkali-kali tanpa menulis ulang logika yang sama.</p>
+        `
+      },
+      {
+        title: "📥 Parameter dan Return Value",
+        content: `
+          <p>Fungsi bisa menerima <strong>parameter</strong> (input) dan mengembalikan nilai dengan <code>return</code>.</p>
+          <pre><code class="language-python">def tambah(a, b):
+    hasil = a + b
+    return hasil
+
+print(tambah(5, 3))  # Output: 8</code></pre>
+          <p>Parameter membantu fungsi menjadi lebih fleksibel.</p>
+        `
+      },
+      {
+        title: "⚙️ Default Parameter & Keyword Argument",
+        content: `
+          <p>Kamu bisa memberikan nilai default pada parameter, dan juga memanggil fungsi dengan <strong>keyword argument</strong>.</p>
+          <pre><code class="language-python">def sapa(nama="Teman"):
+    print(f"Halo, {nama}!")
+
+sapa()              # Halo, Teman!
+sapa("Budi")        # Halo, Budi!
+
+def hitung_luas(p, l):
+    return p * l
+
+print(hitung_luas(l=4, p=6))  # Bisa ubah urutan dengan keyword</code></pre>
+        `
+      },
+      {
+        title: "🌍 Scope Variabel (Global & Local)",
+        content: `
+          <p>Setiap variabel di dalam fungsi memiliki <strong>scope</strong> atau jangkauan tertentu:</p>
+          <ul>
+            <li><strong>Local</strong>: hanya bisa diakses dalam fungsi</li>
+            <li><strong>Global</strong>: bisa diakses di seluruh program</li>
+          </ul>
+          <pre><code class="language-python">x = 10  # variabel global
+
+def ubah():
+    x = 5  # variabel lokal
+    print("Nilai lokal:", x)
+
+ubah()
+print("Nilai global:", x)</code></pre>
+          <p>Gunakan <code>global</code> jika ingin mengubah variabel global dari dalam fungsi.</p>
+        `
+      },
+      {
+        title: "⚡ Lambda Function (Fungsi Anonim)",
+        content: `
+          <p><strong>Lambda</strong> adalah fungsi kecil tanpa nama, biasanya digunakan untuk operasi singkat.</p>
+          <pre><code class="language-python"># Fungsi biasa
+def kali(x):
+    return x * 2
+
+# Lambda function
+kali2 = lambda x: x * 2
+
+print(kali(5))   # 10
+print(kali2(5))  # 10</code></pre>
+          <p>Biasanya digunakan bersama fungsi seperti <code>map()</code>, <code>filter()</code>, atau <code>sorted()</code>.</p>
+        `
+      },
+      {
+        title: "🔁 Rekursi Sederhana",
+        content: `
+          <p><strong>Rekursi</strong> adalah teknik fungsi memanggil dirinya sendiri. 
+          Biasanya digunakan untuk menyelesaikan masalah yang dapat dipecah menjadi submasalah serupa (misalnya faktorial).</p>
+          <pre><code class="language-python">def faktorial(n):
+    if n == 1:
+        return 1
+    else:
+        return n * faktorial(n - 1)
+
+print(faktorial(5))  # Output: 120</code></pre>
+          <p>Pastikan selalu ada <strong>base case</strong> agar tidak terjadi infinite recursion!</p>
+        `
+      },
+      {
+        title: "Video: Belajar Fungsi di Python",
+        video: "https://www.youtube.com/embed/9Os0o3wzS_I",
+        content: `
+          <p>Tonton video ini untuk memahami konsep fungsi di Python termasuk parameter, return value, lambda, dan rekursi.</p>
+          <p>Video ini cocok untuk memperdalam pemahaman tentang modularisasi kode.</p>
+        `
+      }
+    ]
+  },
+
+  7: {
+    title: "⚠️ Error & Exception Handling",
+    slides: [
+      {
+        title: "🧠 Jenis Error di Python",
+        content: `
+          <p>Dalam pemrograman Python, error terbagi menjadi dua jenis utama:</p>
+          <ul>
+            <li><strong>Syntax Error</strong> – Kesalahan pada penulisan kode (struktur tidak sesuai aturan Python).</li>
+            <li><strong>Runtime Error (Exception)</strong> – Kesalahan yang terjadi saat program dijalankan.</li>
+          </ul>
+
+          <pre><code class="language-python"># Contoh Syntax Error
+print("Halo Dunia"    # Kurang tanda tutup kurung
+
+# Contoh Runtime Error
+print(10 / 0)  # ZeroDivisionError</code></pre>
+
+          <p>Syntax error terdeteksi sebelum program dijalankan, sedangkan exception terjadi saat program sedang berjalan.</p>
+        `
+      },
+      {
+        title: "🧩 Penanganan Error dengan try–except",
+        content: `
+          <p>Gunakan blok <code>try</code>–<code>except</code> untuk menangani error tanpa menghentikan program.</p>
+          <pre><code class="language-python">try:
+    angka = int(input("Masukkan angka: "))
+    print("Hasil:", 10 / angka)
+except ValueError:
+    print("❌ Input harus berupa angka!")
+except ZeroDivisionError:
+    print("❌ Tidak bisa dibagi dengan nol!")</code></pre>
+
+          <p>Jika error terjadi di dalam blok <code>try</code>, maka Python akan langsung mengeksekusi blok <code>except</code> yang sesuai.</p>
+        `
+      },
+      {
+        title: "✅ Menggunakan else dan finally",
+        content: `
+          <p>Selain <code>try</code> dan <code>except</code>, kamu juga bisa menggunakan:</p>
+          <ul>
+            <li><strong>else</strong> – dijalankan jika tidak ada error di dalam <code>try</code>.</li>
+            <li><strong>finally</strong> – dijalankan selalu, entah ada error atau tidak.</li>
+          </ul>
+
+          <pre><code class="language-python">try:
+    x = int(input("Masukkan angka: "))
+except ValueError:
+    print("Input tidak valid.")
+else:
+    print("Tidak ada error, nilai x adalah:", x)
+finally:
+    print("Program selesai dijalankan.")</code></pre>
+
+          <p>Blok <code>finally</code> sering digunakan untuk menutup file, koneksi database, atau membersihkan resource lainnya.</p>
+        `
+      },
+      {
+        title: "🚨 Membuat Exception Sendiri (raise)",
+        content: `
+          <p>Kamu dapat membuat error atau <strong>exception</strong> sendiri dengan menggunakan perintah <code>raise</code>.</p>
+          <pre><code class="language-python">def cek_umur(umur):
+    if umur < 0:
+        raise ValueError("Umur tidak boleh negatif!")
+    elif umur < 17:
+        print("Kamu belum cukup umur.")
+    else:
+        print("Kamu sudah dewasa.")
+
+try:
+    cek_umur(-5)
+except ValueError as e:
+    print("Terjadi error:", e)</code></pre>
+
+          <p>Dengan <code>raise</code>, kamu bisa mengontrol jalannya program dan memberikan pesan error yang lebih informatif.</p>
+        `
+      },
+      {
+        title: "Video: Error & Exception Handling di Python",
+        video: "https://www.youtube.com/embed/NIWwJbo-9_8",
+        content: `
+          <p>Tonton video ini untuk memahami cara menangani error dan exception di Python dengan try-except, else, finally, dan raise.</p>
+          <p>Video ini penting untuk membuat program yang robust dan tidak mudah crash.</p>
+        `
+      }
+    ]
+  },
+
+  8: {
+    title: "🧠 OOP (Object Oriented Programming)",
+    slides: [
+      {
+        title: "🧩 Konsep Class & Object",
+        content: `
+          <p><strong>OOP (Object-Oriented Programming)</strong> adalah paradigma pemrograman yang berfokus pada <em>objek</em> — yaitu gabungan data (atribut) dan perilaku (method).</p>
+          <ul>
+            <li><strong>Class</strong> → cetak biru (blueprint) untuk membuat objek.</li>
+            <li><strong>Object</strong> → hasil konkret dari class.</li>
+          </ul>
+
+          <pre><code class="language-python"># Membuat class
+class Mobil:
+    def nyalakan(self):
+        print("Mobil dinyalakan")
+
+# Membuat object dari class
+avanza = Mobil()
+avanza.nyalakan()</code></pre>
+
+          <p>Class menentukan struktur dan perilaku, sedangkan object adalah "instance" nyata dari class tersebut.</p>
+        `
+      },
+      {
+        title: "⚙️ Attribute dan Method",
+        content: `
+          <p><strong>Attribute</strong> adalah variabel di dalam class, sedangkan <strong>method</strong> adalah fungsi di dalam class.</p>
+          <pre><code class="language-python">class Mobil:
+    def __init__(self, merk, warna):
+        self.merk = merk      # attribute
+        self.warna = warna    # attribute
+
+    def info(self):           # method
+        print(f"Mobil {self.merk} berwarna {self.warna}")
+
+# Membuat objek
+mobil1 = Mobil("Toyota", "Hitam")
+mobil1.info()</code></pre>
+
+          <p>Setiap <code>self</code> mewakili objek yang sedang digunakan, mirip seperti "this" di bahasa lain seperti Java atau C#.</p>
+        `
+      },
+      {
+        title: "🏗️ Constructor (__init__)",
+        content: `
+          <p><strong>Constructor</strong> adalah method khusus yang otomatis dijalankan saat objek dibuat. 
+          Di Python, constructor disebut <code>__init__()</code>.</p>
+
+          <pre><code class="language-python">class Hewan:
+    def __init__(self, nama, jenis):
+        self.nama = nama
+        self.jenis = jenis
+        print(f"Hewan {self.nama} dari jenis {self.jenis} telah dibuat!")
+
+kucing = Hewan("Milo", "Kucing")</code></pre>
+
+          <p>Constructor sering digunakan untuk inisialisasi data awal dalam objek.</p>
+        `
+      },
+      {
+        title: "🧬 Inheritance (Pewarisan)",
+        content: `
+          <p><strong>Inheritance</strong> memungkinkan satu class mewarisi atribut dan method dari class lain.</p>
+          <pre><code class="language-python">class Hewan:
+    def bersuara(self):
+        print("Hewan ini bersuara.")
+
+class Kucing(Hewan):
+    def meong(self):
+        print("Meong~")
+
+milo = Kucing()
+milo.bersuara()  # diwarisi dari Hewan
+milo.meong()     # milik Kucing sendiri</code></pre>
+
+          <p>Dengan pewarisan, kamu bisa membuat hierarki class yang lebih efisien dan terorganisir.</p>
+        `
+      },
+      {
+        title: "🌀 Method Overriding",
+        content: `
+          <p><strong>Overriding</strong> berarti menimpa method dari parent class agar memiliki perilaku berbeda di subclass.</p>
+          <pre><code class="language-python">class Hewan:
+    def bersuara(self):
+        print("Hewan ini bersuara.")
+
+class Anjing(Hewan):
+    def bersuara(self):  # override method
+        print("Guk guk!")
+
+dog = Anjing()
+dog.bersuara()  # Output: Guk guk!</code></pre>
+
+          <p>Overriding memungkinkan subclass menyesuaikan perilaku tanpa mengubah class induknya.</p>
+        `
+      },
+      {
+        title: "🔒 Encapsulation & 🔁 Polymorphism (Sederhana)",
+        content: `
+          <h4>🔒 Encapsulation</h4>
+          <p>Melindungi data agar tidak diakses langsung dari luar class (menggunakan prefix <code>_</code> atau <code>__</code>).</p>
+          <pre><code class="language-python">class AkunBank:
+    def __init__(self, saldo):
+        self.__saldo = saldo  # atribut privat
+
+    def lihat_saldo(self):
+        print("Saldo:", self.__saldo)
+
+    def setor(self, jumlah):
+        self.__saldo += jumlah
+
+akun = AkunBank(1000)
+akun.lihat_saldo()
+akun.setor(500)
+akun.lihat_saldo()</code></pre>
+
+          <h4>🔁 Polymorphism</h4>
+          <p>Polymorphism memungkinkan penggunaan method yang sama pada class berbeda.</p>
+          <pre><code class="language-python">class Kucing:
+    def bersuara(self):
+        print("Meong~")
+
+class Anjing:
+    def bersuara(self):
+        print("Guk guk!")
+
+for hewan in [Kucing(), Anjing()]:
+    hewan.bersuara()</code></pre>
+
+          <p>Meski objek berbeda jenis, method yang sama dapat dipanggil karena berbagi "interface" yang mirip.</p>
+        `
+      },
+      {
+        title: "Video: Belajar OOP Python",
+        video: "https://www.youtube.com/embed/JeznW_7DlB0",
+        content: `
+          <p>Tonton video ini untuk memahami konsep OOP di Python termasuk class, object, inheritance, encapsulation, dan polymorphism.</p>
+          <p>Video ini penting untuk menguasai pemrograman berorientasi objek.</p>
+        `
+      }
+    ]
+  },
+
+  9: {
+    title: "🔧 Project Akhir: Aplikasi Perpustakaan Sederhana (Console)",
+    slides: [
+      {
+        title: "Gambaran Proyek",
+        content: `
+          <p>Di proyek ini kita membuat <strong>aplikasi manajemen perpustakaan sederhana</strong> yang berjalan di terminal. 
+          Tujuan: menerapkan semua materi yang sudah dipelajari — instalasi, I/O, tipe data, struktur data, percabangan, perulangan, fungsi, OOP, exception, lambda, dan rekursi.</p>
+
+          <p>Fitur singkat:</p>
+          <ul>
+            <li>Menambah buku</li>
+            <li>Melihat daftar buku</li>
+            <li>Mencari buku (filter & lambda)</li>
+            <li>Pinjam & kembalikan buku (validasi & exception)</li>
+            <li>Simpan & muat data ke file JSON</li>
+          </ul>
+
+          <p>Struktur file (saran):</p>
+          <pre><code>perpus/
+├─ main.py         # entrypoint (menu & loop)
+├─ models.py       # class: Book, Member, Library
+├─ storage.py      # fungsi baca/tulis file (JSON)
+└─ utils.py        # helper (validasi, kalkulasi rekursif, dll)</code></pre>
+        `
+      },
+      {
+        title: "Step 1 — models.py: Class & Inheritance",
+        content: `
+          <p>Di sini kita pakai OOP: class <code>Book</code>, <code>Member</code>, dan <code>Library</code>. Ada enkapsulasi, constructor, inheritance sederhana.</p>
+
+          <pre><code class="language-python"># models.py
+import datetime
+
+class Book:
+    def __init__(self, id, title, author, qty=1):
+        self.id = id                # int / str (tipe dasar)
+        self.title = title          # str
+        self.author = author        # str
+        self.qty = qty              # int
+
+    def to_dict(self):
+        return {"id": self.id, "title": self.title, "author": self.author, "qty": self.qty}
+
+class Member:
+    def __init__(self, member_id, name):
+        self.member_id = member_id
+        self.name = name
+        self.borrowed = []  # list menyimpan dict buku yang dipinjam
+
+    def borrow(self, book_id):
+        self.borrowed.append({"book_id": book_id, "date": str(datetime.date.today())})
+
+    def return_book(self, book_id):
+        for b in self.borrowed:
+            if b["book_id"] == book_id:
+                self.borrowed.remove(b)
+                return True
+        return False
+
+# Admin mewarisi Member (contoh inheritance)
+class Admin(Member):
+    def __init__(self, member_id, name, level=1):
+        super().__init__(member_id, name)
+        self.level = level  # attribute tambahan untuk Admin
+        # method override contoh:
+    def borrow(self, book_id):
+        # Admin bisa mengambil buku tanpa tercatat (misal)
+        print(f"Admin {self.name} mengambil buku {book_id} (tidak tercatat di borrowed).")
+        return None</code></pre>
+
+          <p>Penjelasan singkat: <code>__init__</code> = constructor, <code>to_dict()</code> untuk serialisasi ke JSON.</p>
+        `
+      },
+      {
+        title: "Step 2 — storage.py: Simpan & Muat (I/O + Exception)",
+        content: `
+          <p>Menyimpan data perpustakaan (list of dict) ke file JSON. Gunakan try–except untuk menangani error file.</p>
+
+          <pre><code class="language-python"># storage.py
+import json
+
+def save_data(path, data):
+    try:
+        with open(path, "w", encoding="utf-8") as f:
+            json.dump(data, f, ensure_ascii=False, indent=2)
+    except IOError as e:
+        raise IOError("Gagal menyimpan data: " + str(e))
+
+def load_data(path):
+    try:
+        with open(path, "r", encoding="utf-8") as f:
+            return json.load(f)
+    except FileNotFoundError:
+        return None
+    except json.JSONDecodeError:
+        raise ValueError("File rusak atau bukan format JSON")</code></pre>
+
+          <p>Catatan: gunakan <code>raise</code> untuk meneruskan exception bila perlu.</p>
+        `
+      },
+      {
+        title: "Step 3 — utils.py: Fungsi, Lambda, Casting, Rekursi",
+        content: `
+          <p>Beberapa helper: validasi input, fungsi format, pencarian pakai lambda & map, serta contoh rekursi sederhana.</p>
+
+          <pre><code class="language-python"># utils.py
+from models import Book, Member
+
+def input_int(prompt):
+    while True:
+        s = input(prompt)
+        try:
+            return int(s)  # casting
+        except ValueError:
+            print("Masukkan angka yang valid!")
+
+# contoh lambda + filter untuk mencari buku berdasarkan kata kunci
+def search_books(books, keyword):
+    return list(filter(lambda b: keyword.lower() in b["title"].lower() or keyword.lower() in b["author"].lower(), books))
+
+# contoh rekursi sederhana: hitung denda bertingkat (misal)
+def fine_recursive(days):
+    # base case
+    if days <= 0:
+        return 0
+    # denda tiap hari bertambah 1000 per hari (contoh)
+    return 1000 + fine_recursive(days - 1)</code></pre>
+
+          <p>Fungsi <code>input_int</code> menunjukkan penggunaan input() & try/except untuk casting dan validasi.</p>
+        `
+      },
+      {
+        title: "Step 4 — main.py: Menu Utama (Loop, If, For, Break/Continue)",
+        content: `
+          <p>Menu utama menjalankan loop <code>while True</code>, menampilkan pilihan, dan memanggil fungsi sesuai opsi. Contoh implementasi ringkas:</p>
+
+          <pre><code class="language-python"># main.py (ringkasan)
+from models import Book, Member, Admin
+from storage import save_data, load_data
+from utils import input_int, search_books, fine_recursive
+import os
+
+DATA_PATH = "perpus_data.json"
+
+def load_or_init():
+    raw = load_data(DATA_PATH)
+    if raw is None:
+        return {"books": [], "members": []}
+    return raw
+
+def save_all(db):
+    save_data(DATA_PATH, db)
+
+def show_books(db):
+    books = db["books"]
+    if not books:
+        print("Belum ada buku.")
+        return
+    for i, b in enumerate(books):  # enumerate -> index & value
+        print(i, b["id"], b["title"], "-", b["author"], "(qty:", b["qty"], ")")
+
+def add_book(db):
+    id = input("ID buku: ")
+    title = input("Judul: ")
+    author = input("Penulis: ")
+    qty = input_int("Jumlah: ")
+    db["books"].append({"id": id, "title": title, "author": author, "qty": qty})
+    print("Buku ditambahkan.")
+
+def borrow_book(db):
+    member_id = input("ID Member: ")
+    # cari member (contoh sederhana)
+    member = next((m for m in db["members"] if m["member_id"] == member_id), None)
+    if not member:
+        print("Member tidak ditemukan.")
+        return
+    book_id = input("ID Buku yang dipinjam: ")
+    book = next((b for b in db["books"] if b["id"] == book_id), None)
+    if not book or book["qty"] <= 0:
+        print("Buku tidak tersedia.")
+        return
+    # update qty & catat peminjaman
+    book["qty"] -= 1
+    member["borrowed"].append({"book_id": book_id, "date": "2025-10-28"})
+    print("Sukses meminjam buku.")
+
+def main():
+    db = load_or_init()
+    while True:
+        print("\\n== Perpustakaan Sederhana ==")
+        print("1. Lihat buku")
+        print("2. Tambah buku")
+        print("3. Cari buku")
+        print("4. Pinjam buku")
+        print("5. Simpan & Keluar")
+        pilihan = input_int("Pilih menu: ")
+
+        if pilihan == 1:
+            show_books(db)
+        elif pilihan == 2:
+            add_book(db)
+        elif pilihan == 3:
+            keyword = input("Masukkan kata kunci: ")
+            hasil = search_books(db["books"], keyword)
+            for h in hasil:
+                print(h["id"], h["title"], "-", h["author"])
+        elif pilihan == 4:
+            borrow_book(db)
+        elif pilihan == 5:
+            save_all(db)
+            print("Data disimpan. Sampai jumpa!")
+            break
+        else:
+            print("Pilihan tidak valid.")
+        
+if __name__ == "__main__":
+    main()</code></pre>
+
+          <p>Penjelasan: loop utama menggunakan <code>while True</code>. Gunakan <code>break</code> untuk keluar. <code>next(..., None)</code> berguna untuk pencarian cepat.</p>
+        `
+      },
+      {
+        title: "Step 5 — Struktur Data & Nested Data",
+        content: `
+          <p>Contoh struktur data yang dipakai di DB (nested):</p>
+          <pre><code>db = {
+  "books": [
+    {"id": "B001", "title": "Python Dasar", "author": "A", "qty": 3},
+    {"id": "B002", "title": "Algoritma", "author": "B", "qty": 2}
+  ],
+  "members": [
+    {"member_id": "M001", "name": "Ali", "borrowed": [{"book_id":"B001","date":"2025-10-28"}]},
+    {"member_id": "M002", "name": "Siti", "borrowed": []}
+  ]
+}</code></pre>
+
+          <p>Di sini kita menggunakan <strong>list</strong>, <strong>dict</strong>, dan <strong>nested list/dict</strong> (contoh: list of dicts).</p>
+        `
+      },
+      {
+        title: "Step 6 — Exception Handling Lengkap",
+        content: `
+          <p>Contoh lengkap penanganan error saat load/save dan input:</p>
+          <pre><code class="language-python">try:
+    db = load_data(DATA_PATH)
+    if db is None:
+        db = {"books": [], "members": []}
+except ValueError as e:
+    print("File data rusak:", e)
+    db = {"books": [], "members": []}
+except Exception as e:
+    print("Terjadi error tak terduga:", e)
+    db = {"books": [], "members": []}</code></pre>
+
+          <p>Selalu gunakan <code>except</code> yang spesifik dahulu, baru <code>except Exception</code> umum jika perlu.</p>
+        `
+      },
+      {
+        title: "Step 7 — Contoh Penggunaan Lambda, map, filter, sorted",
+        content: `
+          <p>Beberapa operasi singkat dengan lambda dan built-in:</p>
+          <pre><code class="language-python"># ambil semua judul buku
+all_titles = list(map(lambda b: b["title"], db["books"]))
+
+# filter buku yang tersedia (qty > 0)
+available = list(filter(lambda b: b["qty"] > 0, db["books"]))
+
+# sortir buku berdasarkan judul
+sorted_by_title = sorted(db["books"], key=lambda b: b["title"])</code></pre>
+
+          <p>Ini menunjukkan penggunaan lambda, map, filter, dan sorted dengan key function.</p>
+        `
+      },
+      {
+        title: "Step 8 — Contoh Rekursi (Penggunaan dalam Proyek)",
+        content: `
+          <p>Kita tambahkan fungsi rekursif untuk menghitung denda bertingkat (contoh educational):</p>
+          <pre><code class="language-python"># hitung denda total jika denda per hari bertambah (misal hari ke-1 = 1000, hari ke-2 = 2000, dst)
+def escalating_fine(days):
+    if days <= 0:
+        return 0
+    return days * 1000 + escalating_fine(days - 1)
+
+print(escalating_fine(3))  # 3*1000 + 2*1000 + 1*1000 = 6000</code></pre>
+
+          <p>Gunakan ini saat menghitung total denda peminjaman yang telat.</p>
+        `
+      },
+      {
+        title: "Step 9 — Testing & Contoh Run (Contoh Input/Output)",
+        content: `
+          <p>Contoh alur saat dijalankan (simulasi):</p>
+          <pre><code>== Perpustakaan Sederhana ==
+1. Lihat buku
+2. Tambah buku
+3. Cari buku
+4. Pinjam buku
+5. Simpan & Keluar
+Pilih menu: 2
+ID buku: B001
+Judul: Python Dasar
+Penulis: Rudi
+Jumlah: 3
+Buku ditambahkan.
+
+Pilih menu: 1
+0 B001 Python Dasar - Rudi (qty: 3)
+
+Pilih menu: 4
+ID Member: M001
+ID Buku yang dipinjam: B001
+Sukses meminjam buku.
+
+Pilih menu: 5
+Data disimpan. Sampai jumpa!</code></pre>
+
+          <p>Gunakan sample data di awal agar cepat coba fitur. Pastikan selalu menyimpan (menu 5) sebelum keluar.</p>
+        `
+      },
+      {
+        title: "Tips & Best Practices",
+        content: `
+          <ul>
+            <li>Gunakan <strong>virtual environment</strong> (venv) untuk proyek nyata.</li>
+            <li>Pisahkan modul: models, storage, utils, dan main untuk keterbacaan.</li>
+            <li>Gunakan <code>try/except</code> pada IO file dan validasi input pengguna.</li>
+            <li>Tambahkan <strong>unit tests</strong> jika proyek berkembang.</li>
+            <li>Dokumentasikan fungsi dengan docstring singkat.</li>
+          </ul>
+        `
+      },
+      {
+        title: "Video: Python Project Tutorial",
+        video: "https://www.youtube.com/embed/8ext9G7xspg",
+        content: `
+          <p>Tonton video ini untuk melihat pembuatan proyek perpustakaan sederhana dengan Python secara langkah demi langkah.</p>
+          <p>Video ini akan membantu memahami implementasi nyata dari semua konsep yang telah dipelajari.</p>
+        `
+      }
+    ]
+  }
+};
   </script>
   <script src="../../assets/js/frontend.js"></script>
 </body>
