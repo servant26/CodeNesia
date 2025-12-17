@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>CodeNesia — Responsive Sidebar with Dark Mode</title>
-
+  <title>Devmate</title>
+  <link rel="icon" href="../assets/img/favicon.png" type="image/png">
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Bootstrap Icons -->
@@ -104,10 +104,7 @@
     .profile-pic {
       width: 34px;
       height: 34px;
-      border-radius: 8px;
       object-fit: cover;
-      border: 2px solid var(--accent);
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     }
 
     .side-nav{ margin-top:6px; display:flex;flex-direction:column;gap:6px; font-size:14px; }
@@ -357,7 +354,7 @@
       display: contents;
     }
     
-    /* FIXED IMAGE SIZE - Tidak berubah di semua device */
+    /* FIXED IMAGE SIZE - Desktop */
     .card-cover{ 
       height: 140px;
       border-radius:8px; 
@@ -647,7 +644,29 @@
       }
     }
 
-    /* ========== RESPONSIVE STYLES ========== */
+    /* ========== SEARCH RESULTS STYLES ========== */
+    .search-results-container {
+      display: none;
+      margin: 20px 0 30px;
+    }
+
+    .search-results-header {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text-color);
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .search-results-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 8px;
+    }
+
+    /* ========== RESPONSIVE STYLES - FIXED SIZE UNTUK MOBILE ========== */
     
     /* Hide mobile navbar on desktop */
     @media (min-width: 961px) {
@@ -674,17 +693,28 @@
       
       .main-content {
         margin-top: 120px;
+        padding: 12px 16px !important;
       }
       
       /* Sembunyikan sidebar di mobile */
       .sidebar {
         display: none !important;
       }
+      
+      /* Search results grid untuk mobile */
+      .search-results-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 12px !important;
+      }
     }
     
     /* Large Desktop */
     @media (min-width: 1440px) {
       .cards-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+      
+      .search-results-grid {
         grid-template-columns: repeat(4, 1fr);
       }
     }
@@ -712,6 +742,8 @@
       }
     }
     
+    /* ========== TABLET & MOBILE - UKURAN CARD LEBIH KECIL ========== */
+    
     /* Tablet */
     @media (max-width: 960px) {
       .sidebar { 
@@ -731,21 +763,73 @@
         padding: 14px 20px;
       }
       
-      /* Tetap fixed size untuk gambar di tablet */
-      .card-cover,
-      .card-cover img {
-        height: 140px;
-        min-height: 140px;
-        max-height: 140px;
+      /* UKURAN CARD LEBIH KECIL untuk tablet */
+      .content-card {
+        padding: 12px !important;
+        min-height: 150px !important;
+        gap: 8px !important;
       }
       
-      /* Adjust margin untuk mobile */
+      /* Gambar lebih kecil untuk tablet */
+      .card-cover,
+      .card-cover img {
+        height: 100px !important;
+        min-height: 100px !important;
+        max-height: 100px !important;
+      }
+      
+      /* Judul lebih kecil */
+      .card-title {
+        font-size: 14px !important;
+        line-height: 1.3 !important;
+      }
+      
+      /* Meta lebih kecil */
+      .card-meta {
+        font-size: 11px !important;
+        gap: 6px !important;
+      }
+      
+      /* Badge assign lebih kecil */
+      .assign-badge {
+        font-size: 10px !important;
+        padding: 4px 8px !important;
+        left: 12px !important;
+        top: -6px !important;
+      }
+      
+      /* Muted text lebih kecil */
+      .muted {
+        font-size: 11px !important;
+      }
+      
+      /* Badge lebih kecil */
+      .badge {
+        font-size: 10px !important;
+        padding: 4px 8px !important;
+      }
+      
+      /* Section title lebih kecil */
       .section-title {
+        font-size: 18px !important;
         margin: 15px 0 10px;
       }
       
+      /* Adjust margin untuk mobile */
       .studio-head {
         margin: 8px 0 10px;
+      }
+      
+      /* Horizontal cards lebih kecil */
+      .cards-grid.horizontal .content-card {
+        flex: 0 0 240px !important;
+        min-width: 220px !important;
+      }
+      
+      /* Search results untuk tablet */
+      .search-results-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 12px !important;
       }
     }
     
@@ -804,54 +888,69 @@
         margin: -2px 0 8px;
       }
       
-      .cards-grid.horizontal .content-card {
-        flex: 0 0 85%;
-        min-width: 85%;
-      }
-      
+      /* UKURAN CARD LEBIH KECIL untuk mobile besar */
       .content-card {
-        padding: 14px;
-        min-height: 160px;
+        padding: 10px !important;
+        min-height: 140px !important;
+        gap: 6px !important;
       }
       
-      /* Tetap fixed size untuk gambar di mobile */
+      /* Gambar lebih kecil untuk mobile besar */
       .card-cover,
       .card-cover img {
-        height: 140px;
-        min-height: 140px;
-        max-height: 140px;
+        height: 90px !important;
+        min-height: 90px !important;
+        max-height: 90px !important;
       }
       
-      .card-title {
-        font-size: 15px;
+      /* Horizontal cards untuk mobile */
+      .cards-grid.horizontal .content-card {
+        flex: 0 0 220px !important;
+        min-width: 200px !important;
       }
       
-      .card-meta {
-        font-size: 12px;
-      }
-      
-      .muted {
-        font-size: 12px;
-      }
-      
-      .assign-badge {
-        font-size: 11px;
-        padding: 5px 8px;
-        left: 12px;
-        top: -6px;
+      /* Search results untuk mobile besar - 2 kolom */
+      .search-results-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 10px !important;
       }
     }
     
-    /* Mobile */
+    /* Mobile - Ukuran sedang */
     @media (max-width: 640px) {
       .cards-grid {
         grid-template-columns: 1fr;
-        gap: 16px;
+        gap: 12px !important;
       }
       
-      .cards-grid.horizontal .content-card {
-        flex: 0 0 90%;
-        min-width: 90%;
+      /* UKURAN CARD LEBIH KECIL untuk mobile sedang */
+      .content-card {
+        padding: 10px !important;
+        min-height: 130px !important;
+        gap: 6px !important;
+      }
+      
+      /* Gambar lebih kecil untuk mobile sedang */
+      .card-cover,
+      .card-cover img {
+        height: 85px !important;
+        min-height: 85px !important;
+        max-height: 85px !important;
+      }
+      
+      /* Judul lebih kecil */
+      .card-title {
+        font-size: 13px !important;
+      }
+      
+      /* Meta lebih kecil */
+      .card-meta {
+        font-size: 10px !important;
+      }
+      
+      /* Muted text lebih kecil */
+      .muted {
+        font-size: 10px !important;
       }
       
       .topbar-right {
@@ -863,19 +962,17 @@
         order: 0;
       }
       
-      /* Tetap fixed size untuk gambar di mobile kecil */
-      .card-cover,
-      .card-cover img {
-        height: 140px;
-        min-height: 140px;
-        max-height: 140px;
+      /* Search results untuk mobile sedang - 1 kolom */
+      .search-results-grid {
+        grid-template-columns: 1fr !important;
+        gap: 12px !important;
       }
     }
     
-    /* Small Mobile */
+    /* Small Mobile - Ukuran kecil */
     @media (max-width: 480px) {
       .main-content {
-        padding: 12px;
+        padding: 10px !important;
       }
       
       .topbar {
@@ -883,9 +980,53 @@
         gap: 12px;
       }
       
-      .cards-grid.horizontal .content-card {
-        flex: 0 0 92%;
-        min-width: 92%;
+      /* UKURAN CARD LEBIH KECIL untuk mobile kecil */
+      .content-card {
+        padding: 8px !important;
+        min-height: 120px !important;
+        gap: 5px !important;
+        border-radius: 10px !important;
+      }
+      
+      /* Gambar lebih kecil untuk mobile kecil */
+      .card-cover,
+      .card-cover img {
+        height: 80px !important;
+        min-height: 80px !important;
+        max-height: 80px !important;
+        border-radius: 6px !important;
+      }
+      
+      /* Judul lebih kecil */
+      .card-title {
+        font-size: 12px !important;
+        line-height: 1.2 !important;
+      }
+      
+      /* Meta lebih kecil */
+      .card-meta {
+        font-size: 9px !important;
+        gap: 4px !important;
+      }
+      
+      /* Badge assign lebih kecil */
+      .assign-badge {
+        font-size: 9px !important;
+        padding: 3px 6px !important;
+        left: 8px !important;
+        top: -5px !important;
+        border-radius: 6px !important;
+      }
+      
+      /* Muted text lebih kecil */
+      .muted {
+        font-size: 9px !important;
+      }
+      
+      /* Badge lebih kecil */
+      .badge {
+        font-size: 9px !important;
+        padding: 3px 6px !important;
       }
       
       .project-pill {
@@ -915,40 +1056,82 @@
         height: 40px;
       }
       
-      /* Tetap fixed size untuk gambar di mobile sangat kecil */
-      .card-cover,
-      .card-cover img {
-        height: 140px;
-        min-height: 140px;
-        max-height: 140px;
+      /* Search results untuk mobile kecil */
+      .search-results-grid {
+        grid-template-columns: 1fr !important;
+        gap: 10px !important;
+      }
+      
+      .search-results-header {
+        font-size: 16px !important;
+        margin-bottom: 12px !important;
+        padding-bottom: 8px !important;
       }
     }
     
-    /* Very Small Mobile */
+    /* Very Small Mobile - Ukuran sangat kecil */
     @media (max-width: 360px) {
       .main-content {
-        padding: 10px;
+        padding: 8px !important;
       }
       
       .topbar {
         padding: 10px;
       }
       
-      .cards-grid.horizontal .content-card {
-        flex: 0 0 94%;
-        min-width: 94%;
-      }
-      
+      /* UKURAN CARD LEBIH KECIL untuk mobile sangat kecil */
       .content-card {
-        padding: 12px;
+        padding: 6px !important;
+        min-height: 110px !important;
+        gap: 4px !important;
+        border-radius: 8px !important;
       }
       
-      /* Tetap fixed size untuk gambar di semua kondisi */
+      /* Gambar lebih kecil untuk mobile sangat kecil */
       .card-cover,
       .card-cover img {
-        height: 140px;
-        min-height: 140px;
-        max-height: 140px;
+        height: 70px !important;
+        min-height: 70px !important;
+        max-height: 70px !important;
+        border-radius: 5px !important;
+      }
+      
+      /* Judul lebih kecil */
+      .card-title {
+        font-size: 11px !important;
+      }
+      
+      /* Meta lebih kecil */
+      .card-meta {
+        font-size: 8px !important;
+      }
+      
+      /* Muted text lebih kecil */
+      .muted {
+        font-size: 8px !important;
+      }
+      
+      /* Badge assign lebih kecil */
+      .assign-badge {
+        font-size: 8px !important;
+        padding: 2px 4px !important;
+      }
+      
+      /* Badge lebih kecil */
+      .badge {
+        font-size: 8px !important;
+        padding: 2px 4px !important;
+      }
+      
+      /* Horizontal cards untuk mobile sangat kecil */
+      .cards-grid.horizontal .content-card {
+        flex: 0 0 180px !important;
+        min-width: 160px !important;
+      }
+      
+      /* Search results untuk mobile sangat kecil */
+      .search-results-grid {
+        gap: 8px !important;
       }
     }
 
@@ -990,9 +1173,9 @@
   <aside id="siteSidebar" class="sidebar" aria-label="Sidebar">
     <div class="logo">
       <!-- Mengganti mark dengan foto profil kartun -->
-      <img src="../assets/img/profile.jpg" alt="Foto Profil" class="profile-pic">
+      <img src="../assets/img/favicon.png" alt="Foto Profil" class="profile-pic">
       <div>
-        <div style="font-size:14px;font-weight:700">CodeNesia</div>
+        <div style="font-size:14px;font-weight:700">Devmate</div>
       </div>
     </div>
 
@@ -1058,6 +1241,17 @@
     </div>
 
     <div class="main-content">
+      <!-- SEARCH RESULTS SECTION - akan ditampilkan saat ada pencarian -->
+      <section id="search-results-section" class="search-results-container">
+        <div class="search-results-header" id="search-results-header">Hasil yang anda cari:</div>
+        <div class="search-results-grid" id="search-results-grid">
+          <!-- Hasil pencarian akan ditampilkan di sini -->
+        </div>
+        <div class="search-results-empty" id="search-results-empty" style="display: none;">
+          Materi yang anda cari tidak ditemukan...
+        </div>
+      </section>
+
     <!-- Front End -->
     <section id="section-front-end" class="section">
       <div class="section-title">Front End Web Developer</div>
@@ -1347,6 +1541,12 @@
     const mobileNavbar = document.getElementById('mobileNavbar');
     const navLinks = document.querySelectorAll('#mainNav .nav-link');
     const currentDateElement = document.getElementById('currentDate');
+    const searchInput = document.getElementById('searchInput');
+    const searchResultsSection = document.getElementById('search-results-section');
+    const searchResultsGrid = document.getElementById('search-results-grid');
+    const searchResultsHeader = document.getElementById('search-results-header');
+    const searchResultsEmpty = document.getElementById('search-results-empty');
+    const originalSections = document.querySelectorAll('.section');
 
     // Update tanggal live
     function updateCurrentDate() {
@@ -1538,7 +1738,7 @@
     window.addEventListener('scroll', throttle(handleMobileNavbarScroll, 100));
 
     // initial state
-    updateCurrentDate(); // Tambahkan ini
+    updateCurrentDate();
     ensureSidebarStateOnResize();
     initTheme();
 
@@ -1555,16 +1755,14 @@
     document.addEventListener('scroll', throttle(onScrollSpy, 150));
     onScrollSpy();
 
-    // ----------------- Search + horizontal logic -----------------
-    const searchInput = document.getElementById('searchInput');
-
+    // ========== IMPROVED SEARCH FUNCTION ==========
+    
     function normalize(s){ return (s||'').toString().toLowerCase(); }
-    function updateNoResults(sectionEl, anyVisible){
-      const noEl = sectionEl.querySelector('.no-results');
-      if(!noEl) return;
-      noEl.style.display = anyVisible ? 'none' : 'block';
-    }
-
+    
+    // Koleksi semua kartu dari semua section
+    const allCards = Array.from(document.querySelectorAll('.content-card'));
+    const allCardLinks = Array.from(document.querySelectorAll('.content-card-link'));
+    
     function evaluateHorizontal(cardsWrap){
       if(!cardsWrap) return;
       cardsWrap.style.minWidth = '0';
@@ -1603,37 +1801,101 @@
       }
     }
 
-    function filterAll(q){
-      const query = normalize(q).trim();
-      document.querySelectorAll('.section').forEach(section => {
-        const cardsWrap = section.querySelector('.cards-grid');
-        const cards = Array.from(section.querySelectorAll('.content-card'));
-        const isHorizontal = cardsWrap && cardsWrap.classList.contains('horizontal');
-        let anyVisible = false;
-
-        cards.forEach(card => {
-          const title = normalize(card.querySelector('.card-title')?.innerText);
-          const meta = normalize(card.querySelector('.card-meta')?.innerText);
-          const cover = normalize(card.querySelector('.card-cover')?.innerText);
-          const bottom = normalize(card.querySelector('.card-bottom')?.innerText);
-          const matches = query === '' || title.includes(query) || meta.includes(query) || cover.includes(query) || bottom.includes(query);
-
-          if(matches){ 
-            card.style.display = ''; 
-            card.style.opacity = '1'; 
-            anyVisible = true; 
-          } else { 
-            card.style.display = 'none'; 
-            card.style.opacity = '0'; 
+    // Function untuk melakukan pencarian
+    function performSearch(query) {
+      query = normalize(query).trim();
+      
+      if (query === '') {
+        // Kosongkan pencarian, tampilkan semua section asli
+        searchResultsSection.style.display = 'none';
+        originalSections.forEach(section => {
+          section.classList.remove('hidden-section');
+          
+          // Reset semua kartu
+          const cards = section.querySelectorAll('.content-card');
+          cards.forEach(card => {
+            card.style.display = '';
+            card.style.opacity = '1';
+          });
+          
+          // Update visibility
+          const cardsWrap = section.querySelector('.cards-grid');
+          const anyVisible = cards.length > 0;
+          updateNoResults(section, true);
+          
+          if (cardsWrap && cardsWrap.classList.contains('horizontal')) {
+            evaluateHorizontal(cardsWrap);
           }
         });
-
-        updateNoResults(section, anyVisible);
-
-        if(isHorizontal){
-          setTimeout(() => evaluateHorizontal(cardsWrap), 20);
+        return;
+      }
+      
+      // Sembunyikan section asli
+      originalSections.forEach(section => {
+        section.classList.add('hidden-section');
+      });
+      
+      // Tampilkan section hasil pencarian
+      searchResultsSection.style.display = 'block';
+      
+      // Kosongkan grid hasil pencarian
+      searchResultsGrid.innerHTML = '';
+      
+      // Cari semua kartu yang cocok
+      const matchedCards = [];
+      
+      allCardLinks.forEach(link => {
+        const card = link.querySelector('.content-card');
+        const title = normalize(card.querySelector('.card-title')?.innerText);
+        const meta = normalize(card.querySelector('.card-meta')?.innerText);
+        const bottom = normalize(card.querySelector('.muted')?.innerText);
+        
+        const matches = title.includes(query) || meta.includes(query) || bottom.includes(query);
+        
+        if (matches) {
+          matchedCards.push({
+            link: link.href,
+            onclick: link.getAttribute('onclick'),
+            card: card.cloneNode(true)
+          });
         }
       });
+      
+      // Update header dengan jumlah hasil
+      const resultsCount = matchedCards.length;
+      if (resultsCount > 0) {
+        searchResultsHeader.textContent = `Hasil yang anda cari (${resultsCount} hasil ditemukan):`;
+        searchResultsEmpty.style.display = 'none';
+        
+        // Tampilkan kartu yang cocok dalam grid
+        matchedCards.forEach((item, index) => {
+          const cardClone = item.card;
+          const cardWrapper = document.createElement('a');
+          cardWrapper.href = item.link;
+          cardWrapper.className = 'content-card-link';
+          
+          if (item.onclick) {
+            cardWrapper.setAttribute('onclick', item.onclick);
+          }
+          
+          cardWrapper.appendChild(cardClone);
+          searchResultsGrid.appendChild(cardWrapper);
+        });
+      } else {
+        // Tidak ada hasil
+        searchResultsHeader.textContent = 'Hasil yang anda cari:';
+        searchResultsEmpty.style.display = 'block';
+      }
+      
+      // Scroll ke hasil pencarian
+      searchResultsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    // Function update no results untuk section asli
+    function updateNoResults(sectionEl, anyVisible){
+      const noEl = sectionEl.querySelector('.no-results');
+      if(!noEl) return;
+      noEl.style.display = anyVisible ? 'none' : 'block';
     }
 
     // bind image load to recalc
@@ -1662,6 +1924,25 @@
       };
     }
 
+    // Search input handler
+    let searchTimeout;
+    if(searchInput){
+      searchInput.addEventListener('input', e => {
+        clearTimeout(searchTimeout);
+        searchTimeout = setTimeout(() => {
+          performSearch(e.target.value);
+        }, 300);
+      });
+      
+      // Tambahkan event untuk clear search dengan escape key
+      searchInput.addEventListener('keydown', e => {
+        if (e.key === 'Escape') {
+          searchInput.value = '';
+          performSearch('');
+        }
+      });
+    }
+
     // init
     document.addEventListener('DOMContentLoaded', () => {
       bindImageLoadRecalc();
@@ -1669,10 +1950,6 @@
         document.querySelectorAll('.cards-grid.horizontal').forEach(cw => evaluateHorizontal(cw));
       }, 300);
     });
-
-    if(searchInput){
-      searchInput.addEventListener('input', e => filterAll(e.target.value));
-    }
 
     // run one more time after images probably loaded
     setTimeout(() => { 

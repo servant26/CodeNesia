@@ -3,7 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>CodeNesia</title>
+  <title>Devmate</title>
+  <link rel="icon" href="assets/img/favicon.png" type="image/png">
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
@@ -39,6 +40,17 @@
       width: 280px;
       overflow: hidden;
       position: relative;
+    }
+
+    .brand{
+      font-size: 2.0rem;   /* gedein teks */
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      margin-left: -25px;
+    }
+
+    .brand:hover{
+      opacity: .85;
     }
 
     .course-card .course-img {
@@ -688,23 +700,25 @@ img {
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
   <div class="container">
-    <a class="navbar-brand d-flex align-items-center gap-2 brand" href="#">
-      <div style="width:36px; height:36px; border-radius:10px; background:linear-gradient(135deg,#ff9a9e,#6c63ff);"></div>
-      CodeNesia
+    <a class="navbar-brand brand" href="#">
+      Devmate
     </a>
+
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
       <span class="navbar-toggler-icon"></span>
     </button>
+
     <div class="collapse navbar-collapse" id="navmenu">
-      <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
         <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
         <li class="nav-item"><a class="nav-link" href="#courses">Courses</a></li>
         <li class="nav-item"><a class="nav-link" href="#community">Community</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Support Us</a></li>
+        <li class="nav-item"><a class="nav-link" href="#sosmed">Support Us</a></li>
       </ul>
     </div>
   </div>
 </nav>
+
 
 <header class="hero container-fluid">
   <div class="left px-5">
@@ -721,7 +735,7 @@ img {
   </div>
 
   <div class="right d-flex justify-content-center">
-    <img src="assets/img/icon.jpg" alt="hero" 
+    <img src="assets/img/icon.png" alt="hero" 
       onerror="this.onerror=null; this.src='https://via.placeholder.com/300'" />
   </div>
 </header>
@@ -816,7 +830,7 @@ img {
      <div class="container">
         <div class="row">
             <div class="footer-col">
-                <h4><a class="nav-link active" href="#">Follow sosial media kami</a></h4>
+                <h4><a class="nav-link active" href="#">Support Us</a></h4>
                 <div class="social-links">
                     <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
                     <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>

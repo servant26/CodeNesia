@@ -305,11 +305,10 @@ const moduleContent = {
           <ul>
             <li><strong>1991</strong> – HTML pertama kali diperkenalkan oleh <em>Tim Berners-Lee</em>.</li>
             <li><strong>1995</strong> – HTML 2.0 dirilis, menambahkan dukungan untuk form dan tabel.</li>
-            <li><strong>1997</strong> – HTML 3.2 hadir dengan dukungan gambar, script, dan style.</li>
+            <li><strong>1996</strong> – HTML 3.2 hadir dengan dukungan gambar, script, dan style.</li>
             <li><strong>1999</strong> – HTML 4.01 menjadi standar web utama selama bertahun-tahun.</li>
             <li><strong>2014</strong> – HTML5 diluncurkan, membawa elemen modern seperti <code>&lt;video&gt;</code>, <code>&lt;audio&gt;</code>, <code>&lt;section&gt;</code>, dan <code>&lt;article&gt;</code>.</li>
           </ul>
-          <p>Saat ini, HTML5 adalah versi yang digunakan secara luas dan terus diperbarui oleh <strong>WHATWG</strong> (bukan W3C lagi).</p>
         `
       },
       {
@@ -417,52 +416,9 @@ const moduleContent = {
             <li><code>&lt;sub&gt;</code> – teks subscript (tulisan bawah, contoh: H<sub>2</sub>O)</li>
             <li><code>&lt;sup&gt;</code> – teks superscript (tulisan atas, contoh: x<sup>2</sup>)</li>
           </ul>
+          <b>Contoh:</b><br>
           <pre><code>&lt;p&gt;Ini adalah &lt;strong&gt;teks penting&lt;/strong&gt; dan &lt;em&gt;teks miring&lt;/em&gt;.&lt;/p&gt;
 &lt;p&gt;Air kimia: H&lt;sub&gt;2&lt;/sub&gt;O dan rumus luas: x&lt;sup&gt;2&lt;/sup&gt;&lt;/p&gt;</code></pre>
-        `
-      },
-      {
-        title: "Quote & Citation",
-        content: `
-          <p>Untuk menampilkan kutipan atau referensi, HTML menyediakan beberapa elemen:</p>
-          <ul>
-            <li><code>&lt;blockquote&gt;</code> – untuk kutipan panjang</li>
-            <li><code>&lt;q&gt;</code> – untuk kutipan pendek dalam satu baris</li>
-            <li><code>&lt;cite&gt;</code> – untuk menandai sumber atau referensi</li>
-            <li><code>&lt;abbr&gt;</code> – untuk singkatan atau akronim dengan keterangan</li>
-          </ul>
-          <pre><code>&lt;blockquote&gt;
-  "Kegigihan adalah kunci sukses dalam belajar pemrograman."
-&lt;/blockquote&gt;
-
-&lt;p&gt;Seperti kata &lt;q&gt;Albert Einstein&lt;/q&gt;, imajinasi lebih penting dari pengetahuan.&lt;/p&gt;
-
-&lt;p&gt;Artikel oleh &lt;cite&gt;OpenAI Blog&lt;/cite&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;abbr title="HyperText Markup Language"&gt;HTML&lt;/abbr&gt; adalah bahasa dasar web.&lt;/p&gt;</code></pre>
-        `
-      },
-      {
-        title: "Preformatted & Code Text",
-        content: `
-          <p>Elemen berikut digunakan untuk menampilkan teks yang mempertahankan format aslinya, biasanya untuk kode atau teks teknis:</p>
-          <ul>
-            <li><code>&lt;pre&gt;</code> – mempertahankan spasi dan baris seperti di sumber</li>
-            <li><code>&lt;code&gt;</code> – menandai potongan kode</li>
-            <li><code>&lt;kbd&gt;</code> – menunjukkan input dari keyboard</li>
-            <li><code>&lt;samp&gt;</code> – menunjukkan output dari sistem atau program</li>
-          </ul>
-          <pre><code>&lt;pre&gt;
-for (let i = 0; i &lt; 5; i++) {
-  console.log(i);
-}
-&lt;/pre&gt;
-
-&lt;p&gt;Gunakan &lt;code&gt;console.log()&lt;/code&gt; untuk menampilkan output.&lt;/p&gt;
-
-&lt;p&gt;Tekan &lt;kbd&gt;Ctrl&lt;/kbd&gt; + &lt;kbd&gt;S&lt;/kbd&gt; untuk menyimpan.&lt;/p&gt;
-
-&lt;p&gt;Hasil program: &lt;samp&gt;File berhasil disimpan&lt;/samp&gt;&lt;/p&gt;</code></pre>
         `
       },
       {
@@ -481,6 +437,7 @@ for (let i = 0; i &lt; 5; i++) {
         title: "Anchor Tag (<a>)",
         content: `
           <p>Elemen <code>&lt;a&gt;</code> atau <strong>anchor tag</strong> digunakan untuk membuat tautan (link) ke halaman lain, file, atau lokasi tertentu di dalam halaman.</p>
+          <b>Contoh:</b><br>
           <pre><code>&lt;a href="https://www.google.com"&gt;Kunjungi Google&lt;/a&gt;</code></pre>
           <p>Ketika pengguna mengklik teks di dalam tag <code>&lt;a&gt;</code>, browser akan membuka halaman tujuan yang didefinisikan dalam atribut <code>href</code>.</p>
         `
@@ -491,17 +448,15 @@ for (let i = 0; i &lt; 5; i++) {
           <p>Anchor tag memiliki beberapa atribut penting yang menentukan cara link bekerja:</p>
           <ul>
             <li><strong>href</strong> – menentukan alamat tujuan tautan</li>
-            <li><strong>target</strong> – menentukan di mana link dibuka</li>
-            <li><strong>title</strong> – menampilkan teks tambahan saat kursor diarahkan ke link</li>
+            <li><strong>target</strong> – menentukan bagaimana link dibuka</li>
           </ul>
+          <b>Contoh:</b><br>
           <pre><code>&lt;a href="https://www.example.com" target="_blank" title="Buka situs Example"&gt;
   Kunjungi Example
 &lt;/a&gt;</code></pre>
           <p><strong>Keterangan:</strong></p>
           <ul>
             <li><code>target="_blank"</code> → membuka link di tab baru</li>
-            <li><code>target="_self"</code> → membuka link di tab yang sama (default)</li>
-            <li><code>title</code> → menampilkan tooltip kecil saat hover</li>
           </ul>
         `
       },
@@ -521,46 +476,7 @@ for (let i = 0; i &lt; 5; i++) {
         `
       },
       {
-        title: "Link ke Email dan Telepon",
-        content: `
-          <p>HTML memungkinkan kita membuat tautan langsung ke email atau nomor telepon dengan format khusus pada atribut <code>href</code>:</p>
-          <h4>Contoh Link ke Email:</h4>
-          <pre><code>&lt;a href="mailto:info@contoh.com"&gt;Kirim Email&lt;/a&gt;</code></pre>
-          <h4>Contoh Link ke Telepon:</h4>
-          <pre><code>&lt;a href="tel:+6281234567890"&gt;Hubungi Kami&lt;/a&gt;</code></pre>
-          <p><strong>Keterangan:</strong></p>
-          <ul>
-            <li><code>mailto:</code> membuka aplikasi email default pengguna</li>
-            <li><code>tel:</code> membuka aplikasi telepon di perangkat mobile</li>
-          </ul>
-        `
-      },
-      {
-        title: "Membuat Navigation Bar Dasar",
-        content: `
-          <p>Navigation bar (navbar) biasanya berisi kumpulan tautan untuk berpindah antar halaman.</p>
-          <pre><code>&lt;nav&gt;
-  &lt;a href="index.html"&gt;Beranda&lt;/a&gt;
-  &lt;a href="about.html"&gt;Tentang&lt;/a&gt;
-  &lt;a href="services.html"&gt;Layanan&lt;/a&gt;
-  &lt;a href="contact.html"&gt;Kontak&lt;/a&gt;
-&lt;/nav&gt;</code></pre>
-          <p>Dengan CSS, navbar ini bisa dibuat horizontal:</p>
-          <pre><code>nav a {
-  text-decoration: none;
-  color: black;
-  margin: 10px;
-}
-
-nav a:hover {
-  color: blue;
-  text-decoration: underline;
-}</code></pre>
-          <p><strong>Tips:</strong> Gunakan elemen <code>&lt;nav&gt;</code> untuk menandai area navigasi utama agar struktur halaman lebih semantik.</p>
-        `
-      },
-      {
-        title: "Video: Membuat Link & Navigasi HTML",
+        title: "Video: Membuat Link HTML",
         video: "https://www.youtube.com/embed/qg5-hE-T6O0",
         content: `
         `
@@ -679,7 +595,7 @@ nav a:hover {
             <li>Jeruk</li>
             <li>Mangga</li>
           </ul>
-          <p><strong>Catatan:</strong> Tag <code>&lt;ul&gt;</code> sering digunakan untuk membuat navigasi (navbar) dalam kombinasi dengan CSS.</p>
+          <p><strong>Tips:</strong> Kamu juga bisa mengubah tipe penomoran dengan atribut <code>type</code> (misal <code>type="disc, square, circle"</code>).</p>
         `
       },
       {
@@ -838,6 +754,7 @@ nav a:hover {
             <li><strong>action:</strong> menentukan ke mana data dikirim (biasanya ke file backend seperti PHP atau API)</li>
             <li><strong>method:</strong> cara pengiriman data, bisa <code>GET</code> atau <code>POST</code></li>
           </ul>
+          <b>Contoh:</b><br>
           <pre><code>&lt;form action="/submit" method="POST"&gt;
   &lt;label&gt;Nama:&lt;/label&gt;
   &lt;input type="text" name="nama"&gt;
@@ -854,6 +771,7 @@ nav a:hover {
         title: "Input Dasar",
         content: `
           <p>Elemen <code>&lt;input&gt;</code> digunakan untuk menerima berbagai jenis data. Jenis input ditentukan lewat atribut <code>type</code>.</p>
+          <b>Contoh:</b><br>
           <pre><code>&lt;form&gt;
   &lt;input type="text" placeholder="Nama Lengkap"&gt;&lt;br&gt;
   &lt;input type="password" placeholder="Kata Sandi"&gt;&lt;br&gt;
@@ -887,6 +805,7 @@ nav a:hover {
         title: "Label & Placeholder",
         content: `
           <p><code>&lt;label&gt;</code> digunakan untuk memberikan teks penjelas pada input. Sedangkan <code>placeholder</code> memberi contoh teks di dalam input.</p>
+          <b>Contoh:</b><br>
           <pre><code>&lt;form&gt;
   &lt;label for="username"&gt;Username:&lt;/label&gt;
   &lt;input id="username" type="text" placeholder="Masukkan username"&gt;
@@ -898,6 +817,7 @@ nav a:hover {
         title: "Select & Option",
         content: `
           <p>Elemen <code>&lt;select&gt;</code> digunakan untuk membuat dropdown menu, dan di dalamnya berisi beberapa <code>&lt;option&gt;</code>.</p>
+          <b>Contoh:</b><br>
           <pre><code>&lt;form&gt;
   &lt;label for="kota"&gt;Pilih Kota:&lt;/label&gt;
   &lt;select id="kota"&gt;
@@ -913,6 +833,7 @@ nav a:hover {
         title: "Textarea",
         content: `
           <p><code>&lt;textarea&gt;</code> digunakan untuk input teks panjang seperti komentar atau deskripsi.</p>
+          <b>Contoh:</b><br>
           <pre><code>&lt;textarea rows="4" cols="50" placeholder="Tulis komentar di sini..."&gt;&lt;/textarea&gt;</code></pre>
           <p><strong>Tips:</strong> Kamu bisa ubah ukuran default dengan CSS atau atribut <code>rows</code> dan <code>cols</code>.</p>
         `
@@ -921,6 +842,7 @@ nav a:hover {
         title: "Fieldset & Legend",
         content: `
           <p>Gunakan <code>&lt;fieldset&gt;</code> untuk mengelompokkan input yang sejenis, dan <code>&lt;legend&gt;</code> untuk memberi judul pada grup tersebut.</p>
+          <b>Contoh:</b><br>
           <pre><code>&lt;fieldset&gt;
   &lt;legend&gt;Data Pribadi&lt;/legend&gt;
   &lt;label&gt;Nama:&lt;/label&gt;
@@ -935,6 +857,7 @@ nav a:hover {
         title: "Datalist",
         content: `
           <p><code>&lt;datalist&gt;</code> menyediakan daftar saran otomatis saat pengguna mengetik di input.</p>
+          <b>Contoh:</b><br>
           <pre><code>&lt;label for="browser"&gt;Pilih Browser:&lt;/label&gt;
 &lt;input list="browsers" id="browser" name="browser"&gt;
 
@@ -956,6 +879,7 @@ nav a:hover {
             <li><code>minlength</code> / <code>maxlength</code> → panjang minimal dan maksimal teks</li>
             <li><code>pattern</code> → validasi format input menggunakan regex</li>
           </ul>
+          <b>Contoh:</b><br>
           <pre><code>&lt;form&gt;
   &lt;input type="text" required minlength="3" maxlength="10" placeholder="Nama (3-10 huruf)"&gt;&lt;br&gt;
   &lt;input type="email" required placeholder="Masukkan email"&gt;&lt;br&gt;
@@ -969,6 +893,7 @@ nav a:hover {
         title: "Button",
         content: `
           <p>Selain <code>&lt;input type="submit"&gt;</code>, kamu bisa pakai <code>&lt;button&gt;</code> untuk tombol yang lebih fleksibel.</p>
+          <b>Contoh:</b><br>
           <pre><code>&lt;button type="submit"&gt;Kirim&lt;/button&gt;
 &lt;button type="reset"&gt;Reset&lt;/button&gt;
 &lt;button type="button" onclick="alert('Halo!')"&gt;Klik Aku&lt;/button&gt;</code></pre>
@@ -984,6 +909,7 @@ nav a:hover {
             <li><code>readonly</code> → membuat input hanya bisa dibaca, tidak diubah</li>
             <li><code>disabled</code> → membuat input tidak bisa diklik atau diisi</li>
           </ul>
+          <b>Contoh:</b><br>
           <pre><code>&lt;form autocomplete="off" novalidate&gt;
   &lt;input type="text" value="Contoh" readonly&gt;&lt;br&gt;
   &lt;input type="text" value="Tidak aktif" disabled&gt;&lt;br&gt;
@@ -1016,6 +942,7 @@ nav a:hover {
             <li><code>&lt;aside&gt;</code> — konten tambahan seperti sidebar, catatan samping, atau iklan</li>
             <li><code>&lt;footer&gt;</code> — bagian kaki halaman atau artikel, biasanya berisi informasi kontak atau hak cipta</li>
           </ul>
+          <b>Contoh:</b><br>
           <pre><code>&lt;header&gt;
   &lt;h1&gt;Belajar HTML&lt;/h1&gt;
   &lt;nav&gt;
@@ -1050,6 +977,7 @@ nav a:hover {
             <li><code>&lt;figure&gt;</code> — digunakan untuk membungkus gambar, diagram, atau ilustrasi</li>
             <li><code>&lt;figcaption&gt;</code> — memberikan keterangan pada elemen <code>&lt;figure&gt;</code></li>
           </ul>
+          <b>Contoh:</b><br>
           <pre><code>&lt;main&gt;
   &lt;h2&gt;Tentang Kami&lt;/h2&gt;
   &lt;p&gt;Kami menyediakan kursus pemrograman web untuk pemula hingga mahir.&lt;/p&gt;
@@ -1069,6 +997,7 @@ nav a:hover {
             <li><code>&lt;div&gt;</code> — digunakan untuk membungkus elemen blok, sering digunakan untuk layout atau container</li>
             <li><code>&lt;span&gt;</code> — digunakan untuk membungkus teks atau elemen inline untuk keperluan styling atau scripting</li>
           </ul>
+          <b>Contoh:</b><br>
           <pre><code>&lt;div class="kontainer"&gt;
   &lt;h2&gt;Produk&lt;/h2&gt;
   &lt;p&gt;
@@ -1087,6 +1016,7 @@ nav a:hover {
             <li><strong>Tag Semantik:</strong> Memiliki makna khusus dan menggambarkan tujuan kontennya. Contoh: <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;footer&gt;</code></li>
             <li><strong>Tag Non-Semantik:</strong> Tidak menjelaskan kontennya, hanya digunakan untuk styling atau struktur. Contoh: <code>&lt;div&gt;</code>, <code>&lt;span&gt;</code></li>
           </ul>
+          <b>Contoh:</b><br>
           <pre><code>&lt;!-- Semantik --&gt;
 &lt;article&gt;
   &lt;h2&gt;Berita Terbaru&lt;/h2&gt;
@@ -1111,6 +1041,7 @@ nav a:hover {
             <li>Gunakan heading (<code>&lt;h1&gt;</code>–<code>&lt;h6&gt;</code>) secara berurutan dan logis</li>
             <li>Tambahkan atribut <code>alt</code> pada gambar untuk deskripsi</li>
           </ul>
+          <b>Contoh:</b><br>
           <pre><code>&lt;header&gt;
   &lt;nav&gt;...&lt;/nav&gt;
 &lt;/header&gt;
@@ -1168,6 +1099,7 @@ nav a:hover {
             <li><code>&lt;script&gt;</code> — untuk file JavaScript eksternal</li>
             <li><code>&lt;style&gt;</code> — untuk menulis CSS langsung di dalam HTML</li>
           </ul>
+          <b>Contoh:</b><br>
           <pre><code>&lt;!-- CSS eksternal --&gt;
 &lt;link rel="stylesheet" href="assets/css/style.css"&gt;
 
