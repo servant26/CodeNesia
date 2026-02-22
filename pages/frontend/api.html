@@ -1,0 +1,3879 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Devmate</title>
+  <link rel="icon" href="../../assets/img/favicon.png" type="image/png">
+  <link rel="stylesheet" type="text/css" href="../../assets/bootstrap/css/bootstrap.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="../../assets/css/frontend.css">
+</head>
+<body>
+  <!-- Mobile Navbar -->
+  <nav id="mobileNavbar" class="mobile-navbar" aria-label="Mobile navigation" style="display: none;">
+    <!-- Content akan diisi oleh JavaScript -->
+  </nav>
+
+  <!-- Sidebar -->
+  <aside id="siteSidebar" class="sidebar" aria-label="Sidebar">
+    <div class="logo">
+      <!-- Mengganti mark dengan foto profil kartun -->
+      <img src="../../assets/img/favicon.png" alt="Foto Profil" class="profile-pic">
+      <div>
+        <div style="font-size:14px;font-weight:700">Devmate</div>
+      </div>
+    </div>
+
+    <nav id="mainNav" class="side-nav" aria-label="Main navigation">
+      <a class="nav-link" href="#section-front-end"><i class="bi bi-folder2-open"></i> Front-End</a>
+      <a class="nav-link" href="#section-back-end"><i class="bi bi-server"></i> Back-End</a>
+      <a class="nav-link" href="#section-language"><i class="bi bi-code-slash"></i> Programming Language</a>
+      <a class="nav-link" href="#ebook"><i class="bi bi-book"></i> Ebook</a>
+      <a class="nav-link" href="#support"><i class="bi bi-hand-thumbs-up"></i> Support Us</a>
+      <a class="nav-link" href="../home.html"><i class="bi bi-back"></i> Back</a>
+    </nav>
+
+    <div class="social-section">
+      <div>Social Media</div>
+
+      <!-- project-pill style social buttons (like top area) -->
+      <a class="project-pill" href="https://www.youtube.com" target="_blank" rel="noopener noreferrer">
+        <span class="icon"><i class="bi bi-youtube" style="color:#f59e0b"></i></span>
+        <span>Youtube</span>
+      </a>
+
+      <a class="project-pill" href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+        <span class="icon"><i class="bi bi-instagram" style="color:#3ec5ff"></i></span>
+        <span>Instagram</span>
+      </a>
+
+      <a class="project-pill" href="https://www.tiktok.com" target="_blank" rel="noopener noreferrer">
+        <span class="icon"><i class="bi bi-music-note-beamed"></i></span>
+        <span>Tiktok</span>
+      </a>
+
+      <a class="project-pill" href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+        <span class="icon"><i class="bi bi-facebook"></i></span>
+        <span>Facebook</span>
+      </a>
+    </div>
+  </aside>
+
+  <!-- Main -->
+  <main id="top" class="main" role="main">
+    <div class="topbar">
+      <div class="topbar-left">
+        <div class="breadcrumbs">
+          <i class="bi bi-grid-fill"></i>
+          <div id="currentDate" style="font-weight:700"></div>
+        </div>
+      </div>
+
+      <div class="topbar-right">
+        <!-- Theme Toggle Button -->
+        <button id="themeToggle" class="theme-toggle" aria-label="Toggle dark mode">
+          <i class="bi bi-sun" id="themeIcon"></i>
+        </button>
+      </div>
+    </div>
+
+    <div class="main-content">
+      <!-- Course Header -->
+      <div class="course-header">
+        <div class="course-cover">
+          <img src="../../assets/img/api.jpg" alt="Figma Course Cover">
+        </div>
+        <div class="course-info">
+          <h1 class="course-title">API</h1>
+          <p class="course-description">
+            Pelajari API dari dasar dan pahami bagaimana proses pertukaran data antar sistem bekerja. Di course ini, kamu akan mengenal konsep endpoint, request–response, metode HTTP, serta cara mengelola dan menguji API dengan benar.
+          </p>
+          <div class="course-actions">
+            <a href="https://www.youtube.com/playlist?list=YOUR_PLAYLIST_ID" target="_blank" class="btn-enroll btn btn-primary">
+              Tonton Playlist
+            </a>
+          </div>
+        </div>
+      </div>
+      <br>
+      <!-- Course Content -->
+      <div class="course-content">
+        <div class="content-left">
+          <!-- Course Modules -->
+            <div class="content-section">
+            <h2 class="section-title"><i class="bi bi-list-check"></i> Daftar Materi API</h2>
+            <div class="scrollable-section">
+                <ul class="module-list">
+                <li class="module-item" data-module="1">
+                    <div class="module-number">01</div>
+                    <div class="module-content">
+                    <div class="module-title">Pengenalan API & Konsep Dasar</div>
+                    <div class="module-duration">25 min</div>
+                    </div>
+                </li>
+                <li class="module-item" data-module="2">
+                    <div class="module-number">02</div>
+                    <div class="module-content">
+                    <div class="module-title">Jadi Konsumen API (Postman)</div>
+                    <div class="module-duration">35 min</div>
+                    </div>
+                </li>
+                <li class="module-item" data-module="3">
+                    <div class="module-number">03</div>
+                    <div class="module-content">
+                    <div class="module-title">Bangun API dengan Node.js + Express</div>
+                    <div class="module-duration">45 min</div>
+                    </div>
+                </li>
+                <li class="module-item" data-module="4">
+                    <div class="module-number">04</div>
+                    <div class="module-content">
+                    <div class="module-title">Bangun API dengan PHP Laravel</div>
+                    <div class="module-duration">50 min</div>
+                    </div>
+                </li>
+                <li class="module-item" data-module="5">
+                    <div class="module-number">05</div>
+                    <div class="module-content">
+                    <div class="module-title">Proyek: Todo List API + Frontend</div>
+                    <div class="module-duration">60 min</div>
+                    </div>
+                </li>
+                </ul>
+            </div>
+            </div>
+        </div>
+
+        <div class="content-right">
+          <!-- Course Stats - Now at the top -->
+          <div class="content-section">
+            <h2 class="section-title"><i class="bi bi-graph-up"></i> Detail Materi</h2>
+            <div style="display: flex; flex-direction: column; gap: 12px;">
+              <div style="display: flex; justify-content: space-between;">
+                <span style="color: var(--muted-text);">Durasi</span>
+                <span style="font-weight: 600;">2.5 Jam</span>
+              </div>
+              <div style="display: flex; justify-content: space-between;">
+                <span style="color: var(--muted-text);">Total Materi</span>
+                <span style="font-weight: 600;">12 Modul</span>
+              </div>
+              <div style="display: flex; justify-content: space-between;">
+                <span style="color: var(--muted-text);">Tipe</span>
+                <span style="font-weight: 600; color: var(--accent);">Front-End</span>
+              </div>
+            </div>
+          </div>
+          <br>
+          <!-- About Course - Now scrollable and at the bottom -->
+          <div class="content-section">
+            <h2 class="section-title"><i class="bi bi-info-circle"></i> Tentang Materi</h2>
+            <div class="scrollable-section" style="max-height: 195px;">
+              <p class="about-course">
+                Course API ini dirancang untuk membantu kamu memahami fondasi utama dalam pengembangan dan integrasi sistem. Mulai dari pengenalan konsep API, struktur endpoint, metode HTTP, hingga praktik membuat dan mengelola request–response secara efisien dan terstruktur.
+              <p class="about-course">
+                Sangat cocok untuk pemula yang ingin memulai karier di bidang backend development atau siapa pun yang ingin memahami cara kerja pertukaran data antar sistem dan integrasi aplikasi secara menyeluruh.
+              </p>
+              <!-- ... konten lainnya ... -->
+            </div>
+          </div>
+        </div>
+
+        <!-- PERUBAHAN: What You'll Learn - NOW FULL WIDTH -->
+        <div class="content-section full-width-section">
+        <h2 class="section-title"><i class="bi bi-lightbulb"></i> Apa yang akan kamu pelajari?</h2><br>
+        <ul class="learn-list">
+            <li class="learn-item">Memahami konsep dasar API dan perannya dalam menghubungkan berbagai sistem atau aplikasi</li>
+            <li class="learn-item">Mampu memahami struktur endpoint serta cara kerja request dan response</li>
+            <li class="learn-item">Mempelajari metode HTTP seperti GET, POST, PUT, dan DELETE dalam pengelolaan data</li>
+            <li class="learn-item">Mengirim dan menerima data dalam format JSON untuk kebutuhan integrasi aplikasi</li>
+            <li class="learn-item">Memahami konsep status code dan penanganan error dalam API</li>
+            <li class="learn-item">Menggunakan tools seperti Postman untuk menguji dan mendokumentasikan API</li>
+            <li class="learn-item">Membangun satu proyek REST API sederhana sebagai penerapan dari seluruh konsep yang telah dipelajari</li>
+        </ul>
+        </div>
+
+    </div>
+  </main>
+
+  <!-- Course Modal -->
+  <div id="courseModal" class="course-modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="modalModuleTitle">Module 1: Pengenalan Dasar</h3>
+        <button class="close-modal">&times;</button>
+      </div>
+      <div class="modal-body" id="modalBody">
+        <!-- Konten akan diisi oleh JavaScript berdasarkan modul yang dipilih -->
+      </div>
+      <div class="modal-footer">
+        <div class="slide-indicator">
+          Slide <span id="currentSlide">1</span> of <span id="totalSlides">3</span>
+        </div>
+        <div class="nav-buttons">
+          <button class="btn-nav btn-nav-outline" id="prevBtn">
+            <i class="bi bi-chevron-left"></i> Previous
+          </button>
+          <button class="btn-nav" id="nextBtn">
+            Next <i class="bi bi-chevron-right"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="helpFab" class="help-fab" title="Help"><i class="bi bi-question-lg"></i></div>
+
+  <!-- Bootstrap JS bundle -->
+  <script src="../../assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Elements
+    const sidebar = document.getElementById('siteSidebar');
+    const themeToggle = document.getElementById('themeToggle');
+    const themeIcon = document.getElementById('themeIcon');
+    const htmlElement = document.documentElement;
+    const mobileNavbar = document.getElementById('mobileNavbar');
+    const navLinks = document.querySelectorAll('#mainNav .nav-link');
+    const currentDateElement = document.getElementById('currentDate');
+    const courseModal = document.getElementById('courseModal');
+    const closeModal = document.querySelector('.close-modal');
+    const moduleItems = document.querySelectorAll('.module-item');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const currentSlideEl = document.getElementById('currentSlide');
+    const totalSlidesEl = document.getElementById('totalSlides');
+    const modalModuleTitle = document.getElementById('modalModuleTitle');
+    const modalBody = document.getElementById('modalBody');
+
+    // Modal state
+    let currentSlide = 0;
+    let totalSlides = 0;
+    let currentModule = 1;
+    let slides = [];
+
+    // Data konten untuk setiap modul
+const moduleContent = {
+  // =================================================================
+  // TAHAP 1: PENGENALAN API & KONSEP DASAR
+  // =================================================================
+  1: {
+    title: "Pengenalan API & Konsep Dasar",
+    slides: [
+      {
+        title: "Apa itu API?",
+        content: `
+          <p><strong>API (Application Programming Interface)</strong> adalah jembatan yang menghubungkan dua aplikasi berbeda agar bisa berkomunikasi dan bertukar data.</p>
+          
+          <p><strong>Analogi Sederhana - Restoran:</strong></p>
+          <ul>
+            <li><strong>Kamu (Client)</strong> = pengunjung restoran yang ingin makan</li>
+            <li><strong>Menu (API Documentation)</strong> = daftar makanan yang tersedia</li>
+            <li><strong>Pelayan (API)</strong> = perantara yang mengambil pesanan</li>
+            <li><strong>Dapur (Server)</strong> = tempat memproses pesanan</li>
+            <li><strong>Makanan (Response)</strong> = data yang kamu terima</li>
+          </ul>
+          
+          <p>Prosesnya:</p>
+          <ol>
+            <li>Kamu lihat menu (baca dokumentasi API)</li>
+            <li>Kamu panggil pelayan dan pesan makanan (kirim request ke API)</li>
+            <li>Pelayan sampaikan ke dapur (server terima request)</li>
+            <li>Dapur masak (server proses data)</li>
+            <li>Pelayan antar makanan (server kirim response)</li>
+            <li>Kamu makan (client pakai data)</li>
+          </ol>
+        `
+      },
+      {
+        title: "Cara Kerja API - Request dan Response",
+        content: `
+          <p>API bekerja dengan konsep <strong>Request</strong> (permintaan) dan <strong>Response</strong> (tanggapan).</p>
+          
+          <p><strong>Alur kerja API:</strong></p>
+          <ol>
+            <li>Client mengirim request ke server melalui URL endpoint</li>
+            <li>Server memproses request (ambil data dari database, hitung, dll)</li>
+            <li>Server mengirim response kembali ke client (biasanya JSON)</li>
+            <li>Client menampilkan data tersebut ke pengguna</li>
+          </ol>
+          
+          <p><strong>Contoh kode - Request API sederhana dengan fetch():</strong></p>
+          <pre><code>&lt;!-- index.html --&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Belajar API - Request & Response&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Demo Request API&lt;/h1&gt;
+    
+    &lt;button onclick="ambilDataUser()"&gt;Ambil Data User&lt;/button&gt;
+    
+    &lt;div id="hasil" style="margin-top:20px; padding:10px; border:1px solid #ccc;"&gt;&lt;/div&gt;
+    
+    &lt;script&gt;
+    function ambilDataUser() {
+        // Tampilkan loading
+        document.getElementById('hasil').innerHTML = 'Loading...';
+        
+        // MELAKUKAN REQUEST KE API
+        fetch('https://jsonplaceholder.typicode.com/users/1')
+            .then(function(response) {
+                // INI RESPONSE MENTAH DARI SERVER
+                console.log('Response status:', response.status);
+                console.log('Response headers:', response.headers);
+                
+                // Ubah response ke JSON (parsing)
+                return response.json();
+            })
+            .then(function(user) {
+                // INI DATA YANG SUDAH SIAP PAKAI
+                console.log('Data user:', user);
+                
+                // TAMPILKAN DATA DI HTML
+                document.getElementById('hasil').innerHTML = \`
+                    &lt;h3&gt;Data User Ditemukan!&lt;/h3&gt;
+                    &lt;p&gt;&lt;strong&gt;Nama:&lt;/strong&gt; \${user.name}&lt;/p&gt;
+                    &lt;p&gt;&lt;strong&gt;Email:&lt;/strong&gt; \${user.email}&lt;/p&gt;
+                    &lt;p&gt;&lt;strong&gt;Telepon:&lt;/strong&gt; \${user.phone}&lt;/p&gt;
+                    &lt;p&gt;&lt;strong&gt;Website:&lt;/strong&gt; \${user.website}&lt;/p&gt;
+                    &lt;p&gt;&lt;strong&gt;Kota:&lt;/strong&gt; \${user.address.city}&lt;/p&gt;
+                \`;
+            })
+            .catch(function(error) {
+                // JIKA TERJADI ERROR
+                console.log('Error:', error);
+                document.getElementById('hasil').innerHTML = 'Error: ' + error.message;
+            });
+    }
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+          <p><strong>Penjelasan detail kode:</strong></p>
+          <ul>
+            <li><code>fetch('url')</code> = fungsi bawaan JavaScript untuk melakukan request HTTP</li>
+            <li><code>.then()</code> = akan dijalankan setelah request selesai (promise)</li>
+            <li><code>response.json()</code> = mengubah response mentah (string) menjadi object JavaScript</li>
+            <li><code>console.log()</code> = untuk melihat data di console browser (F12)</li>
+            <li><code>.catch()</code> = menangani error jika request gagal</li>
+          </ul>
+          
+          <p><strong>Coba sendiri:</strong></p>
+          <ol>
+            <li>Buat file HTML dengan kode di atas</li>
+            <li>Buka di browser</li>
+            <li>Tekan F12 buka console</li>
+            <li>Klik tombol "Ambil Data User"</li>
+            <li>Lihat hasil di halaman dan di console</li>
+          </ol>
+        `
+      },
+      {
+        title: "HTTP Methods (GET, POST, PUT, DELETE)",
+        content: `
+          <p><strong>HTTP Methods</strong> adalah "kata kerja" yang memberi tahu API apa yang ingin kita lakukan.</p>
+          
+          <table border="1" cellpadding="8">
+            <tr>
+              <th>Method</th>
+              <th>Fungsi</th>
+              <th>Analogi Restoran</th>
+            </tr>
+            <tr>
+              <td><strong>GET</strong></td>
+              <td>Mengambil data</td>
+              <td>"Mbak, saya mau lihat menu"</td>
+            </tr>
+            <tr>
+              <td><strong>POST</strong></td>
+              <td>Mengirim data baru</td>
+              <td>"Mbak, saya mau pesan nasi goreng"</td>
+            </tr>
+            <tr>
+              <td><strong>PUT</strong></td>
+              <td>Mengupdate data (ganti semua)</td>
+              <td>"Mbak, pesanan saya ganti total jadi mie ayam"</td>
+            </tr>
+            <tr>
+              <td><strong>PATCH</strong></td>
+              <td>Mengupdate data (sebagian)</td>
+              <td>"Mbak, pesanan saya tambah telur"</td>
+            </tr>
+            <tr>
+              <td><strong>DELETE</strong></td>
+              <td>Menghapus data</td>
+              <td>"Mbak, pesanan saya batalkan"</td>
+            </tr>
+          </table>
+          
+          <p><strong>Contoh kode - Semua HTTP Methods:</strong></p>
+          <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Demo HTTP Methods&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Demo HTTP Methods dengan API JSONPlaceholder&lt;/h1&gt;
+    &lt;p&gt;Buka console (F12) untuk lihat hasil&lt;/p&gt;
+    
+    &lt;button onclick="getData()"&gt;1. GET Data&lt;/button&gt;
+    &lt;button onclick="postData()"&gt;2. POST Data Baru&lt;/button&gt;
+    &lt;button onclick="putData()"&gt;3. PUT Update Data&lt;/button&gt;
+    &lt;button onclick="deleteData()"&gt;4. DELETE Data&lt;/button&gt;
+    
+    &lt;div id="result" style="margin-top:20px; white-space: pre-wrap; background:#f5f5f5; padding:10px;"&gt;&lt;/div&gt;
+    
+    &lt;script&gt;
+    const resultDiv = document.getElementById('result');
+    
+    // 1. GET - Mengambil data
+    function getData() {
+        resultDiv.innerHTML = 'Loading...';
+        
+        fetch('https://jsonplaceholder.typicode.com/posts/1')
+            .then(response => {
+                console.log('GET Response status:', response.status);
+                return response.json();
+            })
+            .then(data => {
+                console.log('GET Data:', data);
+                resultDiv.innerHTML = \`
+                    &lt;h3&gt;GET Berhasil (Status 200)&lt;/h3&gt;
+                    &lt;p&gt;&lt;b&gt;ID:&lt;/b&gt; \${data.id}&lt;/p&gt;
+                    &lt;p&gt;&lt;b&gt;Title:&lt;/b&gt; \${data.title}&lt;/p&gt;
+                    &lt;p&gt;&lt;b&gt;Body:&lt;/b&gt; \${data.body}&lt;/p&gt;
+                \`;
+            })
+            .catch(error => {
+                resultDiv.innerHTML = 'Error: ' + error.message;
+            });
+    }
+    
+    // 2. POST - Mengirim data baru
+    function postData() {
+        resultDiv.innerHTML = 'Loading...';
+        
+        const dataBaru = {
+            title: 'Belajar API',
+            body: 'Ini adalah post baru yang saya buat',
+            userId: 1
+        };
+        
+        console.log('Data yang dikirim:', dataBaru);
+        
+        fetch('https://jsonplaceholder.typicode.com/posts', {
+            method: 'POST', // Method POST
+            headers: {
+                'Content-Type': 'application/json' // Memberi tahu server kita kirim JSON
+            },
+            body: JSON.stringify(dataBaru) // Ubah object ke string JSON
+        })
+        .then(response => {
+            console.log('POST Response status:', response.status);
+            return response.json();
+        })
+        .then(data => {
+            console.log('Response dari server:', data);
+            resultDiv.innerHTML = \`
+                &lt;h3&gt;POST Berhasil (Status 201 Created)&lt;/h3&gt;
+                &lt;p&gt;&lt;b&gt;ID baru:&lt;/b&gt; \${data.id}&lt;/p&gt;
+                &lt;p&gt;&lt;b&gt;Title:&lt;/b&gt; \${data.title}&lt;/p&gt;
+                &lt;p&gt;&lt;b&gt;Body:&lt;/b&gt; \${data.body}&lt;/p&gt;
+                &lt;p&gt;&lt;i&gt;Server mengembalikan data yang kita kirim + ID baru&lt;/i&gt;&lt;/p&gt;
+            \`;
+        })
+        .catch(error => {
+            resultDiv.innerHTML = 'Error: ' + error.message;
+        });
+    }
+    
+    // 3. PUT - Update data
+    function putData() {
+        resultDiv.innerHTML = 'Loading...';
+        
+        const dataUpdate = {
+            id: 1,
+            title: 'Judul sudah diupdate',
+            body: 'Isi postingan sudah diubah semua',
+            userId: 1
+        };
+        
+        fetch('https://jsonplaceholder.typicode.com/posts/1', {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(dataUpdate)
+        })
+        .then(response => {
+            console.log('PUT Response status:', response.status);
+            return response.json();
+        })
+        .then(data => {
+            console.log('Data setelah update:', data);
+            resultDiv.innerHTML = \`
+                &lt;h3&gt;PUT Berhasil (Status 200)&lt;/h3&gt;
+                &lt;p&gt;&lt;b&gt;ID:&lt;/b&gt; \${data.id}&lt;/p&gt;
+                &lt;p&gt;&lt;b&gt;Title baru:&lt;/b&gt; \${data.title}&lt;/p&gt;
+                &lt;p&gt;&lt;b&gt;Body baru:&lt;/b&gt; \${data.body}&lt;/p&gt;
+            \`;
+        })
+        .catch(error => {
+            resultDiv.innerHTML = 'Error: ' + error.message;
+        });
+    }
+    
+    // 4. DELETE - Hapus data
+    function deleteData() {
+        resultDiv.innerHTML = 'Loading...';
+        
+        fetch('https://jsonplaceholder.typicode.com/posts/1', {
+            method: 'DELETE'
+        })
+        .then(response => {
+            console.log('DELETE Response status:', response.status);
+            resultDiv.innerHTML = \`
+                &lt;h3&gt;DELETE Berhasil&lt;/h3&gt;
+                &lt;p&gt;&lt;b&gt;Status:&lt;/b&gt; \${response.status} \${response.statusText}&lt;/p&gt;
+                &lt;p&gt;Data dengan ID 1 telah dihapus (dari server palsu)&lt;/p&gt;
+            \`;
+        })
+        .catch(error => {
+            resultDiv.innerHTML = 'Error: ' + error.message;
+        });
+    }
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+          <p><strong>Penjelasan setiap method:</strong></p>
+          <ul>
+            <li><strong>GET</strong> - Cukup panggil URL, tanpa konfigurasi tambahan</li>
+            <li><strong>POST</strong> - Perlu method: 'POST', headers, dan body (data yang dikirim)</li>
+            <li><strong>PUT</strong> - Sama seperti POST, tapi untuk update data yang sudah ada</li>
+            <li><strong>DELETE</strong> - Cukup method: 'DELETE', biasanya tanpa body</li>
+          </ul>
+        `
+      },
+      {
+        title: "HTTP Status Code",
+        content: `
+          <p><strong>Status code</strong> adalah kode 3 digit yang diberikan server untuk memberi tahu hasil request kita.</p>
+          
+          <h3>Kategori Status Code:</h3>
+          <ul>
+            <li><strong>1xx (Informational)</strong> - Request diterima, masih diproses</li>
+            <li><strong>2xx (Success)</strong> - Request berhasil</li>
+            <li><strong>3xx (Redirection)</strong> - Perlu tindakan lebih lanjut</li>
+            <li><strong>4xx (Client Error)</strong> - Error dari sisi client</li>
+            <li><strong>5xx (Server Error)</strong> - Error dari sisi server</li>
+          </ul>
+          
+          <h3>Status Code yang Paling Sering Ditemui:</h3>
+          <table border="1" cellpadding="8">
+            <tr>
+              <th>Kode</th>
+              <th>Arti</th>
+              <th>Penjelasan</th>
+            </tr>
+            <tr>
+              <td>200</td>
+              <td>OK</td>
+              <td>Request sukses, data ditemukan</td>
+            </tr>
+            <tr>
+              <td>201</td>
+              <td>Created</td>
+              <td>Berhasil membuat data baru (POST)</td>
+            </tr>
+            <tr>
+              <td>400</td>
+              <td>Bad Request</td>
+              <td>Request salah format (misal: kirim JSON tidak valid)</td>
+            </tr>
+            <tr>
+              <td>401</td>
+              <td>Unauthorized</td>
+              <td>Belum login / tidak ada token</td>
+            </tr>
+            <tr>
+              <td>403</td>
+              <td>Forbidden</td>
+              <td>Sudah login tapi tidak punya akses</td>
+            </tr>
+            <tr>
+              <td>404</td>
+              <td>Not Found</td>
+              <td>URL atau data tidak ditemukan</td>
+            </tr>
+            <tr>
+              <td>500</td>
+              <td>Internal Server Error</td>
+              <td>Server error (biasanya bug di backend)</td>
+            </tr>
+          </table>
+          
+          <p><strong>Contoh kode - Cek berbagai status code:</strong></p>
+          <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Demo HTTP Status Code&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Cek HTTP Status Code&lt;/h1&gt;
+    
+    &lt;button onclick="cek200()"&gt;200 OK (Sukses)&lt;/button&gt;
+    &lt;button onclick="cek201()"&gt;201 Created (POST)&lt;/button&gt;
+    &lt;button onclick="cek404()"&gt;404 Not Found&lt;/button&gt;
+    &lt;button onclick="cek500()"&gt;500 Server Error&lt;/button&gt;
+    
+    &lt;div id="statusResult" style="margin-top:20px; padding:10px; border:1px solid #ccc;"&gt;&lt;/div&gt;
+    
+    &lt;script&gt;
+    const result = document.getElementById('statusResult');
+    
+    function cek200() {
+        fetch('https://jsonplaceholder.typicode.com/users/1')
+            .then(response => {
+                result.innerHTML = \`
+                    &lt;h3&gt;Status: \${response.status} \${response.statusText}&lt;/h3&gt;
+                    &lt;p&gt;✅ Artinya: SUKSES! Data ditemukan.&lt;/p&gt;
+                    &lt;p&gt;Ini adalah status yang paling sering muncul.&lt;/p&gt;
+                \`;
+                console.log('Response:', response);
+                return response.json();
+            })
+            .then(data => {
+                console.log('Data:', data);
+            });
+    }
+    
+    function cek201() {
+        fetch('https://jsonplaceholder.typicode.com/posts', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({title: 'Test', body: 'Test', userId: 1})
+        })
+        .then(response => {
+            result.innerHTML = \`
+                &lt;h3&gt;Status: \${response.status} \${response.statusText}&lt;/h3&gt;
+                &lt;p&gt;✅ Artinya: BERHASIL MEMBUAT DATA BARU!&lt;/p&gt;
+                &lt;p&gt;Biasanya muncul setelah POST request.&lt;/p&gt;
+            \`;
+            console.log('Response:', response);
+            return response.json();
+        })
+        .then(data => {
+            console.log('Data baru:', data);
+        });
+    }
+    
+    function cek404() {
+        fetch('https://jsonplaceholder.typicode.com/users/99999')
+            .then(response => {
+                result.innerHTML = \`
+                    &lt;h3&gt;Status: \${response.status} \${response.statusText}&lt;/h3&gt;
+                    &lt;p&gt;❌ Artinya: DATA TIDAK DITEMUKAN!&lt;/p&gt;
+                    &lt;p&gt;Penyebab: ID 99999 tidak ada di database.&lt;/p&gt;
+                \`;
+                console.log('Response:', response);
+            });
+    }
+    
+    function cek500() {
+        fetch('https://httpstat.us/500')
+            .then(response => {
+                result.innerHTML = \`
+                    &lt;h3&gt;Status: \${response.status} \${response.statusText}&lt;/h3&gt;
+                    &lt;p&gt;💔 Artinya: ERROR SERVER!&lt;/p&gt;
+                    &lt;p&gt;Biasanya ada bug di backend atau server overload.&lt;/p&gt;
+                \`;
+                console.log('Response:', response);
+            });
+    }
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+        `
+      },
+      {
+        title: "JSON (JavaScript Object Notation)",
+        content: `
+          <p><strong>JSON</strong> adalah format data paling populer untuk pertukaran data di API. Bentuknya mirip object JavaScript.</p>
+          
+          <h3>Perbedaan Object JavaScript dan JSON:</h3>
+          <pre><code>// Object JavaScript (bisa langsung dipakai)
+const userJS = {
+    name: "Budi",        // properti boleh tanpa petik
+    age: 25,
+    isActive: true
+}
+
+// JSON String (format yang dikirim via API)
+const userJSON = '{"name": "Budi", "age": 25, "isActive": true}'
+// Semua properti HARUS pakai petik dua</code></pre>
+
+          <h3>Tipe Data di JSON:</h3>
+          <ul>
+            <li>String: "John Doe"</li>
+            <li>Number: 25, 3.14, -10</li>
+            <li>Boolean: true / false</li>
+            <li>Array: [1, 2, 3, "teks"]</li>
+            <li>Object: {"key": "value"}</li>
+            <li>Null: null</li>
+          </ul>
+          
+          <p><strong>Contoh kode - Manipulasi JSON:</strong></p>
+          <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Belajar JSON&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Demo JSON (JavaScript Object Notation)&lt;/h1&gt;
+    
+    &lt;button onclick="demoParse()"&gt;1. JSON.parse() - String ke Object&lt;/button&gt;
+    &lt;button onclick="demoStringify()"&gt;2. JSON.stringify() - Object ke String&lt;/button&gt;
+    &lt;button onclick="demoComplex()"&gt;3. Contoh JSON Kompleks dari API&lt;/button&gt;
+    
+    &lt;div id="jsonResult" style="margin-top:20px; padding:10px; background:#f0f0f0;"&gt;&lt;/div&gt;
+    
+    &lt;script&gt;
+    const jsonResult = document.getElementById('jsonResult');
+    
+    // 1. JSON.parse() - Ubah String JSON ke Object JavaScript
+    function demoParse() {
+        // JSON string dari server (biasanya)
+        const jsonString = '{"nama": "Budi", "umur": 25, "hobi": ["coding", "membaca"], "menikah": false}';
+        
+        console.log('JSON string (mentah):', jsonString);
+        console.log('Tipe data:', typeof jsonString);
+        
+        // Parse ke object JavaScript
+        const obj = JSON.parse(jsonString);
+        
+        console.log('Hasil parse (object):', obj);
+        console.log('Tipe data setelah parse:', typeof obj);
+        console.log('Bisa akses properti:', obj.nama, obj.umur);
+        
+        // Tampilkan di HTML
+        jsonResult.innerHTML = \`
+            &lt;h3&gt;JSON.parse() - String ke Object&lt;/h3&gt;
+            &lt;p&gt;&lt;b&gt;JSON String:&lt;/b&gt; \${jsonString}&lt;/p&gt;
+            &lt;p&gt;&lt;b&gt;Hasil Parse:&lt;/b&gt;&lt;/p&gt;
+            &lt;ul&gt;
+                &lt;li&gt;Nama: \${obj.nama}&lt;/li&gt;
+                &lt;li&gt;Umur: \${obj.umur}&lt;/li&gt;
+                &lt;li&gt;Hobi: \${obj.hobi.join(', ')}&lt;/li&gt;
+                &lt;li&gt;Menikah: \${obj.menikah ? 'Ya' : 'Tidak'}&lt;/li&gt;
+            &lt;/ul&gt;
+        \`;
+    }
+    
+    // 2. JSON.stringify() - Ubah Object JavaScript ke JSON String
+    function demoStringify() {
+        // Object JavaScript
+        const obj = {
+            nama: 'Siti',
+            umur: 22,
+            hobi: ['membaca', 'menulis'],
+            alamat: {
+                kota: 'Jakarta',
+                provinsi: 'DKI Jakarta'
+            },
+            aktif: true
+        };
+        
+        console.log('Object asli:', obj);
+        console.log('Tipe data:', typeof obj);
+        
+        // Stringify ke JSON string (buat dikirim ke server)
+        const jsonString = JSON.stringify(obj);
+        
+        console.log('JSON string:', jsonString);
+        console.log('Tipe data setelah stringify:', typeof jsonString);
+        
+        // Tampilkan di HTML
+        jsonResult.innerHTML = \`
+            &lt;h3&gt;JSON.stringify() - Object ke String&lt;/h3&gt;
+            &lt;p&gt;&lt;b&gt;Object asli:&lt;/b&gt;&lt;/p&gt;
+            &lt;pre&gt;\${JSON.stringify(obj, null, 2)}&lt;/pre&gt;
+            &lt;p&gt;&lt;b&gt;JSON String (siap kirim ke server):&lt;/b&gt;&lt;/p&gt;
+            &lt;pre&gt;\${jsonString}&lt;/pre&gt;
+        \`;
+    }
+    
+    // 3. Contoh JSON kompleks dari API
+    function demoComplex() {
+        fetch('https://jsonplaceholder.typicode.com/users/1')
+            .then(response => response.json())
+            .then(user => {
+                console.log('Data dari API (langsung object):', user);
+                
+                // Tampilkan struktur JSON
+                jsonResult.innerHTML = \`
+                    &lt;h3&gt;Data JSON dari API (JSONPlaceholder)&lt;/h3&gt;
+                    &lt;p&gt;&lt;b&gt;Data User ID 1:&lt;/b&gt;&lt;/p&gt;
+                    &lt;ul&gt;
+                        &lt;li&gt;Nama: \${user.name}&lt;/li&gt;
+                        &lt;li&gt;Username: \${user.username}&lt;/li&gt;
+                        &lt;li&gt;Email: \${user.email}&lt;/li&gt;
+                        &lt;li&gt;Telepon: \${user.phone}&lt;/li&gt;
+                        &lt;li&gt;Website: \${user.website}&lt;/li&gt;
+                    &lt;/ul&gt;
+                    &lt;p&gt;&lt;b&gt;Alamat:&lt;/b&gt;&lt;/p&gt;
+                    &lt;ul&gt;
+                        &lt;li&gt;Jalan: \${user.address.street}&lt;/li&gt;
+                        &lt;li&gt;Suite: \${user.address.suite}&lt;/li&gt;
+                        &lt;li&gt;Kota: \${user.address.city}&lt;/li&gt;
+                    &lt;/ul&gt;
+                    &lt;p&gt;&lt;b&gt;Perusahaan:&lt;/b&gt; \${user.company.name}&lt;/p&gt;
+                    &lt;p&gt;&lt;i&gt;Lihat juga di console browser (F12)&lt;/i&gt;&lt;/p&gt;
+                \`;
+            });
+    }
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+          <p><strong>Kesimpulan JSON:</strong></p>
+          <ul>
+            <li><code>JSON.parse()</code> = ubah string JSON → object JS (terima dari server)</li>
+            <li><code>JSON.stringify()</code> = ubah object JS → string JSON (kirim ke server)</li>
+            <li>Semua properti di JSON HARUS pakai petik dua ("")</li>
+            <li>JSON tidak bisa punya function atau komentar</li>
+          </ul>
+        `
+      },
+      {
+        title: "Video: Pengenalan API untuk Pemula",
+        video: "https://www.youtube.com/embed/Yzx7UaP0jPc",
+        content: `
+          <p>Video ini menjelaskan konsep API dengan analogi sederhana dan contoh praktis.</p>
+        `
+      }
+    ]
+  },
+
+  // =================================================================
+  // TAHAP 2: JADI KONSUMEN API (POSTMAN)
+  // =================================================================
+  2: {
+    title: "Jadi Konsumen API (Menggunakan Postman)",
+    slides: [
+      {
+        title: "Apa itu API Client?",
+        content: `
+          <p><strong>API Client</strong> adalah tools yang memudahkan kita menguji dan berinteraksi dengan API tanpa harus menulis kode.</p>
+          
+          <h3>Kenapa Perlu API Client?</h3>
+          <ul>
+            <li>Testing API dengan cepat (tidak perlu nulis kode dulu)</li>
+            <li>Melihat response dalam format yang rapi (pretty print)</li>
+            <li>Menyimpan request untuk digunakan lagi (collections)</li>
+            <li>Mengelola environment (development, staging, production)</li>
+            <li>Buat dokumentasi API otomatis</li>
+            <li>Testing otomatis (automation)</li>
+          </ul>
+          
+          <h3>API Client Populer:</h3>
+          <table border="1" cellpadding="8">
+            <tr>
+              <th>Nama</th>
+              <th>Kelebihan</th>
+              <th>Link</th>
+            </tr>
+            <tr>
+              <td><strong>Postman</strong></td>
+              <td>Paling populer, fitur lengkap, gratis, kolaborasi tim</td>
+              <td>postman.com</td>
+            </tr>
+            <tr>
+              <td><strong>Insomnia</strong></td>
+              <td>Ringan, fokus debugging, UI bersih</td>
+              <td>insomnia.rest</td>
+            </tr>
+            <tr>
+              <td><strong>Thunder Client</strong></td>
+              <td>Extension VS Code, ringan, gratis</td>
+              <td>thunderclient.com</td>
+            </tr>
+            <tr>
+              <td><strong>Apidog</strong></td>
+              <td>All-in-one (desain, testing, dokumentasi)</td>
+              <td>apidog.com</td>
+            </tr>
+          </table>
+          
+          <p>Kita akan fokus ke <strong>Postman</strong> karena paling banyak digunakan dan fiturnya lengkap.</p>
+        `
+      },
+      {
+        title: "Instalasi Postman",
+        content: `
+          <p><strong>Langkah-langkah instalasi Postman:</strong></p>
+          
+          <h3>1. Download Postman</h3>
+          <p>Buka website: <a href="https://www.postman.com/downloads/" target="_blank">https://www.postman.com/downloads/</a></p>
+          <p>Pilih versi sesuai OS kamu:</p>
+          <ul>
+            <li>Windows: Download .exe</li>
+            <li>Mac: Download .dmg</li>
+            <li>Linux: Download .tar.gz atau via Snap</li>
+          </ul>
+          
+          <h3>2. Install Postman</h3>
+          <p><strong>Windows:</strong></p>
+          <ul>
+            <li>Jalankan file .exe yang sudah didownload</li>
+            <li>Ikuti petunjuk instalasi (next-next)</li>
+            <li>Tunggu sampai selesai</li>
+          </ul>
+          
+          <p><strong>Mac:</strong></p>
+          <ul>
+            <li>Buka file .dmg</li>
+            <li>Drag Postman ke folder Applications</li>
+          </ul>
+          
+          <h3>3. Buka Postman</h3>
+          <p>Setelah instalasi selesai, buka Postman. Akan muncul tampilan seperti ini:</p>
+          
+          <pre><code>+-----------------------------------------------------+
+|  Postman                                            |
+|  +---------------+  +-----------------------------+ |
+|  | New           |  | GET  https://api.example.com| |
+|  | Import        |  | [Params] [Auth] [Headers]   | |
+|  |               |  | [Body]                      | |
+|  +---------------+  +-----------------------------+ |
+|                                                     |
+|  Collections     |  Response:                       |
+|  [+] My APIs     |  Status: 200 OK                  |
+|                  |  {                                |
+|                  |    "data": ...                    |
+|                  |  }                                |
++-----------------------------------------------------+</code></pre>
+          
+          <h3>4. Setup Awal</h3>
+          <ul>
+            <li>Kamu bisa langsung pakai tanpa login (skip)</li>
+            <li>Atau buat akun gratis untuk menyimpan data di cloud</li>
+            <li>Akun gratis sudah cukup untuk belajar</li>
+          </ul>
+        `
+      },
+      {
+        title: "Mengenal Tampilan Postman",
+        content: `
+          <p><strong>Bagian-bagian penting di Postman:</strong></p>
+          
+          <h3>1. Header / Top Bar</h3>
+          <ul>
+            <li><strong>Method Dropdown</strong> - Pilih HTTP method (GET, POST, dll)</li>
+            <li><strong>URL Bar</strong> - Tempat mengetik endpoint API</li>
+            <li><strong>Save Button</strong> - Simpan request ke collection</li>
+            <li><strong>Send Button</strong> - Kirim request (tombol biru)</li>
+          </ul>
+          
+          <h3>2. Request Tabs (di bawah URL)</h3>
+          <ul>
+            <li><strong>Params</strong> - Untuk menambah query parameters (contoh: ?page=1&limit=10)</li>
+            <li><strong>Authorization</strong> - Untuk setting autentikasi (Bearer token, Basic Auth, dll)</li>
+            <li><strong>Headers</strong> - Untuk menambah HTTP headers</li>
+            <li><strong>Body</strong> - Untuk mengirim data (POST, PUT)</li>
+            <li><strong>Pre-request Script</strong> - JavaScript yang jalan sebelum request</li>
+            <li><strong>Tests</strong> - JavaScript untuk testing response</li>
+          </ul>
+          
+          <h3>3. Response Panel (bagian bawah)</h3>
+          <ul>
+            <li><strong>Status</strong> - HTTP status code (200, 404, dll)</li>
+            <li><strong>Time</strong> - Berapa lama request diproses</li>
+            <li><strong>Size</strong> - Ukuran response</li>
+            <li><strong>Body</strong> - Isi response (biasanya JSON)</li>
+            <li><strong>Cookies</strong> - Cookies yang dikirim server</li>
+            <li><strong>Headers</strong> - Response headers</li>
+          </ul>
+          
+          <h3>4. Sidebar Kiri</h3>
+          <ul>
+            <li><strong>Collections</strong> - Tempat menyimpan request</li>
+            <li><strong>APIs</strong> - Untuk desain API</li>
+            <li><strong>Environments</strong> - Untuk variable environment</li>
+            <li><strong>History</strong> - Riwayat request</li>
+          </ul>
+        `
+      },
+      {
+        title: "API Publik Gratis untuk Latihan",
+        content: `
+          <p>Berikut API publik gratis yang bisa kamu gunakan untuk latihan di Postman:</p>
+          
+          <h3>1. JSONPlaceholder</h3>
+          <p><strong>URL:</strong> https://jsonplaceholder.typicode.com</p>
+          <p><strong>Deskripsi:</strong> API palsu untuk testing, mirip seperti API beneran tapi data dummy.</p>
+          <p><strong>Endpoint yang tersedia:</strong></p>
+          <ul>
+            <li><code>GET /posts</code> - ambil semua postingan</li>
+            <li><code>GET /posts/1</code> - ambil postingan ID 1</li>
+            <li><code>GET /posts/1/comments</code> - komentar postingan ID 1</li>
+            <li><code>GET /comments?postId=1</code> - komentar dengan parameter</li>
+            <li><code>GET /users</code> - ambil semua user</li>
+            <li><code>GET /users/1</code> - ambil user ID 1</li>
+            <li><code>POST /posts</code> - buat postingan baru</li>
+            <li><code>PUT /posts/1</code> - update postingan ID 1</li>
+            <li><code>DELETE /posts/1</code> - hapus postingan ID 1</li>
+          </ul>
+          
+          <h3>2. REST Countries</h3>
+          <p><strong>URL:</strong> https://restcountries.com/v3.1</p>
+          <p><strong>Deskripsi:</strong> Data negara-negara di dunia.</p>
+          <p><strong>Endpoint contoh:</strong></p>
+          <ul>
+            <li><code>GET /all</code> - semua negara</li>
+            <li><code>GET /name/indonesia</code> - data Indonesia</li>
+            <li><code>GET /capital/jakarta</code> - negara dengan ibukota Jakarta</li>
+            <li><code>GET /region/asia</code> - negara di Asia</li>
+          </ul>
+          
+          <h3>3. Random User Generator</h3>
+          <p><strong>URL:</strong> https://randomuser.me/api/</p>
+          <p><strong>Deskripsi:</strong> Generate data user random untuk testing.</p>
+          <p><strong>Endpoint contoh:</strong></p>
+          <ul>
+            <li><code>GET /</code> - satu user random</li>
+            <li><code>GET /?results=5</code> - 5 user random</li>
+            <li><code>GET /?gender=female</code> - user perempuan</li>
+            <li><code>GET /?nat=US</code> - user dari US</li>
+          </ul>
+          
+          <h3>4. OpenWeatherMap</h3>
+          <p><strong>URL:</strong> https://api.openweathermap.org/data/2.5</p>
+          <p><strong>Deskripsi:</strong> Data cuaca (perlu registrasi gratis).</p>
+          <p><strong>Endpoint contoh:</strong></p>
+          <pre><code>GET /weather?q=Jakarta&appid=API_KEY&units=metric</code></pre>
+          
+          <h3>5. NASA API</h3>
+          <p><strong>URL:</strong> https://api.nasa.gov</p>
+          <p><strong>Deskripsi:</strong> Data astronomi, foto luar angkasa.</p>
+        `
+      },
+      {
+        title: "Praktik 1: GET Request di Postman",
+        content: `
+          <p><strong>Langkah-langkah melakukan GET request di Postman:</strong></p>
+          
+          <h3>1. Buka Postman</h3>
+          <p>Buka aplikasi Postman yang sudah diinstall.</p>
+          
+          <h3>2. Buat Request Baru</h3>
+          <ul>
+            <li>Klik tab <strong>"New"</strong> atau <strong>"+"</strong> di sebelah tab</li>
+            <li>Atau langsung di kolom URL yang sudah tersedia</li>
+          </ul>
+          
+          <h3>3. Set Method dan URL</h3>
+          <ul>
+            <li>Method: biarkan <strong>GET</strong> (default)</li>
+            <li>URL: ketik <code>https://jsonplaceholder.typicode.com/users</code></li>
+          </ul>
+          
+          <h3>4. Klik Send</h3>
+          <p>Klik tombol biru <strong>"Send"</strong> di sebelah kanan URL.</p>
+          
+          <h3>5. Lihat Response</h3>
+          <p>Di bagian bawah akan muncul response:</p>
+          
+          <pre><code>Status: 200 OK
+Time: 235 ms
+Size: 4.5 KB
+
+[
+  {
+    "id": 1,
+    "name": "Leanne Graham",
+    "username": "Bret",
+    "email": "Sincere@april.biz",
+    "address": {
+      "street": "Kulas Light",
+      "suite": "Apt. 556",
+      "city": "Gwenborough",
+      "zipcode": "92998-3874",
+      "geo": {
+        "lat": "-37.3159",
+        "lng": "81.1496"
+      }
+    },
+    "phone": "1-770-736-8031 x56442",
+    "website": "hildegard.org",
+    "company": {
+      "name": "Romaguera-Crona",
+      "catchPhrase": "Multi-layered client-server neural-net",
+      "bs": "harness real-time e-markets"
+    }
+  },
+  {
+    "id": 2,
+    "name": "Ervin Howell",
+    ...
+  }
+]</code></pre>
+          
+          <h3>Coba Endpoint Lain:</h3>
+          <ol>
+            <li><code>https://jsonplaceholder.typicode.com/users/3</code> - user ID 3</li>
+            <li><code>https://jsonplaceholder.typicode.com/posts</code> - semua postingan</li>
+            <li><code>https://jsonplaceholder.typicode.com/posts/5</code> - postingan ID 5</li>
+            <li><code>https://jsonplaceholder.typicode.com/comments?postId=1</code> - komentar post 1</li>
+            <li><code>https://restcountries.com/v3.1/name/indonesia</code> - data Indonesia</li>
+            <li><code>https://randomuser.me/api/</code> - user random</li>
+          </ol>
+          
+          <p><strong>Amati perbedaan response setiap endpoint!</strong></p>
+        `
+      },
+      {
+        title: "Praktik 2: POST Request di Postman",
+        content: `
+          <p><strong>POST</strong> digunakan untuk mengirim data baru ke server.</p>
+          
+          <h3>Langkah-langkah POST request:</h3>
+          
+          <h3>1. Set Method ke POST</h3>
+          <p>Klik dropdown method (defaultnya GET), pilih <strong>POST</strong>.</p>
+          
+          <h3>2. Masukkan URL</h3>
+          <p><code>https://jsonplaceholder.typicode.com/posts</code></p>
+          
+          <h3>3. Set Headers</h3>
+          <ul>
+            <li>Klik tab <strong>Headers</strong></li>
+            <li>Tambah key: <code>Content-Type</code></li>
+            <li>Value: <code>application/json</code></li>
+            <li>Ini memberitahu server bahwa kita mengirim data dalam format JSON</li>
+          </ul>
+          
+          <h3>4. Isi Body</h3>
+          <ul>
+            <li>Klik tab <strong>Body</strong></li>
+            <li>Pilih <strong>raw</strong></li>
+            <li>Pilih format <strong>JSON</strong> dari dropdown (yang biasanya "Text" diganti "JSON")</li>
+            <li>Ketik data berikut:</li>
+          </ul>
+          
+          <pre><code>{
+  "title": "Belajar Postman",
+  "body": "Ini adalah postingan pertama saya menggunakan Postman",
+  "userId": 1
+}</code></pre>
+          
+          <h3>5. Klik Send</h3>
+          
+          <h3>6. Lihat Response</h3>
+          <p>Server akan mengembalikan data yang kita kirim, plus ID baru:</p>
+          
+          <pre><code>Status: 201 Created
+
+{
+  "title": "Belajar Postman",
+  "body": "Ini adalah postingan pertama saya menggunakan Postman",
+  "userId": 1,
+  "id": 101
+}</code></pre>
+          
+          <p><strong>Penjelasan:</strong></p>
+          <ul>
+            <li>Status 201 = Created (berhasil buat data baru)</li>
+            <li>Server menambahkan ID 101 (karena ini API palsu)</li>
+            <li>Data tidak benar-benar tersimpan di server asli</li>
+          </ul>
+          
+          <h3>Coba POST ke endpoint lain:</h3>
+          <pre><code>URL: https://jsonplaceholder.typicode.com/users
+Body: {
+  "name": "John Doe",
+  "email": "john@example.com",
+  "username": "johndoe"
+}</code></pre>
+        `
+      },
+      {
+        title: "Praktik 3: PUT Request di Postman",
+        content: `
+          <p><strong>PUT</strong> digunakan untuk mengupdate data yang sudah ada.</p>
+          
+          <h3>Langkah-langkah PUT request:</h3>
+          
+          <h3>1. Set Method ke PUT</h3>
+          <p>Pilih <strong>PUT</strong> dari dropdown method.</p>
+          
+          <h3>2. Masukkan URL dengan ID</h3>
+          <p><code>https://jsonplaceholder.typicode.com/posts/1</code></p>
+          <p><small>Ini berarti kita akan mengupdate postingan dengan ID 1</small></p>
+          
+          <h3>3. Set Headers</h3>
+          <ul>
+            <li>Tab Headers</li>
+            <li>Key: <code>Content-Type</code></li>
+            <li>Value: <code>application/json</code></li>
+          </ul>
+          
+          <h3>4. Isi Body dengan Data Lengkap</h3>
+          <p>Untuk PUT, biasanya kita kirim SELURUH data (termasuk yang tidak diubah):</p>
+          
+          <pre><code>{
+  "id": 1,
+  "title": "Judul sudah diupdate dengan PUT",
+  "body": "Isi postingan juga sudah diupdate semua",
+  "userId": 1
+}</code></pre>
+          
+          <h3>5. Klik Send</h3>
+          
+          <h3>6. Lihat Response</h3>
+          <pre><code>{
+  "id": 1,
+  "title": "Judul sudah diupdate dengan PUT",
+  "body": "Isi postingan juga sudah diupdate semua",
+  "userId": 1
+}</code></pre>
+          
+          <p><strong>Perbedaan PUT dan PATCH:</strong></p>
+          <ul>
+            <li><strong>PUT</strong> - Mengganti SELURUH data. Harus kirim semua field.</li>
+            <li><strong>PATCH</strong> - Mengganti SEBAGIAN data. Hanya kirim field yang diubah.</li>
+          </ul>
+          
+          <h3>Contoh PATCH (kalau mau coba):</h3>
+          <pre><code>PATCH https://jsonplaceholder.typicode.com/posts/1
+Body: {
+  "title": "Judul saja yang diupdate"
+}</code></pre>
+        `
+      },
+      {
+        title: "Praktik 4: DELETE Request di Postman",
+        content: `
+          <p><strong>DELETE</strong> digunakan untuk menghapus data.</p>
+          
+          <h3>Langkah-langkah DELETE request:</h3>
+          
+          <h3>1. Set Method ke DELETE</h3>
+          <p>Pilih <strong>DELETE</strong> dari dropdown method.</p>
+          
+          <h3>2. Masukkan URL dengan ID yang akan dihapus</h3>
+          <p><code>https://jsonplaceholder.typicode.com/posts/1</code></p>
+          
+          <h3>3. Tidak perlu Headers khusus</h3>
+          <p>DELETE biasanya tidak perlu headers (kecuali autentikasi).</p>
+          
+          <h3>4. Tidak perlu Body</h3>
+          <p>DELETE biasanya tidak mengirim body.</p>
+          
+          <h3>5. Klik Send</h3>
+          
+          <h3>6. Lihat Response</h3>
+          <p>Response DELETE biasanya kosong atau hanya pesan sukses:</p>
+          
+          <pre><code>Status: 200 OK
+Response: {}  (object kosong)</code></pre>
+          
+          <p>Atau kadang:</p>
+          <pre><code>Status: 204 No Content
+(Response benar-benar kosong)</code></pre>
+          
+          <h3>Ringkasan Semua Method:</h3>
+          <table border="1" cellpadding="8">
+            <tr>
+              <th>Method</th>
+              <th>URL</th>
+              <th>Body</th>
+              <th>Response</th>
+            </tr>
+            <tr>
+              <td>GET</td>
+              <td>/posts/1</td>
+              <td>Tidak</td>
+              <td>Data post ID 1</td>
+            </tr>
+            <tr>
+              <td>POST</td>
+              <td>/posts</td>
+              <td>Data baru</td>
+              <td>Data + ID baru</td>
+            </tr>
+            <tr>
+              <td>PUT</td>
+              <td>/posts/1</td>
+              <td>Data lengkap</td>
+              <td>Data setelah update</td>
+            </tr>
+            <tr>
+              <td>DELETE</td>
+              <td>/posts/1</td>
+              <td>Tidak</td>
+              <td>Kosong / pesan sukses</td>
+            </tr>
+          </table>
+        `
+      },
+      {
+        title: "Fitur Collections di Postman",
+        content: `
+          <p><strong>Collections</strong> adalah fitur untuk menyimpan request-request API agar bisa dipakai lagi nanti.</p>
+          
+          <h3>Kenapa perlu Collections?</h3>
+          <ul>
+            <li>Tidak perlu mengetik URL berulang-ulang</li>
+            <li>Bisa menjalankan semua request sekaligus (Runner)</li>
+            <li>Bisa dibagikan ke tim</li>
+            <li>Bisa diekspor sebagai dokumentasi API</li>
+            <li>Bisa membuat folder untuk mengorganisir request</li>
+          </ul>
+          
+          <h3>Cara membuat Collection:</h3>
+          <ol>
+            <li>Di sidebar kiri, klik tab <strong>Collections</strong></li>
+            <li>Klik tombol <strong>+</strong> atau <strong>"New Collection"</strong></li>
+            <li>Isi form:
+              <ul>
+                <li><strong>Name:</strong> "Belajar API"</li>
+                <li><strong>Description:</strong> (opsional) "Koleksi untuk belajar API"</li>
+              </ul>
+            </li>
+            <li>Klik <strong>Create</strong></li>
+          </ol>
+          
+          <h3>Cara menyimpan request ke Collection:</h3>
+          <ol>
+            <li>Buat request (misal GET users)</li>
+            <li>Klik tombol <strong>Save</strong> (di sebelah kanan Send)</li>
+            <li>Pilih collection <strong>"Belajar API"</strong></li>
+            <li>Beri nama request: <strong>"Ambil Semua User"</strong></li>
+            <li>Klik <strong>Save</strong></li>
+          </ol>
+          
+          <h3>Cara menjalankan semua request di Collection:</h3>
+          <ol>
+            <li>Klik collection "Belajar API"</li>
+            <li>Klik tab <strong>Runner</strong> (atau titik tiga → Run Collection)</li>
+            <li>Klik <strong>Run Belajar API</strong></li>
+            <li>Lihat hasil semua request dijalankan berurutan</li>
+          </ol>
+        `
+      },
+      {
+        title: "Fitur Params di Postman",
+        content: `
+          <p><strong>Params</strong> digunakan untuk menambahkan query parameters ke URL.</p>
+          
+          <h3>Apa itu Query Parameters?</h3>
+          <p>Query parameters adalah data tambahan di URL setelah tanda <code>?</code>. Contoh:</p>
+          <pre><code>https://jsonplaceholder.typicode.com/comments?postId=1&email=test@test.com</code></pre>
+          <p>Di URL di atas:</p>
+          <ul>
+            <li><code>postId=1</code> adalah parameter pertama</li>
+            <li><code>email=test@test.com</code> adalah parameter kedua</li>
+            <li>Parameter dipisah dengan tanda <code>&</code></li>
+          </ul>
+          
+          <h3>Cara menggunakan fitur Params:</h3>
+          <ol>
+            <li>Buat request baru</li>
+            <li>URL: <code>https://jsonplaceholder.typicode.com/comments</code></li>
+            <li>Klik tab <strong>Params</strong> di bawah URL</li>
+            <li>Tambah baris baru:
+              <ul>
+                <li><strong>Key:</strong> postId</li>
+                <li><strong>Value:</strong> 1</li>
+              </ul>
+            </li>
+            <li>Tambah baris lagi:
+              <ul>
+                <li><strong>Key:</strong> email</li>
+                <li><strong>Value:</strong> test@test.com</li>
+              </ul>
+            </li>
+            <li>Lihat URL otomatis berubah menjadi: <code>https://jsonplaceholder.typicode.com/comments?postId=1&email=test@test.com</code></li>
+            <li>Klik <strong>Send</strong></li>
+          </ol>
+          
+          <h3>Keuntungan fitur Params:</h3>
+          <ul>
+            <li>Tidak perlu mengetik URL panjang manual</li>
+            <li>Parameter terstruktur rapi</li>
+            <li>Mudah mengubah nilai parameter</li>
+            <li>Bisa menonaktifkan parameter sementara (uncheck checkbox)</li>
+          </ul>
+          
+          <h3>Contoh latihan params:</h3>
+          <ol>
+            <li><strong>REST Countries:</strong> https://restcountries.com/v3.1/name/indonesia</li>
+            <li><strong>Random User:</strong> https://randomuser.me/api/ dengan params:
+              <ul>
+                <li>results=5</li>
+                <li>gender=female</li>
+                <li>nat=US</li>
+              </ul>
+            </li>
+          </ol>
+        `
+      },
+      {
+        title: "Fitur Headers di Postman",
+        content: `
+          <p><strong>Headers</strong> adalah informasi tambahan yang dikirim bersama request.</p>
+          
+          <h3>Headers yang Sering Digunakan:</h3>
+          <table border="1" cellpadding="8">
+            <tr>
+              <th>Header</th>
+              <th>Kegunaan</th>
+              <th>Contoh Value</th>
+            </tr>
+            <tr>
+              <td><code>Content-Type</code></td>
+              <td>Memberi tahu server format data yang kita kirim</td>
+              <td>application/json</td>
+            </tr>
+            <tr>
+              <td><code>Authorization</code></td>
+              <td>Mengirim token untuk autentikasi</td>
+              <td>Bearer eyJhbGciOiJIUzI1NiIs...</td>
+            </tr>
+            <tr>
+              <td><code>Accept</code></td>
+              <td>Format response yang diinginkan</td>
+              <td>application/json</td>
+            </tr>
+            <tr>
+              <td><code>User-Agent</code></td>
+              <td>Informasi client (browser, aplikasi)</td>
+              <td>PostmanRuntime/7.26.8</td>
+            </tr>
+          </table>
+          
+          <h3>Cara menggunakan fitur Headers:</h3>
+          <ol>
+            <li>Buat request baru (misal POST)</li>
+            <li>Klik tab <strong>Headers</strong> (di bawah URL)</li>
+            <li>Tambah baris baru:
+              <ul>
+                <li><strong>Key:</strong> Content-Type</li>
+                <li><strong>Value:</strong> application/json</li>
+              </ul>
+            </li>
+            <li>Isi Body dengan data JSON</li>
+            <li>Klik Send</li>
+          </ol>
+          
+          <h3>Contoh API yang butuh Authorization header:</h3>
+          <pre><code>Method: GET
+URL: https://api.github.com/user
+Headers:
+  Authorization: token ghp_yourtokenhere</code></pre>
+          
+          <h3>Headers yang otomatis ditambahkan Postman:</h3>
+          <ul>
+            <li><code>User-Agent</code> - PostmanRuntime/7.x.x</li>
+            <li><code>Accept</code> - */*</li>
+            <li><code>Cache-Control</code> - no-cache</li>
+            <li><code>Postman-Token</code> - (random token)</li>
+          </ul>
+          <p>Kamu bisa lihat semua headers ini di Postman Console.</p>
+        `
+      },
+      {
+        title: "Fitur Environments di Postman",
+        content: `
+          <p><strong>Environments</strong> adalah fitur untuk membuat variable yang bisa dipakai di semua request.</p>
+          
+          <h3>Kenapa perlu Environments?</h3>
+          <ul>
+            <li>Biasanya kita punya beberapa server: development, staging, production</li>
+            <li>URL-nya berbeda: localhost, staging-api.com, api.com</li>
+            <li>Dengan environment, kita tinggal ganti variable, tidak perlu ganti semua URL manual</li>
+          </ul>
+          
+          <h3>Cara membuat Environment:</h3>
+          <ol>
+            <li>Klik ikon <strong>Environment</strong> di pojok kanan atas (ikon mata)</li>
+            <li>Klik <strong>Add</strong> atau <strong>Create Environment</strong></li>
+            <li>Isi:
+              <ul>
+                <li><strong>Name:</strong> Development</li>
+                <li><strong>Variable:</strong> base_url</li>
+                <li><strong>Initial Value:</strong> jsonplaceholder.typicode.com</li>
+                <li><strong>Current Value:</strong> jsonplaceholder.typicode.com</li>
+              </ul>
+            </li>
+            <li>Klik <strong>Save</strong></li>
+          </ol>
+          
+          <h3>Cara menggunakan Environment:</h3>
+          <ol>
+            <li>Pilih environment "Development" di dropdown kanan atas</li>
+            <li>Di URL, ketik: <code>https://{{base_url}}/users</code></li>
+            <li>Klik Send</li>
+            <li>Postman akan mengganti {{base_url}} dengan jsonplaceholder.typicode.com</li>
+          </ol>
+          
+          <h3>Contoh environment untuk berbagai stage:</h3>
+          <pre><code>// Environment: Development
+base_url = localhost:3000
+api_key = dev_key_123
+
+// Environment: Staging
+base_url = staging-api.myapp.com
+api_key = staging_key_456
+
+// Environment: Production
+base_url = api.myapp.com
+api_key = prod_key_789</code></pre>
+          
+          <h3>Variable lain yang bisa dibuat:</h3>
+          <ul>
+            <li><code>api_key</code> - untuk menyimpan API key</li>
+            <li><code>token</code> - untuk menyimpan auth token</li>
+            <li><code>user_id</code> - untuk testing dengan user tertentu</li>
+          </ul>
+        `
+      },
+      {
+        title: "Postman Console untuk Debugging",
+        content: `
+          <p><strong>Postman Console</strong> adalah tools untuk melihat detail lengkap request dan response.</p>
+          
+          <h3>Kapan perlu menggunakan Console?</h3>
+          <ul>
+            <li>Request error dan tidak tahu penyebabnya</li>
+            <li>Ingin melihat headers yang dikirim</li>
+            <li>Ingin melihat raw response (sebelum dipretty print)</li>
+            <li>Debugging masalah autentikasi</li>
+          </ul>
+          
+          <h3>Cara membuka Postman Console:</h3>
+          <ul>
+            <li><strong>Menu:</strong> View → Show Postman Console</li>
+            <li><strong>Shortcut:</strong> Ctrl+Alt+C (Windows) / Cmd+Alt+C (Mac)</li>
+            <li><strong>Ikon:</strong> Ikon console di status bar (bawah)</li>
+          </ul>
+          
+          <h3>Yang bisa dilihat di Console:</h3>
+          <pre><code>Request
+├── Method: POST
+├── URL: https://jsonplaceholder.typicode.com/posts
+├── Headers
+│   ├── Content-Type: application/json
+│   ├── User-Agent: PostmanRuntime/7.26.8
+│   └── ...
+├── Body (raw)
+│   └── {"title": "Test", "body": "Test", "userId": 1}
+│
+Response
+├── Status: 201 Created
+├── Headers
+│   ├── Content-Type: application/json; charset=utf-8
+│   └── ...
+├── Body
+│   └── {"id": 101, "title": "Test", ...}</code></pre>
+          
+          <h3>Cara menggunakan Console:</h3>
+          <ol>
+            <li>Buka Console (Ctrl+Alt+C)</li>
+            <li>Lakukan request di Postman</li>
+            <li>Lihat Console untuk detail lengkap</li>
+            <li>Cari tahu masalah jika error</li>
+          </ol>
+        `
+      },
+      {
+        title: "Video: Tutorial Postman untuk Pemula",
+        video: "https://www.youtube.com/embed/VywxIQ2ZXw4",
+        content: `
+          <p>Video tutorial lengkap menggunakan Postman dari dasar hingga mahir.</p>
+        `
+      }
+    ]
+  },
+
+  // =================================================================
+  // TAHAP 3: BANGUN API DENGAN NODE.JS + EXPRESS
+  // =================================================================
+  3: {
+    title: "Bangun API dengan Node.js + Express",
+    slides: [
+      {
+        title: "Persiapan: Install Node.js dan NPM",
+        content: `
+          <p><strong>Node.js</strong> adalah runtime JavaScript di server. <strong>NPM</strong> adalah package manager untuk Node.js.</p>
+          
+          <h3>Langkah instalasi Node.js:</h3>
+          
+          <h4>1. Download Node.js</h4>
+          <p>Buka website: <a href="https://nodejs.org" target="_blank">https://nodejs.org</a></p>
+          <p>Download versi <strong>LTS (Long Term Support)</strong> - yang direkomendasikan untuk kebanyakan user.</p>
+          
+          <h4>2. Install Node.js</h4>
+          <p><strong>Windows:</strong></p>
+          <ul>
+            <li>Jalankan file .msi yang sudah didownload</li>
+            <li>Ikuti petunjuk instalasi (next-next)</li>
+            <li>Pastikan centang "Add to PATH"</li>
+          </ul>
+          
+          <p><strong>Mac:</strong></p>
+          <ul>
+            <li>Jalankan file .pkg</li>
+            <li>Ikuti petunjuk instalasi</li>
+          </ul>
+          
+          <h4>3. Cek instalasi</h4>
+          <p>Buka Terminal / CMD / PowerShell, ketik:</p>
+          <pre><code>node -v
+npm -v</code></pre>
+          
+          <p>Jika muncul versi (contoh: v18.12.0 dan 8.19.0), instalasi berhasil!</p>
+          
+          <h4>4. Buat folder proyek</h4>
+          <pre><code>mkdir todo-api-express
+cd todo-api-express</code></pre>
+          
+          <h4>5. Inisialisasi proyek Node.js</h4>
+          <pre><code>npm init -y</code></pre>
+          <p>Perintah ini akan membuat file <code>package.json</code> dengan setting default.</p>
+          
+          <h4>6. Install Express</h4>
+          <pre><code>npm install express</code></pre>
+          <p>Express adalah framework untuk membuat API dengan mudah.</p>
+          
+          <p>Setelah semua langkah selesai, struktur folder akan seperti ini:</p>
+          <pre><code>todo-api-express/
+├── node_modules/      (folder dependencies)
+├── package.json       (file konfigurasi)
+├── package-lock.json  (lock file)
+└── server.js          (akan kita buat)</code></pre>
+        `
+      },
+      {
+        title: "Membuat Server Express Pertama",
+        content: `
+          <p>Buat file <code>server.js</code> di folder proyek.</p>
+          
+          <h3>Kode server dasar:</h3>
+          <pre><code>// server.js - Server Express pertama
+const express = require('express');
+
+// Buat aplikasi express
+const app = express();
+
+// Tentukan port
+const PORT = 3000;
+
+// Middleware untuk membaca JSON dari request body
+app.use(express.json());
+
+// Route / endpoint (halaman utama)
+app.get('/', (req, res) => {
+  res.send('Halo Dunia! API Todo ku berjalan!');
+});
+
+// Jalankan server
+app.listen(PORT, () => {
+  console.log(\`🚀 Server berjalan di http://localhost:\${PORT}\`);
+});</code></pre>
+          
+          <h3>Penjelasan kode:</h3>
+          <ul>
+            <li><code>require('express')</code> - memanggil library express yang sudah diinstall</li>
+            <li><code>express()</code> - membuat instance aplikasi express</li>
+            <li><code>app.use(express.json())</code> - middleware agar bisa membaca JSON dari request body</li>
+            <li><code>app.get()</code> - membuat endpoint untuk method GET</li>
+            <li><code>app.listen()</code> - menjalankan server di port tertentu</li>
+          </ul>
+          
+          <h3>Jalankan server:</h3>
+          <pre><code>node server.js</code></pre>
+          
+          <p>Jika berhasil, akan muncul:</p>
+          <pre><code>🚀 Server berjalan di http://localhost:3000</code></pre>
+          
+          <h3>Testing di browser:</h3>
+          <p>Buka browser, ketik: <code>http://localhost:3000</code></p>
+          <p>Akan muncul teks: "Halo Dunia! API Todo ku berjalan!"</p>
+          
+          <h3>Testing di Postman:</h3>
+          <ol>
+            <li>Buka Postman</li>
+            <li>Method: GET</li>
+            <li>URL: <code>http://localhost:3000</code></li>
+            <li>Klik Send</li>
+            <li>Response: "Halo Dunia! API Todo ku berjalan!"</li>
+          </ol>
+          
+          <p><strong>Catatan:</strong> Server harus berjalan terus. Untuk menghentikan server, tekan <strong>Ctrl+C</strong> di terminal.</p>
+        `
+      },
+      {
+        title: "Membuat Data Sementara (In-Memory Database)",
+        content: `
+          <p>Kita akan menggunakan <strong>array</strong> sebagai database sementara. Nanti data akan hilang jika server dimatikan.</p>
+          
+          <h3>Tambahkan kode ini di server.js:</h3>
+          <pre><code>// Data sementara (in-memory database)
+let todos = [
+  { id: 1, task: "Belajar Node.js", completed: false },
+  { id: 2, task: "Bikin API dengan Express", completed: false },
+  { id: 3, task: "Testing di Postman", completed: true },
+  { id: 4, task: "Buat frontend sederhana", completed: false }
+];
+
+// Untuk generate ID baru otomatis
+let nextId = 5;</code></pre>
+          
+          <h3>Penjelasan:</h3>
+          <ul>
+            <li><code>todos</code> - array yang berisi data todo</li>
+            <li>Setiap todo punya 3 properti:
+              <ul>
+                <li><code>id</code> - nomor unik (integer)</li>
+                <li><code>task</code> - deskripsi tugas (string)</li>
+                <li><code>completed</code> - status selesai/belum (boolean)</li>
+              </ul>
+            </li>
+            <li><code>nextId</code> - variabel untuk menghitung ID berikutnya</li>
+          </ul>
+          
+          <h3>File server.js sementara (setelah ditambah data):</h3>
+          <pre><code>const express = require('express');
+const app = express();
+const PORT = 3000;
+
+app.use(express.json());
+
+// Data sementara
+let todos = [
+  { id: 1, task: "Belajar Node.js", completed: false },
+  { id: 2, task: "Bikin API dengan Express", completed: false },
+  { id: 3, task: "Testing di Postman", completed: true },
+  { id: 4, task: "Buat frontend sederhana", completed: false }
+];
+let nextId = 5;
+
+app.get('/', (req, res) => {
+  res.send('Halo Dunia! API Todo ku berjalan!');
+});
+
+// Nanti endpoint-endpoint todo akan ditambahkan di sini
+
+app.listen(PORT, () => {
+  console.log(\`🚀 Server berjalan di http://localhost:\${PORT}\`);
+});</code></pre>
+          
+          <p><strong>Catatan:</strong> Data ini hanya tersimpan di memory. Jika server restart, data akan kembali ke nilai awal.</p>
+        `
+      },
+      {
+        title: "Endpoint GET Semua Todo",
+        content: `
+          <p>Tambahkan endpoint untuk mengambil semua todo.</p>
+          
+          <h3>Kode endpoint:</h3>
+          <pre><code>// GET /todos - Ambil semua todo
+app.get('/todos', (req, res) => {
+  res.json(todos);
+});</code></pre>
+          
+          <h3>Penjelasan detail:</h3>
+          <ul>
+            <li><code>app.get()</code> - membuat endpoint dengan method GET</li>
+            <li><code>'/todos'</code> - path URL (endpoint)</li>
+            <li><code>(req, res) => {}</code> - callback function yang dijalankan saat endpoint dipanggil
+              <ul>
+                <li><code>req</code> = object request (berisi data dari client)</li>
+                <li><code>res</code> = object response (untuk mengirim balasan)</li>
+              </ul>
+            </li>
+            <li><code>res.json(todos)</code> - mengirim response dalam format JSON</li>
+          </ul>
+          
+          <h3>Testing di Postman:</h3>
+          <ol>
+            <li>Buka Postman</li>
+            <li>Method: <strong>GET</strong></li>
+            <li>URL: <code>http://localhost:3000/todos</code></li>
+            <li>Klik <strong>Send</strong></li>
+          </ol>
+          
+          <h3>Response yang diharapkan:</h3>
+          <pre><code>[
+  {
+    "id": 1,
+    "task": "Belajar Node.js",
+    "completed": false
+  },
+  {
+    "id": 2,
+    "task": "Bikin API dengan Express",
+    "completed": false
+  },
+  {
+    "id": 3,
+    "task": "Testing di Postman",
+    "completed": true
+  },
+  {
+    "id": 4,
+    "task": "Buat frontend sederhana",
+    "completed": false
+  }
+]</code></pre>
+          
+          <p><strong>Status code:</strong> 200 OK</p>
+        `
+      },
+      {
+        title: "Endpoint GET Todo by ID",
+        content: `
+          <p>Tambahkan endpoint untuk mengambil satu todo berdasarkan ID.</p>
+          
+          <h3>Kode endpoint:</h3>
+          <pre><code>// GET /todos/:id - Ambil todo berdasarkan ID
+app.get('/todos/:id', (req, res) => {
+  // Ambil ID dari URL, ubah ke integer
+  const id = parseInt(req.params.id);
+  
+  // Cari todo dengan ID yang cocok
+  const todo = todos.find(t => t.id === id);
+  
+  // Jika todo tidak ditemukan
+  if (!todo) {
+    return res.status(404).json({ 
+      error: "Todo tidak ditemukan" 
+    });
+  }
+  
+  // Kirim todo yang ditemukan
+  res.json(todo);
+});</code></pre>
+          
+          <h3>Penjelasan detail:</h3>
+          <ul>
+            <li><code>':id'</code> - parameter dinamis di URL. Bisa diisi angka berapa saja</li>
+            <li><code>req.params.id</code> - mengambil nilai id dari URL (masih string)</li>
+            <li><code>parseInt()</code> - mengubah string ke integer/angka</li>
+            <li><code>todos.find()</code> - mencari elemen di array yang memenuhi kondisi
+              <ul>
+                <li><code>t => t.id === id</code> - arrow function: cari t dimana t.id sama dengan id</li>
+              </ul>
+            </li>
+            <li><code>if (!todo)</code> - jika todo tidak ditemukan (undefined)</li>
+            <li><code>res.status(404)</code> - mengirim response dengan status code 404</li>
+            <li><code>return</code> - menghentikan eksekusi fungsi</li>
+          </ul>
+          
+          <h3>Testing di Postman:</h3>
+          
+          <p><strong>Test 1 - ID yang ada:</strong></p>
+          <ul>
+            <li>Method: GET</li>
+            <li>URL: <code>http://localhost:3000/todos/2</code></li>
+            <li>Response:</li>
+          </ul>
+          <pre><code>{
+  "id": 2,
+  "task": "Bikin API dengan Express",
+  "completed": false
+}</code></pre>
+          
+          <p><strong>Test 2 - ID yang tidak ada:</strong></p>
+          <ul>
+            <li>URL: <code>http://localhost:3000/todos/99</code></li>
+            <li>Response (status 404):</li>
+          </ul>
+          <pre><code>{
+  "error": "Todo tidak ditemukan"
+}</code></pre>
+        `
+      },
+      {
+        title: "Endpoint POST Tambah Todo Baru",
+        content: `
+          <p>Tambahkan endpoint untuk menambah todo baru.</p>
+          
+          <h3>Kode endpoint:</h3>
+          <pre><code>// POST /todos - Tambah todo baru
+app.post('/todos', (req, res) => {
+  // Ambil data dari request body
+  const { task } = req.body;
+  
+  // Validasi: task wajib ada
+  if (!task) {
+    return res.status(400).json({ 
+      error: "Task tidak boleh kosong" 
+    });
+  }
+  
+  // Buat object todo baru
+  const newTodo = {
+    id: nextId++,      // gunakan ID sekarang, lalu increment
+    task: task,        // task dari request
+    completed: false   // default: belum selesai
+  };
+  
+  // Tambahkan ke array todos
+  todos.push(newTodo);
+  
+  // Kirim response dengan status 201 (Created)
+  res.status(201).json(newTodo);
+});</code></pre>
+          
+          <h3>Penjelasan detail:</h3>
+          <ul>
+            <li><code>req.body</code> - mengambil data JSON yang dikirim client</li>
+            <li><code>{ task }</code> - destructuring, mengambil properti task dari object</li>
+            <li><code>if (!task)</code> - validasi: jika task kosong/undefined/null</li>
+            <li><code>status(400)</code> - Bad Request, error dari client</li>
+            <li><code>nextId++</code> - menggunakan nilai nextId sekarang, lalu menambah 1 untuk next</li>
+            <li><code>todos.push()</code> - menambah elemen baru ke array</li>
+            <li><code>status(201)</code> - Created, berhasil membuat resource baru</li>
+          </ul>
+          
+          <h3>Testing di Postman:</h3>
+          <ol>
+            <li>Method: <strong>POST</strong></li>
+            <li>URL: <code>http://localhost:3000/todos</code></li>
+            <li>Tab <strong>Headers</strong>: 
+              <ul>
+                <li>Key: Content-Type</li>
+                <li>Value: application/json</li>
+              </ul>
+            </li>
+            <li>Tab <strong>Body</strong> → raw → JSON</li>
+            <li>Ketik:
+              <pre><code>{
+  "task": "Belajar Express"
+}</code></pre>
+            </li>
+            <li>Klik <strong>Send</strong></li>
+          </ol>
+          
+          <h3>Response:</h3>
+          <pre><code>{
+  "id": 5,
+  "task": "Belajar Express",
+  "completed": false
+}</code></pre>
+          
+          <p><strong>Coba GET /todos lagi</strong> - akan melihat todo baru dengan ID 5.</p>
+        `
+      },
+      {
+        title: "Endpoint PUT Update Todo",
+        content: `
+          <p>Tambahkan endpoint untuk mengupdate todo yang sudah ada.</p>
+          
+          <h3>Kode endpoint:</h3>
+          <pre><code>// PUT /todos/:id - Update todo
+app.put('/todos/:id', (req, res) => {
+  // Ambil ID dari URL
+  const id = parseInt(req.params.id);
+  
+  // Ambil data dari request body
+  const { task, completed } = req.body;
+  
+  // Cari todo berdasarkan ID
+  const todo = todos.find(t => t.id === id);
+  
+  // Jika tidak ditemukan
+  if (!todo) {
+    return res.status(404).json({ 
+      error: "Todo tidak ditemukan" 
+    });
+  }
+  
+  // Update field yang dikirim (kalau ada)
+  if (task !== undefined) {
+    todo.task = task;
+  }
+  
+  if (completed !== undefined) {
+    todo.completed = completed;
+  }
+  
+  // Kirim response
+  res.json(todo);
+});</code></pre>
+          
+          <h3>Penjelasan detail:</h3>
+          <ul>
+            <li><code>task !== undefined</code> - cek apakah task dikirim dalam request</li>
+            <li><code>completed !== undefined</code> - cek apakah completed dikirim</li>
+            <li>Kita hanya update field yang dikirim, sisanya tetap</li>
+            <li>Ini sebenernya lebih mirip PATCH daripada PUT, tapi untuk contoh ini cukup</li>
+          </ul>
+          
+          <h3>Testing di Postman:</h3>
+          <ol>
+            <li>Method: <strong>PUT</strong></li>
+            <li>URL: <code>http://localhost:3000/todos/1</code></li>
+            <li>Headers: Content-Type: application/json</li>
+            <li>Body (raw JSON):
+              <pre><code>{
+  "task": "Sudah belajar Node.js",
+  "completed": true
+}</code></pre>
+            </li>
+            <li>Klik <strong>Send</strong></li>
+          </ol>
+          
+          <h3>Response:</h3>
+          <pre><code>{
+  "id": 1,
+  "task": "Sudah belajar Node.js",
+  "completed": true
+}</code></pre>
+          
+          <p><strong>Coba update sebagian:</strong></p>
+          <pre><code>PUT /todos/2
+Body: { "completed": true }
+
+Response: {
+  "id": 2,
+  "task": "Bikin API dengan Express",  // task tidak berubah
+  "completed": true                     // completed berubah
+}</code></pre>
+        `
+      },
+      {
+        title: "Endpoint DELETE Hapus Todo",
+        content: `
+          <p>Tambahkan endpoint untuk menghapus todo.</p>
+          
+          <h3>Kode endpoint:</h3>
+          <pre><code>// DELETE /todos/:id - Hapus todo
+app.delete('/todos/:id', (req, res) => {
+  // Ambil ID dari URL
+  const id = parseInt(req.params.id);
+  
+  // Cari index (posisi) todo di array
+  const index = todos.findIndex(t => t.id === id);
+  
+  // Jika tidak ditemukan (index = -1)
+  if (index === -1) {
+    return res.status(404).json({ 
+      error: "Todo tidak ditemukan" 
+    });
+  }
+  
+  // Hapus dari array
+  todos.splice(index, 1);
+  
+  // Kirim response sukses
+  res.json({ 
+    message: "Todo berhasil dihapus" 
+  });
+});</code></pre>
+          
+          <h3>Penjelasan detail:</h3>
+          <ul>
+            <li><code>findIndex()</code> - mencari index/posisi elemen di array
+              <ul>
+                <li>Mengembalikan index jika ditemukan (0,1,2,...)</li>
+                <li>Mengembalikan -1 jika tidak ditemukan</li>
+              </ul>
+            </li>
+            <li><code>index === -1</code> - artinya todo tidak ditemukan</li>
+            <li><code>splice(index, 1)</code> - menghapus 1 elemen dari array mulai dari index</li>
+          </ul>
+          
+          <h3>Testing di Postman:</h3>
+          
+          <p><strong>Test 1 - Hapus todo yang ada:</strong></p>
+          <ol>
+            <li>Method: <strong>DELETE</strong></li>
+            <li>URL: <code>http://localhost:3000/todos/3</code></li>
+            <li>Klik <strong>Send</strong></li>
+          </ol>
+          <p>Response:</p>
+          <pre><code>{
+  "message": "Todo berhasil dihapus"
+}</code></pre>
+          
+          <p><strong>Test 2 - Cek apakah sudah terhapus:</strong></p>
+          <ul>
+            <li>GET <code>http://localhost:3000/todos</code> - todo ID 3 sudah tidak ada</li>
+          </ul>
+          
+          <p><strong>Test 3 - Hapus todo yang tidak ada:</strong></p>
+          <ul>
+            <li>DELETE <code>http://localhost:3000/todos/99</code></li>
+            <li>Response (404):</li>
+          </ul>
+          <pre><code>{
+  "error": "Todo tidak ditemukan"
+}</code></pre>
+        `
+      },
+      {
+        title: "File server.js Lengkap (Node.js + Express)",
+        content: `
+          <p>Berikut file <code>server.js</code> lengkap untuk Todo API:</p>
+          
+          <pre><code>// server.js - Todo API dengan Express
+const express = require('express');
+const app = express();
+const PORT = 3000;
+
+// Middleware
+app.use(express.json());
+
+// Data sementara
+let todos = [
+  { id: 1, task: "Belajar Node.js", completed: false },
+  { id: 2, task: "Bikin API dengan Express", completed: false },
+  { id: 3, task: "Testing di Postman", completed: true },
+  { id: 4, task: "Buat frontend sederhana", completed: false }
+];
+let nextId = 5;
+
+// Route home
+app.get('/', (req, res) => {
+  res.send('Todo API berjalan!');
+});
+
+// ============= ENDPOINT TODO =============
+
+// GET semua todo
+app.get('/todos', (req, res) => {
+  res.json(todos);
+});
+
+// GET todo by ID
+app.get('/todos/:id', (req, res) => {
+  const id = parseInt(req.params.id);
+  const todo = todos.find(t => t.id === id);
+  
+  if (!todo) {
+    return res.status(404).json({ error: "Todo tidak ditemukan" });
+  }
+  
+  res.json(todo);
+});
+
+// POST todo baru
+app.post('/todos', (req, res) => {
+  const { task } = req.body;
+  
+  if (!task) {
+    return res.status(400).json({ error: "Task tidak boleh kosong" });
+  }
+  
+  const newTodo = {
+    id: nextId++,
+    task: task,
+    completed: false
+  };
+  
+  todos.push(newTodo);
+  res.status(201).json(newTodo);
+});
+
+// PUT update todo
+app.put('/todos/:id', (req, res) => {
+  const id = parseInt(req.params.id);
+  const { task, completed } = req.body;
+  
+  const todo = todos.find(t => t.id === id);
+  
+  if (!todo) {
+    return res.status(404).json({ error: "Todo tidak ditemukan" });
+  }
+  
+  if (task !== undefined) {
+    todo.task = task;
+  }
+  
+  if (completed !== undefined) {
+    todo.completed = completed;
+  }
+  
+  res.json(todo);
+});
+
+// DELETE hapus todo
+app.delete('/todos/:id', (req, res) => {
+  const id = parseInt(req.params.id);
+  const index = todos.findIndex(t => t.id === id);
+  
+  if (index === -1) {
+    return res.status(404).json({ error: "Todo tidak ditemukan" });
+  }
+  
+  todos.splice(index, 1);
+  res.json({ message: "Todo berhasil dihapus" });
+});
+
+// Jalankan server
+app.listen(PORT, () => {
+  console.log(\`🚀 Server berjalan di http://localhost:\${PORT}\`);
+});</code></pre>
+          
+          <h3>Cara menjalankan:</h3>
+          <pre><code>node server.js</code></pre>
+          
+          <h3>Testing semua endpoint di Postman:</h3>
+          <table border="1" cellpadding="5">
+            <tr>
+              <th>Method</th>
+              <th>URL</th>
+              <th>Body (JSON)</th>
+            </tr>
+            <tr>
+              <td>GET</td>
+              <td>http://localhost:3000/todos</td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td>GET</td>
+              <td>http://localhost:3000/todos/2</td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td>POST</td>
+              <td>http://localhost:3000/todos</td>
+              <td>{"task": "Belajar Express"}</td>
+            </tr>
+            <tr>
+              <td>PUT</td>
+              <td>http://localhost:3000/todos/1</td>
+              <td>{"task": "Update", "completed": true}</td>
+            </tr>
+            <tr>
+              <td>DELETE</td>
+              <td>http://localhost:3000/todos/3</td>
+              <td>-</td>
+            </tr>
+          </table>
+        `
+      },
+      {
+        title: "Video: Tutorial Express API",
+        video: "https://www.youtube.com/embed/Lr9WUkeYSA8",
+        content: `
+          <p>Video tutorial membuat REST API dengan Node.js dan Express.</p>
+        `
+      }
+    ]
+  },
+
+  // =================================================================
+  // TAHAP 4: BANGUN API DENGAN PHP LARAVEL
+  // =================================================================
+  4: {
+    title: "Bangun API dengan PHP Laravel",
+    slides: [
+      {
+        title: "Persiapan: Install PHP, Composer, dan Laravel",
+        content: `
+          <p><strong>Laravel</strong> adalah framework PHP paling populer untuk membuat web dan API.</p>
+          
+          <h3>Yang perlu diinstall:</h3>
+          <ul>
+            <li><strong>PHP</strong> - bahasa pemrograman (minimal PHP 8.1)</li>
+            <li><strong>Composer</strong> - package manager untuk PHP</li>
+            <li><strong>Laravel</strong> - framework</li>
+          </ul>
+          
+          <h3>Cara termudah: Laravel Herd (Windows/Mac)</h3>
+          <p><strong>Laravel Herd</strong> adalah aplikasi all-in-one yang menginstall PHP, Composer, dan Laravel sekaligus.</p>
+          
+          <h4>Langkah instalasi Laravel Herd:</h4>
+          <ol>
+            <li>Buka <a href="https://herd.laravel.com" target="_blank">https://herd.laravel.com</a></li>
+            <li>Download sesuai OS (Windows atau Mac)</li>
+            <li>Install seperti biasa (next-next)</li>
+            <li>Jalankan Herd</li>
+            <li>Selesai! PHP, Composer, dan Laravel sudah terinstall</li>
+          </ol>
+          
+          <h3>Atau install manual:</h3>
+          
+          <h4>Install PHP:</h4>
+          <p><strong>Windows:</strong> Download dari <a href="https://windows.php.net/download" target="_blank">windows.php.net</a></p>
+          <p><strong>Mac:</strong> <code>brew install php</code></p>
+          <p><strong>Linux:</strong> <code>sudo apt install php php-cli php-mbstring php-xml php-bcmath</code></p>
+          
+          <h4>Install Composer:</h4>
+          <p>Download dari <a href="https://getcomposer.org/download" target="_blank">getcomposer.org</a></p>
+          
+          <h4>Install Laravel:</h4>
+          <pre><code>composer global require laravel/installer</code></pre>
+          
+          <h3>Cek instalasi:</h3>
+          <p>Buka terminal/CMD, ketik:</p>
+          <pre><code>php -v
+composer -V
+laravel -v</code></pre>
+          
+          <p>Jika semua muncul versi, instalasi berhasil!</p>
+        `
+      },
+      {
+        title: "Membuat Proyek Laravel Baru",
+        content: `
+          <p><strong>Langkah membuat proyek Laravel baru:</strong></p>
+          
+          <h3>1. Buat proyek baru</h3>
+          <pre><code>laravel new todo-api-laravel</code></pre>
+          
+          <p>Atau pakai composer:</p>
+          <pre><code>composer create-project laravel/laravel todo-api-laravel</code></pre>
+          
+          <h3>2. Masuk ke folder proyek</h3>
+          <pre><code>cd todo-api-laravel</code></pre>
+          
+          <h3>3. Setup database (pilih SQLite - paling mudah)</h3>
+          <p>Saat proses, akan ditanya:</p>
+          <ul>
+            <li><strong>Starter Kit:</strong> pilih <strong>None</strong> (kita buat API saja)</li>
+            <li><strong>Database:</strong> pilih <strong>SQLite</strong> (tidak perlu install database server)</li>
+            <li><strong>Default:</strong> Yes untuk npm install (tidak terlalu penting untuk API)</li>
+          </ul>
+          
+          <h3>4. Struktur folder Laravel</h3>
+          <pre><code>todo-api-laravel/
+├── app/               # Tempat logic aplikasi (Models, Controllers)
+├── bootstrap/         # File bootstrap
+├── config/            # File konfigurasi
+├── database/          # Migration, seeder, factory
+├── public/            # Public folder (index.php)
+├── resources/         # Views, assets
+├── routes/            # File routes (web.php, api.php)
+├── storage/           # File upload, logs
+├── tests/             # Unit tests
+├── .env               # Environment configuration
+├── artisan            # Command line tool
+└── composer.json      # Dependencies</code></pre>
+          
+          <h3>5. Jalankan server</h3>
+          <pre><code>php artisan serve</code></pre>
+          <p>Atau</p>
+          <pre><code>composer run dev</code></pre>
+          
+          <p>Buka browser: <code>http://localhost:8000</code></p>
+          <p>Akan muncul halaman selamat datang Laravel.</p>
+        `
+      },
+      {
+        title: "Membuat Migration untuk Tabel Todos",
+        content: `
+          <p><strong>Migration</strong> adalah file untuk membuat/mengubah struktur database.</p>
+          
+          <h3>1. Buat migration</h3>
+          <pre><code>php artisan make:migration create_todos_table</code></pre>
+          
+          <p>File migration akan dibuat di <code>database/migrations/xxxx_xx_xx_create_todos_table.php</code></p>
+          
+          <h3>2. Edit file migration</h3>
+          <p>Buka file migration tersebut, edit menjadi:</p>
+          
+          <pre><code>&lt;?php
+// database/migrations/[timestamp]_create_todos_table.php
+
+use Illuminate\\Database\\Migrations\\Migration;
+use Illuminate\\Database\\Schema\\Blueprint;
+use Illuminate\\Support\\Facades\\Schema;
+
+return new class extends Migration
+{
+    /**
+     * Run the migrations.
+     */
+    public function up(): void
+    {
+        Schema::create('todos', function (Blueprint $table) {
+            $table->id();                     // Primary key auto increment
+            $table->string('task');            // Kolom task (varchar)
+            $table->boolean('completed')->default(false); // Boolean dengan default false
+            $table->timestamps();               // Kolom created_at dan updated_at
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     */
+    public function down(): void
+    {
+        Schema::dropIfExists('todos');
+    }
+};</code></pre>
+          
+          <h3>3. Jalankan migration</h3>
+          <pre><code>php artisan migrate</code></pre>
+          
+          <p>Jika berhasil, akan muncul pesan:</p>
+          <pre><code>Migration table created successfully.
+Migrating: [timestamp]_create_todos_table
+Migrated:  [timestamp]_create_todos_table</code></pre>
+          
+          <h3>4. Cek database</h3>
+          <p>File database SQLite ada di <code>database/database.sqlite</code></p>
+          <p>Bisa dibuka dengan tools seperti DB Browser for SQLite.</p>
+        `
+      },
+      {
+        title: "Membuat Model Todo",
+        content: `
+          <p><strong>Model</strong> adalah representasi tabel database di kode PHP.</p>
+          
+          <h3>1. Buat model</h3>
+          <pre><code>php artisan make:model Todo</code></pre>
+          
+          <p>File model akan dibuat di <code>app/Models/Todo.php</code></p>
+          
+          <h3>2. Edit file model</h3>
+          <pre><code>&lt;?php
+// app/Models/Todo.php
+
+namespace App\\Models;
+
+use Illuminate\\Database\\Eloquent\\Factories\\HasFactory;
+use Illuminate\\Database\\Eloquent\\Model;
+
+class Todo extends Model
+{
+    use HasFactory;
+
+    /**
+     * Nama tabel (opsional, Laravel otomatis pakai plural dari model)
+     * protected $table = 'todos';
+     */
+
+    /**
+     * Field yang boleh diisi (mass assignment)
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'task',
+        'completed'
+    ];
+
+    /**
+     * Field yang harus di-cast ke tipe data tertentu
+     *
+     * @var array
+     */
+    protected $casts = [
+        'completed' => 'boolean',
+    ];
+}</code></pre>
+          
+          <h3>Penjelasan:</h3>
+          <ul>
+            <li><code>$fillable</code> - field yang boleh diisi melalui method <code>create()</code> atau <code>update()</code></li>
+            <li><code>$casts</code> - mengubah tipe data otomatis
+              <ul>
+                <li><code>'completed' => 'boolean'</code> - field completed akan otomatis jadi boolean (true/false)</li>
+              </ul>
+            </li>
+            <li>Laravel otomatis mengasumsikan tabel bernama <code>todos</code> (plural dari model)</li>
+            <li>Laravel otomatis mengelola <code>created_at</code> dan <code>updated_at</code></li>
+          </ul>
+          
+          <h3>3. Testing model di terminal (Tinker)</h3>
+          <p>Laravel punya tools untuk testing interaktif:</p>
+          <pre><code>php artisan tinker</code></pre>
+          
+          <p>Di dalam tinker, coba:</p>
+          <pre><code>>>> use App\\Models\\Todo;
+>>> $todo = new Todo();
+>>> $todo->task = "Belajar Laravel";
+>>> $todo->save();
+>>> Todo::all();</code></pre>
+        `
+      },
+      {
+        title: "Membuat Controller untuk API",
+        content: `
+          <p><strong>Controller</strong> adalah tempat logic untuk menangani request.</p>
+          
+          <h3>1. Buat controller</h3>
+          <pre><code>php artisan make:controller Api/TodoController --api</code></pre>
+          
+          <p>Penjelasan:</p>
+          <ul>
+            <li><code>Api/TodoController</code> - akan membuat folder Api di dalam Controllers</li>
+            <li><code>--api</code> - membuat method yang biasa dipakai untuk API (index, show, store, update, destroy)</li>
+          </ul>
+          
+          <p>File controller akan dibuat di <code>app/Http/Controllers/Api/TodoController.php</code></p>
+          
+          <h3>2. Buka file controller (awalnya masih kosong)</h3>
+          <pre><code>&lt;?php
+// app/Http/Controllers/Api/TodoController.php
+
+namespace App\\Http\\Controllers\\Api;
+
+use App\\Http\\Controllers\\Controller;
+use Illuminate\\Http\\Request;
+
+class TodoController extends Controller
+{
+    /**
+     * GET /todos - Ambil semua todo
+     */
+    public function index()
+    {
+        // Nanti diisi
+    }
+
+    /**
+     * POST /todos - Tambah todo baru
+     */
+    public function store(Request $request)
+    {
+        // Nanti diisi
+    }
+
+    /**
+     * GET /todos/{id} - Ambil satu todo
+     */
+    public function show(string $id)
+    {
+        // Nanti diisi
+    }
+
+    /**
+     * PUT/PATCH /todos/{id} - Update todo
+     */
+    public function update(Request $request, string $id)
+    {
+        // Nanti diisi
+    }
+
+    /**
+     * DELETE /todos/{id} - Hapus todo
+     */
+    public function destroy(string $id)
+    {
+        // Nanti diisi
+    }
+}</code></pre>
+        `
+      },
+      {
+        title: "Controller: Method Index (GET Semua Todo)",
+        content: `
+          <p><strong>Method index</strong> digunakan untuk mengambil semua data todo.</p>
+          
+          <h3>Kode untuk method index:</h3>
+          <pre><code>/**
+ * GET /todos - Ambil semua todo
+ */
+public function index()
+{
+    // Ambil semua todo dari database
+    $todos = Todo::all();
+    
+    // Return sebagai JSON
+    return response()->json($todos);
+}</code></pre>
+          
+          <h3>Penjelasan:</h3>
+          <ul>
+            <li><code>Todo::all()</code> - query untuk mengambil semua record dari tabel todos</li>
+            <li><code>response()->json()</code> - helper Laravel untuk mengirim response JSON</li>
+            <li>Status code default: 200 OK</li>
+          </ul>
+          
+          <h3>Jangan lupa import model di bagian atas:</h3>
+          <pre><code>use App\\Models\\Todo;</code></pre>
+          
+          <h3>File controller sementara:</h3>
+          <pre><code>&lt;?php
+namespace App\\Http\\Controllers\\Api;
+
+use App\\Http\\Controllers\\Controller;
+use App\\Models\\Todo; // Import model
+use Illuminate\\Http\\Request;
+
+class TodoController extends Controller
+{
+    public function index()
+    {
+        $todos = Todo::all();
+        return response()->json($todos);
+    }
+
+    // Method lainnya masih kosong
+}</code></pre>
+        `
+      },
+      {
+        title: "Controller: Method Show (GET Todo by ID)",
+        content: `
+          <p><strong>Method show</strong> digunakan untuk mengambil satu todo berdasarkan ID.</p>
+          
+          <h3>Kode untuk method show:</h3>
+          <pre><code>/**
+ * GET /todos/{id} - Ambil satu todo
+ */
+public function show(string $id)
+{
+    // Cari todo berdasarkan ID
+    $todo = Todo::find($id);
+    
+    // Jika tidak ditemukan
+    if (!$todo) {
+        return response()->json([
+            'error' => 'Todo tidak ditemukan'
+        ], 404);
+    }
+    
+    // Jika ditemukan
+    return response()->json($todo);
+}</code></pre>
+          
+          <h3>Penjelasan:</h3>
+          <ul>
+            <li><code>Todo::find($id)</code> - mencari record berdasarkan primary key (id)</li>
+            <li><code>if (!$todo)</code> - jika todo null (tidak ditemukan)</li>
+            <li><code>return response()->json([...], 404)</code> - mengirim JSON dengan status 404</li>
+          </ul>
+          
+          <h3>Cara kerja find():</h3>
+          <ul>
+            <li>Jika ID ditemukan: return object Todo</li>
+            <li>Jika ID tidak ditemukan: return null</li>
+          </ul>
+          
+          <h3>Testing di Postman nanti setelah route dibuat:</h3>
+          <ul>
+            <li>GET <code>http://localhost:8000/api/todos/1</code></li>
+            <li>GET <code>http://localhost:8000/api/todos/99</code> (harusnya 404)</li>
+          </ul>
+        `
+      },
+      {
+        title: "Controller: Method Store (POST Todo Baru)",
+        content: `
+          <p><strong>Method store</strong> digunakan untuk menambah todo baru.</p>
+          
+          <h3>Kode untuk method store:</h3>
+          <pre><code>/**
+ * POST /todos - Tambah todo baru
+ */
+public function store(Request $request)
+{
+    // Validasi input
+    $request->validate([
+        'task' => 'required|string|max:255'
+    ]);
+
+    // Buat todo baru
+    $todo = Todo::create([
+        'task' => $request->task,
+        'completed' => false
+    ]);
+
+    // Return dengan status 201 Created
+    return response()->json($todo, 201);
+}</code></pre>
+          
+          <h3>Penjelasan:</h3>
+          <ul>
+            <li><code>$request->validate()</code> - validasi input otomatis
+              <ul>
+                <li><code>required</code> - field wajib ada</li>
+                <li><code>string</code> - harus string</li>
+                <li><code>max:255</code> - maksimal 255 karakter</li>
+              </ul>
+            </li>
+            <li><code>Todo::create()</code> - membuat record baru di database</li>
+            <li><code>$request->task</code> - mengambil input 'task' dari request</li>
+            <li><code>201</code> - status code Created</li>
+          </ul>
+          
+          <h3>Jika validasi gagal:</h3>
+          <p>Laravel otomatis mengirim response 422 Unprocessable Entity dengan pesan error.</p>
+          
+          <h3>Contoh request valid:</h3>
+          <pre><code>POST /api/todos
+Content-Type: application/json
+
+{
+    "task": "Belajar Laravel API"
+}</code></pre>
+        `
+      },
+      {
+        title: "Controller: Method Update (PUT Update Todo)",
+        content: `
+          <p><strong>Method update</strong> digunakan untuk mengupdate todo yang sudah ada.</p>
+          
+          <h3>Kode untuk method update:</h3>
+          <pre><code>/**
+ * PUT/PATCH /todos/{id} - Update todo
+ */
+public function update(Request $request, string $id)
+{
+    // Cari todo
+    $todo = Todo::find($id);
+    
+    // Jika tidak ditemukan
+    if (!$todo) {
+        return response()->json([
+            'error' => 'Todo tidak ditemukan'
+        ], 404);
+    }
+
+    // Validasi input
+    $request->validate([
+        'task' => 'sometimes|string|max:255',
+        'completed' => 'sometimes|boolean'
+    ]);
+
+    // Update field yang dikirim
+    if ($request->has('task')) {
+        $todo->task = $request->task;
+    }
+    
+    if ($request->has('completed')) {
+        $todo->completed = $request->completed;
+    }
+    
+    // Simpan ke database
+    $todo->save();
+
+    // Return hasil update
+    return response()->json($todo);
+}</code></pre>
+          
+          <h3>Penjelasan:</h3>
+          <ul>
+            <li><code>sometimes</code> - validasi hanya dilakukan jika field ada</li>
+            <li><code>$request->has('task')</code> - cek apakah field 'task' dikirim</li>
+            <li><code>$todo->save()</code> - menyimpan perubahan ke database</li>
+          </ul>
+          
+          <h3>Contoh request update:</h3>
+          <pre><code>PUT /api/todos/1
+Content-Type: application/json
+
+{
+    "task": "Sudah belajar Laravel",
+    "completed": true
+}</code></pre>
+          
+          <p>Atau update sebagian:</p>
+          <pre><code>PATCH /api/todos/1
+{
+    "completed": true
+}</code></pre>
+        `
+      },
+      {
+        title: "Controller: Method Destroy (DELETE Todo)",
+        content: `
+          <p><strong>Method destroy</strong> digunakan untuk menghapus todo.</p>
+          
+          <h3>Kode untuk method destroy:</h3>
+          <pre><code>/**
+ * DELETE /todos/{id} - Hapus todo
+ */
+public function destroy(string $id)
+{
+    // Cari todo
+    $todo = Todo::find($id);
+    
+    // Jika tidak ditemukan
+    if (!$todo) {
+        return response()->json([
+            'error' => 'Todo tidak ditemukan'
+        ], 404);
+    }
+
+    // Hapus dari database
+    $todo->delete();
+
+    // Return pesan sukses
+    return response()->json([
+        'message' => 'Todo berhasil dihapus'
+    ]);
+}</code></pre>
+          
+          <h3>Penjelasan:</h3>
+          <ul>
+            <li><code>$todo->delete()</code> - menghapus record dari database</li>
+            <li>Setelah dihapus, data tidak bisa dikembalikan (kecuali pakai soft deletes)</li>
+          </ul>
+          
+          <h3>Response DELETE:</h3>
+          <pre><code>{
+    "message": "Todo berhasil dihapus"
+}</code></pre>
+          
+          <p>Status code: 200 OK</p>
+        `
+      },
+      {
+        title: "File TodoController.php Lengkap",
+        content: `
+          <p>Berikut file <code>app/Http/Controllers/Api/TodoController.php</code> lengkap:</p>
+          
+          <pre><code>&lt;?php
+// app/Http/Controllers/Api/TodoController.php
+
+namespace App\\Http\\Controllers\\Api;
+
+use App\\Http\\Controllers\\Controller;
+use App\\Models\\Todo;
+use Illuminate\\Http\\Request;
+
+class TodoController extends Controller
+{
+    /**
+     * GET /todos - Ambil semua todo
+     */
+    public function index()
+    {
+        $todos = Todo::all();
+        return response()->json($todos);
+    }
+
+    /**
+     * POST /todos - Tambah todo baru
+     */
+    public function store(Request $request)
+    {
+        $request->validate([
+            'task' => 'required|string|max:255'
+        ]);
+
+        $todo = Todo::create([
+            'task' => $request->task,
+            'completed' => false
+        ]);
+
+        return response()->json($todo, 201);
+    }
+
+    /**
+     * GET /todos/{id} - Ambil satu todo
+     */
+    public function show(string $id)
+    {
+        $todo = Todo::find($id);
+        
+        if (!$todo) {
+            return response()->json([
+                'error' => 'Todo tidak ditemukan'
+            ], 404);
+        }
+        
+        return response()->json($todo);
+    }
+
+    /**
+     * PUT/PATCH /todos/{id} - Update todo
+     */
+    public function update(Request $request, string $id)
+    {
+        $todo = Todo::find($id);
+        
+        if (!$todo) {
+            return response()->json([
+                'error' => 'Todo tidak ditemukan'
+            ], 404);
+        }
+
+        $request->validate([
+            'task' => 'sometimes|string|max:255',
+            'completed' => 'sometimes|boolean'
+        ]);
+
+        if ($request->has('task')) {
+            $todo->task = $request->task;
+        }
+        
+        if ($request->has('completed')) {
+            $todo->completed = $request->completed;
+        }
+        
+        $todo->save();
+
+        return response()->json($todo);
+    }
+
+    /**
+     * DELETE /todos/{id} - Hapus todo
+     */
+    public function destroy(string $id)
+    {
+        $todo = Todo::find($id);
+        
+        if (!$todo) {
+            return response()->json([
+                'error' => 'Todo tidak ditemukan'
+            ], 404);
+        }
+
+        $todo->delete();
+
+        return response()->json([
+            'message' => 'Todo berhasil dihapus'
+        ]);
+    }
+}</code></pre>
+        `
+      },
+      {
+        title: "Membuat Route API di Laravel",
+        content: `
+          <p><strong>Route</strong> menghubungkan URL dengan Controller.</p>
+          
+          <h3>1. Buka file routes/api.php</h3>
+          <pre><code>&lt;?php
+// routes/api.php
+
+use Illuminate\\Support\\Facades\\Route;
+use App\\Http\\Controllers\\Api\\TodoController;
+
+/*
+|--------------------------------------------------------------------------
+| API Routes
+|--------------------------------------------------------------------------
+*/
+
+// Route untuk Todo API
+Route::apiResource('todos', TodoController::class);</code></pre>
+          
+          <h3>2. Penjelasan apiResource</h3>
+          <p><code>Route::apiResource('todos', TodoController::class)</code> akan otomatis membuat 5 route:</p>
+          
+          <table border="1" cellpadding="8">
+            <tr>
+              <th>Method</th>
+              <th>URL</th>
+              <th>Controller Method</th>
+              <th>Nama Route</th>
+            </tr>
+            <tr>
+              <td>GET</td>
+              <td>/api/todos</td>
+              <td>index</td>
+              <td>todos.index</td>
+            </tr>
+            <tr>
+              <td>POST</td>
+              <td>/api/todos</td>
+              <td>store</td>
+              <td>todos.store</td>
+            </tr>
+            <tr>
+              <td>GET</td>
+              <td>/api/todos/{id}</td>
+              <td>show</td>
+              <td>todos.show</td>
+            </tr>
+            <tr>
+              <td>PUT/PATCH</td>
+              <td>/api/todos/{id}</td>
+              <td>update</td>
+              <td>todos.update</td>
+            </tr>
+            <tr>
+              <td>DELETE</td>
+              <td>/api/todos/{id}</td>
+              <td>destroy</td>
+              <td>todos.destroy</td>
+            </tr>
+          </table>
+          
+          <h3>3. Cek semua route</h3>
+          <pre><code>php artisan route:list</code></pre>
+          <p>Perintah ini akan menampilkan semua route yang terdaftar.</p>
+        `
+      },
+      {
+        title: "Testing API Laravel di Postman",
+        content: `
+          <p><strong>Langkah testing API Laravel di Postman:</strong></p>
+          
+          <h3>1. Jalankan server Laravel</h3>
+          <pre><code>php artisan serve</code></pre>
+          <p>Atau</p>
+          <pre><code>composer run dev</code></pre>
+          
+          <p>Server akan berjalan di <code>http://localhost:8000</code></p>
+          
+          <h3>2. Testing semua endpoint di Postman</h3>
+          
+          <table border="1" cellpadding="8">
+            <tr>
+              <th>Method</th>
+              <th>URL</th>
+              <th>Body (JSON)</th>
+              <th>Keterangan</th>
+            </tr>
+            <tr>
+              <td>GET</td>
+              <td>http://localhost:8000/api/todos</td>
+              <td>-</td>
+              <td>Ambil semua todo</td>
+            </tr>
+            <tr>
+              <td>POST</td>
+              <td>http://localhost:8000/api/todos</td>
+              <td><code>{"task": "Belajar Laravel"}</code></td>
+              <td>Tambah todo baru</td>
+            </tr>
+            <tr>
+              <td>GET</td>
+              <td>http://localhost:8000/api/todos/1</td>
+              <td>-</td>
+              <td>Ambil todo ID 1</td>
+            </tr>
+            <tr>
+              <td>PUT</td>
+              <td>http://localhost:8000/api/todos/1</td>
+              <td><code>{"task": "Update", "completed": true}</code></td>
+              <td>Update todo</td>
+            </tr>
+            <tr>
+              <td>DELETE</td>
+              <td>http://localhost:8000/api/todos/1</td>
+              <td>-</td>
+              <td>Hapus todo</td>
+            </tr>
+          </table>
+          
+          <h3>3. Catatan penting:</h3>
+          <ul>
+            <li>Semua endpoint diawali dengan <code>/api/</code></li>
+            <li>Untuk POST dan PUT, jangan lupa set Header: Content-Type: application/json</li>
+            <li>Data akan tersimpan di database SQLite</li>
+          </ul>
+        `
+      },
+      {
+        title: "Video: Tutorial Laravel API",
+        video: "https://www.youtube.com/embed/YKX0pP7_m8E",
+        content: `
+          <p>Video tutorial membuat REST API dengan Laravel dari awal.</p>
+        `
+      }
+    ]
+  },
+
+  // =================================================================
+  // TAHAP 5: PROYEK AKHIR - TODO APP DENGAN FRONTEND
+  // =================================================================
+  5: {
+    title: "Proyek Akhir: Todo App dengan Frontend",
+    slides: [
+      {
+        title: "Project Overview",
+        content: `
+          <p>Kita akan membuat aplikasi Todo lengkap dengan:</p>
+          <ul>
+            <li><strong>Backend:</strong> API menggunakan Node.js + Express (bisa juga pakai Laravel)</li>
+            <li><strong>Frontend:</strong> HTML + CSS + JavaScript untuk menampilkan dan mengelola todo</li>
+            <li><strong>Integrasi:</strong> Frontend memanggil backend API menggunakan fetch()</li>
+          </ul>
+          
+          <h3>Fitur aplikasi:</h3>
+          <ul>
+            <li>✅ Menampilkan daftar todo dari API</li>
+            <li>✅ Menambah todo baru</li>
+            <li>✅ Menandai todo selesai (toggle completed)</li>
+            <li>✅ Menghapus todo</li>
+            <li>✅ Loading indicator</li>
+            <li>✅ Error handling</li>
+          </ul>
+          
+          <h3>Struktur folder proyek:</h3>
+          <pre><code>todo-app/
+│
+├── backend/              # Folder untuk API (Express)
+│   ├── server.js
+│   ├── package.json
+│   └── node_modules/
+│
+└── frontend/             # Folder untuk frontend
+    ├── index.html
+    ├── style.css
+    └── script.js</code></pre>
+          
+          <p>Kita akan buat kedua bagian ini secara terpisah.</p>
+        `
+      },
+      {
+        title: "Backend: Setup dengan CORS",
+        content: `
+          <p>Untuk proyek ini, kita perlu menambahkan <strong>CORS</strong> agar frontend bisa memanggil API dari domain/port berbeda.</p>
+          
+          <h3>Apa itu CORS?</h3>
+          <p>CORS (Cross-Origin Resource Sharing) adalah mekanisme keamanan browser yang membatasi request dari domain berbeda. Karena frontend dan backend berjalan di port berbeda (misal: frontend di port 5500, backend di port 3000), kita perlu mengizinkannya.</p>
+          
+          <h3>Install package CORS:</h3>
+          <pre><code>cd backend
+npm install cors</code></pre>
+          
+          <h3>Update server.js dengan CORS:</h3>
+          <pre><code>// backend/server.js
+const express = require('express');
+const cors = require('cors'); // Import cors
+const app = express();
+const PORT = 3000;
+
+// Middleware
+app.use(cors()); // Izinkan request dari mana saja
+app.use(express.json());
+
+// Data sementara
+let todos = [
+  { id: 1, task: "Belajar Node.js", completed: false },
+  { id: 2, task: "Bikin API dengan Express", completed: false },
+  { id: 3, task: "Testing di Postman", completed: true },
+  { id: 4, task: "Buat frontend sederhana", completed: false }
+];
+let nextId = 5;
+
+// Semua endpoint todo (GET, POST, PUT, DELETE) sama seperti sebelumnya
+// ... (masukkan semua endpoint dari materi sebelumnya)
+
+app.listen(PORT, () => {
+  console.log(\`🚀 Backend running at http://localhost:\${PORT}\`);
+});</code></pre>
+          
+          <p>Dengan <code>app.use(cors())</code>, backend kita mengizinkan request dari domain/port manapun.</p>
+        `
+      },
+      {
+        title: "Frontend: HTML Structure",
+        content: `
+          <p>Buat file <code>frontend/index.html</code>:</p>
+          
+          <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Todo App dengan API&lt;/title&gt;
+    &lt;link rel="stylesheet" href="style.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class="container"&gt;
+        &lt;h1&gt;📝 Todo List App&lt;/h1&gt;
+        
+        &lt;!-- Form tambah todo --&gt;
+        &lt;div class="input-group"&gt;
+            &lt;input 
+                type="text" 
+                id="taskInput" 
+                placeholder="Tambah todo baru..." 
+                autocomplete="off"
+            &gt;
+            &lt;button onclick="addTodo()" class="add-btn"&gt;Tambah&lt;/button&gt;
+        &lt;/div&gt;
+        
+        &lt;!-- Loading indicator --&gt;
+        &lt;div id="loading" class="loading"&gt;Loading...&lt;/div&gt;
+        
+        &lt;!-- Error message --&gt;
+        &lt;div id="errorMessage" class="error"&gt;&lt;/div&gt;
+        
+        &lt;!-- Daftar todo --&gt;
+        &lt;ul id="todoList"&gt;&lt;/ul&gt;
+    &lt;/div&gt;
+    
+    &lt;script src="script.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+        `
+      },
+      {
+        title: "Frontend: CSS Styling",
+        content: `
+          <p>Buat file <code>frontend/style.css</code> untuk tampilan yang lebih baik:</p>
+          
+          <pre><code>/* frontend/style.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.input-group {
+    display: flex;
+    margin-bottom: 20px;
+    gap: 10px;
+}
+
+#taskInput {
+    flex: 1;
+    padding: 12px;
+    font-size: 16px;
+    border: 2px solid #e0e0e0;
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+#taskInput:focus {
+    border-color: #667eea;
+}
+
+button {
+    padding: 12px 24px;
+    background: #667eea;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background: #5a67d8;
+}
+
+.loading {
+    text-align: center;
+    padding: 20px;
+    color: #666;
+    display: none;
+}
+
+.error {
+    background: #fee;
+    color: #c33;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    display: none;
+}
+
+#todoList {
+    list-style: none;
+}
+
+.todo-item {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    background: #f9f9f9;
+    margin-bottom: 8px;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.todo-item:hover {
+    background: #f0f0f0;
+}
+
+.todo-item.completed .todo-task {
+    text-decoration: line-through;
+    color: #888;
+}
+
+.todo-checkbox {
+    margin-right: 12px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.todo-task {
+    flex: 1;
+    font-size: 16px;
+}
+
+.delete-btn {
+    padding: 6px 12px;
+    background: #f44336;
+    font-size: 14px;
+}
+
+.delete-btn:hover {
+    background: #da190b;
+}
+
+.empty-message {
+    text-align: center;
+    color: #999;
+    padding: 30px;
+    font-style: italic;
+}</code></pre>
+        `
+      },
+      {
+        title: "Frontend: JavaScript - Setup dan Fetch Todos",
+        content: `
+          <p>Buat file <code>frontend/script.js</code> - bagian setup dan fetch:</p>
+          
+          <pre><code>// frontend/script.js
+
+// ============= KONFIGURASI =============
+const API_URL = 'http://localhost:3000/todos';
+
+// ============= AMBIL ELEMEN DOM =============
+const todoList = document.getElementById('todoList');
+const loading = document.getElementById('loading');
+const errorMessage = document.getElementById('errorMessage');
+const taskInput = document.getElementById('taskInput');
+
+// ============= FUNGSI UTILITY =============
+function showLoading() {
+    loading.style.display = 'block';
+}
+
+function hideLoading() {
+    loading.style.display = 'none';
+}
+
+function showError(message) {
+    errorMessage.textContent = message;
+    errorMessage.style.display = 'block';
+    setTimeout(() => {
+        errorMessage.style.display = 'none';
+    }, 3000);
+}
+
+// ============= FUNGSI AMBIL DATA =============
+async function fetchTodos() {
+    try {
+        showLoading();
+        todoList.innerHTML = '';
+        
+        const response = await fetch(API_URL);
+        
+        if (!response.ok) {
+            throw new Error(\`HTTP error! status: \${response.status}\`);
+        }
+        
+        const todos = await response.json();
+        console.log('Data dari API:', todos);
+        
+        displayTodos(todos);
+        
+    } catch (error) {
+        console.error('Error fetching todos:', error);
+        showError('Gagal mengambil data: ' + error.message);
+        todoList.innerHTML = '&lt;li class="empty-message"&gt;Error memuat data&lt;/li&gt;';
+    } finally {
+        hideLoading();
+    }
+}
+
+// Panggil fetchTodos saat halaman dimuat
+window.onload = fetchTodos;</code></pre>
+        `
+      },
+      {
+        title: "Frontend: JavaScript - Display Todos",
+        content: `
+          <p>Tambahkan fungsi displayTodos ke <code>script.js</code>:</p>
+          
+          <pre><code>// ============= FUNGSI TAMPILKAN TODO =============
+function displayTodos(todos) {
+    if (!todos || todos.length === 0) {
+        todoList.innerHTML = '&lt;li class="empty-message"&gt;Belum ada todo. Tambahkan yang baru!&lt;/li&gt;';
+        return;
+    }
+    
+    let html = '';
+    todos.forEach(todo => {
+        const completedClass = todo.completed ? 'completed' : '';
+        
+        html += \`
+            &lt;li class="todo-item \${completedClass}"&gt;
+                &lt;input 
+                    type="checkbox" 
+                    class="todo-checkbox"
+                    \${todo.completed ? 'checked' : ''} 
+                    onchange="toggleTodo(\${todo.id})"
+                &gt;
+                &lt;span class="todo-task"&gt;\${escapeHtml(todo.task)}&lt;/span&gt;
+                &lt;button class="delete-btn" onclick="deleteTodo(\${todo.id})"&gt;
+                    Hapus
+                &lt;/button&gt;
+            &lt;/li&gt;
+        \`;
+    });
+    
+    todoList.innerHTML = html;
+}
+
+// Fungsi untuk mengamankan HTML (mencegah XSS)
+function escapeHtml(text) {
+    const div = document.createElement('div');
+    div.textContent = text;
+    return div.innerHTML;
+}</code></pre>
+          
+          <p><strong>Penjelasan:</strong></p>
+          <ul>
+            <li><code>escapeHtml()</code> - mengubah karakter khusus menjadi entitas HTML (mencegah XSS)</li>
+            <li><code>completedClass</code> - menambah class 'completed' jika todo sudah selesai</li>
+            <li><code>onchange</code> dan <code>onclick</code> - event handler yang akan dipanggil</li>
+          </ul>
+        `
+      },
+      {
+        title: "Frontend: JavaScript - Add Todo",
+        content: `
+          <p>Tambahkan fungsi addTodo ke <code>script.js</code>:</p>
+          
+          <pre><code>// ============= FUNGSI TAMBAH TODO =============
+async function addTodo() {
+    const task = taskInput.value.trim();
+    
+    if (!task) {
+        showError('Task tidak boleh kosong!');
+        taskInput.focus();
+        return;
+    }
+    
+    try {
+        showLoading();
+        
+        const response = await fetch(API_URL, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ task })
+        });
+        
+        if (!response.ok) {
+            const errorData = await response.json();
+            throw new Error(errorData.error || 'Gagal menambah todo');
+        }
+        
+        const newTodo = await response.json();
+        console.log('Todo baru:', newTodo);
+        
+        // Kosongkan input
+        taskInput.value = '';
+        
+        // Refresh daftar todo
+        await fetchTodos();
+        
+    } catch (error) {
+        console.error('Error adding todo:', error);
+        showError('Gagal menambah todo: ' + error.message);
+    } finally {
+        hideLoading();
+    }
+}</code></pre>
+          
+          <p><strong>Penjelasan:</strong></p>
+          <ul>
+            <li><code>taskInput.value.trim()</code> - mengambil nilai input, hapus spasi di awal/akhir</li>
+            <li><code>method: 'POST'</code> - menggunakan method POST</li>
+            <li><code>JSON.stringify({ task })</code> - mengubah object ke JSON string</li>
+            <li><code>await fetchTodos()</code> - refresh data setelah berhasil tambah</li>
+          </ul>
+        `
+      },
+      {
+        title: "Frontend: JavaScript - Toggle Todo",
+        content: `
+          <p>Tambahkan fungsi toggleTodo ke <code>script.js</code>:</p>
+          
+          <pre><code>// ============= FUNGSI TOGGLE COMPLETED =============
+async function toggleTodo(id) {
+    try {
+        showLoading();
+        
+        const response = await fetch(\`\${API_URL}/\${id}\`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+            // Tidak perlu body karena backend akan toggle completed otomatis
+        });
+        
+        if (!response.ok) {
+            const errorData = await response.json();
+            throw new Error(errorData.error || 'Gagal mengupdate todo');
+        }
+        
+        const updatedTodo = await response.json();
+        console.log('Todo diupdate:', updatedTodo);
+        
+        // Refresh daftar todo
+        await fetchTodos();
+        
+    } catch (error) {
+        console.error('Error toggling todo:', error);
+        showError('Gagal mengupdate todo: ' + error.message);
+        
+        // Refresh tetap dilakukan untuk sync state
+        await fetchTodos();
+    } finally {
+        hideLoading();
+    }
+}</code></pre>
+          
+          <p><strong>Penjelasan:</strong></p>
+          <ul>
+            <li><code>\`\${API_URL}/\${id}\`</code> - template string, contoh: http://localhost:3000/todos/1</li>
+            <li><code>method: 'PUT'</code> - menggunakan method PUT untuk update</li>
+            <li>Kita tidak kirim body karena backend akan toggle completed otomatis</li>
+          </ul>
+        `
+      },
+      {
+        title: "Frontend: JavaScript - Delete Todo",
+        content: `
+          <p>Tambahkan fungsi deleteTodo ke <code>script.js</code>:</p>
+          
+          <pre><code>// ============= FUNGSI HAPUS TODO =============
+async function deleteTodo(id) {
+    if (!confirm('Yakin ingin menghapus todo ini?')) {
+        return;
+    }
+    
+    try {
+        showLoading();
+        
+        const response = await fetch(\`\${API_URL}/\${id}\`, {
+            method: 'DELETE'
+        });
+        
+        if (!response.ok) {
+            const errorData = await response.json();
+            throw new Error(errorData.error || 'Gagal menghapus todo');
+        }
+        
+        const result = await response.json();
+        console.log('Hasil delete:', result);
+        
+        // Refresh daftar todo
+        await fetchTodos();
+        
+    } catch (error) {
+        console.error('Error deleting todo:', error);
+        showError('Gagal menghapus todo: ' + error.message);
+    } finally {
+        hideLoading();
+    }
+}</code></pre>
+          
+          <p><strong>Penjelasan:</strong></p>
+          <ul>
+            <li><code>confirm()</code> - menampilkan dialog konfirmasi sebelum menghapus</li>
+            <li><code>method: 'DELETE'</code> - menggunakan method DELETE</li>
+            <li>Tidak perlu body untuk DELETE request</li>
+          </ul>
+        `
+      },
+      {
+        title: "File script.js Lengkap",
+        content: `
+          <p>Berikut file <code>frontend/script.js</code> lengkap:</p>
+          
+          <pre><code>// frontend/script.js
+
+// ============= KONFIGURASI =============
+const API_URL = 'http://localhost:3000/todos';
+
+// ============= AMBIL ELEMEN DOM =============
+const todoList = document.getElementById('todoList');
+const loading = document.getElementById('loading');
+const errorMessage = document.getElementById('errorMessage');
+const taskInput = document.getElementById('taskInput');
+
+// ============= FUNGSI UTILITY =============
+function showLoading() {
+    loading.style.display = 'block';
+}
+
+function hideLoading() {
+    loading.style.display = 'none';
+}
+
+function showError(message) {
+    errorMessage.textContent = message;
+    errorMessage.style.display = 'block';
+    setTimeout(() => {
+        errorMessage.style.display = 'none';
+    }, 3000);
+}
+
+function escapeHtml(text) {
+    const div = document.createElement('div');
+    div.textContent = text;
+    return div.innerHTML;
+}
+
+// ============= FUNGSI TAMPILKAN TODO =============
+function displayTodos(todos) {
+    if (!todos || todos.length === 0) {
+        todoList.innerHTML = '&lt;li class="empty-message"&gt;Belum ada todo. Tambahkan yang baru!&lt;/li&gt;';
+        return;
+    }
+    
+    let html = '';
+    todos.forEach(todo => {
+        const completedClass = todo.completed ? 'completed' : '';
+        
+        html += \`
+            &lt;li class="todo-item \${completedClass}"&gt;
+                &lt;input 
+                    type="checkbox" 
+                    class="todo-checkbox"
+                    \${todo.completed ? 'checked' : ''} 
+                    onchange="toggleTodo(\${todo.id})"
+                &gt;
+                &lt;span class="todo-task"&gt;\${escapeHtml(todo.task)}&lt;/span&gt;
+                &lt;button class="delete-btn" onclick="deleteTodo(\${todo.id})"&gt;
+                    Hapus
+                &lt;/button&gt;
+            &lt;/li&gt;
+        \`;
+    });
+    
+    todoList.innerHTML = html;
+}
+
+// ============= FUNGSI AMBIL DATA =============
+async function fetchTodos() {
+    try {
+        showLoading();
+        todoList.innerHTML = '';
+        
+        const response = await fetch(API_URL);
+        
+        if (!response.ok) {
+            throw new Error(\`HTTP error! status: \${response.status}\`);
+        }
+        
+        const todos = await response.json();
+        console.log('Data dari API:', todos);
+        
+        displayTodos(todos);
+        
+    } catch (error) {
+        console.error('Error fetching todos:', error);
+        showError('Gagal mengambil data: ' + error.message);
+        todoList.innerHTML = '&lt;li class="empty-message"&gt;Error memuat data&lt;/li&gt;';
+    } finally {
+        hideLoading();
+    }
+}
+
+// ============= FUNGSI TAMBAH TODO =============
+async function addTodo() {
+    const task = taskInput.value.trim();
+    
+    if (!task) {
+        showError('Task tidak boleh kosong!');
+        taskInput.focus();
+        return;
+    }
+    
+    try {
+        showLoading();
+        
+        const response = await fetch(API_URL, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ task })
+        });
+        
+        if (!response.ok) {
+            const errorData = await response.json();
+            throw new Error(errorData.error || 'Gagal menambah todo');
+        }
+        
+        const newTodo = await response.json();
+        console.log('Todo baru:', newTodo);
+        
+        taskInput.value = '';
+        await fetchTodos();
+        
+    } catch (error) {
+        console.error('Error adding todo:', error);
+        showError('Gagal menambah todo: ' + error.message);
+    } finally {
+        hideLoading();
+    }
+}
+
+// ============= FUNGSI TOGGLE COMPLETED =============
+async function toggleTodo(id) {
+    try {
+        showLoading();
+        
+        const response = await fetch(\`\${API_URL}/\${id}\`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+        
+        if (!response.ok) {
+            const errorData = await response.json();
+            throw new Error(errorData.error || 'Gagal mengupdate todo');
+        }
+        
+        const updatedTodo = await response.json();
+        console.log('Todo diupdate:', updatedTodo);
+        
+        await fetchTodos();
+        
+    } catch (error) {
+        console.error('Error toggling todo:', error);
+        showError('Gagal mengupdate todo: ' + error.message);
+        await fetchTodos(); // Refresh untuk sync state
+    } finally {
+        hideLoading();
+    }
+}
+
+// ============= FUNGSI HAPUS TODO =============
+async function deleteTodo(id) {
+    if (!confirm('Yakin ingin menghapus todo ini?')) {
+        return;
+    }
+    
+    try {
+        showLoading();
+        
+        const response = await fetch(\`\${API_URL}/\${id}\`, {
+            method: 'DELETE'
+        });
+        
+        if (!response.ok) {
+            const errorData = await response.json();
+            throw new Error(errorData.error || 'Gagal menghapus todo');
+        }
+        
+        const result = await response.json();
+        console.log('Hasil delete:', result);
+        
+        await fetchTodos();
+        
+    } catch (error) {
+        console.error('Error deleting todo:', error);
+        showError('Gagal menghapus todo: ' + error.message);
+    } finally {
+        hideLoading();
+    }
+}
+
+// ============= INITIAL LOAD =============
+window.onload = fetchTodos;</code></pre>
+        `
+      },
+      {
+        title: "Menjalankan Aplikasi Lengkap",
+        content: `
+          <p><strong>Langkah-langkah menjalankan aplikasi:</strong></p>
+          
+          <h3>1. Jalankan Backend (Express)</h3>
+          <pre><code>cd backend
+node server.js</code></pre>
+          <p>Pastikan muncul: <code>🚀 Backend running at http://localhost:3000</code></p>
+          
+          <h3>2. Buka Frontend</h3>
+          <p>Ada beberapa cara:</p>
+          <ul>
+            <li><strong>Langsung:</strong> Double click file <code>frontend/index.html</code></li>
+            <li><strong>Live Server (VS Code):</strong> Klik kanan index.html → Open with Live Server</li>
+            <li><strong>PHP Server:</strong> <code>php -S localhost:8000 -t frontend</code></li>
+          </ul>
+          
+          <h3>3. Testing Fitur</h3>
+          <ol>
+            <li><strong>Tambah todo:</strong> Ketik task, klik tombol "Tambah"</li>
+            <li><strong>Tandai selesai:</strong> Centang checkbox pada todo</li>
+            <li><strong>Hapus todo:</strong> Klik tombol "Hapus" (akan muncul konfirmasi)</li>
+          </ol>
+          
+          <h3>4. Buka Developer Tools (F12)</h3>
+          <ul>
+            <li>Tab <strong>Console</strong>: lihat log data dari API</li>
+            <li>Tab <strong>Network</strong>: lihat request yang dikirim</li>
+          </ul>
+          
+          <h3>5. Matikan Server</h3>
+          <p>Tekan <strong>Ctrl+C</strong> di terminal untuk menghentikan backend.</p>
+        `
+      },
+      {
+        title: "Troubleshooting",
+        content: `
+          <p><strong>Masalah yang sering terjadi dan solusinya:</strong></p>
+          
+          <h3>1. Error CORS</h3>
+          <p><strong>Gejala:</strong> di console browser muncul error CORS</p>
+          <p><strong>Solusi:</strong> Pastikan backend sudah pakai <code>cors()</code></p>
+          <pre><code>const cors = require('cors');
+app.use(cors());</code></pre>
+          
+          <h3>2. Connection Refused</h3>
+          <p><strong>Gejala:</strong> fetch error "Failed to fetch"</p>
+          <p><strong>Solusi:</strong> Pastikan backend sudah jalan di port 3000</p>
+          <pre><code>node server.js</code></pre>
+          
+          <h3>3. Data Tidak Muncul</h3>
+          <p><strong>Gejala:</strong> List todo kosong</p>
+          <p><strong>Solusi:</strong> Cek di Postman dulu, apakah API berjalan normal</p>
+          <pre><code>GET http://localhost:3000/todos</code></pre>
+          
+          <h3>4. POST Tidak Berhasil</h3>
+          <p><strong>Gejala:</strong> Tambah todo error</p>
+          <p><strong>Solusi:</strong> Cek di Network tab, lihat request body dan response</p>
+          
+          <h3>5. Port Already in Use</h3>
+          <p><strong>Gejala:</strong> Error "EADDRINUSE" saat menjalankan server</p>
+          <p><strong>Solusi:</strong> Ganti port di server.js, atau matikan proses yang menggunakan port 3000</p>
+        `
+      },
+      {
+        title: "Video: Tutorial Todo App Fullstack",
+        video: "https://www.youtube.com/embed/6I8G9HrI9sA",
+        content: `
+          <p>Video tutorial membuat Todo App lengkap dengan backend Node.js dan frontend JavaScript.</p>
+        `
+      }
+    ]
+  }
+};
+</script>
+    <script src="../../assets/js/frontend.js"></script>
+</body>
+</html>
