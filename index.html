@@ -308,66 +308,74 @@
 .hero {
   background: #111;
   color: #fff;
-  padding: 6rem 7rem;
-  min-height: 300px;
+  padding: 3rem 5rem 2rem;
+  min-height: calc(100vh - 80px);
+  min-height: calc(100dvh - 80px);
   display: flex;
   align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.hero .left {
+  margin-top: 1rem;
 }
 
 /* Hero Image jadi lingkaran */
 .hero .right img {
   border-radius: 50%;
   object-fit: cover;
-  width: 300px;
-  height: 300px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+  max-width: 100%;
+  width: 260px;
+  height: 260px;
 }
 
-/* ========== ANIMASI HOVER PADA TEKS HERO YANG BAGUS ========== */
+/* Custom CSS untuk judul hero dengan efek gradient yang dinamis */
 .hero-title {
   position: relative;
   display: inline-block;
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  background-image: linear-gradient(to right, #00c6ff, #0072ff);
+  transition: all 0.5s ease;
   cursor: pointer;
-  transition: all 0.4s ease;
 }
 
 .hero-title::before {
-  content: '';
+  content: "";
   position: absolute;
-  bottom: -5px;
+  top: 0;
   left: 0;
-  width: 0;
-  height: 3px;
-  background: linear-gradient(90deg, #6C63FF, #FF6B6B);
-  transition: width 0.4s ease;
-  border-radius: 2px;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, #f857a6, #ff5858);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  opacity: 0;
+  transition: opacity 0.5s ease;
 }
 
 .hero-title:hover {
-  transform: translateY(-5px);
-  text-shadow: 0 5px 15px rgba(108, 99, 255, 0.3);
-  background: linear-gradient(90deg, #6C63FF, #FF6B6B);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  transform: scale(1.02);
 }
 
 .hero-title:hover::before {
-  width: 100%;
+  opacity: 1;
 }
 
-/* ========== PERBAIKAN RESPONSIVITAS ========== */
-
-/* Hero section untuk HP - GAMBAR DITAMPILKAN DI ATAS TEKS */
+/* Hero section untuk HP - GAMBAR DITAMPILKAN DI ATAS TEKS & DI KETENGAHKAN */
 @media (max-width: 768px) {
   .hero {
-    padding: 3rem 1rem !important;
+    padding: 2rem 1.5rem !important;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
-    height: auto !important;
+    min-height: calc(100vh - 75px) !important;
+    min-height: calc(100dvh - 75px) !important;
   }
   
   /* GAMBAR DITAMPILKAN DI ATAS TEKS */
@@ -415,8 +423,9 @@
 /* Untuk HP yang sangat kecil */
 @media (max-width: 480px) {
   .hero {
-    padding: 2.5rem 1rem !important;
-    min-height: auto !important;
+    padding: 1.5rem 1rem !important;
+    min-height: calc(100vh - 70px) !important;
+    min-height: calc(100dvh - 70px) !important;
   }
   
   .hero .title {
@@ -438,9 +447,10 @@
 /* Untuk Tablet - TAMPILKAN GAMBAR DENGAN JARAK YANG CUKUP */
 @media (min-width: 769px) and (max-width: 991px) {
   .hero {
-    padding: 4rem 2rem !important;
-    min-height: 450px !important;
-    gap: 3rem !important;
+    padding: 3rem 2rem !important;
+    min-height: calc(100vh - 80px) !important;
+    min-height: calc(100dvh - 80px) !important;
+    gap: 2rem !important;
   }
   
   .hero .right img {
@@ -741,9 +751,9 @@ img {
 </header>
 
 
-<main class="container mt-5">
-  <section id="courses">
-    <h3 class="text-center fw-bold">Apa yang akan kamu dapat?</h3>
+<main class="container my-5 pt-5">
+  <section id="courses" class="pt-4">
+    <h3 class="text-center fw-bold mb-4">Apa yang akan kamu dapat?</h3>
     <div class="courses-scroll-container">
       <div class="courses-scroll-wrapper">
         <div class="course-card h-100 p-0">
